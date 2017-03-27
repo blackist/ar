@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ehcache.xsd"
+	monitoring="autodetect" dynamicConfig="true" >
+	
+	
+	<!-- 缓存位置可以是自定义的硬盘地址也可以是JVM默认使用的缓存地址 java.io.tmpdir -->
+	<diskStore path="d:\ar\cache"/>
+	
+	<!-- 缓存配置
+		不能配置 maxElementOnDisk="1000000", 原始文件没有配置，需要其它元素支持-->
+	<defaultCache maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="86400"
+		timeToLiveSeconds="86400" overflowToDisk="true" maxElementsOnDisk="10000000" memoryStoreEvictionPolicy="LRU"/>
+	
+	<cache name="dictionaryCache" maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="86400"
+		timeToLiveSeconds="86400" overflowToDisk="true" memoryStoreEvictionPolicy="LRU"/>
+	
+	<cache name="dictionaryDataCache" maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="86400"
+		timeToLiveSeconds="86400" overflowToDisk="true" memoryStoreEvictionPolicy="LRU"/>
+	
+	<cache name="recruitCache" maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="86400"
+		timeToLiveSeconds="86400" overflowToDisk="true" memoryStoreEvictionPolicy="LRU"/>
+	
+	<!-- 班级录缓存 -->
+	<cache name="classCache" maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="86400"
+		timeToLiveSeconds="86400" overflowToDisk="true" memoryStoreEvictionPolicy="LRU"/>
+	
+	<cache name="classroomCache" maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="86400"
+		timeToLiveSeconds="86400" overflowToDisk="true" memoryStoreEvictionPolicy="LRU"/>
+	
+</ehcache>

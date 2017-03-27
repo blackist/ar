@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xzit.ar.common.mapper.album.AlbumImageMapper" >
+  <resultMap id="BaseResultMap" type="com.xzit.ar.common.po.album.AlbumImage" >
+    <result column="album_id" property="albumId" jdbcType="INTEGER" />
+    <result column="image_id" property="imageId" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xzit.ar.common.po.album.AlbumImage" >
+    insert into album_image (album_id, image_id, create_time
+      )
+    values (#{albumId,jdbcType=INTEGER}, #{imageId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xzit.ar.common.po.album.AlbumImage" >
+    insert into album_image
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="albumId != null" >
+        album_id,
+      </if>
+      <if test="imageId != null" >
+        image_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="albumId != null" >
+        #{albumId,jdbcType=INTEGER},
+      </if>
+      <if test="imageId != null" >
+        #{imageId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

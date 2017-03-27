@@ -1,0 +1,23 @@
+.code
+{
+    background: #fbedbb;
+    border: #c0c0c0 1px solid;
+    padding: 5px;
+    margin: 0 40px 0 20px;
+    font-family: Verdana,Helvetica, "微软雅黑" , Arial, "宋体" , sans-serif;
+    
+    width:95%;
+    word-break:break-all;
+    word-wrap:break-word
+
+}
+.post .postbody {
+word-wrap:break-word
+}
+.post .postbody h2{
+	margin:8px;padding:8px;
+	font-family:'宋体' Helvetica ;				
+	font-size:24px;
+	border-bottom:2px solid #000;background:#ccc	
+}
+<meta name="360_union_verify" content="43f5930c36b00f1e1a6972f6ab7eb00a">

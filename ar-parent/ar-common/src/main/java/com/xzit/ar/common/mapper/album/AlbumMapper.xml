@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xzit.ar.common.mapper.album.AlbumMapper" >
+  <resultMap id="BaseResultMap" type="com.xzit.ar.common.po.album.Album" >
+    <id column="album_id" property="albumId" jdbcType="INTEGER" />
+    <result column="album_name" property="albumName" jdbcType="VARCHAR" />
+    <result column="album_desc" property="albumDesc" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="interests" property="interests" jdbcType="INTEGER" />
+    <result column="cover_image" property="coverImage" jdbcType="INTEGER" />
+    <result column="origin_id" property="originId" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="state" property="state" jdbcType="CHAR" />
+    <result column="state_time" property="stateTime" jdbcType="TIMESTAMP" />
+    <result column="exp1" property="exp1" jdbcType="VARCHAR" />
+    <result column="exp2" property="exp2" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    album_id, album_name, album_desc, create_time, interests, cover_image, origin_id, 
+    user_id, state, state_time, exp1, exp2
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from album
+    where album_id = #{albumId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from album
+    where album_id = #{albumId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xzit.ar.common.po.album.Album" >
+    insert into album (album_id, album_name, album_desc, 
+      create_time, interests, cover_image, 
+      origin_id, user_id, state, 
+      state_time, exp1, exp2
+      )
+    values (#{albumId,jdbcType=INTEGER}, #{albumName,jdbcType=VARCHAR}, #{albumDesc,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{interests,jdbcType=INTEGER}, #{coverImage,jdbcType=INTEGER}, 
+      #{originId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{state,jdbcType=CHAR}, 
+      #{stateTime,jdbcType=TIMESTAMP}, #{exp1,jdbcType=VARCHAR}, #{exp2,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xzit.ar.common.po.album.Album" >
+    insert into album
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="albumId != null" >
+        album_id,
+      </if>
+      <if test="albumName != null" >
+        album_name,
+      </if>
+      <if test="albumDesc != null" >
+        album_desc,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="interests != null" >
+        interests,
+      </if>
+      <if test="coverImage != null" >
+        cover_image,
+      </if>
+      <if test="originId != null" >
+        origin_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="stateTime != null" >
+        state_time,
+      </if>
+      <if test="exp1 != null" >
+        exp1,
+      </if>
+      <if test="exp2 != null" >
+        exp2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="albumId != null" >
+        #{albumId,jdbcType=INTEGER},
+      </if>
+      <if test="albumName != null" >
+        #{albumName,jdbcType=VARCHAR},
+      </if>
+      <if test="albumDesc != null" >
+        #{albumDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="interests != null" >
+        #{interests,jdbcType=INTEGER},
+      </if>
+      <if test="coverImage != null" >
+        #{coverImage,jdbcType=INTEGER},
+      </if>
+      <if test="originId != null" >
+        #{originId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=CHAR},
+      </if>
+      <if test="stateTime != null" >
+        #{stateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="exp1 != null" >
+        #{exp1,jdbcType=VARCHAR},
+      </if>
+      <if test="exp2 != null" >
+        #{exp2,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xzit.ar.common.po.album.Album" >
+    update album
+    <set >
+      <if test="albumName != null" >
+        album_name = #{albumName,jdbcType=VARCHAR},
+      </if>
+      <if test="albumDesc != null" >
+        album_desc = #{albumDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="interests != null" >
+        interests = #{interests,jdbcType=INTEGER},
+      </if>
+      <if test="coverImage != null" >
+        cover_image = #{coverImage,jdbcType=INTEGER},
+      </if>
+      <if test="originId != null" >
+        origin_id = #{originId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=CHAR},
+      </if>
+      <if test="stateTime != null" >
+        state_time = #{stateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="exp1 != null" >
+        exp1 = #{exp1,jdbcType=VARCHAR},
+      </if>
+      <if test="exp2 != null" >
+        exp2 = #{exp2,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where album_id = #{albumId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xzit.ar.common.po.album.Album" >
+    update album
+    set album_name = #{albumName,jdbcType=VARCHAR},
+      album_desc = #{albumDesc,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      interests = #{interests,jdbcType=INTEGER},
+      cover_image = #{coverImage,jdbcType=INTEGER},
+      origin_id = #{originId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      state = #{state,jdbcType=CHAR},
+      state_time = #{stateTime,jdbcType=TIMESTAMP},
+      exp1 = #{exp1,jdbcType=VARCHAR},
+      exp2 = #{exp2,jdbcType=VARCHAR}
+    where album_id = #{albumId,jdbcType=INTEGER}
+  </update>
+</mapper>

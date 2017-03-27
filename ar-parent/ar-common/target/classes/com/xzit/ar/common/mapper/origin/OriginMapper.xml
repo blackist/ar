@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xzit.ar.common.mapper.origin.OriginMapper" >
+	<resultMap id="BaseResultMap" type="com.xzit.ar.common.po.origin.Origin" >
+		<id column="origin_id" property="originId" jdbcType="INTEGER" />
+		<result column="origin_name" property="originName" jdbcType="VARCHAR" />
+		<result column="origin_type" property="originType" jdbcType="VARCHAR" />
+		<result column="origin_grade" property="originGrade" jdbcType="CHAR" />
+		<result column="members" property="members" jdbcType="INTEGER" />
+		<result column="origin_desc" property="originDesc" jdbcType="LONGVARCHAR" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="mgr_id" property="mgrId" jdbcType="INTEGER" />
+		<result column="state" property="state" jdbcType="CHAR" />
+		<result column="state_time" property="stateTime" jdbcType="TIMESTAMP" />
+		<result column="exp1" property="exp1" jdbcType="VARCHAR" />
+		<result column="exp2" property="exp2" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<sql id="Base_Column_List" >
+		origin_id, origin_name, origin_type, origin_grade, members, origin_desc,
+		create_time, mgr_id, state, state_time, exp1, exp2
+	</sql>
+	
+	<select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from origin
+    where origin_id = #{originId,jdbcType=INTEGER}
+	</select>
+	
+	<delete id="delete" parameterType="java.lang.Integer" >delete from origin
+    where origin_id = #{originId,jdbcType=INTEGER}</delete>
+	
+	<insert id="save" parameterType="com.xzit.ar.common.po.origin.Origin" >
+		insert into origin
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="originId != null" >origin_id,</if>
+			<if test="originName != null" >origin_name,</if>
+			<if test="originType != null" >origin_type,</if>
+			<if test="originGrade != null" >origin_grade,</if>
+			<if test="members != null" >members,</if>
+			<if test="createTime != null" >create_time,</if>
+			<if test="creatorId != null" >mgr_id,</if>
+			<if test="state != null" >state,</if>
+			<if test="stateTime != null" >state_time,</if>
+			<if test="exp1 != null" >exp1,</if>
+			<if test="exp2 != null" >exp2,</if>
+			<if test="originDesc != null" >origin_desc,</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="originId != null" >#{originId,jdbcType=INTEGER},</if>
+			<if test="originName != null" >#{originName,jdbcType=VARCHAR},</if>
+			<if test="originType != null" >#{originType,jdbcType=VARCHAR},</if>
+			<if test="originGrade != null" >#{originGrade,jdbcType=CHAR},</if>
+			<if test="members != null" >#{members,jdbcType=INTEGER},</if>
+			<if test="createTime != null" >#{createTime,jdbcType=TIMESTAMP},</if>
+			<if test="creatorId != null" >#{mgrId,jdbcType=INTEGER},</if>
+			<if test="state != null" >#{state,jdbcType=CHAR},</if>
+			<if test="stateTime != null" >#{stateTime,jdbcType=TIMESTAMP},</if>
+			<if test="exp1 != null" >#{exp1,jdbcType=VARCHAR},</if>
+			<if test="exp2 != null" >#{exp2,jdbcType=VARCHAR},</if>
+			<if test="originDesc != null" >#{originDesc,jdbcType=LONGVARCHAR},</if>
+		</trim>
+	</insert>
+	
+	<update id="update" parameterType="com.xzit.ar.common.po.origin.Origin">
+		update origin
+		<set >
+			<if test="originName != null" >origin_name = #{originName,jdbcType=VARCHAR},</if>
+			<if test="originType != null" >origin_type = #{originType,jdbcType=VARCHAR},</if>
+			<if test="originGrade != null" >origin_grade = #{originGrade,jdbcType=CHAR},</if>
+			<if test="members != null" >members = #{members,jdbcType=INTEGER},</if>
+			<if test="createTime != null" >create_time = #{createTime,jdbcType=TIMESTAMP},</if>
+			<if test="mgrId != null" >mgr_id = #{creatorId,jdbcType=INTEGER},</if>
+			<if test="state != null" >state = #{state,jdbcType=CHAR},</if>
+			<if test="stateTime != null" >state_time = #{stateTime,jdbcType=TIMESTAMP},</if>
+			<if test="exp1 != null" >exp1 = #{exp1,jdbcType=VARCHAR},</if>
+			<if test="exp2 != null" >exp2 = #{exp2,jdbcType=VARCHAR},</if>
+			<if test="originDesc != null" >origin_desc = #{originDesc,jdbcType=LONGVARCHAR},</if>
+		</set>
+		where origin_id = #{originId,jdbcType=INTEGER}
+	</update>
+	<update id="updateState">
+		update origin 
+		set state=#{state}
+		where origin_id=#{id}
+	</update>
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<settings>
+		<setting name="cacheEnabled" value="false"/>
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<setting name="aggressiveLazyLoading" value="false"/>
+		<setting name="multipleResultSetsEnabled" value="true"/>
+	</settings>
+	
+	<typeAliases>
+		<package name="com.xzit.ar.common.po.album"/>
+		<package name="com.xzit.ar.common.po.attachment"/>
+		<package name="com.xzit.ar.common.po.dict"/>
+		<package name="com.xzit.ar.common.po.global"/>
+		<package name="com.xzit.ar.common.po.image"/>
+		<package name="com.xzit.ar.common.po.log"/>
+		<package name="com.xzit.ar.common.po.message"/>
+		<package name="com.xzit.ar.common.po.origin"/>
+		<package name="com.xzit.ar.common.po.recruit"/>
+		<package name="com.xzit.ar.common.po.role"/>
+		<package name="com.xzit.ar.common.po.user"/>
+	</typeAliases>
+	
+	
+</configuration>

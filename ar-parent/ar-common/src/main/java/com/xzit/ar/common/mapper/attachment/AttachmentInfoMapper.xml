@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xzit.ar.common.mapper.attachment.AttachmentInfoMapper" >
+	<resultMap id="BaseResultMap" type="com.xzit.ar.common.po.attachment.AttachmentInfo">
+		<result column="attachment_id" property="attachmentId" jdbcType="INTEGER" />
+		<result column="info_id" property="infoId" jdbcType="INTEGER" />
+	</resultMap>
+	
+	<insert id="insertSelective" parameterType="com.xzit.ar.common.po.attachment.AttachmentInfo">
+		insert into attachment_info
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="attachmentId != null" >attachment_id,</if>
+			<if test="infoId != null" >info_id,</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="attachmentId != null" >#{attachmentId,jdbcType=INTEGER},</if>
+			<if test="infoId != null" >#{infoId,jdbcType=INTEGER},</if>
+		</trim>
+	</insert>
+</mapper>

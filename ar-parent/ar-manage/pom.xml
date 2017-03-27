@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.xzit.ar</groupId>
+		<artifactId>ar-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>ar-manage</artifactId>
+	<packaging>war</packaging>
+	<name>ar-manage Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+		<!-- jstl -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+		</dependency>
+		<!-- ar-common依赖 -->
+		<dependency>
+			<groupId>com.xzit.ar</groupId>
+			<artifactId>ar-common</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>ar-manage</finalName>
+	</build>
+</project>

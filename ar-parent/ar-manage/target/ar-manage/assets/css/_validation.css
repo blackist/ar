@@ -1,0 +1,16 @@
+.error_span {
+	font-size: 14px;
+	font-family: Arial;
+	font-style: italic;
+	color: red;
+}
+
+.mymargin {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.myrightdiv{
+	text-align: right;
+	padding-right: 10%;
+}

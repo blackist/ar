@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xzit.ar.common.mapper.log.LogMapper" >
+  <resultMap id="BaseResultMap" type="com.xzit.ar.common.po.log.Log" >
+    <id column="log_id" property="logId" jdbcType="INTEGER" />
+    <result column="operator" property="operator" jdbcType="VARCHAR" />
+    <result column="oper_name" property="operName" jdbcType="VARCHAR" />
+    <result column="oper_params" property="operParams" jdbcType="VARCHAR" />
+    <result column="oper_result" property="operResult" jdbcType="VARCHAR" />
+    <result column="result_msg" property="resultMsg" jdbcType="VARCHAR" />
+    <result column="oper_time" property="operTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    log_id, operator, oper_name, oper_params, oper_result, result_msg, oper_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from log
+    where log_id = #{logId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from log
+    where log_id = #{logId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xzit.ar.common.po.log.Log" >
+    insert into log (log_id, operator, oper_name, 
+      oper_params, oper_result, result_msg, 
+      oper_time)
+    values (#{logId,jdbcType=INTEGER}, #{operator,jdbcType=VARCHAR}, #{operName,jdbcType=VARCHAR}, 
+      #{operParams,jdbcType=VARCHAR}, #{operResult,jdbcType=VARCHAR}, #{resultMsg,jdbcType=VARCHAR}, 
+      #{operTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xzit.ar.common.po.log.Log" >
+    insert into log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="logId != null" >
+        log_id,
+      </if>
+      <if test="operator != null" >
+        operator,
+      </if>
+      <if test="operName != null" >
+        oper_name,
+      </if>
+      <if test="operParams != null" >
+        oper_params,
+      </if>
+      <if test="operResult != null" >
+        oper_result,
+      </if>
+      <if test="resultMsg != null" >
+        result_msg,
+      </if>
+      <if test="operTime != null" >
+        oper_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="logId != null" >
+        #{logId,jdbcType=INTEGER},
+      </if>
+      <if test="operator != null" >
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="operName != null" >
+        #{operName,jdbcType=VARCHAR},
+      </if>
+      <if test="operParams != null" >
+        #{operParams,jdbcType=VARCHAR},
+      </if>
+      <if test="operResult != null" >
+        #{operResult,jdbcType=VARCHAR},
+      </if>
+      <if test="resultMsg != null" >
+        #{resultMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="operTime != null" >
+        #{operTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xzit.ar.common.po.log.Log" >
+    update log
+    <set >
+      <if test="operator != null" >
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="operName != null" >
+        oper_name = #{operName,jdbcType=VARCHAR},
+      </if>
+      <if test="operParams != null" >
+        oper_params = #{operParams,jdbcType=VARCHAR},
+      </if>
+      <if test="operResult != null" >
+        oper_result = #{operResult,jdbcType=VARCHAR},
+      </if>
+      <if test="resultMsg != null" >
+        result_msg = #{resultMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="operTime != null" >
+        oper_time = #{operTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xzit.ar.common.po.log.Log" >
+    update log
+    set operator = #{operator,jdbcType=VARCHAR},
+      oper_name = #{operName,jdbcType=VARCHAR},
+      oper_params = #{operParams,jdbcType=VARCHAR},
+      oper_result = #{operResult,jdbcType=VARCHAR},
+      result_msg = #{resultMsg,jdbcType=VARCHAR},
+      oper_time = #{operTime,jdbcType=TIMESTAMP}
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+</mapper>

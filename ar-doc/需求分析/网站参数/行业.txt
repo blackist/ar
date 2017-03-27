@@ -1,0 +1,181 @@
+<div id="qy_usersel" class="confirmarea cateselted checked" style="top: 221.8px; left: 131px;">
+<p class="tip">
+最多可选
+<strong class="red">3</strong>
+项
+</p>
+<div class="checked">
+<ul class="opt clear checked">
+<li id="248_" class="checked" style="display: none;">
+<span class="qy_">通信/电信</span>
+<a class="qy_ checked" onclick="$.qy.basics.deleteOneTrade(this);" href="javascript:;"></a>
+</li>
+<li id="qy_tradeconf" style="display:none"> </li>
+</ul>
+<label id="tradeconf" class="btn_s bs6" style="display: none;">
+<input class="int_s" type="button" value="确定">
+</label>
+</div>
+</div>
+<div class="cateList">
+<dl class="clear">
+<dt>财务/金融/保险</dt>
+<dd>
+<a id="251" class="qy_hy" href="javascript:;">财务/审计</a>
+<a id="252" class="qy_hy" href="javascript:;">金融/银行</a>
+<a id="253" class="qy_hy" href="javascript:;">保险</a>
+<a id="295" class="qy_hy" href="javascript:;">信托/拍卖</a>
+</dd>
+</dl>
+<dl class="clear">
+<dt>专业服务</dt>
+<dd>
+<a id="275" class="qy_hy" href="javascript:;">教育/科研/培训</a>
+<a id="272" class="qy_hy" href="javascript:;">中介/专业服务</a>
+<a id="3527" class="qy_hy" href="javascript:;">人力资源服务</a>
+</dd>
+</dl>
+<dl class="clear">
+<dt>服务业</dt>
+<dd>
+<a id="262" class="qy_hy" href="javascript:;">医疗/保健/卫生/美容</a>
+<a id="277" class="qy_hy" href="javascript:;">娱乐休闲/餐饮/服务</a>
+<a id="276" class="qy_hy" href="javascript:;">旅游/酒店</a>
+<a id="278" class="qy_hy" href="javascript:;">交通/运输/物流</a>
+<a id="261" class="qy_hy" href="javascript:;">汽车/摩托车</a>
+</dd>
+</dl>
+<dl class="clear">
+<dt>互联网/计算机</dt>
+<dd>
+<a id="244" class="qy_hy" href="javascript:;">互联网/电子商务</a>
+<a id="245" class="qy_hy" href="javascript:;">计算机软件</a>
+<a id="246" class="qy_hy" href="javascript:;">计算机硬件</a>
+<a id="291" class="qy_hy" href="javascript:;">游戏</a>
+</dd>
+</dl>
+<dl class="clear">
+<dt>零售/租赁</dt>
+<dd>
+<a id="254" class="qy_hy" href="javascript:;">贸易/进出口</a>
+<a id="259" class="qy_hy" href="javascript:;">办公用品及设备</a>
+<a id="255" class="qy_hy" href="javascript:;">批发/零售</a>
+<a id="258" class="qy_hy" href="javascript:;">服装/纺织/皮革</a>
+<a id="288" class="qy_hy" href="javascript:;">陶瓷卫浴</a>
+<a id="289" class="qy_hy" href="javascript:;">家具灯饰</a>
+<a id="256" class="qy_hy" href="javascript:;">快速消费品(食品/饮料等)</a>
+<a id="257" class="qy_hy" href="javascript:;">耐用消费品(家具/家电等)</a>
+<a id="296" class="qy_hy" href="javascript:;">租赁服务</a>
+</dd>
+</dl>
+<dl class="clear">
+<dt>房产</dt>
+<dd>
+<a id="269" class="qy_hy" href="javascript:;">房地产/物业管理</a>
+<a id="270" class="qy_hy" href="javascript:;">建筑/建材</a>
+<a id="271" class="qy_hy" href="javascript:;">家居/室内设计/装潢</a>
+</dd>
+</dl>
+<dl class="clear">
+<dt>重工/制造业</dt>
+<dd>
+<a id="260" class="qy_hy" href="javascript:;">钢铁/机械/设备/重工</a>
+<a id="268" class="qy_hy" href="javascript:;">出版/印刷/造纸</a>
+<a id="282" class="qy_hy" href="javascript:;">原材料和加工</a>
+<a id="263" class="qy_hy" href="javascript:;">生物/制药/医疗器械</a>
+</dd>
+</dl>
+<dl class="clear">
+<dt>通信/电子/电信</dt>
+<dd>
+<a id="248" class="qy_hy" href="javascript:;">通信/电信</a>
+<a id="247" class="qy_hy" href="javascript:;">IT服务/系统集成</a>
+<a id="249" class="qy_hy" href="javascript:;">电子技术/半导体/集成电路</a>
+<a id="250" class="qy_hy" href="javascript:;">仪器仪表/工业自动化</a>
+</dd>
+</dl>
+<dl class="clear">
+<dt>广告&市场</dt>
+<dd>
+<a id="264" class="qy_hy" href="javascript:;">广告/创意</a>
+<a id="265" class="qy_hy" href="javascript:;">公关/市场推广/会展</a>
+<a id="266" class="qy_hy" href="javascript:;">文体/影视/艺术</a>
+<a id="267" class="qy_hy" href="javascript:;">媒体传播</a>
+</dd>
+</dl>
+<dl class="clear">
+<dt>能源/矿业/环保</dt>
+<dd>
+<a id="280" class="qy_hy" href="javascript:;">化工/采掘/冶炼</a>
+<a id="281" class="qy_hy" href="javascript:;">能源(电力/水利/矿产)</a>
+<a id="284" class="qy_hy" href="javascript:;">环保</a>
+</dd>
+</dl>
+<dl class="clear">
+<dt>其他行业</dt>
+<dd>
+<a id="279" class="qy_hy" href="javascript:;">航天/航空</a>
+<a id="283" class="qy_hy" href="javascript:;">政府/非盈利机构</a>
+<a id="285" class="qy_hy" href="javascript:;">农林牧渔</a>
+<a id="286" class="qy_hy" href="javascript:;">多元化集团</a>
+<a id="273" class="qy_hy" href="javascript:;">检测/认证</a>
+<a id="274" class="qy_hy" href="javascript:;">法律/法务</a>
+<a id="294" class="qy_hy" href="javascript:;">咨询/顾问</a>
+<a id="287" class="qy_hy" href="javascript:;">其他行业</a>
+</dd>
+</dl>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="singlelist">
+<a k="1476" href="javascript:void(0);">私营</a>
+<a k="1477" href="javascript:void(0);">国有</a>
+<a k="1478" href="javascript:void(0);">股份制</a>
+<a k="1479" href="javascript:void(0);">外商独资/办事处</a>
+<a k="1480" href="javascript:void(0);">中外合资/合作</a>
+<a k="1481" href="javascript:void(0);">上市公司</a>
+<a k="1482" href="javascript:void(0);">事业单位</a>
+<a k="1483" href="javascript:void(0);">政府机关</a>
+<a k="1484" href="javascript:void(0);">非营利机构</a>
+<a k="1485" href="javascript:void(0);">个人企业</a>
+</div>
+
+
+
+
+
+<div class="singlelist">
+<a k="1471" href="javascript:void(0);">1-49人</a>
+<a k="1472" href="javascript:void(0);">50-99人</a>
+<a k="1473" href="javascript:void(0);">100-499人</a>
+<a k="1474" href="javascript:void(0);">500-999人</a>
+<a k="1475" href="javascript:void(0);">1000人以上</a>
+</div>
+
+
+
+
+{"id":5935,"name":"xinziqj","order":0,"text":"薪资水平",
+"values":[{"order":0,"text":"1000元以下","val":"1_999","valId":725261},
+{"order":0,"text":"1000-2000元","val":"1000_2000","valId":725262},
+{"order":0,"text":"2000-3000元","val":"2000_3000","valId":725263},
+{"order":0,"text":"3000-5000元","val":"3000_5000","valId":725264},
+{"order":0,"text":"5000-8000元","val":"5000_7999","valId":725265},
+{"order":0,"text":"8000-12000元","val":"8000_12000","valId":725266},
+{"order":0,"text":"12000-20000元","val":"12000_20000","valId":725267},
+{"order":0,"text":"20000-25000元","val":"20000_25000","valId":725268},
+{"order":0,"text":"25000元以上","val":"25000_999999","valId":725269},
+{"order":0,"text":"面议","val":"面议","valId":1249835}]}

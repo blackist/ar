@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xzit.ar.common.mapper.image.ImageMapper" >
+  <resultMap id="BaseResultMap" type="com.xzit.ar.common.po.image.Image" >
+    <id column="image_id" property="imageId" jdbcType="INTEGER" />
+    <result column="image_name" property="imageName" jdbcType="VARCHAR" />
+    <result column="is_remote" property="isRemote" jdbcType="CHAR" />
+    <result column="image_size" property="imageSize" jdbcType="VARCHAR" />
+    <result column="image_path" property="imagePath" jdbcType="VARCHAR" />
+    <result column="image_type" property="imageType" jdbcType="VARCHAR" />
+    <result column="is_thumb" property="isThumb" jdbcType="CHAR" />
+    <result column="thumb_path" property="thumbPath" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="state" property="state" jdbcType="CHAR" />
+    <result column="state_time" property="stateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    image_id, image_name, is_remote, image_size, image_path, image_type, is_thumb, thumb_path, 
+    create_time, state, state_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from image
+    where image_id = #{imageId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from image
+    where image_id = #{imageId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xzit.ar.common.po.image.Image" >
+    insert into image (image_id, image_name, is_remote, 
+      image_size, image_path, image_type, 
+      is_thumb, thumb_path, create_time, 
+      state, state_time)
+    values (#{imageId,jdbcType=INTEGER}, #{imageName,jdbcType=VARCHAR}, #{isRemote,jdbcType=CHAR}, 
+      #{imageSize,jdbcType=VARCHAR}, #{imagePath,jdbcType=VARCHAR}, #{imageType,jdbcType=VARCHAR}, 
+      #{isThumb,jdbcType=CHAR}, #{thumbPath,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{state,jdbcType=CHAR}, #{stateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xzit.ar.common.po.image.Image" >
+    insert into image
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="imageId != null" >
+        image_id,
+      </if>
+      <if test="imageName != null" >
+        image_name,
+      </if>
+      <if test="isRemote != null" >
+        is_remote,
+      </if>
+      <if test="imageSize != null" >
+        image_size,
+      </if>
+      <if test="imagePath != null" >
+        image_path,
+      </if>
+      <if test="imageType != null" >
+        image_type,
+      </if>
+      <if test="isThumb != null" >
+        is_thumb,
+      </if>
+      <if test="thumbPath != null" >
+        thumb_path,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="stateTime != null" >
+        state_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="imageId != null" >
+        #{imageId,jdbcType=INTEGER},
+      </if>
+      <if test="imageName != null" >
+        #{imageName,jdbcType=VARCHAR},
+      </if>
+      <if test="isRemote != null" >
+        #{isRemote,jdbcType=CHAR},
+      </if>
+      <if test="imageSize != null" >
+        #{imageSize,jdbcType=VARCHAR},
+      </if>
+      <if test="imagePath != null" >
+        #{imagePath,jdbcType=VARCHAR},
+      </if>
+      <if test="imageType != null" >
+        #{imageType,jdbcType=VARCHAR},
+      </if>
+      <if test="isThumb != null" >
+        #{isThumb,jdbcType=CHAR},
+      </if>
+      <if test="thumbPath != null" >
+        #{thumbPath,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=CHAR},
+      </if>
+      <if test="stateTime != null" >
+        #{stateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xzit.ar.common.po.image.Image" >
+    update image
+    <set >
+      <if test="imageName != null" >
+        image_name = #{imageName,jdbcType=VARCHAR},
+      </if>
+      <if test="isRemote != null" >
+        is_remote = #{isRemote,jdbcType=CHAR},
+      </if>
+      <if test="imageSize != null" >
+        image_size = #{imageSize,jdbcType=VARCHAR},
+      </if>
+      <if test="imagePath != null" >
+        image_path = #{imagePath,jdbcType=VARCHAR},
+      </if>
+      <if test="imageType != null" >
+        image_type = #{imageType,jdbcType=VARCHAR},
+      </if>
+      <if test="isThumb != null" >
+        is_thumb = #{isThumb,jdbcType=CHAR},
+      </if>
+      <if test="thumbPath != null" >
+        thumb_path = #{thumbPath,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=CHAR},
+      </if>
+      <if test="stateTime != null" >
+        state_time = #{stateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where image_id = #{imageId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xzit.ar.common.po.image.Image" >
+    update image
+    set image_name = #{imageName,jdbcType=VARCHAR},
+      is_remote = #{isRemote,jdbcType=CHAR},
+      image_size = #{imageSize,jdbcType=VARCHAR},
+      image_path = #{imagePath,jdbcType=VARCHAR},
+      image_type = #{imageType,jdbcType=VARCHAR},
+      is_thumb = #{isThumb,jdbcType=CHAR},
+      thumb_path = #{thumbPath,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      state = #{state,jdbcType=CHAR},
+      state_time = #{stateTime,jdbcType=TIMESTAMP}
+    where image_id = #{imageId,jdbcType=INTEGER}
+  </update>
+</mapper>

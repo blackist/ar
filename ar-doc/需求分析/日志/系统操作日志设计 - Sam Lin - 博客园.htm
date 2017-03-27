@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/inf.js" async=""></script><script src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/analytics.js" async=""></script><script src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/postmoduletext.js" async=""></script><script src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/ga.js" async="" type="text/javascript"></script>
+<meta charset="utf-8">
+<title>系统操作日志设计 - Sam Lin - 博客园</title>
+<link type="text/css" rel="stylesheet" href="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-LessIsMoreRight.css">
+<link type="text/css" rel="stylesheet" href="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/31603.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/samlin/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/samlin/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/samlin/wlwmanifest.xml">
+<script src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'samlin', cb_enable_mathjax=false;</script>
+<script src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.js" type="text/javascript"></script>
+<style type="text/css">#kf-content-div a,#kf-content-div p{border: 0px !important;padding: 0px !important;margin: 0xp !important;}#kf-wiki-div a:hover,kf-content-div a:focus {text-decoration: underline !important;}#kf-wiki-div a {text-decoration: none !important;color: #0645AD !important;background: none repeat scroll 0% 0% transparent !important;}#kf-wiki-div dt {margin-bottom: 0.1em !important;font-weight: bold !important;}#kf-wiki-div dd {margin-left: 1.6em !important;margin-bottom: 0.1em !important;}</style></head>
+<body>
+<a name="top"></a>
+<div id="page_begin_html"> 
+
+
+<meta name="360_union_verify" content="43f5930c36b00f1e1a6972f6ab7eb00a"></div><script>load_page_begin_html();</script>
+
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+		
+<!--done-->
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/samlin/">Sam Lin</a></div>
+<div class="subtitle">一天一个脚印，一步一步向前走——林森桐
+<div style="position:absolute;top:70px;left:50px;">
+Nothing in the world can take the place persistence!
+</div>
+<div style="position:absolute;top:0px;margin:0 0 0 -380px;left:50%;">
+
+</div></div>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li id="nav_sitehome"><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li id="nav_myhome"><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/samlin/">首页</a></li>
+<li id="nav_q"><a class="menu" href="http://q.cnblogs.com/">博问</a></li>
+<li id="nav_ing"><a class="menu" href="http://home.cnblogs.com/ing/">闪存</a></li>
+<li id="nav_newpost"><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li id="nav_contact"><a id="MyLinks1_ContactLink" class="menu" rel="nofollow" href="http://msg.cnblogs.com/send/Sam%20Lin">联系</a></li>
+<li id="nav_rss"><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/samlin/rss">订阅</a>
+<!--<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/samlin/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li id="nav_admin"><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔-195&nbsp;
+文章-1&nbsp;
+评论-250&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/samlin/archive/2010/02/08/Log-Operation-Management.html">系统操作日志设计</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><h4>前言</h4> <p>&nbsp;</p> <p>我们在做企业管理系统时，有多多少少都有对数据的完整性有所要求，比如要求系统不能物理删除记录，要求添加每一条数据时都要有系统记录、或者更新某条数据都需要跟踪到变化的内容、或者删除数据时需要记录谁删除了，何时删除了，以便误删后可以通过系统的<em>XXX</em>功能来恢复误删的数据。</p> <p>我将这种功能称为<strong>操作日志</strong></p> <p><strong>为什么要做操作日志？</strong></p> <p>其
+实上文也描述了一些，其主要目的就是跟踪到每一个用户在系统的操作行为，如对数据进行查询、新增、编辑或删除甚至是登录等行为。更进一步的理解可以说是对
+用户使用系统情况的跟踪，对数据的跟踪防止数据意外删除、更改时有所记录，有所依据，以便对数据的还原，从某种程序上可以保护数据的完整性。</p> <p>&nbsp;</p> <h3>系统设计</h3> <p>场景</p> <p>我们现在有一张表叫Employee：</p> <table border="1" cellpadding="2" cellspacing="0" width="214"> <tbody> <tr> <td valign="top" width="100">ID</td> <td valign="top" width="112">int</td></tr> <tr> <td valign="top" width="100">Name</td> <td valign="top" width="112">nvarchar(50)</td></tr> <tr> <td valign="top" width="100">Gender</td> <td valign="top" width="112">nvarchar(2)</td></tr> <tr> <td valign="top" width="100">DateCreated</td> <td valign="top" width="112">datetime</td></tr> <tr> <td valign="top" width="100">CreateUser</td> <td valign="top" width="112">nvarchar(50)</td></tr></tbody></table> <p>在aspx页面中可能会有EmployeeEdit.aspx（用来添加或更新Employee信息等操作），EmployeeList.aspx（用来查询或进行删除Employee信息等操作）</p> <p>好了，现在我们要对<strong>Empoyee</strong>表操作的信息做一个系统日志，那怎么办？</p> <p>也许你可以建立多一个表跟<strong>Employee</strong>表一模一样的，叫做<strong>EmployeeLog</strong>：</p> <table border="1" cellpadding="2" cellspacing="0" width="224"> <tbody> <tr> <td valign="top" width="100">ID</td> <td valign="top" width="122">int</td></tr> <tr> <td valign="top" width="100">Name</td> <td valign="top" width="122">nvarchar(50)</td></tr> <tr> <td valign="top" width="100">Gender</td> <td valign="top" width="122">nvarchar(2)</td></tr> <tr> <td valign="top" width="100">DateCreated</td> <td valign="top" width="122">datetime</td></tr> <tr> <td valign="top" width="100">CreateUser</td> <td valign="top" width="122">nvarchar(50)</td></tr> <tr> <td valign="top" width="100"><em><font color="#ff0000">LogCreated</font></em></td> <td valign="top" width="122"><em><font color="#ff0000">datetime</font></em></td></tr> <tr> <td valign="top" width="100"><em><font color="#ff0000">OperationType</font></em></td> <td valign="top" width="122"><em><font color="#ff0000">int</font></em></td></tr></tbody></table> <p>其中加多了一些附属的信息如<strong>LogCreated</strong>（日志添加日期）和<strong>OperationType</strong>（查询、新增、删除、更新）</p> <p>此时这种情况可能大家在做用户登录日志的时候是一件很常见的事件。</p> <p>但……问题来了，假如我需要对表<strong>EmployeeIncome</strong>（员工的收入情况）做日志那怎么办？</p> <p>好建立多一张表叫<strong>EmployeeIncomeLog</strong>来记录员工收入情况的操作日志。</p> <p>假如又需要对表<strong>FixedAsset</strong>（固定资产）进行日志记录那又怎么办？</p> <p>&nbsp;</p> <p>好了，大家可能意识到我们这样做不但会造成表数量的增倍，而且大大的增加了工作量和开发时间，对数据库表不易管理等情况。</p> <p>&nbsp;</p> <p>因此我们需要一个能够通过简单的配置和编写就可以完成以上功能的日志管理</p> <p>数据库设计</p> <p><a href="http://images.cnblogs.com/cnblogs_com/samlin/WindowsLiveWriter/b090f1b682fb_DC0E/image_4.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="系统日志设计" alt="系统日志设计" src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/image_thumb_1.png" border="0" height="389" width="631"></a></p> <p>包括三个表，</p> <p>LogSetting（日志设置）——用来存储配置业务表名、业务名称、主键等</p> <p>LogSettingDetail（日志设置明细）——用来存储配置业务表需要记录的详细内容，如Employee表中，我们可能需要记录字段Name、Gender等信息。</p> <p>LogOperation（操作日志）——用来记录用户对各种业务操作的内容情况。</p> <p>&nbsp;</p> <p>下篇将讨论用代码如何实现日志管理的功能，下面先来几张图：</p> <p>日志列表：</p> <p><a href="http://images.cnblogs.com/cnblogs_com/samlin/WindowsLiveWriter/b090f1b682fb_DC0E/image_6.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="日志管理列表" alt="日志管理列表" src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/image_thumb_2.png" border="0" height="208" width="644"></a> </p> <p>查看日志内容：</p> <p><a href="http://images.cnblogs.com/cnblogs_com/samlin/WindowsLiveWriter/b090f1b682fb_DC0E/image_8.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="查看日志内容" alt="查看日志内容" src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/image_thumb_3.png" border="0" height="230" width="644"></a></p>  </div><div style="display: block;" id="MySignature">转载请注明出处［<a href="http://samlin.cnblogs.com/">http://samlin.cnblogs.com/</a>］ <br>
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<span class="bds_more">分享到：</span>
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="shareCount"></a>
+</div>
+<!-- Baidu Button END -->
+<br>
+<div style="margin: 0px auto"><a href="http://union.dangdang.com/transfer/transfer.aspx?from=P-262177&amp;backurl=http://book.dangdang.com/01.54.htm">当当计算书籍 5-8折</a> </div>
+<br>
+
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/samlin/category/115319.html">ASP.Net</a>, <a href="http://www.cnblogs.com/samlin/category/183309.html">软件工程</a></div>
+<div id="EntryTag">标签: <a href="http://www.cnblogs.com/samlin/tag/%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/">日志管理</a>, <a href="http://www.cnblogs.com/samlin/tag/%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97/">操作日志</a>, <a href="http://www.cnblogs.com/samlin/tag/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">系统设计</a></div>
+<div id="blog_post_info"><div id="green_channel">
+<a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(1665986,cb_blogId,1);green_channel_success(this,'谢谢推荐！');">好文要顶</a>
+<a id="green_channel_follow" onclick="c_follow();" href="javascript:void(0);">关注我</a>
+<a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a><a id="green_channel_contact" href="http://msg.cnblogs.com/send/Sam%20Lin" target="_blank">联系我</a>
+<a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_weibo_24.png" alt=""></a>
+<a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+<div id="author_profile_info" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/samlin/" target="_blank"><img src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/u28051.jpg" class="author_avatar" alt=""></a>
+<div id="author_profile_detail" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/samlin/">Sam Lin</a><br>
+<a href="http://home.cnblogs.com/u/samlin/followees">关注 - 0</a><br>
+<a href="http://home.cnblogs.com/u/samlin/followers">粉丝 - 28</a>
+</div>
+</div>
+<div class="clear"></div>
+<div id="author_profile_honor"></div>
+<div id="author_profile_follow">
+    <a href="javascript:void(0);" onclick="c_follow();return false;">+加关注</a>
+</div>
+</div>
+<div id="div_digg">										
+    <div class="diggit" onclick="votePost(1665986,'Digg')">
+        <span class="diggnum" id="digg_count">12</span>
+    </div>
+	<div class="buryit" onclick="votePost(1665986,'Bury')"> 
+		<span class="burynum" id="bury_count">0</span>
+	</div>
+	<div class="clear"></div>	
+	<div class="diggword" id="digg_tips">
+    (请您对文章做出评价)
+    </div>	
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/samlin/archive/2010/02/02/WCAT.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/samlin/archive/2010/02/02/WCAT.html" title="发布于2010-02-02 20:09">用WCAT进行IIS压力测试(转)</a><br><a href="http://www.cnblogs.com/samlin/archive/2010/04/15/1712622.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/samlin/archive/2010/04/15/1712622.html" title="发布于2010-04-15 14:07">28组精心挑选的网页背景材质</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2010-02-08 16:37</span> <a href="http://www.cnblogs.com/samlin/">Sam Lin</a> 阅读(<span id="post_view_count">27748</span>) 评论(<span id="post_comment_count">32</span>)  <a href="http://i.cnblogs.com/EditPosts.aspx?postid=1665986" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(1665986);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=31603,cb_entryId=1665986,cb_blogApp=currentBlogApp,cb_blogUserGuid='76873d0b-63cf-dd11-9e4d-001cf0cd104b',cb_entryCreatedDate='2010/2/8 16:37:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"><div id="comments_pager_top"></div>
+<!--done-->
+<div class="feedback_area_title">评论列表</div>
+<div class="feedbackNoItems"></div>
+	
+
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1762989" class="layer">#1楼</a><a name="1762989" id="comment_anchor_1762989"></a>  <span class="comment_date">2010-02-08 17:26</span> <a id="a_comment_author_1762989" href="http://www.cnblogs.com/liushaoyu/" target="_blank">123112311</a> <a href="http://msg.cnblogs.com/send/123112311" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1762989" class="blog_comment_body">不提供下载吗？lz<br>方便给我们用下不！渴望..</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1762989,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1762989,'Bury',this)">反对(0)</a></div><span id="comment_1762989_avatar" style="display:none;">http://pic.cnblogs.com/face/58604/20130208234757.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1763002" class="layer">#2楼</a><a name="1763002" id="comment_anchor_1763002"></a>  <span class="comment_date">2010-02-08 17:38</span> <a id="a_comment_author_1763002" href="http://www.cnblogs.com/niunan/" target="_blank">牛腩</a> <a href="http://msg.cnblogs.com/send/%E7%89%9B%E8%85%A9" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1763002" class="blog_comment_body">先收藏下。。只有个表名而没有具体的例子一时难以理解，下班。。。10放假。。。耶。。。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1763002,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1763002,'Bury',this)">反对(0)</a></div><span id="comment_1763002_avatar" style="display:none;">http://pic.cnblogs.com/face/u41249.jpg</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1763262" class="layer">#3楼</a><a name="1763262" id="comment_anchor_1763262"></a>  <span class="comment_date">2010-02-09 09:35</span> <a id="a_comment_author_1763262" href="http://www.cnblogs.com/sanjia/" target="_blank">小AI</a> <a href="http://msg.cnblogs.com/send/%E5%B0%8FAI" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1763262" class="blog_comment_body">留名，代码呢啊，呵呵</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1763262,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1763262,'Bury',this)">反对(0)</a></div><span id="comment_1763262_avatar" style="display:none;">http://pic.cnblogs.com/face/55900/20140124202608.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1763391" class="layer">#4楼</a><a name="1763391" id="comment_anchor_1763391"></a>  <span class="comment_date">2010-02-09 11:25</span> <a id="a_comment_author_1763391" href="http://www.cnblogs.com/gotolovo/" target="_blank">gotolovo</a> <a href="http://msg.cnblogs.com/send/gotolovo" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1763391" class="blog_comment_body">不错，有时间看</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1763391,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1763391,'Bury',this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1763430" class="layer">#5楼</a><a name="1763430" id="comment_anchor_1763430"></a>[<span class="louzhu">楼主</span>]  <span class="comment_date">2010-02-09 12:49</span> <a id="a_comment_author_1763430" href="http://www.cnblogs.com/samlin/" target="_blank">Sam Lin</a> <a href="http://msg.cnblogs.com/send/Sam%20Lin" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1763430" class="blog_comment_body"><a href="#1763002" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,1763002);">@</a>牛腩<br>下一篇会有代码的和例子的</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1763430,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1763430,'Bury',this)">反对(0)</a></div><span id="comment_1763430_avatar" style="display:none;">http://pic.cnblogs.com/face/u28051.jpg</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1763538" class="layer">#6楼</a><a name="1763538" id="comment_anchor_1763538"></a>  <span class="comment_date">2010-02-09 15:33</span> <a id="a_comment_author_1763538" href="http://www.cnblogs.com/yinzixin/" target="_blank">yinzixin</a> <a href="http://msg.cnblogs.com/send/yinzixin" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1763538" class="blog_comment_body">不错</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1763538,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1763538,'Bury',this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1763557" class="layer">#7楼</a><a name="1763557" id="comment_anchor_1763557"></a>  <span class="comment_date">2010-02-09 16:06</span> <a id="a_comment_author_1763557" href="http://www.cnblogs.com/dezai/" target="_blank">dezai</a> <a href="http://msg.cnblogs.com/send/dezai" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1763557" class="blog_comment_body">mark<br></div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1763557,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1763557,'Bury',this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1766275" class="layer">#8楼</a><a name="1766275" id="comment_anchor_1766275"></a>  <span class="comment_date">2010-02-22 10:26</span> <a id="ctl00_CommentList_NameLink_7" target="_blank">kakassss[未注册用户]</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1766275" class="blog_comment_body">请问你的LogSetting的最后2个字段的用途是什么？</div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1766293" class="layer">#9楼</a><a name="1766293" id="comment_anchor_1766293"></a>[<span class="louzhu">楼主</span>]  <span class="comment_date">2010-02-22 10:44</span> <a id="a_comment_author_1766293" href="http://www.cnblogs.com/samlin/" target="_blank">Sam Lin</a> <a href="http://msg.cnblogs.com/send/Sam%20Lin" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1766293" class="blog_comment_body"><a href="#1766275" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,1766275);">@</a>kakassss<br>扩展用的，DeleteScriptTemplate是日志删除后执行的脚本<br>而UpdateScriptTemplate是将日志恢复后执行的脚本</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1766293,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1766293,'Bury',this)">反对(0)</a></div><span id="comment_1766293_avatar" style="display:none;">http://pic.cnblogs.com/face/u28051.jpg</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1766786" class="layer">#10楼</a><a name="1766786" id="comment_anchor_1766786"></a>  <span class="comment_date">2010-02-22 21:46</span> <a id="a_comment_author_1766786" href="http://www.cnblogs.com/freeone/" target="_blank">freeone</a> <a href="http://msg.cnblogs.com/send/freeone" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1766786" class="blog_comment_body">兄弟什么时候看下一篇呀,光看表看不出啥东西呀.</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1766786,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1766786,'Bury',this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1770443" class="layer">#11楼</a><a name="1770443" id="comment_anchor_1770443"></a>  <span class="comment_date">2010-02-26 23:54</span> <a id="a_comment_author_1770443" href="http://www.cnblogs.com/freeone/" target="_blank">freeone</a> <a href="http://msg.cnblogs.com/send/freeone" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1770443" class="blog_comment_body">什么时候出下篇呀,希望不要是用TRIGGER的方式.</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1770443,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1770443,'Bury',this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1798328" class="layer">#12楼</a><a name="1798328" id="comment_anchor_1798328"></a>[<span class="louzhu">楼主</span>]  <span class="comment_date">2010-04-11 12:03</span> <a id="a_comment_author_1798328" href="http://www.cnblogs.com/samlin/" target="_blank">Sam Lin</a> <a href="http://msg.cnblogs.com/send/Sam%20Lin" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1798328" class="blog_comment_body">testing</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1798328,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1798328,'Bury',this)">反对(0)</a></div><span id="comment_1798328_avatar" style="display:none;">http://pic.cnblogs.com/face/u28051.jpg</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1808449" class="layer">#13楼</a><a name="1808449" id="comment_anchor_1808449"></a>  <span class="comment_date">2010-04-23 13:36</span> <a id="a_comment_author_1808449" href="http://www.cnblogs.com/ie139/" target="_blank">海上村民</a> <a href="http://msg.cnblogs.com/send/%E6%B5%B7%E4%B8%8A%E6%9D%91%E6%B0%91" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1808449" class="blog_comment_body">渴望源码下载..谢谢！！１<br>我的邮箱是4119828@qq.com</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1808449,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1808449,'Bury',this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1808740" class="layer">#14楼</a><a name="1808740" id="comment_anchor_1808740"></a>  <span class="comment_date">2010-04-23 16:50</span> <a id="a_comment_author_1808740" href="http://home.cnblogs.com/u/83761/" target="_blank">丫hoo</a> <a href="http://msg.cnblogs.com/send/%E4%B8%ABhoo" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1808740" class="blog_comment_body">我想知道界面是ext吗，还是其他的</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1808740,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1808740,'Bury',this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1808820" class="layer">#15楼</a><a name="1808820" id="comment_anchor_1808820"></a>[<span class="louzhu">楼主</span>]  <span class="comment_date">2010-04-23 17:56</span> <a id="a_comment_author_1808820" href="http://www.cnblogs.com/samlin/" target="_blank">Sam Lin</a> <a href="http://msg.cnblogs.com/send/Sam%20Lin" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1808820" class="blog_comment_body"><a href="#1808740" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,1808740);">@</a>丫hoo<br>没用任何UI框架</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1808820,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1808820,'Bury',this)">反对(0)</a></div><span id="comment_1808820_avatar" style="display:none;">http://pic.cnblogs.com/face/u28051.jpg</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1876743" class="layer">#16楼</a><a name="1876743" id="comment_anchor_1876743"></a>  <span class="comment_date">2010-07-21 20:49</span> <a id="a_comment_author_1876743" href="http://home.cnblogs.com/u/80291/" target="_blank">踏浪帅</a> <a href="http://msg.cnblogs.com/send/%E8%B8%8F%E6%B5%AA%E5%B8%85" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1876743" class="blog_comment_body">看的你这文章挺不错的!能不能把源代码发一份给我哟!最近我要做一个这样的功能啊!258378102@qq.com谢谢的!顶你.....</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1876743,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1876743,'Bury',this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1904046" class="layer">#17楼</a><a name="1904046" id="comment_anchor_1904046"></a>  <span class="comment_date">2010-08-29 20:12</span> <a id="a_comment_author_1904046" href="http://home.cnblogs.com/u/155730/" target="_blank">缸中金鱼</a> <a href="http://msg.cnblogs.com/send/%E7%BC%B8%E4%B8%AD%E9%87%91%E9%B1%BC" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1904046" class="blog_comment_body">我是新手，没怎么看懂，希望博主能给我下面几个问题给于解答，谢谢了。<br>一.LogOperation表中的url字段是用来干什么的？LogSetting表中UrlTemplate字段是用来干什么的？<br>二.三个表中都有CreateUser、CreateTime字段，可以分别解释一下各自的用途吗？<br>三.给的两张图示中第二张图显示字段有旧值和新值，怎么没看出哪张表里体现出这一点？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1904046,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1904046,'Bury',this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#1909226" class="layer">#18楼</a><a name="1909226" id="comment_anchor_1909226"></a>[<span class="louzhu">楼主</span>]  <span class="comment_date">2010-09-06 09:42</span> <a id="a_comment_author_1909226" href="http://www.cnblogs.com/samlin/" target="_blank">Sam Lin</a> <a href="http://msg.cnblogs.com/send/Sam%20Lin" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_1909226" class="blog_comment_body"><a href="#1904046" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,1904046);">@</a>缸中金鱼<br>1、url是一个可选字段，目前还没有正式用到，主要用于链接到目标业务界面，如删除或修改了某一员工信息，可以通过url链接到该记录查看其内容；UrlTemplate是跟url一起使用的，主要用于Url的格式设置。<br>2、记录创建人、创建时间，主要用于审计作用<br>3、这里没有做这方面的详细记录，其日志内容存在于Content字段</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1909226,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1909226,'Bury',this)">反对(0)</a></div><span id="comment_1909226_avatar" style="display:none;">http://pic.cnblogs.com/face/u28051.jpg</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2004964" class="layer">#19楼</a><a name="2004964" id="comment_anchor_2004964"></a>  <span class="comment_date">2011-01-06 15:37</span> <a id="a_comment_author_2004964" href="http://www.cnblogs.com/lkvm114/" target="_blank">lkvm</a> <a href="http://msg.cnblogs.com/send/lkvm" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2004964" class="blog_comment_body">必须的学习啊</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2004964,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2004964,'Bury',this)">反对(0)</a></div><span id="comment_2004964_avatar" style="display:none;">http://pic.cnblogs.com/face/u64299.jpg</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2043254" class="layer">#20楼</a><a name="2043254" id="comment_anchor_2043254"></a>  <span class="comment_date">2011-03-10 11:01</span> <a id="ctl00_CommentList_NameLink_19" target="_blank">死心塌地[未注册用户]</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2043254" class="blog_comment_body">这里没有做这方面的详细记录，其日志内容存在于Content字段<br>我想问一下，这样恢复的功能怎么实现！<br>content里记录的应该都文本...手动恢复吗？</div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2043673" class="layer">#21楼</a><a name="2043673" id="comment_anchor_2043673"></a>[<span class="louzhu">楼主</span>]  <span class="comment_date">2011-03-10 17:18</span> <a id="a_comment_author_2043673" href="http://www.cnblogs.com/samlin/" target="_blank">Sam Lin</a> <a href="http://msg.cnblogs.com/send/Sam%20Lin" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2043673" class="blog_comment_body"><a href="#2043254" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,2043254);">@</a>死心塌地<br>这得看具体的业务需求<br>一般可以在设置逻辑删除，这样恢复的时候比较方便。<br>当然也可以通过反射重新自动生成一条数据<br>后者可能相对复杂很多</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2043673,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2043673,'Bury',this)">反对(0)</a></div><span id="comment_2043673_avatar" style="display:none;">http://pic.cnblogs.com/face/u28051.jpg</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2068796" class="layer">#22楼</a><a name="2068796" id="comment_anchor_2068796"></a>  <span class="comment_date">2011-04-12 16:35</span> <a id="ctl00_CommentList_NameLink_21" target="_blank">xiaolan292[未注册用户]</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2068796" class="blog_comment_body">修改的每个字段  旧值 新值 怎么得到数据呢？？<br>我怎么知道用户要修改哪些字段呢？  </div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2158348" class="layer">#23楼</a><a name="2158348" id="comment_anchor_2158348"></a>  <span class="comment_date">2011-07-22 16:00</span> <a id="a_comment_author_2158348" href="http://www.cnblogs.com/ztf_yh/" target="_blank">battle---Shark</a> <a href="http://msg.cnblogs.com/send/battle---Shark" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2158348" class="blog_comment_body">不错.学习了...</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2158348,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2158348,'Bury',this)">反对(0)</a></div><span id="comment_2158348_avatar" style="display:none;">http://pic.cnblogs.com/face/u149447.jpg?id=02172946</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2211061" class="layer">#24楼</a><a name="2211061" id="comment_anchor_2211061"></a>  <span class="comment_date">2011-09-29 17:07</span> <a id="a_comment_author_2211061" href="http://www.cnblogs.com/softwarelanguagebs/" target="_blank">WeiShao</a> <a href="http://msg.cnblogs.com/send/WeiShao" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2211061" class="blog_comment_body">没源码啊！！  下一篇也没哟？ 122633753@qq.com 楼主 发份啊 谢过</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2211061,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2211061,'Bury',this)">反对(0)</a></div><span id="comment_2211061_avatar" style="display:none;">http://pic.cnblogs.com/face/u205154.jpg?id=20170507</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2314297" class="layer">#25楼</a><a name="2314297" id="comment_anchor_2314297"></a>  <span class="comment_date">2012-02-22 11:53</span> <a id="a_comment_author_2314297" href="http://home.cnblogs.com/u/377939/" target="_blank">zhangna</a> <a href="http://msg.cnblogs.com/send/zhangna" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2314297" class="blog_comment_body">我最近也要做这功能，希望能有源码看看咯。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2314297,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2314297,'Bury',this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2396129" class="layer">#26楼</a><a name="2396129" id="comment_anchor_2396129"></a>  <span class="comment_date">2012-06-08 12:30</span> <a id="a_comment_author_2396129" href="http://www.cnblogs.com/josephchan/" target="_blank">Josephchan</a> <a href="http://msg.cnblogs.com/send/Josephchan" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2396129" class="blog_comment_body">Sam，从数据库表没有明显看出你是如何实现 旧值/新值的，能否解释一下？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2396129,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2396129,'Bury',this)">反对(0)</a></div><span id="comment_2396129_avatar" style="display:none;">http://pic.cnblogs.com/face/274203/20130701175351.png</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2469731" class="layer">#27楼</a><a name="2469731" id="comment_anchor_2469731"></a>  <span class="comment_date">2012-09-11 15:55</span> <a id="a_comment_author_2469731" href="http://www.cnblogs.com/VincentDao/" target="_blank">程序员文道</a> <a href="http://msg.cnblogs.com/send/%E7%A8%8B%E5%BA%8F%E5%91%98%E6%96%87%E9%81%93" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2469731" class="blog_comment_body">2年后，相信你对权限系统有了新的看法，再出一版吧。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2469731,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2469731,'Bury',this)">反对(0)</a></div><span id="comment_2469731_avatar" style="display:none;">http://pic.cnblogs.com/face/u319940.jpg?id=01160112</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2579722" class="layer">#28楼</a><a name="2579722" id="comment_anchor_2579722"></a>  <span class="comment_date">2012-12-17 17:17</span> <a id="a_comment_author_2579722" href="http://www.cnblogs.com/CnKker/" target="_blank">cnkker.com</a> <a href="http://msg.cnblogs.com/send/cnkker.com" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2579722" class="blog_comment_body">。。。。。。。。。。。。。。<br>有源码下载么？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2579722,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2579722,'Bury',this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2810799" class="layer">#29楼</a><a name="2810799" id="comment_anchor_2810799"></a>  <span class="comment_date">2013-11-06 11:35</span> <a id="a_comment_author_2810799" href="http://www.cnblogs.com/zhixx/" target="_blank">zhi++</a> <a href="http://msg.cnblogs.com/send/zhi%2B%2B" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2810799" class="blog_comment_body">有几个疑问,<br><br>1.你上面的查退休人员的日志, 如果我想查某个人员的所有日志怎么办? 比如察看针对"张三"的所有操作?<br><br>你只是把数据保存进去,但数据的筛选,查看该如何弄?<br><br>2.如何在表格里横向显示所编辑的字段和内容<br>    表格里列出"张三"的操作内容. <br>      不同的操作,内容不一样. 比如修改,不一定修改同样的字段.<br>      而不同的业务,连表都不一样.<br><br>3.如何处理关联...</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2810799,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2810799,'Bury',this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2834312" class="layer">#30楼</a><a name="2834312" id="comment_anchor_2834312"></a>  <span class="comment_date">2013-12-10 15:10</span> <a id="a_comment_author_2834312" href="http://www.cnblogs.com/jinianjun/" target="_blank">初学者心态</a> <a href="http://msg.cnblogs.com/send/%E5%88%9D%E5%AD%A6%E8%80%85%E5%BF%83%E6%80%81" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2834312" class="blog_comment_body">界面好像有ext的元素</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2834312,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2834312,'Bury',this)">反对(0)</a></div><span id="comment_2834312_avatar" style="display:none;">http://pic.cnblogs.com/face/u290564.gif?id=09205703</span>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#2942349" class="layer">#31楼</a><a name="2942349" id="comment_anchor_2942349"></a>  <span class="comment_date">2014-05-20 10:19</span> <a id="a_comment_author_2942349" href="http://home.cnblogs.com/u/354861/" target="_blank">陌上尘土肩上开花</a> <a href="http://msg.cnblogs.com/send/%E9%99%8C%E4%B8%8A%E5%B0%98%E5%9C%9F%E8%82%A9%E4%B8%8A%E5%BC%80%E8%8A%B1" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_2942349" class="blog_comment_body">可以用AOP</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2942349,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2942349,'Bury',this)">反对(0)</a></div>
+			</div>
+		</div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;<span class="comment_actions"></span>
+				</div>
+				<a href="#3016708" class="layer">#32楼</a><a name="3016708" id="comment_anchor_3016708"></a><span id="comment-maxId" style="display:none;">3016708</span><span id="comment-maxDate" style="display:none;">2014/8/26 10:06:25</span>  <span class="comment_date">2014-08-26 10:06</span> <a id="a_comment_author_3016708" href="http://www.cnblogs.com/huxiaolin/" target="_blank">FrankHu</a> <a href="http://msg.cnblogs.com/send/FrankHu" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="feedbackCon">
+				<div id="comment_body_3016708" class="blog_comment_body">楼主，请问界面上的“业务主键值”是干嘛用的呢？</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3016708,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3016708,'Bury',this)">反对(0)</a></div><span id="comment_3016708_avatar" style="display:none;">http://pic.cnblogs.com/face/559153/20150627072358.png</span>
+			</div>
+		</div>
+	<div id="comments_pager_bottom"></div></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login('commentform');">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    fixPostBodyFormat();
+</script>
+<div id="google_ad_c1" class="c_ad_block"></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/532835/" target="_blank">微软为教孩子们编程 用《我的世界》做了个编程教程</a><br> ·  <a href="http://news.cnblogs.com/n/532828/" target="_blank">好奇号火星车发现火星上存在矿产资源</a><br> ·  <a href="http://news.cnblogs.com/n/532834/" target="_blank">微软更新Edge引擎：带来更好的性能和HTML5兼容性</a><br> ·  <a href="http://news.cnblogs.com/n/532833/" target="_blank">Twitter正在测试反应功能 点赞按钮包括多个emoji表情符号</a><br> ·  <a href="http://news.cnblogs.com/n/532832/" target="_blank">《牛津词典》2015年年度词汇：一个emoji表情</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="google_ad_c2" class="c_ad_block"></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/532236/" target="_blank">被误解的MVC和被神化的MVVM</a><br> ·  <a href="http://kb.cnblogs.com/page/530046/" target="_blank">再谈设计和编码</a><br> ·  <a href="http://kb.cnblogs.com/page/531270/" target="_blank">什么时候应该避免写代码注释？</a><br> ·  <a href="http://kb.cnblogs.com/page/529677/" target="_blank">持续集成是什么？</a><br> ·  <a href="http://kb.cnblogs.com/page/530389/" target="_blank">人，技术与流程</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="google_ad_c3" class="c_ad_block">
+    <script async="" src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/adsbygoogle.js"></script>
+<!-- C3_BlogPost -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-4210569241504288" data-ad-slot="3239908880"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news">
+<div style="display: none" id="__document_write_ajax_div-2"></div>
+
+
+<div style="display: none" id="__document_write_ajax_div-3"></div> 
+<div style="display: none" id="__document_write_ajax_div-4"></div>
+<a href="http://www.vjia.com/?source=samlin" target="_blank"><img class="wwvkmromqprtqedpnayb" alt="" src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/adpic.jpg" border="0"></a>
+
+
+<div style="display: none" id="__document_write_ajax_div-5"></div> 
+<div style="display: none" id="__document_write_ajax_div-6"></div><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/samlin/">Sam Lin</a><br>园龄：<a href="http://home.cnblogs.com/u/samlin/" title="入园时间：2007-12-08">7年11个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/samlin/followers/">28</a><br>关注：<a href="http://home.cnblogs.com/u/samlin/followees/">0</a><div id="p_b_follow"></div><div style="display: none" id="__document_write_ajax_div-7"></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" title="日历" cellpadding="0" cellspacing="0">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar('2010/01/01');return false;">&lt;</a></td><td align="center">2010年2月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar('2010/03/01');return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" abbr="日" scope="col" align="center">日</th><th class="CalDayHeader" abbr="一" scope="col" align="center">一</th><th class="CalDayHeader" abbr="二" scope="col" align="center">二</th><th class="CalDayHeader" abbr="三" scope="col" align="center">三</th><th class="CalDayHeader" abbr="四" scope="col" align="center">四</th><th class="CalDayHeader" abbr="五" scope="col" align="center">五</th><th class="CalDayHeader" abbr="六" scope="col" align="center">六</th></tr><tr><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center"><a href="http://www.cnblogs.com/samlin/archive/2010/02/02.html"><u>2</u></a></td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td class="CalWeekendDay" align="center">6</td></tr><tr><td class="CalWeekendDay" align="center">7</td><td align="center"><a href="http://www.cnblogs.com/samlin/archive/2010/02/08.html"><u>8</u></a></td><td align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td class="CalWeekendDay" align="center">13</td></tr><tr><td class="CalWeekendDay" align="center">14</td><td align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td class="CalWeekendDay" align="center">20</td></tr><tr><td class="CalWeekendDay" align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td class="CalWeekendDay" align="center">27</td></tr><tr><td class="CalWeekendDay" align="center">28</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td></tr><tr><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td><td class="CalOtherMonthDay" align="center">10</td><td class="CalOtherMonthDay" align="center">11</td><td class="CalOtherMonthDay" align="center">12</td><td class="CalOtherMonthDay" align="center">13</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk" type="text">&nbsp;<input onclick="zzk_go()" value="找找看" id="btnZzk" class="btn_my_zzk" type="button"></div>
+<div id="widget_my_google" class="div_my_zzk"><input name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk" type="text">&nbsp;<input onclick="google_go()" value="谷歌搜索" class="btn_my_zzk" type="button"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/samlin/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/samlin/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/samlin/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/samlin/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/samlin/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_recentposts" class="sidebar-block">
+<div class="catListEssay">
+<h3 class="catListTitle">最新随笔</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/samlin/p/RFID.html">1. RFID应用范围</a></li><li><a href="http://www.cnblogs.com/samlin/p/3601206.html">2. 从“2014年全国两会_腾讯新闻”学到10项技能</a></li><li><a href="http://www.cnblogs.com/samlin/p/3515707.html">3. 约制感官生和谐</a></li><li><a href="http://www.cnblogs.com/samlin/p/3515705.html">4. 君子眼中皆好人</a></li><li><a href="http://www.cnblogs.com/samlin/p/treeview-webresource-bug.html">5. asp.net之treeview无法显示树结点图标（IP与域名的表现竟不一样）</a></li><li><a href="http://www.cnblogs.com/samlin/p/zzhongyi_1.html">6. [中医经络学习一]足阳明胃经</a></li><li><a href="http://www.cnblogs.com/samlin/p/IE6_Redirect_Bug.html">7. 发现IE6的一个BUG，添加受信任站点后，页面无法跳转</a></li><li><a href="http://www.cnblogs.com/samlin/p/Tesseract-OCR.html">8. Tesseract-OCR 字符识别---样本训练 [转]</a></li><li><a href="http://www.cnblogs.com/samlin/archive/2012/09/03/Sql_truncate_data.html">9. SQL Server清空日志及所有表的数据</a></li><li><a href="http://www.cnblogs.com/samlin/archive/2012/08/27/dotnet_get_server_info.html">10. .NET获取服务器信息，如服务器版本、IIS等</a></li>
+</ul>
+</div>
+</div><div id="sidebar_toptags" class="sidebar-block">
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/samlin/tag/%E8%82%A1%E7%A5%A8%E6%8C%87%E6%A0%87/">股票指标</a>(6)</li><li><a href="http://www.cnblogs.com/samlin/tag/%E9%9D%A2%E8%AF%95/">面试</a>(4)</li><li><a href="http://www.cnblogs.com/samlin/tag/JavaScript/">JavaScript</a>(4)</li><li><a href="http://www.cnblogs.com/samlin/tag/ASP/">ASP</a>(3)</li><li><a href="http://www.cnblogs.com/samlin/tag/OllyDBG/">OllyDBG</a>(3)</li><li><a href="http://www.cnblogs.com/samlin/tag/winform/">winform</a>(3)</li><li><a href="http://www.cnblogs.com/samlin/tag/seo/">seo</a>(2)</li><li><a href="http://www.cnblogs.com/samlin/tag/Windows%20XP%20%E9%BB%91%E5%B1%8F/">Windows XP 黑屏</a>(2)</li><li><a href="http://www.cnblogs.com/samlin/tag/%E6%8A%A5%E8%A1%A8/">报表</a>(2)</li><li><a href="http://www.cnblogs.com/samlin/tag/%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/">日志管理</a>(2)</li><li><a href="http://www.cnblogs.com/samlin/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div class="catListPostCategory">
+<h3 class="catListTitle">随笔分类<span style="font-size:11px;font-weight:normal">(219)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/samlin/category/135322.html">.net,C#小技巧,代码片断(27)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/samlin/category/115319.html">ASP.Net(23)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/samlin/category/115323.html">Custom Control</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/samlin/category/414020.html">Custome Control</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/samlin/category/120977.html">DataBase(14)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/samlin/category/115318.html">JavaScript(23)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/samlin/category/414021.html">JavaScript 框架</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/samlin/category/116280.html">JQuery(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/samlin/category/129975.html">JS Code Collection(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/samlin/category/126563.html">JS Collecion(9)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/samlin/category/115324.html">Life(22)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/samlin/category/116790.html">MyGeneration</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/samlin/category/347291.html">PHP(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/samlin/category/119732.html">Reading(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_14" href="http://www.cnblogs.com/samlin/category/150465.html">seo(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_15" href="http://www.cnblogs.com/samlin/category/157465.html">Server(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_16" href="http://www.cnblogs.com/samlin/category/120225.html">SoftWare Design(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_17" href="http://www.cnblogs.com/samlin/category/115322.html">Translation(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_18" href="http://www.cnblogs.com/samlin/category/115321.html">Web2.0(20)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_19" href="http://www.cnblogs.com/samlin/category/161578.html">Works(19)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_20" href="http://www.cnblogs.com/samlin/category/165124.html">操作系统(11)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_21" href="http://www.cnblogs.com/samlin/category/176960.html">工作业务学习(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_22" href="http://www.cnblogs.com/samlin/category/168682.html">股票指标(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_23" href="http://www.cnblogs.com/samlin/category/183309.html">软件工程(10)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_24" href="http://www.cnblogs.com/samlin/category/178698.html">游戏外挂(2)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案<span style="font-size:11px;font-weight:normal">(195)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/samlin/archive/2014/12.html">2014年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/samlin/archive/2014/03.html">2014年3月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/samlin/archive/2014/01.html">2014年1月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/samlin/archive/2013/12.html">2013年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/samlin/archive/2013/06.html">2013年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/samlin/archive/2012/09.html">2012年9月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/samlin/archive/2012/08.html">2012年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/samlin/archive/2012/07.html">2012年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/samlin/archive/2012/06.html">2012年6月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/samlin/archive/2012/05.html">2012年5月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/samlin/archive/2012/04.html">2012年4月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/samlin/archive/2012/03.html">2012年3月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/samlin/archive/2012/02.html">2012年2月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/samlin/archive/2012/01.html">2012年1月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/samlin/archive/2011/12.html">2011年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_15" href="http://www.cnblogs.com/samlin/archive/2011/11.html">2011年11月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_16" href="http://www.cnblogs.com/samlin/archive/2011/09.html">2011年9月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_17" href="http://www.cnblogs.com/samlin/archive/2011/08.html">2011年8月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_18" href="http://www.cnblogs.com/samlin/archive/2011/06.html">2011年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_19" href="http://www.cnblogs.com/samlin/archive/2011/05.html">2011年5月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_20" href="http://www.cnblogs.com/samlin/archive/2011/04.html">2011年4月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_21" href="http://www.cnblogs.com/samlin/archive/2011/03.html">2011年3月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_22" href="http://www.cnblogs.com/samlin/archive/2010/12.html">2010年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_23" href="http://www.cnblogs.com/samlin/archive/2010/09.html">2010年9月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_24" href="http://www.cnblogs.com/samlin/archive/2010/07.html">2010年7月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_25" href="http://www.cnblogs.com/samlin/archive/2010/06.html">2010年6月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_26" href="http://www.cnblogs.com/samlin/archive/2010/04.html">2010年4月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_27" href="http://www.cnblogs.com/samlin/archive/2010/02.html">2010年2月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_28" href="http://www.cnblogs.com/samlin/archive/2010/01.html">2010年1月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_29" href="http://www.cnblogs.com/samlin/archive/2009/12.html">2009年12月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_30" href="http://www.cnblogs.com/samlin/archive/2009/08.html">2009年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_31" href="http://www.cnblogs.com/samlin/archive/2009/07.html">2009年7月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_32" href="http://www.cnblogs.com/samlin/archive/2009/06.html">2009年6月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_33" href="http://www.cnblogs.com/samlin/archive/2009/05.html">2009年5月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_34" href="http://www.cnblogs.com/samlin/archive/2009/04.html">2009年4月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_35" href="http://www.cnblogs.com/samlin/archive/2009/03.html">2009年3月 (15)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_36" href="http://www.cnblogs.com/samlin/archive/2009/02.html">2009年2月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_37" href="http://www.cnblogs.com/samlin/archive/2009/01.html">2009年1月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_38" href="http://www.cnblogs.com/samlin/archive/2008/12.html">2008年12月 (12)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_39" href="http://www.cnblogs.com/samlin/archive/2008/11.html">2008年11月 (12)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_40" href="http://www.cnblogs.com/samlin/archive/2008/10.html">2008年10月 (7)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_41" href="http://www.cnblogs.com/samlin/archive/2008/09.html">2008年9月 (10)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_42" href="http://www.cnblogs.com/samlin/archive/2008/08.html">2008年8月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_43" href="http://www.cnblogs.com/samlin/archive/2008/07.html">2008年7月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_44" href="http://www.cnblogs.com/samlin/archive/2008/06.html">2008年6月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_45" href="http://www.cnblogs.com/samlin/archive/2008/05.html">2008年5月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_46" href="http://www.cnblogs.com/samlin/archive/2008/04.html">2008年4月 (6)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_47" href="http://www.cnblogs.com/samlin/archive/2008/03.html">2008年3月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_48" href="http://www.cnblogs.com/samlin/archive/2008/02.html">2008年2月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_49" href="http://www.cnblogs.com/samlin/archive/2008/01.html">2008年1月 (9)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_50" href="http://www.cnblogs.com/samlin/archive/2007/12.html">2007年12月 (13)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListArticleArchive">
+<h3 class="catListTitle">文章档案<span style="font-size:11px;font-weight:normal">(1)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_2_Link_0" href="http://www.cnblogs.com/samlin/archives/2008/12.html" rel="nofollow">2008年12月 (1)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListImageCategory">
+<h3 class="catListTitle">相册<span style="font-size:11px;font-weight:normal">(2)</span></h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_3_Link_0" href="http://www.cnblogs.com/samlin/gallery/248024.html" rel="nofollow">test(2)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catList">
+<h3 class="catListTitle">HandBook</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_4_Link_0" href="http://www.phpx.com/man/dhtmlcn/" rel="nofollow" target="_blank">DHTML 手册</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catList">
+<h3 class="catListTitle">My Links</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_5_Link_0" href="http://www.cnblogs.com/my97/" rel="nofollow">My97控件</a> </li>
+
+<li><a id="CatList_LinkList_5_Link_1" href="http://www.nczonline.net/downloads/" rel="nofollow">nczonline</a> </li>
+<li class="c_b_p_link_desc">Javascript Library,Ajax</li>
+<li><a id="CatList_LinkList_5_Link_2" href="http://www.microsoft.com/china/technet/webcasts/default.mspx" rel="nofollow">TechNet中文网络广播</a> </li>
+
+<li><a id="CatList_LinkList_5_Link_3" href="http://blog.csdn.net/linsentong" rel="nofollow">我的CNSD Blog</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catList">
+<h3 class="catListTitle">Web Designer</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_6_Link_0" href="http://www.colorjack.com/sphere" rel="nofollow">ColorJack</a> </li>
+<li class="c_b_p_link_desc">主要用于颜色的选取</li>
+<li><a id="CatList_LinkList_6_Link_1" href="http://www.cssdrive.com/index.php/main/csscompressor" rel="nofollow" target="_blank">CSS Compress</a> </li>
+
+<li><a id="CatList_LinkList_6_Link_2" href="http://www.webdesignerwall.com/" rel="nofollow" target="_blank">Web Designer Wall</a> </li>
+
+<li><a id="CatList_LinkList_6_Link_3" href="http://www.d500.com.cn/" rel="nofollow">当我吧素材网</a> </li>
+<li class="c_b_p_link_desc">大量的素材，包括图片、CSS、JS以及Web上的一些实例等</li>
+<li><a id="CatList_LinkList_6_Link_4" href="http://soft.yesky.com/lesson/253/3141753.shtml" rel="nofollow">网站制作经典手册速查大全</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_scorerank" class="sidebar-block">
+<div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+		积分 -	204138
+	</li>
+	<li class="liRank">
+		排名 -	687
+	</li>
+</ul>
+</div>
+
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+	<div id="RecentCommentsBlock"><ul>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/samlin/archive/2012/06/06/sql-time-out.html#3271803">1. Re:超时时间已到。在操作完成之前超时时间已过或服务器未响应</a></li>
+    <li class="recent_comment_body">我也遇到这个问题，不知道此问题是否已经解决。</li>
+    <li class="recent_comment_author">--dongmusic</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/samlin/archive/2012/03/07/ZK_Software_Bad_Animal.html#3210362">2. Re:中控科技 ZK Software的售后服务真像一坨屎，技术人员嚣张</a></li>
+    <li class="recent_comment_body">真的！！！我們公司最近也用了它們家產品，也是要搞二次開發，問了半天技術問題，基本上就是讓你看他們文件，重點是他們文件寫的也太簡單了，真心的建議別拿他們家的產品做二次開發！！我慘了．...</li>
+    <li class="recent_comment_author">--Jason Cheng</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/samlin/archive/2009/05/19/1460397.html#3164973">3. Re:解决“当前命令发生了严重错误。应放弃任何可能产生的结果。”的问题</a></li>
+    <li class="recent_comment_body">谢谢<br>解决遇到的问题了</li>
+    <li class="recent_comment_author">--赤月</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/samlin/archive/2008/09/26/JavaScript-Manipulate-Excel.html#3121825">4. Re:JavaScript操作Excel</a></li>
+    <li class="recent_comment_body">这里为什么这么写xlsheet.Range( xlsheet.Cells(1,1),xlsheet.Cells(rowNum+1,7)).HorizontalAlignment =-4108;请问博主...</li>
+    <li class="recent_comment_author">--夜雨潇潇</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/samlin/archive/2009/03/28/JavaScript-appendChild-insertBefore-insertAfter.html">1. JavaScript之appendChild、insertBefore和insertAfter(37566)</a></li><li><a href="http://www.cnblogs.com/samlin/archive/2010/02/08/Log-Operation-Management.html">2. 系统操作日志设计(27748)</a></li><li><a href="http://www.cnblogs.com/samlin/archive/2008/04/13/1151265.html">3. JS实现局部打印和预览 (20614)</a></li><li><a href="http://www.cnblogs.com/samlin/archive/2011/04/22/Any-CPU-x86.html">4. 未能加载文件或程序集 XX 或它的某一个依赖项(15603)</a></li><li><a href="http://www.cnblogs.com/samlin/archive/2011/05/04/InvalidOperationException.html">5. 未在本地计算机上注册“Microsoft.Jet.OleDb.4.0”提供程序(15350)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/samlin/archive/2010/02/08/Log-Operation-Management.html">1. 系统操作日志设计(32)</a></li><li><a href="http://www.cnblogs.com/samlin/archive/2009/08/29/1556107.html">2. 你自己觉得行，你就一定行(28)</a></li><li><a href="http://www.cnblogs.com/samlin/archive/2009/01/21/1379678.html">3. 今天收拾了个电脑抽屉,发现原来我是个有钱人(21)</a></li><li><a href="http://www.cnblogs.com/samlin/archive/2008/09/10/Survey-How-To-Make-MIS-Better.html">4. 小调查：管理信息系统怎么做才好(17)</a></li><li><a href="http://www.cnblogs.com/samlin/archive/2009/04/07/Sql-RegExp.html">5. 在Sql语句中使用正则表达式来查找你所要的字符(14)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/samlin/archive/2010/02/08/Log-Operation-Management.html">1. 系统操作日志设计(12)</a></li><li><a href="http://www.cnblogs.com/samlin/archive/2009/03/28/JavaScript-appendChild-insertBefore-insertAfter.html">2. JavaScript之appendChild、insertBefore和insertAfter(6)</a></li><li><a href="http://www.cnblogs.com/samlin/archive/2009/08/29/1556107.html">3. 你自己觉得行，你就一定行(5)</a></li><li><a href="http://www.cnblogs.com/samlin/archive/2010/04/23/Log-Operation-Management-Coding.html">4. 系统操作日志设计-代码实现(4)</a></li><li><a href="http://www.cnblogs.com/samlin/archive/2010/04/18/How-To-Develop-JQuery-Plugin.html">5. 如何制作JQuery Plugin 插件(4)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2015 Sam Lin
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+<!--PageEndHtml Block Begin-->
+<div style="width:100%;margin:0 auto;text-align:center">
+<script type="text/javascript"> 
+alimama_pid="mm_11274235_1122197_2595222"; 
+alimama_titlecolor="0000FF"; 
+alimama_descolor ="000000"; 
+alimama_bgcolor="FFFFFF"; 
+alimama_bordercolor="E6E6E6"; 
+alimama_linkcolor="008000"; 
+alimama_bottomcolor="FFFFFF"; 
+alimama_anglesize="0"; 
+alimama_bgpic="0"; 
+alimama_icon="0"; 
+alimama_sizecode="11"; 
+alimama_width=760; 
+alimama_height=90; 
+alimama_type=2; 
+</script> 
+<script src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/inf_002.js" type="text/javascript"> 
+</script>
+<div style="margin:0 auto;width:100px;">
+<script type="text/javascript" src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/tongji.js"></script><img src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/tongji.htm" border="0" height="1" width="1"><a href="http://tongji.alimama.com/report.html?unit_id=675816" target="_blank"><img src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon1.gif" alt="量子统计" border="0"></a><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/675816/tongji.gif"/></a></noscript><script src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/stat.php" language="JavaScript" charset="gb2312"></script><script src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=1029082" target="_blank" title="站长统计"><img src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/pic.gif" border="0" hspace="0" vspace="0"></a>
+
+
+<script type="text/javascript" src="%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97%E8%AE%BE%E8%AE%A1%20-%20Sam%20Lin%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/stats" charset="UTF-8"></script>
+
+</div>
+</div>
+<!--PageEndHtml Block End-->
+
+
+<a style="display: none; height: 18px; width: 18px; position: fixed; z-index: 2147483647; font: bold 12px/25px Arial,sans-serif; text-decoration: none; color: rgba(62, 87, 6, 0.53); background: transparent url(&quot;data:image/gif;base64,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&quot;) repeat scroll 0% 0% / 18px 18px; opacity: 0.55; text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.22); border-radius: 18px; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.29), 1px 1px 1px rgba(255, 255, 255, 0.44) inset; transition: all 0.15s ease 0s;" id="kf-my-add-btn" name="kf-my-add-btn" href="javascript:void(0)"></a><div id="kf-add-loading-img" style="display: none; height: 24px; width: 24px; position: fixed; bottom: 20px; right: 20px; border-radius: 24px; background: transparent url(&quot;data:image/gif;base64,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&quot;) repeat scroll 0% 0%; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.29), 1px 1px 1px rgba(255, 255, 255, 0.24) inset;"></div><div style="opacity: 0; display: none; width: 320px; position: fixed; right: 20px; bottom: -190px; z-index: 2147483647; font: 12px/25px Arial,sans-serif; background: transparent none repeat scroll 0% 0%;" id="kf-content-div"><div style="height: 40px; width: 320px; background: rgba(0, 0, 0, 0.05) none repeat scroll 0% 0%; border-radius: 20px 20px 0px 0px; line-height: 40px; text-align: center;" id="kf-top-div"><a style="width: 160px; color: rgba(0, 0, 0, 0.25); text-decoration: none; background: transparent none repeat scroll 0% 0%; float: left; font-size: 1em; border-radius: 20px 20px 0px 0px;" href="javascript:void(0)" id="kf-wiki-tab">WIKIPEDIA</a><a style="width: 160px; color: rgba(255, 255, 255, 0.88); text-decoration: none; background: rgba(56, 189, 15, 0.6) none repeat scroll 0% 0%; font-size: 1em; float: left; border-radius: 20px 20px 0px 0px;" href="javascript:void(0)" id="kf-translator-tab">	TRANSLATOR</a></div><div id="kf-frame-div" style="box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.33); text-align: left;"><div id="trans-div" style="font-weight: bold; width: 300px; height: auto; background: rgb(233, 233, 233) none repeat scroll 0% 0%; opacity: 0.8; padding: 10px; max-height: 190px; overflow: auto;">So happy!</div><div style="width: 300px; max-height: 190px; padding: 10px; background: rgb(233, 233, 233) none repeat scroll 0% 0%; opacity: 0.8; border: 0px none; overflow: auto; display: none;" id="kf-wiki-div" name="kf-wiki-div"></div></div></div></body></html>

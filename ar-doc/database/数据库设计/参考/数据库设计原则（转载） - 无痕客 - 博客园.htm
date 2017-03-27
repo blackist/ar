@@ -1,0 +1,988 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh-cn"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>数据库设计原则（转载） - 无痕客 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89%20-%20%E6%97%A0%E7%97%95%E5%AE%A2%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89%20-%20%E6%97%A0%E7%97%95%E5%AE%A2%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-Cogitation.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/wuhenke/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/wuhenke/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/wuhenke/wlwmanifest.xml">
+<script src="%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89%20-%20%E6%97%A0%E7%97%95%E5%AE%A2%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'wuhenke', cb_enable_mathjax=false;</script>
+<script src="%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89%20-%20%E6%97%A0%E7%97%95%E5%AE%A2%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.js" type="text/javascript"></script>
+<style type="text/css">#kf-content-div a,#kf-content-div p{border: 0px !important;padding: 0px !important;margin: 0xp !important;}#kf-wiki-div a:hover,kf-content-div a:focus {text-decoration: underline !important;}#kf-wiki-div a {text-decoration: none !important;color: #0645AD !important;background: none repeat scroll 0% 0% transparent !important;}#kf-wiki-div dt {margin-bottom: 0.1em !important;font-weight: bold !important;}#kf-wiki-div dd {margin-left: 1.6em !important;margin-bottom: 0.1em !important;}</style></head>
+<body>
+<a name="top"></a>
+
+<div id="top">
+	
+<div>
+	<table>
+		<tbody><tr>
+			<td class="HeaderTitles">
+				<h1 class="HeaderTitle"><a id="Header1_HeaderTitle" class="HeaderMainTitle" href="http://www.cnblogs.com/wuhenke/">无痕客</a></h1>
+				<p id="tagline">落花无情，流水无痕……</p>
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+<div class="HeaderBar">
+	<table id="HeaderBar" class="HeaderBar" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td class="HeaderBarTab" nowrap="nowrap">
+&nbsp;
+<a id="Header1_MyLinks1_HomeLink" href="http://www.cnblogs.com/">博客园</a> ::
+<a id="Header1_MyLinks1_MyHomeLink" href="http://www.cnblogs.com/wuhenke/">首页</a> ::
+<a href="http://q.cnblogs.com/" class="menu">博问</a> ::
+<a href="http://home.cnblogs.com/ing/" class="menu">闪存</a> ::
+<a id="Header1_MyLinks1_NewPostLink" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a> ::
+<a id="Header1_MyLinks1_ContactLink" accesskey="9" rel="nofollow" href="http://msg.cnblogs.com/send/%E6%97%A0%E7%97%95%E5%AE%A2">联系</a> ::
+<a id="Header1_MyLinks1_Syndication" href="http://www.cnblogs.com/wuhenke/rss">订阅</a>
+<a id="Header1_MyLinks1_XMLLink" class="XMLLink" href="http://www.cnblogs.com/wuhenke/rss"><img src="%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89%20-%20%E6%97%A0%E7%97%95%E5%AE%A2%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/xml.gif" alt="订阅"></a> ::
+<a id="Header1_MyLinks1_Admin" rel="nofollow" href="http://i.cnblogs.com/">管理</a> ::
+
+</td>
+			<td><img id="Header1_BlueTab" src="%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89%20-%20%E6%97%A0%E7%97%95%E5%AE%A2%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/BlueTabRight.gif" align="absmiddle"></td>
+			<td class="HeaderBarTabBack" nowrap="nowrap" width="100%">
+				
+<div class="BlogStatsBar">
+	<table class="BlogStatsBar">
+		<tbody><tr>
+			<td width="100%">
+			</td>
+			<td class="BlogStatsBar" nowrap="nowrap">
+				&nbsp;
+				470 
+				随笔&nbsp;::
+				13 文章
+				::
+				258 评论
+				::
+				0 引用
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+
+			</td>
+		</tr>
+	</tbody></table>
+</div>
+
+</div>
+<div id="leftmenu">	
+
+	    <div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" title="Calendar" cellpadding="0" cellspacing="0">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar('2015/11/01');return false;">&lt;</a></td><td align="center">2015年12月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar('2016/01/01');return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" abbr="日" scope="col" align="center">日</th><th class="CalDayHeader" abbr="一" scope="col" align="center">一</th><th class="CalDayHeader" abbr="二" scope="col" align="center">二</th><th class="CalDayHeader" abbr="三" scope="col" align="center">三</th><th class="CalDayHeader" abbr="四" scope="col" align="center">四</th><th class="CalDayHeader" abbr="五" scope="col" align="center">五</th><th class="CalDayHeader" abbr="六" scope="col" align="center">六</th></tr><tr><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td align="center">1</td><td align="center">2</td><td align="center">3</td><td align="center">4</td><td class="CalWeekendDay" align="center">5</td></tr><tr><td class="CalWeekendDay" align="center">6</td><td align="center">7</td><td class="CalTodayDay" align="center">8</td><td align="center">9</td><td align="center">10</td><td align="center">11</td><td class="CalWeekendDay" align="center">12</td></tr><tr><td class="CalWeekendDay" align="center">13</td><td align="center">14</td><td align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center">18</td><td class="CalWeekendDay" align="center">19</td></tr><tr><td class="CalWeekendDay" align="center">20</td><td align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td class="CalWeekendDay" align="center">26</td></tr><tr><td class="CalWeekendDay" align="center">27</td><td align="center">28</td><td align="center">29</td><td align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td></tr><tr><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+		
+<h3>公告</h3>
+<div class="News">
+	<div id="blog-news">所有技术方案，都只是我们达到目标的手段。<p></p>没有经验的开发者误把新技术本身当成了目标。<p></p>研究和积累同样重要！<a href="http://www2.clustrmaps.com/counter/maps.php?url=http://www.cnblogs.com/wuhenke" id="clustrMapsLink"><img src="%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89%20-%20%E6%97%A0%E7%97%95%E5%AE%A2%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/index2.png" style="border:0px;" alt="Locations of visitors to this page" title="Locations of visitors to this page" id="clustrMapsImg" onerror="this.onerror=null; this.src='http://clustrmaps.com/images/clustrmaps-back-soon.jpg'; document.getElementById('clustrMapsLink').href='http://clustrmaps.com';">
+</a>
+<div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/wuhenke/">无痕客</a><br>园龄：<a href="http://home.cnblogs.com/u/wuhenke/" title="入园时间：2009-08-28">6年3个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/wuhenke/followers/">237</a><br>关注：<a href="http://home.cnblogs.com/u/wuhenke/followees/">7</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="cnblogs.UserManager.FollowBlogger('f4070484-8a93-de11-ba8f-001cf0cd104b')">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+		<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk" type="text">&nbsp;<input onclick="zzk_go()" value="找找看" id="btnZzk" class="btn_my_zzk" type="button"></div>
+
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/wuhenke/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/wuhenke/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/wuhenke/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/wuhenke/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/wuhenke/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<h3 class="catListTitle">我的标签</h3>
+<div id="MyTag">
+<ul>
+<li><a href="http://www.cnblogs.com/wuhenke/tag/java/">java</a>(44)</li><li><a href="http://www.cnblogs.com/wuhenke/tag/C%23/">C#</a>(38)</li><li><a href="http://www.cnblogs.com/wuhenke/tag/Oracle/">Oracle</a>(35)</li><li><a href="http://www.cnblogs.com/wuhenke/tag/eclipse/">eclipse</a>(19)</li><li><a href="http://www.cnblogs.com/wuhenke/tag/RCP/">RCP</a>(16)</li><li><a href="http://www.cnblogs.com/wuhenke/tag/World%20Wind/">World Wind</a>(16)</li><li><a href="http://www.cnblogs.com/wuhenke/tag/%E5%9B%BD%E4%BF%A1%E5%8F%B8%E5%8D%97/">国信司南</a>(14)</li><li><a href="http://www.cnblogs.com/wuhenke/tag/SWT/">SWT</a>(11)</li><li><a href="http://www.cnblogs.com/wuhenke/tag/SDE/">SDE</a>(9)</li><li><a href="http://www.cnblogs.com/wuhenke/tag/.NET/">.NET</a>(9)</li><li><a href="http://www.cnblogs.com/wuhenke/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+		<h3>随笔分类</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/wuhenke/category/229207.html">.NET互操作(13)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/wuhenke/category/371822.html">Android开发(1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/wuhenke/category/221962.html">ArcGIS API For Flex(4)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/wuhenke/category/221965.html">ArcGIS Server学习和WMS(1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/wuhenke/category/207621.html">ARCGIS随笔(22)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/wuhenke/category/221963.html">ASP.NET技术积累(10)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/wuhenke/category/217157.html">C#积累(86)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/wuhenke/category/231695.html">Computer Virus原理(6)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/wuhenke/category/223133.html">DirectX和Direct3D(6)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/wuhenke/category/355329.html">Eclipse RCP开发(25)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/wuhenke/category/211177.html">Flex积累(62)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/wuhenke/category/221960.html">Flex新技术(3)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/wuhenke/category/215556.html">FMS与Red 5学习(3)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/wuhenke/category/306314.html">JAVA学习与开发(42)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_14" href="http://www.cnblogs.com/wuhenke/category/221959.html">NET新技术(10)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_15" href="http://www.cnblogs.com/wuhenke/category/287931.html">ORACLE数据恢复(11)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_16" href="http://www.cnblogs.com/wuhenke/category/242125.html">Reactive Extensions for .NET (Rx)(3)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_17" href="http://www.cnblogs.com/wuhenke/category/255871.html">Web技术</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_18" href="http://www.cnblogs.com/wuhenke/category/219358.html">开源技术(41)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_19" href="http://www.cnblogs.com/wuhenke/category/209160.html">每日所得(130)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_20" href="http://www.cnblogs.com/wuhenke/category/207476.html">每日心情(22)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_21" href="http://www.cnblogs.com/wuhenke/category/255156.html">数据库(34)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_22" href="http://www.cnblogs.com/wuhenke/category/255870.html">项目管理(13)</a> </li>
+			
+				</ul>
+			
+	
+		<h3>随笔档案</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/wuhenke/archive/2012/12.html">2012年12月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/wuhenke/archive/2012/11.html">2012年11月 (7)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/wuhenke/archive/2012/10.html">2012年10月 (8)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/wuhenke/archive/2012/09.html">2012年9月 (4)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/wuhenke/archive/2012/08.html">2012年8月 (5)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/wuhenke/archive/2012/07.html">2012年7月 (4)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/wuhenke/archive/2012/05.html">2012年5月 (11)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/wuhenke/archive/2012/04.html">2012年4月 (6)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/wuhenke/archive/2012/03.html">2012年3月 (22)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/wuhenke/archive/2012/02.html">2012年2月 (4)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/wuhenke/archive/2011/12.html">2011年12月 (5)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/wuhenke/archive/2011/11.html">2011年11月 (7)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/wuhenke/archive/2011/10.html">2011年10月 (6)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/wuhenke/archive/2011/09.html">2011年9月 (3)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/wuhenke/archive/2011/08.html">2011年8月 (4)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_15" href="http://www.cnblogs.com/wuhenke/archive/2011/07.html">2011年7月 (4)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_16" href="http://www.cnblogs.com/wuhenke/archive/2011/06.html">2011年6月 (6)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_17" href="http://www.cnblogs.com/wuhenke/archive/2011/05.html">2011年5月 (14)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_18" href="http://www.cnblogs.com/wuhenke/archive/2011/04.html">2011年4月 (6)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_19" href="http://www.cnblogs.com/wuhenke/archive/2011/03.html">2011年3月 (11)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_20" href="http://www.cnblogs.com/wuhenke/archive/2011/02.html">2011年2月 (8)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_21" href="http://www.cnblogs.com/wuhenke/archive/2011/01.html">2011年1月 (10)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_22" href="http://www.cnblogs.com/wuhenke/archive/2010/12.html">2010年12月 (7)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_23" href="http://www.cnblogs.com/wuhenke/archive/2010/11.html">2010年11月 (2)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_24" href="http://www.cnblogs.com/wuhenke/archive/2010/10.html">2010年10月 (16)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_25" href="http://www.cnblogs.com/wuhenke/archive/2010/09.html">2010年9月 (9)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_26" href="http://www.cnblogs.com/wuhenke/archive/2010/08.html">2010年8月 (16)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_27" href="http://www.cnblogs.com/wuhenke/archive/2010/07.html">2010年7月 (20)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_28" href="http://www.cnblogs.com/wuhenke/archive/2010/06.html">2010年6月 (15)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_29" href="http://www.cnblogs.com/wuhenke/archive/2010/05.html">2010年5月 (14)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_30" href="http://www.cnblogs.com/wuhenke/archive/2010/04.html">2010年4月 (18)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_31" href="http://www.cnblogs.com/wuhenke/archive/2010/03.html">2010年3月 (12)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_32" href="http://www.cnblogs.com/wuhenke/archive/2010/02.html">2010年2月 (2)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_33" href="http://www.cnblogs.com/wuhenke/archive/2010/01.html">2010年1月 (47)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_34" href="http://www.cnblogs.com/wuhenke/archive/2009/12.html">2009年12月 (48)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_35" href="http://www.cnblogs.com/wuhenke/archive/2009/11.html">2009年11月 (53)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_36" href="http://www.cnblogs.com/wuhenke/archive/2009/10.html">2009年10月 (20)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_37" href="http://www.cnblogs.com/wuhenke/archive/2009/09.html">2009年9月 (13)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_38" href="http://www.cnblogs.com/wuhenke/archive/2009/08.html">2009年8月 (2)</a> </li>
+			
+				</ul>
+			
+	
+		<h3>文章分类</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_2_Link_0" href="http://www.cnblogs.com/wuhenke/category/207484.html">ArcEngine</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_1" href="http://www.cnblogs.com/wuhenke/category/210155.html">C#知识点和经验(8)</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_2" href="http://www.cnblogs.com/wuhenke/category/207486.html">Flex与WebGis</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_3" href="http://www.cnblogs.com/wuhenke/category/207485.html">SDE开发(1)</a> </li>
+			
+				<li><a id="CatList_LinkList_2_Link_4" href="http://www.cnblogs.com/wuhenke/category/207487.html">数据库应用</a> </li>
+			
+				</ul>
+			
+	
+		<h3>.NET Interop互操作</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_3_Link_0" href="http://www.pinvoke.net/" rel="nofollow" target="_blank">pinvoke.net</a> </li>
+			<li class="c_b_p_link_desc">PInvoke.net is primarily a wiki, allowing
+ developers to find, edit and add PInvoke* signatures, user-defined 
+types, and any other information related to calling Win32 and other 
+unmanaged APIs from managed code (written in languages such as C# or 
+VB.NET).
+
+</li>
+				<li><a id="CatList_LinkList_3_Link_1" href="http://www.icsharpcode.net/OpenSource/SharpZipLib/Download.aspx" rel="nofollow" target="_blank">SharpZipLib</a> </li>
+			<li class="c_b_p_link_desc">压缩和解压缩工具</li>
+				</ul>
+			
+	
+		<h3>AntivirusWorld</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_4_Link_0" href="http://www.antivirusworld.com/" rel="nofollow">AntivirusWorld</a> </li>
+			
+				<li><a id="CatList_LinkList_4_Link_1" href="http://www.bullguard.com/" rel="nofollow" target="_blank">BullGuard</a> </li>
+			
+				</ul>
+			
+	
+		<h3>ArcGIS Flex</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_5_Link_0" href="http://blog.csdn.net/chiangbt" rel="nofollow">GIS浩渺的天空</a> </li>
+			<li class="c_b_p_link_desc">http://www.cnblogs.com/chiangbt/</li>
+				</ul>
+			
+	
+		<h3>C# 、ASP.NET</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_6_Link_0" href="http://www.csharp411.com/net-assembly-faq-part-1/" rel="nofollow">.NET Assembly FAQ – Part 1</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_1" href="http://www.cnblogs.com/Thriving-Country/archive/2008/11/04/1326334.html">BlogEngine.Net架构与源代码分析系列</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_2" href="http://www.boxedapp.com/" rel="nofollow" target="_blank">BoxedApp</a> </li>
+			<li class="c_b_p_link_desc">压缩式打包程序，将多个dll或exe合并为一个exe</li>
+				<li><a id="CatList_LinkList_6_Link_3" href="http://boxedapp.com/blog/category/net/" target="_blank">BoxedApp Blog</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_4" href="http://www.csharp411.com/" rel="nofollow">C#411</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_5" href="http://www.csharphelp.com/" rel="nofollow" target="_blank">C#Help网</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_6" href="http://www.cnblogs.com/secenes/archive/2008/07/18/1246318.html">C#基础：ref和out的区别 [转] </a> </li>
+			<li class="c_b_p_link_desc">C#基础：ref和out的区别 [转] </li>
+				<li><a id="CatList_LinkList_6_Link_7" href="http://csharp-source.net/" rel="nofollow" target="_blank">C#开源工程汇总网站</a> </li>
+			<li class="c_b_p_link_desc">C#开源工程汇总网站</li>
+				<li><a id="CatList_LinkList_6_Link_8" href="http://www.code4dotnet.com/?page_id=3" rel="nofollow">Code4DotNet</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_9" href="http://www.cnblogs.com/lichdr/category/12610.html" target="_blank">CODEDOM系列学习</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_10" href="http://www.codeguru.com/" rel="nofollow" target="_blank">codeguru</a> </li>
+			<li class="c_b_p_link_desc">techie sites like msdn, egghead, expertexchange, codeproject, codeguru</li>
+				<li><a id="CatList_LinkList_6_Link_11" href="http://www.codeplex.com/" rel="nofollow">codeplex</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_12" href="http://blog.csdn.net/songkexin" rel="nofollow" target="_blank">CSDN专家</a> </li>
+			<li class="c_b_p_link_desc">很好的CSDN博客网站</li>
+				<li><a id="CatList_LinkList_6_Link_13" href="http://www.csharper.net/" rel="nofollow" target="_blank">csharper C#</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_14" href="http://www.eggheadcafe.com/" rel="nofollow" target="_blank">Eggheadcafe For NET</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_15" href="http://www.experts-exchange.com/" rel="nofollow" target="_blank">experts-exchange</a> </li>
+			<li class="c_b_p_link_desc">techie sites like msdn, egghead, expertexchange, codeproject, codeguru</li>
+				<li><a id="CatList_LinkList_6_Link_16" href="http://www.sencha.com/products/js/" rel="nofollow" target="_blank">Ext JS </a> </li>
+			<li class="c_b_p_link_desc">Ext JS Cross-Browser Rich Internet Application Framework</li>
+				<li><a id="CatList_LinkList_6_Link_17" href="http://www.thehackerslibrary.com/" rel="nofollow" target="_blank">HackerLibrary</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_18" href="http://ckeditor.com/" rel="nofollow" target="_blank">HTML 在线编辑器</a> </li>
+			<li class="c_b_p_link_desc">HTML 在线编辑器 支持ASP.NET</li>
+				<li><a id="CatList_LinkList_6_Link_19" href="http://weblogs.asp.net/israelio/default.aspx" rel="nofollow" target="_blank">Ohad's Blog---Excellent .NET</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_20" href="http://www.pengjh.cn/" rel="nofollow" target="_blank">Pengjh</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_21" href="http://www.cnblogs.com/zhaozhan/archive/2010/05/05/1727638.html">zhaozhan/</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_22" href="http://www.cnblogs.com/bvbook/" rel="nofollow">博文视点官方博客</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_23" href="http://www.cnblogs.com/tuyile006/" rel="nofollow">博友tuyile006</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_24" href="http://www.orchardproject.net/" rel="nofollow">开源CMS</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_25" href="http://nlog-project.org/home" rel="nofollow" target="_blank">日志组件nlog</a> </li>
+			
+				<li><a id="CatList_LinkList_6_Link_26" href="http://www.q.cc/dev/dotnet/" rel="nofollow" target="_blank">天新网</a> </li>
+			<li class="c_b_p_link_desc">软件开发资源网</li>
+				</ul>
+			
+	
+		<h3>Eclipse&amp;Java</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_7_Link_0" href="http://blog.csdn.net/davyxie/article/category/460474">davyxie的专栏</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_1" href="http://dev.eclipse.org/git/index_http.html" rel="nofollow" target="_blank">Eclipse Dev Resource</a> </li>
+			<li class="c_b_p_link_desc">Eclipse官方示例代码库</li>
+				<li><a id="CatList_LinkList_7_Link_2" href="http://www.ibm.com/developerworks/cn/eclipse/resources.html" rel="nofollow" target="_blank">Eclipse IDE project 资源中心</a> </li>
+			<li class="c_b_p_link_desc">IBM Eclipse IDE project 资源中心</li>
+				<li><a id="CatList_LinkList_7_Link_3" href="http://www.eclipse.org/downloads/" rel="nofollow">Eclipse ORG</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_4" href="http://max-server.myftp.org/trac/mp3m" rel="nofollow" target="_blank">Eclipse RCP MP3 Manager(SVN)</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_5" href="http://www.vogella.de/articles/EclipseRCP/article.html" rel="nofollow" target="_blank">Eclipse RCP Tutorial</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_6" href="http://javeye.iteye.com/category/39840" target="_blank">Eclipse RCP开发javeye博客</a> </li>
+			<li class="c_b_p_link_desc">Eclipse RCP实战经验</li>
+				<li><a id="CatList_LinkList_7_Link_7" href="http://www.blogjava.net/youxia/category/17374.html" target="_blank">Eclipse RCP开发系列专题</a> </li>
+			<li class="c_b_p_link_desc">blogjava上的Eclipse RCP开发系列专题</li>
+				<li><a id="CatList_LinkList_7_Link_8" href="http://www.eclipse.org/resources/" rel="nofollow" target="_blank">eclipse.org官方</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_9" href="http://blog.csdn.net/kevin99zhang/article/category/331614" target="_blank">EclipseRCP开发收集</a> </li>
+			<li class="c_b_p_link_desc">资源转载收集</li>
+				<li><a id="CatList_LinkList_7_Link_10" href="http://www.open-china.net/wiki/eclipse-rcp-%E7%BE%8E%E5%8C%96.html" rel="nofollow" target="_blank">eclipse-rcp-美化（开源中国）</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_11" href="http://eclipse.dzone.com/" rel="nofollow">eclipseZone</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_12" href="http://www.ibm.com/developerworks/cn/" rel="nofollow" target="_blank">IBM developerworks</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_13" href="http://blog.csdn.net/javamxj/article/category/53508">jar包外链</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_14" href="http://www.planeteclipse.org/planet/" rel="nofollow" target="_blank">planeteclipse</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_15" href="http://www.ralfebert.de/blog/" rel="nofollow" target="_blank">RCP 个人</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_16" href="http://www.richclient2.de/category/smart-client/eclipse/eclipse-platform/" target="_blank">RichClient2</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_17" href="http://358184482-qq-com.iteye.com/category/63376">swt/jface博客1</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_18" href="http://www.beansoft.biz/?cat=20&amp;paged=1" rel="nofollow" target="_blank">WebLogic 中文博客（著名）</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_19" href="http://www.cnblogs.com/bjzhanghao/category/26425.html" target="_blank">八进制</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_20" href="http://www.blogjava.net/hopeshared/category/5326.html" target="_blank">精彩的人生——java</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_21" href="http://www.mengyan.org/blog/" rel="nofollow" target="_blank">孟岩个人博客</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_22" href="http://www.vogella.de/code/code.html" rel="nofollow" target="_blank">实例代码</a> </li>
+			
+				<li><a id="CatList_LinkList_7_Link_23" href="http://358184482-qq-com.iteye.com/blog/569637" rel="nofollow" target="_blank">自定义RCP外观 </a> </li>
+			<li class="c_b_p_link_desc">自定义RCP外观</li>
+				</ul>
+			
+	
+		<h3>Flex 3D</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_8_Link_0" href="http://www.krpano.com/" rel="nofollow" target="_blank">krpano</a> </li>
+			<li class="c_b_p_link_desc">三维交互式网上全景浏览</li>
+				</ul>
+			
+	
+		<h3>Flex Web</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_9_Link_0" href="http://corfield.org/blog/index.cfm?" rel="nofollow">corfield</a> </li>
+			
+				<li><a id="CatList_LinkList_9_Link_1" href="http://www.cflex.net/" rel="nofollow">FLEX</a> </li>
+			
+				<li><a id="CatList_LinkList_9_Link_2" href="http://www.igorcosta.org/?p=231" rel="nofollow" target="_blank">Flex blog</a> </li>
+			
+				<li><a id="CatList_LinkList_9_Link_3" href="http://blog.flexexamples.com/" rel="nofollow" target="_blank">Flex Examples</a> </li>
+			<li class="c_b_p_link_desc">Just a bunch of Adobe Flex Examples</li>
+				<li><a id="CatList_LinkList_9_Link_4" href="http://www.fonts4free.net/" rel="nofollow" target="_blank">Flex 字体库</a> </li>
+			<li class="c_b_p_link_desc">Flex 字体库</li>
+				<li><a id="CatList_LinkList_9_Link_5" href="http://www.flex888.com/" rel="nofollow" target="_blank">Flex888</a> </li>
+			
+				<li><a id="CatList_LinkList_9_Link_6" href="http://degrafa.org/" rel="nofollow">http://degrafa.org/</a> </li>
+			
+				<li><a id="CatList_LinkList_9_Link_7" href="http://www.igorcosta.org/" rel="nofollow" target="_blank">Igor Costa</a> </li>
+			
+				<li><a id="CatList_LinkList_9_Link_8" href="http://www.riaforge.org/" rel="nofollow">riaforge</a> </li>
+			
+				<li><a id="CatList_LinkList_9_Link_9" href="http://stackoverflow.com/" rel="nofollow">stackoverflow（OpenID）</a> </li>
+			
+				<li><a id="CatList_LinkList_9_Link_10" href="http://www.cnblogs.com/taobataoma/category/115060.html">博客园Flex先驱1</a> </li>
+			
+				<li><a id="CatList_LinkList_9_Link_11" href="http://flextutorial.org/" rel="nofollow" target="_blank">外国Flex教程网</a> </li>
+			<li class="c_b_p_link_desc">很多好的FLEX 原创文章</li>
+				<li><a id="CatList_LinkList_9_Link_12" href="http://flextutorial.org/author/bryan/" rel="nofollow" target="_blank">外国Flex牛人1博客</a> </li>
+			<li class="c_b_p_link_desc">Flex好文章很多</li>
+				</ul>
+			
+	
+		<h3>GIS开发</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_10_Link_0" href="http://hi.baidu.com/tag/Arcgis%20Engine/feeds" rel="nofollow" target="_blank">ArcEngine开发资料1</a> </li>
+			<li class="c_b_p_link_desc">有些ArcEngine开发资料</li>
+				<li><a id="CatList_LinkList_10_Link_1" href="http://hi.baidu.com/tag/Arcgis%20Engine/feeds" rel="nofollow" target="_blank">ArcEngine开发资料1</a> </li>
+			<li class="c_b_p_link_desc">有些ArcEngine开发资料</li>
+				<li><a id="CatList_LinkList_10_Link_2" href="http://hi.baidu.com/tag/Arcgis%20Engine/feeds" rel="nofollow" target="_blank">ArcEngine开发资料1</a> </li>
+			<li class="c_b_p_link_desc">有些ArcEngine开发资料</li>
+				<li><a id="CatList_LinkList_10_Link_3" href="http://www.cnblogs.com/willwayer/category/180187.html">ArcEngine相关积累</a> </li>
+			<li class="c_b_p_link_desc">ArcEngine相关积累</li>
+				<li><a id="CatList_LinkList_10_Link_4" href="http://blog.sina.com.cn/s/blog_68e929210100npuq.html" rel="nofollow" target="_blank">ArcGIS 开发博客</a> </li>
+			<li class="c_b_p_link_desc">ArcGis开发</li>
+				<li><a id="CatList_LinkList_10_Link_5" href="http://www.cnblogs.com/flyingis/" rel="nofollow" target="_blank">Flyingis</a> </li>
+			
+				<li><a id="CatList_LinkList_10_Link_6" href="http://www.galdosinc.com/archives/746" rel="nofollow" target="_blank">GeoWeb</a> </li>
+			
+				<li><a id="CatList_LinkList_10_Link_7" href="http://www.gispark.com/" rel="nofollow">Gis Park网站</a> </li>
+			
+				<li><a id="CatList_LinkList_10_Link_8" href="http://www.thecarbonproject.com/" rel="nofollow" target="_blank">The Carbon Project</a> </li>
+			
+				<li><a id="CatList_LinkList_10_Link_9" href="http://hi.baidu.com/liongg/blog/index/13" rel="nofollow">好博客</a> </li>
+			
+				<li><a id="CatList_LinkList_10_Link_10" href="http://pengjh.blog.51cto.com/" rel="nofollow" target="_blank">小彭的博客</a> </li>
+			<li class="c_b_p_link_desc">同事小彭博客主攻GIS方面</li>
+				<li><a id="CatList_LinkList_10_Link_11" href="http://www.cnblogs.com/kisstome88/" rel="nofollow" target="_blank">智能GIS</a> </li>
+			
+				</ul>
+			
+	
+		<h3>ORACLE</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_11_Link_0" href="http://blog.csdn.net/jackpk/category/423662.aspx">jackpk数据库积累</a> </li>
+			
+				<li><a id="CatList_LinkList_11_Link_1" href="http://www.oracle.com/technology/global/cn/obe/sqldev_obe/plsql_debug/plsql_debug.htm" rel="nofollow">Oracle PL/SQL 使用指南</a> </li>
+			
+				<li><a id="CatList_LinkList_11_Link_2" href="http://hi.baidu.com/%C9%E1%B5%C30710/home" rel="nofollow" target="_blank">ORACLE牛人网站</a> </li>
+			
+				<li><a id="CatList_LinkList_11_Link_3" href="http://percywang.itpub.net/category/25150/40246" target="_blank">ORACLE数据库percywang</a> </li>
+			<li class="c_b_p_link_desc">ORACLE数据库方面的知识</li>
+				<li><a id="CatList_LinkList_11_Link_4" href="http://blog.csdn.net/hdhai9451/article/category/487991">Oracle资料收集</a> </li>
+			<li class="c_b_p_link_desc">Oracle资料收集</li>
+				<li><a id="CatList_LinkList_11_Link_5" href="http://space.itpub.net/6517/spacelist-blog-itemtypeid-50246" rel="nofollow" target="_blank">数据库与BI</a> </li>
+			<li class="c_b_p_link_desc">很多ORACLE数据库方面的文章</li>
+				</ul>
+			
+	
+		<h3>SVN地址</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_12_Link_0" href="http://svn.osgeo.org/geotools/branches/2.7.x/" rel="nofollow">Geotools SVN</a> </li>
+			<li class="c_b_p_link_desc">Geotools工程源代码</li>
+				</ul>
+			
+	
+		<h3>Web方面</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_13_Link_0" href="http://www.lnwest.com/program/" rel="nofollow">七月的海风</a> </li>
+			
+				</ul>
+			
+	
+		<h3>混淆与反编译</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_14_Link_0" href="http://ntcore.com/rebelnet.php" rel="nofollow" target="_blank">Rebel.NET </a> </li>
+			<li class="c_b_p_link_desc">Download Rebel.NET </li>
+				<li><a id="CatList_LinkList_14_Link_1" href="http://ntcore.com/" rel="nofollow" target="_blank">混淆器Phoenix Protector</a> </li>
+			<li class="c_b_p_link_desc">混淆器Phoenix Protector的博客，牛人！很多实用工具和文章！</li>
+				</ul>
+			
+	
+		<h3>开源GIS</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_15_Link_0" href="http://www.freegis.org/" rel="nofollow" target="_blank">FreeGIS</a> </li>
+			
+				<li><a id="CatList_LinkList_15_Link_1" href="http://fwtools.maptools.org/" rel="nofollow" target="_blank">FWtools</a> </li>
+			<li class="c_b_p_link_desc">FWTools: Open Source GIS Binary Kit for Windows and Linux</li>
+				<li><a id="CatList_LinkList_15_Link_2" href="http://geowebcache.org/trac" rel="nofollow" target="_blank">GeoWebCache</a> </li>
+			<li class="c_b_p_link_desc">GeoWebCache is a cache for WMS tiles implemented in Java</li>
+				<li><a id="CatList_LinkList_15_Link_3" href="http://geowebcache.org/trac" rel="nofollow" target="_blank">GeoWebCache</a> </li>
+			<li class="c_b_p_link_desc">GeoWebCache is a cache for WMS tiles implemented in Java</li>
+				<li><a id="CatList_LinkList_15_Link_4" href="http://www.grime.net/gistools/" rel="nofollow" target="_blank">GIS Tools</a> </li>
+			<li class="c_b_p_link_desc">大量GIS 工具</li>
+				<li><a id="CatList_LinkList_15_Link_5" href="http://udig.refractions.net/confluence/display/ADMIN/01+Git+Install" rel="nofollow" target="_blank">Udig 代码下载安装</a> </li>
+			<li class="c_b_p_link_desc">Udig开源桌面GIS软件</li>
+				<li><a id="CatList_LinkList_15_Link_6" href="http://www.vterrain.org/" rel="nofollow" target="_blank">VirtualEarthProject</a> </li>
+			<li class="c_b_p_link_desc">大量软件和数据资源</li>
+				<li><a id="CatList_LinkList_15_Link_7" href="http://blog.csdn.net/paul_xj/category/327946.aspx" target="_blank">WorldWind源码研究</a> </li>
+			
+				<li><a id="CatList_LinkList_15_Link_8" href="http://geoserver.org/display/GEOS/Welcome" rel="nofollow" target="_blank">开源GIS Server——GeoServer</a> </li>
+			<li class="c_b_p_link_desc">GeoServer is an open source software 
+server written in Java that allows users to share and edit geospatial 
+data. Designed for interoperability, it publishes data from any major 
+spatial data source using open standards.</li>
+				<li><a id="CatList_LinkList_15_Link_9" href="http://mapserver.org/" rel="nofollow" target="_blank">开源GIS Server——MapServer</a> </li>
+			<li class="c_b_p_link_desc">MapServer is an Open Source platform for publishing spatial data and interactive mapping applications to the web. </li>
+				<li><a id="CatList_LinkList_15_Link_10" href="https://mapguide.osgeo.org/" rel="nofollow" target="_blank">开源GIS——MapGuide Open Source</a> </li>
+			
+				<li><a id="CatList_LinkList_15_Link_11" href="http://www.postgresql.org/" rel="nofollow" target="_blank">开源gis空间数据库——PostgreSQL</a> </li>
+			
+				<li><a id="CatList_LinkList_15_Link_12" href="http://www.codeplex.com/SharpMap" rel="nofollow" target="_blank">开源GIS软件——SharpMap</a> </li>
+			
+				<li><a id="CatList_LinkList_15_Link_13" href="http://www.oschina.net/project/tag/78/gis" rel="nofollow" target="_blank">开源中国社区（GIS版块）</a> </li>
+			
+				<li><a id="CatList_LinkList_15_Link_14" href="http://blog.csdn.net/mach365/category/420008.aspx" target="_blank">小马看GIS</a> </li>
+			<li class="c_b_p_link_desc">GeoServer开发,GeoWebCache,UDig，OpenLayers</li>
+				</ul>
+			
+	
+		<h3>开源SharpMap</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_16_Link_0" href="http://www.gisdev.cn/" rel="nofollow">GISdev</a> </li>
+			
+				<li><a id="CatList_LinkList_16_Link_1" href="http://www.cnblogs.com/maweifeng/" rel="nofollow" target="_blank">Mars</a> </li>
+			
+				<li><a id="CatList_LinkList_16_Link_2" href="http://www.sharpgis.net/" rel="nofollow" target="_blank">SharpGIS</a> </li>
+			
+				<li><a id="CatList_LinkList_16_Link_3" href="http://www.codeplex.com/SharpMap" rel="nofollow" target="_blank">SharpMap</a> </li>
+			
+				<li><a id="CatList_LinkList_16_Link_4" href="http://blog.csdn.net/suen/category/277733.aspx" target="_blank">小粟</a> </li>
+			
+				</ul>
+			
+	
+		<h3>开源项目</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_17_Link_0" href="http://sourceforge.net/projects/itextsharp/files/" rel="nofollow" target="_blank">itextsharp</a> </li>
+			<li class="c_b_p_link_desc">制作和操作PDF</li>
+				<li><a id="CatList_LinkList_17_Link_1" href="http://www.janus-project.org/Home" rel="nofollow" target="_blank">Janus</a> </li>
+			<li class="c_b_p_link_desc">Janus is an enterprise-ready open-source multi-agent platform fully </li>
+				<li><a id="CatList_LinkList_17_Link_2" href="http://www.lighttpd.net/" rel="nofollow" target="_blank">lighttpd Web服务器</a> </li>
+			<li class="c_b_p_link_desc">lighttpd Web服务器</li>
+				<li><a id="CatList_LinkList_17_Link_3" href="http://www.p51labs.com/lightwindow" rel="nofollow" target="_blank">lightwindow</a> </li>
+			<li class="c_b_p_link_desc">JS弹出窗体</li>
+				<li><a id="CatList_LinkList_17_Link_4" href="http://www.pdfsharp.net/Default.aspx?AspxAutoDetectCookieSupport=1" rel="nofollow" target="_blank">PDFSharp</a> </li>
+			<li class="c_b_p_link_desc">PDF 的C#开源类库</li>
+				<li><a id="CatList_LinkList_17_Link_5" href="http://www.icsharpcode.net/OpenSource/SD/" rel="nofollow">开源的C#开发环境</a> </li>
+			
+				</ul>
+			
+	
+		<h3>开源资源汇总</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_18_Link_0" href="http://www.corkdump.com/" rel="nofollow" target="_blank">corkdump</a> </li>
+			<li class="c_b_p_link_desc">网站开发设计资源</li>
+				<li><a id="CatList_LinkList_18_Link_1" href="http://tomsondev.bestsolution.at/2009/07/02/e4-a-new-area-for-rcpria-applications/" rel="nofollow" target="_blank">E4 – A new area for RCP/RIA-Applications</a> </li>
+			
+				<li><a id="CatList_LinkList_18_Link_2" href="http://freecode.com/" rel="nofollow" target="_blank">freecode开源工程</a> </li>
+			
+				<li><a id="CatList_LinkList_18_Link_3" href="http://jexcelapi.sourceforge.net/" rel="nofollow">Java Excel API(jxl.jar)</a> </li>
+			<li class="c_b_p_link_desc">Java Excel API - A Java API to read, write, and modify Excel spreadsheets</li>
+				<li><a id="CatList_LinkList_18_Link_4" href="http://www.k024.com/os/index.htm" rel="nofollow" target="_blank">K024资源导航</a> </li>
+			<li class="c_b_p_link_desc">C#、AJAX、PHP资源大全</li>
+				<li><a id="CatList_LinkList_18_Link_5" href="http://php.opensourcecms.com/" rel="nofollow" target="_blank">opensourcecms.com</a> </li>
+			<li class="c_b_p_link_desc">PHP开源CMS资料</li>
+				<li><a id="CatList_LinkList_18_Link_6" href="http://hexapixel.com/projects/ribbon" rel="nofollow">SWT Ribbon</a> </li>
+			<li class="c_b_p_link_desc">rcp界面控件</li>
+				<li><a id="CatList_LinkList_18_Link_7" href="http://www.alvit.de/handbook/" rel="nofollow" target="_blank">Web Developer's Handbook</a> </li>
+			<li class="c_b_p_link_desc">Web Developer's Handbook</li>
+				<li><a id="CatList_LinkList_18_Link_8" href="http://blog.webdistortion.com/category/programming/">webdistortion</a> </li>
+			<li class="c_b_p_link_desc">webdistortion开发资源网站，介绍开源资源</li>
+				<li><a id="CatList_LinkList_18_Link_9" href="http://www.hrtsea.com/" rel="nofollow" target="_blank">心海e站 </a> </li>
+			<li class="c_b_p_link_desc">很多绿化汉化软件资源</li>
+				</ul>
+			
+	
+		<h3>软件站点</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_19_Link_0" href="http://www.soft711.com/" rel="nofollow" target="_blank">711软件站点</a> </li>
+			
+				<li><a id="CatList_LinkList_19_Link_1" href="http://www.jayxon.com/" rel="nofollow" target="_blank">jayxon破解软件</a> </li>
+			<li class="c_b_p_link_desc">优化绿色软件</li>
+				<li><a id="CatList_LinkList_19_Link_2" href="http://www.portableappc.com/" rel="nofollow" target="_blank">portableappc</a> </li>
+			<li class="c_b_p_link_desc">可携带绿色软件站点</li>
+				<li><a id="CatList_LinkList_19_Link_3" href="http://zd423.com/" rel="nofollow" target="_blank">zd423软件</a> </li>
+			
+				<li><a id="CatList_LinkList_19_Link_4" href="http://www.lxty-blog.com/" rel="nofollow" target="_blank">蓝天星宇软件</a> </li>
+			
+				<li><a id="CatList_LinkList_19_Link_5" href="http://softdao.com/" rel="nofollow" target="_blank">软件岛</a> </li>
+			
+				<li><a id="CatList_LinkList_19_Link_6" href="http://www.itopdog.cn/" rel="nofollow" target="_blank">软件盒子</a> </li>
+			
+				<li><a id="CatList_LinkList_19_Link_7" href="http://www.hrtsea.com/" rel="nofollow">心海驿站</a> </li>
+			<li class="c_b_p_link_desc">汉化破解工具</li>
+				<li><a id="CatList_LinkList_19_Link_8" href="http://www.iplaysoft.com/archives" rel="nofollow" target="_blank">异次元软件</a> </li>
+			
+				</ul>
+			
+	
+		<h3>微软</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_20_Link_0" href="http://www.microsoft.com/china/community/clubs/blogs23.mspx" rel="nofollow">微软</a> </li>
+			
+				<li><a id="CatList_LinkList_20_Link_1" href="http://www.cnblogs.com/shanyou/archive/2011/02/08/1950004.html">自动升级</a> </li>
+			
+				</ul>
+			
+	
+		<h3>项目管理方面</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_21_Link_0" href="http://www.umlonline.cn/html/index.html" rel="nofollow">UML在线设计</a> </li>
+			
+				<li><a id="CatList_LinkList_21_Link_1" href="http://www.cnblogs.com/downmoon/" rel="nofollow">很好的学习网站</a> </li>
+			<li class="c_b_p_link_desc">Windows Service</li>
+				</ul>
+			
+	</div><div id="sidebar_scorerank" class="sidebar-block">
+<h3>积分与排名</h3>
+<ul>
+	<li>
+		积分 -
+		293924
+	</li><li>
+		排名 -
+		399
+	</li>
+</ul>
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<h3 class="catListTitle">最新评论</h3>
+<div class="RecentComment" id="RecentComments">
+	<div id="RecentCommentsBlock"><ul>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/wuhenke/archive/2012/02/07/2341656.html#3319658">1. Re:sqlite第三方类库：FMDB使用（转载）</a></li>
+    <li class="recent_comment_body">太好了，学习了</li>
+    <li class="recent_comment_author">--大蕾蕾</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/wuhenke/archive/2011/03/04/1971151.html#3310733">2. Re:C#用GDAL/OGR库创建与写Shape文件(转载)</a></li>
+    <li class="recent_comment_body">拷贝过去debug目录下，还是有问题啊</li>
+    <li class="recent_comment_author">--oolili</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/wuhenke/archive/2010/04/16/1713946.html#3305261">3. Re:操作PDF文档功能的相关开源项目探索——iTextSharp 和PDFBox</a></li>
+    <li class="recent_comment_body">PDFbox中文乱码</li>
+    <li class="recent_comment_author">--*^__^*</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/wuhenke/archive/2010/05/17/1737781.html#3289311">4. Re:使用blowery.Web.HttpCompress.dll对aspx压缩</a></li>
+    <li class="recent_comment_body">沉静时的思考——抵制领导带着谎言的关心</li>
+    <li class="recent_comment_author">--咸鱼翻身</li>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/wuhenke/archive/2012/09/27/2706048.html#3279919">5. Re:解决自动禁用Flash打开摄像头询问</a></li>
+    <li class="recent_comment_body">这个可以把摄像头默认的询问设置成允许吗</li>
+    <li class="recent_comment_author">--断点.</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<h3 class="catListTitle">阅读排行榜</h3>
+<div class="RecentComment" id="TopViewPosts"> 
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/wuhenke/archive/2010/08/11/1797307.html">1. 数据库设计原则（转载）(64193)</a></li><li><a href="http://www.cnblogs.com/wuhenke/archive/2012/02/07/2341656.html">2. sqlite第三方类库：FMDB使用（转载）(57689)</a></li><li><a href="http://www.cnblogs.com/wuhenke/archive/2010/09/30/1839424.html">3. php webservice实例(转载)(45715)</a></li><li><a href="http://www.cnblogs.com/wuhenke/archive/2010/07/28/1786954.html">4. SQL复制数据表及表结构(43361)</a></li><li><a href="http://www.cnblogs.com/wuhenke/archive/2011/10/30/2229126.html">5. JAVA使用SQLite——sqlitejdbc(35869)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<h3 class="catListTitle">评论排行榜</h3>
+<div class="RecentComment" id="TopCommentsPosts">
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/wuhenke/archive/2010/03/16/1686885.html">1. FlexPaper_1.2.1.swc——Flex在线显示PDF文档（使用FlexPaper）感悟(23)</a></li><li><a href="http://www.cnblogs.com/wuhenke/archive/2010/10/25/1860809.html">2. Oracle中BLOB字段存储4GB以下视频数据的方法(14)</a></li><li><a href="http://www.cnblogs.com/wuhenke/archive/2009/12/11/1621459.html">3. WorldWind学习系列三：简单功能分析——截屏功能和“关于”窗体分析(11)</a></li><li><a href="http://www.cnblogs.com/wuhenke/archive/2009/12/09/1620545.html">4. WorldWind学习系列一：顺利起航篇(11)</a></li><li><a href="http://www.cnblogs.com/wuhenke/archive/2009/11/22/1607967.html">5. PDF在线阅读任务（完成总结篇）(10)</a></li></ul></div>
+</div></div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/wuhenke/archive/2010/08/11/1797307.html">1. 数据库设计原则（转载）(15)</a></li><li><a href="http://www.cnblogs.com/wuhenke/archive/2010/06/19/1760980.html">2. 屏幕录像功能技术探索及分享(7)</a></li><li><a href="http://www.cnblogs.com/wuhenke/archive/2010/09/30/1839424.html">3. php webservice实例(转载)(5)</a></li><li><a href="http://www.cnblogs.com/wuhenke/archive/2010/10/25/1860809.html">4. Oracle中BLOB字段存储4GB以下视频数据的方法(4)</a></li><li><a href="http://www.cnblogs.com/wuhenke/archive/2012/12/24/2830530.html">5. 关于Async与Await的FAQ(4)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+	
+</div>
+<div id="main">
+	
+<div id="post_detail">
+<div class="post">
+	<div class="postTitle">
+		<a id="cb_post_title_url" href="http://www.cnblogs.com/wuhenke/archive/2010/08/11/1797307.html">数据库设计原则（转载）</a>
+	</div>
+	
+	<div class="postText">
+		<div id="cnblogs_post_body"><p><strong>1. 原始单据与实体之间的关系</strong> <br>　　可以是一对一、一对多、多对多的关系。在一般情况下，它们是一对一的关系：即一张原始单据对应且只对应一个实体。 <br>在特殊情况下，它们可能是一对多或多对一的关系，即一张原始单证对应多个实体，或多张原始单证对应一个实体。 <br>这里的实体可以理解为基本表。明确这种对应关系后，对我们设计录入界面大有好处。 <br><br>　　〖例1〗：一份员工履历资料，在人力资源信息系统中，就对应三个基本表：员工基本情况表、社会关系表、工作简历表。 <br>　　　　　　&nbsp; 这就是“一张原始单证对应多个实体”的典型例子。 <br><br><strong>2. 主键与外键</strong> <br>　　一般而言，一个实体不能既无主键又无外键。在E—R 图中, 处于叶子部位的实体, 可以定义主键，也可以不定义主键 <br>　　(因为它无子孙), 但必须要有外键(因为它有父亲)。 <br><br>　　主键与外键的设计，在全局数据库的设计中，占有重要地位。当全局数据库的设计完成以后，有个美国数据库设计专 <br>　　家说：“键，到处都是键，除了键之外，什么也没有”，这就是他的数据库设计经验之谈，也反映了他对信息系统核 <br>　　心(数据模型)的高度抽象思想。因为：主键是实体的高度抽象，主键与外键的配对，表示实体之间的连接。 <br><br><strong>3. 基本表的性质 <br></strong>　　基本表与中间表、临时表不同，因为它具有如下四个特性： <br>　　 (1) 原子性。基本表中的字段是不可再分解的。 <br>　　 (2) 原始性。基本表中的记录是原始数据（基础数据）的记录。 <br>　　 (3) 演绎性。由基本表与代码表中的数据，可以派生出所有的输出数据。 <br>　　 (4) 稳定性。基本表的结构是相对稳定的，表中的记录是要长期保存的。 <br>　　理解基本表的性质后，在设计数据库时，就能将基本表与中间表、临时表区分开来。 <br><br><strong>4. 范式标准 <br></strong>　　基本表及其字段之间的关系, 应尽量满足第三范式。但是，满足第三范式的数据库设计，往往不是最好的设计。 <br>　　为了提高数据库的运行效率，常常需要降低范式标准：适当增加冗余，达到以空间换时间的目的。 <br><br>　　〖例2〗：有一张存放商品的基本表，如表1所示。“金额”这个字段的存在，表明该表的设计不满足第三范式， <br>　　因为“金额”可以由“单价”乘以“数量”得到，说明“金额”是冗余字段。但是，增加“金额”这个冗余字段， <br>　　可以提高查询统计的速度，这就是以空间换时间的作法。 <br>　　在Rose 2002中，规定列有两种类型：数据列和计算列。“金额”这样的列被称为“计算列”，而“单价”和 <br>　　“数量”这样的列被称为“数据列”。 <br><br>　　表1 商品表的表结构 <br>　　商品名称 商品型号 单价 数量 金额 <br>　　电视机 29吋 2,500 40 100,000 <br>　　 <br><strong>5. 通俗地理解三个范式</strong> <br>　　通俗地理解三个范式，对于数据库设计大有好处。在数据库设计中，为了更好地应用三个范式，就必须通俗地理解 <br>　　三个范式(通俗地理解是够用的理解，并不是最科学最准确的理解)： <br>　　第一范式：1NF是对属性的原子性约束，要求属性具有原子性，不可再分解； <br>　　第二范式：2NF是对记录的惟一性约束，要求记录有惟一标识，即实体的惟一性； <br>　　第三范式：3NF是对字段冗余性的约束，即任何字段不能由其他字段派生出来，它要求字段没有冗余。 <br><br>　　没有冗余的数据库设计可以做到。但是，没有冗余的数据库未必是最好的数据库，有时为了提高运行效率，就必须降 <br>　　低范式标准，适当保留冗余数据。具体做法是：在概念数据模型设计时遵守第三范式，降低范式标准的工作放到物理 <br>　　数据模型设计时考虑。降低范式就是增加字段，允许冗余。 <br><br><strong>6. 要善于识别与正确处理多对多的关系 <br></strong>　　若两个实体之间存在多对多的关系，则应消除这种关系。消除的办法是，在两者之间增加第三个实体。这样，原来一 <br>　　个多对多的关系，现在变为两个一对多的关系。要将原来两个实体的属性合理地分配到三个实体中去。这里的第三个 <br>　　实体，实质上是一个较复杂的关系，它对应一张基本表。一般来讲，数据库设计工具不能识别多对多的关系，但能处 <br>　　理多对多的关系。 <br><br>　　〖例3〗：在“图书馆信息系统”中，“图书”是一个实体，“读者”也是一个实体。这两个实体之间的关系，是一 <br>　　个典型的多对多关系：一本图书在不同时间可以被多个读者借阅，一个读者又可以借多本图书。为此，要在二者之 <br>　　间增加第三个实体，该实体取名为“借还书”，它的属性为：借还时间、借还标志(0表示借书，1表示还书)，另外， <br>　　它还应该有两个外键(“图书”的主键，“读者”的主键)，使它能与“图书”和“读者”连接。 <br><br><strong>7. 主键PK的取值方法 <br></strong>　　 PK是供程序员使用的表间连接工具，可以是一无物理意义的数字串, 由程序自动加1来实现。也可以是有物理意义 <br>　　的字段名或字段名的组合。不过前者比后者好。当PK是字段名的组合时，建议字段的个数不要太多，多了不但索引 <br>　　占用空间大，而且速度也慢。 <br><br><strong>8. 正确认识数据冗余</strong> <br>　　主键与外键在多表中的重复出现, 不属于数据冗余，这个概念必须清楚，事实上有许多人还不清楚。非键字段的重 <br>　　复出现, 才是数据冗余！而且是一种低级冗余，即重复性的冗余。高级冗余不是字段的重复出现，而是字段的派生出现。 <br><br>　　〖例4〗：商品中的“单价、数量、金额”三个字段，“金额”就是由“单价”乘以“数量”派生出来的，它就是冗余， <br>　　而且是一种高级冗余。冗余的目的是为了提高处理速度。只有低级冗余才会增加数据的不一致性，因为同一数据，可 <br>　　能从不同时间、地点、角色上多次录入。因此，我们提倡高级冗余(派生性冗余)，反对低级冗余(重复性冗余)。 <br><br><strong>9. E--R图没有标准答案</strong> <br>　　信息系统的E--R图没有标准答案，因为它的设计与画法不是惟一的，只要它覆盖了系统需求的业务范围和功能内容， <br>　　就是可行的。反之要修改E--R图。尽管它没有惟一的标准答案，并不意味着可以随意设计。好的E—R图的标准是： <br>　　结构清晰、关联简洁、实体个数适中、属性分配合理、没有低级冗余。 <br><br><strong>10 . 视图技术在数据库设计中很有用 <br></strong>　　与基本表、代码表、中间表不同，视图是一种虚表，它依赖数据源的实表而存在。视图是供程序员使用数据库的 <br>　　一个窗口，是基表数据综合的一种形式, 是数据处理的一种方法，是用户数据保密的一种手段。为了进行复杂处理、 <br>　　提高运算速度和节省存储空间, 视图的定义深度一般不得超过三层。 若三层视图仍不够用, 则应在视图上定义临时表, <br>　　 在临时表上再定义视图。这样反复交迭定义, 视图的深度就不受限制了。 <br><br>　　对于某些与国家政治、经济、技术、军事和安全利益有关的信息系统，视图的作用更加重要。这些系统的基本表完 <br>　　成物理设计之后，立即在基本表上建立第一层视图，这层视图的个数和结构，与基本表的个数和结构是完全相同。 <br>　　并且规定，所有的程序员，一律只准在视图上操作。只有数据库管理员，带着多个人员共同掌握的“安全钥匙”， <br>　　才能直接在基本表上操作。请读者想想：这是为什么？ <br><br><strong>11. 中间表、报表和临时表</strong> <br>　　中间表是存放统计数据的表，它是为数据仓库、输出报表或查询结果而设计的，有时它没有主键与外键(数据仓 <br>　　库除外)。临时表是程序员个人设计的，存放临时记录，为个人所用。基表和中间表由DBA维护，临时表由程序员 <br>　　自己用程序自动维护。 <br><br><strong>12. 完整性约束表现在三个方面 <br></strong>　　域的完整性：用Check来实现约束，在数据库设计工具中，对字段的取值范围进行定义时，有一个Check按钮，通 <br>　　过它定义字段的值城。 <br>　　参照完整性：用PK、FK、表级触发器来实现。 <br>　　用户定义完整性：它是一些业务规则，用存储过程和触发器来实现。 <br><br><strong>13. 防止数据库设计打补丁的方法是“三少原则” <br></strong>　　 (1) 一个数据库中表的个数越少越好。只有表的个数少了，才能说明系统的E--R图少而精，去掉了重复的多余的 <br>　　　　实体，形成了对客观世界的高度抽象，进行了系统的数据集成，防止了打补丁式的设计； <br><br>　　 (2) 一个表中组合主键的字段个数越少越好。因为主键的作用，一是建主键索引，二是做为子表的外键，所以组 <br>　　　　合主键的字段个数少了，不仅节省了运行时间，而且节省了索引存储空间； <br><br>　　 (3) 一个表中的字段个数越少越好。只有字段的个数少了，才能说明在系统中不存在数据重复，且很少有数据冗 <br>　　　　余，更重要的是督促读者学会“列变行”，这样就防止了将子表中的字段拉入到主表中去，在主表中留下许 <br>　　　　多空余的字段。所谓“列变行”，就是将主表中的一部分内容拉出去，另外单独建一个子表。这个方法很简 <br>　　　　单，有的人就是不习惯、不采纳、不执行。 <br><br>　　数据库设计的实用原则是：在数据冗余和处理速度之间找到合适的平衡点。“三少”是一个整体概念，综合观点， <br>　　不能孤立某一个原则。该原则是相对的，不是绝对的。“三多”原则肯定是错误的。试想：若覆盖系统同样的功 <br>　　能，一百个实体(共一千个属性) 的E--R图，肯定比二百个实体(共二千个属性) 的E--R图，要好得多。 <br><br>　　提倡“三少”原则，是叫读者学会利用数据库设计技术进行系统的数据集成。数据集成的步骤是将文件系统集成 <br>　　为应用数据库，将应用数据库集成为主题数据库，将主题数据库集成为全局综合数据库。集成的程度越高，数据 <br>　　共享性就越强，信息孤岛现象就越少，整个企业信息系统的全局E—R图中实体的个数、主键的个数、属性的个数 <br>　　就会越少。 <br><br>　　提倡“三少”原则的目的，是防止读者利用打补丁技术，不断地对数据库进行增删改，使企业数据库变成了随意 <br>　　设计数据库表的“垃圾堆”，或数据库表的“大杂院”，最后造成数据库中的基本表、代码表、中间表、临时表 <br>　　杂乱无章，不计其数，导致企事业单位的信息系统无法维护而瘫痪。 <br><br>　　 “三多”原则任何人都可以做到，该原则是“打补丁方法”设计数据库的歪理学说。“三少”原则是少而精的 <br>　　原则，它要求有较高的数据库设计技巧与艺术，不是任何人都能做到的，因为该原则是杜绝用“打补丁方法” <br>　　设计数据库的理论依据。 <br><br><strong>14. 提高数据库运行效率的办法</strong> <br>　　在给定的系统硬件和系统软件条件下，提高数据库系统的运行效率的办法是： <br>　　 (1) 在数据库物理设计时，降低范式，增加冗余, 少用触发器, 多用存储过程。 <br>　　 (2) 当计算非常复杂、而且记录条数非常巨大时(例如一千万条)，复杂计算要先在数据库外面，以文件系统方 <br>　　　　式用C++语言计算处理完成之后，最后才入库追加到表中去。这是电信计费系统设计的经验。 <br>　　 (3) 发现某个表的记录太多，例如超过一千万条，则要对该表进行水平分割。水平分割的做法是，以该表主键 <br>　　　　PK的某个值为界线，将该表的记录水平分割为两个表。若发现某个表的字段太多，例如超过八十个，则 <br>　　　　垂直分割该表，将原来的一个表分解为两个表。 <br>　　 (4) 对数据库管理系统DBMS进行系统优化，即优化各种系统参数，如缓冲区个数。 <br>　　 (5) 在使用面向数据的SQL语言进行程序设计时，尽量采取优化算法。 <br>　　　　总之，要提高数据库的运行效率，必须从数据库系统级优化、数据库设计级优化、程序实现级优化，这三 <br>　　　　个层次上同时下功夫。 <br><br>　　上述十四个技巧，是许多人在大量的数据库分析与设计实践中，逐步总结出来的。对于这些经验的运用，读者不能生帮硬套，死记硬背，而要消化理解，实事求是，灵活掌握。并逐步做到：在应用中发展，在发展中应用。</p>
+<p>转载自：<a href="http://www.javaeye.com/topic/281611">http://www.javaeye.com/topic/281611</a></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/wuhenke/category/209160.html">每日所得</a>, <a href="http://www.cnblogs.com/wuhenke/category/255156.html">数据库</a></div>
+<div id="EntryTag">标签: <a href="http://www.cnblogs.com/wuhenke/tag/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></div>
+<div id="blog_post_info"><div id="green_channel">
+<a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(1797307,cb_blogId,1);green_channel_success(this,'谢谢推荐！');">好文要顶</a>
+<a id="green_channel_follow" onclick="c_follow();" href="javascript:void(0);">关注我</a>
+<a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a><a id="green_channel_contact" href="http://msg.cnblogs.com/send/%E6%97%A0%E7%97%95%E5%AE%A2" target="_blank">联系我</a>
+<a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89%20-%20%E6%97%A0%E7%97%95%E5%AE%A2%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_weibo_24.png" alt=""></a>
+<a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89%20-%20%E6%97%A0%E7%97%95%E5%AE%A2%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+<div id="author_profile_info" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/wuhenke/" target="_blank"><img src="%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89%20-%20%E6%97%A0%E7%97%95%E5%AE%A2%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/sample_face.gif" class="author_avatar" alt=""></a>
+<div id="author_profile_detail" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/wuhenke/">无痕客</a><br>
+<a href="http://home.cnblogs.com/u/wuhenke/followees">关注 - 7</a><br>
+<a href="http://home.cnblogs.com/u/wuhenke/followers">粉丝 - 237</a>
+</div>
+</div>
+<div class="clear"></div>
+<div id="author_profile_honor"></div>
+<div id="author_profile_follow">
+    <a href="javascript:void(0);" onclick="c_follow();return false;">+加关注</a>
+</div>
+</div>
+<div id="div_digg">										
+    <div class="diggit" onclick="votePost(1797307,'Digg')">
+        <span class="diggnum" id="digg_count">15</span>
+    </div>
+	<div class="buryit" onclick="votePost(1797307,'Bury')"> 
+		<span class="burynum" id="bury_count">0</span>
+	</div>
+	<div class="clear"></div>	
+	<div class="diggword" id="digg_tips">
+    (请您对文章做出评价)
+    </div>	
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/wuhenke/archive/2010/08/11/1797304.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/wuhenke/archive/2010/08/11/1797304.html" title="发布于2010-08-11 14:36">SQL Server 返回插入记录的自增编号（转）</a><br><a href="http://www.cnblogs.com/wuhenke/archive/2010/08/13/1799005.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/wuhenke/archive/2010/08/13/1799005.html" title="发布于2010-08-13 14:40">Introduction to MrSID</a><br></div>
+</div>
+
+
+	</div>
+	
+	<div class="postfoot">
+		posted on <span id="post-date">2010-08-11 14:39</span> <a href="http://www.cnblogs.com/wuhenke/">无痕客</a> 阅读(<span id="post_view_count">64193</span>) 评论(<span id="post_comment_count">8</span>)  <a href="http://i.cnblogs.com/EditPosts.aspx?postid=1797307" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(1797307);return false;">收藏</a>
+	</div>
+</div>
+<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=60258,cb_entryId=1797307,cb_blogApp=currentBlogApp,cb_blogUserGuid='f4070484-8a93-de11-ba8f-001cf0cd104b',cb_entryCreatedDate='2010/8/11 14:39:00';loadViewCount(cb_entryId);</script>
+
+</div><a name="!comments"></a><div id="blog-comments-placeholder"><div id="comments_pager_top"></div>
+<a name="comments"></a>
+<br>
+<div id="comments">
+<h3>评论</h3>
+
+
+		<div class="post">			
+			<div class="postTitle">
+				<a href="#1967370" class="layer">#1楼</a><a name="1967370" id="comment_anchor_1967370"></a>
+					<span>
+						 <span class="comment_date">2010-11-23 18:49</span>
+					</span>
+				<a id="a_comment_author_1967370" href="http://www.cnblogs.com/reflection/" target="_blank">hopeone</a> <a href="http://msg.cnblogs.com/send/hopeone" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_1967370" class="blog_comment_body">很实用！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(1967370,'Digg',this)">支持(1)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(1967370,'Bury',this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="#2613228" class="layer">#2楼</a><a name="2613228" id="comment_anchor_2613228"></a>
+					<span>
+						 <span class="comment_date">2013-02-03 01:32</span>
+					</span>
+				<a id="a_comment_author_2613228" href="http://home.cnblogs.com/u/257478/" target="_blank">Techdong</a> <a href="http://msg.cnblogs.com/send/Techdong" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2613228" class="blog_comment_body">非常有用</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2613228,'Digg',this)">支持(1)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2613228,'Bury',this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="#2806513" class="layer">#3楼</a><a name="2806513" id="comment_anchor_2806513"></a>
+					<span>
+						 <span class="comment_date">2013-10-31 16:36</span>
+					</span>
+				<a id="a_comment_author_2806513" href="http://home.cnblogs.com/u/573364/" target="_blank">codefans_fky</a> <a href="http://msg.cnblogs.com/send/codefans_fky" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2806513" class="blog_comment_body">good</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2806513,'Digg',this)">支持(1)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2806513,'Bury',this)">反对(1)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="#2924567" class="layer">#4楼</a><a name="2924567" id="comment_anchor_2924567"></a>
+					<span>
+						 <span class="comment_date">2014-04-24 14:47</span>
+					</span>
+				<a id="a_comment_author_2924567" href="http://www.cnblogs.com/duoduo0605/" target="_blank">重新开始js</a> <a href="http://msg.cnblogs.com/send/%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8Bjs" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_2924567" class="blog_comment_body">nice</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(2924567,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(2924567,'Bury',this)">反对(1)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="#3108225" class="layer">#5楼</a><a name="3108225" id="comment_anchor_3108225"></a>
+					<span>
+						 <span class="comment_date">2015-01-16 14:34</span>
+					</span>
+				<a id="a_comment_author_3108225" href="http://home.cnblogs.com/u/657357/" target="_blank">killdragon</a> <a href="http://msg.cnblogs.com/send/killdragon" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3108225" class="blog_comment_body">mark</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3108225,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3108225,'Bury',this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="#3136100" class="layer">#6楼</a><a name="3136100" id="comment_anchor_3136100"></a>
+					<span>
+						 <span class="comment_date">2015-03-06 00:01</span>
+					</span>
+				<a id="a_comment_author_3136100" href="http://home.cnblogs.com/u/720565/" target="_blank">elson.zeng</a> <a href="http://msg.cnblogs.com/send/elson.zeng" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3136100" class="blog_comment_body">很好，谢谢</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3136100,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3136100,'Bury',this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="#3193057" class="layer">#7楼</a><a name="3193057" id="comment_anchor_3193057"></a>
+					<span>
+						 <span class="comment_date">2015-05-26 03:12</span>
+					</span>
+				<a id="a_comment_author_3193057" href="http://www.cnblogs.com/hhh5460/" target="_blank">罗兵</a> <a href="http://msg.cnblogs.com/send/%E7%BD%97%E5%85%B5" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3193057" class="blog_comment_body">学习了！</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3193057,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3193057,'Bury',this)">反对(0)</a></div><span id="comment_3193057_avatar" style="display:none;">http://pic.cnblogs.com/face/709432/20150122201055.png</span>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+		<div class="post">			
+			<div class="postTitle">
+				<a href="#3277731" class="layer">#8楼</a><a name="3277731" id="comment_anchor_3277731"></a><span id="comment-maxId" style="display:none;">3277731</span><span id="comment-maxDate" style="display:none;">2015/10/1 22:30:36</span>
+					<span>
+						 <span class="comment_date">2015-10-01 22:30</span>
+					</span>
+				<a id="a_comment_author_3277731" href="http://www.cnblogs.com/qk0923/" target="_blank">victor_chang</a> <a href="http://msg.cnblogs.com/send/victor_chang" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+			</div>
+			<div class="postText">
+				<div id="comment_body_3277731" class="blog_comment_body">受益匪浅</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3277731,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3277731,'Bury',this)">反对(0)</a></div>
+			</div>
+            <div class="commentOpt">
+			&nbsp;&nbsp;<span class="comment_actions"></span>
+            </div>
+		</div>
+		<br>
+	
+</div><div id="comments_pager_bottom"></div></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login('commentform');">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    fixPostBodyFormat();
+</script>
+<div id="google_ad_c1" class="c_ad_block"></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/534419/" target="_blank">苹果官方给iPhone做了个充电保护套 售价848元</a><br> ·  <a href="http://news.cnblogs.com/n/534418/" target="_blank">跨界表演有风险，百事手机P1众筹宣告失败</a><br> ·  <a href="http://news.cnblogs.com/n/534416/" target="_blank">阿里巴巴新增四名合伙人 俞永福和郑俊芳加入</a><br> ·  <a href="http://news.cnblogs.com/n/534415/" target="_blank">验证码让人抓狂？其实奇葩的不止12306</a><br> ·  <a href="http://news.cnblogs.com/n/534414/" target="_blank">Visual Studio Update 1 为Android项目加入Java支持等功能</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="google_ad_c2" class="c_ad_block"></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/533407/" target="_blank">程序员的思考：分享即提高</a><br> ·  <a href="http://kb.cnblogs.com/page/527814/" target="_blank">从涂鸦到发布——理解API的设计过程</a><br> ·  <a href="http://kb.cnblogs.com/page/531834/" target="_blank">好的架构是进化来的，不是设计来的</a><br> ·  <a href="http://kb.cnblogs.com/page/532236/" target="_blank">被误解的MVC和被神化的MVVM</a><br> ·  <a href="http://kb.cnblogs.com/page/530046/" target="_blank">再谈设计和编码</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+</div>
+<div class="footer">
+
+<p id="footer">
+	Powered by: 
+	<br>
+	
+	<a id="Footer1_Hyperlink3" name="Hyperlink1" href="http://www.cnblogs.com/" style="font-family:Verdana;font-size:12px;">博客园</a>
+	<br>
+	Copyright © 无痕客
+</p>
+</div>
+
+
+<a style="display: none; height: 18px; width: 18px; position: fixed; z-index: 2147483647; font: bold 12px/25px Arial,sans-serif; text-decoration: none; color: rgba(62, 87, 6, 0.53); background: transparent url(&quot;data:image/gif;base64,R0lGODlhGAAYAPf/AHvPYG7KUK7ind/z2FXBM6Lm+/X8/8rw/cztwpHWe1jDSljR+fD57MDu/b/nsun5/j7K+FXQ+UnN+VPEYnjOXVHP+VnCOEHFsV3S+nXNWkHI1GrITK7p/LrmrFjDRU7EdEHK8aLdkYnf+/n+/1bDUjPG7T3FvonUcsLptjnF0nvb+ynE+N32/jbI+ELL+V7EPtXwzfn9+WfHSDbG3lDEazLG8TTH+FTEXDzFxkbL6E3O+UHFq1nIgrrp12zX+jDG9mbV+jXG4vz+/IzVemjISu346ZzbiIXTbVzDPEvEilnDQWrW+uf24/z+/+76/8XqueH3/obd++r35oLRaOH024Hd+0fElEDK+WXGRdLvyff89nfZ+jvFydvy1LLq/EbM+ZbZg3DKUtLy/kbFnP7+/9v1/vL7/6jn/GTHRl3EPLHjojbG6DPG6uP13S7G+ETFoSzF+HPY+lfDTtn0/mzX81nEU1jCNjjI+JnahMjrvTvJ89b0/nHLVErEhr3t/T7I4jjF2e756n7QZFvS9ez6/vX785rj+E3FgFXGc7bkp0PHxmzJTrbr/fL68CXD+GTITbrs/WLU+kTM+WDFQPn9943Vdpnj/JTh+2nJUTnFz53k/K7iojzJ+DTH7lrERrfkqWbHR06+K3PMV1/T+oDRZ1/EP0vEgnfPc3TNYmLFQmnKWVnGY1vFWk/Ip3va977t+a/p+lLALyHC917LmFDGhDLG+FzDOzrJ+DHG+F7EPTvJ+GPGQzPH+DLH+Of4/mPGRC7F+MDosz3K+OT4/uX135/ci5/cjFrDPPv++oPSam7X+mHHWY3f++/57EjIs+z6/avo/ITd9p3j+Yne9mnQsETL94zWhR/B91zR6GLHUkvJvXHX9EjM8GfV9TbH9VXP74PScYbTeE3IqF7FSv7//mPJcUfGq2XKavL8/5zk+3HNa6vn7kTHu0fHsbHipLPkpVXKqGrJVq3o95zbjUjEkIjTb4vUc+/7/rnr/S/G+Oz46ovd3VvDOjDG+P///////yH/C05FVFNDQVBFMi4wAwEAAAAh+QQJCgD/ACwAAAAAGAAYAAAI/wD/CRw4EIKkFjUA1SDIsOG/Xv364YrYz1u/Hw4Z6qLIsePCjLUi8orEYc69e3M4ROIVEWPDiRFdVDlgwJ8/AwequKDocuAtihj22Bw6dA8Gih8FRryy4AHRp/4eLKA4MGQ/ZhygQuWgi6VLimWaaH3aJMLGfv92RjQzFioGCBJbnO03rO3TBZwirmlBUVMDuzZZSOB7kXA/CUBGAI7C8ceXjlsItYUEl+IaSR37LTjjS+uSjor+Ze5no4KPJQVq+vPyk6NAq6P7RbFZJkLHnrH7jYLirwyQzAN9te6ow88IRlM9MoQZsdeVOGe23MnckyDsWhB0qL2d8d9ZXLpcDBJH2r1q7OrlBUJwYeNHkBLdAwIAIfkECQoA/wAsAAAAABgAGAAACP8A/wkcOBCCpBZsAF0QQ7Chw179+uHqVyNiPxMPHDbUZdFiRYtBJmgUWCsir0gc5ty7J0aELjj9ZtzQODGiiyoHDPjz5+RMhXz5LnpoeMsihj07k+584ANYRFO7CEa8suCB0qsPIjhNoWBgyX7MOFwdW6DXRBpIBFos02Ts1WFfeOV7w++fC4tm3GLVYSMfjrocIw7Tq9SXhL5B+C1qYVFTA8I7D0Dola8EPzSMI0oAMoIwORUw+1nG8qVjvy2E9DaAELRf4l+STPdbcMbX2Cqh+/0N8E92PxsVfCyBRc6fmC+56ZL0bdGQvxGgW/dDO5B5v1FWC7TIzXWgr6KydfhBMWBJWO5+pl40rBmx15U4Z7bJ7WjCk8av/WpB0OHio0WZI/0TGC66uHCLf66JFOByHlmE0YINQeCCDSXMsNBIAQEAIfkECQoA/wAsAAAAABgAGAAACP8A/wkcOBCCpBZBMtFqQrChw179+uHqVyMiFwUOHeqKyJEix0we0mQUWCsir0gc5tx7BikCnH47+NnKODGiiyoHDPjzN0cZrnw/aMhseIsjhj07k/prUmVFPhP8+O0iGPHKggdKlT6oAKfTjagDS/ZjxiFrVmYvk0zih0QgxzJNzCo90KKfNiJgXXA0I3cup3waAoDdGHFY36QH7vRbsyjqoroRNTU47M9Lr3wlsERFA7mfBCAjDitb0a9EVH5YvnTst4WQ3AOcgPULcvqXpNX9FpzxldWS036ZTgf4h7ufjQo+lrzydw8D6X4XTpMszlFe5V6y+/WJ2tYt9VH3fC1ReNmPzVd+A30Vxa3DD6E45PtB5feiYc2Iva7EOdMte7+gQzkkVj+1QKCDCxVxFNNMIxGGiy4u3JIgcAqINFJYHSV40YUZQeCCDWykcAhDGQUEACH5BAUKAP8ALAAAAAAYABgAAAj/AP8JHDgQgqQWMy6MI8iw4b9e/frh6leiXwoPSBwy1BWxI8WIF/jxS6PxX62IvCJxmHPvQRQ3+WjY4mfL4cSILqocMOCPTIEWwNiJpMnwVkcMe/wpXWppha5TQ3cRjHhlwYOlWAnpgLMOwNCBJ/sx44C1rIoVzIL9KsUv47+OZZqUxXoGjg8hFIiI/Oeio5m5WDnAieBPUIC9HCMOA7wUGpwv/gAsErmoRUdNDRj7u7QCAjE+WESisRxRApARgMlF6lxsKD8sXzz220Jo7p5bcECAcv1Lkux+C874wuplxY8/rvkFePvbRgUfSw74U+GoH47kAsP+jvjqngQ4/d64V3bLfPuoGAVW5Ot3yPVAX0Z/6/Cz5wt4NnKGvmB4M2KvK3GcMQh4/VxwjEg1NaRdLRDo4EJFEdGAYEmJ4aKLC7dAGNJIJYHlUUUXkddhQS7YEMQOCpQUEAAh+QQFCgD/ACwMAAAABgAYAAAIdQCt5Jr0r+AMObb4IflX4wO/h/wu7QuWLBe/M65gGNnAjwUQf/4GCEL3EWQRcspAqlShEuSWlv5etvTRcsSCloQkqMwz7IvKE690+kOxq4AOf1Qo8Euno82RhypyAIBY7ULChz/oQeTXcCsgOQ8XjrGVq+C/gAAh+QQFCgD/ACwMAAAAAwAYAAAIMABt5ZqUyha/g/waUXHgTwsMfxAjSpxIsSLERJT8GYPIxF8bZE8ACACFsCRCJAIDAgAh+QQFCgD/ACwKAAAAAgAYAAAIMQC/4Pg35l+ffyEQ/hPw79O/YP/yRJzo4J8ahQn+Pfqn4F+2f6j+nfqH6B8tgv9wBAQAIfkEBQoA/wAsBwAAAAUAGAAACHEA/wkUR0LgDn4e/gVRgPDfLALJmIBYZgdPjB4EMhTyl8hOon/+wIShAlLQCYH+AlRCicUeyl0ZmIAEZSEYyEUEpgjxx4qfBTX+aPjcFc4Uv6Me3hy1oCrTUQJgatywYGvePyv8SqlSqOBFNoMNB5IICAAh+QQFCgD/ACwEAAAACAAYAAAImQD/CfwnxNkEBQPX0ODHT8k/XSUWMlRSq18ffnYo5GHQD8cxfrYqUfHX7wNGPEL8+dPgCQkFBir9UbPDJxi5mGBiHbkZU1CsSjFVYopVL6i/cQQyIAjqid+LZJRiymFoR0DMCQwtvBBQyJ8phgzTABiyAyxYJSkUmLWDqiRYC2ncdfzIkM+mihdBboj3MCJIUI8SSnQ4sODBgAAh+QQJCgD/ACwBAAAACwAYAAAIogD/CRz4rwutOh4I/gv0gZ9CgRpIOHwISKIFNCG6NBJYoqHDDB02CrzAj5+FE0X8DWQzgV8qAIFUDuTCj0AlFORkCrTCL9QnfzoF0uj5JKhAiaEcGP3ngV8sMFnIKWxqAdQRSkElTixGieDQibYqwRCysyRBIvUE0pz4kKXZgRYAjHwrkEgwjh4FlpryaWDFiZPCYCIY0WGpDQ8Zsn1Y8KCHgAAh+QQFCgD/ACwAAAAAGAAYAAAIuQD/CRw4EAmSSQQTKiSYhp8tAPwWShSIhJ/FixMXVuSXK5kDKo0yJrR1cYMRGFr8iRxY6qKgAf5iqlz5D0maMAACyYxJcyOKYDt5rrzYRkjQmRkv8it0FOnEDRksSmm6Mgwfi2oQHF25kV+AI8iCrmyoNAGDnSt3KbUIoEMRoSLXWnyRwd6JnnKV0vyX1yKpvbnyikKw9x/Ji2mIJOhQuOZFJDL4bGj8L7BDLBt2Uaaod7PAXEhyrQwIACH5BAkKAP8ALAwAAAAMABgAAAizABWwotXln8GDBpXwM/ghEMKECOVoePivSwg0Fv6RAPSwUYcMC/99KEGxyImM/y7cKkkh4wQ2FP+9S2OLH5daFKUsSmPBSr+SfF7wo4GrxcMiYV5YINHPxUMYoJDw89DPBkJyYOwYpGr1IAIZIZl+QYgH5T8a/ZYEI1cxgFmf/zb9iwHG7L+b//T9SzRJq8GXBrUIQOPXoEqDQ5A8HHlQycONCB0fJDEx8sGGFD3UIRjzX0AAIfkECQoA/wAsAAAAABgAGAAACNsA/wkcSFAgiVXthBRcyFCgEn78aKxpSNEhRH4T2NyqyJBBHgoW+PXph4tjQX9UKtnidwwHSZMD/fkTgscOvw/9+m2EKdMfA1F2PKXICfNfT38hQprj1a8Wz55ZJvHjoYuoyaMwsPBbBYFki6s9YeziV4dTThdgZQZLw89Ti5w20vqrRICfh5z94nIM+yukHLxf0gqoixHvEpMI/DUSRNgUXpPHgvlDkSYkvx05nZpspA+ATbtD+xVlUOnzzZw7TYKzzNJlyaIPL458DftixtS1I04sSlABQoUMAwIAIfkEBQoA/wAsAAAAABgAGAAACP8A/wkcOBCJrUk34N0iyLDhvzT8bAHg54GfuX61HDJEwq+jx4oegvTrt1AjR365kjmg0ohJMgKzeI3E5dCWxw1GYGjxFwOPnWUgRvajSbCUR0ED/ClVWigDgR4YhJYUiCRNGACBlmpVEyvRgwVCC3ZEEUyrVhhp8PjjoEtmxn8e2wgxu7TZhin+mkTQNRKux0J0lzYKIEopBghDW2zI0FFKYKWNFhFRuoDTSBdh+HRUg+AxMTRo/LGQ0GKkjZP8AhxBFjgPAVD+ogjtZwOiR34JGNA1EmsRJMRCv+y63RFAhyJaSRHIsGR2vyV+ib/IYO8ElUAy7Ki75Zwq8dvHuiBdsMOPh/O30b+T0pKAAL833Qfm+s5PFIIspSzwyzR7qkCbHqVBRAIdoELeDTUIRdRGHiEhAx8bVMSPFQpq9M98EWGxwS4VKTDDSP6ZdFtFO2BkoUO5IJELCa0IY2FAACH5BAUKAP8ALAoAAAAHABgAAAhuAJH8U1Thn0GDY/rdOfivT7+HB0PM4RApooEDVVwYFOCv4x6Dn/519Gewg8iOBoOdJPlP5UiDDlaWlPlPDU0BNEPQBGOgoxeDQzqWiQDUXxkg/QzaY7QA4r9zdx4m/fdB6kGHTv8lnGoQx5eDAQEAIfkEBQoA/wAsCwAAAAIAGAAACCMA/93614/gv3v//CVcqLAhw4cKC/CL8g/KvxH/thgsWNBGQAAh+QQFCgD/ACwKAAAAAgAYAAAINgD5Ifpn5d+Of9P+ifhn6V+Bf7D+QZL4D98/Dv80/WP2L84/EP/Y/Pvz79s/bP8U/WtH8B+NgAAh+QQFCgD/ACwGAAAABgAYAAAIfgD/CfyXZMbAJP1KCJTDJqFAeHAiQbEQLwccFSP+9VhRwYy/ZgXgFPjn758KCXNI/sOwRGBJCXFc/uPkQ+adClBUQgDGQWW1FaOalPyTD46mklz6ublF59+FflAV0oMKh9u/CVBXuPqnBFA+XNEEjslnw+o/hjZADOzj8OCMgAAh+QQFCgD/ACwDAAAACQAYAAAIoQD/CRTY5FAKNgP/KeDS71+NgR4YNnwocEc/OBEgPRNI40c+XMrm+BNoIt+KKk1G/ivXCVcEQir/7VshgQM5lXa2OQKScqCtQY6U+Yv5r5qjJUMTeltRocHNgSXy2QBiIGaQfvngWEr6L1O/fsBaXDIj8MJXrL0WCOxzduDDGyW+DvxGUq6bWtI4/pCrw9BAi/1wuUgYMTCEhAoZOkRc8GBAACH5BAkKAP8ALAIAAAAKABgAAAioAP8JHCjmwowSA/89MNEvocAbMxo6hNgPji4RYu7988Aw378KZ5wINNWvHzAfD/wJVJAp350FKQfS6LdCmRdyKgW+6SergL+cAnH0u8YIqMAgPKEZ/VeinyMVDX4ObArsChADQJFKjDJiIJeS//LhUnagyb+dEgVa/TczbUIFKcAOBDboH8m0cK7A+ueJYcN8NiIVeBgx7B0J1QZSBOxCT8KFbh0WPBgQACH5BAXIAP8ALAAAAAAYABgAAAi5AP8JHDgQgqQWBBMqJNirXz9c/RZKFKjLocWIExXWcsgrEoc59zImhOjQRZUDBvyJHHjLIoY9/mKqXPnP4ZUFD2TGpLmxHzMOOneutFimSdCZGV1YNHMU6cSKDoc1XdnCoqYGR6lalABkRNCVXy7220JI50pJYvstOONLqMi0/WxU8LGEJ1yLNGveHUXTV8u0Ovzk/UfSYa8rcc4M/tezXy0IOlws/gcVly4XtyYLbIxR8z8ILmysDAgAOw==&quot;) repeat scroll 0% 0% / 18px 18px; opacity: 0.55; text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.22); border-radius: 18px; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.29), 1px 1px 1px rgba(255, 255, 255, 0.44) inset; transition: all 0.15s ease 0s;" id="kf-my-add-btn" name="kf-my-add-btn" href="javascript:void(0)"></a><div id="kf-add-loading-img" style="display: none; height: 24px; width: 24px; position: fixed; bottom: 20px; right: 20px; border-radius: 24px; background: transparent url(&quot;data:image/gif;base64,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&quot;) repeat scroll 0% 0%; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.29), 1px 1px 1px rgba(255, 255, 255, 0.24) inset;"></div><div style="opacity: 0; display: none; width: 320px; position: fixed; right: 20px; bottom: -190px; z-index: 2147483647; font: 12px/25px Arial,sans-serif; background: transparent none repeat scroll 0% 0%;" id="kf-content-div"><div style="height: 40px; width: 320px; background: rgba(0, 0, 0, 0.05) none repeat scroll 0% 0%; border-radius: 20px 20px 0px 0px; line-height: 40px; text-align: center;" id="kf-top-div"><a style="width: 160px; color: rgba(0, 0, 0, 0.25); text-decoration: none; background: transparent none repeat scroll 0% 0%; float: left; font-size: 1em; border-radius: 20px 20px 0px 0px;" href="javascript:void(0)" id="kf-wiki-tab">WIKIPEDIA</a><a style="width: 160px; color: rgba(255, 255, 255, 0.88); text-decoration: none; background: rgba(56, 189, 15, 0.6) none repeat scroll 0% 0%; font-size: 1em; float: left; border-radius: 20px 20px 0px 0px;" href="javascript:void(0)" id="kf-translator-tab">	TRANSLATOR</a></div><div id="kf-frame-div" style="box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.33); text-align: left;"><div id="trans-div" style="font-weight: bold; width: 300px; height: auto; background: rgb(233, 233, 233) none repeat scroll 0% 0%; opacity: 0.8; padding: 10px; max-height: 190px; overflow: auto;">So happy!</div><div style="width: 300px; max-height: 190px; padding: 10px; background: rgb(233, 233, 233) none repeat scroll 0% 0%; opacity: 0.8; border: 0px none; overflow: auto; display: none;" id="kf-wiki-div" name="kf-wiki-div"></div></div></div></body></html>

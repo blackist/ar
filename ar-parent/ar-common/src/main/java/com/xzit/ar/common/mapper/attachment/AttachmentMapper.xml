@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xzit.ar.common.mapper.attachment.AttachmentMapper" >
+  <resultMap id="BaseResultMap" type="com.xzit.ar.common.po.attachment.Attachment" >
+    <id column="atta_id" property="attaId" jdbcType="INTEGER" />
+    <result column="atta_type" property="attaType" jdbcType="VARCHAR" />
+    <result column="atta_name" property="attaName" jdbcType="VARCHAR" />
+    <result column="is_remote" property="isRemote" jdbcType="CHAR" />
+    <result column="file_size" property="fileSize" jdbcType="VARCHAR" />
+    <result column="file_path" property="filePath" jdbcType="VARCHAR" />
+    <result column="downloads" property="downloads" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="exp_time" property="expTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    atta_id, atta_type, atta_name, is_remote, file_size, file_path, downloads, create_time, 
+    exp_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from attachment
+    where atta_id = #{attaId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from attachment
+    where atta_id = #{attaId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xzit.ar.common.po.attachment.Attachment" >
+    insert into attachment (atta_id, atta_type, atta_name, 
+      is_remote, file_size, file_path, 
+      downloads, create_time, exp_time
+      )
+    values (#{attaId,jdbcType=INTEGER}, #{attaType,jdbcType=VARCHAR}, #{attaName,jdbcType=VARCHAR}, 
+      #{isRemote,jdbcType=CHAR}, #{fileSize,jdbcType=VARCHAR}, #{filePath,jdbcType=VARCHAR}, 
+      #{downloads,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{expTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xzit.ar.common.po.attachment.Attachment" >
+    insert into attachment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="attaId != null" >
+        atta_id,
+      </if>
+      <if test="attaType != null" >
+        atta_type,
+      </if>
+      <if test="attaName != null" >
+        atta_name,
+      </if>
+      <if test="isRemote != null" >
+        is_remote,
+      </if>
+      <if test="fileSize != null" >
+        file_size,
+      </if>
+      <if test="filePath != null" >
+        file_path,
+      </if>
+      <if test="downloads != null" >
+        downloads,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="expTime != null" >
+        exp_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="attaId != null" >
+        #{attaId,jdbcType=INTEGER},
+      </if>
+      <if test="attaType != null" >
+        #{attaType,jdbcType=VARCHAR},
+      </if>
+      <if test="attaName != null" >
+        #{attaName,jdbcType=VARCHAR},
+      </if>
+      <if test="isRemote != null" >
+        #{isRemote,jdbcType=CHAR},
+      </if>
+      <if test="fileSize != null" >
+        #{fileSize,jdbcType=VARCHAR},
+      </if>
+      <if test="filePath != null" >
+        #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="downloads != null" >
+        #{downloads,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expTime != null" >
+        #{expTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xzit.ar.common.po.attachment.Attachment" >
+    update attachment
+    <set >
+      <if test="attaType != null" >
+        atta_type = #{attaType,jdbcType=VARCHAR},
+      </if>
+      <if test="attaName != null" >
+        atta_name = #{attaName,jdbcType=VARCHAR},
+      </if>
+      <if test="isRemote != null" >
+        is_remote = #{isRemote,jdbcType=CHAR},
+      </if>
+      <if test="fileSize != null" >
+        file_size = #{fileSize,jdbcType=VARCHAR},
+      </if>
+      <if test="filePath != null" >
+        file_path = #{filePath,jdbcType=VARCHAR},
+      </if>
+      <if test="downloads != null" >
+        downloads = #{downloads,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expTime != null" >
+        exp_time = #{expTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where atta_id = #{attaId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xzit.ar.common.po.attachment.Attachment" >
+    update attachment
+    set atta_type = #{attaType,jdbcType=VARCHAR},
+      atta_name = #{attaName,jdbcType=VARCHAR},
+      is_remote = #{isRemote,jdbcType=CHAR},
+      file_size = #{fileSize,jdbcType=VARCHAR},
+      file_path = #{filePath,jdbcType=VARCHAR},
+      downloads = #{downloads,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      exp_time = #{expTime,jdbcType=TIMESTAMP}
+    where atta_id = #{attaId,jdbcType=INTEGER}
+  </update>
+</mapper>

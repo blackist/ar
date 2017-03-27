@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xzit.ar.common.mapper.dict.DictionaryMapper" >
+	
+	<resultMap id="BaseResultMap" type="com.xzit.ar.common.po.dict.Dictionary" >
+		<id column="dict_value" property="dictValue" jdbcType="VARCHAR" />
+		<result column="dict_name" property="dictName" jdbcType="VARCHAR" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List" >dict_value, dict_name, remark</sql>
+	
+	<!-- 查询 -->
+	<!-- 分页查询不开启缓存, 数据量不大，不是性能瓶颈, 开启反而影响分页功能 -->
+	<select id="queryDicts" parameterType="map" resultMap="BaseResultMap">
+		SELECT * from dictionary where dict_value like #{queryInput} or dict_name like #{queryInput}
+		or remark like #{queryInput}
+	</select>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String"
+		useCache="true">
+		select
+		<include refid="Base_Column_List" />
+		from dictionary
+    	where dict_value = #{dictValue,jdbcType=VARCHAR}
+	</select>
+	<!-- 获取所有 -->
+	<select id="getAll" resultType="com.xzit.ar.common.po.dict.Dictionary">
+		SELECT dictionary.dict_name dictName, dictionary.dict_value dictValue FROM dictionary
+	</select>
+	
+	<!-- 删除 -->
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">delete from dictionary
+    where dict_value = #{dictValue,jdbcType=VARCHAR}</delete>
+	
+	<!-- 插入 -->
+	<insert id="save" parameterType="com.xzit.ar.common.po.dict.Dictionary">
+		insert into dictionary
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="dictValue != null and dictValue != ''" >dict_value,</if>
+			<if test="dictName != null" >dict_name,</if>
+			<if test="remark != null" >remark,</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="dictValue != null and dictValue != ''" >#{dictValue,jdbcType=VARCHAR},</if>
+			<if test="dictName != null" >#{dictName,jdbcType=VARCHAR},</if>
+			<if test="remark != null" >#{remark,jdbcType=VARCHAR},</if>
+		</trim>
+	</insert>
+	
+	<!-- Update -->
+	<update id="update" parameterType="com.xzit.ar.common.po.dict.Dictionary">
+		update dictionary
+		<set >
+			<if test="dictName != null" >dict_name = #{dictName,jdbcType=VARCHAR},</if>
+			<if test="remark != null" >remark = #{remark,jdbcType=VARCHAR},</if>
+		</set>
+		where dict_value = #{dictValue,jdbcType=VARCHAR}
+	</update>
+</mapper>

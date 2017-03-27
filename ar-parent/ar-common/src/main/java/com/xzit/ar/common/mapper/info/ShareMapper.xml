@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xzit.ar.common.mapper.info.ShareMapper" >
+	<resultMap id="BaseResultMap" type="com.xzit.ar.common.po.info.Share" >
+		<result column="user_id" property="userId" jdbcType="INTEGER" />
+		<result column="info_id" property="infoId" jdbcType="INTEGER" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="where" property="where" jdbcType="VARCHAR" />
+	</resultMap>
+	<insert id="insert" parameterType="com.xzit.ar.common.po.info.Share" >
+		insert into share (user_id, info_id, create_time, where) values (#{userId,jdbcType=INTEGER},
+		#{infoId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{where,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.xzit.ar.common.po.info.Share" >
+		insert into share
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="userId != null" >user_id,</if>
+			<if test="infoId != null" >info_id,</if>
+			<if test="createTime != null" >create_time,</if>
+			<if test="where != null" >where,</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="userId != null" >#{userId,jdbcType=INTEGER},</if>
+			<if test="infoId != null" >#{infoId,jdbcType=INTEGER},</if>
+			<if test="createTime != null" >#{createTime,jdbcType=TIMESTAMP},</if>
+			<if test="where != null" >#{where,jdbcType=VARCHAR},</if>
+		</trim>
+	</insert>
+</mapper>
