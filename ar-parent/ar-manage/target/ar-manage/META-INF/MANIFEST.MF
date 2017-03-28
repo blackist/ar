@@ -1,3 +1,5 @@
 Manifest-Version: 1.0
-Class-Path: 
+Built-By: black
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.7.0_17
 

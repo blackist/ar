@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ar-common/ar-common.iml" filepath="$PROJECT_DIR$/ar-common/ar-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ar-manage/ar-manage.iml" filepath="$PROJECT_DIR$/ar-manage/ar-manage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ar-parent.iml" filepath="$PROJECT_DIR$/ar-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ar-portal/ar-portal.iml" filepath="$PROJECT_DIR$/ar-portal/ar-portal.iml" />
+    </modules>
+  </component>
+</project>

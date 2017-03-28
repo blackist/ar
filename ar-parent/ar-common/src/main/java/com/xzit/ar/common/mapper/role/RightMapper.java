@@ -74,4 +74,5 @@ public interface RightMapper extends BaseMapper {
 	 * @throws
 	 */
 	List<Right> getAllRights() throws Exception;
+	
 }
