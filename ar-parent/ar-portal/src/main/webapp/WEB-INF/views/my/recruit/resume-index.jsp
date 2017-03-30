@@ -11,7 +11,7 @@
 	<div class="container higher" id="container">
 		<div class="pageheader">
 			<h2>
-				<i class="fa fa-user"></i> 个人中心 <span>个人资料</span>
+				<i class="fa fa-user"></i> 个人中心 <span>我的简历</span>
 			</h2>
 			<div class="breadcrumb-wrapper">
 				<span class="label"></span>
@@ -33,17 +33,27 @@
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs">
 					<li><a href="my/recruit.action"><span
-							class="glyphicon glyphicon-th-list"></span>&nbsp;<strong>我的招聘</strong></a></li>
+							class="fa fa-archive"></span>&nbsp;<strong>我的招聘</strong></a></li>
 					<li><a href="my/resume/posted.action"><span
-							class="glyphicon glyphicon-paperclip"></span>&nbsp;<strong>我的投递</strong></a></li>
+							class="fa fa-chain"></span>&nbsp;<strong>我的投递</strong></a></li>
 					<li class="active"><a href="my/resume.action"><span
-							class="glyphicon glyphicon-briefcase"></span>&nbsp;<strong>我的简历</strong></a></li>
+							class="fa fa-file-text-o"></span>&nbsp;<strong>我的简历</strong></a></li>
 				</ul>
 				<!-- Nav Tab -->
 
 				<!-- Tab panes -->
 				<div class="tab-content">
-					<div class="tab-pane active" id="tab-job"></div>
+					<ul class="filemanager-options">
+						<li>
+							<div class="ckbox ckbox-default">
+								<input type="checkbox" id="selectall" value="1" />
+								<label for="selectall">Select All</label>
+							</div>
+						</li>
+						<li><a href="my/resume/addResume.action" class="itemopt"><i class="fa fa-plus"></i> 登记简历</a></li>
+						<li><a href="" class="itemopt"></a></li>
+						<li><a href="" class="itemopt"></a></li>
+					</ul>
 				</div>
 			</div>
 		</div>

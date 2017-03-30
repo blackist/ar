@@ -32,8 +32,7 @@
 						<div class="col-md-12">
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title">填写招聘信息</h4>
-									<p>公司信息</p>
+									<h4 class="panel-title">完成发布</h4>
 								</div>
 								<div class="panel-body panel-body-nopadding">
 

@@ -32,12 +32,12 @@
 			<div class="col-sm-8 col-lg-10">
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs">
-					<li class="active"><a href="my/recruit.action"><span
-							class="glyphicon glyphicon-th-list"></span>&nbsp;<strong>我的招聘</strong></a></li>
-					<li><a href="my/resume/posted.action"><span
-							class="glyphicon glyphicon-paperclip"></span>&nbsp;<strong>我的投递</strong></a></li>
+					<li><a href="my/recruit.action"><span
+							class="fa fa-archive"></span>&nbsp;<strong>我的招聘</strong></a></li>
+					<li class="active"><a href="my/resume/posted.action"><span
+							class="fa fa-chain"></span>&nbsp;<strong>我的投递</strong></a></li>
 					<li><a href="my/resume.action"><span
-							class="glyphicon glyphicon-briefcase"></span>&nbsp;<strong>我的简历</strong></a></li>
+							class="fa fa-file-text-o"></span>&nbsp;<strong>我的简历</strong></a></li>
 				</ul>
 				<!-- Nav Tab -->
 

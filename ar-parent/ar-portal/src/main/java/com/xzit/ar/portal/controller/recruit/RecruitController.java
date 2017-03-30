@@ -146,7 +146,7 @@ public class RecruitController extends BaseController {
 	 */
 	@RequestMapping("/recruitSuccess")
 	public String recruitSuccess(Model model) {
-		setMessage(model, "提交成功！");
+		setMessage(model, "提交成功，等待审核！");
 		setOperateRemarks(model, "若要修改招聘信息，请到 个人中心 >> 我的招聘");
 		return "recruit/recruit-success";
 	}

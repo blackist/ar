@@ -64,9 +64,15 @@ public class MyResumeController extends BaseController {
 		return "redirect:/recruit/detailRecruit.action";
 	}
 
-	@RequestMapping(value = "/createResume", method = RequestMethod.POST)
-	public String createResume(Model model){
+	@RequestMapping("/addResume")
+	public String addResume(Model model){
 		
-		return "";
+		return "my/recruit/resume-add";
+	}
+
+	@RequestMapping("/addResumeSubmit")
+	public String addResumeSubmit(){
+
+		return "redirect:/my/resume.action";
 	}
 }

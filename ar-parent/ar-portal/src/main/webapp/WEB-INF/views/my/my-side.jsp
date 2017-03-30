@@ -18,11 +18,11 @@
 <h1 class="subtitle">应用</h1>
 <ul class="nav nav-pills nav-stacked nav-email">
 	<li id="my-class"><a href="my/class.action"><i
-			class="fa fa-mortar-board"></i>班级</a></li>
+			class="fa fa-mortar-board"></i>我的班级</a></li>
 	<li id="my-forum"><a href="my/forum.action"><i
-			class="fa fa-group"></i>论坛</a></li>
+			class="fa fa-group"></i>我的论坛</a></li>
 	<li id="my-recruit"><a href="my/recruit.action"><i
-			class="fa fa-bookmark"></i>招聘</a></li>
+			class="fa fa-bookmark"></i>我的招聘</a></li>
 </ul>
 
 <div class="mb10"></div>

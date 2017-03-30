@@ -11,7 +11,7 @@
 	<div class="container higher" id="container">
 		<div class="pageheader">
 			<h2>
-				<i class="fa fa-user"></i> 个人中心 <span>个人资料</span>
+				<i class="fa fa-user"></i> 个人中心 <span>我的招聘</span>
 			</h2>
 			<div class="breadcrumb-wrapper">
 				<span class="label"></span>
@@ -33,11 +33,11 @@
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs">
 					<li class="active"><a href="my/recruit.action"><span
-							class="glyphicon glyphicon-th-list"></span>&nbsp;<strong>我的招聘</strong></a></li>
+							class="fa fa-archive"></span>&nbsp;<strong>我的招聘</strong></a></li>
 					<li><a href="my/resume/posted.action"><span
-							class="glyphicon glyphicon-paperclip"></span>&nbsp;<strong>我的投递</strong></a></li>
+							class="fa fa-chain"></span>&nbsp;<strong>我的投递</strong></a></li>
 					<li><a href="my/resume.action"><span
-							class="glyphicon glyphicon-briefcase"></span>&nbsp;<strong>我的简历</strong></a></li>
+							class="fa fa-file-text-o"></span>&nbsp;<strong>我的简历</strong></a></li>
 				</ul>
 				<!-- Nav Tab -->
 

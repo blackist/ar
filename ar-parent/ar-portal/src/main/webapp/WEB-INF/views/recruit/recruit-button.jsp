@@ -5,7 +5,7 @@
 		style="width: 350px; float: right; padding-left: 50px;">
 		<a class="btn btn-success" href="recruit/addRecruit.action"> <span
 			class="fa fa-plus-circle"></span>&nbsp;发布招聘
-		</a> <a class="btn btn-success" href="resume/createResume.action"> <span
+		</a> <a class="btn btn-success" href="my/resume/addResume.action"> <span
 			class="fa fa-file-text-o"></span>&nbsp;登记简历
 		</a>
 	</div>
