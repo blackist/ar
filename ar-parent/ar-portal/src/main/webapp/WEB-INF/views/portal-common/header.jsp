@@ -18,7 +18,7 @@
 				<ul>
 					<c:choose>
 						<c:when test="${SESSION_USER != null}">
-							<li class="top_link">欢迎回来,<a href="my.action" target="blank">${SESSION_USER.userName}</a></li>
+							<li class="top_link"><a href="my.action" target="blank"><i class="fa fa-user"></i> ${SESSION_USER.userName}</a></li>
 							<li>|</li>
 							<li class="top_link"><a href="login/logout.action">退出</a></li>
 							<input class="logoutStyle" name="-gfj_jkb-fsjvbkcjadkcnkjsdnzxc"

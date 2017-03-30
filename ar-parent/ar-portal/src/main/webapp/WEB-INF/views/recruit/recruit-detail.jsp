@@ -150,7 +150,7 @@
 											</div>
 											<div class="modal-body">
 												<form class="form" method="post" id="postForm"
-													action="resume/postResume.action">
+													action="/my/resume/postResume.action">
 													<div class="row">
 														<div class="form-group">
 															<label class="col-sm-2"><span class="asterisk">*

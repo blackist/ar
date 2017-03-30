@@ -23,6 +23,11 @@ import com.xzit.ar.common.po.recruit.Recruit;
  */
 public interface RecruitService {
 
+	/**
+	 * @param recruit
+	 * @return
+	 * @throws ServiceException
+	 */
 	public int createRecruit(Recruit recruit) throws ServiceException;
 	
 	public List<Map<String, Object>> queryRecruit(Page<Map<String, Object>> page, String queryStr) throws ServiceException ;
