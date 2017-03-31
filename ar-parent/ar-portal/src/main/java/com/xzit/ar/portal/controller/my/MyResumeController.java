@@ -12,6 +12,8 @@ import java.util.Date;
 
 import javax.annotation.Resource;
 
+import com.xzit.ar.common.init.context.ARContext;
+import com.xzit.ar.common.po.user.UserResume;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -66,12 +68,19 @@ public class MyResumeController extends BaseController {
 
 	@RequestMapping("/addResume")
 	public String addResume(Model model){
+		// 加载招聘常量
+		model.addAttribute("positionSalary", ARContext.positionSalary);
 		
 		return "my/recruit/resume-add";
 	}
 
 	@RequestMapping("/addResumeSubmit")
-	public String addResumeSubmit(){
+	public String addResumeSubmit(Model model, RedirectAttributes attr, UserResume resume) throws ServiceException {
+
+		resume.setState("A");
+		resume.setStateTime(new Date());
+		resume.setUserId(getCurrentUserId());
+		resumeService.createResume(resume);
 
 		return "redirect:/my/resume.action";
 	}

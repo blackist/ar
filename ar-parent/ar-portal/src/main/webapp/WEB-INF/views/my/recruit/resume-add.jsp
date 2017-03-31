@@ -62,7 +62,7 @@
 											<label class="col-sm-4"><span class="asterisk">*
 														</span>简历标题</label>
 											<div class="col-sm-4">
-												<input type="text" name="title" id="title" maxlength="20"
+												<input type="text" name="resumeTitle" id="resumeTitle" maxlength="20"
 													   class="form-control tooltips" data-trigger="hover"
 													   data-toggle="tooltip" data-original-title="2-20字" />
 											</div>
@@ -72,7 +72,7 @@
 											<label class="col-sm-4"><span class="asterisk">*
 														</span>职业类型</label>
 											<div class="col-sm-4">
-												<input type="text" name="title" id="title" maxlength="20"
+												<input type="text" name="profType" id="profType" maxlength="20"
 													   class="form-control tooltips" data-trigger="hover"
 													   data-toggle="tooltip" data-original-title="2-20字" />
 											</div>
@@ -83,13 +83,13 @@
 														</span> 期望工资</label>
 											<div class="col-sm-4">
 												<div class="input-group">
-													<span class="input-group-addon">￥</span><select
-														class="select2" name="salary" id="salary">
-													<option value="">--</option>
-													<c:forEach items="${positionSalary}" var="salary">
-														<option value="${salary.value}">${salary.name}</option>
-													</c:forEach>
-												</select>
+													<span class="input-group-addon">￥</span>
+													<select class="select2" name="expSalary" id="expSalary">
+														<option value="">--</option>
+														<c:forEach items="${positionSalary}" var="salary">
+															<option value="${salary.value}">${salary.name}</option>
+														</c:forEach>
+													</select>
 												</div>
 											</div>
 										</div>
@@ -100,10 +100,10 @@
 										<div class="form-group">
 											<label class="col-sm-4"><span class="asterisk">*</span> 姓名</label>
 											<div class="col-sm-4">
-												<input type="text" name="posName" id="posName"
+												<input type="text" name="name" id="name"
 													   class="form-control tooltips" data-trigger="hover"
-													   data-toggle="tooltip" data-original-title="2-20字"
-													   maxlength="20" />
+													   data-toggle="tooltip" data-original-title="2-10字"
+													   maxlength="10" />
 											</div>
 										</div>
 
@@ -111,12 +111,12 @@
 											<label class="col-sm-4"><span class="asterisk">*</span> 性别</label>
 											<div class="col-sm-4">
 												<div class="rdio rdio-primary">
-													<input type="radio" id="male" value="m" name="sex" checked/>
-													<label for="male">男</label>
+													<input type="radio" value="1" id="1" name="sex" checked/>
+													<label for="1">男</label>
 												</div>
 												<div class="rdio rdio-primary">
-													<input type="radio" id="female" value="f" name="sex">
-													<label for="female">女</label>
+													<input type="radio" value="0" id="0" name="sex">
+													<label for="0">女</label>
 												</div>
 											</div>
 										</div>
@@ -125,9 +125,9 @@
 											<label class="col-sm-4"><span class="asterisk">*
 														</span>现居住地</label>
 											<div class="col-sm-7">
-												<input type="text" name="workPlace" id="workPlace"
+												<input type="text" name="domicile" id="domicile"
 													   class="form-control tooltips" data-trigger="hover"
-													   data-toggle="tooltip" data-original-title="不超过50字"
+													   data-toggle="tooltip" data-original-title="必填，且不超过50字"
 													   maxlength="50" />
 											</div>
 										</div>
@@ -136,9 +136,9 @@
 											<label class="col-sm-4"><span class="asterisk">*
 														</span>联系方式</label>
 											<div class="col-sm-4">
-												<input type="text" name="leaderPhone" id="leaderPhone"
+												<input type="text" name="contact" id="contact"
 													   class="form-control tooltips" data-trigger="hover"
-													   data-toggle="tooltip" data-original-title="不超过30字"
+													   data-toggle="tooltip" data-original-title="必填，且不超过30字"
 													   placeholder="手机/固定电话" maxlength="30" />
 											</div>
 										</div>
@@ -148,9 +148,9 @@
 													class="asterisk">* </span>个人简介</label>
 											<div class="col-sm-7">
 															<textarea rows="7" style="height: 150.4px;"
-																	  name="posDesc" id="posDesc"
+																	  name="introduce" id="introduce"
 																	  class="form-control tooltips" data-trigger="hover"
-																	  data-toggle="tooltip" data-original-title="20-500字"
+																	  data-toggle="tooltip" data-original-title=不超过500字"
 																	  maxlength="500"></textarea>
 											</div>
 										</div>

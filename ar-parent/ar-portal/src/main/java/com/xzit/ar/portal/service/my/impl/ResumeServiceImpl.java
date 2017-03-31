@@ -91,6 +91,17 @@ public class ResumeServiceImpl implements ResumeService {
 	}
 
 	@Override
+	public int createResume(UserResume resume) throws ServiceException {
+		int row = 0;
+		try {
+			row = resumeMapper.save(resume);
+		} catch (Exception e) {
+			throw new ServiceException("保存简历时发生异常！");
+		}
+		return row;
+	}
+
+	@Override
 	public int cancelPostResume(ResumePost resumePost) throws ServiceException {
 		return 0;
 	}

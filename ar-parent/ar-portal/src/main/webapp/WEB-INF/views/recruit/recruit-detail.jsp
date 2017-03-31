@@ -163,7 +163,7 @@
 																	</c:forEach>
 																</select><br /> <br />
 																<button class="btn btn-default btn-block" type="button"
-																	onclick="location='resume/createResume.action'">
+																	onclick="location='my/resume/addResume.action'">
 																	<span class="fa fa-plus-square-o">&nbsp;</span>创建简历
 																</button>
 															</div>

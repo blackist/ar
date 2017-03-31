@@ -64,4 +64,11 @@ public interface ResumeService {
 	 * @param @param recruitId
 	 */
 	public List<Map<String, Object>> postResumeRecord(Integer recruitId) throws ServiceException;
+
+	/**
+	 * @param resume
+	 * @return
+	 * @throws ServiceException
+	 */
+	public int createResume(UserResume resume) throws ServiceException;
 }
