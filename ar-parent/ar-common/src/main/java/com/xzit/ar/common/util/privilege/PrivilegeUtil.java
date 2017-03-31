@@ -54,15 +54,15 @@ public class PrivilegeUtil {
 	 * @Description: TODO 加载所有权限
 	 * @return List<Right>
 	 */
-	public static void loadAllRights() throws UtilException {
+	public static void loadAllRights()  {
 		System.out.println("-------------- 加载权限资源 ---------------");
-		try {
+//		try {
 			RightMapper rightMapper = ARContext.applicationContext.getBean(RightMapper.class);
 			// 加载数据库存有权限到环境
 			ARContext.rightList = rightMapper.getAllRights();
-		} catch (Exception e) {
-			throw new UtilException("加载权限失败！");
-		}
+//		} catch (Exception e) {
+//			throw new UtilException("加载权限失败！");
+//		}
 	}
 
 	/**

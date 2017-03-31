@@ -13,9 +13,9 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 	
 	<!-- 注解管理缓存 -->
-	<cache:annotation-driven mode="proxy" order="0" cache-manager="enCacheManager" key-generator="ckg"/>
+	<cache:annotation-driven mode="proxy" order="0" cache-manager="ehCacheCacheManager" key-generator="ckg"/>
 	<!-- 缓存管理器 -->
-	<bean id="enCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+	<bean id="ehCacheCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
 		<property name="cacheManager" ref="cacheManagerFactoryBean"/>
 	</bean>
 	<!-- Ehcache缓存管理器FactoryBean -->

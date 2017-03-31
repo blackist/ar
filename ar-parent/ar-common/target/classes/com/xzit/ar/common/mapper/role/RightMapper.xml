@@ -28,20 +28,25 @@
 		from `right` where right_name like #{queryInput} or right_URL like #{queryInput}
 			order by right_URL
 	</select>
+	
 	<select id="selectById" resultType="com.xzit.ar.common.po.role.Right" parameterType="java.lang.Integer">
 		select
 		<include refid="Entity" />
 		from `right` where right_id = #{rightId,jdbcType=INTEGER}
 	</select>
+
 	<select id="selectTopPosCode" resultType="map">
 		SELECT MAX(right_pos) topPos, MAX(right_code) topCode FROM `right` WHERE right_pos=(SELECT
 		max(right_pos) from `right`)
 	</select>
+
+	
 	<select id="selectByRightUrl" parameterType="java.lang.String" resultType="com.xzit.ar.common.po.role.Right">
 		SELECT
 		<include refid="Entity" />
 		FROM `right` WHERE right_URL = #{rightUrl}
 	</select>
+
 	<select id="getAllRights" resultType="com.xzit.ar.common.po.role.Right">
 		SELECT 
 		<include refid="Entity" />
