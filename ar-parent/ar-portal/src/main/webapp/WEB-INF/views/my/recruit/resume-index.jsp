@@ -72,7 +72,8 @@
 														class="btn btn-sm btn-white tooltips" type="button" data-toggle="tooltip" title="详情"><i class="fa fa-bars"></i></button>
 												<button onclick="location='my/resume/edit.action?resumeId=${resume.resumeId}'"
 														class="btn btn-sm btn-white tooltips" type="button" data-toggle="tooltip" title="编辑"><i class="fa fa-edit"></i></button>
-												<button onclick="location='my/resume/delete.action?resumeId=${resume.resumeId}'"
+												<button  onclick="deleteResume(${resume.resumeId})"
+														<%--onclick="location='my/resume/delete.action?resumeId=${resume.resumeId}'"--%>
 														class="btn btn-sm btn-white tooltips" type="button" data-toggle="tooltip" title="删除"><i class="fa fa-trash-o"></i></button>
 											</div>
 										</td>

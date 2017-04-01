@@ -112,7 +112,7 @@
 							<ul class="pager wizard">
 								<li><a href="my/resume/edit.action?resumeId=${resume.resumeId}">编辑</a></li>
 								&nbsp;&nbsp;&nbsp;&nbsp;
-								<li><a href="my/resume/delete.action?resumeId=${resume.resumeId}">删除</a></li>
+								<li><a href="javascript:;" onclick="deleteResume(${resume.resumeId})">删除</a></li>
 							</ul>
 						</div>
 					</div>

@@ -169,5 +169,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/my/recruit/recruit-index.js"></script>
+<script src="assets/script/my/recruit/recruit.js"></script>
 </html>

@@ -139,9 +139,16 @@ public class MyResumeController extends BaseController {
 		return "redirect:/my/resume.action";
 	}
 
+	/**
+	 * TODO 删除用户指定的简历
+	 * @param model
+	 * @param resumeId
+	 * @return
+	 * @throws ServiceException
+	 */
 	@RequestMapping("/delete")
-	public String delete(Model model, @Param("resumeId") Integer resumeId){
-
+	public String delete(Model model, @Param("resumeId") Integer resumeId) throws ServiceException {
+		resumeService.deleteResume(resumeId);
 		return "redirect:/my/resume.action";
 	}
 }

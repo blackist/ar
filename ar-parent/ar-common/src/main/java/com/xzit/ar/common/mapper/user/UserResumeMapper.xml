@@ -101,5 +101,11 @@
 		</set>
 		where resume_id = #{resumeId,jdbcType=INTEGER}
 	</update>
+
+	<update id="updateState" parameterType="java.lang.Integer">
+		UPDATE user_resume
+		<set>state = #{state}</set>
+		<where>resume_id = #{id}</where>
+	</update>
 	
 </mapper>

@@ -106,6 +106,28 @@ public class ResumeServiceImpl implements ResumeService {
 	}
 
 	/**
+	 * TODO 删除个人简历
+	 *
+	 * @param resumeId
+	 * @return
+	 * @throws ServiceException
+	 */
+	@Override
+	public int deleteResume(Integer resumeId) throws ServiceException {
+		int row = 0;
+		try {
+			if(CommonUtil.isNotEmpty(resumeId)) {
+				row = resumeMapper.updateState(resumeId, "X");
+			} else{
+				throw new ServiceException("删除简历时发生异常！");
+			}
+		} catch (Exception e) {
+			throw new ServiceException("删除简历时发生异常！");
+		}
+		return row;
+	}
+
+	/**
 	 * TODO 更新简历信息
 	 *
 	 * @param resume

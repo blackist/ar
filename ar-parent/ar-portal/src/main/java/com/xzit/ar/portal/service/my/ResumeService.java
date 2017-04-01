@@ -87,4 +87,12 @@ public interface ResumeService {
 	 * @throws ServiceException
 	 */
 	public int updateResume(UserResume resume) throws ServiceException;
+
+	/**
+	 * TODO 删除个人简历
+	 * @param resumeId
+	 * @return
+	 * @throws ServiceException
+	 */
+	public int deleteResume(Integer resumeId) throws ServiceException;
 }
