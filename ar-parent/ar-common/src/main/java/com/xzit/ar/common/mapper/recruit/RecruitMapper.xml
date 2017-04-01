@@ -31,11 +31,13 @@
 		pos_name, pos_desc, salary, benefit, work_place, unit_id, user_id, create_time,
 		state, state_time, exp1, exp2
 	</sql>
+
 	<sql id="entity" >
 		r.recruit_id recruitId, r.title title, r.prof prof, r.resumes resumes, r.create_time
 		createTime, r.is_top isTop, r.state state, r.state_time stateTime, r.salary salary,
 		u.unit_name unitName, user.account account
 	</sql>
+
 	<sql id="detail" >
 		r.recruit_id recruitId, r.title title, r.prof prof, r.resumes resumes, r.create_time
 		createTime, r.end_time endTime, r.is_top isTop, r.user_id userId, r.state_time stateTime,
@@ -52,6 +54,7 @@
 		from recruit
     	where recruit_id = #{recruitId,jdbcType=INTEGER}
 	</select>
+
 	<select id="queryRecruit" resultType="map" parameterType="java.lang.String">
 		select
 		<include refid="entity"/>
@@ -60,12 +63,14 @@
 		) and r.unit_id = u.unit_id and r.user_id = user.user_id and r.state='A' order by
 		r.is_top desc, r.create_time desc
 	</select>
+
 	<select id="getDetailRecruit" resultType="map" parameterType="java.lang.Integer">
 		select
 		<include refid="detail" />
 		from recruit r, recruit_unit u where r.recruit_id = #{recruitId,jdbcType=INTEGER}
 		and r.unit_id = u.unit_id
 	</select>
+
 	<select id="loadOtherRecruits" parameterType="java.lang.Integer" resultType="map">
 		select recruit_id recruitId, title title from recruit where unit_id = #{unitId} and
 		recruit_id != #{recruitId} and state = 'A'
@@ -159,6 +164,7 @@
 		</set>
 		where recruit_id = #{recruitId,jdbcType=INTEGER}
 	</update>
+
 	<update id="batchState" parameterType="java.util.List">
 		update recruit
 		<set >state = #{state}</set>
@@ -167,9 +173,16 @@
 			<foreach collection="ids" item="id" index="index" open="(" close=")" separator=",">#{id}</foreach>
 		</where>
 	</update>
+
 	<update id="updateState" parameterType="java.lang.Integer">
 		update recruit
 		<set >state = #{state}</set>
 		<where>recruit_id = #{id}</where>
+	</update>
+
+	<update id="addResumes" parameterType="java.lang.Integer">
+		update recruit
+		<set>resumes = resumes + 1</set>
+		<where>recruit_id = #{recruitId}</where>
 	</update>
 </mapper>

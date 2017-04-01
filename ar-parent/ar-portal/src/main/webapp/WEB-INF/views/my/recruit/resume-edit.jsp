@@ -11,7 +11,7 @@
 	<div class="container higher" id="container">
 		<div class="pageheader">
 			<h2>
-				<i class="fa fa-user"></i> 个人中心 <span>我的简历</span><span>登记简历</span>
+				<i class="fa fa-user"></i> 个人中心 <span>我的简历</span><span>编辑简历</span>
 			</h2>
 			<div class="breadcrumb-wrapper">
 				<span class="label"></span>
@@ -44,7 +44,7 @@
 				<!-- Tab panes -->
 				<div class="tab-content">
 					<div class="panel-heading">
-						<h4 class="panel-title"><i class="fa fa-plus"></i> 登记简历</h4>
+						<h4 class="panel-title"><i class="fa fa-edit"></i> 编辑简历</h4>
 					</div>
 					<div class="panel-body panel-body-nopadding">
 
@@ -53,7 +53,7 @@
 							<div class="tab-content">
 								<div class="tab-pane active" id="tab-recruit">
 									<form class="form" id="resumeForm" method="post"
-										  action="my/resume/addResumeSubmit.action">
+										  action="my/resume/update.action">
 										
 										<div class="panel panel-default">
 											<h5 class="panel-title">职位信息</h5>
@@ -64,7 +64,7 @@
 											<div class="col-sm-4">
 												<input type="text" name="resumeTitle" id="resumeTitle" maxlength="20"
 													   class="form-control tooltips" data-trigger="hover"
-													   data-toggle="tooltip" data-original-title="2-20字" />
+													   data-toggle="tooltip" data-original-title="2-20字" value="${resume.resumeTitle}"/>
 											</div>
 										</div>
 
@@ -74,7 +74,7 @@
 											<div class="col-sm-4">
 												<input type="text" name="profType" id="profType" maxlength="20"
 													   class="form-control tooltips" data-trigger="hover"
-													   data-toggle="tooltip" data-original-title="2-20字" />
+													   data-toggle="tooltip" data-original-title="2-20字" value="${resume.profType}"/>
 											</div>
 										</div>
 
@@ -87,7 +87,9 @@
 													<select class="select2" name="expSalary" id="expSalary">
 														<option value="">--</option>
 														<c:forEach items="${positionSalary}" var="salary">
-															<option value="${salary.value}">${salary.name}</option>
+															<option value="${salary.value}" <c:if test="${resume.expSalary==salary.value}">selected</c:if>>
+															${salary.name}
+															</option>
 														</c:forEach>
 													</select>
 												</div>
@@ -103,7 +105,7 @@
 												<input type="text" name="name" id="name"
 													   class="form-control tooltips" data-trigger="hover"
 													   data-toggle="tooltip" data-original-title="2-10字"
-													   maxlength="10" />
+													   maxlength="10" value="${resume.name}"/>
 											</div>
 										</div>
 
@@ -111,11 +113,11 @@
 											<label class="col-sm-4"><span class="asterisk">*</span> 性别</label>
 											<div class="col-sm-4">
 												<div class="rdio rdio-primary">
-													<input type="radio" value="1" id="1" name="sex" checked/>
+													<input type="radio" value="1" id="1" name="sex" <c:if test="${resume.sex=='1'}">checked</c:if> />
 													<label for="1">男</label>
 												</div>
 												<div class="rdio rdio-primary">
-													<input type="radio" value="0" id="0" name="sex">
+													<input type="radio" value="0" id="0" name="sex" <c:if test="${resume.sex=='0'}">checked</c:if>  >
 													<label for="0">女</label>
 												</div>
 											</div>
@@ -128,7 +130,7 @@
 												<input type="text" name="domicile" id="domicile"
 													   class="form-control tooltips" data-trigger="hover"
 													   data-toggle="tooltip" data-original-title="必填，且不超过50字"
-													   maxlength="50" />
+													   maxlength="50" value="${resume.domicile}"/>
 											</div>
 										</div>
 
@@ -139,7 +141,7 @@
 												<input type="text" name="contact" id="contact"
 													   class="form-control tooltips" data-trigger="hover"
 													   data-toggle="tooltip" data-original-title="必填，且不超过30字"
-													   placeholder="手机/固定电话" maxlength="30" />
+													   placeholder="手机/固定电话" maxlength="30" value="${resume.contact}"/>
 											</div>
 										</div>
 
@@ -151,10 +153,10 @@
 																	  name="introduce" id="introduce"
 																	  class="form-control tooltips" data-trigger="hover"
 																	  data-toggle="tooltip" data-original-title=不超过500字"
-																	  maxlength="500"></textarea>
+																	  maxlength="500">${resume.introduce}</textarea>
 											</div>
 										</div>
-
+										<input hidden name="resumeId" id="resumeId" value="${resume.resumeId}">
 									</form>
 								</div>
 
@@ -164,7 +166,7 @@
 							<ul class="pager wizard">
 								<li><a href="javascript:;" onclick="addResumeSubmit()" id="submitBtn">提交</a></li>
 								&nbsp;&nbsp;&nbsp;
-								<li><a href="my/resume.action" id="cancelBtn">放弃</a></li>
+								<li><a href="my/resume/detail.action?resumeId=${resume.resumeId}" id="cancelBtn">放弃</a></li>
 							</ul>
 						</div>
 					</div>

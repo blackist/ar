@@ -14,6 +14,7 @@ import javax.annotation.Resource;
 
 import com.xzit.ar.common.init.context.ARContext;
 import com.xzit.ar.common.po.user.UserResume;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,12 +41,16 @@ public class MyResumeController extends BaseController {
 	private ResumeService resumeService;
 
 	@RequestMapping("")
-	public String index(Model model){
+	public String index(Model model) throws ServiceException{
+		// 加载简历列表
+		model.addAttribute("resumes", resumeService.loadMyResumes(getCurrentUserId()));
+		// 加载招聘常量
+		model.addAttribute("positionSalary", ARContext.positionSalary);
 
 		return "my/recruit/resume-index";
 	}
 
-	@RequestMapping(value = "postResume", method = RequestMethod.POST)
+	@RequestMapping(value = "/postResume", method = RequestMethod.POST)
 	public String postResume(RedirectAttributes attr, @RequestParam("recruitId") Integer recruitId,
 			@RequestParam("resumeId") Integer resumeId) throws ServiceException {
 
@@ -74,6 +79,13 @@ public class MyResumeController extends BaseController {
 		return "my/recruit/resume-add";
 	}
 
+	/**
+	 * @param model
+	 * @param attr
+	 * @param resume
+	 * @return
+	 * @throws ServiceException
+	 */
 	@RequestMapping("/addResumeSubmit")
 	public String addResumeSubmit(Model model, RedirectAttributes attr, UserResume resume) throws ServiceException {
 
@@ -81,6 +93,54 @@ public class MyResumeController extends BaseController {
 		resume.setStateTime(new Date());
 		resume.setUserId(getCurrentUserId());
 		resumeService.createResume(resume);
+
+		return "redirect:/my/resume.action";
+	}
+
+	@RequestMapping("/detail")
+	public String detail(Model model, @Param("resumeId") Integer resumeId) throws ServiceException{
+		// 加载简历信息
+		model.addAttribute("resume", resumeService.getResumeById(resumeId));
+
+		return "my/recruit/resume-detail";
+	}
+
+	/**
+	 * TODO 编辑简历，加载简历信息到编辑界面
+	 * @param model
+	 * @param resumeId
+	 * @return
+	 * @throws ServiceException
+	 */
+	@RequestMapping("/edit")
+	public String edit(Model model, @Param("resumeId") Integer resumeId) throws ServiceException {
+		// 加载简历信息
+		model.addAttribute("resume", resumeService.getResumeById(resumeId));
+		// 加载招聘常量
+		model.addAttribute("positionSalary", ARContext.positionSalary);
+		
+		return "my/recruit/resume-edit";
+	}
+
+	/**
+	 * TODO  更新简历信息
+	 * @param model
+	 * @param resume
+	 * @return
+	 * @throws ServiceException
+	 */
+	@RequestMapping("/update")
+	public String update(Model model, UserResume resume) throws ServiceException {
+		// 填补resume信息并更新，
+		resume.setStateTime(new Date());
+		if (resumeService.updateResume(resume) > 0){
+			 setMessage(model, "简历更新成功");
+		}
+		return "redirect:/my/resume.action";
+	}
+
+	@RequestMapping("/delete")
+	public String delete(Model model, @Param("resumeId") Integer resumeId){
 
 		return "redirect:/my/resume.action";
 	}

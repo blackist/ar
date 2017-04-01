@@ -20,7 +20,7 @@ import com.xzit.ar.common.init.context.ARContext;
 public class RecruitUtil {
 
 	public static void initRecruit() throws UtilException {
-		System.out.println("-------------- 职业招聘初始化 ---------------");
+		System.out.println(">>>>>>>>>>>>>>>>>>>>> 职业招聘初始化 <<<<<<<<<<<<<<<<<<<<<<");
 		loadUnitProperty();
 		loadUnitIndustry();
 		loadUnitScale();
@@ -35,7 +35,7 @@ public class RecruitUtil {
 	 * @Description: TODO 加载公司属性列表
 	 */
 	public static void loadUnitProperty() throws UtilException {
-		System.out.println("-------------- 加载 公司属性列表 ---------------");
+		System.out.println("-------------------- 加载 公司属性列表 --------------------");
 		try {
 			// 加载数据库存有权限到环境
 			ARContext.unitProperty = ARContext.dataMapper.loadDictData("pro");
@@ -63,7 +63,7 @@ public class RecruitUtil {
 	 * @Description: TODO loadUnitScale
 	 */
 	public static void loadUnitScale() throws UtilException {
-		System.out.println("-------------- 加载 公司规模列表 ---------------");
+		System.out.println("-------------------- 加载 公司规模列表 --------------------");
 		try {
 			// 加载数据库存有权限到环境
 			ARContext.unitScale = ARContext.dataMapper.loadDictData("sca");
@@ -91,7 +91,7 @@ public class RecruitUtil {
 	 * @Description: TODO loadUnitIndustry
 	 */
 	public static void loadUnitIndustry() throws UtilException {
-		System.out.println("-------------- 加载 公司行业列表 ---------------");
+		System.out.println("-------------------- 加载 公司行业列表 --------------------");
 		try {
 			// 加载数据库存有权限到环境
 			ARContext.unitIndustry = ARContext.dataMapper.loadDictData("ind");
@@ -119,7 +119,7 @@ public class RecruitUtil {
 	 *         UtilException @return void @throws
 	 */
 	public static void loadPositionSalary() throws UtilException {
-		System.out.println("-------------- 加载 职位薪资列表 ---------------");
+		System.out.println("-------------------- 加载 职位薪资列表 --------------------");
 		try {
 			// 加载数据库存有权限到环境
 			ARContext.positionSalary = ARContext.dataMapper.loadDictData("sl");
@@ -146,7 +146,7 @@ public class RecruitUtil {
 	 *         UtilException @return void @throws
 	 */
 	public static void loadPositionBenefit() throws UtilException {
-		System.out.println("-------------- 加载 职位福利列表 ---------------");
+		System.out.println("-------------------- 加载 职位福利列表 --------------------");
 		try {
 			// 加载数据库存有权限到环境
 			ARContext.positionBenefit = ARContext.dataMapper.loadDictData("be");
@@ -174,7 +174,7 @@ public class RecruitUtil {
 	 * @Description: TODO loadPositionPro
 	 */
 	public static void loadPositionProf() throws UtilException {
-		System.out.println("-------------- 加载 职位学历要求列表 ---------------");
+		System.out.println("-------------------- 加载 职位学历要求列表 --------------------");
 		try {
 			// 加载数据库存有权限到环境
 			ARContext.positionProf = ARContext.dataMapper.loadDictData("prof");

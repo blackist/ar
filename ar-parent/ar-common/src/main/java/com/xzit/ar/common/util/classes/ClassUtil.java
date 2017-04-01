@@ -26,6 +26,7 @@ public class ClassUtil {
 	 * @Description: TODO 班级录初始化
 	 */
 	public static void initClass() throws UtilException {
+		System.out.println(">>>>>>>>>>>>>>>>>>>> 班记录初始化 <<<<<<<<<<<<<<<<<<<<<");
 		loadGradeList();
 	}
 
@@ -36,6 +37,7 @@ public class ClassUtil {
 	 */
 	public static void loadGradeList() throws UtilException {
 		try {
+			System.out.println("-------------------- 加载年级列表 --------------------");
 			ARContext.classGrade = ARContext.applicationContext.getBean(GradeMapper.class).loadGradeList();
 		} catch (Exception e) {
 			throw new UtilException("加载年级列表异常");

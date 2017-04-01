@@ -29,10 +29,10 @@ public interface ResumeService {
 	 * @param @param userId
 	 * @param @return
 	 * @param @throws ServiceException   
-	 * @return List<UserResume> 
+	 * @return List<Map<String, Object>>
 	 * @throws
 	 */
-	public List<UserResume> loadMyResumes(Integer userId) throws ServiceException;
+	public List<Map<String, Object>> loadMyResumes(Integer userId) throws ServiceException;
 
 	/**
 	 * @Title: loadPostResumes
@@ -71,4 +71,20 @@ public interface ResumeService {
 	 * @throws ServiceException
 	 */
 	public int createResume(UserResume resume) throws ServiceException;
+
+	/**
+	 * TODO 根据ID加载用户简历详情
+	 * @param resumeId
+	 * @return
+	 * @throws ServiceException
+	 */
+	public UserResume getResumeById(Integer resumeId) throws ServiceException;
+
+	/**
+	 * TODO 更新简历信息
+	 * @param resume
+	 * @return
+	 * @throws ServiceException
+	 */
+	public int updateResume(UserResume resume) throws ServiceException;
 }

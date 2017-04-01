@@ -21,7 +21,7 @@ import com.xzit.ar.common.mapper.dict.DictionaryDataMapper;
 public class DictionaryUtil {
 
 	public static void loadDictionary() throws UtilException {
-		System.out.println("-------------- 加载数据字典 ---------------");
+		System.out.println("-------------------- 加载数据字典 --------------------");
 		try {
 			DictionaryDataMapper dictionaryDataMapper = ARContext.applicationContext
 					.getBean(DictionaryDataMapper.class);

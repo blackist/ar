@@ -28,13 +28,13 @@
 		select
 		<include refid="Base_Column_List" />
 		from user_resume
-    	where resume_id = #{resumeId,jdbcType=INTEGER}
+    	where resume_id = #{resumeId,jdbcType=INTEGER}  and state = 'A'
 	</select>
-	<select id="loadPostResumes" resultType="map" parameterType="java.lang.Integer">
+	<select id="getResumes" resultType="map" parameterType="java.lang.Integer">
 		select
-		resume_id resumeId, resume_title resumeTitle
+		resume_id resumeId, resume_title resumeTitle, prof_type profType, exp_salary expSalary
 		from user_resume
-		where user_id = #{userId}
+		where user_id = #{userId} and state = 'A'
 	</select>
 	
 	<!-- delete -->
@@ -84,7 +84,7 @@
 	<update id="update" parameterType="com.xzit.ar.common.po.user.UserResume">
 		update user_resume
 		<set >
-			<if test="resumeTitle != null" >resume_titile = #{resumeTitle,jdbcType=VARCHAR},</if>
+			<if test="resumeTitle != null" >resume_title = #{resumeTitle,jdbcType=VARCHAR},</if>
 			<if test="profType != null" >prof_type = #{profType,jdbcType=VARCHAR},</if>
 			<if test="expSalary != null" >exp_salary = #{expSalary,jdbcType=VARCHAR},</if>
 			<if test="name != null" >name = #{name,jdbcType=VARCHAR},</if>

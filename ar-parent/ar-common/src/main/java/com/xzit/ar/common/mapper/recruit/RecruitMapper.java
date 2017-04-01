@@ -49,4 +49,12 @@ public interface RecruitMapper extends BaseMapper {
 	@SelectProvider(type=RecruitProvider.class,method="queryJob")
 	List<Map<String, Object>> queryJob(Page<Map<String, Object>> page, @Param("queryStr") String queryStr, @Param("state") String state)
 			throws Exception;
+
+	/**
+	 * TODO 用户向此招聘信息投递简历时，此招聘信息的简历投递数+1
+	 * @param recruitId
+	 * @return
+	 * @throws Exception
+	 */
+	int addResumes(@Param("recruitId") Integer recruitId) throws Exception;
 }

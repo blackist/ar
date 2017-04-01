@@ -44,6 +44,9 @@ public class StartupServlet extends DispatcherServlet {
 		ARContext.applicationContext = super.getWebApplicationContext();
 
 		try {
+
+			System.out.println("-------------------- 加载系统数据 --------------------");
+			
 			/**
 			 * 获取数据字典bean
 			 */
@@ -69,9 +72,9 @@ public class StartupServlet extends DispatcherServlet {
 			 */
 			ClassUtil.initClass();
 			
-			System.out.println("--------- 信电校友录 启动成功  ----------");
+			System.out.println("-------------------- 信电校友录 启动成功  --------------------");
 		} catch (Exception e) {
-			System.out.println("--------- 信电校友录 启动失败  ----------");
+			System.out.println("-------------------- 信电校友录 启动失败  --------------------");
 			e.printStackTrace();
 		}
 	}
