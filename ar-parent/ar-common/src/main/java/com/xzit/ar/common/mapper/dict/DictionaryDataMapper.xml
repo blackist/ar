@@ -8,7 +8,7 @@
 		<result column="dictdata_value" property="dictdataValue" jdbcType="VARCHAR" />
 		<result column="is_fixed" property="isFixed" jdbcType="CHAR" />
 		<result column="is_cancel" property="isCancel" jdbcType="CHAR" />
-		<result column="parent_id" property="parentId" jdbcType="CHAR" />
+		<result column="parent_id" property="parentId" jdbcType="INTEGER" />
 	</resultMap>
 	<sql id="Base_Column_List" >id, dict_value, dictdata_name, dictdata_value, is_fixed, is_cancel, parent_id</sql>
 	<sql id="result_List" >
@@ -56,7 +56,7 @@
 			<if test="dictdataValue != null" >#{dictdataValue,jdbcType=VARCHAR},</if>
 			<if test="isFixed != null" >#{isFixed,jdbcType=CHAR},</if>
 			<if test="isCancel != null" >#{isCancel,jdbcType=CHAR},</if>
-			<if test="parentId != null" >#{parentId,jdbcType=CHAR},</if>
+			<if test="parentId != null" >#{parentId,jdbcType=INTEGER},</if>
 		</trim>
 	</insert>
 	
@@ -69,7 +69,7 @@
 			<if test="dictdataValue != null" >dictdata_value = #{dictdataValue,jdbcType=VARCHAR},</if>
 			<if test="isFixed != null" >is_fixed = #{isFixed,jdbcType=CHAR},</if>
 			<if test="isCancel != null" >is_cancel = #{isCancel,jdbcType=CHAR},</if>
-			<if test="parentId != null" >parent_id = #{parentId,jdbcType=CHAR},</if>
+			<if test="parentId != null" >parent_id = #{parentId,jdbcType=INTEGER},</if>
 		</set>
 		where id = #{id,jdbcType=INTEGER}
 	</update>

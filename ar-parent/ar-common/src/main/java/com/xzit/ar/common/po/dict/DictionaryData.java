@@ -20,7 +20,7 @@ public class DictionaryData extends BaseEntity {
 
     private String isCancel;
 
-    private String parentId;
+    private Integer parentId;
 
     public Integer getId() {
         return id;
@@ -70,11 +70,11 @@ public class DictionaryData extends BaseEntity {
         this.isCancel = isCancel == null ? null : isCancel.trim();
     }
 
-    public String getParentId() {
+    public Integer getParentId() {
         return parentId;
     }
 
-    public void setParentId(String parentId) {
-        this.parentId = parentId == null ? null : parentId.trim();
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
     }
 }
