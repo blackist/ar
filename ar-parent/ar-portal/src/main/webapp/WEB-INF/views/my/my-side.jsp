@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<img src="/img/portrait/me.jpg" class="thumbnail img-responsive" />
+<img src="assets/images/photos/profile-2.png" class="thumbnail img-responsive" />
 <h1 class="subtitle">基本</h1>
 <ul class="nav nav-pills nav-stacked nav-email ul-h">
 	<li id="my-home"><a href="my.action"><i
