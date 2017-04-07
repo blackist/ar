@@ -49,7 +49,7 @@
 										<td>
 											<div class="media">
 												<a href="#" class="pull-left"> <img alt=""
-													src="assets/images/photos/profile-2.jpg"
+													src="${SESSION_USER.portrait}"
 													class="media-object">
 												</a>
 												<div class="media-body">

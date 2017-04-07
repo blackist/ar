@@ -8,7 +8,7 @@ import com.xzit.ar.common.base.BaseMapper;
 
 public interface UserMapper extends BaseMapper {
 
-	Map<String, Object> selectByAccount(@Param("account") String account);
+	Map<String, Object> selectByAccount(@Param("account") String account) throws  Exception;
 
-	Map<String, Object> loadUserRelInfo(@Param("userId") Integer userId);
+	Map<String, Object> loadUserRelInfo(@Param("userId") Integer userId) throws Exception;
 }

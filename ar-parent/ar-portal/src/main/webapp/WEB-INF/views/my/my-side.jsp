@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<img src="assets/images/photos/profile-2.png" class="thumbnail img-responsive" />
+<%--<img src="assets/images/photos/profile-2.png" class="thumbnail img-responsive" />--%>
+<img src="${SESSION_USER.portrait}" class="thumbnail img-responsive" />
 <h1 class="subtitle">基本</h1>
 <ul class="nav nav-pills nav-stacked nav-email ul-h">
 	<li id="my-home"><a href="my.action"><i
@@ -8,15 +9,15 @@
 	<li id="my-profile"><a href="my/profile/basic.action"><i
 			class="fa fa-user"></i>个人资料</a></li>
 	<li><a href="my/account.action"><i class="fa fa-gears"></i>账户设置</a></li>
-	<li id="my-msg"><a href="my/msg.action"> <span
-			class="badge pull-right">3</span> <i
-			class="glyphicon glyphicon-comment"></i>我的消息
-	</a></li>
 </ul>
 
 <div class="mb10"></div>
 <h1 class="subtitle">应用</h1>
 <ul class="nav nav-pills nav-stacked nav-email">
+	<li id="my-msg"><a href="my/msg.action"> <span
+			class="badge pull-right">3</span> <i
+			class="fa fa-comments"></i>我的消息
+	</a></li>
 	<li id="my-class"><a href="my/class.action"><i
 			class="fa fa-mortar-board"></i>我的班级</a></li>
 	<li id="my-forum"><a href="my/forum.action"><i

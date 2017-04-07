@@ -31,7 +31,7 @@ public interface BaseMapper {
 	/**
 	 * 根据Id查询
 	 */
-	<T extends BaseEntity> T getById(final Serializable id) throws Exception;
+	<T extends BaseEntity> T getById(final Serializable id);
 
 	/**
 	 * 根据实体查询

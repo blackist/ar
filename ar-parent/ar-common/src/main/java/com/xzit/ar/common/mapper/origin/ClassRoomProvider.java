@@ -23,7 +23,7 @@ public class ClassRoomProvider {
 //				+ "img.image_path mgrImg "
 //				+ "from origin o, user_info ui, image img, user u "
 //				+ "where o.origin_id=#{classId} and o.state='A' and ui.user_id=o.mgr_id and u.user_id=ui.user_id "
-//				+ "and img.image_id=u.head_image_id ";
+//				+ "and img.image_id=u.image_id ";
 //	}
 	
 	public String classIndex() {
@@ -39,7 +39,7 @@ public class ClassRoomProvider {
 				+ "from origin o, user_origin uo, user_info ui, image img, user u "
 				+ "where o.origin_id=#{classId} and o.state='A' "
 				+ "and uo.origin_id=o.origin_id and uo.state='A' and ui.user_id=uo.user_id "
-				+ "and u.user_id=ui.user_id and img.image_id=u.head_image_id ";
+				+ "and u.user_id=ui.user_id and img.image_id=u.image_id ";
 	}
 	
 	public String classMember(){
@@ -47,7 +47,7 @@ public class ClassRoomProvider {
 				+ "from origin o, user_origin uo, user_info ui, image img, user u "
 				+ "where o.origin_id=#{classId} and o.state='A' "
 				+ "and uo.origin_id=o.origin_id and uo.state='A' and ui.user_id=uo.user_id "
-				+ "and u.user_id=ui.user_id and img.image_id=u.head_image_id order by uo.state_time ";
+				+ "and u.user_id=ui.user_id and img.image_id=u.image_id order by uo.state_time ";
 	}
 	
 	public String classInfo(){
@@ -73,7 +73,7 @@ public class ClassRoomProvider {
 				+ "ui.true_name userName, ui.introduce userIntroduce, info.create_time createTime, info.info_id infoId, ui.user_id userId, "
 				+ "img.image_path userHead "
 				+ "from information info, user_info ui, user u, image img "
-				+ "where info.user_id=ui.user_id and ui.user_id=u.user_id and u.head_image_id=img.image_id "
+				+ "where info.user_id=ui.user_id and ui.user_id=u.user_id and u.image_id=img.image_id "
 				+ "and info.origin_id=#{classId} and info.info_id=#{infoId} and info.info_type='CI' and info.state='A' "
 				+ "order by info.create_time ";
 	}

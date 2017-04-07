@@ -57,7 +57,7 @@ public class OriginProvider {
 				+ "img.image_path imgPath, uo.create_time createTime "
 				+ "from origin o, user_origin uo, user u, user_info ui, image img "
 				+ "where o.origin_type=#{originType} and o.state='A' and uo.state='A' "
-				+ "and o.origin_id=uo.origin_id and uo.user_id=u.user_id and ui.user_id=u.user_id and img.image_id=u.head_image_id "
+				+ "and o.origin_id=uo.origin_id and uo.user_id=u.user_id and ui.user_id=u.user_id and img.image_id=u.image_id "
 				+ "order by uo.create_time desc limit 0,#{number}";
 	}
 	

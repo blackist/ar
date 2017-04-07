@@ -12,6 +12,8 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import com.xzit.ar.common.mapper.image.ImageMapper;
+import com.xzit.ar.common.po.image.Image;
 import org.springframework.stereotype.Service;
 
 import com.xzit.ar.common.exception.ServiceException;
@@ -30,6 +32,9 @@ public class LoginServiceImpl implements com.xzit.ar.portal.service.LoginService
 	@Resource
 	private UserMapper userMapper;
 
+	@Resource
+	private ImageMapper imageMapper;
+
 	@Override
 	public Map<String, Object> validateUser(String account, String password) throws ServiceException {
 		Map<String, Object> user = null;
@@ -43,8 +48,17 @@ public class LoginServiceImpl implements com.xzit.ar.portal.service.LoginService
 					if (password.equals(user.get("password"))) {
 						if (!user.get("isAdmin").toString().equals("1")) {
 							// 加载用户关联信息
+							Integer imageId = (Integer) (user.get("imageId"));
 							Integer userId = (Integer) (user.get("userId"));
-							user = userMapper.loadUserRelInfo(userId);
+							Map<String, Object> userTmp = userMapper.loadUserRelInfo(userId);
+							if(CommonUtil.isNotEmpty(userTmp)) {
+								user = userTmp;
+							} else if (CommonUtil.isNotEmpty(imageId)) {
+								Image image = imageMapper.getById(imageId);
+								if(image != null){
+									user.put("portrait", image.getImagePath());
+								}
+							}
 						}
 					} else {
 						user.put("userId", null);

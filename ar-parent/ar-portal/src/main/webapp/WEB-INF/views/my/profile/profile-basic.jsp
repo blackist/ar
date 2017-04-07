@@ -135,7 +135,7 @@
 												<td>
 													<div class="media">
 														<a href="#" class="pull-left"> <img alt=""
-															src="images/photos/user4.png" class="media-object">
+															src="${SESSION_USER.portrait}" class="media-object">
 														</a>
 														<div class="media-body">
 															<span class="media-meta pull-right">Jan 12 at

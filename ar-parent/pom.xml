@@ -10,8 +10,8 @@
 
 	<modules>
 		<module>ar-common</module>
-		<module>ar-portal</module>
 		<module>ar-manage</module>
+		<module>ar-portal</module>
 	</modules>
 
 	<properties>
@@ -278,7 +278,7 @@
 				<version>${project.version}</version>
 			</dependency>
 
-			<!-- 工程common war包 -->
+			<!-- 工程manage war包 -->
 			<dependency>
 				<groupId>com.xzit.ar</groupId>
 				<artifactId>ar-manage</artifactId>

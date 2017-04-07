@@ -13,12 +13,22 @@
 					<li>|</li>
 					<li><a href="message/contactUs.action">联系我们</a></li>
 				</ul>
-			</div>
+			</div>                      
 			<div class="top_left">
 				<ul>
 					<c:choose>
 						<c:when test="${SESSION_USER != null}">
-							<li class="top_link"><a href="my.action" target="blank"><i class="fa fa-user"></i> ${SESSION_USER.userName}</a></li>
+							<li class="top_link">
+								<a href="my.action" target="blank">
+									<%--<c:if test="${SESSION_USER.portrait != null}">--%>
+										<%--<img src="${SESSION_USER.portrait}" width="20px" class="img-circle"/>--%>
+									<%--</c:if>--%>
+									<%--<c:if test="${SESSION_USER.portrait == null}"><i class="fa fa-user"></i></c:if>--%>
+
+									<c:if test="${SESSION_USER.trueName != null}"><i class="fa fa-user"></i>&nbsp;${SESSION_USER.trueName}</c:if>
+									<c:if test="${SESSION_USER.trueName == null}">${SESSION_USER.account}</c:if>
+								</a>
+							</li>
 							<li>|</li>
 							<li class="top_link"><a href="login/logout.action">退出</a></li>
 							<input class="logoutStyle" name="-gfj_jkb-fsjvbkcjadkcnkjsdnzxc"
@@ -31,7 +41,6 @@
 					</c:choose>
 				</ul>
 			</div>
-			<div class="clearfix"></div>
 		</div>
 	</div>
 </div>

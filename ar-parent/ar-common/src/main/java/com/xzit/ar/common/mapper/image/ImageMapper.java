@@ -1,17 +1,8 @@
 package com.xzit.ar.common.mapper.image;
 
-import com.xzit.ar.common.po.image.Image;
+import com.xzit.ar.common.base.BaseMapper;
 
-public interface ImageMapper {
-    int deleteByPrimaryKey(Integer imageId);
+public interface ImageMapper extends BaseMapper {
 
-    int insert(Image record);
-
-    int insertSelective(Image record);
-
-    Image selectByPrimaryKey(Integer imageId);
-
-    int updateByPrimaryKeySelective(Image record);
-
-    int updateByPrimaryKey(Image record);
+    
 }
