@@ -40,7 +40,6 @@ body a:hover {
 	font-size: 2em;
 	color: #204056;
 	text-decoration: none;
-	background: url(../images/1.png) no-repeat 0px 0px;
 	display: block;
 	height: 50px;
 	padding-left: 1.8em;
@@ -431,7 +430,6 @@ a.simpleCart_empty {
 	text-decoration: none;
 	height: 74px;
 	width: 35px;
-	background: transparent url("../images/2.png") no-repeat -15px -36px;
 }
 
 .callbacks_nav:active {
@@ -440,7 +438,7 @@ a.simpleCart_empty {
 
 .callbacks_nav.next {
 	left: auto;
-	background: transparent url("../images/2.png") no-repeat -80px -36px;
+	background: transparent url("") no-repeat -80px -36px;
 	right: -3%;
 }
 
@@ -456,7 +454,7 @@ a.simpleCart_empty {
 	text-decoration: none;
 	height: 35px;
 	width: 28px;
-	background: transparent url("../images/img-sp.png") no-repeat -1.4em
+	background: transparent url("") no-repeat -1.4em
 		-26em;
 }
 
@@ -466,7 +464,6 @@ a.simpleCart_empty {
 
 .callbacks2_nav.next {
 	left: auto;
-	background: transparent url("../images/img-sp.png") no-repeat -4em -26em;
 	right: 47.6%;
 	height: 35px;
 	width: 28px;
@@ -584,7 +581,6 @@ li
 
 
 li
-,
 {
 display
 
@@ -705,7 +701,6 @@ display
 ul.social-slide li i {
 	width: 70px;
 	height: 74px;
-	background: url(../images/backward.png) no-repeat;
 	display: inline-block;
 	margin: 0px 15px;
 }
@@ -835,7 +830,6 @@ ul.social-slide li i.mac {
 	color: #204056;
 	margin: 0;
 	font-size: 1.5em;
-	background: url(../images/4.png) no-repeat 140px 18px;
 	display: block;
 }
 
@@ -911,13 +905,11 @@ ul.social-slide li i.mac {
 .nbs-flexisel-nav-left {
 	left: -4%;
 	top: 15% !important;
-	background: url(../images/3.png) no-repeat 0px 0px;
 }
 
 .nbs-flexisel-nav-right {
 	right: -4%;
 	top: 15% !important;
-	background: url(../images/3.png) no-repeat -66px 0px;
 }
 /*--//flexisel--*/
 /*-- //cate --*/
@@ -975,7 +967,6 @@ ul.social-slide li i.mac {
 
 .let a:hover {
 	background-position: 107px !important;
-	background: url(../images/3.png) no-repeat 86px 14px #204056;
 }
 /*-- //cate-bottom --*/
 /*-- welcome --*/
@@ -1500,7 +1491,6 @@ a.item_add1 {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 	padding: 10px 15px;
-	background: url(0) #f54d56;
 }
 
 a.item_add1:hover {
@@ -2141,7 +2131,6 @@ span.valsa {
 	color: #f65a5b;
 	text-transform: uppercase;
 	font-size: 11px;
-	-webkit-text-stroke: 0px;
 	letter-spacing: 0px;
 }
 
@@ -2757,7 +2746,6 @@ label.radio {
 		min-height: 300px;
 	}
 	.welcome:before {
-		background: url(../images/5.png) no-repeat -36px 40px;
 	}
 	.wel a {
 		width: 32%;
@@ -2838,7 +2826,6 @@ label.radio {
 		width: 17%;
 	}
 	.cate-left h3 {
-		background: url(../images/4.png) no-repeat 140px 23px;
 	}
 	.cate-bottom-info h3 {
 		padding: 1em 0 .5em;
@@ -2847,7 +2834,6 @@ label.radio {
 		width: 35%;
 	}
 	.cate-bottom {
-		background: url(../images/21.jpg) no-repeat 0px -120px;
 		background-size: cover;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
@@ -2862,12 +2848,10 @@ label.radio {
 		width: 50% !important;
 	}
 	.welcome:before {
-		background: url(../images/5.png) no-repeat -36px 40px;
 		background-size: 145%;
 		width: 280px;
 	}
 	.welcome:after {
-		background: url(../images/6.png) no-repeat 0px 0px;
 		width: 360px;
 		background-size: 100%;
 	}
@@ -2942,12 +2926,10 @@ label.radio {
 	.callbacks_nav {
 		height: 65px;
 		width: 30px;
-		background: transparent url("../images/2.png") no-repeat -15px -36px;
 		background-size: 432%;
 		left: -1.6%;
 	}
 	.callbacks_nav.next {
-		background: transparent url("../images/2.png") no-repeat -80px -36px;
 		background-size: 432%;
 		right: -1.6%;
 	}
@@ -2955,7 +2937,6 @@ label.radio {
 		display: none;
 	}
 	.cate-left h3 {
-		background: url(../images/4.png) no-repeat 108px 23px;
 		font-size: 1.3em;
 	}
 	.cate-bottom-info {
@@ -2968,12 +2949,10 @@ label.radio {
 		min-height: 311px;
 	}
 	.welcome:before {
-		background: url(../images/5.png) no-repeat -36px 40px;
 		background-size: 158%;
 		width: 200px;
 	}
 	.welcome:after {
-		background: url(../images/6.png) no-repeat -15px 0px;
 		width: 230px;
 		background-size: 120%;
 	}
@@ -3120,13 +3099,11 @@ label.radio {
 		padding: 0em 0 2em;
 	}
 	.cate-left h3 {
-		background: url(../images/4.png) no-repeat 290px 20px;
 	}
 	.cate-bottom-info {
 		width: 60%;
 	}
 	.welcome:before {
-		background: url(../images/5.png) no-repeat -35px 40px;
 		background-size: 158%;
 		width: 125px;
 	}
@@ -3134,7 +3111,6 @@ label.radio {
 		width: 100%;
 	}
 	.welcome:after {
-		background: url(../images/6.png) no-repeat -15px 0px;
 		width: 160px;
 		background-size: 120%;
 	}
@@ -3242,7 +3218,6 @@ label.radio {
 		width: 32.69%;
 	}
 	.cate-bottom {
-		background: url(../images/21.jpg) no-repeat 0px -95px;
 		background-size: cover;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
@@ -3269,7 +3244,6 @@ label.radio {
 		font-size: 14px;
 	}
 	.logo a {
-		background: url(../images/1.png) no-repeat 0px 0px;
 		background-size: 18%;
 		font-size: 1.5em;
 	}
@@ -3344,12 +3318,10 @@ label.radio {
 		min-height: 250px;
 	}
 	.welcome:before {
-		background: url(../images/5.png) no-repeat -20px 40px;
 		background-size: 150%;
 		width: 100px;
 	}
 	.welcome:after {
-		background: url(../images/6.png) no-repeat -9px 0px;
 		width: 100px;
 		background-size: 120%;
 	}
@@ -3464,7 +3436,6 @@ label.radio {
 		text-align: center;
 	}
 	.logo a {
-		background: url(../images/1.png) no-repeat 60px 0px;
 		background-size: 13%;
 	}
 	.header_top {
@@ -3481,7 +3452,6 @@ label.radio {
 
 @media ( max-width : 320px) {
 	.logo a {
-		background: url(../images/1.png) no-repeat 36px 0px;
 		background-size: 13%;
 	}
 	.box_1 {
@@ -3514,7 +3484,6 @@ label.radio {
 	}
 	.cate-left h3 {
 		font-size: 1em;
-		background: url(../images/4.png) no-repeat 134px 16px;
 	}
 	.cate-left h3 span {
 		font-size: 12px;
@@ -3526,7 +3495,6 @@ label.radio {
 		width: 50% !important;
 	}
 	.cate-bottom {
-		background: url(../images/21.jpg) no-repeat 0px 0px;
 	}
 	.wel a {
 		width: 80% !important;
@@ -3756,7 +3724,6 @@ label.radio {
 		font-size: 13px;
 	}
 	.banner-info1 {
-		background: url(../images/banner.jpg) no-repeat -100px 0px;
 		background-size: cover;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
@@ -3793,7 +3760,6 @@ label.radio {
 	.logo a {
 		height: 37px;
 		font-size: 1.3em;
-		background: url(../images/1.png) no-repeat 47px 2px;
 		background-size: 11%;
 	}
 }

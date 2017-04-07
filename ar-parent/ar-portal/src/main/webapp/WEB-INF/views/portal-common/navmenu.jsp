@@ -14,12 +14,12 @@
 				<li id="nav-bbs"><a class="color1" href="javascript:;">校友论坛</a></li>
 				<li id="nav-recruit"><a class="color1" href="recruit.action">职业招聘</a></li>
 				<li id="nav-donate"><a class="color1" href="javascript:;">校友捐赠</a></li>
-				<li id="nav-contact"><a class="color1"
-					href="message/contactUs.action">联系我们</a></li>
+				<li id="nav-contact"><a class="color1" href="service.action">校园服务</a></li>
 				<li><div class="search" style="max-width: 263px;">
 						<input type="text" value="" placeholder="搜索 ..."> <input
 							type="submit" value="" onclick="superSearch()">
-					</div></li>
+					</div>
+				</li>
 			</ul>
 			<div class="clearfix"></div>
 		</div>

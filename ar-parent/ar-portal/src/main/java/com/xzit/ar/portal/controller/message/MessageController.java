@@ -8,7 +8,9 @@
  */
 package com.xzit.ar.portal.controller.message;
 
+import com.xzit.ar.common.po.message.Message;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.xzit.ar.common.base.BaseController;
@@ -27,8 +29,9 @@ public class MessageController extends BaseController {
 	 * @Title: contactUs
 	 * @Description: TODO 加载联系我们表单
 	 */
-	@RequestMapping("/contactUs")
+	@RequestMapping("")
 	public String contactUs() {
-		return "message/contact-us";
+		return "msg/contact-us";
 	}
+
 }
