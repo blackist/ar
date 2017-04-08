@@ -18,8 +18,6 @@
 
 @import url('select2.css');
 
-@import url('lato.css');
-
 @import url('roboto.css');
 
 /********** 2. RESET STYLES **********/
@@ -104,7 +102,7 @@ strong {
 
 .searchform input {
 	width: 250px;
-	background: #fff url(../images/icon-search.png) no-repeat 95% center;
+	background: #fff no-repeat 95% center;
 	float: left;
 	padding: 18px 20px;
 	border: 0;
@@ -501,12 +499,11 @@ strong {
 }
 
 .nav-bracket>li.nav-parent>a {
-	background: transparent url(../images/plus-white.png) no-repeat 92%
+	background: transparent  no-repeat 92%
 		center;
 }
 
 .nav-bracket>li.nav-parent>a:focus {
-	background-color: none;
 	color: #8F939E;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
@@ -517,12 +514,10 @@ strong {
 	{
 	color: #1d2939;
 	background-color: #fff;
-	background-image: url(../images/plus.png);
 }
 
 .nav-bracket>li.nav-active>a {
 	background-color: #fff;
-	background-image: url(../images/minus.png);
 	color: #1d2939;
 	-moz-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
 	-webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
@@ -530,7 +525,6 @@ strong {
 }
 
 .nav-bracket>li.nav-active>a:hover {
-	background-image: url(../images/minus.png);
 	background-repeat: no-repeat;
 }
 
@@ -551,15 +545,12 @@ strong {
 }
 
 .nav-bracket>li.nav-parent.active>a {
-	background-image: url(../images/plus.png);
 }
 
 .nav-bracket>li.nav-active.active>a {
-	background-image: url(../images/minus.png);
 }
 
 .nav-bracket>li.nav-active.active>a:hover {
-	background-image: url(../images/minus.png);
 }
 
 .nav-bracket li .fa, .nav-bracket li .glyphicon {
@@ -719,7 +710,6 @@ strong {
 
 .pageheader .fa-file-text {
 	padding: 6px 10px;
-	`
 }
 
 .pageheader .fa-map-marker {
@@ -3016,11 +3006,11 @@ div.error label.error:before {
 }
 
 .signinpanel .uname {
-	background: #fff url(../images/user.png) no-repeat 95% center;
+	background: #fff no-repeat 95% center;
 }
 
 .signinpanel .pword {
-	background: #fff url(../images/locked.png) no-repeat 95% center;
+	background: #fff no-repeat 95% center;
 }
 
 .signinpanel .btn {

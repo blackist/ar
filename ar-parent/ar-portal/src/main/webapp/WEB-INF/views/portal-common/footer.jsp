@@ -40,7 +40,7 @@
 </div>
 <div class="footer-copy">
 	<p>
-		© 2015 徐州工程学院信电学院保留所有版权 | XSD Team 设计 <a href="#"> XSD</a>
+		© 徐州工程学院信电工程学院保留所有版权 | <a href="http://www.blackist.org" style="text-decoration: none">董亮亮</a> 设计
 	</p>
 </div>
 <!-- //footer -->

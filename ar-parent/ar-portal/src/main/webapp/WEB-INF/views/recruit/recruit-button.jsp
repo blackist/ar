@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <form action="recruit.action" method="get">
 	<div class="btn-demo"
-		style="width: 350px; float: right; padding-left: 50px;">
+		style="width: 228px; float: right; ">
 		<a class="btn btn-success" href="recruit/addRecruit.action"> <span
 			class="fa fa-plus-circle"></span>&nbsp;发布招聘
 		</a> <a class="btn btn-success" href="my/resume/addResume.action"> <span
