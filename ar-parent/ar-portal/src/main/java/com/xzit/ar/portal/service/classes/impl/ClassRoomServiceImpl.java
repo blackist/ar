@@ -181,7 +181,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 			if (comment != null && CommonUtil.isNotEmpty(comment.getContent())
 					&& CommonUtil.isNotEmpty(comment.getInfoId())) {
 				// 动态的评论数+1
-				infoMapper.increaseCommentNum(comment.getInfoId());
+				infoMapper.increaseComments(comment.getInfoId());
 				// 保存评论
 				return commentMapper.save(comment);
 			}

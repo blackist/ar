@@ -62,10 +62,10 @@
 	 <select id="getInfoDetailById" resultType="map">
 		 SELECT DISTINCT info.info_id infoId, info.info_title infoTitle, info.content content, info.theme theme, info.thumb_image thumbImage,
 		 		info.views views, info.comments comments, info.loves loves, info.create_time createTime, info.is_top isTop,
-		 		info.origin_id originId, u.user_id userId, u.true_name trueName, u.is_admin isAdmin, ui.introduce introduce, img.image_path portrait
-		 FROM information info, user u, origin o, user_info ui, image img
+		 		info.origin_id originId, u.user_id userId, u.true_name trueName, u.is_admin isAdmin, u.introduce introduce, img.image_path portrait
+		 FROM information info, user u, origin o, image img
 		 <where>
-			 info.info_id=#{infoId} AND info.user_id=u.user_id AND u.user_id=ui.user_id AND u.image_id=img.image_id
+			 info.info_id=#{infoId} AND info.user_id=u.user_id AND u.image_id=img.image_id
 			 AND info.state='A'
 		 </where>
 	 </select>
@@ -134,10 +134,33 @@
 		</set>
 		where info_id = #{infoId,jdbcType=INTEGER}
 	</update>
-	<update id="increaseCommentNum" parameterType="java.lang.Integer">
+	<!--累计评论-->
+	<update id="increaseComments" parameterType="java.lang.Integer">
 		update information 
 		set comments=(comments+1)
 		where info_id=#{infoId}
+	</update>
+
+	<!--累计喜欢-->
+	<update id="increaseLoves" parameterType="java.lang.Integer">
+		UPDATE information
+		<set>
+			loves=(loves+1)
+		</set>
+		<where>
+			info_id=#{infoId}
+		</where>
+	</update>
+
+	<!--累计浏览量-->
+	<update id="increaseViews" parameterType="java.lang.Integer">
+		UPDATE information
+		<set>
+			views=(views+1)
+		</set>
+		<where>
+			info_id=#{infoId}
+		</where>
 	</update>
 	
 </mapper>

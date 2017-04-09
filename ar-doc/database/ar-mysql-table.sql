@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50173
 File Encoding         : 65001
 
-Date: 2017-04-09 23:36:35
+Date: 2017-04-10 00:04:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -477,6 +477,7 @@ CREATE TABLE `user` (
   `password` varchar(32) NOT NULL COMMENT '用户密码',
   `email` varchar(50) DEFAULT NULL COMMENT '用户邮箱',
   `true_name` varchar(10) NOT NULL,
+  `introduce` varchar(255) NOT NULL DEFAULT '（这个人很懒，什么也没留下）' COMMENT '个人简介',
   `image_id` int(8) NOT NULL DEFAULT '1' COMMENT '头像图片标识',
   `is_admin` char(1) NOT NULL COMMENT '管理员标识',
   `create_time` datetime NOT NULL COMMENT '创建时间',
@@ -496,7 +497,6 @@ CREATE TABLE `user_info` (
   `sex` char(1) DEFAULT NULL,
   `age` smallint(3) DEFAULT NULL COMMENT '年龄',
   `birthday` datetime DEFAULT NULL COMMENT '生日',
-  `introduce` varchar(200) DEFAULT NULL COMMENT '自我介绍',
   `phone` varchar(20) DEFAULT NULL COMMENT '手机号',
   `email` varchar(50) DEFAULT NULL COMMENT '邮箱',
   `qq` varchar(20) DEFAULT NULL COMMENT 'qq',

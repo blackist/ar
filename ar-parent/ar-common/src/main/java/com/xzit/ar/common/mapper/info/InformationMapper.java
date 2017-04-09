@@ -17,7 +17,7 @@ public interface InformationMapper extends BaseMapper {
 	 * @param infoNum
 	 * @return
 	 */
-	List<Map<String, Object>> loadOriginInfos(@Param("infoType") String infoType, @Param("originId") Integer originId,
+	public List<Map<String, Object>> loadOriginInfos(@Param("infoType") String infoType, @Param("originId") Integer originId,
 			@Param("infoNum") Integer infoNum) throws Exception;
 
 	/**
@@ -29,7 +29,7 @@ public interface InformationMapper extends BaseMapper {
 	 * @return
 	 * @throws Exception
 	 */
-	List<Map<String, Object>> loadOriginUserInfos(Page<Map<String, Object>> page, @Param("userId") Integer userId,
+	public List<Map<String, Object>> loadOriginUserInfos(Page<Map<String, Object>> page, @Param("userId") Integer userId,
 			@Param("originId") Integer originId, @Param("infoType") String infoType) throws Exception;
 
 	/**
@@ -37,7 +37,23 @@ public interface InformationMapper extends BaseMapper {
 	 * @param infoId
 	 * @return
 	 */
-	Integer increaseCommentNum(@Param("infoId") Integer infoId) throws Exception;
+	public Integer increaseComments(@Param("infoId") Integer infoId) throws Exception;
+
+	/**
+	 * TODO 增加喜欢数
+	 * @param infoId
+	 * @return
+	 * @throws Exception
+	 */
+	public Integer increaseLoves(@Param("infoId") Integer infoId) throws Exception;
+
+	/**
+	 * TODO 累计浏览量
+	 * @param infoId
+	 * @return
+	 * @throws Exception
+	 */
+	public Integer increaseViews(@Param("infoId") Integer infoId) throws Exception;
 
 	/**
 	 * TODO 根据条件查询信息列表
@@ -51,7 +67,7 @@ public interface InformationMapper extends BaseMapper {
 	 * @return 信息列表
 	 * @throws Exception
 	 */
-	List<Map<String, Object>> queryInfos(Page<Map<String, Object>> page, @Param("queryStr") String queryStr, @Param("infoType") String infoType,
+	public List<Map<String, Object>> queryInfos(Page<Map<String, Object>> page, @Param("queryStr") String queryStr, @Param("infoType") String infoType,
 										 @Param("theme") String theme, @Param("state") String state);
 
 	/**

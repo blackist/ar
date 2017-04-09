@@ -32,7 +32,13 @@ public class PostServiceImpl implements PostService {
     public Map<String, Object> getPostById(Integer postId) throws ServiceException {
         Map<String, Object> post = null;
         try {
-            post = informationMapper.getInfoDetailById(postId);
+            // 参数校验
+            if (CommonUtil.isNotEmpty(postId)){
+                // 累计浏览量
+                informationMapper.increaseViews(postId);
+                // 加载帖子详情
+                post = informationMapper.getInfoDetailById(postId);
+            }
         } catch (Exception e) {
             throw new ServiceException("加载信息详情时发生异常！");
         }
