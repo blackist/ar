@@ -9,7 +9,7 @@
 		<result column="thumb_image" property="thumbImage" jdbcType="VARCHAR" />
 		<result column="views" property="views" jdbcType="INTEGER" />
 		<result column="comments" property="comments" jdbcType="INTEGER" />
-		<result column="shares" property="shares" jdbcType="INTEGER" />
+		<result column="loves" property="loves" jdbcType="INTEGER" />
 		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
 		<result column="is_top" property="isTop" jdbcType="CHAR" />
 		<result column="info_type" property="infoType" jdbcType="VARCHAR" />
@@ -20,7 +20,7 @@
 	</resultMap>
 	
 	<sql id="Base_Column_List" >
-		info_id, info_title, theme, content, thumb_image, views, comments, shares, create_time,
+		info_id, info_title, theme, content, thumb_image, views, comments, loves, create_time,
 		is_top, info_type, user_id, origin_id, state, state_time
 	</sql>
 	
@@ -31,24 +31,44 @@
 		from information
     where info_id = #{infoId,jdbcType=INTEGER}
 	</select>
+
+	<!-- 加载指定组织的消息列表 -->
 	<select id="loadOriginInfos" resultType="map">
 		select info_id infoId, info_title infoTitle from information where origin_id=#{originId}
 		and info_type=#{infoType} and state='A' order by create_time desc limit 0,#{infoNum}
 	</select>
+
+	<!--组织内指定成员发布的信息-->
 	<select id="loadOriginUserInfos" resultType="map">
 		select info_id infoId, info_title infoTitle from information where origin_id=#{originId}
 		and user_id=#{userId} and info_type=#{infoType} and state='A' order by create_time
 		desc
 	</select>
+
 	<!-- 查询消息列表 -->
 	<select id="queryInfos" resultType="map">
-		SELECT
-		FROM information info, user
+		SELECT info.info_id infoId, info.info_title infoTitle, info.content content, info.theme theme, info.thumb_image thumbImage, info.views views,
+				info.comments comments, info.loves loves, info.create_time createTime, info.is_top isTop, info.origin_id originId,
+				u.user_id userId, u.true_name trueName, u.is_admin isAdmin
+		FROM information info, user u
 		<where>
-			
+			info.user_id=u.user_id AND info.state=#{state} AND info.info_type=#{infoType} AND info.theme LIKE '%%'
+			AND ( info.info_title LIKE #{queryStr} OR u.true_name LIKE #{queryStr} )
+			ORDER BY info.create_time desc, info.is_top desc
 		</where>
 	</select>
-	
+
+	<!--查询消息、作者以及组织的详情-->
+	 <select id="getInfoDetailById" resultType="map">
+		 SELECT DISTINCT info.info_id infoId, info.info_title infoTitle, info.content content, info.theme theme, info.thumb_image thumbImage,
+		 		info.views views, info.comments comments, info.loves loves, info.create_time createTime, info.is_top isTop,
+		 		info.origin_id originId, u.user_id userId, u.true_name trueName, u.is_admin isAdmin, ui.introduce introduce, img.image_path portrait
+		 FROM information info, user u, origin o, user_info ui, image img
+		 <where>
+			 info.info_id=#{infoId} AND info.user_id=u.user_id AND u.user_id=ui.user_id AND u.image_id=img.image_id
+			 AND info.state='A'
+		 </where>
+	 </select>
 	
 	<!-- delete -->
 	<delete id="delete" parameterType="java.lang.Integer" >delete from information
@@ -64,7 +84,7 @@
 			<if test="thumbImage != null" >thumb_image,</if>
 			<if test="views != null" >views,</if>
 			<if test="comments != null" >comments,</if>
-			<if test="shares != null" >shares,</if>
+			<if test="loves != null" >loves,</if>
 			<if test="createTime != null" >create_time,</if>
 			<if test="isTop != null" >is_top,</if>
 			<if test="infoType != null" >info_type,</if>
@@ -81,7 +101,7 @@
 			<if test="thumbImage != null" >#{thumbImage,jdbcType=VARCHAR},</if>
 			<if test="views != null" >#{views,jdbcType=INTEGER},</if>
 			<if test="comments != null" >#{comments,jdbcType=INTEGER},</if>
-			<if test="shares != null" >#{shares,jdbcType=INTEGER},</if>
+			<if test="loves != null" >#{loves,jdbcType=INTEGER},</if>
 			<if test="createTime != null" >#{createTime,jdbcType=TIMESTAMP},</if>
 			<if test="isTop != null" >#{isTop,jdbcType=CHAR},</if>
 			<if test="infoType != null" >#{infoType,jdbcType=VARCHAR},</if>
@@ -102,7 +122,7 @@
 			<if test="thumbImage != null" >thumb_image = #{thumbImage,jdbcType=VARCHAR},</if>
 			<if test="views != null" >views = #{views,jdbcType=INTEGER},</if>
 			<if test="comments != null" >comments = #{comments,jdbcType=INTEGER},</if>
-			<if test="shares != null" >shares = #{shares,jdbcType=INTEGER},</if>
+			<if test="loves != null" >loves = #{shares,jdbcType=INTEGER},</if>
 			<if test="createTime != null" >create_time = #{createTime,jdbcType=TIMESTAMP},</if>
 			<if test="isTop != null" >is_top = #{isTop,jdbcType=CHAR},</if>
 			<if test="infoType != null" >info_type = #{infoType,jdbcType=VARCHAR},</if>

@@ -17,7 +17,7 @@
 
 	<!-- contact -->
 	<div class="container higher">
-		<div class="col-md-8 project1">
+		<div class="col-md-9 project1">
 			<!-- 导航栏 -->
 			<ol class="breadcrumb">
 				<li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>

@@ -22,7 +22,7 @@ public class Information extends BaseEntity {
 
     private Integer comments;
 
-    private Integer shares;
+    private Integer loves;
 
     private Date createTime;
 
@@ -89,11 +89,11 @@ public class Information extends BaseEntity {
     }
 
     public Integer getShares() {
-        return shares;
+        return loves;
     }
 
-    public void setShares(Integer shares) {
-        this.shares = shares;
+    public void setShares(Integer loves) {
+        this.loves = loves;
     }
 
     public Date getCreateTime() {

@@ -328,6 +328,8 @@ public class PageInterceptor implements Interceptor {
 	 */
 	protected String buildCountSql(String sql) {
 		int index = sql.indexOf("from");
+		if(index <= 0)
+			index = sql.indexOf("FROM");
 		return "select count(*) " + sql.substring(index);
 	}
 

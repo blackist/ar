@@ -2473,7 +2473,7 @@ div.error label.error:before {
 }
 
 .blog-content {
-	max-width: 975px;
+	/*max-width: 975px;*/
 }
 
 .authorpanel {
@@ -2523,13 +2523,13 @@ div.error label.error:before {
 }
 
 .sidebar-list li a {
-	padding: 7px 0;
+	padding: 5px 0;
 	display: block;
 }
 
 .sidebar-list li i {
 	display: inline-block;
-	margin-right: 5px;
+	margin-right: 0px;
 }
 
 .comment-list .media {

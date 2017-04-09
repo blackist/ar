@@ -20,4 +20,12 @@ public interface PostService {
      * @throws ServiceException
      */
     public List<Map<String, Object>> queryPosts(Page<Map<String, Object>> page, String queryStr) throws ServiceException;
+
+    /**
+     * TODO 根据info_id查询帖子详情
+     * @param postId
+     * @return post
+     * @throws ServiceException
+     */
+    public Map<String, Object> getPostById(Integer postId) throws ServiceException;
 }

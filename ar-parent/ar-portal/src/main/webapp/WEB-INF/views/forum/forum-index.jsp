@@ -35,22 +35,21 @@
 
 							<thead>
 								<tr>
-									<th>标题</th>
-									<th>招聘单位</th>
-									<th>薪水</th>
+									<th>话题</th>
+									<th>作者</th>
+									<th>评论/浏览</th>
 									<th>发布时间</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${page.beanList}" var="recruit">
+								<c:forEach items="${page.beanList}" var="post">
 									<tr>
-										<td id="${recruit.recruitId}">&nbsp;<a
-											href="recruit/detailRecruit.action?recruitId=${recruit.recruitId}"
-											target="_blank"> ${recruit.title}</a> 
-											<ar:top value="${recruit.isTop}" /></td>
-										<td>${recruit.unitName}</td>
-										<td><ar:dictdata dictdata="${recruit.salary}" dict="sl" /></td>
-										<td><fmt:formatDate value="${recruit.createTime}"
+										<td id="${post.infoId}">&nbsp;<a
+											href="post/detail.action?postId=${post.infoId}">${post.infoTitle}</a><ar:top value="${post.isTop}" />
+										</td>
+										<td>${post.trueName}</td>
+										<td>${post.comments}/${post.views}</td>
+										<td><fmt:formatDate value="${post.createTime}"
 												pattern="M月d日"></fmt:formatDate></td>
 									</tr>
 								</c:forEach>

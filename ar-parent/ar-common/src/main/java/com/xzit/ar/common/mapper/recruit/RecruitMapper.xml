@@ -58,10 +58,9 @@
 	<select id="queryRecruit" resultType="map" parameterType="java.lang.String">
 		select
 		<include refid="entity"/>
-		from recruit r, recruit_unit u, user user where (r.title like #{queryStr} or r.pos_name
-		like #{queryStr} or r.work_place like #{queryStr} or u.unit_name like #{queryStr}
-		) and r.unit_id = u.unit_id and r.user_id = user.user_id and r.state='A' order by
-		r.is_top desc, r.create_time desc
+		from recruit r, recruit_unit u, user user
+		where (r.title like #{queryStr} or r.pos_name like #{queryStr} or r.work_place like #{queryStr} or u.unit_name like #{queryStr})
+		and r.unit_id = u.unit_id and r.user_id = user.user_id and r.state='A' order by r.is_top desc, r.create_time desc
 	</select>
 
 	<select id="getDetailRecruit" resultType="map" parameterType="java.lang.Integer">

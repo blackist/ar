@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50173
 File Encoding         : 65001
 
-Date: 2017-04-09 16:32:08
+Date: 2017-04-09 23:36:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -226,13 +226,13 @@ CREATE TABLE `image` (
 DROP TABLE IF EXISTS `information`;
 CREATE TABLE `information` (
   `info_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '信息标识',
-  `info_title` varchar(50) DEFAULT NULL COMMENT '信息标题',
+  `info_title` varchar(50) DEFAULT '' COMMENT '信息标题',
   `content` text NOT NULL COMMENT '内容',
-  `theme` varchar(20) DEFAULT NULL COMMENT '主题',
-  `thumb_image` varchar(255) DEFAULT NULL COMMENT '图文信息缩略图',
+  `theme` varchar(20) DEFAULT '' COMMENT '主题',
+  `thumb_image` varchar(255) DEFAULT '' COMMENT '图文信息缩略图',
   `views` int(4) DEFAULT '0' COMMENT '浏览量',
   `comments` int(4) DEFAULT '0' COMMENT '评论数',
-  `shares` int(4) DEFAULT '0' COMMENT '分享次数',
+  `loves` int(4) DEFAULT '0' COMMENT '分享次数',
   `create_time` datetime NOT NULL COMMENT '创建时间',
   `is_top` char(1) NOT NULL DEFAULT '0' COMMENT '指定标志位',
   `info_type` varchar(20) NOT NULL COMMENT '信息类型',
