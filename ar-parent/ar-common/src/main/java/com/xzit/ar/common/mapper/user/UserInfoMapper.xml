@@ -3,8 +3,7 @@
 <mapper namespace="com.xzit.ar.common.mapper.user.UserInfoMapper" >
 	<resultMap id="BaseResultMap" type="com.xzit.ar.common.po.user.UserInfo" >
 		<id column="user_info_id" property="userInfoId" jdbcType="INTEGER" />
-		<result column="true_name" property="trueName" jdbcType="VARCHAR" />
-		<result column="age" property="age" jdbcType="CHAR" />
+		<result column="age" property="age" jdbcType="INTEGER" />
 		<result column="sex" property="sex" jdbcType="CHAR" />
 		<result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
 		<result column="introduce" property="introduce" jdbcType="VARCHAR" />
@@ -21,7 +20,7 @@
 		<result column="exp2" property="exp2" jdbcType="VARCHAR" />
 	</resultMap>
 	<sql id="Base_Column_List" >
-		user_info_id, true_name, age, sex, birthday, introduce, phone, email, qq, microblog,
+		user_info_id, age, sex, birthday, introduce, phone, email, qq, microblog,
 		wechat, address, user_id, state, state_time, exp1, exp2
 	</sql>
 	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer"
@@ -38,7 +37,6 @@
 		insert into user_info
 		<trim prefix="(" suffix=")" suffixOverrides="," >
 			<if test="userInfoId != null" >user_info_id,</if>
-			<if test="trueName != null" >true_name,</if>
 			<if test="age != null" >age,</if>
 			<if test="sex != null" >sex,</if>
 			<if test="birthday != null" >birthday,</if>
@@ -57,8 +55,7 @@
 		</trim>
 		<trim prefix="values (" suffix=")" suffixOverrides="," >
 			<if test="userInfoId != null" >#{userInfoId,jdbcType=INTEGER},</if>
-			<if test="trueName != null" >#{trueName,jdbcType=VARCHAR},</if>
-			<if test="age != null" >#{age,jdbcType=CHAR},</if>
+			<if test="age != null" >#{age,jdbcType=INTEGER},</if>
 			<if test="sex != null" >#{sex,jdbcType=CHAR},</if>
 			<if test="birthday != null" >#{birthday,jdbcType=TIMESTAMP},</if>
 			<if test="introduce != null" >#{introduce,jdbcType=VARCHAR},</if>
@@ -79,8 +76,7 @@
 		>
 		update user_info
 		<set >
-			<if test="trueName != null" >true_name = #{trueName,jdbcType=VARCHAR},</if>
-			<if test="age != null" >age = #{age,jdbcType=CHAR},</if>
+			<if test="age != null" >age = #{age,jdbcType=INTEGER},</if>
 			<if test="sex != null" >sex = #{sex,jdbcType=CHAR},</if>
 			<if test="birthday != null" >birthday = #{birthday,jdbcType=TIMESTAMP},</if>
 			<if test="introduce != null" >introduce = #{introduce,jdbcType=VARCHAR},</if>

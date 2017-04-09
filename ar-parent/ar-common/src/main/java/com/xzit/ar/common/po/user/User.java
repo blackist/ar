@@ -18,6 +18,8 @@ public class User extends BaseEntity {
 
     private String email;
 
+    private String trueName;
+
     private String isAdmin;
 
     private Integer headImageId;
@@ -58,6 +60,14 @@ public class User extends BaseEntity {
 
     public void setEmail(String email) {
         this.email = email == null ? null : email.trim();
+    }
+
+    public String getTrueName() {
+        return trueName;
+    }
+
+    public void setTrueName(String trueName) {
+        this.trueName = trueName == null ? null : trueName.trim();
     }
 
     public String getIsAdmin() {

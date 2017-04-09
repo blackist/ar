@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50173
 File Encoding         : 65001
 
-Date: 2017-04-02 20:44:55
+Date: 2017-04-09 16:32:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -220,10 +220,9 @@ CREATE TABLE `dictionary` (
 INSERT INTO `dictionary` VALUES ('at', '相册类型', 'album type, 相册的分类， 班级相册，校友组织分类');
 INSERT INTO `dictionary` VALUES ('be', '职位福利', 'benifit  职位福利');
 INSERT INTO `dictionary` VALUES ('g', '游戏', 'game');
-INSERT INTO `dictionary` VALUES ('in', '信息类型', 'information的类型，新闻/班级动态/帖子/校友动态/捐赠信息');
+INSERT INTO `dictionary` VALUES ('in', '消息类型', 'information的类型，新闻/班级动态/帖子/校友动态/捐赠信息/系统留言');
 INSERT INTO `dictionary` VALUES ('ind', '招聘公司所属行业', 'industry 行业, 招聘公司所属行业');
 INSERT INTO `dictionary` VALUES ('it', '图片类型', '');
-INSERT INTO `dictionary` VALUES ('mpi', '公告信息', 'public info(公告信息)，后台或门户网站的公告，管理员可添加公告信息，滚动播放');
 INSERT INTO `dictionary` VALUES ('ny', '[是]/[否] 字段填写', '根据字典值 dictdata 显示 是/否');
 INSERT INTO `dictionary` VALUES ('ot', '组织类型', '班级/校友组织  等团体的类型');
 INSERT INTO `dictionary` VALUES ('p', '专业类型', 'profession, 专业类型， 校友/班级所属专业，以及个人简历上的专业名称');
@@ -254,7 +253,7 @@ CREATE TABLE `dictionary_data` (
   PRIMARY KEY (`id`),
   KEY `FK_DICTIONARYDATA_DICTVALUE` (`dict_value`),
   CONSTRAINT `FK_DICTIONARYDATA_DICTVALUE` FOREIGN KEY (`dict_value`) REFERENCES `dictionary` (`dict_value`)
-) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dictionary_data
@@ -331,6 +330,10 @@ INSERT INTO `dictionary_data` VALUES ('92', 't', '研讨', 'yt', '1', null, null
 INSERT INTO `dictionary_data` VALUES ('93', 'in', '班级动态', 'CI', '1', null, null);
 INSERT INTO `dictionary_data` VALUES ('94', 'sex', '男', '1', '1', null, null);
 INSERT INTO `dictionary_data` VALUES ('95', 'sex', '女', '0', '1', null, null);
+INSERT INTO `dictionary_data` VALUES ('96', 'in', '校园服务信息', 'SS', '1', null, null);
+INSERT INTO `dictionary_data` VALUES ('97', 'ot', '学院', 'INS', '1', null, null);
+INSERT INTO `dictionary_data` VALUES ('98', 'in', '招生就业', 'RR', '1', null, null);
+INSERT INTO `dictionary_data` VALUES ('99', 'in', '论坛帖子', 'BBS', '1', null, null);
 
 -- ----------------------------
 -- Table structure for grade
@@ -372,14 +375,15 @@ CREATE TABLE `image` (
   `state_time` datetime DEFAULT NULL COMMENT '状态日期',
   PRIMARY KEY (`image_id`),
   KEY `image_id` (`image_id`,`image_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of image
 -- ----------------------------
-INSERT INTO `image` VALUES ('1', 'user1.png', null, null, '/img/portrait/user1.png', null, null, null, null, 'A', null);
+INSERT INTO `image` VALUES ('1', 'xzit.png', null, null, 'assets/images/logo/xzit.png', null, null, null, null, 'A', null);
 INSERT INTO `image` VALUES ('2', 'user2.png', null, null, '/img/portrait/user2.png', null, null, null, null, 'A', null);
 INSERT INTO `image` VALUES ('3', null, null, null, '/img/info/blog1.png', null, null, null, null, 'A', null);
+INSERT INTO `image` VALUES ('4', null, null, null, '/img/portrait/user6.png', null, null, null, null, 'A', null);
 
 -- ----------------------------
 -- Table structure for information
@@ -391,22 +395,22 @@ CREATE TABLE `information` (
   `content` text NOT NULL COMMENT '内容',
   `theme` varchar(20) DEFAULT NULL COMMENT '主题',
   `thumb_image` varchar(255) DEFAULT NULL COMMENT '图文信息缩略图',
-  `views` int(4) DEFAULT NULL COMMENT '浏览量',
-  `comments` int(4) DEFAULT NULL COMMENT '评论数',
-  `shares` int(4) DEFAULT NULL COMMENT '分享次数',
+  `views` int(4) DEFAULT '0' COMMENT '浏览量',
+  `comments` int(4) DEFAULT '0' COMMENT '评论数',
+  `shares` int(4) DEFAULT '0' COMMENT '分享次数',
   `create_time` datetime NOT NULL COMMENT '创建时间',
-  `is_top` char(1) NOT NULL COMMENT '指定标志位',
+  `is_top` char(1) NOT NULL DEFAULT '0' COMMENT '指定标志位',
   `info_type` varchar(20) NOT NULL COMMENT '信息类型',
   `user_id` int(8) NOT NULL COMMENT '信息发布者标识',
-  `origin_id` int(8) NOT NULL COMMENT '发布信息的组织',
-  `state` char(2) NOT NULL COMMENT '状态',
+  `origin_id` int(8) DEFAULT NULL COMMENT '发布信息的组织',
+  `state` char(2) NOT NULL DEFAULT 'A' COMMENT '状态',
   `state_time` datetime DEFAULT NULL COMMENT '状态日期',
   PRIMARY KEY (`info_id`),
   KEY `FK_INFORMATION_USERID` (`user_id`),
   KEY `FK_INFORMATION_ORIGINID` (`origin_id`),
   CONSTRAINT `FK_INFORMATION_ORIGINID` FOREIGN KEY (`origin_id`) REFERENCES `origin` (`origin_id`) ON DELETE CASCADE,
   CONSTRAINT `FK_INFORMATION_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of information
@@ -434,6 +438,11 @@ INSERT INTO `information` VALUES ('21', null, 'black在这留言', null, null, '
 INSERT INTO `information` VALUES ('22', null, '留言测试', null, null, '0', '0', '0', '2017-03-28 15:37:40', '0', 'CM', '2', '3', 'A', '2017-03-28 15:37:40');
 INSERT INTO `information` VALUES ('23', '厉害了我的哥', '厉害了我的哥', null, null, '0', '0', '0', '2017-03-28 15:39:01', '0', 'CI', '2', '4', 'A', '2017-03-28 15:39:01');
 INSERT INTO `information` VALUES ('24', '我是一个梦想家', '我是一个梦想家', null, null, '0', '0', '0', '2017-03-28 18:31:10', '0', 'CI', '2', '3', 'A', '2017-03-28 18:31:10');
+INSERT INTO `information` VALUES ('25', null, '我来了，让我听到你们的声音', null, null, '0', '0', '0', '2017-04-07 10:55:49', '0', 'CM', '2', '4', 'A', '2017-04-07 10:55:49');
+INSERT INTO `information` VALUES ('26', '校园行指南', '    玉泉校区位于西湖西北角，紧邻玉泉植物园。校区占地总面积1700多亩，校舍建筑总面积70万平方米。玉泉校区是原浙江大学所在地，现浙江大学党政机关办公所在地。\r\n    目前浙江大学理学院、电气工程学院、机械与能源工程学院、材料与化学工程学院、计算机科学与技术学院、信息科学与工程学院、建筑工程学院、生物医学工程与仪器科学学院、经济学院、管理学院、软件学院11个学院党政机关设在该校区。\r\n\r\n    公交线路：K89、K228(夜)、 K16、82/K82、 815、81/K81、527 、15/K15、21/K21、28/k28\r\n\r\n    旅馆：紫兰酒店、玉泉饭店、西子饭店、灵峰山庄、杭州金乐饭店、百合花饭店、浙江大学竺可桢国际教育大楼、浙江大学招待所、玉泉饭店、西子饭店、灵峰山庄、杭州金乐饭店、杭州百合花饭店。', null, null, null, null, null, '2017-04-07 15:48:55', '0', 'SS', '1', '1', 'A', null);
+INSERT INTO `information` VALUES ('27', '走进校园', '徐州工程学院是2002年6月经教育部批准，由始建于1983年的彭城职业大学和始建于1985年的徐州经济管理干部学院合并组建的一所全日制普通本科院校。2006年6月，学校获得学士学位授予权。2007年6月，始建于1959年的徐州教育学院整建制并入。\r\n学校坚持地方性、应用型的办学定位，坚持“立足徐州、面向苏北、服务江苏”的服务定位和为区域经济社会发展培养高素质应用型人才的办学目标，实施“错位发展战略”，大力推进教育教学改革和人才培养模式改革，经过多年的建设和发展，已成为一所主干专业学科对应地方支柱产业，具有一定区位优势的地方高校。目前，学校获批为教育部“卓越工程师教育培养计划”实施高校、江苏省大学生创业教育示范校，被授予江苏省高等学校和谐校园、江苏省文明单位、江苏省五一劳动奖状、江苏省科技富民突出贡献单位等荣誉。\r\n学校现有3个校区，占地面积1990.5亩，校舍面积57.39万平方米，固定资产14.78亿元，教学仪器设备值1.50亿元，设有14个二级学院、1个思想政治理论课教研部和1个成人教育学院，开设49个本科专业，全日制在校生21376人。\r\n学校牢固树立人才资源是第一资源和“办学以教师为本”的理念，大力实施师资队伍建设“五大工程”和“卓越计划”，不断提高师资队伍水平。学校现有教职工1279人，其中具有正高职称98人、副高职称335人；具有博士学位140人、硕士学位664人；有1人被遴选为国家科学技术奖评委，2人享受国务院政府特殊津贴，3人被评为二级教授；有全国模范教师和全国优秀教育工作者2人，“江苏省有突出贡献的中青年专家”3人，省“六大人才高峰”培养对象14人，省“333工程”培养对象28人，省“青蓝工程”中青年学术带头人12人和优秀青年骨干教师35人，徐州市优秀专家、拔尖人才63人。\r\n学校紧密结合区域经济社会发展需求，扎实推进专业学科一体化建设。现有2个国家级特色专业，3个教育部“卓越工程师计划”实施专业，1个国家级“专业综合改革试点”项目，3个国家级工程实践教育中心，1个国家级大学生校外实践教育基地，2个国家级国际合作办学项目，6个省级特色专业，5个省级重点专业（类）；获批省级精品课程10门、省级精品教材13部，省级重点教材3部，获省级优秀教学成果奖13项；拥有3个省级一级重点建设学科。\r\n学校坚持以贡献求支持，以贡献求发展，加强产教融合，努力提升科技服务能力，科学研究和平台建设不断取得新进展。09年以来，承担和完成省部级以上科研项目199项、横向课题381项，科研成果获省部级奖励37项。学校现拥有2个省级重点建设实验室，2个省级工程实验室，9个省级工程技术研究中心，8个省级实验教学示范中心；获批省级工业设计中心、省级校外人文社科研究基地、省级人才培养模式创新实验基地、省级优秀教学团队各1个，省级科技创新团队2个，1项成果入选2012年《国家哲学社会科学成果文库》。\r\n学校秉承“格物致知，敬业乐群”的校训精神，积极推进人才培养模式改革，着重培养学生的社会责任感、创新精神和实践动手能力，人才培养质量稳步提升。近三年，我校学生共获得国际竞赛奖项12项，国家级竞赛奖项469项，省部级竞赛奖项492项，其中包括国际数学建模竞赛一等奖、全国大学生数学建模竞赛一等奖、“挑战杯”中国大学生创业计划竞赛银奖、全国普通高等院校算量大赛总冠军、全国大学生英语竞赛特等奖、全国大学生桥牌锦标赛亚军等高级别奖项；获批国家级大学生创新创业训练计划项目71项。人才培养质量的不断提高和毕业生“下得去、留得住、上手快、能力强”的特点受到社会广泛认可，毕业生就业率保持在98%以上。\r\n学校深入推进国际化战略。近年来，学校先后与美国、法国、俄罗斯等12个国家的17所高校和机构建立了稳定的合作关系。举办合作办学项目10个，联合培养学生1470人。着力推进“中青年骨干教师海外培训工程”，派出教师和管理干部393人次到境外培训、访学和攻读学位；留学生工作、中外合作科研和汉语国际推广不断取得新成效。学校是“茉莉花留学江苏政府奖学金”资助高校；有3位外籍教师荣获“江苏省五一劳动荣誉奖章”。教育部简报2012年第212期以《徐州工程学院大力推进国际化发展战略，着力提高师资队伍国际化水平》为题，报道了我校师资国际化的探索和实践。\r\n学校注重结合区域文化特征，努力发挥文化传承功能。学校以非物质文化遗产的研究与传承作为高校发挥文化传承与创新功能的突破口，积极推进“非遗”进校园、进课堂、进教材、进科研工作。举办了两届中国非物质文化遗产高层论坛，“淮海地区非物质文化遗产研究中心”获批江苏省普通高等学校人文社会科学校外研究基地，相关建设成果获得教育部“高校校园文化建设”优秀奖。\r\n展望未来，学校将深入贯彻落实科学发展观，不断加强内涵建设，大力提高教育教学质量和人才培养质量，以改革创新为动力，努力发展成为一所特色鲜明的高水平地方本科院校。', null, null, null, null, null, '2017-04-07 16:13:24', '0', 'SS', '1', '1', 'A', null);
+INSERT INTO `information` VALUES ('28', '校友论坛规章制度', '严格遵守', null, null, null, null, null, '2017-04-09 14:03:41', '0', 'BBS', '1', null, 'A', '2017-04-09 14:05:42');
+INSERT INTO `information` VALUES ('29', '欢天喜地的校庆', '百年校庆', null, null, '0', '0', '0', '2017-04-09 14:10:49', '0', 'BBS', '1', null, 'A', '2017-04-09 14:11:01');
 
 -- ----------------------------
 -- Table structure for log
@@ -486,8 +495,8 @@ CREATE TABLE `origin` (
   `origin_no` varchar(20) DEFAULT NULL COMMENT '组织编号',
   `origin_type` varchar(20) NOT NULL COMMENT '组织类型',
   `origin_desc` varchar(500) DEFAULT NULL COMMENT '组织描述',
-  `origin_grade` char(4) NOT NULL,
-  `members` int(4) NOT NULL COMMENT '成员数量',
+  `origin_grade` char(4) DEFAULT NULL,
+  `members` int(4) NOT NULL DEFAULT '0' COMMENT '成员数量',
   `create_time` datetime NOT NULL COMMENT '创建时间',
   `mgr_id` int(8) DEFAULT NULL,
   `creator_id` int(8) NOT NULL COMMENT '创建者',
@@ -500,15 +509,16 @@ CREATE TABLE `origin` (
   KEY `FK_ORIGIN_MGRID` (`mgr_id`),
   CONSTRAINT `FK_ORIGIN_CREATORID` FOREIGN KEY (`creator_id`) REFERENCES `user` (`user_id`),
   CONSTRAINT `FK_ORIGIN_MGRID` FOREIGN KEY (`mgr_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of origin
 -- ----------------------------
-INSERT INTO `origin` VALUES ('1', '13软嵌2班', '201305052', 'C', '这是一个很牛逼的班级', '2013', '45', '2016-02-16 23:21:47', '2', '2', 'A', '2016-02-16 23:22:02', null, null);
+INSERT INTO `origin` VALUES ('1', '徐州工程学院', '', 'INS', '', '', '0', '2016-02-16 23:21:47', '1', '1', 'A', '2016-02-16 23:22:02', null, null);
 INSERT INTO `origin` VALUES ('2', '13软嵌1班', '201305051', 'C', null, '2013', '47', '2016-02-17 15:38:12', '3', '2', 'A', '2016-02-17 15:38:25', null, null);
 INSERT INTO `origin` VALUES ('3', '14计嵌1', '201405051', 'C', 'hahah', '2014', '56', '2016-02-18 19:45:09', '4', '2', 'A', '2016-02-18 19:45:21', null, null);
 INSERT INTO `origin` VALUES ('4', '15自动化', '201505011', 'C', null, '2015', '34', '2016-02-18 19:46:04', '3', '2', 'A', '2016-02-18 19:46:12', null, null);
+INSERT INTO `origin` VALUES ('5', '信电工程学院', null, 'INS', null, null, '0', '2017-04-07 15:54:11', '1', '1', 'A', '2017-04-07 15:54:24', null, null);
 
 -- ----------------------------
 -- Table structure for recruit
@@ -740,24 +750,28 @@ CREATE TABLE `user` (
   `user_id` int(8) NOT NULL AUTO_INCREMENT COMMENT '自增主键',
   `account` varchar(16) NOT NULL COMMENT '用户帐号',
   `password` varchar(32) NOT NULL COMMENT '用户密码',
+  `email` varchar(50) DEFAULT NULL COMMENT '用户邮箱',
+  `true_name` varchar(10) NOT NULL,
+  `image_id` int(8) NOT NULL DEFAULT '1' COMMENT '头像图片标识',
   `is_admin` char(1) NOT NULL COMMENT '管理员标识',
-  `email` varchar(20) DEFAULT NULL COMMENT '用户邮箱',
-  `head_image_id` int(8) DEFAULT NULL COMMENT '头像图片标识',
   `create_time` datetime NOT NULL COMMENT '创建时间',
-  `state` char(2) NOT NULL COMMENT '状态',
+  `state` char(2) NOT NULL DEFAULT 'A' COMMENT '状态',
   `state_time` datetime DEFAULT NULL COMMENT '状态日期',
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`user_id`),
+  KEY `FK_USER_IMAGEID` (`image_id`),
+  CONSTRAINT `FK_USER_IMAGEID` FOREIGN KEY (`image_id`) REFERENCES `image` (`image_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'sa', '202CB962AC59075B964B07152D234B70', '1', null, null, '2016-01-02 15:01:42', 'A', null);
-INSERT INTO `user` VALUES ('2', 'black', '202CB962AC59075B964B07152D234B70', '0', null, '1', '2016-01-15 22:53:27', 'A', null);
-INSERT INTO `user` VALUES ('3', 'jenny', '202CB962AC59075B964B07152D234B70', '0', null, null, '2016-01-24 13:17:33', 'A', null);
-INSERT INTO `user` VALUES ('4', '20130505238', '202CB962AC59075B964B07152D234B70', '0', null, '2', '2016-02-05 15:09:15', 'A', null);
-INSERT INTO `user` VALUES ('5', '20130505240', '202CB962AC59075B964B07152D234B70', '0', null, null, '2016-02-05 15:38:48', 'A', null);
-INSERT INTO `user` VALUES ('6', '20130505241', '202CB962AC59075B964B07152D234B70', '0', null, null, '2016-02-05 15:38:48', 'A', '2016-02-05 17:24:50');
+INSERT INTO `user` VALUES ('1', 'sa', '202CB962AC59075B964B07152D234B70', null, '超级管理员', '1', '1', '2016-01-02 15:01:42', 'A', '2017-04-09 15:40:29');
+INSERT INTO `user` VALUES ('2', 'black', '202CB962AC59075B964B07152D234B70', null, '布莱克', '1', '0', '2016-01-15 22:53:27', 'A', '2017-04-09 15:40:31');
+INSERT INTO `user` VALUES ('3', 'jenny', '202CB962AC59075B964B07152D234B70', null, '珍妮', '4', '0', '2016-01-24 13:17:33', 'A', '2017-04-09 15:40:34');
+INSERT INTO `user` VALUES ('4', '20130505238', '202CB962AC59075B964B07152D234B70', null, '董亮亮', '2', '0', '2016-02-05 15:09:15', 'A', '2017-04-09 15:40:38');
+INSERT INTO `user` VALUES ('5', '20130505240', '202CB962AC59075B964B07152D234B70', null, '梅朔', '1', '0', '2016-02-05 15:38:48', 'A', '2017-04-09 15:40:40');
+INSERT INTO `user` VALUES ('6', '20130505241', '202CB962AC59075B964B07152D234B70', null, '沈亚东', '3', '0', '2016-02-05 15:38:48', 'A', '2016-02-05 17:24:50');
+INSERT INTO `user` VALUES ('7', 'blackist', '202CB962AC59075B964B07152D234B70', null, 'Black先生', '1', '0', '2017-04-02 22:35:28', 'A', '2017-04-02 22:35:38');
 
 -- ----------------------------
 -- Table structure for user_info
@@ -765,9 +779,8 @@ INSERT INTO `user` VALUES ('6', '20130505241', '202CB962AC59075B964B07152D234B70
 DROP TABLE IF EXISTS `user_info`;
 CREATE TABLE `user_info` (
   `user_info_id` int(8) NOT NULL AUTO_INCREMENT COMMENT '用户信息标识',
-  `true_name` varchar(20) DEFAULT NULL COMMENT '用户姓名',
-  `age` char(3) DEFAULT NULL COMMENT '年龄',
-  `sex` char(1) DEFAULT NULL COMMENT '性别',
+  `sex` char(1) DEFAULT NULL,
+  `age` smallint(3) DEFAULT NULL COMMENT '年龄',
   `birthday` datetime DEFAULT NULL COMMENT '生日',
   `introduce` varchar(200) DEFAULT NULL COMMENT '自我介绍',
   `phone` varchar(20) DEFAULT NULL COMMENT '手机号',
@@ -784,13 +797,14 @@ CREATE TABLE `user_info` (
   PRIMARY KEY (`user_info_id`),
   KEY `FK_USER_USERINFO` (`user_id`),
   CONSTRAINT `FK_USER_USERINFO` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user_info
 -- ----------------------------
-INSERT INTO `user_info` VALUES ('1', '董亮亮', '22', '1', '2016-02-19 08:51:31', '作为一个成熟的男人，渴望被爱！！！', '18796221162', '1075512174@qq.com', '1075512174', '家里有小杰', '董学长', '徐州市沛县龙固镇龙东村', '4', 'A', '2016-02-19 08:52:56', null, null);
-INSERT INTO `user_info` VALUES ('2', '布朗克', '20', '1', null, '谢谢徐州工程学院的同学的照顾', '15162044824', '3838438@190.com', '3838438', '香蕉人', '海龟大人', '南通市神鬼村', '2', 'A', '2016-02-27 20:19:13', null, null);
+INSERT INTO `user_info` VALUES ('1', '1', '22', '2016-02-19 08:51:31', '作为一个成熟的男人，渴望被爱！！！', '18796221162', '1075512174@qq.com', '1075512174', '家里有小杰', '董学长', '徐州市沛县龙固镇龙东村', '4', 'A', '2016-02-19 08:52:56', null, null);
+INSERT INTO `user_info` VALUES ('2', '1', '20', null, '谢谢徐州工程学院的同学的照顾', '15162044824', '3838438@190.com', '3838438', '香蕉人', '海龟大人', '南通市神鬼村', '2', 'A', '2016-02-27 20:19:13', null, null);
+INSERT INTO `user_info` VALUES ('3', '1', '23', '2017-04-02 22:40:30', '男人，性感最重要', '18796257336', 'blackist@163.com', '1075512174', null, 'blackbool', null, '7', 'A', '2017-04-02 22:41:48', null, null);
 
 -- ----------------------------
 -- Table structure for user_job

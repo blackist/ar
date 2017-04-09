@@ -7,7 +7,7 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<div class="col-md-4 about-list" style="padding-left: 40px;padding-top: 20px;font-size: 16px">
+<div class="col-md-4 about-list" style="padding-left: 40px;padding-top: 20px;font-size: 15px">
     <h4>校园服务</h4>
     <ul>
         <hr>

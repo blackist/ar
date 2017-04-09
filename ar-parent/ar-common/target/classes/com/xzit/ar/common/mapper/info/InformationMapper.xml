@@ -40,6 +40,14 @@
 		and user_id=#{userId} and info_type=#{infoType} and state='A' order by create_time
 		desc
 	</select>
+	<!-- 查询消息列表 -->
+	<select id="queryInfos" resultType="map">
+		SELECT
+		FROM information info, user
+		<where>
+			
+		</where>
+	</select>
 	
 	
 	<!-- delete -->

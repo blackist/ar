@@ -60,7 +60,6 @@ public class LoginController extends BaseController {
 		password = CommonUtil.md5(password);
 		// 登录校验
 		user = loginService.validateUser(account, password);
-		System.out.println(user.get("isAdmin").toString());
 		if (user != null) {
 			if (user.get("password") != null) {
 				// 填充登录信息

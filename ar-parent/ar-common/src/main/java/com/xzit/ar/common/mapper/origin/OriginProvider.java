@@ -22,10 +22,10 @@ public class OriginProvider {
 
 	public String queryClasses() {
 		return "select distinct " + clazz 
-				+ "from origin o, user_origin uo, user_info i "
+				+ "from origin o, user_origin uo, user u"
 				+ "where o.origin_grade like #{originGrade} "
-				+ "and (o.origin_name like #{queryStr} or i.true_name like #{queryStr}) "
-				+ "and uo.origin_id=o.origin_id and i.user_id=uo.user_id  and uo.state='A' "
+				+ "and (o.origin_name like #{queryStr} or u.true_name like #{queryStr}) "
+				+ "and uo.origin_id=o.origin_id and u.user_id=uo.user_id  and uo.state='A' "
 				+ "and o.state like #{state} and o.origin_type='C' order by o.create_time desc";
 	}
 	
@@ -53,11 +53,11 @@ public class OriginProvider {
 	}
 	
 	public String latestMembers(){
-		return "select o.origin_name originName, o.origin_id originId, u.user_id userId, ui.true_name trueName, "
+		return "select o.origin_name originName, o.origin_id originId, u.user_id userId, u.true_name trueName, "
 				+ "img.image_path imgPath, uo.create_time createTime "
-				+ "from origin o, user_origin uo, user u, user_info ui, image img "
+				+ "from origin o, user_origin uo, user u, image img "
 				+ "where o.origin_type=#{originType} and o.state='A' and uo.state='A' "
-				+ "and o.origin_id=uo.origin_id and uo.user_id=u.user_id and ui.user_id=u.user_id and img.image_id=u.image_id "
+				+ "and o.origin_id=uo.origin_id and uo.user_id=u.user_id and img.image_id=u.image_id "
 				+ "order by uo.create_time desc limit 0,#{number}";
 	}
 	

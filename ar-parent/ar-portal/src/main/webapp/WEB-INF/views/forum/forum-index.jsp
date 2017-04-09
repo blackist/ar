@@ -28,7 +28,7 @@
 					<%@ include file="/WEB-INF/views/forum/forum-button.jsp"%>
 					<h3>招聘信息</h3>
 				</div>
-				<!-- 	<p>招聘信息</p> -->
+				<!-- 	<p>论坛帖子</p> -->
 				<div class="table-responsive">
 					<div class="dataTables_wrapper no-footer">
 						<table class="table table-striped" id="table">

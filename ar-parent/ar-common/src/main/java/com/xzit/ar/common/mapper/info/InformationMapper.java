@@ -39,5 +39,19 @@ public interface InformationMapper extends BaseMapper {
 	 */
 	Integer increaseCommentNum(@Param("infoId") Integer infoId) throws Exception;
 
-	
+	/**
+	 * TODO 根据条件查询信息列表
+	 * @param page 分页类
+	 * @param userId 用户id
+	 * @param originId 组织id
+	 * @param infoType 信息类型
+	 * @param theme 信息主题
+	 * @param queryStr 模糊查询条件
+	 * @param state 信息状态
+	 * @return信息列表
+	 * @throws Exception
+	 */
+	public List<Map<String, Object>> queryInfos(Page<Map<String, Object>> page, @Param("userId") Integer userId,
+			@Param("originId") Integer originId, @Param("infoType") String infoType, @Param("theme") String theme,
+			@Param("queryStr") String queryStr, @Param("state") String state) throws Exception;
 }

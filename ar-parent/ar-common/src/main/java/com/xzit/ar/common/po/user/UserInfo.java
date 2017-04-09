@@ -12,9 +12,7 @@ public class UserInfo extends BaseEntity {
 
 	private Integer userInfoId;
 
-    private String trueName;
-
-    private String age;
+    private Integer age;
 
     private String sex;
 
@@ -52,20 +50,12 @@ public class UserInfo extends BaseEntity {
         this.userInfoId = userInfoId;
     }
 
-    public String getTrueName() {
-        return trueName;
-    }
-
-    public void setTrueName(String trueName) {
-        this.trueName = trueName == null ? null : trueName.trim();
-    }
-
-    public String getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(String age) {
-        this.age = age == null ? null : age.trim();
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getSex() {
