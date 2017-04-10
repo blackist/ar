@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ include file="/WEB-INF/views/portal-common/portal-tag.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -35,16 +34,17 @@
 								<li><fmt:formatDate value="${post.createTime}" pattern="Y-M-d HH:mm"></fmt:formatDate></li>
 								<li><i class="fa fa-eye"></i> 浏览 ${post.views} </li>
 								<li><i class="fa fa-heart"></i> 喜欢 ${post.loves}</li>
-								<li><i class="fa fa-comments"></i> 评论 ${post.comments}</li>
+								<li><i class="glyphicon glyphicon-comment"></i> 评论 ${post.comments}</li>
 							</ul>
 
 							<br />
 							<div class="blog-img"><img src="assets/images/photos/blog1.jpg" class="img-responsive" alt="" /></div>
 							<div class="mb20"></div>
 
-							<p>${post.content}</p>
+							<p>${post.content}</p><%-- postId --%>
 
 						</div><!-- panel-body -->
+						<p hidden id="postId">${post.infoId}</p>
 					</div><!-- panel -->
 
 					<div class="authorpanel">
@@ -63,54 +63,17 @@
 					<h5 class="subtitle"><i class="fa fa-comments-o"></i> 评论 ${post.comments}</h5>
 					<div class="mb30"></div>
 
-					<ul class="media-list comment-list">
-
-						<li class="media">
-							<a class="pull-left" href="#">
-								<img class="thumbnail img-responsive center-block" src="${SESSION_USER.portrait}"  style="max-width: 65px"/>
-							</a>
-							<div class="media-body">
-								<a href="" class="btn btn-primary btn-xs pull-right reply">Reply</a>
-								<h4>Nusja Nawancali</h4>
-								<small class="text-muted">January 10, 2014 at 7:30am</small>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							</div><!-- media-body -->
-						</li><!-- media -->
-
-						<li class="media">
-							<a class="pull-left" href="#">
-								<img class="media-object thumbnail" src="images/photos/user1.png" alt="" />
-							</a>
-							<div class="media-body">
-								<a href="" class="btn btn-primary btn-xs pull-right reply">Reply</a>
-								<h4>Nusja Nawancali</h4>
-								<small class="text-muted">January 10, 2014 at 7:30am</small>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-							</div>
-						</li><!-- media -->
-
-						<li class="media">
-							<a class="pull-left" href="#">
-								<img class="media-object thumbnail" src="images/photos/user4.png" alt="" />
-							</a>
-							<div class="media-body">
-								<a href="" class="btn btn-primary btn-xs pull-right reply">Reply</a>
-								<h4>Weno Carasbong</h4>
-								<small class="text-muted">January 10, 2014 at 7:30am</small>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-							</div>
-						</li><!-- media -->
-
+					<ul class="media-list comment-list" id="comment-list">
 					</ul><!-- comment-list -->
 
 					<div class="mb20"></div>
 					<h5 class="subtitle mb5">评论一下</h5>
 					<div class="mb20"></div>
 
-					<form>
-						<textarea placeholder="" rows="5" class="form-control"></textarea>
+					<form method="post" action="post/comment.action" id="form-comment">
+						<textarea maxlength="500" placeholder="" rows="5" class="form-control" id="comment-content"></textarea>
 						<div class="mb10"></div>
-						<button class="btn btn-primary"><i class="fa fa-comment"></i> 发表评论</button>
+						<button class="btn btn-primary" onclick="commentPost()"><i class="fa fa-comment"></i> 发表评论</button>
 					</form>
 
 				</div><!-- col-sm-10 -->
@@ -153,5 +116,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/forum/forum-index.js"></script>
+<script src="assets/script/forum/post-detail.js"></script>
 </html>

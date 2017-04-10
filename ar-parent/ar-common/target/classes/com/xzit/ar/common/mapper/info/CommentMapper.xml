@@ -17,13 +17,23 @@
 		from comment
     where comment_id = #{commentId,jdbcType=INTEGER}
 	</select>
+	<!--记载评论及用户信息-->
 	<select id="loadInfoComment" resultType="map">
 		select co.content content, co.create_time createTime, co.user_id userId, 
-		ui.true_name userName, img.image_path imgPath
-		from comment co, user_info ui, image img, user u
+		u.true_name userName, img.image_path imgPath
+		from comment co, image img, user u
 		where co.info_id = #{infoId} 
-		and co.user_id=ui.user_id and u.user_id=ui.user_id and img.image_id=u.head_image_id
+		and co.user_id=u.user_id and img.image_id=u.image_id
 		order by co.create_time asc 
+	</select>
+	<!--动态加载评论-->
+	<select id="dynamicLoadComment" resultType="map">
+		select co.content content, co.create_time createTime, co.user_id userId, 
+		u.true_name trueName, img.image_path portrait
+		from comment co, image img, user u
+		where co.info_id = #{infoId}
+		and co.user_id=u.user_id and img.image_id=u.image_id
+		order by co.create_time asc
 	</select>
 	
 	<delete id="delete" parameterType="java.lang.Integer" >delete from comment

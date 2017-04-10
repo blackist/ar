@@ -28,4 +28,13 @@ public interface PostService {
      * @throws ServiceException
      */
     public Map<String, Object> getPostById(Integer postId) throws ServiceException;
+
+    /**
+     * TODO 动态加载评论列表
+     * @param page
+     * @param postId
+     * @return
+     * @throws ServiceException
+     */
+    public List<Map<String, Object>> dynamicLoadComment(Page<Map<String, Object>> page, Integer postId) throws ServiceException;
 }

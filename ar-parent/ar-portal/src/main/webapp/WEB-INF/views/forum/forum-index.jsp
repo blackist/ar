@@ -26,7 +26,6 @@
 
 				<div class="page-header">
 					<%@ include file="/WEB-INF/views/forum/forum-button.jsp"%>
-					<h3>招聘信息</h3>
 				</div>
 				<!-- 	<p>论坛帖子</p> -->
 				<div class="table-responsive">

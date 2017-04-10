@@ -24,6 +24,9 @@
 		<servlet-name>dispatcherServlet</servlet-name>
 		<url-pattern>*.action</url-pattern>
 	</servlet-mapping>
+	<session-config>
+		<session-timeout>14400</session-timeout>
+	</session-config>
 	
 	<!-- post乱码过虑器 -->
 	<filter>

@@ -1,6 +1,7 @@
 package com.xzit.ar.portal.service.forum.impl;
 
 import com.xzit.ar.common.exception.ServiceException;
+import com.xzit.ar.common.mapper.info.CommentMapper;
 import com.xzit.ar.common.mapper.info.InformationMapper;
 import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.util.CommonUtil;
@@ -20,6 +21,9 @@ public class PostServiceImpl implements PostService {
 
     @Resource
     private InformationMapper informationMapper;
+
+    @Resource
+    private CommentMapper commentMapper;
 
     /**
      * TODO 根据info_id查询帖子详情
@@ -43,6 +47,29 @@ public class PostServiceImpl implements PostService {
             throw new ServiceException("加载信息详情时发生异常！");
         }
         return post;
+    }
+
+    /**
+     * TODO 动态加载评论列表
+     *
+     * @param page
+     * @param postId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public List<Map<String, Object>> dynamicLoadComment(Page<Map<String, Object>> page, Integer postId) throws ServiceException {
+        List<Map<String, Object>> comments = null;
+        try {
+            // 参数校验
+            if (CommonUtil.isNotEmpty(postId)){
+                // 加载评论
+                comments = commentMapper.dynamicLoadComment(page, postId);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("加载评论时发生异常！");
+        }
+        return comments;
     }
 
     /**
