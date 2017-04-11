@@ -48,6 +48,14 @@ public interface InformationMapper extends BaseMapper {
 	public Integer increaseLoves(@Param("infoId") Integer infoId) throws Exception;
 
 	/**
+	 * TODO 获取消息点赞数
+	 * @param infoId
+	 * @return
+	 * @throws Exception
+	 */
+	public Integer getLoves(@Param("infoId") Integer infoId) throws Exception;
+
+	/**
 	 * TODO 累计浏览量
 	 * @param infoId
 	 * @return

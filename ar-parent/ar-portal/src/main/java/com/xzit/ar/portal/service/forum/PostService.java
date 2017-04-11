@@ -2,6 +2,7 @@ package com.xzit.ar.portal.service.forum;
 
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.page.Page;
+import com.xzit.ar.common.po.info.Comment;
 
 import java.util.List;
 import java.util.Map;
@@ -37,4 +38,20 @@ public interface PostService {
      * @throws ServiceException
      */
     public List<Map<String, Object>> dynamicLoadComment(Page<Map<String, Object>> page, Integer postId) throws ServiceException;
+
+    /**
+     * TODO 存储评论内容
+      * @param comment
+     * @return
+     * @throws ServiceException
+     */
+    public Integer commentPost(Comment comment) throws ServiceException;
+
+    /**
+     * TODO 喜欢帖子
+     * @param postId 帖子id
+     * @return 喜欢此帖子的人数
+     * @throws ServiceException
+     */
+    public Integer lovePost(Integer postId) throws ServiceException;
 }

@@ -4,6 +4,7 @@ import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.mapper.info.CommentMapper;
 import com.xzit.ar.common.mapper.info.InformationMapper;
 import com.xzit.ar.common.page.Page;
+import com.xzit.ar.common.po.info.Comment;
 import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.portal.service.forum.PostService;
 import org.springframework.stereotype.Service;
@@ -47,6 +48,55 @@ public class PostServiceImpl implements PostService {
             throw new ServiceException("加载信息详情时发生异常！");
         }
         return post;
+    }
+
+    /**
+     * TODO 喜欢帖子
+     *
+     * @param postId 帖子id
+     * @return 喜欢此帖子的人数
+     * @throws ServiceException
+     */
+    @Override
+    public Integer lovePost(Integer postId) throws ServiceException {
+        int loves = 0;
+        try {
+            // 参数校验
+            if (CommonUtil.isNotEmpty(postId)){
+                // 点赞
+                if (informationMapper.increaseLoves(postId) > 0 ) {
+                    loves = 1;
+                    // 查询点赞数
+                    loves = informationMapper.getLoves(postId);
+                }
+            }
+        } catch (Exception e) {
+            throw new ServiceException("给文章点赞时发生异常!");
+        }
+        return loves;
+    }
+
+    /**
+     * TODO 存储评论内容
+     *
+     * @param comment
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public Integer commentPost(Comment comment) throws ServiceException {
+        try {
+            // 参数校验
+            if (comment != null && CommonUtil.isNotEmpty(comment.getUserId()) && CommonUtil.isNotEmpty(comment.getInfoId())){
+                // 存储评论内容
+                commentMapper.save(comment);
+                // 累计评论
+                informationMapper.increaseComments(comment.getInfoId());
+            }
+        } catch (Exception e) {
+            throw new ServiceException("评论时发生异常！");
+        }
+        return null;
     }
 
     /**

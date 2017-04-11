@@ -30,51 +30,63 @@
 						<div class="panel-body">
 							<h3 class="blogsingle-title">${post.infoTitle}</h3>
 							<ul class="blog-meta">
-								<li>作者: <a href="show.action?${post.userId}">${post.trueName}</a></li>
+								<li>作者: <a href="ta/show.action?${post.userId}">${post.trueName}</a></li>
 								<li><fmt:formatDate value="${post.createTime}" pattern="Y-M-d HH:mm"></fmt:formatDate></li>
 								<li><i class="fa fa-eye"></i> 浏览 ${post.views} </li>
-								<li><i class="fa fa-heart"></i> 喜欢 ${post.loves}</li>
+								<li><i class="fa fa-heart"></i> 喜欢 <span class="post-loves">${post.loves}</span></li>
 								<li><i class="glyphicon glyphicon-comment"></i> 评论 ${post.comments}</li>
 							</ul>
 
 							<br />
 							<div class="blog-img"><img src="assets/images/photos/blog1.jpg" class="img-responsive" alt="" /></div>
-							<div class="mb20"></div>
+							<div class="mb10"></div>
 
 							<p>${post.content}</p><%-- postId --%>
 
 						</div><!-- panel-body -->
 						<p hidden id="postId">${post.infoId}</p>
+						<div class="widget-photoday">
+							<ul class="photo-meta">
+								<li><span><i class="fa fa-eye"></i> 浏览 (${post.views})</span></li>
+								<li><a href="javascript:;" onclick="lovePost(${post.infoId})" id="post-love-add">
+									<i class="fa fa-heart"></i> 喜欢 (<arp class="post-loves">${post.loves}</arp>)</a>
+								</li>
+								<li><a href="javascript:;" onclick="focusCommentPost()"><i class="fa fa-comment"></i> 评论 (${post.comments})</a></li>
+							</ul>
+						</div>
 					</div><!-- panel -->
 
-					<div class="authorpanel">
-						<div class="media">
-							<a class="pull-left" href="ta/show.action?userId=${post.userId}">
-								<img class="thumbnail img-responsive center-block" src="${post.portrait}"  style="max-width: 65px"/>
-							</a>
-							<div class="media-body event-body">
-								<h4 class="subtitle">关于 ${post.trueName}</h4>
-								<p>${post.introduce}</p>
-							</div>
-						</div><!-- media -->
-					</div><!-- authorpanel -->
-
-					<div class="mb30"></div>
-					<h5 class="subtitle"><i class="fa fa-comments-o"></i> 评论 ${post.comments}</h5>
-					<div class="mb30"></div>
-
+					<ol class="breadcrumb">
+						<li class="active"><i class="fa fa-user"></i> 关于作者</li>
+					</ol>
+					<div class="media">
+						<a class="pull-left" href="ta/show.action?userId=${post.userId}">
+							<img class="thumbnail img-responsive center-block" src="${post.portrait}"  style="max-width: 65px"/>
+						</a>
+						<div class="media-body event-body">
+							<h4 class="subtitle">${post.trueName}</h4>
+							<p>${post.introduce}</p>
+						</div>
+					</div><!-- media -->
+					
+					<ol class="breadcrumb">
+						<li class="active"><i class="fa fa-comments-o"></i> 评论(${post.comments})</li>
+					</ol>
 					<ul class="media-list comment-list" id="comment-list">
 					</ul><!-- comment-list -->
 
-					<div class="mb20"></div>
-					<h5 class="subtitle mb5">评论一下</h5>
-					<div class="mb20"></div>
-
-					<form method="post" action="post/comment.action" id="form-comment">
-						<textarea maxlength="500" placeholder="" rows="5" class="form-control" id="comment-content"></textarea>
-						<div class="mb10"></div>
-						<button class="btn btn-primary" onclick="commentPost()"><i class="fa fa-comment"></i> 发表评论</button>
-					</form>
+					<%--登录可评论--%>
+					<c:if test="${SESSION_USER != null}">
+						<div class="mb20"></div>
+						<h5 class="subtitle mb5">评论一下</h5>
+						<div class="mb20"></div>
+						<form method="post" action="post/comment.action" id="form-comment">
+							<textarea name="content" maxlength="500" rows="5" class="form-control" id="comment-content"></textarea>
+							<input hidden name="infoId" value="${post.infoId}">
+							<div class="mb10"></div>
+							<button class="btn btn-primary" onclick="commentPost()" type="button"><i class="fa fa-comment"></i> 发表评论</button>
+						</form>
+					</c:if>
 
 				</div><!-- col-sm-10 -->
 

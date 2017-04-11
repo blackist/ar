@@ -3,13 +3,19 @@ package com.xzit.ar.portal.controller.forum;
 import com.xzit.ar.common.base.BaseController;
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.page.Page;
+import com.xzit.ar.common.po.info.Comment;
+import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.portal.service.forum.PostService;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -54,4 +60,35 @@ public class PostController extends BaseController {
 
         return "forum/post/post-comments";
     }
+
+    /**
+     * TODO 评论帖子
+     * @param model
+     * @param redirectAttributes
+     * @param comment
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/comment")
+    public String comment(Model model, RedirectAttributes redirectAttributes, Comment comment) throws ServiceException {
+        // 设置参数
+        comment.setUserId(getCurrentUserId());
+        comment.setCreateTime(new Date());
+        // 存储
+        postService.commentPost(comment);
+        // 重定向
+        if (comment != null && CommonUtil.isNotEmpty(comment.getInfoId())){
+            redirectAttributes.addAttribute("postId", comment.getInfoId());
+            return "redirect:/post/detail.action";
+        } else {
+            return "redirect:/forum.action";
+        }
+    }
+
+
+    @RequestMapping(value = "/love", method = RequestMethod.GET)
+    public @ResponseBody Integer love(Model model, @Param("postId") Integer postId) throws ServiceException {
+        return postService.lovePost(postId);
+    }
+
 }

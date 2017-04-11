@@ -151,6 +151,12 @@
 			info_id=#{infoId}
 		</where>
 	</update>
+	<!--获取点赞数-->
+	<select id="getLoves" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+		SELECT loves
+		FROM information
+		WHERE info_id=#{infoId}
+	</select>
 
 	<!--累计浏览量-->
 	<update id="increaseViews" parameterType="java.lang.Integer">
