@@ -11,6 +11,7 @@ package com.xzit.ar.common.init;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 
+import com.xzit.ar.common.util.forum.ForumUtil;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import com.xzit.ar.common.init.context.ARContext;
@@ -71,7 +72,12 @@ public class StartupServlet extends DispatcherServlet {
 			 * 班级录初始化
 			 */
 			ClassUtil.initClass();
-			
+
+			/**
+			 * 论坛初始化
+			 */
+			ForumUtil.initForum();
+
 			System.out.println("-------------------- 信电校友录 启动成功  --------------------");
 		} catch (Exception e) {
 			System.out.println("-------------------- 信电校友录 启动失败  --------------------");

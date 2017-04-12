@@ -2,8 +2,10 @@ package com.xzit.ar.portal.controller.forum;
 
 import com.xzit.ar.common.base.BaseController;
 import com.xzit.ar.common.exception.ServiceException;
+import com.xzit.ar.common.init.context.ARContext;
 import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.info.Comment;
+import com.xzit.ar.common.po.info.Information;
 import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.portal.service.forum.PostService;
 import org.springframework.data.repository.query.Param;
@@ -85,10 +87,45 @@ public class PostController extends BaseController {
         }
     }
 
-
+    /**
+     * TODO 为帖子点赞
+     * @param model
+     * @param postId
+     * @return
+     * @throws ServiceException
+     */
     @RequestMapping(value = "/love", method = RequestMethod.GET)
     public @ResponseBody Integer love(Model model, @Param("postId") Integer postId) throws ServiceException {
         return postService.lovePost(postId);
+    }
+
+    /**
+     * TODO 加载发帖界面
+     * @param model
+     * @return
+     */
+    @RequestMapping("/add")
+    public String add(Model model){
+        model.addAttribute("themes", ARContext.postTheme);
+        return "forum/post/post-add";
+    }
+
+    @RequestMapping("/save")
+    public String save(Model model, Information information) throws ServiceException {
+        // 设置参数
+        information.setCreateTime(new Date());
+        information.setStateTime(new Date());
+        information.setState("A");
+        information.setInfoType("BBS");
+        information.setIsTop("0");
+        information.setComments(0);
+        information.setUserId(getCurrentUserId());
+        information.setLoves(0);
+        information.setViews(0);
+
+        postService.savePost(information);
+
+        return "redirect:/forum.action";
     }
 
 }

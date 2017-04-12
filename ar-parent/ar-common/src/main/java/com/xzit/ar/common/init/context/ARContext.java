@@ -81,4 +81,9 @@ public class ARContext {
 	 */
 	
 	public static List<Map<String, Object>> classGrade;
+
+	/**
+	 * 论坛环境变量
+	 */
+	public static List<Map<String, Object>> postTheme;
 }

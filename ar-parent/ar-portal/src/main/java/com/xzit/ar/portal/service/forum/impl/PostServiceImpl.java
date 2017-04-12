@@ -5,6 +5,7 @@ import com.xzit.ar.common.mapper.info.CommentMapper;
 import com.xzit.ar.common.mapper.info.InformationMapper;
 import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.info.Comment;
+import com.xzit.ar.common.po.info.Information;
 import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.portal.service.forum.PostService;
 import org.springframework.stereotype.Service;
@@ -144,5 +145,25 @@ public class PostServiceImpl implements PostService {
 //            throw new ServiceException("加载论坛帖子时发生异常！");
 //        }
         return posts;
+    }
+
+    /**
+     * TODO 保存帖子信息
+     *
+     * @param information
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public Integer savePost(Information information) throws ServiceException {
+        int row = 0;
+        try {
+            if (information != null && CommonUtil.isNotEmpty(information.getUserId())){
+                row = informationMapper.save(information);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("发布新帖时发生异常");
+        }
+        return row;
     }
 }

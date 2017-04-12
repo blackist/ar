@@ -3,41 +3,6 @@
 
 <script type="text/javascript" src="assets/js/jquery-1.11.1.min.js"></script>
 
-<script type="text/javascript">
-	$(function() {
-		jQuery(".select2").select2({
-			width : '100%',
-			minimumResultsForSearch : -1
-		});
-
-		/* modal */
-		$(".modal").click(function() {
-			$('body').css({
-				'margin-right' : '0px'
-			});
-		});
-
-		/* center modal */
-		function centerModals() {
-			$('.modal').each(
-					function(i) {
-						var $clone = $(this).clone().css('display', 'block')
-								.appendTo('body');
-						var top = Math.round(($clone.height() - $clone.find(
-								'.modal-content').height()) / 3);
-						top = top > 0 ? top : 0;
-						$clone.remove();
-						$(this).find('.modal-content').css("margin-top", top);
-					});
-		}
-		$('.modal').on('show.bs.modal', centerModals);
-		setTimeout(function() {
-			$(".goaway").fadeOut(1000);
-		}, 2300);
-		$(window).on('resize', centerModals);
-	});
-</script>
-
 <!-- util js -->
 <script type="text/javascript" src="assets/script/portal-common/util.js"></script>
 
@@ -62,3 +27,12 @@
 
 <script src="assets/js/fileinput.min.js"></script>
 <script src="assets/js/fileinput_locale_zh.js"></script>
+
+<script type="text/javascript">
+	$(function () {
+        jQuery(".select2").select2({
+            width : '100%',
+            minimumResultsForSearch : -1
+        });
+    });
+</script>

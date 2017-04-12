@@ -580,7 +580,7 @@ dsy.add("0_30_0", [ "城口县", "大足县", "垫江县", "丰都县", "奉节�
 		"璧山县", "綦江县" ]);
 var s = [ "province", "city", "county" ];
 var opt0 = [ "省份", "地级市", "市、县级市、县" ];
-function setup() {
+function setup_address() {
 	for (i = 0; i < s.length - 1; i++)
 		document.getElementById(s[i]).onchange = new Function("change("
 				+ (i + 1) + ")");

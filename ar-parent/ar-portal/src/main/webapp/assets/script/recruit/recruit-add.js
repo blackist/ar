@@ -1,4 +1,7 @@
 $(function() {
+    $("#nav-recruit").attr("class", "active grid");
+
+    // 文本框获取焦点
 	$("#title").focus();
 	$("#posDesc").html("岗位职责: \n任职资格: \n工作时间: ");
 });

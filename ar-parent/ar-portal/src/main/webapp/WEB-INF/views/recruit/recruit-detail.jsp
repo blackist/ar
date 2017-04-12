@@ -270,4 +270,5 @@
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
 <script src="assets/script/recruit/recruit-detail.js"></script>
+
 </html>

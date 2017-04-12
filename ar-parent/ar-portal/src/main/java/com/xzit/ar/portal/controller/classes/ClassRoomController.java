@@ -138,7 +138,7 @@ public class ClassRoomController extends BaseController {
 			information.setOriginId(classId);
 			information.setComments(0);
 			information.setViews(0);
-			information.setShares(0);
+			information.setLoves(0);
 			information.setState("A");
 			information.setCreateTime(new Date());
 			information.setStateTime(new Date());
@@ -235,7 +235,7 @@ public class ClassRoomController extends BaseController {
 			information.setOriginId(classId);
 			information.setComments(0);
 			information.setViews(0);
-			information.setShares(0);
+			information.setLoves(0);
 			information.setState("A");
 			information.setCreateTime(new Date());
 			information.setStateTime(new Date());

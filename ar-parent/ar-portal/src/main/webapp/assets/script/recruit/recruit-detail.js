@@ -1,4 +1,5 @@
 $(function() {
+    $("#nav-recruit").attr("class", "active grid");
 
 });
 

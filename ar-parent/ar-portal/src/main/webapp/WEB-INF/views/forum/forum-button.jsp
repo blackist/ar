@@ -10,10 +10,10 @@
 		<input type="hidden" name="ie" value="UTF-8"> <input
 			type="text" name="queryStr" id="queryStr"
 			class="form-control col-xs-3" size="10" width="100px"
-			value="${queryStr}" placeholder="标题/公司/职位/工作地点"
+			value="${queryStr}" placeholder="帖子/作者"
 			onkeypress="if(event.keyCode==13){queryBtn.click();return false;}" />
 		<span class="input-group-btn">
-			<button type="submit" id="queryBtn" class="btn btn-default">找工作</button>
+			<button type="submit" id="queryBtn" class="btn btn-default">搜帖子</button>
 		</span>
 	</div>
 </form>

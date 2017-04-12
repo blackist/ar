@@ -70,7 +70,7 @@
 					</div><!-- media -->
 					
 					<ol class="breadcrumb">
-						<li class="active"><i class="fa fa-comments-o"></i> 评论(${post.comments})</li>
+						<li class="active"><i class="fa fa-comments-o"></i> 所有评论(${post.comments})</li>
 					</ol>
 					<ul class="media-list comment-list" id="comment-list">
 					</ul><!-- comment-list -->
@@ -78,7 +78,7 @@
 					<%--登录可评论--%>
 					<c:if test="${SESSION_USER != null}">
 						<div class="mb20"></div>
-						<h5 class="subtitle mb5">评论一下</h5>
+						<h5 class="subtitle mb5"><i class="fa fa-user"></i> ${SESSION_USER.trueName}：</h5>
 						<div class="mb20"></div>
 						<form method="post" action="post/comment.action" id="form-comment">
 							<textarea name="content" maxlength="500" rows="5" class="form-control" id="comment-content"></textarea>

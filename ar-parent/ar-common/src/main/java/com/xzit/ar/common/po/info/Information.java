@@ -88,11 +88,11 @@ public class Information extends BaseEntity {
         this.comments = comments;
     }
 
-    public Integer getShares() {
+    public Integer getLoves() {
         return loves;
     }
 
-    public void setShares(Integer loves) {
+    public void setLoves(Integer loves) {
         this.loves = loves;
     }
 

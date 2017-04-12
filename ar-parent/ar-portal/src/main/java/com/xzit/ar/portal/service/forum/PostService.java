@@ -3,6 +3,7 @@ package com.xzit.ar.portal.service.forum;
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.info.Comment;
+import com.xzit.ar.common.po.info.Information;
 
 import java.util.List;
 import java.util.Map;
@@ -54,4 +55,12 @@ public interface PostService {
      * @throws ServiceException
      */
     public Integer lovePost(Integer postId) throws ServiceException;
+
+    /**
+     * TODO 保存帖子信息
+     * @param information
+     * @return
+     * @throws ServiceException
+     */
+    public Integer savePost(Information information) throws ServiceException;
 }

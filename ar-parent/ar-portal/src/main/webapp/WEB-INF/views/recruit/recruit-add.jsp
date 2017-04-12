@@ -218,7 +218,34 @@
 
 <!--js初始化函数-->
 <script type="text/javascript">
-	setup()
+    setup_address();
+	$(function() {
+		/* modal */
+		$(".modal").click(function() {
+			$('body').css({
+				'margin-right' : '0px'
+			});
+		});
+
+		/* center modal */
+		function centerModals() {
+			$('.modal').each(
+				function(i) {
+					var $clone = $(this).clone().css('display', 'block')
+						.appendTo('body');
+					var top = Math.round(($clone.height() - $clone.find(
+							'.modal-content').height()) / 3);
+					top = top > 0 ? top : 0;
+					$clone.remove();
+					$(this).find('.modal-content').css("margin-top", top);
+				});
+		}
+		$('.modal').on('show.bs.modal', centerModals);
+		setTimeout(function() {
+			$(".goaway").fadeOut(1000);
+		}, 2300);
+		$(window).on('resize', centerModals);
+	});
 </script>
 
 </html>

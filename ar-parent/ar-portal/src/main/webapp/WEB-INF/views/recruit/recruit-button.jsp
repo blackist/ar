@@ -6,7 +6,7 @@
 		<a class="btn btn-success" href="recruit/addRecruit.action"> <span
 			class="fa fa-plus-circle"></span>&nbsp;发布招聘
 		</a> <a class="btn btn-success" href="my/resume/addResume.action"> <span
-			class="fa fa-file-text-o"></span>&nbsp;登记简历
+			class="fa fa-file-text-o"></span>&nbsp;登记简历                                        
 		</a>
 	</div>
 	<div class="input-group col-xs-3">
