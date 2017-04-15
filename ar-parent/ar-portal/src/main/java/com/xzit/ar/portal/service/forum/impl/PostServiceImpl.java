@@ -133,7 +133,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public List<Map<String, Object>> queryPosts(Page<Map<String, Object>> page, String queryStr) throws ServiceException {
         List<Map<String, Object>> posts = null;
-//        try {
+        try {
             // 校验参数
               if (CommonUtil.isEmpty(queryStr)){
                   queryStr = "";
@@ -141,9 +141,9 @@ public class PostServiceImpl implements PostService {
             queryStr = "%" + queryStr + "%";
             // 根据条件查询帖子
             posts = informationMapper.queryInfos(page, queryStr,"BBS", "%%", "A");
-//        } catch (Exception e) {
-//            throw new ServiceException("加载论坛帖子时发生异常！");
-//        }
+        } catch (Exception e) {
+            throw new ServiceException("加载论坛帖子时发生异常！");
+        }
         return posts;
     }
 
@@ -165,5 +165,24 @@ public class PostServiceImpl implements PostService {
             throw new ServiceException("发布新帖时发生异常");
         }
         return row;
+    }
+
+    /**
+     * TODO 删除用户的帖子
+     *
+     * @param postId
+     * @param userId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public Integer deletePost(Integer postId, Integer userId) throws ServiceException {
+        try {
+            if(CommonUtil.isNotEmpty(postId) && CommonUtil.isNotEmpty(userId))
+                return informationMapper.deleteInfoByIdAndType(postId, userId, "BBS");
+        } catch (Exception e) {
+            throw new ServiceException("删除帖子时发生异常！");
+        }
+        return 0;
     }
 }

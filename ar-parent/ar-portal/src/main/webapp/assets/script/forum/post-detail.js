@@ -77,3 +77,10 @@ function lovePost(postId) {
         }
     });
 }
+
+function deletePost(postId) {
+    if (confirm("删除后无法恢复，确定删除这条帖子吗？")){
+        // 删除帖子
+        location.href = "post/delete.action?postId="+postId;
+    }
+}

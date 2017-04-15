@@ -52,6 +52,9 @@
 									<i class="fa fa-heart"></i> 喜欢 (<arp class="post-loves">${post.loves}</arp>)</a>
 								</li>
 								<li><a href="javascript:;" onclick="focusCommentPost()"><i class="fa fa-comment"></i> 评论 (${post.comments})</a></li>
+								<c:if test="${post.userId == SESSION_USER.userId}" >
+								<li><a href="javascript:;" onclick="deletePost(${post.infoId})"><i class="fa fa-trash-o"></i> 删除 </a></li>
+								</c:if>
 							</ul>
 						</div>
 					</div><!-- panel -->

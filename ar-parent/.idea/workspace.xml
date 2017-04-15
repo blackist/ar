@@ -45,14 +45,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="my-mini.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/my/my-mini.jsp">
+      <file leaf-file-name="PostService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/forum/PostService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-              <folding>
-                <element signature="e#379#402#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="385">
+              <caret line="62" column="32" lean-forward="true" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,8 +84,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/forum/ForumController.java" />
-        <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/page/PageInterceptor.java" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/css/style.default.css" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/service/service-index.jsp" />
@@ -107,10 +103,6 @@
         <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/info/CommentMapper.java" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/forum/post/post-comments.jsp" />
         <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/info/CommentMapper.xml" />
-        <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/info/InformationMapper.xml" />
-        <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/info/InformationMapper.java" />
-        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/forum/post-detail.js" />
-        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/forum/post/post-detail.jsp" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/forum/forum-button.jsp" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-button.jsp" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-detail.jsp" />
@@ -124,12 +116,8 @@
         <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/util/forum/ForumUtil.java" />
         <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/init/StartupServlet.java" />
         <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/po/info/Information.java" />
-        <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/forum/PostService.java" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/classes/ClassRoomController.java" />
-        <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/forum/PostController.java" />
-        <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/forum/impl/PostServiceImpl.java" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/forum/post/post-add.jsp" />
-        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/forum/post-add.js" />
         <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/origin/ActivityMapper.xml" />
         <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/origin/OriginProvider.java" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-message.jsp" />
@@ -137,6 +125,16 @@
         <option value="$PROJECT_DIR$/ar-manage/src/main/webapp/WEB-INF/ar-tag.tld" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/ar-tag.tld" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/my/my-mini.jsp" />
+        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/my/recruit/resume-index.jsp" />
+        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/forum/post-detail.js" />
+        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/forum/post-add.js" />
+        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/forum/post/post-detail.jsp" />
+        <option value="$PROJECT_DIR$/ar-manage/src/main/webapp/WEB-INF/views/error/error.jsp" />
+        <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/forum/PostController.java" />
+        <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/info/InformationMapper.java" />
+        <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/info/InformationMapper.xml" />
+        <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/forum/impl/PostServiceImpl.java" />
+        <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/forum/PostService.java" />
       </list>
     </option>
   </component>
@@ -296,6 +294,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -649,124 +681,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ar-manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ar-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ar-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ar-manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ar-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ar-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ar-manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ar-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ar-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ar-manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ar-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ar-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ar-manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ar-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ar-parent" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="ar-common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -909,7 +823,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="origin" />
+              <option name="myItemId" value="info" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1553,12 +1467,12 @@
       <workItem from="1491870359381" duration="8910000" />
       <workItem from="1491995725343" duration="13104000" />
       <workItem from="1492045052661" duration="593000" />
-      <workItem from="1492252524552" duration="3171000" />
+      <workItem from="1492252524552" duration="6088000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210976000" />
+    <option name="totallyTimeSpent" value="213893000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1571,7 +1485,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="0" width="1932" height="1092" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1596,7 +1510,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32708332" sideWeight="0.49785408" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32919255" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23064688" sideWeight="0.4946071" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23064688" sideWeight="0.4946071" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16914104" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5053929" order="10" side_tool="false" content_ui="tabs" />
@@ -1642,27 +1556,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/forum/post/post-comments.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="20" column="65" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-manage/src/main/java/com/xzit/ar/manage/controller/dict/DictDataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1139">
-          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-manage/src/main/java/com/xzit/ar/manage/controller/dict/DictController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3073">
-          <caret line="156" column="49" lean-forward="true" selection-start-line="156" selection-start-column="42" selection-end-line="156" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/assets/css/style.default.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -1691,31 +1584,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/forum/post-detail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="74" column="16" lean-forward="false" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/forum/forum-button.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="3" column="79" lean-forward="true" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/info/InformationMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="150" column="29" lean-forward="false" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/info/InformationMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="895">
-          <caret line="58" column="17" lean-forward="false" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1873,27 +1745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/forum/PostService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="64" column="25" lean-forward="false" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/forum/impl/PostServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="166" column="18" lean-forward="false" selection-start-line="166" selection-start-column="18" selection-end-line="166" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/forum/PostController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="125" column="24" lean-forward="true" selection-start-line="125" selection-start-column="24" selection-end-line="125" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/forum/post/post-add.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-794">
@@ -1940,17 +1791,6 @@
             <marker date="1492012850819" expanded="true" signature="2557:2770" ph="..." />
             <marker date="1492012850819" expanded="true" signature="2940:3102" ph="..." />
             <marker date="1492012850819" expanded="true" signature="3029:3035" ph="&amp;nbsp;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/forum/post-add.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <marker date="1492255965771" expanded="true" signature="13:64" ph="{...}" />
-            <marker date="1492255965771" expanded="true" signature="88:132" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2158,47 +1998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/forum/post/post-detail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="58" column="35" lean-forward="false" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
-          <folding>
-            <marker date="1491880837378" expanded="true" signature="193:5249" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="200:313" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="320:5118" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="495:5046" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="507:5038" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="547:751" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="575:741" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="612:618" ph="&amp;nbsp;" />
-            <marker date="1491880837378" expanded="true" signature="786:5012" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="813:3568" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="864:2198" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="895:1633" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="984:1415" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="1735:2186" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="1766:2173" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="1854:2035" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="1931:2021" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="2242:2315" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="2340:2680" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="2412:2531" ph="..." />
-            <marker date="1491880837378" expanded="false" signature="2503:2518" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="2573:2668" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="2729:2826" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="2886:2897" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="2981:3556" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="3206:3543" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="3614:4984" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="3948:4459" ph="..." />
-            <marker date="1491880837378" expanded="true" signature="4014:4019" ph="&amp;amp;" />
-            <marker date="1491880837378" expanded="true" signature="4101:4106" ph="&amp;amp;" />
-            <marker date="1491880837378" expanded="true" signature="4425:4430" ph="&amp;amp;" />
-            <marker date="1491880837378" expanded="true" signature="4565:4971" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ar-manage/src/main/webapp/WEB-INF/ar-tag.tld">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -2239,6 +2038,97 @@
             <marker date="1491530057416" expanded="true" signature="1042:1048" ph="&amp;nbsp;" />
             <marker date="1491530057416" expanded="true" signature="1351:1435" ph="..." />
             <marker date="1491530057416" expanded="true" signature="1471:1555" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/ar-tag.tld">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <marker date="1492258375700" expanded="true" signature="61:2514" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="321:684" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="458:562" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="576:676" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="691:932" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="824:924" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="939:1174" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="1067:1166" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="1181:1415" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="1306:1407" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="1422:1778" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="1553:1654" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="1668:1770" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="1785:2138" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="1914:2015" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="2029:2130" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="2145:2504" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="2280:2381" ph="..." />
+            <marker date="1492258375700" expanded="true" signature="2395:2496" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/my/my-mini.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <marker date="1492258466523" expanded="true" signature="63:86" ph="..." />
+            <marker date="1492258466523" expanded="true" signature="194:594" ph="..." />
+            <marker date="1492258466523" expanded="true" signature="215:586" ph="..." />
+            <marker date="1492258466523" expanded="true" signature="291:410" ph="..." />
+            <marker date="1492258466523" expanded="true" signature="386:401" ph="..." />
+            <marker date="1492258466523" expanded="true" signature="448:578" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/my/recruit/resume-index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="76" column="132" lean-forward="false" selection-start-line="76" selection-start-column="132" selection-end-line="76" selection-end-column="132" />
+          <folding>
+            <marker date="1492259476348" expanded="true" signature="63:106" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="129:3473" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="136:236" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="243:3342" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="352:3250" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="379:653" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="387:450" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="486:644" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="546:634" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="699:3227" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="750:815" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="868:3197" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="920:1300" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="930:1036" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="958:1031" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="964:1000" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1001:1007" ph="&amp;nbsp;" />
+            <marker date="1492259476348" expanded="true" signature="1046:1156" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1080:1151" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1086:1120" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1121:1127" ph="&amp;nbsp;" />
+            <marker date="1492259476348" expanded="true" signature="1181:1290" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1208:1285" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1214:1254" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1255:1261" ph="&amp;nbsp;" />
+            <marker date="1492259476348" expanded="true" signature="1375:3187" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1413:1622" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1659:3151" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1688:3138" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1704:1858" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1717:1841" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1874:3122" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1945:3105" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="1959:3084" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="2245:3069" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="2284:3053" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="2378:2512" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="2604:2738" ph="..." />
+            <marker date="1492259476348" expanded="true" signature="2803:3035" ph="..." />
           </folding>
         </state>
       </provider>
@@ -2302,41 +2192,279 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/ar-tag.tld">
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/forum/post-add.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+        <state relative-caret-position="180">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding>
-            <marker date="1492258375700" expanded="true" signature="61:2514" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="321:684" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="458:562" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="576:676" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="691:932" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="824:924" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="939:1174" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="1067:1166" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="1181:1415" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="1306:1407" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="1422:1778" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="1553:1654" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="1668:1770" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="1785:2138" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="1914:2015" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="2029:2130" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="2145:2504" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="2280:2381" ph="..." />
-            <marker date="1492258375700" expanded="true" signature="2395:2496" ph="..." />
+            <marker date="1492260703552" expanded="true" signature="13:64" ph="{...}" />
+            <marker date="1492260703552" expanded="true" signature="88:117" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/my/my-mini.jsp">
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/forum/post-detail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        <state relative-caret-position="437">
+          <caret line="80" column="19" lean-forward="false" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="19" />
           <folding>
-            <element signature="e#379#402#0#HTML" expanded="true" />
+            <marker date="1492259546070" expanded="true" signature="13:233" ph="{...}" />
+            <marker date="1492259546070" expanded="true" signature="183:229" ph="{...}" />
+            <marker date="1492259546070" expanded="true" signature="237:279" ph="/** TODO 加载更多评论 ...*/" />
+            <marker date="1492259546070" expanded="true" signature="316:693" ph="{...}" />
+            <marker date="1492259546070" expanded="true" signature="497:563" ph="{&quot;postId&quot;: postId...}" />
+            <marker date="1492259546070" expanded="true" signature="580:689" ph="{...}" />
+            <marker date="1492259546070" expanded="true" signature="695:730" ph="/** 点击评论 ...*/" />
+            <marker date="1492259546070" expanded="true" signature="759:896" ph="{...}" />
+            <marker date="1492259546070" expanded="true" signature="898:915" ph="/** 发表评论校验 ...*/" />
+            <marker date="1492259546070" expanded="true" signature="939:1164" ph="{...}" />
+            <marker date="1492259546070" expanded="true" signature="1037:1099" ph="{...}" />
+            <marker date="1492259546070" expanded="true" signature="1104:1162" ph="{...}" />
+            <marker date="1492259546070" expanded="true" signature="1166:1209" ph="/** 点击回复，评论框获得焦点 ...*/" />
+            <marker date="1492259546070" expanded="true" signature="1243:1423" ph="{...}" />
+            <marker date="1492259546070" expanded="true" signature="1425:1457" ph="/** 喜欢帖子 ...*/" />
+            <marker date="1492259546070" expanded="true" signature="1484:1768" ph="{...}" />
+            <marker date="1492259546070" expanded="true" signature="1498:1764" ph="{&quot;type&quot;: &quot;GET&quot;...}" />
+            <marker date="1492259546070" expanded="true" signature="1650:1758" ph="{...}" />
+            <marker date="1492259546070" expanded="true" signature="1798:1924" ph="{...}" />
+            <marker date="1492259546070" expanded="true" signature="1838:1922" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/my/recruit/resume-detail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1491048037504" expanded="true" signature="63:106" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="129:4068" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="136:236" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="243:3937" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="352:3845" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="379:670" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="387:467" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="503:661" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="563:651" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="716:3822" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="767:832" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="885:3813" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="937:1317" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="947:1053" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="975:1048" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="981:1017" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1018:1024" ph="&amp;nbsp;" />
+            <marker date="1491048037504" expanded="true" signature="1063:1173" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1097:1168" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1103:1137" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1138:1144" ph="&amp;nbsp;" />
+            <marker date="1491048037504" expanded="true" signature="1198:1307" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1225:1302" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1231:1271" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1272:1278" ph="&amp;nbsp;" />
+            <marker date="1491048037504" expanded="true" signature="1392:3803" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1425:1504" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1555:3792" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1609:3780" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1643:3485" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1698:3470" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1757:3455" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1866:1928" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="1963:2090" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="2126:2250" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="2286:2485" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="2369:2468" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="2530:2592" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="2627:2744" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="2780:2946" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="2982:3105" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="3141:3263" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="3299:3437" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="3547:3767" ph="..." />
+            <marker date="1491048037504" expanded="true" signature="3641:3647" ph="&amp;nbsp;" />
+            <marker date="1491048037504" expanded="true" signature="3647:3653" ph="&amp;nbsp;" />
+            <marker date="1491048037504" expanded="true" signature="3653:3659" ph="&amp;nbsp;" />
+            <marker date="1491048037504" expanded="true" signature="3659:3665" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/forum/post/post-detail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="56" column="80" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+          <folding>
+            <marker date="1492259110000" expanded="true" signature="193:5441" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="200:313" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="320:5310" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="495:5238" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="507:5230" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="547:751" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="575:741" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="612:618" ph="&amp;nbsp;" />
+            <marker date="1492259110000" expanded="true" signature="786:5204" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="813:3760" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="864:2390" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="895:1633" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="984:1415" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="1735:2378" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="1766:2365" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="1854:2035" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="1931:2021" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="2220:2352" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="2434:2507" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="2532:2872" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="2604:2723" ph="..." />
+            <marker date="1492259110000" expanded="false" signature="2695:2710" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="2765:2860" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="2921:3018" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="3078:3089" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="3173:3748" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="3398:3735" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="3806:5176" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="4140:4651" ph="..." />
+            <marker date="1492259110000" expanded="true" signature="4206:4211" ph="&amp;amp;" />
+            <marker date="1492259110000" expanded="true" signature="4293:4298" ph="&amp;amp;" />
+            <marker date="1492259110000" expanded="true" signature="4617:4622" ph="&amp;amp;" />
+            <marker date="1492259110000" expanded="true" signature="4757:5163" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-manage/src/main/webapp/WEB-INF/views/error/error.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding>
+            <marker date="1492260903518" expanded="true" signature="63:86" ph="..." />
+            <marker date="1492260903518" expanded="true" signature="252:1043" ph="..." />
+            <marker date="1492260903518" expanded="true" signature="259:530" ph="..." />
+            <marker date="1492260903518" expanded="true" signature="537:1035" ph="..." />
+            <marker date="1492260903518" expanded="true" signature="554:915" ph="..." />
+            <marker date="1492260903518" expanded="false" signature="564:671" ph="..." />
+            <marker date="1492260903518" expanded="true" signature="834:907" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/forum/PostController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="148" column="74" lean-forward="true" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
+          <folding>
+            <marker date="1492260580794" expanded="false" signature="53:899" ph="..." />
+            <marker date="1492260580794" expanded="true" signature="901:955" ph="/**...*/" />
+            <marker date="1492260580794" expanded="true" signature="956:992" ph="@{...}" />
+            <marker date="1492260580794" expanded="true" signature="1103:1221" ph="/**...*/" />
+            <marker date="1492260580794" expanded="true" signature="1348:1484" ph="{...}" />
+            <marker date="1492260580794" expanded="true" signature="1490:1555" ph="/**...*/" />
+            <marker date="1492260580794" expanded="true" signature="1692:2001" ph="{...}" />
+            <marker date="1492260580794" expanded="true" signature="2007:2157" ph="/**...*/" />
+            <marker date="1492260580794" expanded="true" signature="2309:2768" ph="{...}" />
+            <marker date="1492260580794" expanded="true" signature="2774:2891" ph="/**...*/" />
+            <marker date="1492260580794" expanded="true" signature="3065:3117" ph="{...}" />
+            <marker date="1492260580794" expanded="true" signature="3123:3188" ph="/**...*/" />
+            <marker date="1492260580794" expanded="true" signature="3251:3355" ph="{...}" />
+            <marker date="1492260580794" expanded="true" signature="3361:3487" ph="/**...*/" />
+            <marker date="1492260580794" expanded="true" signature="3602:4067" ph="{...}" />
+            <marker date="1492260580794" expanded="true" signature="4073:4189" ph="/**...*/" />
+            <marker date="1492260580794" expanded="true" signature="4316:4424" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/info/InformationMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="91" column="54" lean-forward="true" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
+          <folding>
+            <marker date="1492261399858" expanded="false" signature="48:211" ph="..." />
+            <marker date="1492261399858" expanded="true" signature="271:374" ph="/**...*/" />
+            <marker date="1492261399858" expanded="true" signature="549:688" ph="/**...*/" />
+            <marker date="1492261399858" expanded="true" signature="897:952" ph="/**...*/" />
+            <marker date="1492261399858" expanded="true" signature="1032:1107" ph="/**...*/" />
+            <marker date="1492261399858" expanded="true" signature="1184:1261" ph="/**...*/" />
+            <marker date="1492261399858" expanded="true" signature="1333:1408" ph="/**...*/" />
+            <marker date="1492261399858" expanded="true" signature="1485:1716" ph="/**...*/" />
+            <marker date="1492261399858" expanded="true" signature="1933:2052" ph="/**...*/" />
+            <marker date="1492261399858" expanded="true" signature="2145:2203" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/info/InformationMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="76" column="37" lean-forward="false" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
+          <folding>
+            <marker date="1492261405915" expanded="true" signature="217:7850" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="296:1340" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="1371:1528" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="1630:1755" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="1634:1745" ph="select from information" />
+            <marker date="1492261405915" expanded="true" signature="1826:2015" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="1830:2005" ph="select info_... information" />
+            <marker date="1492261405915" expanded="true" signature="2089:2283" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="2093:2273" ph="select info_... information" />
+            <marker date="1492261405915" expanded="true" signature="2344:2968" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="2712:2957" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="3043:3623" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="3494:3611" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="3698:3778" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="3700:3770" ph="delete from " />
+            <marker date="1492261405915" expanded="true" signature="3830:3940" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="3835:3919" ph="DELETE FROM " />
+            <marker date="1492261405915" expanded="true" signature="3835:3930" ph="DELETE FROM " />
+            <marker date="1492261405915" expanded="true" signature="4032:5865" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="4109:4806" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="4864:5854" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="5961:7123" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="5965:7113" ph="update infor... " />
+            <marker date="1492261405915" expanded="true" signature="5990:7067" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="7202:7289" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="7206:7279" ph="update infor... " />
+            <marker date="1492261405915" expanded="true" signature="7366:7476" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="7395:7423" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="7433:7465" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="7579:7650" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="7583:7640" ph="SELECT loves... information" />
+            <marker date="1492261405915" expanded="true" signature="7728:7838" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="7757:7785" ph="..." />
+            <marker date="1492261405915" expanded="true" signature="7795:7827" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/forum/impl/PostServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="174" column="47" lean-forward="true" selection-start-line="174" selection-start-column="14" selection-end-line="174" selection-end-column="14" />
+          <folding>
+            <marker date="1492261413745" expanded="false" signature="55:561" ph="..." />
+            <marker date="1492261413745" expanded="true" signature="563:617" ph="/**...*/" />
+            <marker date="1492261413745" expanded="true" signature="821:940" ph="/**...*/" />
+            <marker date="1492261413745" expanded="true" signature="1038:1477" ph="{...}" />
+            <marker date="1492261413745" expanded="true" signature="1483:1600" ph="/**...*/" />
+            <marker date="1492261413745" expanded="true" signature="1683:2160" ph="{...}" />
+            <marker date="1492261413745" expanded="true" signature="2166:2272" ph="/**...*/" />
+            <marker date="1492261413745" expanded="true" signature="2359:2823" ph="{...}" />
+            <marker date="1492261413745" expanded="true" signature="2829:2955" ph="/**...*/" />
+            <marker date="1492261413745" expanded="true" signature="3098:3472" ph="{...}" />
+            <marker date="1492261413745" expanded="true" signature="3478:3619" ph="/**...*/" />
+            <marker date="1492261413745" expanded="true" signature="3755:4214" ph="{...}" />
+            <marker date="1492261413745" expanded="true" signature="4220:4330" ph="/**...*/" />
+            <marker date="1492261413745" expanded="true" signature="4422:4740" ph="{...}" />
+            <marker date="1492261413745" expanded="true" signature="4746:4873" ph="/**...*/" />
+            <marker date="1492261413745" expanded="true" signature="4974:5275" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/forum/PostService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="62" column="32" lean-forward="true" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

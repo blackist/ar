@@ -14,7 +14,7 @@
 		style="border-style: dashed; border-color: #e4e4e4; line-height: 30px; background: url(sorry.png) no-repeat right;">
 		<h1>抱歉，${message}</h1>
 		<h2>Sorry, the site contents error.</h2>
-		<font color="#666666">${message}，我们建议你返回首页进行浏览，谢谢！</font><br /> <br />
+		<font color="#666666">${message}<br>我们建议你返回首页进行浏览，谢谢！</font><br><br>
 		<div class="button">
 			<a href="index.action" title="返回首页" target="_blank">返回首页</a>
 		</div>

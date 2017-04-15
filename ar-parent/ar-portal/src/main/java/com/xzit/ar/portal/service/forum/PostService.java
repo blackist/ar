@@ -21,7 +21,7 @@ public interface PostService {
      * @return 帖子list
      * @throws ServiceException
      */
-    public List<Map<String, Object>> queryPosts(Page<Map<String, Object>> page, String queryStr) throws ServiceException;
+    List<Map<String, Object>> queryPosts(Page<Map<String, Object>> page, String queryStr) throws ServiceException;
 
     /**
      * TODO 根据info_id查询帖子详情
@@ -29,7 +29,7 @@ public interface PostService {
      * @return post
      * @throws ServiceException
      */
-    public Map<String, Object> getPostById(Integer postId) throws ServiceException;
+    Map<String, Object> getPostById(Integer postId) throws ServiceException;
 
     /**
      * TODO 动态加载评论列表
@@ -38,7 +38,7 @@ public interface PostService {
      * @return
      * @throws ServiceException
      */
-    public List<Map<String, Object>> dynamicLoadComment(Page<Map<String, Object>> page, Integer postId) throws ServiceException;
+    List<Map<String, Object>> dynamicLoadComment(Page<Map<String, Object>> page, Integer postId) throws ServiceException;
 
     /**
      * TODO 存储评论内容
@@ -46,7 +46,7 @@ public interface PostService {
      * @return
      * @throws ServiceException
      */
-    public Integer commentPost(Comment comment) throws ServiceException;
+    Integer commentPost(Comment comment) throws ServiceException;
 
     /**
      * TODO 喜欢帖子
@@ -54,7 +54,7 @@ public interface PostService {
      * @return 喜欢此帖子的人数
      * @throws ServiceException
      */
-    public Integer lovePost(Integer postId) throws ServiceException;
+    Integer lovePost(Integer postId) throws ServiceException;
 
     /**
      * TODO 保存帖子信息
@@ -62,5 +62,14 @@ public interface PostService {
      * @return
      * @throws ServiceException
      */
-    public Integer savePost(Information information) throws ServiceException;
+    Integer savePost(Information information) throws ServiceException;
+
+    /**
+     * TODO 删除用户的帖子
+     * @param postId
+     * @param userId
+     * @return
+     * @throws ServiceException
+     */
+    Integer deletePost(Integer postId, Integer userId) throws ServiceException;
 }

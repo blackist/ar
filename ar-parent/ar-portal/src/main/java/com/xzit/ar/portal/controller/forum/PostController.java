@@ -110,6 +110,13 @@ public class PostController extends BaseController {
         return "forum/post/post-add";
     }
 
+    /**
+     * TODO 保存用户发布的新帖
+     * @param model
+     * @param information
+     * @return
+     * @throws ServiceException
+     */
     @RequestMapping("/save")
     public String save(Model model, Information information) throws ServiceException {
         // 设置参数
@@ -128,4 +135,16 @@ public class PostController extends BaseController {
         return "redirect:/forum.action";
     }
 
+    /**
+     * TODO 删除帖子
+     * @param model
+     * @param postId
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/delete")
+    public String delete(Model model, @Param("postId") Integer postId) throws ServiceException {
+        postService.deletePost(postId, getCurrentUserId());
+        return "redirect:/forum.action";
+    }
 }

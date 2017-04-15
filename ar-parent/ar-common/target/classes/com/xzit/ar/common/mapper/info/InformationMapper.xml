@@ -73,7 +73,12 @@
 	<!-- delete -->
 	<delete id="delete" parameterType="java.lang.Integer" >delete from information
     where info_id = #{infoId,jdbcType=INTEGER}</delete>
-	
+	<!--删除用户帖子-->
+	<delete id="deleteInfoByIdAndType" >
+		DELETE FROM information WHERE info_id=#{infoId} and user_id=#{userId} and info_type=#{infoType}
+	</delete>
+
+
 	<!-- save -->
 	<insert id="save" parameterType="com.xzit.ar.common.po.info.Information">
 		insert into information

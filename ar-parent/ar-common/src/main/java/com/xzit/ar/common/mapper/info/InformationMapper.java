@@ -17,7 +17,7 @@ public interface InformationMapper extends BaseMapper {
 	 * @param infoNum
 	 * @return
 	 */
-	public List<Map<String, Object>> loadOriginInfos(@Param("infoType") String infoType, @Param("originId") Integer originId,
+	List<Map<String, Object>> loadOriginInfos(@Param("infoType") String infoType, @Param("originId") Integer originId,
 			@Param("infoNum") Integer infoNum) throws Exception;
 
 	/**
@@ -29,7 +29,7 @@ public interface InformationMapper extends BaseMapper {
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Map<String, Object>> loadOriginUserInfos(Page<Map<String, Object>> page, @Param("userId") Integer userId,
+	List<Map<String, Object>> loadOriginUserInfos(Page<Map<String, Object>> page, @Param("userId") Integer userId,
 			@Param("originId") Integer originId, @Param("infoType") String infoType) throws Exception;
 
 	/**
@@ -37,7 +37,7 @@ public interface InformationMapper extends BaseMapper {
 	 * @param infoId
 	 * @return
 	 */
-	public Integer increaseComments(@Param("infoId") Integer infoId) throws Exception;
+	Integer increaseComments(@Param("infoId") Integer infoId) throws Exception;
 
 	/**
 	 * TODO 增加喜欢数
@@ -45,7 +45,7 @@ public interface InformationMapper extends BaseMapper {
 	 * @return
 	 * @throws Exception
 	 */
-	public Integer increaseLoves(@Param("infoId") Integer infoId) throws Exception;
+	Integer increaseLoves(@Param("infoId") Integer infoId) throws Exception;
 
 	/**
 	 * TODO 获取消息点赞数
@@ -53,7 +53,7 @@ public interface InformationMapper extends BaseMapper {
 	 * @return
 	 * @throws Exception
 	 */
-	public Integer getLoves(@Param("infoId") Integer infoId) throws Exception;
+	Integer getLoves(@Param("infoId") Integer infoId) throws Exception;
 
 	/**
 	 * TODO 累计浏览量
@@ -61,7 +61,7 @@ public interface InformationMapper extends BaseMapper {
 	 * @return
 	 * @throws Exception
 	 */
-	public Integer increaseViews(@Param("infoId") Integer infoId) throws Exception;
+	Integer increaseViews(@Param("infoId") Integer infoId) throws Exception;
 
 	/**
 	 * TODO 根据条件查询信息列表
@@ -75,7 +75,7 @@ public interface InformationMapper extends BaseMapper {
 	 * @return 信息列表
 	 * @throws Exception
 	 */
-	public List<Map<String, Object>> queryInfos(Page<Map<String, Object>> page, @Param("queryStr") String queryStr, @Param("infoType") String infoType,
+	List<Map<String, Object>> queryInfos(Page<Map<String, Object>> page, @Param("queryStr") String queryStr, @Param("infoType") String infoType,
 										 @Param("theme") String theme, @Param("state") String state);
 
 	/**
@@ -84,5 +84,13 @@ public interface InformationMapper extends BaseMapper {
 	 * @return Map<String, Object> info
 	 * @throws Exception
 	 */
-	public Map<String, Object> getInfoDetailById(@Param("infoId") Integer infoId) throws Exception;
+	Map<String, Object> getInfoDetailById(@Param("infoId") Integer infoId) throws Exception;
+
+	/**
+	 * TODO 删除用户帖子
+	 * @return
+	 * @throws Exception
+	 */
+	Integer deleteInfoByIdAndType(@Param("infoId") Integer infoId, @Param("userId") Integer userId,
+								  @Param("infoType") String infoType) throws Exception;
 }
