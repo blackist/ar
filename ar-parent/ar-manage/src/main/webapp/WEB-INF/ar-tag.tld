@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd">
 	<tlib-version>1.0</tlib-version>
-	<jsp-version>2.2</jsp-version>
+	<jsp-version>2.0</jsp-version>
 	<short-name>ar</short-name>
 	<uri>/ar-taglib</uri>
 	<tag>
@@ -34,7 +34,7 @@
 	<tag>
 		<name>ac</name>
 		<tag-class>com.xzit.ar.common.tag.PrivilegeTag</tag-class>
-		<body-content>jsp</body-content>
+		<body-content>empty</body-content>
 		<attribute>
 			<name>url</name>
 			<required>true</required>

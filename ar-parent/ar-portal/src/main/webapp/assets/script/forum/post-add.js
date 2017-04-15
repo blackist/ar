@@ -7,3 +7,4 @@ function savePost() {
 	alert("HEH");
 	$("#postForm").submit();
 }
+

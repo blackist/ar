@@ -91,7 +91,7 @@
 						<div class="alert alert-info">
 							<button class="close" aria-hidden="true" data-dismiss="alert"
 								type="button">×</button>
-							<strong></strong><a class="alert-link" href="javascript:;">您已加入该班级!</a>
+							<strong></strong><a class="alert-link" href="javascript:;">您已加入该班级啦!</a>
 						</div>
 					</ar:exist>
 					<ar:notexist items="${memberList}" value="${SESSION_USER.userId}">

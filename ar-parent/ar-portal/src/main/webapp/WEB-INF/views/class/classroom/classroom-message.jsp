@@ -48,7 +48,7 @@
 										<br>
 										<ul class="blog-meta">
 											<li>By: <a
-												href="ta.show.action?userId=${message.userId}">${message.userName}</a></li>
+												href="ta/show.action?userId=${message.userId}">${message.userName}</a></li>
 											<li><fmt:formatDate value="${message.createTime}"
 													pattern="yyyy-MM-dd HH:mm" /></li>
 										</ul>

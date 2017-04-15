@@ -3,17 +3,12 @@
 <%@ include file="/WEB-INF/views/portal-common/portal-tag.jsp"%>
 <c:if test="${SESSION_USER.userId!=null}">
 	<div class="media">
-		<a class="pull-left"
-			href="ta/show.action?userId=${SESSION_USER.userId}"> <img
-			class="media-object img-responsive" src="${SESSION_USER.headImg}"
-			alt="" style="max-width: 100px;">
+		<a class="pull-left" href="ta/show.action?userId=${SESSION_USER.userId}">
+			<img class="thumbnail img-responsive center-block" src="${SESSION_USER.portrait}"  style="max-width: 65px"/>
 		</a>
-		<div class="media-body">
-			<h5>${SESSION_USER.userName}</h5>
-			<p class="email-summary">
-				<ar:sub length="20" value="${SESSION_USER.introduce}" />
-			</p>
+		<div class="media-body event-body">
+			<h4 class="subtitle">${SESSION_USER.trueName}</h4>
+			<p><ar:sub length="20" value="${SESSION_USER.introduce}" /></p>
 		</div>
 	</div>
-	<div class="row"></div>
 </c:if>
