@@ -69,14 +69,18 @@
 			 AND info.state='A'
 		 </where>
 	 </select>
+
+	<!--通过userId、infoId查询信息-->
+	<select id="getInfoByUserIdAndInfoId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		SELECT
+		<include refid="Base_Column_List"/>
+		FROM information
+		WHERE user_id=#{userId} and info_id=#{infoId}
+	</select>
 	
 	<!-- delete -->
 	<delete id="delete" parameterType="java.lang.Integer" >delete from information
     where info_id = #{infoId,jdbcType=INTEGER}</delete>
-	<!--删除用户帖子-->
-	<delete id="deleteInfoByIdAndType" >
-		DELETE FROM information WHERE info_id=#{infoId} and user_id=#{userId} and info_type=#{infoType}
-	</delete>
 
 
 	<!-- save -->

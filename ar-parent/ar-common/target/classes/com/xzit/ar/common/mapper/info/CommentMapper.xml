@@ -38,6 +38,10 @@
 	
 	<delete id="delete" parameterType="java.lang.Integer" >delete from comment
     where comment_id = #{commentId,jdbcType=INTEGER}</delete>
+
+	<delete id="deleteCommentByInfoId" parameterType="java.lang.Integer">
+		DELETE FROM comment WHERE info_id=#{infoId}
+	</delete>
 	
 	
 	<insert id="save" parameterType="com.xzit.ar.common.po.info.Comment" >

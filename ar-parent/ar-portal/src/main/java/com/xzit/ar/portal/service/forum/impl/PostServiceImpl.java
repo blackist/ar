@@ -178,8 +178,16 @@ public class PostServiceImpl implements PostService {
     @Override
     public Integer deletePost(Integer postId, Integer userId) throws ServiceException {
         try {
-            if(CommonUtil.isNotEmpty(postId) && CommonUtil.isNotEmpty(userId))
-                return informationMapper.deleteInfoByIdAndType(postId, userId, "BBS");
+            // 参数校验
+            if(CommonUtil.isNotEmpty(postId) && CommonUtil.isNotEmpty(userId)) {
+                // 检验帖子是否存在
+                if (informationMapper.getInfoByUserIdAndInfoId(postId, userId) != null) {
+                    // 删除帖子相关评论
+                    commentMapper.deleteCommentByInfoId(postId);
+                    // 删除帖子
+                    return informationMapper.delete(postId);
+                }
+            }
         } catch (Exception e) {
             throw new ServiceException("删除帖子时发生异常！");
         }

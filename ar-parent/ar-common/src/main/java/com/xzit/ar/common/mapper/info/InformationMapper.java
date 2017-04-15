@@ -3,6 +3,7 @@ package com.xzit.ar.common.mapper.info;
 import java.util.List;
 import java.util.Map;
 
+import com.xzit.ar.common.po.info.Information;
 import org.apache.ibatis.annotations.Param;
 
 import com.xzit.ar.common.base.BaseMapper;
@@ -87,10 +88,11 @@ public interface InformationMapper extends BaseMapper {
 	Map<String, Object> getInfoDetailById(@Param("infoId") Integer infoId) throws Exception;
 
 	/**
-	 * TODO 删除用户帖子
+	 * TODO 通过userId和infoId查找信息
+	 * @param infoId
+	 * @param userId
 	 * @return
 	 * @throws Exception
 	 */
-	Integer deleteInfoByIdAndType(@Param("infoId") Integer infoId, @Param("userId") Integer userId,
-								  @Param("infoType") String infoType) throws Exception;
+	Information getInfoByUserIdAndInfoId(@Param("infoId") Integer infoId, @Param("userId") Integer userId) throws Exception;
 }
