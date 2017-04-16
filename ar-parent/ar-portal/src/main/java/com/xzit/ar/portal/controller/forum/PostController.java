@@ -8,6 +8,7 @@ import com.xzit.ar.common.po.info.Comment;
 import com.xzit.ar.common.po.info.Information;
 import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.portal.service.forum.PostService;
+import com.xzit.ar.portal.service.message.CommentService;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,6 +31,9 @@ public class PostController extends BaseController {
 
     @Resource
     private PostService postService;
+
+    @Resource
+    private CommentService commentService;
 
     /**
      * TODO 加载信息详情
@@ -146,5 +150,16 @@ public class PostController extends BaseController {
     public String delete(Model model, @Param("postId") Integer postId) throws ServiceException {
         postService.deletePost(postId, getCurrentUserId());
         return "redirect:/forum.action";
+    }
+
+    /**
+     * TODO 删除用户评论
+     * @param commentId
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/deleteComment")
+    public @ResponseBody Integer deleteComment(@Param("commentId") Integer commentId) throws ServiceException {
+        return commentService.deleteComment(commentId, getCurrentUserId());
     }
 }

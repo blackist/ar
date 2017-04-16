@@ -78,9 +78,27 @@ function lovePost(postId) {
     });
 }
 
+/**
+ * TODO 删除用户帖子
+ * @param postId
+ */
 function deletePost(postId) {
     if (confirm("删除后无法恢复，确定删除这条帖子吗？")){
         // 删除帖子
         location.href = "post/delete.action?postId="+postId;
+    }
+}
+
+/**
+ * TODO 删除用户评论
+ * @param commentId
+ */
+function deleteComment(commentId) {
+    if (confirm("确定删除这条评论吗？")){
+        $.post("post/deleteComment.action?commentId="+commentId, function (data) {
+            // 页面移除评论内容
+            $("#comment-li-"+commentId).remove();
+            window.location.reload();
+        });
     }
 }

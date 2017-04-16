@@ -17,9 +17,9 @@
 		from comment
     where comment_id = #{commentId,jdbcType=INTEGER}
 	</select>
-	<!--记载评论及用户信息-->
+	<!--加载评论及用户信息-->
 	<select id="loadInfoComment" resultType="map">
-		select co.content content, co.create_time createTime, co.user_id userId, 
+		select co.comment_id commentId, co.content content, co.create_time createTime, co.user_id userId,
 		u.true_name userName, img.image_path imgPath
 		from comment co, image img, user u
 		where co.info_id = #{infoId} 
@@ -28,7 +28,7 @@
 	</select>
 	<!--动态加载评论-->
 	<select id="dynamicLoadComment" resultType="map">
-		select co.content content, co.create_time createTime, co.user_id userId, 
+		select co.comment_id commentId, co.content content, co.create_time createTime, co.user_id userId,
 		u.true_name trueName, img.image_path portrait
 		from comment co, image img, user u
 		where co.info_id = #{infoId}
@@ -41,6 +41,10 @@
 
 	<delete id="deleteCommentByInfoId" parameterType="java.lang.Integer">
 		DELETE FROM comment WHERE info_id=#{infoId}
+	</delete>
+
+	<delete id="deleteCommentByUserIdAndInfoId" parameterType="java.lang.Integer">
+		DELETE FROM comment WHERE comment_id=#{commentId} and user_id=#{userId}
 	</delete>
 	
 	

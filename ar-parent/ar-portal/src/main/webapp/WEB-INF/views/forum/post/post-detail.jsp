@@ -71,11 +71,13 @@
 							<p>${post.introduce}</p>
 						</div>
 					</div><!-- media -->
-					
+
+					<%--comment-list 评论列表--%>
 					<ol class="breadcrumb">
 						<li class="active"><i class="fa fa-comments-o"></i> 所有评论(${post.comments})</li>
 					</ol>
 					<ul class="media-list comment-list" id="comment-list">
+						<img class="center-block" src='assets/images/icon/loader.gif'>
 					</ul><!-- comment-list -->
 
 					<%--登录可评论--%>

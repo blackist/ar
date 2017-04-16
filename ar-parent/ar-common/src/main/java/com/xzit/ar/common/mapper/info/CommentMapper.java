@@ -33,4 +33,13 @@ public interface CommentMapper extends BaseMapper {
 	 * @throws Exception
 	 */
 	Integer deleteCommentByInfoId(@Param("infoId") Integer infoId) throws Exception;
+
+	/**
+	 * TODO 通过userId和commentId删除评论
+	 * @param infoId
+	 * @param userId
+	 * @return
+	 * @throws Exception
+	 */
+	Integer deleteCommentByUserIdAndInfoId(@Param("commentId") Integer commentId, @Param("userId") Integer userId) throws Exception;
 }
