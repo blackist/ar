@@ -48,13 +48,18 @@ public class ClassRoomController extends BaseController {
 	@Resource
 	private ClassRoomService classRoomService;
 
+	/**
+	 * TODO 加载班级主页
+	 * @param model
+	 * @param classId
+	 * @return
+	 * @throws ServiceException
+	 */
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String index(Model model, @RequestParam("classId") Integer classId) throws ServiceException {
 		Page<Map<String, Object>> page = new Page<>(getPageIndex(), 3);
-		System.out.println(classId);
 		model.addAttribute("lastInfos", classRoomService.classInfo(page, classId).getBeanList());
-		Map<String, Object> classRoom = classRoomService.classIndex(classId);
-		model.addAttribute("classroom", classRoom);
+		model.addAttribute("classroom", classRoomService.classIndex(classId));
 		model.addAttribute("memberList", classRoomService.getAllMemberIds(classId));
 		
 		return "class/classroom/classroom-index";
