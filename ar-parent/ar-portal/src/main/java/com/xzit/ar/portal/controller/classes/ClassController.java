@@ -49,6 +49,12 @@ public class ClassController extends BaseController {
 		return "class/class-index";
 	}
 
+	/**
+	 * TODO 加载班记录信息侧边栏
+	 * @param model
+	 * @return
+	 * @throws ServiceException
+	 */
 	@RequestMapping("/outlineClass")
 	public String outlineClass(Model model) throws ServiceException {
 
@@ -68,6 +74,12 @@ public class ClassController extends BaseController {
 		return "class/class-outline";
 	}
 
+	/**
+	 * TODO 查询班级
+	 * @param model
+	 * @return
+	 * @throws ServiceException
+	 */
 	@RequestMapping("/queryClasses")
 	public String queryClasses(Model model) throws ServiceException {
 		// page 对象

@@ -20,14 +20,23 @@
 		origin_id, origin_name, origin_type, origin_grade, members, origin_desc,
 		create_time, mgr_id, state, state_time, exp1, exp2
 	</sql>
-	
+
+	<!--按id查询组织-->
 	<select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
 		select
 		<include refid="Base_Column_List" />
-		from origin
-    where origin_id = #{originId,jdbcType=INTEGER}
+		from origin 
+    	where origin_id = #{originId,jdbcType=INTEGER}
+	</select>
+
+	<!--按组织类型查询组织列表-->
+	<select id="loadOriginByOriginType" resultType="map">
+		SELECT origin_id originId, origin_name originName, members members, state_time stateTime
+		FROM origin
+		WHERE origin_type=#{originType} AND state='A'
 	</select>
 	
+	<!--删除组织-->
 	<delete id="delete" parameterType="java.lang.Integer" >delete from origin
     where origin_id = #{originId,jdbcType=INTEGER}</delete>
 	

@@ -23,18 +23,59 @@ import com.xzit.ar.common.po.origin.Grade;
  */
 public interface ClassService {
 
-	public List<Grade> getAll() throws ServiceException;
+	/**
+	 * TODO 获取年级列表，年级列表中含有各年级班级数
+	 * @return
+	 * @throws ServiceException
+	 */
+	List<Grade> getAll() throws ServiceException;
 
-	public List<Map<String, Object>> queryClasses(Page<Map<String, Object>> page, String queryStr, String selectStr)
+	/**
+	 * TODO 条件查询班级
+	 * @param page 分页类
+	 * @param queryStr 查询条件
+	 * @param selectStr   查询条件
+	 * @return
+	 * @throws ServiceException
+	 */
+	List<Map<String, Object>> queryClasses(Page<Map<String, Object>> page, String queryStr, String selectStr)
 			throws ServiceException;
 
-	public Integer countClassNum() throws ServiceException;
+	/**
+	 * TODO 查询班级总数
+	 * @return
+	 * @throws ServiceException
+	 */
+	Integer countClassNum() throws ServiceException;
 
-	public Integer countClassMembers() throws ServiceException;
+	/**
+	 * TODO 查询加入班记录的总人数
+	 * @return
+	 * @throws ServiceException
+	 */
+	Integer countClassMembers() throws ServiceException;
 
-	public List<Map<String, Object>> loadMyClass(Integer userId) throws ServiceException;
-	
-	public List<Map<String, Object>> loadPopularClass(Integer number) throws ServiceException;
-	
-	public List<Map<String, Object>> latestMembers(Integer number) throws ServiceException;
+	/**
+	 * TODO 加载我加入的班级
+	 * @param userId
+	 * @return
+	 * @throws ServiceException
+	 */
+	List<Map<String, Object>> loadMyClass(Integer userId) throws ServiceException;
+
+	/**
+	 * TODO 加载热门班级
+	 * @param number
+	 * @return
+	 * @throws ServiceException
+	 */
+	List<Map<String, Object>> loadPopularClass(Integer number) throws ServiceException;
+
+	/**
+	 * TODO 查询最近加入的用户
+	 * @param number
+	 * @return
+	 * @throws ServiceException
+	 */
+	List<Map<String, Object>> latestMembers(Integer number) throws ServiceException;
 }
