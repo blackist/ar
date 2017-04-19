@@ -100,4 +100,14 @@ public interface OriginMapper extends BaseMapper {
 	 * @throws Exception
 	 */
 	List<Map<String, Object>> loadOriginByOriginType(@Param("originType") String originType) throws Exception;
+
+	/**
+	 * TODO 记载组织最近的动态消息
+	 * @param page
+	 * @param originId
+	 * @return
+	 * @throws Exception
+	 */
+	List<Map<String, Object>> getLatestInfosByOriginId(Page<Map<String, Object>> page,@Param("originId") Integer originId)
+			throws Exception;
 }

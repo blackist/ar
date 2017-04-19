@@ -1,5 +1,12 @@
 package com.xzit.ar.portal.service.org;
 
+import com.xzit.ar.common.exception.ServiceException;
+import com.xzit.ar.common.page.Page;
+import com.xzit.ar.common.po.origin.Origin;
+
+import java.util.List;
+import java.util.Map;
+
 /**
  * TODO ${TODO}
  *
@@ -7,4 +14,29 @@ package com.xzit.ar.portal.service.org;
  * @Date:2017/4/18 23:32.
  */
 public interface OrgroomService {
+
+
+    /**
+     * TODO 根据 originId 查询 origin 基本信息
+     * @param originId  orginId
+     * @return  origin 信息
+     * @throws ServiceException
+     */
+    Origin getOriginById(Integer originId) throws ServiceException;
+
+    /**
+     * TODO 记载组织最近消息
+     * @param page  分页类
+     * @param originId  组织id
+     * @return  消息列表
+     * @throws ServiceException
+     */
+    List<Map<String, Object>> getLatestInfosByOriginId(Page<Map<String, Object>> page, Integer originId) throws ServiceException;
+
+    /**
+     * TODO 加载组织成员id列表
+     * @return  成员id列表
+     * @throws ServiceException
+     */
+    List<Integer> getMemberIds(Integer originId) throws ServiceException;
 }

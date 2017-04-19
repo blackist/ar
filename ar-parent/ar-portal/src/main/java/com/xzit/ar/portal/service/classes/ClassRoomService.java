@@ -33,6 +33,7 @@ public interface ClassRoomService {
 	public Page<Map<String, Object>> classMember(Page<Map<String, Object>> page, Integer classId)
 			throws ServiceException;
 	/**
+	 * TODO 加载班级最新动态消息
 	 * @param page
 	 * @param classId
 	 * @return

@@ -4,17 +4,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>${orgroom.className}-信电校友录</title>
+<title>${orgroom.originName}-信电校友录</title>
 <%@ include file="/WEB-INF/views/portal-common/portal-meta.jsp"%>
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/portal-common/header.jsp"%>
 	<div class="container higher" id="container">
-		<%@ include
-			file="/WEB-INF/views/class/classroom/classroom-pageheader.jsp"%>
-		<div class="mb5"></div>
+		<%--org pageheader--%>
+		<%@include file="/WEB-INF/views/org/orgroom/orgroom-pageheader.jsp"%>
+
 		<!-- nav tab -->
-		<%@ include file="/WEB-INF/views/class/classroom/classroom-nav.jsp"%>
+		<%@ include file="/WEB-INF/views/org/orgroom/orgroom-nav.jsp"%>
 
 		<!-- Tab panes -->
 		<div class="tab-content">
@@ -27,12 +27,10 @@
 						<div class="panel-body">
 							<blockquote>
 								<i class="fa fa-quote-left"></i>
-								<c:if
-									test="${classroom.classDesc!=''&&classroom.classDesc!=null}">
-									<p>${classroom.classDesc}</p>
+								<c:if test="${orgroom.originDesc!=''&&orgroom.originDesc!=null}">
+									<p>${orgroom.originDesc}</p>
 								</c:if>
-								<c:if
-									test="${classroom.classDesc==''||classroom.classDesc==null}">
+								<c:if test="${orgroom.originDesc=='' || orgroom.originDesc==null}">
 									<p>(暂无简介)</p>
 								</c:if>
 							</blockquote>
@@ -44,7 +42,7 @@
 						</div>
 					</div>
 					<div id="bloglist" class="row">
-						<c:forEach items="${lastInfos}" var="info" varStatus="status">
+						<c:forEach items="${latestInfos}" var="info" varStatus="status">
 							<div class="col-md-12">
 								<div class="blog-item">
 									<%--
@@ -57,17 +55,14 @@
 									</c:if> --%>
 									<div class="blog-details">
 										<div class="blog-summary">
-											<ar:sub length="40" value="${info.content}" />
-											<br>
+											<ar:sub length="40" value="${info.content}" /><br>
 											<ul class="blog-meta">
-												<li>By: <a href="ta.show.action?userId=${info.userId}">${info.userName}</a></li>
-												<li><fmt:formatDate value="${info.createTime}"
-														pattern="yyyy-MM-dd HH:mm" /></li>
-												<li><a
-													href="classroom/infoDetail.action?classId=${classroom.classId}&infoId=${info.infoId}">评论(${info.comments})</a></li>
+												<li>By: <a href="ta/show.action?userId=${info.userId}">${info.trueName}</a></li>
+												<li><fmt:formatDate value="${info.createTime}" pattern="yyyy-MM-dd HH:mm" /></li>
+												<li><a href="orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${info.infoId}">评论(${info.comments})</a></li>
 											</ul>
 											<button class="btn btn-sm btn-white"
-												onclick="javascript:location.href='classroom/infoDetail.action?classId=${classroom.classId}&infoId=${info.infoId}';">查看详情</button>
+													onclick="javascript:location.href='orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${info.infoId}';">查看详情</button>
 										</div>
 									</div>
 								</div>
@@ -87,21 +82,19 @@
 				<div class="col-md-3"
 					style="background-color: #eee; padding: 10px 10px 50px 10px;">
 					<%@ include file="/WEB-INF/views/my/my-mini.jsp"%>
-					<ar:exist items="${memberList}" value="${SESSION_USER.userId}">
+					<ar:exist items="${memberIds}" value="${SESSION_USER.userId}">
 						<div class="alert alert-info">
-							<button class="close" aria-hidden="true" data-dismiss="alert"
-								type="button">×</button>
-							<strong></strong><a class="alert-link" href="javascript:;">您已加入该班级啦!</a>
+							<button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+							<a class="alert-link" href="javascript:;">您已加入该班级啦!</a>
 						</div>
 					</ar:exist>
-					<ar:notexist items="${memberList}" value="${SESSION_USER.userId}">
+					<ar:notexist items="${memberIds}" value="${SESSION_USER.userId}">
 						<div class="alert alert-info">
-							<button class="close" aria-hidden="true" data-dismiss="alert"
-								type="button">×</button>
-							<strong></strong><a class="alert-link" href="javascript:;">您还未加入该班级!</a>
+							<button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+							<a class="alert-link" href="javascript:;">您还未加入该班级!</a>
 						</div>
 						<a class="btn btn-darkblue"
-							href="classroom/joinClass.action?classId=${classroom.classId}"><span
+							href="orgroom/joinOrg.action?originId=${orgroom.originId}"><span
 							class="glyphicon glyphicon-plus"></span>&nbsp;加入班级</a>
 					</ar:notexist>
 					<hr />
