@@ -37,7 +37,7 @@
 	</select>
 
 	<!--查询组织最近的消息-->
-	<select id="getLatestInfosByOriginId" resultType="map">
+	<select id="getOriginInfos" resultType="map">
 		SELECT info.info_title infoTitle, info.content content, info.thumb_image infoImg, info.comments comments,
 				info.create_time createTime, info.info_id infoId, info.user_id userId, u.true_name trueName
 		FROM information info, `user` u
@@ -46,7 +46,7 @@
 			ORDER BY info.create_time DESC 
 		</where>
 	</select>
-	
+
 	<!--删除组织-->
 	<delete id="delete" parameterType="java.lang.Integer" >delete from origin
     where origin_id = #{originId,jdbcType=INTEGER}</delete>

@@ -122,5 +122,5 @@
 	<%@ include file="/WEB-INF/views/portal-common/footer.jsp"%>
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/class/classroom/classroom-index.js"></script>
+<script src="assets/script/org/orgroom/orgroom-index.js"></script>
 </html>

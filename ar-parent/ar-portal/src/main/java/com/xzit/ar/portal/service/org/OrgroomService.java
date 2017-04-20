@@ -2,6 +2,7 @@ package com.xzit.ar.portal.service.org;
 
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.page.Page;
+import com.xzit.ar.common.po.info.Information;
 import com.xzit.ar.common.po.origin.Origin;
 
 import java.util.List;
@@ -31,7 +32,7 @@ public interface OrgroomService {
      * @return  消息列表
      * @throws ServiceException
      */
-    List<Map<String, Object>> getLatestInfosByOriginId(Page<Map<String, Object>> page, Integer originId) throws ServiceException;
+    List<Map<String, Object>> getOriginInfos(Page<Map<String, Object>> page, Integer originId) throws ServiceException;
 
     /**
      * TODO 加载组织成员id列表
@@ -39,4 +40,12 @@ public interface OrgroomService {
      * @throws ServiceException
      */
     List<Integer> getMemberIds(Integer originId) throws ServiceException;
+
+    /**
+     * TODO 发布组织动态消息
+     * @param information 消息实体
+     * @return
+     * @throws ServiceException
+     */
+    Integer publishOriginInfo(Information information) throws ServiceException;
 }

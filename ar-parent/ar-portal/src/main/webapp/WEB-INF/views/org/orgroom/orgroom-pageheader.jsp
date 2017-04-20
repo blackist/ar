@@ -7,7 +7,7 @@
 	<div class="breadcrumb-wrapper">
 		<ol class="breadcrumb">
 			<li><a href="index.action">主页</a></li>
-			<li><a href="org.action">班级录</a></li>
+			<li><a href="org.action">校友组织</a></li>
 			<li class="active">${orgroom.originName}</li>
 		</ol>
 	</div>
