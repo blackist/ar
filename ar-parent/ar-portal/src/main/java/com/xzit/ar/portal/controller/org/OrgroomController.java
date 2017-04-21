@@ -69,6 +69,15 @@ public class OrgroomController extends BaseController {
         return "org/orgroom/orgroom-info";
     }
 
+    /**
+     * TODO 发布组织动态消息
+     * @param attributes
+     * @param content
+     * @param originId
+     * @return
+     * @throws ServiceException
+     * @author 董亮亮
+     */
     @RequestMapping("/publishInfo")
     public String publishInfo(RedirectAttributes attributes, @RequestParam("content") String content, @RequestParam("originId") Integer originId) throws ServiceException {
         if (CommonUtil.isNotEmpty(content) && CommonUtil.isNotEmpty(originId)){
@@ -98,6 +107,18 @@ public class OrgroomController extends BaseController {
         setMessage(attributes, "发布失败！");
 
         return "redirect:/orgroom/info.action";
+    }
+
+
+    /**
+     * TODO 加载班级动态详情
+     * @param model
+     * @param originId
+     * @return
+     */
+    @RequestMapping("/infoDetail")
+    public String infoDetail(Model model, Integer originId){
+        return "org/orgroom/orgroom-info-detail";
     }
 
 }
