@@ -28,6 +28,12 @@ $(function() {
 });
 
 function infoPublishValid() {
+
+	var infoTitle = $("#infoTitle").val();
+	if (!isLength(infoTitle, 1, 20)){
+		errMsg('infoTitle', "  标题不能为空");
+		return;
+	}
 	var content = $('#infoBoxText').val();
 	if (!isValid(content)) {
 		errMsg('infoBoxText', "  说两句吧");

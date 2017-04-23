@@ -31,6 +31,7 @@ public class OrgController extends BaseController {
      */
     @RequestMapping("")
     public String index(Model model){
+        model.addAttribute("");
         return "org/org-index";
     }
 

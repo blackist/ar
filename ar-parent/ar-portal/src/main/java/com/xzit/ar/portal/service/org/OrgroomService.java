@@ -48,4 +48,13 @@ public interface OrgroomService {
      * @throws ServiceException
      */
     Integer publishOriginInfo(Information information) throws ServiceException;
+
+    /**
+     * TODO 动态加载动态消息的评论
+     * @param infoId
+     * @return
+     * @throws ServiceException
+     */
+    List<Map<String, Object>> dynamicLoadComment(Page<Map<String, Object> > page, Integer infoId) throws ServiceException;
+
 }

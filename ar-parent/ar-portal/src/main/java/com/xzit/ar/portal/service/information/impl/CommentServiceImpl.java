@@ -1,9 +1,11 @@
-package com.xzit.ar.portal.service.message.Impl;
+package com.xzit.ar.portal.service.information.impl;
 
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.mapper.info.CommentMapper;
+import com.xzit.ar.common.mapper.info.InformationMapper;
+import com.xzit.ar.common.po.info.Comment;
 import com.xzit.ar.common.util.CommonUtil;
-import com.xzit.ar.portal.service.message.CommentService;
+import com.xzit.ar.portal.service.information.CommentService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -18,6 +20,9 @@ public class CommentServiceImpl implements CommentService {
 
     @Resource
     private CommentMapper commentMapper;
+
+    @Resource
+    private InformationMapper informationMapper;
 
     /**
      * TODO 删除用户自己的评论
@@ -34,6 +39,29 @@ public class CommentServiceImpl implements CommentService {
             }
         } catch (Exception e) {
             throw new ServiceException("删除评论时发生异常！");
+        }
+        return null;
+    }                                                       
+
+    /**
+     * TODO 存储评论
+     *
+     * @param comment
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public Integer saveComment(Comment comment) throws ServiceException {
+        try {
+            Integer infoId = comment.getInfoId();
+            if (CommonUtil.isNotEmpty(infoId) && CommonUtil.isNotEmpty(comment.getUserId())){
+                // 增加评论数
+                informationMapper.increaseComments(infoId);
+                // 存储评论
+                return commentMapper.save(comment);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("发表评论时发生异常");
         }
         return null;
     }

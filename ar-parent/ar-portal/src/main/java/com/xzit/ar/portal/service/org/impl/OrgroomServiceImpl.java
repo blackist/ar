@@ -1,6 +1,7 @@
 package com.xzit.ar.portal.service.org.impl;
 
 import com.xzit.ar.common.exception.ServiceException;
+import com.xzit.ar.common.mapper.info.CommentMapper;
 import com.xzit.ar.common.mapper.info.InformationMapper;
 import com.xzit.ar.common.mapper.origin.OriginMapper;
 import com.xzit.ar.common.mapper.user.UserOriginMapper;
@@ -33,6 +34,9 @@ public class OrgroomServiceImpl implements OrgroomService {
 
     @Resource
     private InformationMapper informationMapper;
+
+    @Resource
+    private CommentMapper commentMapper;
 
 
     /**
@@ -120,6 +124,22 @@ public class OrgroomServiceImpl implements OrgroomService {
             }
         } catch (Exception e) {
             throw new ServiceException("加载最近消息时失败！");
+        }
+        return null;
+    }
+
+    /**
+     * TODO 动态加载动态消息的评论
+     * @param infoId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public List<Map<String, Object>> dynamicLoadComment(Page<Map<String, Object> > page, Integer infoId) throws ServiceException {
+        try {
+            commentMapper.dynamicLoadComment(page, infoId);
+        } catch (Exception e) {
+            throw new ServiceException("");
         }
         return null;
     }

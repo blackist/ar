@@ -60,12 +60,32 @@
 
 	<!--查询消息、作者以及组织的详情-->
 	 <select id="getInfoDetailById" resultType="map">
-		 SELECT DISTINCT info.info_id infoId, info.info_title infoTitle, info.content content, info.theme theme, info.thumb_image thumbImage,
-		 		info.views views, info.comments comments, info.loves loves, info.create_time createTime, info.is_top isTop,
-		 		info.origin_id originId, u.user_id userId, u.true_name trueName, u.is_admin isAdmin, u.introduce introduce, img.image_path portrait
-		 FROM information info, user u, origin o, image img
+		SELECT DISTINCT
+				info.info_id infoId,
+				info.info_title infoTitle,
+				info.content content,
+				info.theme theme,
+				info.thumb_image thumbImage,
+				info.views views,
+				info.comments comments,
+				info.loves loves,
+				info.create_time createTime,
+				info.is_top isTop,
+				info.origin_id originId,
+				u.user_id userId,
+				u.true_name trueName,
+				u.is_admin isAdmin,
+				u.introduce introduce,
+				img.image_path portrait
+
+		 FROM
+		 		information info,
+		 		user u,
+		 		image img
 		 <where>
-			 info.info_id=#{infoId} AND info.user_id=u.user_id AND u.image_id=img.image_id
+			 info.info_id=#{infoId}
+			 AND info.user_id=u.user_id
+			 AND u.image_id=img.image_id
 			 AND info.state='A'
 		 </where>
 	 </select>
@@ -76,6 +96,40 @@
 		<include refid="Base_Column_List"/>
 		FROM information
 		WHERE user_id=#{userId} and info_id=#{infoId}
+	</select>
+
+	<!--通过 infoId 和 originId 查询消息-->
+	<select id="getInfoByInfoIdAndOriginId" resultType="map">
+		SELECT DISTINCT
+		info.info_id infoId,
+		info.info_title infoTitle,
+		info.content content,
+		info.theme theme,
+		info.thumb_image thumbImage,
+		info.views views,
+		info.comments comments,
+		info.loves loves,
+		info.create_time createTime,
+		info.is_top isTop,
+		info.origin_id originId,
+		u.user_id userId,
+		u.true_name trueName,
+		u.is_admin isAdmin,
+		u.introduce introduce,
+		img.image_path portrait
+
+		FROM
+		information info,
+		`user` u,
+		image img
+		
+		<where>
+			info.info_id=#{infoId}
+			AND info.origin_id=#{originId}
+			AND info.user_id=u.user_id
+			AND u.image_id=img.image_id
+			AND info.state='A'
+		</where>
 	</select>
 	
 	<!-- delete -->

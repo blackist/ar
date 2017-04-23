@@ -61,9 +61,8 @@ public class ClassRoomProvider {
 	public String classInfoDetail(){
 		return "select info.info_title infoTitle, info.content content, info.thumb_image infoImg, info.comments comments, "
 				+ "info.create_time createTime, info.info_id infoId, info.user_id userId, u.true_name userName, "
-				+ "img.image_path userHead "
-				+ "from information info, user u, image img "
-				+ "where info.user_id=u.user_id and u.image_id=img.image_id "
+				+ "from information info, user u "
+				+ "where info.user_id=u.user_id "
 				+ "and info.origin_id=#{classId} and info.info_id=#{infoId} and info.info_type='CI' and info.state='A' "
 				+ "order by info.create_time ";
 	}

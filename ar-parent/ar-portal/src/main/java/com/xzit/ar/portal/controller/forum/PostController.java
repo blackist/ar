@@ -8,7 +8,7 @@ import com.xzit.ar.common.po.info.Comment;
 import com.xzit.ar.common.po.info.Information;
 import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.portal.service.forum.PostService;
-import com.xzit.ar.portal.service.message.CommentService;
+import com.xzit.ar.portal.service.information.CommentService;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -57,7 +57,6 @@ public class PostController extends BaseController {
      */
     @RequestMapping("/commentList")
     public String commentList(Model model, @Param("postId") Integer postId) throws ServiceException {
-        System.out.println("Comments");
         // 构造 page 对象
         Page<Map<String, Object>> page = new Page<>(getPageIndex(), getPageSize());
         // 加载列表

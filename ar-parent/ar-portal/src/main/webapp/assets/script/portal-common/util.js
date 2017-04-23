@@ -50,9 +50,8 @@ function isNumber(param) {
 
 /* 屏幕定位 */
 function windowToEL(el) {
-	$("html,body").animate({
-		scrollTop : $("#" + el).offset().top
-	}, 10);
+	$("html,body").animate({scrollTop : $("#" + el).offset().top}, 500);
+	$("#" + el).focus();
 }
 
 /* 用户检测 */

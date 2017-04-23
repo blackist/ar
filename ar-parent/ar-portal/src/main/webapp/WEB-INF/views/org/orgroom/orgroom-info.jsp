@@ -23,8 +23,12 @@
 				<!-- 动态编写 -->
 				<div class="panel panel-dark panel-alt timeline-post" id="infoBox">
 					<form action="orgroom/publishInfo.action" method="post" enctype="multipart/form-data" id="originInfoForm">
+						<div class="panel-body" style="border-bottom: solid 5px #ddd">
+							<input class="form-control" name="infoTitle" id="infoTitle" placeholder="标题">
+						</div>
+						<div class="mb5"></div>
 						<div class="panel-body">
-							<textarea class="form-control" placeholder="写点什么..." id="infoBoxText" maxlength="500" name="content"></textarea>
+							<textarea class="form-control" placeholder="分享你的生活..." id="infoBoxText" maxlength="500" name="content"></textarea>
 						</div>
 						<div class="panel-footer" hidden="true" id="infoBoxEditor">
 							<div class="timeline-btns pull-left">
@@ -55,21 +59,24 @@
 							<div class="blog-item">
 								<%----%>
 								<c:if test="${info.infoImg!=null&&info.infoImg!=''}">
-									<a href="classroom/infoDetail.action?classId=${orgroom.originId}&infoId=${info.infoId}"
-									   class="blog-img" target="blank"><img src="${info.infoImg}" class="img-responsive" style="max-height: 230px;" /></a>
+									<a href="classroom/infoDetail.action?classId=${orgroom.originId}&infoId=${info.infoId}" class="blog-img" target="blank">
+										<img src="${info.infoImg}" class="img-responsive" style="max-height: 230px;" />
+									</a>
 								</c:if>
 								<div class="blog-details">
 									<div class="blog-summary">
-										<ar:sub length="40" value="${info.content}" />
+										<ar:sub length="40" value="${info.infoTitle}" />
+										<c:if test="${info.isTop == 1}">
+											<span class='badge badge-danger'>置顶</span>
+										</c:if>
 										<br>
 										<ul class="blog-meta">
 											<li>By: <a href="ta/show.action?userId=${info.userId}">${info.trueName}</a></li>
 											<li><fmt:formatDate value="${info.createTime}" pattern="yyyy-MM-dd HH:mm" /></li>
-											<li><a
-												href="orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${info.infoId}">评论(${info.comments})</a></li>
+											<li><a href="orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${info.infoId}">评论(${info.comments})</a></li>
 										</ul>
 										<button class="btn btn-sm btn-white"
-											onclick="javascript:location.href='orgroom/infoDetail.action?origin=${orgroom.originId}&infoId=${info.infoId}';">查看详情</button>
+											onclick="javascript:location.href='orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${info.infoId}';">查看详情</button>
 									</div>
 								</div>
 							</div>

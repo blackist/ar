@@ -95,4 +95,14 @@ public interface InformationMapper extends BaseMapper {
 	 * @throws Exception
 	 */
 	Information getInfoByUserIdAndInfoId(@Param("infoId") Integer infoId, @Param("userId") Integer userId) throws Exception;
+
+	/**
+	 * TODO 通过 InfoId 和 OriginId 获取
+	 * @param infoId
+	 * @param originId
+	 * @return
+	 * @throws Exception
+	 */
+	Map<String, Object> getInfoByInfoIdAndOriginId(@Param("infoId") Integer infoId, @Param("originId") Integer originId)
+			throws Exception;
 }
