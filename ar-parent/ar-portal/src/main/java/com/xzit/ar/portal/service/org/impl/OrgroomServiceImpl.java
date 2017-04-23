@@ -121,4 +121,16 @@ public class OrgroomServiceImpl implements OrgroomService {
         }
         return null;
     }
+
+    /**
+     * TODO 加载组织留言
+     * @param page
+     * @param originId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public List<Map<String, Object>> getOriginMessage(Page<Map<String, Object>> page, Integer originId) throws ServiceException {
+        return null;
+    }
 }

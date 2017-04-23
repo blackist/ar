@@ -39,30 +39,29 @@ public interface ClassRoomService {
 	 * @return
 	 * @throws ServiceException
 	 */
-	public Page<Map<String, Object>> classInfo(Page<Map<String, Object>> page, Integer classId) throws ServiceException;
+	Page<Map<String, Object>> classInfo(Page<Map<String, Object>> page, Integer classId) throws ServiceException;
 
-	public List<Map<String, Object>> classInfoComment(Integer infoId) throws ServiceException;
+	List<Map<String, Object>> classInfoComment(Integer infoId) throws ServiceException;
 
-	public Map<String, Object> classInfoDetail(Integer classId, Integer infoId) throws ServiceException;
+	Map<String, Object> classInfoDetail(Integer classId, Integer infoId) throws ServiceException;
 
-	public List<Map<String, Object>> classOtherInfo(Integer classId, Integer infoNum) throws ServiceException;
+	List<Map<String, Object>> classOtherInfo(Integer classId, Integer infoNum) throws ServiceException;
 
-	public List<Map<String, Object>> classMateInfos(Page<Map<String, Object>> page, Integer classId, Integer userId)
+	List<Map<String, Object>> classMateInfos(Page<Map<String, Object>> page, Integer classId, Integer userId) throws ServiceException;
+
+	Integer addClassInfoComment(Comment comment) throws ServiceException;
+
+	Integer addClassInfo(Information information) throws ServiceException;
+
+	boolean isMemberInClass(Integer userId, Integer classId) throws ServiceException;
+
+	Integer addToClass(UserOrigin userOrigin) throws ServiceException;
+
+	List<Integer> getAllMemberIds(Integer classId) throws ServiceException;
+
+	Page<Map<String, Object>> classMessage(Page<Map<String, Object>> page, Integer classId)
 			throws ServiceException;
 
-	public Integer addClassInfoComment(Comment comment) throws ServiceException;
-
-	public Integer addClassInfo(Information information) throws ServiceException;
-
-	public boolean isMemberInClass(Integer userId, Integer classId) throws ServiceException;
-
-	public Integer addToClass(UserOrigin userOrigin) throws ServiceException;
-
-	public List<Integer> getAllMemberIds(Integer classId) throws ServiceException;
-
-	public Page<Map<String, Object>> classMessage(Page<Map<String, Object>> page, Integer classId)
-			throws ServiceException;
-
-	public Integer updateClassDesc(String description, Integer classId) throws ServiceException;
+	Integer updateClassDesc(String description, Integer classId) throws ServiceException;
 
 }

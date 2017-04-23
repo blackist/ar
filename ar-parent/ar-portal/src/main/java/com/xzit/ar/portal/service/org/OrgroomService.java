@@ -48,4 +48,13 @@ public interface OrgroomService {
      */
     List<Map<String, Object>> dynamicLoadComment(Page<Map<String, Object> > page, Integer infoId) throws ServiceException;
 
+    /**
+     * TODO 加载组织留言
+     * @param page
+     * @param originId
+     * @return
+     * @throws ServiceException
+     */
+    List<Map<String, Object>> getOriginMessage(Page<Map<String, Object> > page, Integer originId) throws ServiceException;
+
 }

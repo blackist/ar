@@ -31,14 +31,14 @@ public interface InformationService {
     List<Map<String, Object>> getOriginInfos(Page<Map<String, Object>> page, Integer originId) throws ServiceException;
 
     /**
-     * TODO 加载组织内某一成员的动态消息
+     *
      * @param page
      * @param originId
      * @param originId
      * @return
      * @throws ServiceException
      */
-    List<Map<String, Object>> getOriginUserInfos(Page<Map<String, Object>> page, Integer userId, Integer originId, String originType) throws ServiceException;
+    List<Map<String, Object>> getOriginUserInfos(Page<Map<String, Object>> page, Integer userId, Integer originId, String infoType) throws ServiceException;
 
     /**
      * TODO 通过 消息id 和 组织id 获取消息详情

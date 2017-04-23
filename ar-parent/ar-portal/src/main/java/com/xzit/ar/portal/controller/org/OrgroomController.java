@@ -221,6 +221,14 @@ public class OrgroomController extends BaseController {
         return "redirect:/orgroom/info.action";
     }
 
+    /**
+     * TODO 加载消息详情页面的侧边栏
+     * @param model
+     * @param authorId
+     * @param originId
+     * @return
+     * @throws ServiceException
+     */
     @RequestMapping("/infoSide")
     public String infoSide(Model model, @RequestParam("authorId") Integer authorId, @RequestParam("originId") Integer originId) throws ServiceException {
         // 校友组织基本信息
@@ -239,6 +247,20 @@ public class OrgroomController extends BaseController {
         model.addAttribute("authorOtherInfos", informationService.getOriginUserInfos(page2, authorId, originId, "OI"));
 
         return "org/orgroom/orgroom-info-side";
+    }
+
+    @RequestMapping("/message")
+    public String message(Model model, Integer originId) throws ServiceException {
+        // 校友组织基本信息
+        Origin origin = orgroomService.getOriginById(originId);
+        if (origin == null || CommonUtil.isEmpty(origin.getOriginId())){
+            return "redirect:/org.action";
+        }
+        model.addAttribute("orgroom", origin);
+        // 加载留言
+        Page<Map<String, Object>> page = new Page<>(getPageIndex(), getPageSize());
+
+        return "";
     }
 
 }

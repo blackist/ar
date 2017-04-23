@@ -39,10 +39,15 @@
 	</select>
 
 	<!--组织内指定成员发布的信息-->
-	<select id="loadOriginUserInfos" resultType="map">
-		select info_id infoId, info_title infoTitle from information where origin_id=#{originId}
-		and user_id=#{userId} and info_type=#{infoType} and state='A' order by create_time
-		desc
+	<select id="loadOriginUserInfos" parameterType="com.xzit.ar.common.po.info.Information" resultType="map">
+		SELECT info_id infoId,
+				info_title infoTitle
+		FROM information
+		WHERE origin_id=#{originId}
+				AND user_id=#{userId}
+				AND info_type=#{infoType}
+				AND state='A'
+				ORDER BY create_time DESC
 	</select>
 
 	<!-- 查询消息列表 -->

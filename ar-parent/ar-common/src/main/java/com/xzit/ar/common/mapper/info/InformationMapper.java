@@ -22,7 +22,7 @@ public interface InformationMapper extends BaseMapper {
 			@Param("infoNum") Integer infoNum) throws Exception;
 
 	/**
-	 * TODO 加载特定组织成员发布的消息
+	 * TODO 加载组织某一个成员发布的消息
 	 * @param page
 	 * @param userId
 	 * @param originId
@@ -31,7 +31,7 @@ public interface InformationMapper extends BaseMapper {
 	 * @throws Exception
 	 */
 	List<Map<String, Object>> loadOriginUserInfos(Page<Map<String, Object>> page, @Param("userId") Integer userId,
-			@Param("originId") Integer originId, @Param("infoType") String infoType) throws Exception;
+												  @Param("originId") Integer originId, @Param("infoType") String infoType) throws Exception;
 
 	/**
 	 * TODO 增加消息评论数
@@ -67,8 +67,6 @@ public interface InformationMapper extends BaseMapper {
 	/**
 	 * TODO 根据条件查询信息列表
 	 * @param page 分页类
-	 * @param userId 用户id
-	 * @param originId 组织id
 	 * @param infoType 信息类型
 	 * @param theme 信息主题
 	 * @param queryStr 模糊查询条件

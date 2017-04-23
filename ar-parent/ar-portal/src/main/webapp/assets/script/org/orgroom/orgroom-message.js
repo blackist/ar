@@ -1,7 +1,7 @@
 $(function() {
 	$("#message-li").attr("class", "active");
-	var classId = $("#classId").val();
-	_pageBond("classroom/message.action?classId=" + classId);
+	var originId = $("#originId").val();
+	_pageBond("orgroom/message.action?originId=" + originId);
 
 	$("#infoBoxText").focus(function() {
 		$('#infoBoxEditor').attr("hidden", false);
@@ -9,7 +9,10 @@ $(function() {
 
 });
 
-function publishClassMessage() {
+/**
+ * TODO 留言提交校验
+ */
+function publishMessage() {
 	var content = $('#infoBoxText').val();
 	if (!isValid(content)) {
 		errMsg('infoBoxText', "  说两句吧");
@@ -21,11 +24,5 @@ function publishClassMessage() {
 		return;
 	}
 
-	if ($("#asfvbszd_ausivsbkjzcnsaohdknxzoxhjcnc_").val() != $(
-			"#dad_asfasdfsa_").val()) {
-		errMsg("infoBoxText", "页面错误");
-		return;
-	}
-
-	$("#classMessagePublishForm").submit();
+	$("#orgroomMessageForm").submit();
 }

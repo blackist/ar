@@ -29,6 +29,8 @@ public class InformationServiceImpl implements InformationService {
 
     @Resource
     private OriginMapper originMapper;
+
+
     
     /**
      * TODO 记载组织最近消息
