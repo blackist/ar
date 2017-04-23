@@ -44,7 +44,10 @@
 								<div class="mb10"></div>
 								${info.content} <br>
 								<div class="mb10"></div>
-								<p hidden id="infoId">${info.infoId}</p>
+								<input hidden id="infoId" value="${info.infoId}"/>
+								<input hidden id="authorId" value="${info.userId}"/>
+								<input hidden id="originType" value="${orgroom.originType}"/>
+								<input hidden id="originId" value="${orgroom.originId}"/>
 								<div class="widget-photoday">
 									<ul class="photo-meta">
 										<li><span><i class="fa fa-eye"></i> 浏览 (${info.views})</span></li>
@@ -63,7 +66,7 @@
 						<!-- panel -->
 
 						<ol class="breadcrumb">
-							<li class="active"><i class="fa fa-user"></i> 关于作者</li>
+							<li class="active"><i class="fa fa-user"></i> 关于校友</li>
 						</ol>
 						<div class="media">
 							<a class="pull-left" href="ta/show.action?userId=${info.userId}">
@@ -91,7 +94,7 @@
 							<div class="mb20"></div>
 							<form method="post" action="orgroom/commentInfo.action" id="form-comment">
 								<textarea name="content" maxlength="500" rows="5" class="form-control" id="comment-content"></textarea>
-								<input hidden id="originId" name="infoId" value="${info.infoId}">
+								<input hidden name="infoId" value="${info.infoId}">
 								<div class="mb10"></div>
 								<button class="btn btn-primary" onclick="commentInfo()" type="button"><i class="fa fa-comment"></i> 发表评论</button>
 							</form>
@@ -100,59 +103,8 @@
 					</div>
 					<!-- col-sm-8 -->
 
-					<div class="col-sm-3">
-						<div class="blog-sidebar">
-
-							<h5 class="subtitle">班级动态</h5>
-							<p>班级动态是了解班级同学近况的窗口</p>
-
-							<div class="mb30"></div>
-
-							<h5 class="subtitle">班级相关动态：</h5>
-							<c:choose>
-								<c:when
-									test="${classOtherInfo!=null && fn:length(classOtherInfo)>1}">
-									<ul class="sidebar-list">
-										<c:forEach items="${classOtherInfo}" var="classInfo">
-											<c:if test="${classInfo.infoId!=info.infoId}">
-												<li><a
-													href="classroom/infoDetail.action?classId=${classroom.classId}&infoId=${classInfo.infoId}"><i
-														class="fa fa-angle-right"></i> <ar:sub length="15"
-															value="${classInfo.infoTitle}" /> </a></li>
-											</c:if>
-										</c:forEach>
-									</ul>
-								</c:when>
-								<c:otherwise>
-								没有更多！
-								</c:otherwise>
-							</c:choose>
-
-							<div class="mb30"></div>
-
-							<h5 class="subtitle">董亮亮的动态：</h5>
-							<c:choose>
-								<c:when
-									test="${classMateOtherInfo!=null && fn:length(classMateOtherInfo)>1}">
-									<ul class="sidebar-list">
-										<c:forEach items="${classMateOtherInfo}" var="mateInfo">
-											<c:if test="${mateInfo.infoId!=info.infoId}">
-												<li><a
-													href="classroom/infoDetail.action?classId=${classroom.classId}&infoId=${mateInfo.infoId}"><i
-														class="fa fa-angle-right"></i> <ar:sub length="15"
-															value="${mateInfo.infoTitle}" /> </a></li>
-											</c:if>
-										</c:forEach>
-									</ul>
-								</c:when>
-								<c:otherwise>
-								没有更多！
-								</c:otherwise>
-							</c:choose>
-
-						</div>
-						<!-- blog-sidebar -->
-
+					<div class="col-sm-3" id="orgroom-info-side">
+						<img class="center-block" src='assets/images/icon/loader.gif'>
 					</div>
 					<!-- col-sm-4 -->
 

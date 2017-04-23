@@ -3,12 +3,15 @@ package com.xzit.ar.portal.service.information.impl;
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.mapper.info.CommentMapper;
 import com.xzit.ar.common.mapper.info.InformationMapper;
+import com.xzit.ar.common.mapper.origin.OriginMapper;
+import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.info.Information;
 import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.portal.service.information.InformationService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,6 +26,54 @@ public class InformationServiceImpl implements InformationService {
 
     @Resource
     private CommentMapper commentMapper;
+
+    @Resource
+    private OriginMapper originMapper;
+    
+    /**
+     * TODO 记载组织最近消息
+     * @param page     分页类
+     * @param originId 组织id
+     * @return 消息列表
+     * @throws ServiceException
+     */
+    @Override
+    public List<Map<String, Object>> getOriginInfos(Page<Map<String, Object>> page, Integer originId)
+            throws ServiceException {
+        try {
+            // 参数校验
+            if (CommonUtil.isNotEmpty(originId)){
+                // 查询
+                return originMapper.getOriginInfos(page, originId);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("加载最近消息时失败！");
+        }
+        return null;
+    }
+
+    /**
+     * TODO 加载组织内某一成员的动态消息
+     * @param page
+     * @param originId
+     * @param userId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public List<Map<String, Object>> getOriginUserInfos(Page<Map<String, Object>> page, Integer userId, Integer originId,
+                                                        String originType) throws ServiceException {
+        try {
+            // 参数校验
+            if(CommonUtil.isNotEmpty(userId) && CommonUtil.isNotEmpty(originId) && CommonUtil.isNotEmpty(originType)){
+                // 查询消息
+                return informationMapper.loadOriginUserInfos(page, userId, originId, originType);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("加载消息时发生异常");
+        }
+        return null;
+    }
 
     /**
      * TODO 通过 消息id 和 组织id 获取消息详情

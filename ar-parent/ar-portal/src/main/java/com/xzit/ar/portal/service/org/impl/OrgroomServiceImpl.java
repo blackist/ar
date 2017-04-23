@@ -107,28 +107,6 @@ public class OrgroomServiceImpl implements OrgroomService {
     }
 
     /**
-     * TODO 记载组织最近消息
-     * @param page     分页类
-     * @param originId 组织id
-     * @return 消息列表
-     * @throws ServiceException
-     */
-    @Override
-    public List<Map<String, Object>> getOriginInfos(Page<Map<String, Object>> page, Integer originId)
-            throws ServiceException {
-        try {
-            // 参数校验
-            if (CommonUtil.isNotEmpty(originId)){
-                // 查询
-                return originMapper.getOriginInfos(page, originId);
-            }
-        } catch (Exception e) {
-            throw new ServiceException("加载最近消息时失败！");
-        }
-        return null;
-    }
-
-    /**
      * TODO 动态加载动态消息的评论
      * @param infoId
      * @return

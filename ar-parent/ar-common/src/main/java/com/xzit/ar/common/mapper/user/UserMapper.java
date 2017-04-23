@@ -14,6 +14,14 @@ public interface UserMapper extends BaseMapper {
 	 * @return
 	 * @throws Exception
 	 */
-	public Map<String, Object> selectByAccount(@Param("account") String account) throws  Exception;
+	Map<String, Object> selectByAccount(@Param("account") String account) throws  Exception;
+
+	/**
+	 * TODO 获取用户基本信息：userId, account, portrait, trueName, introduce
+	 * @param userId
+	 * @return
+	 * @throws Exception
+	 */
+	Map<String, Object> getUserBasicInfo(@Param("userId") Integer userId) throws Exception;
 
 }

@@ -1,8 +1,10 @@
 package com.xzit.ar.portal.service.information;
 
 import com.xzit.ar.common.exception.ServiceException;
+import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.info.Information;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,6 +20,25 @@ public interface InformationService {
      * @throws ServiceException
      */
     Information getInfoById(Integer infoId) throws ServiceException;
+
+    /**
+     * TODO 加载组织最近消息
+     * @param page  分页类
+     * @param originId  组织id
+     * @return  消息列表
+     * @throws ServiceException
+     */
+    List<Map<String, Object>> getOriginInfos(Page<Map<String, Object>> page, Integer originId) throws ServiceException;
+
+    /**
+     * TODO 加载组织内某一成员的动态消息
+     * @param page
+     * @param originId
+     * @param originId
+     * @return
+     * @throws ServiceException
+     */
+    List<Map<String, Object>> getOriginUserInfos(Page<Map<String, Object>> page, Integer userId, Integer originId, String originType) throws ServiceException;
 
     /**
      * TODO 通过 消息id 和 组织id 获取消息详情

@@ -4,8 +4,18 @@ $(function() {
     // 加载评论列表
     var infoId = $("#infoId").html();
     $.post("orgroom/infoCommentList.action?infoId="+infoId, function(data) {
+        // 刷新评论列表
         $("#comment-list").html(data);
     });
+
+    // 加载侧边栏
+    var authorId = $("#authorId").val();
+    var originId = $("#originId").val();
+    var originType = $("#originType").val();
+    $.post("orgroom/infoSide.action?authorId="+authorId+"&originId="+originId+"&originType="+originType, function (data) {
+        $("#orgroom-info-side").html(data);
+    });
+
 });
 
 /**
@@ -16,7 +26,7 @@ function loadMoreComment(pageIndex) {
     // 按钮显示加载
     $("#btn-load-more").html("<img src='assets/images/icon/loader.gif'>");
     // 加载评论列表
-    var infoId = $("#infoId").html();
+    var infoId = $("#infoId").val();
     $.post("orgroom/infoCommentList.action", {
         "infoId" : infoId,
         "pageIndex" : pageIndex

@@ -31,6 +31,18 @@
 		from `user`
     	WHERE account = #{account} AND state = 'A'
 	</select>
+	<!--获取用户基本信息-->
+	<select id="getUserBasicInfo" parameterType="java.lang.Integer" resultType="map">
+		SELECT u.user_id userId,
+		 	u.account account,
+		 	u.true_name trueName,
+		 	u.introduce introduce,
+		 	img.image_path portrait
+		FROM `user` u,
+			image img
+		WHERE u.image_id=img.image_id
+		 	AND u.user_id=#{userId}
+	</select>
 	
 	<delete id="delete" parameterType="java.lang.Integer" >delete from user
     where user_id = #{userId,jdbcType=INTEGER}</delete>

@@ -26,15 +26,6 @@ public interface OrgroomService {
     Origin getOriginById(Integer originId) throws ServiceException;
 
     /**
-     * TODO 记载组织最近消息
-     * @param page  分页类
-     * @param originId  组织id
-     * @return  消息列表
-     * @throws ServiceException
-     */
-    List<Map<String, Object>> getOriginInfos(Page<Map<String, Object>> page, Integer originId) throws ServiceException;
-
-    /**
      * TODO 加载组织成员id列表
      * @return  成员id列表
      * @throws ServiceException

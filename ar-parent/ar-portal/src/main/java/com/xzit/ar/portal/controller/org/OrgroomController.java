@@ -9,6 +9,7 @@ import com.xzit.ar.common.po.origin.Origin;
 import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.portal.service.information.CommentService;
 import com.xzit.ar.portal.service.information.InformationService;
+import com.xzit.ar.portal.service.my.TaService;
 import com.xzit.ar.portal.service.org.OrgroomService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,6 +40,9 @@ public class OrgroomController extends BaseController {
     @Resource
     private CommentService commentService;
 
+    @Resource
+    private TaService taService;
+
 
     /**
      * TODO 加载校友组织首页
@@ -57,7 +61,7 @@ public class OrgroomController extends BaseController {
         model.addAttribute("orgroom", origin);
         // 查询组织内最新消息
         Page<Map<String, Object>> page = new Page<>(getPageIndex(), 3);
-        model.addAttribute("latestInfos", orgroomService.getOriginInfos(page, originId));
+        model.addAttribute("latestInfos", informationService.getOriginInfos(page, originId));
         // 加载组织成员id 列表
         model.addAttribute("memberIds", orgroomService.getMemberIds(originId));
 
@@ -81,7 +85,7 @@ public class OrgroomController extends BaseController {
         model.addAttribute("orgroom", origin);
         // 分页查询组织内最新消息
         Page<Map<String, Object>> page = new Page<>(getPageIndex(), getPageSize());
-        orgroomService.getOriginInfos(page, originId);
+        informationService.getOriginInfos(page, originId);
         model.addAttribute("page", page);
 
         return "org/orgroom/orgroom-info";
@@ -215,6 +219,26 @@ public class OrgroomController extends BaseController {
         // 重定向
         redirectAttributes.addAttribute("originId", originId);
         return "redirect:/orgroom/info.action";
+    }
+
+    @RequestMapping("/infoSide")
+    public String infoSide(Model model, @RequestParam("authorId") Integer authorId, @RequestParam("originId") Integer originId) throws ServiceException {
+        // 校友组织基本信息
+        Origin origin = orgroomService.getOriginById(originId);
+        if (origin == null || CommonUtil.isEmpty(origin.getOriginId())){
+            return "redirect:/org.action";
+        }
+        model.addAttribute("orgroom", origin);
+        // 查询组织内最新消息
+        Page<Map<String, Object>> page1 = new Page<>(1, 4);
+        model.addAttribute("originOtherInfos", informationService.getOriginInfos(page1, originId));
+        // 用户基本信息
+        model.addAttribute("author", taService.getUserBasicInfo(authorId));
+        // 查询用户最近消息
+        Page<Map<String, Object>> page2 = new Page<>(1, 4);
+        model.addAttribute("authorOtherInfos", informationService.getOriginUserInfos(page2, authorId, originId, "OI"));
+
+        return "org/orgroom/orgroom-info-side";
     }
 
 }
