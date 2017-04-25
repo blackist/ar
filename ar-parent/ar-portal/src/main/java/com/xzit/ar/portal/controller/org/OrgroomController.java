@@ -61,7 +61,7 @@ public class OrgroomController extends BaseController {
         model.addAttribute("orgroom", origin);
         // 查询组织内最新消息
         Page<Map<String, Object>> page = new Page<>(getPageIndex(), 3);
-        model.addAttribute("latestInfos", informationService.getOriginInfos(page, originId));
+        model.addAttribute("latestInfos", informationService.getOriginInfos(page, originId, "OI"));
         // 加载组织成员id 列表
         model.addAttribute("memberIds", orgroomService.getMemberIds(originId));
 
@@ -69,7 +69,7 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 发布组织动态消息，可以是图文信息
+     * TODO 加载校友组织动态消息页面
      * @param model   视图model
      * @param originId 组织id
      * @return
@@ -85,7 +85,7 @@ public class OrgroomController extends BaseController {
         model.addAttribute("orgroom", origin);
         // 分页查询组织内最新消息
         Page<Map<String, Object>> page = new Page<>(getPageIndex(), getPageSize());
-        informationService.getOriginInfos(page, originId);
+        informationService.getOriginInfos(page, originId, "OI");
         model.addAttribute("page", page);
 
         return "org/orgroom/orgroom-info";
@@ -121,13 +121,12 @@ public class OrgroomController extends BaseController {
             information.setTheme("");
             information.setThumbImage("");
             // 存储数据库
-            orgroomService.publishOriginInfo(information);
+            informationService.publishOriginInfo(information);
             setMessage(attributes, "发布成功！");
 
         }
         // 重定向
         attributes.addAttribute("originId", originId);
-        setMessage(attributes, "发布失败！");
 
         return "redirect:/orgroom/info.action";
     }
@@ -166,7 +165,7 @@ public class OrgroomController extends BaseController {
         // 构造 page 对象
         Page<Map<String, Object>> page = new Page<>(getPageIndex(), getPageSize());
         // 加载列表
-        orgroomService.dynamicLoadComment(page, infoId);
+        commentService.dynamicLoadComment(page, infoId);
         model.addAttribute("page", page);
 
         return "org/orgroom/orgroom-info-comments";
@@ -174,26 +173,25 @@ public class OrgroomController extends BaseController {
 
     /**
      * TODO 评论帖子
-     * @param model
      * @param redirectAttributes
      * @param comment
      * @return
      * @throws ServiceException
      */
     @RequestMapping("/commentInfo")
-    public String commentInfo(RedirectAttributes redirectAttributes, Comment comment) throws ServiceException {
+    public String commentInfo(RedirectAttributes redirectAttributes, Comment comment, Integer originId) throws ServiceException {
         // 设置参数
         comment.setUserId(getCurrentUserId());
         comment.setCreateTime(new Date());
         // 存储
         commentService.saveComment(comment);
         // 重定向
-        if (comment != null && CommonUtil.isNotEmpty(comment.getInfoId())){
-            redirectAttributes.addAttribute("postId", comment.getInfoId());
-            return "redirect:/post/detail.action";
-        } else {
-            return "redirect:/forum.action";
+        if (comment != null && CommonUtil.isNotEmpty(comment.getInfoId()) && CommonUtil.isNotEmpty(originId)){
+            redirectAttributes.addAttribute("infoId", comment.getInfoId());
+            redirectAttributes.addAttribute("originId", originId);
+            return "redirect:/orgroom/infoDetail.action";
         }
+        return "redirect:/org.action";
     }
 
     /**
@@ -239,7 +237,7 @@ public class OrgroomController extends BaseController {
         model.addAttribute("orgroom", origin);
         // 查询组织内最新消息
         Page<Map<String, Object>> page1 = new Page<>(1, 4);
-        model.addAttribute("originOtherInfos", informationService.getOriginInfos(page1, originId));
+        model.addAttribute("originOtherInfos", informationService.getOriginInfos(page1, originId, "OI"));
         // 用户基本信息
         model.addAttribute("author", taService.getUserBasicInfo(authorId));
         // 查询用户最近消息
@@ -249,6 +247,13 @@ public class OrgroomController extends BaseController {
         return "org/orgroom/orgroom-info-side";
     }
 
+    /**
+     * TODO 加载组织留言板
+     * @param model
+     * @param originId
+     * @return
+     * @throws ServiceException
+     */
     @RequestMapping("/message")
     public String message(Model model, Integer originId) throws ServiceException {
         // 校友组织基本信息
@@ -259,8 +264,45 @@ public class OrgroomController extends BaseController {
         model.addAttribute("orgroom", origin);
         // 加载留言
         Page<Map<String, Object>> page = new Page<>(getPageIndex(), getPageSize());
+        informationService.getOriginInfos(page, originId, "OM");
+        model.addAttribute("page", page);
 
-        return "";
+        return "org/orgroom/orgroom-message";
+    }
+
+    /**
+     * TODO 发表组织留言
+     * @param attributes
+     * @param information
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("publishMessage")
+    public String publishMessage(RedirectAttributes attributes, Information information) throws ServiceException {
+        // 参数校验
+        if (CommonUtil.isNotEmpty(information.getOriginId()) && CommonUtil.isNotEmpty(information.getContent())){
+            // 设置消息内容
+            information.setInfoTitle("");
+            information.setCreateTime(new Date());
+            information.setUserId(getCurrentUserId());
+            information.setComments(0);
+            information.setViews(0);
+            information.setLoves(0);
+            information.setIsTop("0");
+            information.setInfoType("OM");
+            information.setState("A");
+            information.setStateTime(new Date());
+            information.setTheme("");
+            information.setThumbImage("");
+
+            // 保存数据
+            informationService.publishOriginInfo(information);
+        }
+        // 加入重定向参数
+        attributes.addAttribute("originId", information.getOriginId());
+
+
+        return "redirect:/orgroom/message.action";
     }
 
 }

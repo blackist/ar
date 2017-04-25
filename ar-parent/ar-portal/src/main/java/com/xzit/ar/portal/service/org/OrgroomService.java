@@ -33,22 +33,6 @@ public interface OrgroomService {
     List<Integer> getMemberIds(Integer originId) throws ServiceException;
 
     /**
-     * TODO 发布组织动态消息
-     * @param information 消息实体
-     * @return
-     * @throws ServiceException
-     */
-    Integer publishOriginInfo(Information information) throws ServiceException;
-
-    /**
-     * TODO 动态加载动态消息的评论
-     * @param infoId
-     * @return
-     * @throws ServiceException
-     */
-    List<Map<String, Object>> dynamicLoadComment(Page<Map<String, Object> > page, Integer infoId) throws ServiceException;
-
-    /**
      * TODO 加载组织留言
      * @param page
      * @param originId

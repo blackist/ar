@@ -15,6 +15,7 @@ import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.info.Comment;
 import com.xzit.ar.common.po.info.Information;
+import com.xzit.ar.common.po.origin.Origin;
 import com.xzit.ar.common.po.user.UserOrigin;
 
 /**
@@ -25,12 +26,18 @@ import com.xzit.ar.common.po.user.UserOrigin;
  */
 public interface ClassRoomService {
 
-	public Map<String, Object> classIndex(Integer classId) throws ServiceException;
+	/**
+	 * TODO 查询班级基本信息
+	 * @param classId
+	 * @return
+	 * @throws ServiceException
+	 */
+	Map<String, Object> classIndex(Integer classId) throws ServiceException;
 
-	public Page<Map<String, Object>> classDirector(Page<Map<String, Object>> page, Integer classId)
+	Page<Map<String, Object>> classDirector(Page<Map<String, Object>> page, Integer classId)
 			throws ServiceException;
 
-	public Page<Map<String, Object>> classMember(Page<Map<String, Object>> page, Integer classId)
+	Page<Map<String, Object>> classMember(Page<Map<String, Object>> page, Integer classId)
 			throws ServiceException;
 	/**
 	 * TODO 加载班级最新动态消息

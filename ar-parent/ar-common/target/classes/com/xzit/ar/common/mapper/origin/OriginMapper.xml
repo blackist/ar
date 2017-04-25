@@ -37,7 +37,7 @@
 	</select>
 
 	<!--查询组织最近的消息-->
-	<select id="getOriginInfos" resultType="map">
+	<select id="getOriginInfosByType" resultType="map">
 		SELECT
 			info.info_title infoTitle,
 			info.content content,
@@ -47,15 +47,15 @@
 			info.create_time createTime,
 			info.info_id infoId,
 			info.user_id userId, u.true_name trueName
-		
+
 		FROM
 			information info,
 			`user` u
-		
+
 		<where>
 			info.user_id = u.user_id
 			AND info.origin_id=#{originId}
-			AND info.info_type='OI'
+			AND info.info_type=#{infoType}
 			AND info.state='A'
 
 			ORDER BY

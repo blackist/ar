@@ -3,12 +3,15 @@ package com.xzit.ar.portal.service.information.impl;
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.mapper.info.CommentMapper;
 import com.xzit.ar.common.mapper.info.InformationMapper;
+import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.info.Comment;
 import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.portal.service.information.CommentService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
+import java.util.Map;
 
 /**
  * TODO ${TODO}
@@ -62,6 +65,25 @@ public class CommentServiceImpl implements CommentService {
             }
         } catch (Exception e) {
             throw new ServiceException("发表评论时发生异常");
+        }
+        return null;
+    }
+
+    /**
+     * TODO 动态加载动态消息的评论
+     * @param infoId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public List<Map<String, Object>> dynamicLoadComment(Page<Map<String, Object> > page, Integer infoId) throws ServiceException {
+        try {
+            // 参数校验
+            if (CommonUtil.isNotEmpty(infoId)){
+                return commentMapper.dynamicLoadComment(page, infoId);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("");
         }
         return null;
     }

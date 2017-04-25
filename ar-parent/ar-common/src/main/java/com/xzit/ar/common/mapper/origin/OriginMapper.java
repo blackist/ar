@@ -108,6 +108,6 @@ public interface OriginMapper extends BaseMapper {
 	 * @return
 	 * @throws Exception
 	 */
-	List<Map<String, Object>> getOriginInfos(Page<Map<String, Object>> page, @Param("originId") Integer originId)
-			throws Exception;
+	List<Map<String, Object>> getOriginInfosByType(Page<Map<String, Object>> page, @Param("originId") Integer originId,
+											 @Param("infoType") String infoType) throws Exception;
 }

@@ -2,7 +2,7 @@ $(function() {
     $("#info-li").attr("class", "active");
 
     // 加载评论列表
-    var infoId = $("#infoId").html();
+    var infoId = $("#infoId").val();
     $.post("orgroom/infoCommentList.action?infoId="+infoId, function(data) {
         // 刷新评论列表
         $("#comment-list").html(data);

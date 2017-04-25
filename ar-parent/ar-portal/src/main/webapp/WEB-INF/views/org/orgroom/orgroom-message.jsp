@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>${orgroom.className}-信电校友录</title>
+<title>${orgroom.originName}-信电校友录</title>
 <%@ include file="/WEB-INF/views/portal-common/portal-meta.jsp"%>
 </head>
 <body>
@@ -24,14 +24,12 @@
 				<div class="panel panel-dark panel-alt timeline-post" id="infoBox">
 					<form action="orgroom/publishMessage.action" method="post" id="orgroomMessageForm">
 						<div class="panel-body">
-							<textarea class="form-control" placeholder="留言..."
-								id="infoBoxText" maxlength="200" name="content"></textarea>
+							<textarea class="form-control" placeholder="留言..." id="infoBoxText" maxlength="200" name="content"></textarea>
 						</div>
 						<div class="panel-footer" hidden="true" id="infoBoxEditor">
-							<button class="btn btn-primary pull-right" id="infoPostBtn"
-								type="button" onclick="publishMessage()">发布留言</button>
+							<button class="btn btn-primary pull-right" id="infoPostBtn" type="button" onclick="publishMessage()">发布留言</button>
 						</div>
-						<input hidden name="classId" value="${orgroom.originId}">
+						<input hidden name="originId" value="${orgroom.originId}">
 					</form>
 				</div>
 				<div id="bloglist" class="row">

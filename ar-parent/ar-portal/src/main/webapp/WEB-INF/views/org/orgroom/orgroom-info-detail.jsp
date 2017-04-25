@@ -95,6 +95,7 @@
 							<form method="post" action="orgroom/commentInfo.action" id="form-comment">
 								<textarea name="content" maxlength="500" rows="5" class="form-control" id="comment-content"></textarea>
 								<input hidden name="infoId" value="${info.infoId}">
+								<input hidden name="originId" value="${orgroom.originId}">
 								<div class="mb10"></div>
 								<button class="btn btn-primary" onclick="commentInfo()" type="button"><i class="fa fa-comment"></i> 发表评论</button>
 							</form>

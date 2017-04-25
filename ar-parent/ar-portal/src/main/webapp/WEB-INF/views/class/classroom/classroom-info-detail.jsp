@@ -25,148 +25,86 @@
 					<div class="col-sm-9">
 						<div class="panel panel-default panel-blog">
 							<div class="panel-body">
-								<ul class="pull-left blog-meta">
-									<li>By:<a href="ta.show.action?userId=${info.userId}">${info.userName}</a></li>
-									<li><fmt:formatDate value="${info.createTime}"
-											pattern="yyyy-MM-dd H:mm" /></li>
-									<li>评论(${info.comments})</li>
+								<h3 class="blogsingle-title">${info.infoTitle}</h3>
+								<ul class="blog-meta">
+									<li>作者: <a href="ta/show.action?${info.userId}">${info.trueName}</a></li>
+									<li><fmt:formatDate value="${info.createTime}" pattern="Y-M-d HH:mm"></fmt:formatDate></li>
+									<li><i class="fa fa-eye"></i> 浏览 ${info.views} </li>
+									<li><i class="fa fa-heart"></i> 喜欢 <span class="info-loves">${info.loves}</span></li>
+									<li><i class="glyphicon glyphicon-comment"></i> 评论 ${info.comments}</li>
 								</ul>
-								<c:if test="${info.infoImg!=null&&info.infoImg!=''}">
-									<br />
+								<c:if test="${info.thumbImage!=null && info.thumbImage!=''}">
+									<br/>
 									<div class="blog-img">
-										<img src="${info.infoImg}" class="img-responsive" alt="" />
+										<img src="${info.thumbImage}" class="img-responsive"/>
 									</div>
 								</c:if>
-								<br>
-								<div class="mb20"></div>
+								<br />
+								<div class="blog-img"><img src="assets/images/photos/blog1.jpg" class="img-responsive" alt="" /></div>
+								<div class="mb10"></div>
 								${info.content} <br>
-								<div class="pull-right">
-									<a class="tooltips" title="" href="javascript:;"> <i
-										class="glyphicon glyphicon-heart"></i>&nbsp;感兴趣
-									</a> &nbsp;<a title="" href="javascript:;" onclick="comment()">
-										<i class="glyphicon glyphicon-comment"></i>&nbsp;评论
-									</a> &nbsp;<a class="tooltips" title="" href="javascript:;"> <i
-										class="glyphicon glyphicon-share"></i>&nbsp;分享
-									</a>
+								<div class="mb10"></div>
+								<input hidden id="infoId" value="${info.infoId}"/>
+								<input hidden id="authorId" value="${info.userId}"/>
+								<input hidden id="classId" value="${classroom.classId}"/>
+								<div class="widget-photoday">
+									<ul class="photo-meta">
+										<li><span><i class="fa fa-eye"></i> 浏览 (${info.views})</span></li>
+										<li><a href="javascript:;" onclick="loveInfo(${info.infoId})" id="info-love-add">
+											<i class="fa fa-heart"></i> 喜欢 (<arp class="info-loves">${info.loves}</arp>)</a>
+										</li>
+										<li><a href="javascript:;" onclick="focusCommentInfo()"><i class="fa fa-comment"></i> 评论 (${info.comments})</a></li>
+										<c:if test="${info.userId == SESSION_USER.userId}" >
+											<li><a href="javascript:;" onclick="deleteInfo(${info.infoId})"><i class="fa fa-trash-o"></i> 删除 </a></li>
+										</c:if>
+									</ul>
 								</div>
 							</div>
 							<!-- panel-body -->
 						</div>
 						<!-- panel -->
 
-						<div class="authorpanel">
-							<div class="media">
-								<a class="pull-left" href="ta/show.action?userId=${info.userId}">
-									<img class="media-object thumbnail" src="${info.userHead}"
-									alt="" />
-								</a>
-								<div class="media-body event-body">
-									<h4 class="subtitle">${info.userName}</h4>
-									<p>${info.userIntroduce}</p>
-									<br>
-									<button class="btn btn-primary mr5">
-										<i class="fa fa-user"></i> 关 注 &nbsp;&nbsp;
-									</button>
-									<button class="btn btn-white" onclick=";">
-										<i class="fa fa-envelope-o"></i> 私 信 &nbsp;&nbsp;
-									</button>
-								</div>
+						<ol class="breadcrumb">
+							<li class="active"><i class="fa fa-user"></i> 关于校友</li>
+						</ol>
+						<div class="media">
+							<a class="pull-left" href="ta/show.action?userId=${info.userId}">
+								<img class="thumbnail img-responsive center-block" src="${info.portrait}"  style="max-width: 65px"/>
+							</a>
+							<div class="media-body event-body">
+								<h4 class="subtitle">${info.trueName}</h4>
+								<p>${info.introduce}</p>
 							</div>
-							<!-- media -->
 						</div>
-						<!-- authorpanel -->
+						<!-- media -->
 
-						<div class="mb20"></div>
-						<h5 class="subtitle">评论(${info.comments})</h5>
-						<div class="mb30"></div>
-						<ul class="media-list comment-list">
-							<c:forEach items="${comments}" var="comment" varStatus="status">
-								<li class="media"><a class="pull-left"
-									href="ta/show.action?userId=${comment.userId}"> <img
-										class="media-object thumbnail" src="${comment.imgPath}" alt="" />
-								</a>
-									<div class="media-body">
-										<a href="javascript:;"
-											onclick="reply('${status.index+1}楼  ${comment.userName}')"
-											class="btn btn-primary btn-xs pull-right reply">回复</a> <span
-											class="pull-right">${status.index+1}楼&nbsp;&nbsp;&nbsp;&nbsp;</span>
-										<h4>${comment.userName}</h4>
-										<small class="text-muted"><fmt:formatDate
-												value="${comment.createTime}" pattern="yyyy-M-d HH:mm" /> </small>
-										<p>${comment.content}</p>
-									</div> <!-- media-body --></li>
-								<!-- media -->
-							</c:forEach>
-						</ul>
-						<!-- comment-list -->
+						<%--comment-list 评论列表--%>
+						<ol class="breadcrumb">
+							<li class="active"><i class="fa fa-comments-o"></i> 所有评论(${info.comments})</li>
+						</ol>
+						<ul class="media-list comment-list" id="comment-list">
+							<img class="center-block" src='assets/images/icon/loader.gif'>
+						</ul><!-- comment-list -->
 
-						<div class="mb30"></div>
-						<h5 class="subtitle mb5">发表评论</h5>
-						<div class="mb20"></div>
-						<form id="commentForm" class="tab-pane">
-							<textarea placeholder="评论一下吧，200以内哦" rows="3"
-								class="form-control" id="commentContent" maxlength="200"></textarea>
-							<div class="mb10"></div>
-							<button class="btn btn-primary" type="button"
-								onclick="addComment(${info.infoId})">发表评论</button>
-						</form>
+						<%--登录可评论--%>
+						<c:if test="${SESSION_USER != null}">
+							<div class="mb20"></div>
+							<h5 class="subtitle mb5"><i class="fa fa-user"></i> ${SESSION_USER.trueName}：</h5>
+							<div class="mb20"></div>
+							<form method="post" action="classroom/commentInfo.action" id="form-comment">
+								<textarea name="content" maxlength="500" rows="5" class="form-control" id="comment-content"></textarea>
+								<input hidden name="infoId" value="${info.infoId}">
+								<input hidden name="classId" value="${classroom.classId}">
+								<div class="mb10"></div>
+								<button class="btn btn-primary" onclick="commentInfo()" type="button"><i class="fa fa-comment"></i> 发表评论</button>
+							</form>
+						</c:if>
 
 					</div>
 					<!-- col-sm-8 -->
 
-					<div class="col-sm-3">
-						<div class="blog-sidebar">
-
-							<h5 class="subtitle">班级动态</h5>
-							<p>班级动态是了解班级同学近况的窗口</p>
-
-							<div class="mb30"></div>
-
-							<h5 class="subtitle">班级相关动态：</h5>
-							<c:choose>
-								<c:when
-									test="${classOtherInfo!=null && fn:length(classOtherInfo)>1}">
-									<ul class="sidebar-list">
-										<c:forEach items="${classOtherInfo}" var="classInfo">
-											<c:if test="${classInfo.infoId!=info.infoId}">
-												<li><a
-													href="classroom/infoDetail.action?classId=${classroom.classId}&infoId=${classInfo.infoId}"><i
-														class="fa fa-angle-right"></i> <ar:sub length="15"
-															value="${classInfo.infoTitle}" /> </a></li>
-											</c:if>
-										</c:forEach>
-									</ul>
-								</c:when>
-								<c:otherwise>
-								没有更多！
-								</c:otherwise>
-							</c:choose>
-
-							<div class="mb30"></div>
-
-							<h5 class="subtitle">董亮亮的动态：</h5>
-							<c:choose>
-								<c:when
-									test="${classMateOtherInfo!=null && fn:length(classMateOtherInfo)>1}">
-									<ul class="sidebar-list">
-										<c:forEach items="${classMateOtherInfo}" var="mateInfo">
-											<c:if test="${mateInfo.infoId!=info.infoId}">
-												<li><a
-													href="classroom/infoDetail.action?classId=${classroom.classId}&infoId=${mateInfo.infoId}"><i
-														class="fa fa-angle-right"></i> <ar:sub length="15"
-															value="${mateInfo.infoTitle}" /> </a></li>
-											</c:if>
-										</c:forEach>
-									</ul>
-								</c:when>
-								<c:otherwise>
-								没有更多！
-								</c:otherwise>
-							</c:choose>
-
-						</div>
-						<!-- blog-sidebar -->
-
+					<div class="col-sm-3" id="classroom-info-side">
+						<img class="center-block" src='assets/images/icon/loader.gif'>
 					</div>
 					<!-- col-sm-4 -->
 
@@ -184,32 +122,4 @@
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
 <script src="assets/script/class/classroom/classroom-info-detail.js"></script>
-<script type="text/javascript">
-function addComment(infoId) {
-	var content = $('#commentContent').val();
-	if(isValid(content)){
-		if(content.length<=200){
-			$.ajax({
-				type : 'POST',
-				url : 'classroom/classInfoComment.action',
-				data : "content=" + content + "&infoId=" + infoId,
-				success : function(data) {
-					$('#commentContent').val("");
-					window.location.reload();
-				},
-				error :function() {
-					alert("评论失败");
-				},
-				dataType: "json"
-			});
-		}else{
-			errMsg('commentContent', "不超过200字");
-		}
-	}
-}
-
-									
-									</script>
-
-
 </html>

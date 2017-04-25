@@ -13,6 +13,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import com.xzit.ar.common.po.origin.Origin;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -117,7 +118,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 	}
 
 	@Override
-	@Cacheable(value = { "classroomCache" })
+//	@Cacheable(value = { "classroomCache" })
 	public Map<String, Object> classInfoDetail(Integer classId, Integer infoId) throws ServiceException {
 		try {
 			// 参数校验
@@ -131,7 +132,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 	}
 
 	@Override
-	@Cacheable(value = { "classroomCache" })
+//	@Cacheable(value = { "classroomCache" })
 	public List<Map<String, Object>> classOtherInfo(Integer classId, Integer infoNum) throws ServiceException {
 		try {
 			// 参数校验
@@ -145,7 +146,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 	}
 
 	@Override
-	@Cacheable(value = { "classroomCache" })
+//	@Cacheable(value = { "classroomCache" })
 	public List<Map<String, Object>> classMateInfos(Page<Map<String, Object>> page, Integer classId, Integer userId)
 			throws ServiceException {
 		try {
@@ -160,7 +161,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 	}
 
 	@Override
-	@Cacheable(value = { "classroomCache" })
+//	@Cacheable(value = { "classroomCache" })
 	public List<Map<String, Object>> classInfoComment(Integer infoId) throws ServiceException {
 		try {
 			// 参数校验
@@ -174,7 +175,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 	}
 
 	@Override
-	@CacheEvict(value = "classroomCache", allEntries = true, beforeInvocation = true)
+//	@CacheEvict(value = "classroomCache", allEntries = true, beforeInvocation = true)
 	public Integer addClassInfoComment(Comment comment) throws ServiceException {
 		try {
 			// 参数校验
@@ -192,7 +193,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 	}
 
 	@Override
-	@CacheEvict(value = "classroomCache", allEntries = true, beforeInvocation = true)
+//	@CacheEvict(value = "classroomCache", allEntries = true, beforeInvocation = true)
 	public Integer addClassInfo(Information information) throws ServiceException {
 		try {
 			// 参数校验
@@ -206,7 +207,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 	}
 
 	@Override
-	@CacheEvict(value = "classroomCache", allEntries = true, beforeInvocation = true)
+//	@CacheEvict(value = "classroomCache", allEntries = true, beforeInvocation = true)
 	public Integer addToClass(UserOrigin userOrigin) throws ServiceException {
 		try {
 			// 参数校验
@@ -222,7 +223,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 	}
 
 	@Override
-	@Cacheable(value = { "classroomCache" })
+//	@Cacheable(value = { "classroomCache" })
 	public List<Integer> getAllMemberIds(Integer classId) throws ServiceException {
 		try {
 			// 参数校验
@@ -236,7 +237,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 	}
 
 	@Override
-	@Cacheable(value = { "classroomCache" })
+//	@Cacheable(value = { "classroomCache" })
 	public Page<Map<String, Object>> classMessage(Page<Map<String, Object>> page, Integer classId)
 			throws ServiceException {
 		try {
@@ -252,7 +253,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 	}
 
 	@Override
-	@CacheEvict(value = "classroomCache", allEntries = true, beforeInvocation = true)
+//	@CacheEvict(value = "classroomCache", allEntries = true, beforeInvocation = true)
 	public Integer updateClassDesc(String description, Integer classId) throws ServiceException {
 		try {
 			// 参数校验

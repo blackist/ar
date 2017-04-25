@@ -10,20 +10,20 @@
 
 <div class="blog-sidebar">
 
-    <h5 class="subtitle"><ar:dictdata dictdata="${orgroom.originType}" dict="ot"></ar:dictdata>动态</h5>
-    <p><ar:dictdata dictdata="${orgroom.originType}" dict="ot"></ar:dictdata>动态是了解校友近况的窗口</p>
+    <h5 class="subtitle">班级动态</h5>
+    <p>班级动态是了解校友近况的窗口</p>
 
     <div class="mb30"></div>
 
-    <h5 class="subtitle">${orgroom.originName}动态：</h5>
+    <h5 class="subtitle">${classroom.className}动态：</h5>
     <c:choose>
-        <c:when test="${originOtherInfos!=null && originOtherInfos.size() > 0}">
+        <c:when test="${classOtherInfos!=null && classOtherInfos.size() > 0}">
             <ul class="sidebar-list">
-                <c:forEach items="${originOtherInfos}" var="originInfo">
-                    <c:if test="${originInfo.infoId != infoId}">
+                <c:forEach items="${classOtherInfos}" var="classInfo">
+                    <c:if test="${classInfo.infoId != infoId}">
                         <li>
-                            <a href="orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${originInfo.infoId}">
-                                <i class="fa fa-angle-right"></i> <ar:sub length="15" value="${originInfo.infoTitle}" />
+                            <a href="classroom/infoDetail.action?classId=${classroom.classId}&infoId=${classInfo.infoId}">
+                                <i class="fa fa-angle-right"></i> <ar:sub length="15" value="${classInfo.infoTitle}" />
                             </a>
                         </li>
                     </c:if>
@@ -43,7 +43,7 @@
             <ul class="sidebar-list">
                 <c:forEach items="${authorOtherInfos}" var="authorInfo">
                         <li>
-                            <a href="orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${authorInfo.infoId}">
+                            <a href="classroom/infoDetail.action?classId=${classroom.classId}&infoId=${authorInfo.infoId}">
                             <i class="fa fa-angle-right"></i> <ar:sub length="15" value="${authorInfo.infoTitle}" /> </a>
                         </li>
                 </c:forEach>

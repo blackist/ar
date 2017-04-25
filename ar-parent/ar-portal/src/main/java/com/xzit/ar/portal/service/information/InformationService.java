@@ -28,7 +28,7 @@ public interface InformationService {
      * @return  消息列表
      * @throws ServiceException
      */
-    List<Map<String, Object>> getOriginInfos(Page<Map<String, Object>> page, Integer originId) throws ServiceException;
+    List<Map<String, Object>> getOriginInfos(Page<Map<String, Object>> page, Integer originId, String infoType) throws ServiceException;
 
     /**
      *
@@ -48,6 +48,14 @@ public interface InformationService {
      * @throws ServiceException
      */
     Map<String, Object> getInfoByInfoIdAndOriginId(Integer infoId, Integer originId) throws ServiceException;
+
+    /**
+     * TODO 发布组织动态消息
+     * @param information 消息实体
+     * @return
+     * @throws ServiceException
+     */
+    Integer publishOriginInfo(Information information) throws ServiceException;
 
     /**
      * TODO 为消息点赞

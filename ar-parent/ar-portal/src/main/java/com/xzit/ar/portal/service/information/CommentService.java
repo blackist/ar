@@ -1,7 +1,11 @@
 package com.xzit.ar.portal.service.information;
 
 import com.xzit.ar.common.exception.ServiceException;
+import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.info.Comment;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * TODO ${TODO}
@@ -26,4 +30,12 @@ public interface CommentService {
      * @throws ServiceException
      */
     Integer saveComment(Comment comment) throws ServiceException;
+
+    /**
+     * TODO 动态加载动态消息的评论
+     * @param infoId
+     * @return
+     * @throws ServiceException
+     */
+    List<Map<String, Object>> dynamicLoadComment(Page<Map<String, Object> > page, Integer infoId) throws ServiceException;
 }
