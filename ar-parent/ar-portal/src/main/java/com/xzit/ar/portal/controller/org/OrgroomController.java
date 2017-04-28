@@ -6,6 +6,7 @@ import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.info.Comment;
 import com.xzit.ar.common.po.info.Information;
 import com.xzit.ar.common.po.origin.Origin;
+import com.xzit.ar.common.po.user.UserOrigin;
 import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.portal.service.information.CommentService;
 import com.xzit.ar.portal.service.information.InformationService;
@@ -24,6 +25,7 @@ import java.util.Map;
 
 /**
  * TODO 校友组织主页
+ *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/4/16 15:34.
  */
@@ -46,6 +48,7 @@ public class OrgroomController extends BaseController {
 
     /**
      * TODO 加载校友组织首页
+     *
      * @param model
      * @param originId
      * @return
@@ -55,7 +58,7 @@ public class OrgroomController extends BaseController {
 
         // 校友组织基本信息
         Origin origin = orgroomService.getOriginById(originId);
-        if (origin == null || CommonUtil.isEmpty(origin.getOriginId())){
+        if (origin == null || CommonUtil.isEmpty(origin.getOriginId())) {
             return "redirect:/org.action";
         }
         model.addAttribute("orgroom", origin);
@@ -69,8 +72,37 @@ public class OrgroomController extends BaseController {
     }
 
     /**
+     * TODO 加入组织
+     *
+     * @param attributes
+     * @param originId   组织id
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/joinOrigin")
+    public String joinOrigin(RedirectAttributes attributes, @RequestParam("originId") Integer originId) throws ServiceException {
+        // 加入组织
+        if (CommonUtil.isNotEmpty(originId)) {
+            // 设置参数
+            UserOrigin userOrigin = new UserOrigin();
+            userOrigin.setOriginId(originId);
+            userOrigin.setUserId(getCurrentUserId());
+            userOrigin.setCreateTime(new Date());
+            userOrigin.setState("A");
+            userOrigin.setStateTime(new Date());
+            // 存储
+            orgroomService.joinOrigin(userOrigin);
+        }
+        // 传递参数
+        attributes.addAttribute("originId", originId);
+
+        return "redirect:/orgroom.action";
+    }
+
+    /**
      * TODO 加载校友组织动态消息页面
-     * @param model   视图model
+     *
+     * @param model    视图model
      * @param originId 组织id
      * @return
      * @throws ServiceException
@@ -79,7 +111,7 @@ public class OrgroomController extends BaseController {
     public String info(Model model, @RequestParam("originId") Integer originId) throws ServiceException {
         // 校友组织基本信息
         Origin origin = orgroomService.getOriginById(originId);
-        if (origin == null || CommonUtil.isEmpty(origin.getOriginId())){
+        if (origin == null || CommonUtil.isEmpty(origin.getOriginId())) {
             return "redirect:/org.action";
         }
         model.addAttribute("orgroom", origin);
@@ -93,6 +125,7 @@ public class OrgroomController extends BaseController {
 
     /**
      * TODO 发布组织动态消息
+     *
      * @param attributes
      * @param content
      * @param originId
@@ -103,7 +136,7 @@ public class OrgroomController extends BaseController {
     @RequestMapping("/publishInfo")
     public String publishInfo(RedirectAttributes attributes, @RequestParam("infoTitle") String infoTitle, @RequestParam("content") String content, @RequestParam("originId") Integer originId) throws ServiceException {
         System.out.println(infoTitle);
-        if (CommonUtil.isNotEmpty(infoTitle) && CommonUtil.isNotEmpty(content) && CommonUtil.isNotEmpty(originId)){
+        if (CommonUtil.isNotEmpty(infoTitle) && CommonUtil.isNotEmpty(content) && CommonUtil.isNotEmpty(originId)) {
             Information information = new Information();
             // 设置消息内容
             information.setInfoTitle(infoTitle);
@@ -134,18 +167,19 @@ public class OrgroomController extends BaseController {
 
     /**
      * TODO 加载班级动态详情
+     *
      * @param model
      * @param originId
      * @return
      */
     @RequestMapping("/infoDetail")
-    public String infoDetail(Model model,Integer originId, Integer infoId) throws ServiceException {
+    public String infoDetail(Model model, Integer originId, Integer infoId) throws ServiceException {
         // 校友组织基本信息
         Origin origin = orgroomService.getOriginById(originId);
         // 加载消息详情
         Map<String, Object> info = informationService.getInfoByInfoIdAndOriginId(infoId, originId);
         // 校验
-        if (origin == null || CommonUtil.isEmpty(origin.getOriginId()) || info == null ){
+        if (origin == null || CommonUtil.isEmpty(origin.getOriginId()) || info == null) {
             return "redirect:/org.action";
         }
         model.addAttribute("orgroom", origin);
@@ -156,6 +190,7 @@ public class OrgroomController extends BaseController {
 
     /**
      * TODO 动态加载评论
+     *
      * @param model
      * @param infoId
      * @return
@@ -173,6 +208,7 @@ public class OrgroomController extends BaseController {
 
     /**
      * TODO 评论帖子
+     *
      * @param redirectAttributes
      * @param comment
      * @return
@@ -186,7 +222,7 @@ public class OrgroomController extends BaseController {
         // 存储
         commentService.saveComment(comment);
         // 重定向
-        if (comment != null && CommonUtil.isNotEmpty(comment.getInfoId()) && CommonUtil.isNotEmpty(originId)){
+        if (comment != null && CommonUtil.isNotEmpty(comment.getInfoId()) && CommonUtil.isNotEmpty(originId)) {
             redirectAttributes.addAttribute("infoId", comment.getInfoId());
             redirectAttributes.addAttribute("originId", originId);
             return "redirect:/orgroom/infoDetail.action";
@@ -196,19 +232,23 @@ public class OrgroomController extends BaseController {
 
     /**
      * TODO 为消息点赞
+     *
      * @param infoId
      * @return
      */
     @RequestMapping("/loveInfo")
-    public @ResponseBody Integer loveInfo(@RequestParam("infoId") Integer infoId) throws ServiceException {
+    public
+    @ResponseBody
+    Integer loveInfo(@RequestParam("infoId") Integer infoId) throws ServiceException {
         return informationService.loveInfo(infoId);
     }
 
     /**
      * TODO 删除消息
+     *
      * @param redirectAttributes
      * @param infoId
-     * @return 
+     * @return
      */
     @RequestMapping("/deleteInfo")
     public String deleteInfo(RedirectAttributes redirectAttributes, @RequestParam("infoId") Integer infoId, @RequestParam("originId") Integer originId) throws ServiceException {
@@ -221,6 +261,7 @@ public class OrgroomController extends BaseController {
 
     /**
      * TODO 加载消息详情页面的侧边栏
+     *
      * @param model
      * @param authorId
      * @param originId
@@ -231,7 +272,7 @@ public class OrgroomController extends BaseController {
     public String infoSide(Model model, @RequestParam("authorId") Integer authorId, @RequestParam("originId") Integer originId) throws ServiceException {
         // 校友组织基本信息
         Origin origin = orgroomService.getOriginById(originId);
-        if (origin == null || CommonUtil.isEmpty(origin.getOriginId())){
+        if (origin == null || CommonUtil.isEmpty(origin.getOriginId())) {
             return "redirect:/org.action";
         }
         model.addAttribute("orgroom", origin);
@@ -249,6 +290,7 @@ public class OrgroomController extends BaseController {
 
     /**
      * TODO 加载组织留言板
+     *
      * @param model
      * @param originId
      * @return
@@ -258,7 +300,7 @@ public class OrgroomController extends BaseController {
     public String message(Model model, Integer originId) throws ServiceException {
         // 校友组织基本信息
         Origin origin = orgroomService.getOriginById(originId);
-        if (origin == null || CommonUtil.isEmpty(origin.getOriginId())){
+        if (origin == null || CommonUtil.isEmpty(origin.getOriginId())) {
             return "redirect:/org.action";
         }
         model.addAttribute("orgroom", origin);
@@ -272,6 +314,7 @@ public class OrgroomController extends BaseController {
 
     /**
      * TODO 发表组织留言
+     *
      * @param attributes
      * @param information
      * @return
@@ -280,7 +323,7 @@ public class OrgroomController extends BaseController {
     @RequestMapping("publishMessage")
     public String publishMessage(RedirectAttributes attributes, Information information) throws ServiceException {
         // 参数校验
-        if (CommonUtil.isNotEmpty(information.getOriginId()) && CommonUtil.isNotEmpty(information.getContent())){
+        if (CommonUtil.isNotEmpty(information.getOriginId()) && CommonUtil.isNotEmpty(information.getContent())) {
             // 设置消息内容
             information.setInfoTitle("");
             information.setCreateTime(new Date());
@@ -301,8 +344,24 @@ public class OrgroomController extends BaseController {
         // 加入重定向参数
         attributes.addAttribute("originId", information.getOriginId());
 
-
         return "redirect:/orgroom/message.action";
+    }
+
+    @RequestMapping("/member")
+    public String member(Model model, @RequestParam("originId") Integer originId) throws ServiceException {
+        // 校友组织基本信息
+        Origin origin = orgroomService.getOriginById(originId);
+        if (origin == null || CommonUtil.isEmpty(origin.getOriginId())) {
+            return "redirect:/org.action";
+        }
+        model.addAttribute("orgroom", origin);
+        // 成员信息
+        Page<Map<String, Object> > page = new Page<>(getPageIndex(), 20);
+        orgroomService.getOriginMember(page, originId);
+        // 传递成员列表 
+        model.addAttribute("page", page);
+
+        return "org/orgroom/orgroom-member";
     }
 
 }

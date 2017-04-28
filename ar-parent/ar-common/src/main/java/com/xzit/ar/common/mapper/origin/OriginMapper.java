@@ -110,4 +110,12 @@ public interface OriginMapper extends BaseMapper {
 	 */
 	List<Map<String, Object>> getOriginInfosByType(Page<Map<String, Object>> page, @Param("originId") Integer originId,
 											 @Param("infoType") String infoType) throws Exception;
+
+	/**
+	 * TODO 查询组织成员列表
+	 * @param originId
+	 * @return
+	 * @throws Exception
+	 */
+	List<Map<String, Object>> getOriginMember(Page<Map<String, Object> > page, @Param("originId") Integer originId)  ;
 }

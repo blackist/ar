@@ -64,6 +64,24 @@
 		</where>
 	</select>
 
+	<!--查询组织成员列表-->
+	<select id="getOriginMember" parameterType="java.lang.Integer" resultType="map">
+		SELECT
+			u.user_id userId,
+			u.true_name trueName,
+			img.image_path portrait
+		FROM
+			`user` u,
+			user_origin uo,
+			image img
+		WHERE
+			uo.origin_id=#{originId}
+			AND uo.state='A'
+			AND uo.user_id=u.user_id
+			AND u.image_id=img.image_id
+	</select>
+
+
 	<!--删除组织-->
 	<delete id="delete" parameterType="java.lang.Integer" >delete from origin
     where origin_id = #{originId,jdbcType=INTEGER}</delete>

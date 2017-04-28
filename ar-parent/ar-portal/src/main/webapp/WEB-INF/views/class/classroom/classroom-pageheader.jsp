@@ -6,6 +6,7 @@
 	<h2><i class="fa fa-graduation-cap"></i>${classroom.classGrade} 级 ${classroom.className} <span>${classroom.members}人加入</span></h2>
 	<div class="breadcrumb-wrapper">
 		<ol class="breadcrumb">
+			
 			<li><a href="index.action">主页</a></li>
 			<li><a href="class.action">班级录</a></li>
 			<li class="active">${classroom.clasName}</li>

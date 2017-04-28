@@ -4,6 +4,7 @@ import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.info.Information;
 import com.xzit.ar.common.po.origin.Origin;
+import com.xzit.ar.common.po.user.UserOrigin;
 
 import java.util.List;
 import java.util.Map;
@@ -33,12 +34,19 @@ public interface OrgroomService {
     List<Integer> getMemberIds(Integer originId) throws ServiceException;
 
     /**
-     * TODO 加载组织留言
-     * @param page
+     * TODO 当前用户加入组织
+     * @param userOrigin
+     * @return
+     * @throws ServiceException
+     */
+    Integer joinOrigin(UserOrigin userOrigin) throws ServiceException;
+
+    /**
+     * TODO 查询组织成员列表
+     * @param page 
      * @param originId
      * @return
      * @throws ServiceException
      */
-    List<Map<String, Object>> getOriginMessage(Page<Map<String, Object> > page, Integer originId) throws ServiceException;
-
+    List<Map<String, Object>> getOriginMember(Page<Map<String, Object> > page, Integer originId) throws ServiceException;
 }

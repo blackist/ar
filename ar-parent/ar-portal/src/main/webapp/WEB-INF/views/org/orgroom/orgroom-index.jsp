@@ -85,17 +85,16 @@
 					<ar:exist items="${memberIds}" value="${SESSION_USER.userId}">
 						<div class="alert alert-info">
 							<button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
-							<a class="alert-link" href="javascript:;">您已加入该班级啦!</a>
+							<a class="alert-link" href="javascript:;">您已加入${orgroom.originName}!</a>
 						</div>
 					</ar:exist>
 					<ar:notexist items="${memberIds}" value="${SESSION_USER.userId}">
 						<div class="alert alert-info">
 							<button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
-							<a class="alert-link" href="javascript:;">您还未加入该班级!</a>
+							<a class="alert-link" href="javascript:;">您还未加入该班级${orgroom.originName}!</a>
 						</div>
-						<a class="btn btn-darkblue"
-							href="orgroom/joinOrg.action?originId=${orgroom.originId}"><span
-							class="glyphicon glyphicon-plus"></span>&nbsp;加入班级</a>
+						<a class="btn btn-darkblue" href="orgroom/joinOrigin.action?originId=${orgroom.originId}">
+							<span class="glyphicon glyphicon-plus"></span>&nbsp;申请加入</a>
 					</ar:notexist>
 					<hr />
 					<h5 class="subtitle mb5">管理员：</h5>

@@ -8,6 +8,7 @@ import com.xzit.ar.common.mapper.user.UserOriginMapper;
 import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.info.Information;
 import com.xzit.ar.common.po.origin.Origin;
+import com.xzit.ar.common.po.user.UserOrigin;
 import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.portal.service.org.OrgroomService;
 import org.springframework.stereotype.Service;
@@ -79,15 +80,47 @@ public class OrgroomServiceImpl implements OrgroomService {
     }
 
     /**
-     * TODO 加载组织留言
+     * TODO 当前用户加入组织
+     * @param userOrigin
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public Integer joinOrigin(UserOrigin userOrigin) throws ServiceException {
+        try {
+            // 参数校验
+            if (CommonUtil.isNotEmpty(userOrigin.getOriginId())
+                    && CommonUtil.isNotEmpty(userOrigin.getUserId())) {
+                // 存储数据
+                userOriginMapper.save(userOrigin);
+                // 更新组织人数
+                return originMapper.addOriginMemberNum(userOrigin.getOriginId());
+            }
+        } catch (Exception e) {
+            throw new ServiceException("申请加入时发生异常！");
+        }
+        return 0;
+    }
+
+    /**
+     * TODO 查询组织成员列表
+     *
      * @param page
      * @param originId
      * @return
      * @throws ServiceException
      */
     @Override
-    public List<Map<String, Object>> getOriginMessage(Page<Map<String, Object>> page, Integer originId) throws ServiceException {
-
+    public List<Map<String, Object>> getOriginMember(Page<Map<String, Object>> page, Integer originId) throws ServiceException {
+//        try {
+            // 参数校验
+            if (CommonUtil.isNotEmpty(originId)){
+                // 执行查询
+                return  originMapper.getOriginMember(page, originId);
+            }
+//        } catch (Exception e) {
+//            throw new ServiceException("加载成员列表时发生异常！");
+//        }
         return null;
     }
 }
