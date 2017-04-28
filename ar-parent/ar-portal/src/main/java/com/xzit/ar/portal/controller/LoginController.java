@@ -58,6 +58,7 @@ public class LoginController extends BaseController {
 		Map<String, Object> user = new HashMap<String, Object>();
 		// md5 对密码加密
 		password = CommonUtil.md5(password);
+		System.out.println(password);
 		// 登录校验
 		user = loginService.validateUser(account, password);
 		if (user != null) {

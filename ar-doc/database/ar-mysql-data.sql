@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50173
 File Encoding         : 65001
 
-Date: 2017-04-10 00:04:32
+Date: 2017-04-28 14:20:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -185,7 +185,7 @@ CREATE TABLE `comment` (
   KEY `FK_COMMENT_INFOID` (`info_id`),
   CONSTRAINT `FK_COMMENT_INFOID` FOREIGN KEY (`info_id`) REFERENCES `information` (`info_id`),
   CONSTRAINT `FK_COMMENT_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of comment
@@ -202,6 +202,40 @@ INSERT INTO `comment` VALUES ('30', '考查课自行车vj', '2016-03-01 16:37:42
 INSERT INTO `comment` VALUES ('31', 'hehhe', '2016-03-01 17:40:58', '4', '20');
 INSERT INTO `comment` VALUES ('32', '我来了', '2016-03-01 21:33:56', '2', '20');
 INSERT INTO `comment` VALUES ('33', '回复 2楼  董亮亮：你说的不错哦', '2016-03-01 21:34:11', '2', '20');
+INSERT INTO `comment` VALUES ('34', '1楼', '2017-04-10 20:12:37', '3', '29');
+INSERT INTO `comment` VALUES ('36', '3楼', '2017-04-10 20:13:21', '3', '29');
+INSERT INTO `comment` VALUES ('37', '4楼', '2017-04-10 21:10:39', '4', '29');
+INSERT INTO `comment` VALUES ('38', '5楼', '2017-04-10 21:10:57', '5', '29');
+INSERT INTO `comment` VALUES ('39', '6楼', '2017-04-10 21:11:11', '6', '29');
+INSERT INTO `comment` VALUES ('40', '7楼', '2017-04-10 21:11:27', '4', '29');
+INSERT INTO `comment` VALUES ('42', '9楼', '2017-04-10 21:11:53', '3', '29');
+INSERT INTO `comment` VALUES ('43', '10楼', '2017-04-10 21:12:05', '4', '29');
+INSERT INTO `comment` VALUES ('44', '11楼', '2017-04-10 21:12:19', '5', '29');
+INSERT INTO `comment` VALUES ('45', '12楼', '2017-04-10 21:12:29', '6', '29');
+INSERT INTO `comment` VALUES ('46', '13楼', '2017-04-10 21:12:41', '3', '29');
+INSERT INTO `comment` VALUES ('47', '14楼', '2017-04-10 21:12:54', '2', '29');
+INSERT INTO `comment` VALUES ('48', '15楼', '2017-04-10 21:13:10', '4', '29');
+INSERT INTO `comment` VALUES ('49', '16楼', '2017-04-10 21:13:23', '5', '29');
+INSERT INTO `comment` VALUES ('50', '17楼', '2017-04-10 21:13:37', '6', '29');
+INSERT INTO `comment` VALUES ('51', '18楼', '2017-04-10 21:13:51', '2', '29');
+INSERT INTO `comment` VALUES ('52', '19楼', '2017-04-10 21:14:09', '3', '29');
+INSERT INTO `comment` VALUES ('53', '20楼', '2017-04-10 21:14:23', '4', '29');
+INSERT INTO `comment` VALUES ('54', '21楼', '2017-04-10 21:14:35', '5', '29');
+INSERT INTO `comment` VALUES ('55', '22楼', '2017-04-10 21:14:46', '6', '29');
+INSERT INTO `comment` VALUES ('57', '作为自发、非盈利性活动平台，羽毛球俱乐部活动收取的相关费用只用于支付场租、购羽毛球、交流赛等各项支出。作为自发集体活动，组织方只负责召集、联络工作。凡参加活动的人员，均视为具有完全独立民事行为能力人，须对自身的安全及健康状况负责。活动中所发生的意外，俱乐部不承担任何法律连带责任。以任何形式参加本俱乐部为主体召集的活动，都将被视为同意以上免责声明，如有异议切勿参加，以免造成不必要的法律纠纷。俱乐部成员间私下发起、开展相关活动所产生的一切后果，亦与俱乐部无关。', '2017-04-10 23:19:55', '2', '29');
+INSERT INTO `comment` VALUES ('58', '抢一楼', '2017-04-10 23:24:05', '2', '28');
+INSERT INTO `comment` VALUES ('59', '回复 #9 珍妮：回复一下试试', '2017-04-10 23:38:43', '2', '29');
+INSERT INTO `comment` VALUES ('60', '2楼也是我的', '2017-04-11 10:00:12', '2', '28');
+INSERT INTO `comment` VALUES ('61', '再盖一楼', '2017-04-12 19:25:59', '4', '29');
+INSERT INTO `comment` VALUES ('62', '盖一楼', '2017-04-23 14:40:03', '2', '34');
+INSERT INTO `comment` VALUES ('63', '再来一楼', '2017-04-23 14:40:25', '2', '34');
+INSERT INTO `comment` VALUES ('64', '三楼来了', '2017-04-23 15:44:08', '2', '34');
+INSERT INTO `comment` VALUES ('65', 'hehe', '2017-04-25 14:30:16', '2', '33');
+INSERT INTO `comment` VALUES ('66', '爱上的风格', '2017-04-25 16:22:53', '2', '34');
+INSERT INTO `comment` VALUES ('67', 'zailiyilou', '2017-04-25 16:43:42', '2', '34');
+INSERT INTO `comment` VALUES ('68', '呵呵', '2017-04-25 16:44:31', '2', '15');
+INSERT INTO `comment` VALUES ('69', '第二楼', '2017-04-25 16:47:53', '2', '15');
+INSERT INTO `comment` VALUES ('70', '评论一下', '2017-04-28 14:17:51', '262', '29');
 
 -- ----------------------------
 -- Table structure for dictionary
@@ -253,7 +287,7 @@ CREATE TABLE `dictionary_data` (
   PRIMARY KEY (`id`),
   KEY `FK_DICTIONARYDATA_DICTVALUE` (`dict_value`),
   CONSTRAINT `FK_DICTIONARYDATA_DICTVALUE` FOREIGN KEY (`dict_value`) REFERENCES `dictionary` (`dict_value`)
-) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dictionary_data
@@ -334,6 +368,14 @@ INSERT INTO `dictionary_data` VALUES ('96', 'in', '校园服务信息', 'SS', '1
 INSERT INTO `dictionary_data` VALUES ('97', 'ot', '学院', 'INS', '1', null, null);
 INSERT INTO `dictionary_data` VALUES ('98', 'in', '招生就业', 'RR', '1', null, null);
 INSERT INTO `dictionary_data` VALUES ('99', 'in', '论坛帖子', 'BBS', '1', null, null);
+INSERT INTO `dictionary_data` VALUES ('100', 'be', '', 'slmy', '1', null, null);
+INSERT INTO `dictionary_data` VALUES ('101', 'ot', '校友总会', 'org', '1', null, null);
+INSERT INTO `dictionary_data` VALUES ('102', 'ot', '院系分会', 'orgi', '1', null, null);
+INSERT INTO `dictionary_data` VALUES ('103', 'ot', '社团分会', 'orgm', '1', null, null);
+INSERT INTO `dictionary_data` VALUES ('104', 'ot', '学生协会', 'orgu', '1', null, null);
+INSERT INTO `dictionary_data` VALUES ('105', 'ot', '校友组织', 'OI', '1', null, null);
+INSERT INTO `dictionary_data` VALUES ('106', 'in', '班级留言', 'CM', '1', null, null);
+INSERT INTO `dictionary_data` VALUES ('107', 'in', '组织留言', 'OM', '1', null, null);
 
 -- ----------------------------
 -- Table structure for grade
@@ -410,7 +452,7 @@ CREATE TABLE `information` (
   KEY `FK_INFORMATION_ORIGINID` (`origin_id`),
   CONSTRAINT `FK_INFORMATION_ORIGINID` FOREIGN KEY (`origin_id`) REFERENCES `origin` (`origin_id`) ON DELETE CASCADE,
   CONSTRAINT `FK_INFORMATION_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of information
@@ -428,7 +470,7 @@ INSERT INTO `information` VALUES ('11', '和S科学家离开vsk', '和S科学家
 INSERT INTO `information` VALUES ('12', '双方的股份回购名', '双方的股份回购名', null, null, '0', '1', '0', '2016-02-29 23:22:04', '0', 'CI', '4', '1', 'A', '2016-02-29 23:22:04');
 INSERT INTO `information` VALUES ('13', '你说我人品怎么样\r\n还可以吧', '你说我人品怎么样\r\n还可以吧', null, '/img/info/e7f8430a-9973-4319-ad74-8efd30a6f1ac.jpg', '0', '0', '0', '2016-03-01 11:51:01', '0', 'CI', '4', '1', 'A', '2016-03-01 11:51:01');
 INSERT INTO `information` VALUES ('14', '奥德赛vhasild', '奥德赛vhasildj oaiSJl c ASDlL  jlkzdj flkzj 就 ｌｊ　ｌｊ　ｓｄｌｊｆｚｓｌｊ　ｆｄｊ　ｆｌ　ｊ　ｌｊ　ｌｊｌ　ｉｌｕ　ｉｊｊｊｋｋＯＬ　ＪＯ　ｏ　ｋ就开始离开家阿隆索飞机乘客来说ｖｊｌ路径 SJDcLDS', null, null, '0', '5', '0', '2016-03-01 12:31:02', '0', 'CI', '4', '1', 'A', '2016-03-01 12:31:02');
-INSERT INTO `information` VALUES ('15', '谔谔同花顺俄而是是忽', '谔谔同花顺俄而是是忽然怀念和健康　看空间就', null, null, '0', '0', '0', '2016-03-01 12:31:26', '0', 'CI', '4', '2', 'A', '2016-03-01 12:31:26');
+INSERT INTO `information` VALUES ('15', '谔谔同花顺俄而是是忽', '谔谔同花顺俄而是是忽然怀念和健康　看空间就', null, null, '0', '2', '0', '2016-03-01 12:31:26', '0', 'CI', '4', '2', 'A', '2016-03-01 12:31:26');
 INSERT INTO `information` VALUES ('16', 'iwoqujsqAK;L', 'iwoqujsqAK;L', null, null, '0', '1', '0', '2016-03-01 12:40:36', '0', 'CI', '4', '1', 'A', '2016-03-01 12:40:36');
 INSERT INTO `information` VALUES ('17', '爱克发haskfhds.j快来', '爱克发haskfhds.j快来', null, null, '0', '0', '0', '2016-03-01 15:59:00', '0', 'CI', '4', '1', 'A', '2016-03-01 15:59:00');
 INSERT INTO `information` VALUES ('18', '恶搞无法打败你后悔', '恶搞无法打败你后悔', null, null, '0', '0', '0', '2016-03-01 16:28:04', '0', 'CI', '4', '1', 'A', '2016-03-01 16:28:04');
@@ -441,8 +483,23 @@ INSERT INTO `information` VALUES ('24', '我是一个梦想家', '我是一个�
 INSERT INTO `information` VALUES ('25', null, '我来了，让我听到你们的声音', null, null, '0', '0', '0', '2017-04-07 10:55:49', '0', 'CM', '2', '4', 'A', '2017-04-07 10:55:49');
 INSERT INTO `information` VALUES ('26', '校园行指南', '    玉泉校区位于西湖西北角，紧邻玉泉植物园。校区占地总面积1700多亩，校舍建筑总面积70万平方米。玉泉校区是原浙江大学所在地，现浙江大学党政机关办公所在地。\r\n    目前浙江大学理学院、电气工程学院、机械与能源工程学院、材料与化学工程学院、计算机科学与技术学院、信息科学与工程学院、建筑工程学院、生物医学工程与仪器科学学院、经济学院、管理学院、软件学院11个学院党政机关设在该校区。\r\n\r\n    公交线路：K89、K228(夜)、 K16、82/K82、 815、81/K81、527 、15/K15、21/K21、28/k28\r\n\r\n    旅馆：紫兰酒店、玉泉饭店、西子饭店、灵峰山庄、杭州金乐饭店、百合花饭店、浙江大学竺可桢国际教育大楼、浙江大学招待所、玉泉饭店、西子饭店、灵峰山庄、杭州金乐饭店、杭州百合花饭店。', null, null, '0', '0', '0', '2017-04-07 15:48:55', '0', 'SS', '1', '1', 'A', '2017-04-09 18:58:25');
 INSERT INTO `information` VALUES ('27', '走进校园', '徐州工程学院是2002年6月经教育部批准，由始建于1983年的彭城职业大学和始建于1985年的徐州经济管理干部学院合并组建的一所全日制普通本科院校。2006年6月，学校获得学士学位授予权。2007年6月，始建于1959年的徐州教育学院整建制并入。\r\n学校坚持地方性、应用型的办学定位，坚持“立足徐州、面向苏北、服务江苏”的服务定位和为区域经济社会发展培养高素质应用型人才的办学目标，实施“错位发展战略”，大力推进教育教学改革和人才培养模式改革，经过多年的建设和发展，已成为一所主干专业学科对应地方支柱产业，具有一定区位优势的地方高校。目前，学校获批为教育部“卓越工程师教育培养计划”实施高校、江苏省大学生创业教育示范校，被授予江苏省高等学校和谐校园、江苏省文明单位、江苏省五一劳动奖状、江苏省科技富民突出贡献单位等荣誉。\r\n学校现有3个校区，占地面积1990.5亩，校舍面积57.39万平方米，固定资产14.78亿元，教学仪器设备值1.50亿元，设有14个二级学院、1个思想政治理论课教研部和1个成人教育学院，开设49个本科专业，全日制在校生21376人。\r\n学校牢固树立人才资源是第一资源和“办学以教师为本”的理念，大力实施师资队伍建设“五大工程”和“卓越计划”，不断提高师资队伍水平。学校现有教职工1279人，其中具有正高职称98人、副高职称335人；具有博士学位140人、硕士学位664人；有1人被遴选为国家科学技术奖评委，2人享受国务院政府特殊津贴，3人被评为二级教授；有全国模范教师和全国优秀教育工作者2人，“江苏省有突出贡献的中青年专家”3人，省“六大人才高峰”培养对象14人，省“333工程”培养对象28人，省“青蓝工程”中青年学术带头人12人和优秀青年骨干教师35人，徐州市优秀专家、拔尖人才63人。\r\n学校紧密结合区域经济社会发展需求，扎实推进专业学科一体化建设。现有2个国家级特色专业，3个教育部“卓越工程师计划”实施专业，1个国家级“专业综合改革试点”项目，3个国家级工程实践教育中心，1个国家级大学生校外实践教育基地，2个国家级国际合作办学项目，6个省级特色专业，5个省级重点专业（类）；获批省级精品课程10门、省级精品教材13部，省级重点教材3部，获省级优秀教学成果奖13项；拥有3个省级一级重点建设学科。\r\n学校坚持以贡献求支持，以贡献求发展，加强产教融合，努力提升科技服务能力，科学研究和平台建设不断取得新进展。09年以来，承担和完成省部级以上科研项目199项、横向课题381项，科研成果获省部级奖励37项。学校现拥有2个省级重点建设实验室，2个省级工程实验室，9个省级工程技术研究中心，8个省级实验教学示范中心；获批省级工业设计中心、省级校外人文社科研究基地、省级人才培养模式创新实验基地、省级优秀教学团队各1个，省级科技创新团队2个，1项成果入选2012年《国家哲学社会科学成果文库》。\r\n学校秉承“格物致知，敬业乐群”的校训精神，积极推进人才培养模式改革，着重培养学生的社会责任感、创新精神和实践动手能力，人才培养质量稳步提升。近三年，我校学生共获得国际竞赛奖项12项，国家级竞赛奖项469项，省部级竞赛奖项492项，其中包括国际数学建模竞赛一等奖、全国大学生数学建模竞赛一等奖、“挑战杯”中国大学生创业计划竞赛银奖、全国普通高等院校算量大赛总冠军、全国大学生英语竞赛特等奖、全国大学生桥牌锦标赛亚军等高级别奖项；获批国家级大学生创新创业训练计划项目71项。人才培养质量的不断提高和毕业生“下得去、留得住、上手快、能力强”的特点受到社会广泛认可，毕业生就业率保持在98%以上。\r\n学校深入推进国际化战略。近年来，学校先后与美国、法国、俄罗斯等12个国家的17所高校和机构建立了稳定的合作关系。举办合作办学项目10个，联合培养学生1470人。着力推进“中青年骨干教师海外培训工程”，派出教师和管理干部393人次到境外培训、访学和攻读学位；留学生工作、中外合作科研和汉语国际推广不断取得新成效。学校是“茉莉花留学江苏政府奖学金”资助高校；有3位外籍教师荣获“江苏省五一劳动荣誉奖章”。教育部简报2012年第212期以《徐州工程学院大力推进国际化发展战略，着力提高师资队伍国际化水平》为题，报道了我校师资国际化的探索和实践。\r\n学校注重结合区域文化特征，努力发挥文化传承功能。学校以非物质文化遗产的研究与传承作为高校发挥文化传承与创新功能的突破口，积极推进“非遗”进校园、进课堂、进教材、进科研工作。举办了两届中国非物质文化遗产高层论坛，“淮海地区非物质文化遗产研究中心”获批江苏省普通高等学校人文社会科学校外研究基地，相关建设成果获得教育部“高校校园文化建设”优秀奖。\r\n展望未来，学校将深入贯彻落实科学发展观，不断加强内涵建设，大力提高教育教学质量和人才培养质量，以改革创新为动力，努力发展成为一所特色鲜明的高水平地方本科院校。', null, null, '0', '0', '0', '2017-04-07 16:13:24', '0', 'SS', '1', '1', 'A', null);
-INSERT INTO `information` VALUES ('28', '校友论坛规章制度', '严格遵守', 'AZ', null, '2', '0', '0', '2017-04-09 14:03:41', '0', 'BBS', '1', null, 'A', '2017-04-09 14:05:42');
-INSERT INTO `information` VALUES ('29', '欢天喜地的校庆', '时间：2017年04月19日 20:00~22:00\r\n所属：杭州浙江大学校友会 \r\n地址：（东园街）东园巷379号东园小学东园校区（大门左手边体育馆2楼）\r\n人数：14人\r\n状态：距离开始还有1周\r\n\r\n1.费用：男生30元，女生20元，请自备零钱或者支付宝fugel@163.com。\r\n空降兵（没报名直接参加的）35元，现场支付（请不要空降，确保每个人一定的打球时间，谢谢）。<br>\r\n鸽子（报了名不参加的）事后追罚10元，同年三次以上追罚20元。（活动当日提前三小时以上取消报名的不算鸽子。）\r\n2.如报名后需取消报名，请在活动当天17点前取消报名。\r\n3.活动用球由俱乐部统一提供。\r\n4.羽毛球qq交流群79806050（入群申请务必写明姓名及教育信息，否则一概无视哟）。\r\n\r\n公交站点：体育场路口、 红会医院、建国路口、潮鸣寺巷、宝善桥建国路口、红会医院北站', 'ZA', null, '5', '0', '0', '2017-04-09 14:10:49', '0', 'BBS', '2', null, 'A', '2017-04-09 14:11:01');
+INSERT INTO `information` VALUES ('28', '校友论坛规章制度', '严格遵守', 'AZ', null, '27', '2', '0', '2017-04-09 14:03:41', '0', 'BBS', '1', null, 'A', '2017-04-09 14:05:42');
+INSERT INTO `information` VALUES ('29', '欢天喜地的校庆', '时间：2017年04月19日 20:00~22:00\r\n所属：杭州浙江大学校友会 \r\n地址：（东园街）东园巷379号东园小学东园校区（大门左手边体育馆2楼）\r\n人数：14人\r\n状态：距离开始还有1周\r\n\r\n1.费用：男生30元，女生20元，请自备零钱或者支付宝fugel@163.com。\r\n空降兵（没报名直接参加的）35元，现场支付（请不要空降，确保每个人一定的打球时间，谢谢）。<br>\r\n鸽子（报了名不参加的）事后追罚10元，同年三次以上追罚20元。（活动当日提前三小时以上取消报名的不算鸽子。）\r\n2.如报名后需取消报名，请在活动当天17点前取消报名。\r\n3.活动用球由俱乐部统一提供。\r\n4.羽毛球qq交流群79806050（入群申请务必写明姓名及教育信息，否则一概无视哟）。\r\n\r\n公交站点：体育场路口、 红会医院、建国路口、潮鸣寺巷、宝善桥建国路口、红会医院北站', 'ZA', null, '293', '27', '24', '2017-04-09 14:10:49', '0', 'BBS', '2', null, 'A', '2017-04-09 14:11:01');
+INSERT INTO `information` VALUES ('32', '', 'DEBUG测试', '', '', '0', '0', '0', '2017-04-15 19:49:06', '0', 'CM', '2', '3', 'A', '2017-04-15 19:49:06');
+INSERT INTO `information` VALUES ('33', '出现BUG了，好烦啊', '出现BUG了，好烦啊', '', '', '0', '1', '0', '2017-04-15 20:15:09', '0', 'CI', '2', '3', 'A', '2017-04-15 20:15:09');
+INSERT INTO `information` VALUES ('34', '智能车协会公告', '不能闷骚', '', '', '68', '5', '2', '2017-04-19 00:14:35', '1', 'OI', '2', '8', 'A', '2017-04-19 00:15:05');
+INSERT INTO `information` VALUES ('41', 'Come On Baby Go', 'Let me hear you say', '', '', '10', '0', '0', '2017-04-23 17:02:41', '0', 'OI', '2', '8', 'A', '2017-04-23 17:02:41');
+INSERT INTO `information` VALUES ('42', '', '留言测试', '', '', '0', '0', '0', '2017-04-23 23:18:07', '0', 'OM', '2', '8', 'A', '2017-04-23 23:18:26');
+INSERT INTO `information` VALUES ('43', '', 'ceshi2', '', '', '0', '0', '0', '2017-04-25 14:11:00', '0', 'OM', '2', '8', 'A', '2017-04-25 14:11:00');
+INSERT INTO `information` VALUES ('44', '', '第一个留言 ----black', '', '', '0', '0', '0', '2017-04-25 16:52:06', '0', 'CM', '2', '2', 'A', '2017-04-25 16:52:06');
+INSERT INTO `information` VALUES ('45', '', '自动糊班级是一个神奇的存在', '', '', '0', '0', '0', '2017-04-25 16:54:14', '0', 'CM', '4', '4', 'A', '2017-04-25 16:54:14');
+INSERT INTO `information` VALUES ('46', '周一下午班级聚会', '周一下午班级聚会', '', '', '0', '0', '0', '2017-04-25 17:03:13', '0', 'CI', '4', '2', 'A', '2017-04-25 17:03:13');
+INSERT INTO `information` VALUES ('47', '班级严禁打群架，不过', '班级严禁打群架，不过偶尔可以打一打', '', '', '0', '0', '0', '2017-04-25 17:15:26', '0', 'CI', '4', '2', 'A', '2017-04-25 17:15:26');
+INSERT INTO `information` VALUES ('48', '我是逗逼', '呵呵呵', '', '', '0', '0', '0', '2017-04-25 17:25:12', '0', 'CI', '5', '3', 'A', '2017-04-25 17:25:12');
+INSERT INTO `information` VALUES ('49', '', '董亮亮回班级来看看了', '', '', '0', '0', '0', '2017-04-28 13:25:43', '0', 'CM', '4', '3', 'A', '2017-04-28 13:25:43');
+INSERT INTO `information` VALUES ('50', '贺一飞前来报到', '我是一个大太阳，浑身充满正能量', '', '', '0', '0', '0', '2017-04-28 14:16:19', '0', 'CI', '262', '2', 'A', '2017-04-28 14:16:19');
+INSERT INTO `information` VALUES ('51', '班级聚会', '不V鼓鼓囊囊 vc大发慈悲不vs的是谁发的号码你不单纯I度噢迪接啊爱看哦我剖大家来看但判断是否刚才V会比较', '', '', '0', '0', '0', '2017-04-28 14:18:55', '0', 'OI', '262', '8', 'A', '2017-04-28 14:18:55');
+INSERT INTO `information` VALUES ('52', '', '官方公会很高  对方vc是的浮现出V没机会故事大全二手房的规划和郭德纲方便改变中断过ds fg', '', '', '0', '0', '0', '2017-04-28 14:19:14', '0', 'OM', '262', '8', 'A', '2017-04-28 14:19:14');
 
 -- ----------------------------
 -- Table structure for log
@@ -509,16 +566,24 @@ CREATE TABLE `origin` (
   KEY `FK_ORIGIN_MGRID` (`mgr_id`),
   CONSTRAINT `FK_ORIGIN_CREATORID` FOREIGN KEY (`creator_id`) REFERENCES `user` (`user_id`),
   CONSTRAINT `FK_ORIGIN_MGRID` FOREIGN KEY (`mgr_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of origin
 -- ----------------------------
 INSERT INTO `origin` VALUES ('1', '徐州工程学院', '', 'INS', '', '', '0', '2016-02-16 23:21:47', '1', '1', 'A', '2016-02-16 23:22:02', null, null);
-INSERT INTO `origin` VALUES ('2', '13软嵌1班', '201305051', 'C', null, '2013', '47', '2016-02-17 15:38:12', '3', '2', 'A', '2016-02-17 15:38:25', null, null);
-INSERT INTO `origin` VALUES ('3', '14计嵌1', '201405051', 'C', 'hahah', '2014', '56', '2016-02-18 19:45:09', '4', '2', 'A', '2016-02-18 19:45:21', null, null);
-INSERT INTO `origin` VALUES ('4', '15自动化', '201505011', 'C', null, '2015', '34', '2016-02-18 19:46:04', '3', '2', 'A', '2016-02-18 19:46:12', null, null);
+INSERT INTO `origin` VALUES ('2', '13软嵌1班', '201305051', 'C', null, '2013', '48', '2016-02-17 15:38:12', '3', '2', 'A', '2016-02-17 15:38:25', null, null);
+INSERT INTO `origin` VALUES ('3', '14计嵌1', '201405051', 'C', '14计嵌1班欢迎你的加入', '2014', '58', '2016-02-18 19:45:09', '4', '2', 'A', '2016-02-18 19:45:21', null, null);
+INSERT INTO `origin` VALUES ('4', '15自动化', '201505011', 'C', null, '2015', '35', '2016-02-18 19:46:04', '3', '2', 'A', '2016-02-18 19:46:12', null, null);
 INSERT INTO `origin` VALUES ('5', '信电工程学院', null, 'INS', null, null, '0', '2017-04-07 15:54:11', '1', '1', 'A', '2017-04-07 15:54:24', null, null);
+INSERT INTO `origin` VALUES ('6', '校友总会', null, 'org', '信电学院校友总会', null, '1', '2017-04-16 21:54:52', '1', '1', 'A', '2017-04-16 21:55:05', null, null);
+INSERT INTO `origin` VALUES ('7', '信电工程学院分会', null, 'orgi', '信电工程学院分会', null, '2', '2017-04-16 21:56:03', '1', '1', 'A', '2017-04-16 21:56:16', null, null);
+INSERT INTO `origin` VALUES ('8', '智能车与机器人协会', null, 'orgm', '科技引领时代', null, '3', '2017-04-16 21:57:35', '1', '1', 'A', '2017-04-28 14:19:15', null, null);
+INSERT INTO `origin` VALUES ('9', '跆拳道协会', null, 'orgm', '不得不承认，有时候肌肉比头脑更管用，所以我们要强身健体', null, '1', '2017-04-16 21:58:48', '1', '1', 'A', '2017-04-16 21:58:55', null, null);
+INSERT INTO `origin` VALUES ('10', '三早晨读社', null, 'orgm', '早睡，早起，早读书', null, '1', '2017-04-16 21:59:40', '1', '1', 'A', '2017-04-16 21:59:45', null, null);
+INSERT INTO `origin` VALUES ('11', '轮滑社', null, 'orgm', '在这光滑的地面上摩擦', null, '1', '2017-04-16 22:00:26', '1', '1', 'A', '2017-04-16 22:00:32', null, null);
+INSERT INTO `origin` VALUES ('12', '手机开发协会', null, 'orgm', '移动端时代已经到来，我们就是引领时代的先行者', null, '1', '2017-04-16 22:01:16', '1', '1', 'A', '2017-04-16 22:01:22', null, null);
+INSERT INTO `origin` VALUES ('13', '学习部', null, 'orgu', '督促松弛的同学学习，是我们的目的', null, '1', '2017-04-16 22:02:17', '1', '1', 'A', '2017-04-16 22:02:22', null, null);
 
 -- ----------------------------
 -- Table structure for recruit
@@ -551,7 +616,7 @@ CREATE TABLE `recruit` (
   KEY `FK_RECRUIT_USERID` (`user_id`),
   CONSTRAINT `FK_RECRUIT_UNITID` FOREIGN KEY (`unit_id`) REFERENCES `recruit_unit` (`unit_id`) ON DELETE CASCADE,
   CONSTRAINT `FK_RECRUIT_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of recruit
@@ -560,7 +625,7 @@ INSERT INTO `recruit` VALUES ('27', '西树泡芙开业大吉，招服务员10�
 INSERT INTO `recruit` VALUES ('38', '羊肉馆缺的就是 经理', 'sl4', '1', 'bk', '0', null, '张全蛋', '3838438', '0', '大堂经理', '工作时间:，大堂经理最潇洒，大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒', 'be1,be2,be3,be4', '徐州市沛县龙固时尚街区', '38', '2', '2016-02-06 16:38:34', 'A', '2016-02-06 16:38:34', null, null);
 INSERT INTO `recruit` VALUES ('53', '朱氏土灶台', 'sl2', '2', 'profall', '0', null, '朱正玉', '19873661127', '0', '洗碗工', '工作时间:呵呵额呵呵我试试看，呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看', 'be1,be4,be8', '苏州科技园小吃一条街', '38', '2', '2016-02-06 20:23:12', 'A', '2016-02-10 23:03:08', null, null);
 INSERT INTO `recruit` VALUES ('54', '长城4S店', 'sl4', '3', 'profall', '0', null, '刘金宝', '13322529090', '1', '4S专业维修人员', '工作时间:早上9点-晚上5点工作时间:早上9点-晚上5点工作时间:早上9点-晚上5点工作时间:早上9点-晚上5点工作时间:早上9点-晚上5点工作时间:早上9点-晚上5点工作时间:早上9点-晚上5点工作时间:早上9点-晚上5点', 'be1,be2,be3,be4', '徐州市竹林寺对面，长城4S店', '38', '2', '2016-02-06 21:15:01', 'A', '2016-02-11 22:45:47', null, null);
-INSERT INTO `recruit` VALUES ('56', '重工之路，怎能少了机械师的指点', 'sl5', '3', 'bk', '0', null, '刘经理', '13452328979', '1', '中型机械师', '岗位职责:研究以及实践新时代下重型器械的发展方向，为我公司做强有力的发展导师；\r\n\r\n任职资格:本科及以上学历，有三年以上工作经验；\r\n\r\n工作时间:三班倒', 'be1,be2,be3,be4,be5,be6,be7,be8,be10', '徐州工业集团总部厂房', '39', '3', '2016-02-06 22:52:15', 'A', '2016-02-11 21:46:56', null, null);
+INSERT INTO `recruit` VALUES ('56', '重工之路，怎能少了机械师的指点', 'sl5', '3', 'bk', '1', null, '刘经理', '13452328979', '1', '中型机械师', '岗位职责:研究以及实践新时代下重型器械的发展方向，为我公司做强有力的发展导师；\r\n\r\n任职资格:本科及以上学历，有三年以上工作经验；\r\n\r\n工作时间:三班倒', 'be1,be2,be3,be4,be5,be6,be7,be8,be10', '徐州工业集团总部厂房', '39', '3', '2016-02-06 22:52:15', 'A', '2016-02-11 21:46:56', null, null);
 INSERT INTO `recruit` VALUES ('57', '招聘A级摄影师一名', 'sl4', '1', 'profall', '0', null, '吴经理', '15567984543', '0', '摄影室', '岗位职责:国庆将至，本店迎来大批顾客，拍摄写真、全家福等照片，业务较多，特聘摄影师负责部分 工作，包括摄影、场景布置、业务接待；\r\n\r\n任职资格:有两年以上工作经验\r\n\r\n工作时间:早九晚五', 'be1,be6,be7,be10', '徐州古彭大厦A座8楼', '44', '4', '2016-02-09 14:20:52', 'A', '2016-02-10 23:03:07', null, null);
 INSERT INTO `recruit` VALUES ('59', '证券交易所急招网络安全人员', 'sl5', '2', 'bk', '0', null, '王经理', '15569098900', '0', '网络交易安全', '岗位职责: 维护交易所网站信息安全、交易安全，为证券交易避免网络攻击，保证公司信息安全；\r\n任职资格: 有两年以上工作经验；\r\n工作时间: 早九晚五‘；', 'be3,be4,be6,be7,be10', '上海虹桥机场南广场办公楼1002', '34', '1', '2016-02-10 22:13:06', 'X', '2016-02-10 23:03:08', null, null);
 INSERT INTO `recruit` VALUES ('60', '特聘汽车美容师', 'sl4', '5', 'profall', '0', null, '王金山', '89922512/18796553231', '0', '汽车美容师', '岗位职责: 负责返厂汽车的美容保养工作\r\n任职资格: 有一年以上工作经验；\r\n工作时间: 早上8：00-晚上9：00', 'be1,be2,be3,be4,be6,be7', '金山桥一汽大众工作室', '43', '1', '2016-02-10 22:22:57', 'A', '2016-02-10 22:22:57', null, null);
@@ -572,6 +637,7 @@ INSERT INTO `recruit` VALUES ('68', '朱氏土灶台', 'sl2', '2', 'profall', '0
 INSERT INTO `recruit` VALUES ('69', '聘请秘书一名', 'sl4', '1', 'yjs', '0', null, '刘局长', '89970796', '0', '专职秘书', '岗位职责: 专职秘书专职秘书专职秘书专职秘书专职秘书专职秘书\r\n任职资格: 专职秘书专职秘书专职秘书\r\n工作时间:', 'be3,be4,be5,be6,be7,be8,be10,be9', '徐州市工商管理局', '34', '1', '2016-02-11 22:03:30', 'A', '2016-02-11 22:03:30', null, null);
 INSERT INTO `recruit` VALUES ('70', '照烧鸡排饭厨师', 'sl4', '1', 'bk', '0', null, '董经理', '18796221162', '0', '主厨', '岗位职责: 烧饭\r\n任职资格: 要求两年以上工作经验\r\n工作时间: 早九晚五\r\n岗位职责: 烧饭\r\n任职资格: 要求两年以上工作经验\r\n工作时间: 早九晚五', 'be1,be2,be3', '新世纪大道', '45', '2', '2017-03-28 23:04:02', 'A', '2017-03-28 23:04:02', null, null);
 INSERT INTO `recruit` VALUES ('71', '哈哈以哈哈', 'sl3', '45', 'bk', '0', null, '宿舍的', '1234554657', '0', '搞笑专家', '岗位职责: 但是V的股份你好久没看，里的反对过分和你见面后\r\n任职资格: 是V的股份你好久没看，里的反对过分和你见面后\r\n工作时间: 是V的股份你好久没看，里的反对过分和你见面后', 'be1,be2', '谁的风格回家帮你是的过得更好', '45', '2', '2017-03-30 22:11:46', 'D', '2017-03-30 22:11:46', null, null);
+INSERT INTO `recruit` VALUES ('72', '代练', 'sl4', '2', 'bk', '0', null, '董亮亮', '18796221162', '0', '代练王者荣耀', '岗位职责: 代练游戏，就是干\r\n任职资格: 不坑队友，有三年以上工作经验\r\n工作时间: 全天候，有需求我们就有服务', 'be1,be2', '南京软件大道', '45', '2', '2017-04-12 22:40:37', 'A', '2017-04-12 22:40:37', null, null);
 
 -- ----------------------------
 -- Table structure for recruit_unit
@@ -646,6 +712,7 @@ CREATE TABLE `resume_post` (
 -- Records of resume_post
 -- ----------------------------
 INSERT INTO `resume_post` VALUES ('62', '2', '2017-04-01 15:55:53', 'A', '2017-04-01 15:55:53');
+INSERT INTO `resume_post` VALUES ('56', '2', '2017-04-25 11:14:18', 'A', '2017-04-25 11:14:18');
 
 -- ----------------------------
 -- Table structure for right
@@ -661,7 +728,7 @@ CREATE TABLE `right` (
   `state` char(2) NOT NULL COMMENT '状态',
   `state_time` datetime DEFAULT NULL COMMENT '状态日期',
   PRIMARY KEY (`right_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=237 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of right
@@ -749,30 +816,186 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `user_id` int(8) NOT NULL AUTO_INCREMENT COMMENT '自增主键',
   `account` varchar(16) NOT NULL COMMENT '用户帐号',
-  `password` varchar(32) NOT NULL COMMENT '用户密码',
+  `password` varchar(32) NOT NULL DEFAULT '25D55AD283AA400AF464C76D713C07AD' COMMENT '用户密码',
   `email` varchar(50) DEFAULT NULL COMMENT '用户邮箱',
-  `true_name` varchar(10) NOT NULL,
-  `introduce` varchar(255) NOT NULL DEFAULT '（这个人很懒，什么也没留下）' COMMENT '个人简介',
+  `true_name` varchar(10) NOT NULL COMMENT '校友姓名',
+  `introduce` varchar(255) NOT NULL DEFAULT '--这个人很懒，什么也没留下' COMMENT '个人简介',
   `image_id` int(8) NOT NULL DEFAULT '1' COMMENT '头像图片标识',
-  `is_admin` char(1) NOT NULL COMMENT '管理员标识',
-  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `is_admin` char(1) NOT NULL DEFAULT '0' COMMENT '管理员标识',
   `state` char(2) NOT NULL DEFAULT 'A' COMMENT '状态',
   `state_time` datetime DEFAULT NULL COMMENT '状态日期',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`),
   KEY `FK_USER_IMAGEID` (`image_id`),
   CONSTRAINT `FK_USER_IMAGEID` FOREIGN KEY (`image_id`) REFERENCES `image` (`image_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=277 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'sa', '202CB962AC59075B964B07152D234B70', null, '管理员', 'A', '1', '1', '2016-01-02 15:01:42', 'A', '2017-04-09 15:40:29');
-INSERT INTO `user` VALUES ('2', 'black', '202CB962AC59075B964B07152D234B70', null, '布莱克', 'HAHA', '1', '0', '2016-01-15 22:53:27', 'A', '2017-04-09 15:40:31');
-INSERT INTO `user` VALUES ('3', 'jenny', '202CB962AC59075B964B07152D234B70', null, '珍妮', 'A', '4', '0', '2016-01-24 13:17:33', 'A', '2017-04-09 15:40:34');
-INSERT INTO `user` VALUES ('4', '20130505238', '202CB962AC59075B964B07152D234B70', null, '董亮亮', 'A', '2', '0', '2016-02-05 15:09:15', 'A', '2017-04-09 15:40:38');
-INSERT INTO `user` VALUES ('5', '20130505240', '202CB962AC59075B964B07152D234B70', null, '梅朔', 'A', '1', '0', '2016-02-05 15:38:48', 'A', '2017-04-09 15:40:40');
-INSERT INTO `user` VALUES ('6', '20130505241', '202CB962AC59075B964B07152D234B70', null, '沈亚东', 'A', '3', '0', '2016-02-05 15:38:48', 'A', '2016-02-05 17:24:50');
-INSERT INTO `user` VALUES ('7', 'blackist', '202CB962AC59075B964B07152D234B70', null, 'Black先生', 'A', '1', '0', '2017-04-02 22:35:28', 'A', '2017-04-02 22:35:38');
+INSERT INTO `user` VALUES ('1', 'sa', '202CB962AC59075B964B07152D234B70', null, '管理员', '--这人很懒，什么也没留下', '1', '1', 'A', '2017-04-09 15:40:29', '2016-01-02 15:01:42');
+INSERT INTO `user` VALUES ('2', 'black', '202CB962AC59075B964B07152D234B70', null, '布莱克', '这人很懒，什么也没留下', '1', '0', 'A', '2017-04-09 15:40:31', '2016-01-15 22:53:27');
+INSERT INTO `user` VALUES ('3', 'jenny', '202CB962AC59075B964B07152D234B70', null, '珍妮', '这人很懒，什么也没留下', '4', '0', 'A', '2017-04-09 15:40:34', '2016-01-24 13:17:33');
+INSERT INTO `user` VALUES ('4', '20130505238', '25D55AD283AA400AF464C76D713C07AD', null, '董亮亮', '这人很懒，什么也没留下', '2', '0', 'A', '2017-04-09 15:40:38', '2016-02-05 15:09:15');
+INSERT INTO `user` VALUES ('5', '20130505240', '25D55AD283AA400AF464C76D713C07AD', null, '梅朔', '这人很懒，什么也没留下', '1', '0', 'A', '2017-04-09 15:40:40', '2016-02-05 15:38:48');
+INSERT INTO `user` VALUES ('6', '20130505241', '25D55AD283AA400AF464C76D713C07AD', null, '沈亚东', '这人很懒，什么也没留下', '3', '0', 'A', '2016-02-05 17:24:50', '2016-02-05 15:38:48');
+INSERT INTO `user` VALUES ('7', 'blackist', '202CB962AC59075B964B07152D234B70', null, 'Black先生', '这人很懒，什么也没留下', '1', '0', 'A', '2017-04-02 22:35:38', '2017-04-02 22:35:28');
+INSERT INTO `user` VALUES ('8', '20130503202', '25D55AD283AA400AF464C76D713C07AD', null, '颜健', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('9', '20130503203', '25D55AD283AA400AF464C76D713C07AD', null, '张娜', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('10', '20130503204', '25D55AD283AA400AF464C76D713C07AD', null, '杨燕', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('11', '20130503205', '25D55AD283AA400AF464C76D713C07AD', null, '张艳', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('12', '20130503206', '25D55AD283AA400AF464C76D713C07AD', null, '何泽慧', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('13', '20130503207', '25D55AD283AA400AF464C76D713C07AD', null, '祁凯', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('14', '20130503208', '25D55AD283AA400AF464C76D713C07AD', null, '于成东', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('15', '20130503209', '25D55AD283AA400AF464C76D713C07AD', null, '潘峰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('16', '20130503210', '25D55AD283AA400AF464C76D713C07AD', null, '韦杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('17', '20130503212', '25D55AD283AA400AF464C76D713C07AD', null, '范亚雷', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('18', '20130503213', '25D55AD283AA400AF464C76D713C07AD', null, '王杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('19', '20130503214', '25D55AD283AA400AF464C76D713C07AD', null, '杜昊鸿', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('20', '20130503215', '25D55AD283AA400AF464C76D713C07AD', null, '林山河', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('21', '20130503216', '25D55AD283AA400AF464C76D713C07AD', null, '李波', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('22', '20130503217', '25D55AD283AA400AF464C76D713C07AD', null, '颜嘉欣', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('23', '20130503218', '25D55AD283AA400AF464C76D713C07AD', null, '刘跃波', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('24', '20130503220', '25D55AD283AA400AF464C76D713C07AD', null, '肖飞', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('25', '20130503221', '25D55AD283AA400AF464C76D713C07AD', null, '刘强', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('26', '20130503223', '25D55AD283AA400AF464C76D713C07AD', null, '赵东栋', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('27', '20130503225', '25D55AD283AA400AF464C76D713C07AD', null, '郑文传', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('28', '20130503226', '25D55AD283AA400AF464C76D713C07AD', null, '石进远', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('29', '20130503227', '25D55AD283AA400AF464C76D713C07AD', null, '戴永政', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('30', '20130503228', '25D55AD283AA400AF464C76D713C07AD', null, '陈冲', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('31', '20130503229', '25D55AD283AA400AF464C76D713C07AD', null, '左文滔', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('32', '20130503230', '25D55AD283AA400AF464C76D713C07AD', null, '司兴健', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('33', '20130503231', '25D55AD283AA400AF464C76D713C07AD', null, '张泽燚', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('34', '20130503232', '25D55AD283AA400AF464C76D713C07AD', null, '吉波', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
+INSERT INTO `user` VALUES ('35', '20130503233', '25D55AD283AA400AF464C76D713C07AD', null, '王明轩', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('36', '20130503234', '25D55AD283AA400AF464C76D713C07AD', null, '张彪', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('37', '20130503235', '25D55AD283AA400AF464C76D713C07AD', null, '许恒', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('38', '20130503236', '25D55AD283AA400AF464C76D713C07AD', null, '李琪', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('39', '20130503237', '25D55AD283AA400AF464C76D713C07AD', null, '严志麟', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('40', '20130503238', '25D55AD283AA400AF464C76D713C07AD', null, '徐澔', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('41', '20130503239', '25D55AD283AA400AF464C76D713C07AD', null, '沙淘金', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('42', '20130503240', '25D55AD283AA400AF464C76D713C07AD', null, '滕珂', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('43', '20130503241', '25D55AD283AA400AF464C76D713C07AD', null, '计宗佑', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('44', '20130503242', '25D55AD283AA400AF464C76D713C07AD', null, '谢海庆', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('45', '20130503243', '25D55AD283AA400AF464C76D713C07AD', null, '凌立章', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('46', '20130503244', '25D55AD283AA400AF464C76D713C07AD', null, '张加涛', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('47', '20130503245', '25D55AD283AA400AF464C76D713C07AD', null, '张杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('48', '20130503246', '25D55AD283AA400AF464C76D713C07AD', null, '陆亚洲', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('49', '20130503247', '25D55AD283AA400AF464C76D713C07AD', null, '李凌飞', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('50', '20130503248', '25D55AD283AA400AF464C76D713C07AD', null, '周亮亮', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('51', '20130503249', '25D55AD283AA400AF464C76D713C07AD', null, '吴庆业', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('52', '20130503250', '25D55AD283AA400AF464C76D713C07AD', null, '刘明明', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('53', '20130503251', '25D55AD283AA400AF464C76D713C07AD', null, '李帅', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('54', '20130503252', '25D55AD283AA400AF464C76D713C07AD', null, '周东东', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('55', '20130503253', '25D55AD283AA400AF464C76D713C07AD', null, '魏庭胜', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('56', '20130503254', '25D55AD283AA400AF464C76D713C07AD', null, '蔡志鹏', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('57', '20130503255', '25D55AD283AA400AF464C76D713C07AD', null, '吴小康', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('58', '20130503256', '25D55AD283AA400AF464C76D713C07AD', null, '孟永乐', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('59', '20130503257', '25D55AD283AA400AF464C76D713C07AD', null, '田小彤', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('60', '20130503258', '25D55AD283AA400AF464C76D713C07AD', null, '汪保旭', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('61', '20130503259', '25D55AD283AA400AF464C76D713C07AD', null, '臧家宾', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('62', '20130503260', '25D55AD283AA400AF464C76D713C07AD', null, '洪伟韬', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
+INSERT INTO `user` VALUES ('118', '20130502201', '25D55AD283AA400AF464C76D713C07AD', null, '宋雪莹', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('119', '20130502202', '25D55AD283AA400AF464C76D713C07AD', null, '刘敏', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('120', '20130502203', '25D55AD283AA400AF464C76D713C07AD', null, '徐香', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('121', '20130502204', '25D55AD283AA400AF464C76D713C07AD', null, '冯敏', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('122', '20130502205', '25D55AD283AA400AF464C76D713C07AD', null, '陈琦', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('123', '20130502206', '25D55AD283AA400AF464C76D713C07AD', null, '倪宇惠', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('124', '20130502207', '25D55AD283AA400AF464C76D713C07AD', null, '沈咪', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('125', '20130502208', '25D55AD283AA400AF464C76D713C07AD', null, '夏杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('126', '20130502209', '25D55AD283AA400AF464C76D713C07AD', null, '张艺馨', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('127', '20130502210', '25D55AD283AA400AF464C76D713C07AD', null, '姜娟', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('128', '20130502211', '25D55AD283AA400AF464C76D713C07AD', null, '崔政霞', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('129', '20130502212', '25D55AD283AA400AF464C76D713C07AD', null, '周梦莹', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('130', '20130502213', '25D55AD283AA400AF464C76D713C07AD', null, '丁甜甜', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('131', '20130502214', '25D55AD283AA400AF464C76D713C07AD', null, '黄虚虚', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('132', '20130502215', '25D55AD283AA400AF464C76D713C07AD', null, '杨孟婧', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('133', '20130502216', '25D55AD283AA400AF464C76D713C07AD', null, '冯曦瑾', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('134', '20130502217', '25D55AD283AA400AF464C76D713C07AD', null, '时贝贝', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('135', '20130502218', '25D55AD283AA400AF464C76D713C07AD', null, '胡璐', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('136', '20130502219', '25D55AD283AA400AF464C76D713C07AD', null, '孟颖', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('137', '20130502220', '25D55AD283AA400AF464C76D713C07AD', null, '钟清华', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('138', '20130502221', '25D55AD283AA400AF464C76D713C07AD', null, '周永鹏', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('139', '20130502222', '25D55AD283AA400AF464C76D713C07AD', null, '彭涛', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('140', '20130502223', '25D55AD283AA400AF464C76D713C07AD', null, '孙俊', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('141', '20130502224', '25D55AD283AA400AF464C76D713C07AD', null, '朱家熠', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('142', '20130502225', '25D55AD283AA400AF464C76D713C07AD', null, '张春昊', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('143', '20130502226', '25D55AD283AA400AF464C76D713C07AD', null, '陈键', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('144', '20130502227', '25D55AD283AA400AF464C76D713C07AD', null, '谈子杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('145', '20130502228', '25D55AD283AA400AF464C76D713C07AD', null, '陆元凯', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('146', '20130502229', '25D55AD283AA400AF464C76D713C07AD', null, '曹彦文', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('147', '20130502231', '25D55AD283AA400AF464C76D713C07AD', null, '钱东培', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('148', '20130502232', '25D55AD283AA400AF464C76D713C07AD', null, '章豪杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('149', '20130502233', '25D55AD283AA400AF464C76D713C07AD', null, '王安户', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('150', '20130502234', '25D55AD283AA400AF464C76D713C07AD', null, '于孝文', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('151', '20130502235', '25D55AD283AA400AF464C76D713C07AD', null, '孔冰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('152', '20130502236', '25D55AD283AA400AF464C76D713C07AD', null, '沈成', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('153', '20130502237', '25D55AD283AA400AF464C76D713C07AD', null, '吴智超', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('154', '20130502238', '25D55AD283AA400AF464C76D713C07AD', null, '王杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('155', '20130502239', '25D55AD283AA400AF464C76D713C07AD', null, '唐旺', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('156', '20130502240', '25D55AD283AA400AF464C76D713C07AD', null, '王项韬', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('157', '20130502241', '25D55AD283AA400AF464C76D713C07AD', null, '毛稳', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('158', '20130502242', '25D55AD283AA400AF464C76D713C07AD', null, '胡大伟', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('159', '20130502243', '25D55AD283AA400AF464C76D713C07AD', null, '张青', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('160', '20130502244', '25D55AD283AA400AF464C76D713C07AD', null, '周仁朋', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('161', '20130502246', '25D55AD283AA400AF464C76D713C07AD', null, '赵玉吉', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('162', '20130502247', '25D55AD283AA400AF464C76D713C07AD', null, '薛凤凯', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('163', '20130502248', '25D55AD283AA400AF464C76D713C07AD', null, '李彬', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('164', '20130502249', '25D55AD283AA400AF464C76D713C07AD', null, '王见远', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('165', '20130502250', '25D55AD283AA400AF464C76D713C07AD', null, '张萌萌', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('166', '20130502251', '25D55AD283AA400AF464C76D713C07AD', null, '周宇超', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('167', '20130502252', '25D55AD283AA400AF464C76D713C07AD', null, '郭啸', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('168', '20130502253', '25D55AD283AA400AF464C76D713C07AD', null, '陈凯顺', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('169', '20130502254', '25D55AD283AA400AF464C76D713C07AD', null, '孟珂', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('170', '20130502255', '25D55AD283AA400AF464C76D713C07AD', null, '廖凯', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('171', '20130502256', '25D55AD283AA400AF464C76D713C07AD', null, '樊佳卫', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('172', '20130502257', '25D55AD283AA400AF464C76D713C07AD', null, '姜鹏程', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('173', '20130502258', '25D55AD283AA400AF464C76D713C07AD', null, '陈中康', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('174', '20130502259', '25D55AD283AA400AF464C76D713C07AD', null, '刘磊', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('175', '20130502260', '25D55AD283AA400AF464C76D713C07AD', null, '李壮', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
+INSERT INTO `user` VALUES ('231', '20130505201', '25D55AD283AA400AF464C76D713C07AD', null, '陈傲娟', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('232', '20130505202', '25D55AD283AA400AF464C76D713C07AD', null, '袁路路', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('233', '20130505203', '25D55AD283AA400AF464C76D713C07AD', null, '闫雨', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('234', '20130505204', '25D55AD283AA400AF464C76D713C07AD', null, '赵莉', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('235', '20130505205', '25D55AD283AA400AF464C76D713C07AD', null, '谢佳慧', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('236', '20130505206', '25D55AD283AA400AF464C76D713C07AD', null, '董倩', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('237', '20130505207', '25D55AD283AA400AF464C76D713C07AD', null, '赵缘', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('238', '20130505208', '25D55AD283AA400AF464C76D713C07AD', null, '吴楠', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('239', '20130505209', '25D55AD283AA400AF464C76D713C07AD', null, '张叶', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('240', '20130505210', '25D55AD283AA400AF464C76D713C07AD', null, '薛玉淋', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('241', '20130505211', '25D55AD283AA400AF464C76D713C07AD', null, '周颖', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('242', '20130505212', '25D55AD283AA400AF464C76D713C07AD', null, '侯文静', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('243', '20130505213', '25D55AD283AA400AF464C76D713C07AD', null, '郝天威', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('244', '20130505214', '25D55AD283AA400AF464C76D713C07AD', null, '戴运来', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('245', '20130505215', '25D55AD283AA400AF464C76D713C07AD', null, '赵一沣', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('246', '20130505216', '25D55AD283AA400AF464C76D713C07AD', null, '刘杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('247', '20130505217', '25D55AD283AA400AF464C76D713C07AD', null, '是旸明', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('248', '20130505218', '25D55AD283AA400AF464C76D713C07AD', null, '施圣洁', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('249', '20130505219', '25D55AD283AA400AF464C76D713C07AD', null, '王凯', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('250', '20130505220', '25D55AD283AA400AF464C76D713C07AD', null, '姜可', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('251', '20130505221', '25D55AD283AA400AF464C76D713C07AD', null, '杨健', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('252', '20130505222', '25D55AD283AA400AF464C76D713C07AD', null, '夏辉', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('253', '20130505223', '25D55AD283AA400AF464C76D713C07AD', null, '徐洋洋', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('254', '20130505224', '25D55AD283AA400AF464C76D713C07AD', null, '王维', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('255', '20130505225', '25D55AD283AA400AF464C76D713C07AD', null, '赵江麟', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('256', '20130505226', '25D55AD283AA400AF464C76D713C07AD', null, '吴健', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('257', '20130505227', '25D55AD283AA400AF464C76D713C07AD', null, '吴焰峰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('258', '20130505228', '25D55AD283AA400AF464C76D713C07AD', null, '姜凌峰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('259', '20130505229', '25D55AD283AA400AF464C76D713C07AD', null, '任越', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('260', '20130505230', '25D55AD283AA400AF464C76D713C07AD', null, '顾余祥', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('261', '20130505231', '25D55AD283AA400AF464C76D713C07AD', null, '张兴刚', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('262', '20130505233', '25D55AD283AA400AF464C76D713C07AD', null, '贺一飞', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('263', '20130505234', '25D55AD283AA400AF464C76D713C07AD', null, '徐盼', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('264', '20130505235', '25D55AD283AA400AF464C76D713C07AD', null, '叶浪', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('265', '20130505236', '25D55AD283AA400AF464C76D713C07AD', null, '尤煜明', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('266', '20130505237', '25D55AD283AA400AF464C76D713C07AD', null, '邵熙', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('268', '20130505239', '25D55AD283AA400AF464C76D713C07AD', null, '秦冲', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('271', '20130505242', '25D55AD283AA400AF464C76D713C07AD', null, '姜俊杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('272', '20130505243', '25D55AD283AA400AF464C76D713C07AD', null, '顾朋朋', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('273', '20130505244', '25D55AD283AA400AF464C76D713C07AD', null, '陈天瑶', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('274', '20130505246', '25D55AD283AA400AF464C76D713C07AD', null, '沈东扬', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('275', '20130505247', '25D55AD283AA400AF464C76D713C07AD', null, '陈超', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
+INSERT INTO `user` VALUES ('276', '20130505249', '25D55AD283AA400AF464C76D713C07AD', null, '时波', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
 
 -- ----------------------------
 -- Table structure for user_info
@@ -855,6 +1078,21 @@ INSERT INTO `user_origin` VALUES ('2', '1', '2016-03-01 22:22:20', 'A', '2016-03
 INSERT INTO `user_origin` VALUES ('2', '3', '2017-02-27 23:17:52', 'A', '2017-02-27 23:17:52');
 INSERT INTO `user_origin` VALUES ('2', '2', '2017-02-28 00:30:45', 'A', '2017-02-28 00:30:45');
 INSERT INTO `user_origin` VALUES ('2', '4', '2017-03-28 15:38:44', 'A', '2017-03-28 15:38:44');
+INSERT INTO `user_origin` VALUES ('2', '8', '2017-04-17 15:47:57', 'A', '2017-04-17 15:48:02');
+INSERT INTO `user_origin` VALUES ('2', '9', '2017-04-17 15:48:24', 'A', '2017-04-17 15:48:31');
+INSERT INTO `user_origin` VALUES ('2', '10', '2017-04-17 15:48:49', 'A', '2017-04-17 15:48:51');
+INSERT INTO `user_origin` VALUES ('2', '11', '2017-04-17 15:49:06', 'A', '2017-04-17 15:49:10');
+INSERT INTO `user_origin` VALUES ('3', '8', '2017-04-17 15:49:38', 'A', '2017-04-17 15:49:46');
+INSERT INTO `user_origin` VALUES ('4', '8', '2017-04-17 15:50:33', 'A', '2017-04-17 15:50:38');
+INSERT INTO `user_origin` VALUES ('5', '6', '2017-04-17 15:51:33', 'A', '2017-04-17 15:51:39');
+INSERT INTO `user_origin` VALUES ('6', '7', '2017-04-17 15:51:49', 'A', '2017-04-17 15:51:55');
+INSERT INTO `user_origin` VALUES ('7', '12', '2017-04-17 15:52:10', 'A', '2017-04-17 15:52:15');
+INSERT INTO `user_origin` VALUES ('3', '13', '2017-04-17 15:52:26', 'A', '2017-04-17 15:52:31');
+INSERT INTO `user_origin` VALUES ('2', '7', '2017-04-18 21:17:50', 'A', '2017-04-18 21:17:50');
+INSERT INTO `user_origin` VALUES ('4', '4', '2017-04-25 16:53:30', 'A', '2017-04-25 16:53:30');
+INSERT INTO `user_origin` VALUES ('5', '3', '2017-04-25 17:24:55', 'A', '2017-04-25 17:24:55');
+INSERT INTO `user_origin` VALUES ('4', '3', '2017-04-28 13:25:56', 'A', '2017-04-28 13:25:56');
+INSERT INTO `user_origin` VALUES ('262', '2', '2017-04-28 14:15:31', 'A', '2017-04-28 14:15:31');
 
 -- ----------------------------
 -- Table structure for user_resume

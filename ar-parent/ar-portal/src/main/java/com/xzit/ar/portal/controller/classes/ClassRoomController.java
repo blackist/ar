@@ -146,6 +146,7 @@ public class ClassRoomController extends BaseController {
 		// 加载信息列表
 		Page<Map<String, Object>> page = new Page<>(getPageIndex(), 8);
 		model.addAttribute("page", classRoomService.classInfo(page, classId));
+		
 		return "class/classroom/classroom-info";
 	}
 
@@ -262,16 +263,12 @@ public class ClassRoomController extends BaseController {
 	 * @Description: TODO 发布班级动态
 	 */
 	@RequestMapping(value = "/publishClassInfo", method = RequestMethod.POST)
-	public String publishClassInfo(Model model, RedirectAttributes attr, @RequestParam("content") String content,
-			MultipartFile infoImage, @RequestParam("classId") Integer classId) throws ServiceException {
+	public String publishClassInfo(Model model, RedirectAttributes attr, @RequestParam("infoTitle") String infoTitle,
+								   @RequestParam("content") String content, MultipartFile infoImage, @RequestParam("classId") Integer classId) throws ServiceException {
 		Information information = new Information();
 		// 参数校验
-		if (CommonUtil.isNotEmpty(content)) {
-			if (content.length() > 15) {
-				information.setInfoTitle(content.substring(0, 10));
-			} else {
-				information.setInfoTitle(content);
-			}
+		if (CommonUtil.isNotEmpty(content) && CommonUtil.isNotEmpty(infoTitle)) {
+			information.setInfoTitle(infoTitle);
 			information.setContent(content);
 			information.setInfoType("CI");
 			information.setIsTop("0");

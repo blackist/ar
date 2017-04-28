@@ -49,8 +49,8 @@ public class LoginInterceptor implements HandlerInterceptor {
 		String uri = request.getRequestURI();
 		String queryString = request.getQueryString();
 		// 全限定名判断
-		if (uri.indexOf("/ar-") > -1) {
-			uri = uri.substring(uri.indexOf("/", uri.indexOf("/ar-") + 1), uri.indexOf(".action"));
+		if (uri.indexOf("/ar") > -1) {
+			uri = uri.substring(uri.indexOf("/", uri.indexOf("/ar") + 1), uri.indexOf(".action"));
 			System.out.println(uri);
 		}
 		// 判断公开资源
@@ -77,8 +77,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 		}
 
 		// session中没有登录信息, 跳转登录界面
-		request.getRequestDispatcher("/login.action?queryString=" + uri + ".action?" + queryString).forward(request,
-				response);
+		request.getRequestDispatcher("/login.action?queryString=" + uri + ".action?" + queryString).forward(request, response);
 
 		return false;
 	}

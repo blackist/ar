@@ -19,11 +19,5 @@ function setDescription() {
 		return;
 	}
 
-	if ($("#asfvbszd_ausivsbkjzcnsaohdknxzoxhjcnc_").val() != $(
-			"#dad_asfasdfsa_").val()) {
-		errMsg("description", "页面错误");
-		return;
-	}
-
 	$("#descForm").submit();
 }

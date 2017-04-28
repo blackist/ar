@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50173
 File Encoding         : 65001
 
-Date: 2017-04-10 00:04:22
+Date: 2017-04-28 14:19:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -156,7 +156,7 @@ CREATE TABLE `comment` (
   KEY `FK_COMMENT_INFOID` (`info_id`),
   CONSTRAINT `FK_COMMENT_INFOID` FOREIGN KEY (`info_id`) REFERENCES `information` (`info_id`),
   CONSTRAINT `FK_COMMENT_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for dictionary
@@ -184,7 +184,7 @@ CREATE TABLE `dictionary_data` (
   PRIMARY KEY (`id`),
   KEY `FK_DICTIONARYDATA_DICTVALUE` (`dict_value`),
   CONSTRAINT `FK_DICTIONARYDATA_DICTVALUE` FOREIGN KEY (`dict_value`) REFERENCES `dictionary` (`dict_value`)
-) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for grade
@@ -245,7 +245,7 @@ CREATE TABLE `information` (
   KEY `FK_INFORMATION_ORIGINID` (`origin_id`),
   CONSTRAINT `FK_INFORMATION_ORIGINID` FOREIGN KEY (`origin_id`) REFERENCES `origin` (`origin_id`) ON DELETE CASCADE,
   CONSTRAINT `FK_INFORMATION_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for log
@@ -304,7 +304,7 @@ CREATE TABLE `origin` (
   KEY `FK_ORIGIN_MGRID` (`mgr_id`),
   CONSTRAINT `FK_ORIGIN_CREATORID` FOREIGN KEY (`creator_id`) REFERENCES `user` (`user_id`),
   CONSTRAINT `FK_ORIGIN_MGRID` FOREIGN KEY (`mgr_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for recruit
@@ -337,7 +337,7 @@ CREATE TABLE `recruit` (
   KEY `FK_RECRUIT_USERID` (`user_id`),
   CONSTRAINT `FK_RECRUIT_UNITID` FOREIGN KEY (`unit_id`) REFERENCES `recruit_unit` (`unit_id`) ON DELETE CASCADE,
   CONSTRAINT `FK_RECRUIT_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for recruit_unit
@@ -406,7 +406,7 @@ CREATE TABLE `right` (
   `state` char(2) NOT NULL COMMENT '状态',
   `state_time` datetime DEFAULT NULL COMMENT '状态日期',
   PRIMARY KEY (`right_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=237 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for role
@@ -474,19 +474,19 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `user_id` int(8) NOT NULL AUTO_INCREMENT COMMENT '自增主键',
   `account` varchar(16) NOT NULL COMMENT '用户帐号',
-  `password` varchar(32) NOT NULL COMMENT '用户密码',
+  `password` varchar(32) NOT NULL DEFAULT '25D55AD283AA400AF464C76D713C07AD' COMMENT '用户密码',
   `email` varchar(50) DEFAULT NULL COMMENT '用户邮箱',
-  `true_name` varchar(10) NOT NULL,
-  `introduce` varchar(255) NOT NULL DEFAULT '（这个人很懒，什么也没留下）' COMMENT '个人简介',
+  `true_name` varchar(10) NOT NULL COMMENT '校友姓名',
+  `introduce` varchar(255) NOT NULL DEFAULT '--这个人很懒，什么也没留下' COMMENT '个人简介',
   `image_id` int(8) NOT NULL DEFAULT '1' COMMENT '头像图片标识',
-  `is_admin` char(1) NOT NULL COMMENT '管理员标识',
-  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `is_admin` char(1) NOT NULL DEFAULT '0' COMMENT '管理员标识',
   `state` char(2) NOT NULL DEFAULT 'A' COMMENT '状态',
   `state_time` datetime DEFAULT NULL COMMENT '状态日期',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`),
   KEY `FK_USER_IMAGEID` (`image_id`),
   CONSTRAINT `FK_USER_IMAGEID` FOREIGN KEY (`image_id`) REFERENCES `image` (`image_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=277 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for user_info

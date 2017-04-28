@@ -21,11 +21,5 @@ function publishClassMessage() {
 		return;
 	}
 
-	if ($("#asfvbszd_ausivsbkjzcnsaohdknxzoxhjcnc_").val() != $(
-			"#dad_asfasdfsa_").val()) {
-		errMsg("infoBoxText", "页面错误");
-		return;
-	}
-
 	$("#classMessagePublishForm").submit();
 }
