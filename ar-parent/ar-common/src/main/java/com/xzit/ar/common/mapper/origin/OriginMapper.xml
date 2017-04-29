@@ -81,6 +81,36 @@
 			AND u.image_id=img.image_id
 	</select>
 
+	<!--查询组织成员列表-->
+	<select id="getOriginDirectory" parameterType="java.lang.Integer" resultType="map">
+
+		SELECT
+			u.user_id userId,
+			u.true_name trueName,
+			img.image_path portrait,
+			ui.sex sex,
+			ui.age age,
+			ui.birthday birthday,
+			ui.phone phone,
+			ui.email email,
+			ui.microblog microblog,
+			ui.qq qq,
+			ui.wechat wechat,
+			ui.address address
+		FROM 
+			user_info ui,
+			`user` u,
+			user_origin uo,
+			image img
+		WHERE
+			uo.origin_id=#{originId}
+			AND uo.state='A'
+			AND uo.user_id=u.user_id
+			AND u.user_id=ui.user_id
+			AND u.image_id=img.image_id
+			
+	</select>
+
 
 	<!--删除组织-->
 	<delete id="delete" parameterType="java.lang.Integer" >delete from origin

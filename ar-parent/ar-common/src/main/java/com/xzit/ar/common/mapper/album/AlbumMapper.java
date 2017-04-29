@@ -1,17 +1,21 @@
 package com.xzit.ar.common.mapper.album;
 
+import com.xzit.ar.common.base.BaseMapper;
+import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.album.Album;
+import org.apache.ibatis.annotations.Param;
 
-public interface AlbumMapper {
-    int deleteByPrimaryKey(Integer albumId);
+import java.util.List;
 
-    int insert(Album record);
+public interface AlbumMapper extends BaseMapper{
 
-    int insertSelective(Album record);
-
-    Album selectByPrimaryKey(Integer albumId);
-
-    int updateByPrimaryKeySelective(Album record);
-
-    int updateByPrimaryKey(Album record);
+    /**
+     * TODO 加载相册列表
+     * @param page
+     * @param originId
+     * @return
+     * @throws Exception
+     */
+    List<Album> getAlbums(Page<Album> page, @Param("originId") Integer originId)  ;
+    
 }

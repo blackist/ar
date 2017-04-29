@@ -49,4 +49,13 @@ public interface OrgroomService {
      * @throws ServiceException
      */
     List<Map<String, Object>> getOriginMember(Page<Map<String, Object> > page, Integer originId) throws ServiceException;
+
+    /**
+     * TODO 加载班级成员通讯录列表
+     * @param page  分页类
+     * @param originId  originId
+     * @return
+     * @throws ServiceException
+     */
+    List<Map<String, Object>> getOriginDirectory(Page<Map<String, Object> > page, Integer originId) throws ServiceException;
 }

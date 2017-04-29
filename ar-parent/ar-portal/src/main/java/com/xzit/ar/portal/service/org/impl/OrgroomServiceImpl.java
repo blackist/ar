@@ -42,6 +42,7 @@ public class OrgroomServiceImpl implements OrgroomService {
 
     /**
      * TODO 根据 originId 查询 origin 基本信息
+     *
      * @param originId orginId
      * @return origin 信息
      * @throws ServiceException
@@ -50,7 +51,7 @@ public class OrgroomServiceImpl implements OrgroomService {
     public Origin getOriginById(Integer originId) throws ServiceException {
         try {
             // 参数校验
-            if(CommonUtil.isNotEmpty(originId)){
+            if (CommonUtil.isNotEmpty(originId)) {
                 return originMapper.getById(originId);
             }
         } catch (Exception e) {
@@ -70,7 +71,7 @@ public class OrgroomServiceImpl implements OrgroomService {
     public List<Integer> getMemberIds(Integer originId) throws ServiceException {
         try {
             // 参数校验
-            if (CommonUtil.isNotEmpty(originId)){
+            if (CommonUtil.isNotEmpty(originId)) {
                 return userOriginMapper.getAllOriginMemberIds(originId);
             }
         } catch (Exception e) {
@@ -81,6 +82,7 @@ public class OrgroomServiceImpl implements OrgroomService {
 
     /**
      * TODO 当前用户加入组织
+     *
      * @param userOrigin
      * @return
      * @throws ServiceException
@@ -112,15 +114,37 @@ public class OrgroomServiceImpl implements OrgroomService {
      */
     @Override
     public List<Map<String, Object>> getOriginMember(Page<Map<String, Object>> page, Integer originId) throws ServiceException {
-//        try {
+        try {
             // 参数校验
-            if (CommonUtil.isNotEmpty(originId)){
+            if (CommonUtil.isNotEmpty(originId)) {
                 // 执行查询
-                return  originMapper.getOriginMember(page, originId);
+                return originMapper.getOriginMember(page, originId);
             }
-//        } catch (Exception e) {
-//            throw new ServiceException("加载成员列表时发生异常！");
-//        }
+        } catch (Exception e) {
+            throw new ServiceException("加载成员列表时发生异常！");
+        }
+        return null;
+    }
+
+    /**
+     * TODO 加载班级成员通讯录列表
+     *
+     * @param page     分页类
+     * @param originId originId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public List<Map<String, Object>> getOriginDirectory(Page<Map<String, Object>> page, Integer originId) throws ServiceException {
+        try {
+            // 参数校验
+            if (CommonUtil.isNotEmpty(originId)) {
+                // 查询
+                return originMapper.getOriginDirectory(page, originId);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("加载通讯录时发生异常！");
+        }
         return null;
     }
 }

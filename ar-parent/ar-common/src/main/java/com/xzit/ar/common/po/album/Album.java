@@ -6,21 +6,21 @@ import com.xzit.ar.common.base.BaseEntity;
 
 public class Album extends BaseEntity {
     /**
-	* @Fields serialVersionUID : TODO <br>
-	*/ 
-	private static final long serialVersionUID = 1L;
+     * @Fields serialVersionUID : TODO <br>
+     */
+    private static final long serialVersionUID = 1L;
 
-	private Integer albumId;
+    private Integer albumId;
 
     private String albumName;
 
     private String albumDesc;
 
+    private String coverImage;
+
     private Date createTime;
 
     private Integer interests;
-
-    private Integer coverImage;
 
     private Integer originId;
 
@@ -58,6 +58,14 @@ public class Album extends BaseEntity {
         this.albumDesc = albumDesc == null ? null : albumDesc.trim();
     }
 
+    public String getCoverImage() {
+        return coverImage;
+    }
+
+    public void setCoverImage(String coverImage) {
+        this.coverImage = coverImage;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -72,14 +80,6 @@ public class Album extends BaseEntity {
 
     public void setInterests(Integer interests) {
         this.interests = interests;
-    }
-
-    public Integer getCoverImage() {
-        return coverImage;
-    }
-
-    public void setCoverImage(Integer coverImage) {
-        this.coverImage = coverImage;
     }
 
     public Integer getOriginId() {

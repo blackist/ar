@@ -2,12 +2,15 @@ package com.xzit.ar.portal.controller.org;
 
 import com.xzit.ar.common.base.BaseController;
 import com.xzit.ar.common.exception.ServiceException;
+import com.xzit.ar.common.init.context.ARContext;
 import com.xzit.ar.common.page.Page;
+import com.xzit.ar.common.po.album.Album;
 import com.xzit.ar.common.po.info.Comment;
 import com.xzit.ar.common.po.info.Information;
 import com.xzit.ar.common.po.origin.Origin;
 import com.xzit.ar.common.po.user.UserOrigin;
 import com.xzit.ar.common.util.CommonUtil;
+import com.xzit.ar.portal.service.image.AlbumService;
 import com.xzit.ar.portal.service.information.CommentService;
 import com.xzit.ar.portal.service.information.InformationService;
 import com.xzit.ar.portal.service.my.TaService;
@@ -44,6 +47,9 @@ public class OrgroomController extends BaseController {
 
     @Resource
     private TaService taService;
+
+    @Resource
+    private AlbumService albumService;
 
 
     /**
@@ -347,6 +353,13 @@ public class OrgroomController extends BaseController {
         return "redirect:/orgroom/message.action";
     }
 
+    /**
+     * TODO 加载组织的成员列表
+     * @param model
+     * @param originId
+     * @return
+     * @throws ServiceException
+     */
     @RequestMapping("/member")
     public String member(Model model, @RequestParam("originId") Integer originId) throws ServiceException {
         // 校友组织基本信息
@@ -362,6 +375,63 @@ public class OrgroomController extends BaseController {
         model.addAttribute("page", page);
 
         return "org/orgroom/orgroom-member";
+    }
+
+    /**
+     * TODO 加载组织通讯录
+     * @param model
+     * @param originId originId
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/directory")
+    public String directory(Model model, Integer originId) throws ServiceException {
+        // 校友组织基本信息
+        Origin origin = orgroomService.getOriginById(originId);
+        if (origin == null || CommonUtil.isEmpty(origin.getOriginId())) {
+            return "redirect:/org.action";
+        }
+        model.addAttribute("orgroom", origin);
+        // 成员信息
+        Page<Map<String, Object> > page = new Page<>(getPageIndex(), 20);
+        orgroomService.getOriginDirectory(page, originId);
+        // 传递通讯录数据
+        model.addAttribute("page", page);
+        model.addAttribute("letters", ARContext.lowerLetters);
+
+        return "org/orgroom/orgroom-directory";
+    }
+
+    /**
+     * TODO 加载组织相册
+     * @param model
+     * @param originId
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/album")
+    public String album(Model model, @RequestParam("originId") Integer originId) throws ServiceException {
+        // 校友组织基本信息
+        Origin origin = orgroomService.getOriginById(originId);
+        if (origin == null || CommonUtil.isEmpty(origin.getOriginId())) {
+            return "redirect:/org.action";
+        }
+        model.addAttribute("orgroom", origin);
+        // 加载相册
+        Page<Album> page = new Page<>(getPageIndex(), 12);
+        albumService.getAlbums(page, originId);
+        // 传递数据
+        model.addAttribute("page", page);
+
+        return "org/orgroom/orgroom-album";
+    }
+
+    @RequestMapping("/album/image")
+    public String image(Model model, Integer albumId, Integer originId) {
+
+        model.addAttribute("page");
+
+        return "org/orgroom/orgroom-album-image";
     }
 
 }
