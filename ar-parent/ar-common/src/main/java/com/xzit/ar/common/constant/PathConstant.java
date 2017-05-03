@@ -17,12 +17,18 @@ package com.xzit.ar.common.constant;
 public interface PathConstant {
 
 	/**
-	 * information的图片的物理路径
+	 * 多媒体资源的物理路径
 	 */
-	String infoPicAbsPath = "D:\\ar\\image\\info\\";
+	String infoPicAbsPath = "D:\\cache\\ar\\";
 
 	/**
 	 * information的图片的相对路径
 	 */
-	String infoPicRelPath = "/img/info/";
+	String infoPicRelPath = "/ar/pic/info/";
+
+	/**
+	 * 用户头像相对路径
+	 */
+	String portraitRelPath = "/ar/pic/portrait";
+
 }

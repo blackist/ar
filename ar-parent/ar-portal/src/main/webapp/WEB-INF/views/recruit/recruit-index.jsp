@@ -45,14 +45,12 @@
 							<tbody>
 								<c:forEach items="${page.beanList}" var="recruit">
 									<tr>
-										<td id="${recruit.recruitId}">&nbsp;<a
-											href="recruit/detailRecruit.action?recruitId=${recruit.recruitId}"
-											target="_blank"> ${recruit.title}</a> 
+										<td id="${recruit.recruitId}">&nbsp;
+											<a href="recruit/detailRecruit.action?recruitId=${recruit.recruitId}"> ${recruit.title}</a>
 											<ar:top value="${recruit.isTop}" /></td>
 										<td>${recruit.unitName}</td>
 										<td><ar:dictdata dictdata="${recruit.salary}" dict="sl" /></td>
-										<td><fmt:formatDate value="${recruit.createTime}"
-												pattern="M月d日"></fmt:formatDate></td>
+										<td><fmt:formatDate value="${recruit.createTime}" pattern="M月d日"></fmt:formatDate></td>
 									</tr>
 								</c:forEach>
 							</tbody>

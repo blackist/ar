@@ -43,7 +43,7 @@
 	<tag>
 		<name>top</name>
 		<tag-class>com.xzit.ar.common.tag.TopTag</tag-class>
-		<body-content>empty</body-content>
+		<body-content>jsp</body-content>
 		<attribute>
 			<name>value</name>
 			<required>true</required>

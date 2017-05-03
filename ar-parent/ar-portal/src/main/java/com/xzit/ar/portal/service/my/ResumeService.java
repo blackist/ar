@@ -32,7 +32,7 @@ public interface ResumeService {
 	 * @return List<Map<String, Object>>
 	 * @throws
 	 */
-	public List<Map<String, Object>> loadMyResumes(Integer userId) throws ServiceException;
+	List<Map<String, Object>> loadMyResumes(Integer userId) throws ServiceException;
 
 	/**
 	 * @Title: loadPostResumes
@@ -43,34 +43,34 @@ public interface ResumeService {
 	 * @return List<UserResume> 
 	 * @throws
 	 */
-	public List<Map<String, Object>> loadResumesToPost(Integer userId) throws ServiceException;
+	List<Map<String, Object>> loadResumesToPost(Integer userId) throws ServiceException;
 	
 	/**
 	 * @Title: postResume
 	 * @Description: TODO 投递简历
 	 * @param @param resumePost
 	 */
-	public int postResume(ResumePost resumePost) throws ServiceException;
+	int postResume(ResumePost resumePost) throws ServiceException;
 	
 	/**
 	 * @Title: cancelPostResume
 	 * @Description: TODO 取消投递
 	 */
-	public int cancelPostResume(ResumePost resumePost) throws ServiceException;
+	int cancelPostResume(ResumePost resumePost) throws ServiceException;
 	
 	/**
 	 * @Title: postResumeRecord
 	 * @Description: TODO 加载招聘信息简历投递记录
 	 * @param @param recruitId
 	 */
-	public List<Map<String, Object>> postResumeRecord(Integer recruitId) throws ServiceException;
+	List<Map<String, Object>> postResumeRecord(Integer recruitId) throws ServiceException;
 
 	/**
 	 * @param resume
 	 * @return
 	 * @throws ServiceException
 	 */
-	public int createResume(UserResume resume) throws ServiceException;
+	int createResume(UserResume resume) throws ServiceException;
 
 	/**
 	 * TODO 根据ID加载用户简历详情
@@ -78,7 +78,7 @@ public interface ResumeService {
 	 * @return
 	 * @throws ServiceException
 	 */
-	public UserResume getResumeById(Integer resumeId) throws ServiceException;
+	UserResume getResumeById(Integer resumeId) throws ServiceException;
 
 	/**
 	 * TODO 更新简历信息
@@ -86,7 +86,7 @@ public interface ResumeService {
 	 * @return
 	 * @throws ServiceException
 	 */
-	public int updateResume(UserResume resume) throws ServiceException;
+	int updateResume(UserResume resume) throws ServiceException;
 
 	/**
 	 * TODO 删除个人简历
@@ -94,5 +94,5 @@ public interface ResumeService {
 	 * @return
 	 * @throws ServiceException
 	 */
-	public int deleteResume(Integer resumeId) throws ServiceException;
+	int deleteResume(Integer resumeId) throws ServiceException;
 }

@@ -39,12 +39,31 @@
 	</sql>
 
 	<sql id="detail" >
-		r.recruit_id recruitId, r.title title, r.prof prof, r.resumes resumes, r.create_time
-		createTime, r.end_time endTime, r.is_top isTop, r.user_id userId, r.state_time stateTime,
-		r.state state, r.members members, r.leader_name leaderName, r.leader_phone leaderPhone,
-		r.salary salary, r.pos_name posName, r.pos_desc posDesc, r.benefit benefit, r.work_place
-		workPlace, u.unit_name unitName, u.unit_id unitId, u.industry industry, u.property
-		property, u.scale scale, u.unit_desc unitDesc, u.unit_web unitWeb
+		r.recruit_id recruitId,
+		r.title title,
+		r.prof prof,
+		r.resumes resumes,
+		r.create_time createTime,
+		r.end_time endTime,
+		r.is_top isTop,
+		r.user_id userId,
+		r.state_time stateTime,
+		r.state state,
+		r.members members,
+		r.leader_name leaderName,
+		r.leader_phone leaderPhone,
+		r.salary salary,
+		r.pos_name posName,
+		r.pos_desc posDesc,
+		r.benefit benefit,
+		r.work_place workPlace,
+		u.unit_name unitName,
+		u.unit_id unitId,
+		u.industry industry,
+		u.property property,
+		u.scale scale,
+		u.unit_desc unitDesc,
+		u.unit_web unitWeb
 	</sql>
 	
 	<!-- select -->
@@ -57,10 +76,21 @@
 
 	<select id="queryRecruit" resultType="map" parameterType="java.lang.String">
 		select
-		<include refid="entity"/>
-		from recruit r, recruit_unit u, user user
-		where (r.title like #{queryStr} or r.pos_name like #{queryStr} or r.work_place like #{queryStr} or u.unit_name like #{queryStr})
-		and r.unit_id = u.unit_id and r.user_id = user.user_id and r.state='A' order by r.is_top desc, r.create_time desc
+			<include refid="entity"/>
+		from
+			recruit r, recruit_unit u,
+			`user` user
+		where
+			(r.title like #{queryStr}
+				or r.pos_name like #{queryStr}
+				or r.work_place like #{queryStr}
+				or u.unit_name like #{queryStr})
+			and r.unit_id = u.unit_id
+		  	and r.user_id = user.user_id
+			and r.state='A'
+		order by
+			r.is_top desc,
+			r.create_time desc
 	</select>
 
 	<select id="getDetailRecruit" resultType="map" parameterType="java.lang.Integer">

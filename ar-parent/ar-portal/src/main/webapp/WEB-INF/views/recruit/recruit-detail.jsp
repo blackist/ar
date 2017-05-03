@@ -221,16 +221,14 @@
 									<div id="apply-record" class="tab-pane">
 										<ul class="media-list comment-list">
 											<c:forEach items="${postRecords}" var="record">
-												<li class="media"><a
-													href="profile.action?userId=${record.userId}"
-													class="pull-left"> <img alt=""
-														src="assets/images/photos/user3.png" class="media-object">
+												<li class="media"><a href="ta/show.action?userId=${record.userId}" class="pull-left">
+													<img src="${record.portrait}" class="media-object">
 												</a>
 													<div class="media-body">
-														<h4>${record.account}</h4>
-														<small class="text-muted">申请于:<fmt:formatDate
-																value="${record.createTime}"
-																pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate></small>
+														<h4>${record.trueName}</h4>
+														<small class="text-muted">
+															申请于:<fmt:formatDate value="${record.createTime}" pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate>
+														</small>
 														<p></p>
 													</div></li>
 											</c:forEach>

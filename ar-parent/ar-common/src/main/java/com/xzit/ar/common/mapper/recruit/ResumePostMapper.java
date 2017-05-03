@@ -10,8 +10,19 @@ import com.xzit.ar.common.po.recruit.ResumePost;
 
 public interface ResumePostMapper extends BaseMapper {
 
-	List<Map<String, Object>> postResumeRecord(@Param("recruitId") Integer recruitId);
-	
+	/**
+	 * TODO 加载招聘信息的简历投递记录
+	 * @param recruitId
+	 * @return
+	 * @throws Exception
+	 */
+	List<Map<String, Object>> postResumeRecord(@Param("recruitId") Integer recruitId) throws Exception;
+
+	/**
+	 * TODO 
+	 * @param resumePost
+	 * @return
+	 */
 	List<Map<String, Object>> checkResumeRecord(ResumePost resumePost);
 
 	int recoverResumeRecord(ResumePost resumePost);

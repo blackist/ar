@@ -59,8 +59,7 @@
 											<h5 class="panel-title">职位信息</h5>
 										</div>
 										<div class="form-group">
-											<label class="col-sm-4"><span class="asterisk">*
-														</span>简历标题</label>
+											<label class="col-sm-4"><span class="asterisk">*</span>简历标题</label>
 											<div class="col-sm-4">
 												<input type="text" name="resumeTitle" id="resumeTitle" maxlength="20"
 													   class="form-control tooltips" data-trigger="hover"
@@ -69,8 +68,7 @@
 										</div>
 
 										<div class="form-group">
-											<label class="col-sm-4"><span class="asterisk">*
-														</span>职业类型</label>
+											<label class="col-sm-4"><span class="asterisk">*</span>职业类型</label>
 											<div class="col-sm-4">
 												<input type="text" name="profType" id="profType" maxlength="20"
 													   class="form-control tooltips" data-trigger="hover"
@@ -79,8 +77,7 @@
 										</div>
 
 										<div class="form-group">
-											<label class="col-sm-4"><span class="asterisk">*
-														</span> 期望工资</label>
+											<label class="col-sm-4"><span class="asterisk">*</span> 期望工资</label>
 											<div class="col-sm-4">
 												<div class="input-group">
 													<span class="input-group-addon">￥</span>

@@ -10,11 +10,23 @@
 	</resultMap>
 	
 	<select id="postResumeRecord" parameterType="java.lang.Integer" resultType="map">
-		select u.user_id userId, u.account account,
-				p.create_time createTime
-		from resume_post p, user u, user_resume r
-		where p.state = 'A'	and p.recruit_id = #{recruitId} 
-			and p.resume_id = r.resume_id and r.user_id = u.user_id
+		select
+			u.user_id userId,
+			u.account account,
+			u.true_name trueName,
+			img.image_path portrait,
+			p.create_time createTime
+		from
+			resume_post p,
+			user_resume r,
+			`user` u,
+			image img
+		where
+			p.state = 'A'
+			and p.recruit_id = #{recruitId}
+			and p.resume_id = r.resume_id
+			and r.user_id = u.user_id
+			AND u.image_id=img.image_id
 	</select>
 	
 	<select id="checkResumeRecord" parameterType="com.xzit.ar.common.po.recruit.ResumePost" resultType="map">

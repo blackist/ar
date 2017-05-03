@@ -24,10 +24,13 @@
 				<div class="people-list">
 					<c:forEach items="${page.beanList}" var="member">
 						<div class="col-md-2">
-							<div class="people-item" style="text-align: center;">
-								<a href="ta/show.action?userId=${member.userId}"> <img
-									alt="" src="${member.imgPath}" class="img-responsive"
-									style="max-height: 100px;">${member.trueName}
+							<div class="people-item" style="text-align: center; min-height: 170px; max-height: 170px">
+								<a href="ta/show.action?userId=${member.userId}">
+									<div style="min-height: 125px;">
+										<img src="${member.imgPath}" class="img-responsive center-block"
+											 style="max-height: 125px;">
+									</div>
+										${member.trueName}
 								</a>
 							</div>
 						</div>

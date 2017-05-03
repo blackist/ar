@@ -28,11 +28,31 @@ public interface RecruitService {
 	 * @return
 	 * @throws ServiceException
 	 */
-	public int createRecruit(Recruit recruit) throws ServiceException;
-	
-	public List<Map<String, Object>> queryRecruit(Page<Map<String, Object>> page, String queryStr) throws ServiceException ;
-	
-	public Map<String, Object> getDetailRecruit(Integer id) throws ServiceException ;
+	int createRecruit(Recruit recruit) throws ServiceException;
 
-	public List<Map<String, Object>> loadOtherRecruits(Integer unitId,Integer recruitId) throws ServiceException;
+	/**
+	 * TODO 条件查询招聘信息
+	 * @param page
+	 * @param queryStr
+	 * @return
+	 * @throws ServiceException
+	 */
+	List<Map<String, Object>> queryRecruit(Page<Map<String, Object>> page, String queryStr) throws ServiceException ;
+
+	/**
+	 * TODO 查询招聘详情
+	 * @param id
+	 * @return
+	 * @throws ServiceException
+	 */
+	Map<String, Object> getDetailRecruit(Integer id) throws ServiceException ;
+
+	/**
+	 * TODO 加载其他投递简历的用户
+	 * @param unitId
+	 * @param recruitId
+	 * @return
+	 * @throws ServiceException
+	 */
+	List<Map<String, Object>> loadOtherRecruits(Integer unitId,Integer recruitId) throws ServiceException;
 }

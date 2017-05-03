@@ -13,7 +13,7 @@ function addResumeSubmit(){
     if (!isLength($("#resumeTitle").val(), 2, 20)) {
         errMsg("resumeTitle", "简历标题在2-20字之间");
     } else if (!isLength($("#profType").val(), 2, 20)) {
-        errMsg("profType", "简历标题在2-20字之间");
+        errMsg("profType", "职业类型在2-20字之间");
     } else if (!isValid($("#expSalary").val())) {
         errMsg("expSalary", "请选择期望薪资");
     } else if (!isLength($("#name").val(), 2, 10)) {
@@ -32,7 +32,7 @@ function addResumeSubmit(){
 /**
  * 更新简历表单校验
  */
-function addResumeSubmit(){
+function updateResumeSubmit(){
     if (!isLength($("#resumeTitle").val(), 2, 20)) {
         errMsg("resumeTitle", "简历标题在2-20字之间");
     } else if (!isLength($("#profType").val(), 2, 20)) {

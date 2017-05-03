@@ -96,6 +96,12 @@ public class RecruitController extends BaseController {
 		return "recruit/recruit-detail";
 	}
 
+	/**
+	 * TODO 跳转发布招聘界面
+	 * @param model
+	 * @return
+	 * @throws ServiceException
+	 */
 	@RequestMapping("/addRecruit")
 	public String addRecruit(Model model) throws ServiceException {
 		// 判断当前用户创建公司情况
@@ -114,6 +120,14 @@ public class RecruitController extends BaseController {
 		return "recruit/recruit-add";
 	}
 
+	/**
+	 * TODO 招聘信息保存
+	 * @param model
+	 * @param attr
+	 * @param recruit
+	 * @return
+	 * @throws ServiceException
+	 */
 	@RequestMapping("/addRecruitSubmit")
 	public String addRecruitSubmit(Model model, RedirectAttributes attr, Recruit recruit) throws ServiceException {
 		// 判断当前用户创建公司情况

@@ -164,7 +164,7 @@
 							<!-- tab-content -->
 
 							<ul class="pager wizard">
-								<li><a href="javascript:;" onclick="addResumeSubmit()" id="submitBtn">提交</a></li>
+								<li><a href="javascript:;" onclick="updateResumeSubmit()" id="submitBtn">提交</a></li>
 								&nbsp;&nbsp;&nbsp;
 								<li><a href="my/resume/detail.action?resumeId=${resume.resumeId}" id="cancelBtn">放弃</a></li>
 							</ul>
