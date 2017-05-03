@@ -17,21 +17,23 @@
     <input type="hidden" value="${orgroom.originId}" id="originId">
     <!-- Tab panes -->
     <div class="tab-content" style="background-color: #ddd;">
-        <div class="people-list">
-            <c:forEach items="${page.beanList}" var="member">
-                <div class="col-md-2">
-                    <div class="people-item" style="text-align: center; min-height: 170px; max-height: 170px">
-                        <a href="ta/show.action?userId=${member.userId}">
-                            <div style="min-height: 125px;">
-                                <img src="${member.portrait}" class="img-responsive center-block"
-                                     style="max-height: 125px;">
-                            </div>
-                                ${member.trueName}
-                        </a>
+        <div class="tab-pane active" id="classroom-content">
+            <div class="people-list">
+                <c:forEach items="${page.beanList}" var="member">
+                    <div class="col-md-2">
+                        <div class="people-item" style="text-align: center; min-height: 170px; max-height: 170px;">
+                            <a href="ta/show.action?userId=${member.userId}">
+                                <div style="min-height: 125px;">
+                                    <img src="${member.portrait}" class="img-responsive center-block"
+                                         style="max-height: 125px;">
+                                </div>
+                                    ${member.trueName}
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <!-- col-md-6 -->
-            </c:forEach>
+                    <!-- col-md-6 -->
+                </c:forEach>
+            </div>
         </div>
         <%@ include file="/WEB-INF/views/portal-common/pagination.jsp" %>
     </div>

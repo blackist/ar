@@ -7,636 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ececa08-7c78-49ca-b88d-e43327a37548" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/admin-404.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/admin-form.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/admin-gallery.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/admin-help.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/admin-index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/admin-log.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/admin-table.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/admin-user.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/css/admin.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/css/amazeui.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/css/amazeui.flat.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/css/amazeui.flat.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/css/amazeui.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/css/app.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/i/app-icon72x72@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/i/examples/admin-chrome.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/i/examples/admin-firefox.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/i/examples/admin-ie.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/i/examples/admin-opera.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/i/examples/admin-safari.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/i/examples/adminPage.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/i/examples/blogPage.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/i/examples/landing.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/i/examples/landingPage.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/i/examples/loginPage.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/i/examples/sidebarPage.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/i/favicon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/i/startup-640x1096.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/js/amazeui.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/js/amazeui.legacy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/js/amazeui.legacy.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/js/amazeui.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/js/amazeui.widgets.helper.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/js/amazeui.widgets.helper.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/js/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/js/handlebars.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/js/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/js/jquery1.11.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/js/modernizr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/js/polyfill/rem.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/assets/js/polyfill/respond.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-admin/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/about.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/blog.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/contact.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/css/responsiveslides.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/css/touchTouch.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/a1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/b1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/b2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/b3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/b4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/blog-icon1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/blog-icon2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/blog-icon3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/blog-icon4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/blog-icon5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/call.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/f-logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/fancybox_sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/icon2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/lbl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/list.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/list1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/logo2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/marker02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/marker020.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/menu-tops.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/move-top.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/msg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/p2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/p3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/p4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/p5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/p6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/p7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/p8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/p9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/phone.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/r1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/search1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/sin1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/sin2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/sin3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/sl3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/sl99.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/slider1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/slider2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/social-icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/w1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/w2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/images/w3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/js/easing.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/js/jquery.fancybox.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/js/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/js/move-top.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/js/responsiveslides.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/projects.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/services.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Blog/single.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/Virgin Islands, U.S" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/ajax/accordion.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/ajax/images/photos/_div style=" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/ajax/images/photos/photo4.jpg.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/ajax/panel.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/ajax/photo-viewer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/ajax/remote.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/ajax/tabs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/alerts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/all.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/audio.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/blank.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/blog-list.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/blog-single.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/blog-single.html.bak" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/bug-issues.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/bug-tracker.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/buttons.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/calendar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/code-editor.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/compose.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/animate.delay.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/animate.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/bootstrap-editable.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/bootstrap-override.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/bootstrap-timepicker.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/bootstrap-wysihtml5.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/codemirror/codemirror.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/codemirror/theme/ambiance.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/colorpicker.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/dropzone.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/fullcalendar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/helvetica.css.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/images/_div style=" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/images/animated-overlay.gif.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/jquery-jvectormap-1.2.2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/jquery-ui-1.10.3.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/jquery.datatables.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/jquery.gritter.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/jquery.tagsinput.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/lato.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/morris.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/prettyPhoto.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/roboto.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/select2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/style.default.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/toggles.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/weather-icons.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/css/源码之家.url" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/document.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/email.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/extras.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fixed-width.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fixed-width2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Bla-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Bla-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Bla-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Bla-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-BlaIta-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-BlaIta-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-BlaIta-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-BlaIta-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Bol-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Bol-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Bol-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Bol-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-BolIta-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-BolIta-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-BolIta-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-BolIta-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Hai-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Hai-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Hai-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Hai-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-HaiIta-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-HaiIta-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-HaiIta-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-HaiIta-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Lig-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Lig-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Lig-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Lig-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-LigIta-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-LigIta-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-LigIta-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-LigIta-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Reg-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Reg-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Reg-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-Reg-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-RegIta-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-RegIta-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-RegIta-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/lato/Lato-RegIta-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Black-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Black-webfont.eot~.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Black-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Black-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Black-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BlackItalic-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BlackItalic-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BlackItalic-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BlackItalic-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Bold-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Bold-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Bold-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Bold-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BoldCondensed-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BoldCondensed-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BoldCondensed-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BoldCondensed-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BoldCondensedItalic-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BoldCondensedItalic-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BoldCondensedItalic-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BoldCondensedItalic-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BoldItalic-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BoldItalic-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BoldItalic-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-BoldItalic-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Condensed-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Condensed-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Condensed-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Condensed-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-CondensedItalic-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-CondensedItalic-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-CondensedItalic-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-CondensedItalic-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Italic-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Italic-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Italic-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Italic-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Light-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Light-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Light-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Light-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-LightItalic-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-LightItalic-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-LightItalic-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-LightItalic-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Medium-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Medium-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Medium-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Medium-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-MediumItalic-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-MediumItalic-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-MediumItalic-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-MediumItalic-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Regular-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Regular-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Regular-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Regular-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Thin-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Thin-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Thin-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-Thin-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-ThinItalic-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-ThinItalic-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-ThinItalic-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/roboto/Roboto-ThinItalic-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/weathericons-regular-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/weathericons-regular-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/weathericons-regular-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/fonts/weathericons-regular-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/form-layouts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/form-validation.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/form-wizards.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/general-forms.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/graphs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/holder.js/100x120.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/holder.js/100x125.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/holder.js/110x110.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/holder.js/60x60.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/holder.js/80x60/80x60.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/holder.js/80x60/_div style=" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/holder.js/_div style=" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/horizontal-menu.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/horizontal-menu2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/icons.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/image.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/calendar-arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/clear.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/close-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/colorpicker/colorpicker_background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/colorpicker/colorpicker_hex.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/colorpicker/colorpicker_hsb_b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/colorpicker/colorpicker_hsb_h.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/colorpicker/colorpicker_hsb_s.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/colorpicker/colorpicker_indic.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/colorpicker/colorpicker_overlay.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/colorpicker/colorpicker_rgb_b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/colorpicker/colorpicker_rgb_g.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/colorpicker/colorpicker_rgb_r.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/colorpicker/colorpicker_select.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/colorpicker/colorpicker_submit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/colorpicker/select2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/droparrows.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/dropdown-arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/favicon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/icon-search.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/is-document.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/is-money.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/is-user.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader1.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader10.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader11.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader12.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader13.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader14.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader15.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader16.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader17.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader18.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader19.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader20.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader21.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader22.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader23.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader24.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader25.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader26.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader27.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader28.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader29.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader3.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader30.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader4.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader5.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader6.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader7.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader8.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loaders/loader9.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/locked.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/minus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/blog1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/blog2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/blog3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/blog4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/loggeduser.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/media-audio.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/media-doc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/media1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/media2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/media3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/media4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/media5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/media6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/media7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/photo1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/photo2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/photo3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/profile-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/profilepic1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/user1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/user2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/user3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/user4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/user5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/photos/userprofile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/plus-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/plus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/dark_rounded/_div style=" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/dark_rounded/btnNext.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/dark_rounded/btnPrevious.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/dark_rounded/contentPattern.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/dark_rounded/loader.gif.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/dark_rounded/sprite.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/dark_square/_div style=" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/dark_square/btnNext.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/dark_square/btnPrevious.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/dark_square/loader.gif.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/dark_square/sprite.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/default_thumb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/facebook/_div style=" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/facebook/btnNext.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/facebook/btnPrevious.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/facebook/contentPatternBottom.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/facebook/contentPatternLeft.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/facebook/contentPatternRight.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/facebook/contentPatternTop.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/facebook/default_thumbnail.gif.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/facebook/loader.gif.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/facebook/sprite.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/light_rounded/_div style=" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/light_rounded/btnNext.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/light_rounded/btnPrevious.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/light_rounded/loader.gif.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/light_rounded/sprite.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/light_square/_div style=" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/light_square/btnNext.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/light_square/btnPrevious.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/light_square/sprite.png.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/sprite.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/sprite_next.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/sprite_prev.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/sprite_x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/prettyphoto/sprite_y.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/screen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/select2-spinner.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/select2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/select2x2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/sort_asc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/sort_asc_disabled.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/sort_both.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/sort_desc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/sort_desc_disabled.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/spritemap.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/spritemap@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/themeforest.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/uploadfile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/images/user.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/invoice.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/bootstrap-datetimepicker.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/bootstrap-editable.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/bootstrap-timepicker.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/bootstrap-wizard.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/bootstrap-wysihtml5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/charts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/chosen.jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/ckeditor/,CKEDITOR.tools.htmlEncode(e._[" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/ckeditor/,CKEDITOR.tools.htmlEncode(e.id__" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/ckeditor/adapters/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/ckeditor/ckeditor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/ckeditor/images/_div style=" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/ckeditor/images/spacer.gif.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/codemirror/codemirror.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/codemirror/formatting.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/codemirror/mode/javascript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/codemirror/mode/xml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/colorpicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/custom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/dashboard.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/dropzone.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/flot/jquery.flot.categories.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/flot/jquery.flot.crosshair.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/flot/jquery.flot.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/flot/jquery.flot.pie.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/flot/jquery.flot.resize.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/flot/jquery.flot.spline.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/flot/jquery.flot.symbol.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/fullcalendar.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/gmaps.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/holder.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/html5shiv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery-1.11.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery-jvectormap-1.2.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery-jvectormap-us-aea-en.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery-jvectormap-world-mill-en.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery-migrate-1.2.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery-ui-1.10.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery.autogrow-textarea.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery.cookies.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery.datatables.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery.gritter.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery.maskedinput.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery.mousewheel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery.prettyPhoto.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery.sparkline.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery.tagsinput.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery.ui.touch-punch.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/jquery.validate.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/masonry.pkgd.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/modernizr.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/moment.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/morris.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/raphael-2.1.0.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/respond.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/retina.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/select2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/toggles.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/js/wysihtml5-0.3.0.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/layouts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/locked.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/maps.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/media-manager.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/modals.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/notfound.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/p1.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/p2.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/people-directory.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/profile.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/read.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/search-results.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/signin.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/signout.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/signup.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/sliders.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/tables.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/tabs-accordions.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/timeline.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/typography.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/video.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/view-issue.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/widgets.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/wysiwyg.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/x-editable.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/Bracket1.5/源码之家.url" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/checkout.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/contact.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/css/flexslider.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/css/megamenu.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/1-.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/10-.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/11-.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/12-.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/13-.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/2-.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/3-.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/3-.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/4-.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/4-.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/5-.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/6-.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/7-.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/8-.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/9-.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/a.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/a3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/b.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/banner.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/c.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/cart-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/cart.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/cart1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/close_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/d.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/e.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/s1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/s2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/s3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/s4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/search1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/star.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/images/tick.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/js/jquery-1.11.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/js/jquery.flexisel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/js/jquery.flexslider.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/js/jquery.jscrollpane.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/js/megamenu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/js/responsiveslides.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/js/simpleCart.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/products.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/register.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/model-portal/门户/single.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/毕设文档/08、毕业论文_董亮亮_20130505238.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/毕设文档/2017届徐州工程学院毕业设计说明书（论文）撰写规范（修订）/毕业论文样例1.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/毕设文档/2017届徐州工程学院毕业设计说明书（论文）撰写规范（修订）/毕业论文样例4.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/毕设文档/2017届徐州工程学院毕业设计说明书（论文）撰写规范（修订）/毕业设计样例2.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/需求分析/__校友社区网站需求分析概要设计.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/需求分析/~$工程学院_信电学院_校友会_需求分析.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/需求分析/~WRL0002.tmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ar-doc/需求分析/徐州工程学院_信电校友录_需求分析.docx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ar-doc/毕设文档/05、中期检查汇报佐证材料1、校友录系统功能设计、数据库设计说明书.doc" afterPath="$PROJECT_DIR$/../ar-doc/毕设文档/05、中期检查汇报佐证材料1、校友录系统功能设计、数据库设计说明书.doc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ar-doc/毕设文档/2017届徐州工程学院毕业设计说明书（论文）撰写规范（修订）/附件二：毕业论文模板.doc" afterPath="$PROJECT_DIR$/../ar-doc/毕设文档/2017届徐州工程学院毕业设计说明书（论文）撰写规范（修订）/附件二：毕业论文模板.doc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ar-doc/用例分析建模/AR.mdl" afterPath="$PROJECT_DIR$/../ar-doc/用例分析建模/AR.mdl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ar-doc/用例分析建模/用例规约/徐州工程学院_信电校友录_用例规约_班级录.docx" afterPath="$PROJECT_DIR$/../ar-doc/用例分析建模/用例规约/徐州工程学院_信电校友录_用例规约_班级录.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/constant/PathConstant.java" afterPath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/constant/PathConstant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/recruit/RecruitMapper.xml" afterPath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/recruit/RecruitMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/recruit/ResumePostMapper.java" afterPath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/recruit/ResumePostMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/recruit/ResumePostMapper.xml" afterPath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/recruit/ResumePostMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-common/target/classes/com/xzit/ar/common/mapper/recruit/ResumePostMapper.xml" afterPath="$PROJECT_DIR$/ar-common/target/classes/com/xzit/ar/common/mapper/recruit/ResumePostMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-common/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/ar-common/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-manage/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/ar-manage/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/recruit/RecruitController.java" afterPath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/recruit/RecruitController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/my/ResumeService.java" afterPath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/my/ResumeService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/my/impl/ResumeServiceImpl.java" afterPath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/my/impl/ResumeServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/recruit/RecruitService.java" afterPath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/recruit/RecruitService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/ar-tag.tld" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/ar-tag.tld" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-directory.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-directory.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-member.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-member.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/my/recruit/resume-add.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/my/recruit/resume-add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/my/recruit/resume-edit.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/my/recruit/resume-edit.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/org/orgroom/orgroom-member.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/org/orgroom/orgroom-member.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-detail.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-detail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-index.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/my/recruit/resume.js" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/my/recruit/resume.js" />
     </list>
     <ignored path="$PROJECT_DIR$/ar-portal/target/" />
     <ignored path="$PROJECT_DIR$/ar-manage/target/" />
@@ -683,12 +54,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="recruit-index.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-index.jsp">
+      <file leaf-file-name="orgroom-member.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/org/orgroom/orgroom-member.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="49" column="36" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="420">
+              <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -770,7 +146,6 @@
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/org/orgroom/orgroom-album-image.jsp" />
         <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/constant/PathConstant.java" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/ar-tag.tld" />
-        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/org/orgroom/orgroom-member.jsp" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-member.jsp" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/org/OrgroomController.java" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-directory.jsp" />
@@ -786,6 +161,7 @@
         <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/my/impl/ResumeServiceImpl.java" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-detail.jsp" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-index.jsp" />
+        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/org/orgroom/orgroom-member.jsp" />
       </list>
     </option>
   </component>
@@ -1070,6 +446,86 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orgroom" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2314,12 +1770,12 @@
       <workItem from="1493499704639" duration="168000" />
       <workItem from="1493529601893" duration="2794000" />
       <workItem from="1493616895539" duration="162000" />
-      <workItem from="1493810325316" duration="4693000" />
+      <workItem from="1493810325316" duration="6374000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="424714000" />
+    <option name="totallyTimeSpent" value="426395000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2332,7 +1788,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2360,7 +1816,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32685184" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32690355" sideWeight="0.49785408" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32919255" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.221875" sideWeight="0.4946071" order="6" side_tool="false" content_ui="combo" x="747" y="39" width="419" height="1014" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.221875" sideWeight="0.4946071" order="6" side_tool="false" content_ui="combo" x="747" y="39" width="419" height="1014" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16718914" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2373,6 +1829,46 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47140038" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32690355" sideWeight="0.50214595" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30092594" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="199" y="429" width="1516" height="234" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.215625" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.24973877" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15694591" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4814815" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32919255" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32314816" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27005076" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32992464" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="91" y="100" width="1732" height="892" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32685184" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32690355" sideWeight="0.49785408" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32919255" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.221875" sideWeight="0.4946071" order="6" side_tool="false" content_ui="combo" x="747" y="39" width="419" height="1014" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16718914" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47140038" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5053929" order="10" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -2747,20 +2243,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-965">
           <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/org/orgroom/orgroom-member.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-member.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="38" column="67" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -3342,9 +2824,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-index.jsp">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="58" column="46" lean-forward="true" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
+          <folding>
+            <marker date="1493815120803" expanded="true" signature="63:106" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="194:2068" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="201:301" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="308:1933" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="465:1861" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="513:1853" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="526:1844" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="568:731" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="597:720" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="635:641" ph="&amp;nbsp;" />
+            <marker date="1493815120803" expanded="true" signature="762:860" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="922:1761" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="970:1750" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="1023:1738" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="1039:1170" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="1052:1154" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="1185:1723" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="1244:1707" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="1258:1686" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="1299:1460" ph="..." />
+            <marker date="1493815120803" expanded="true" signature="1300:1306" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-member.jsp">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
-          <caret line="49" column="36" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
-          <folding />
+          <caret line="22" column="64" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="64" />
+          <folding>
+            <marker date="1493458318938" expanded="true" signature="63:106" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="194:1790" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="201:347" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="354:1644" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="465:1552" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="480:547" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="722:745" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="746:1522" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="802:1445" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="832:1367" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="887:1356" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="916:1314" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="957:1013" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="1014:1301" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="1072:1287" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="1095:1113" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="1114:1245" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="1190:1229" ph="..." />
+            <marker date="1493458318938" expanded="true" signature="1210:1228" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/org/orgroom/orgroom-member.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
