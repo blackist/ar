@@ -426,8 +426,21 @@ public class OrgroomController extends BaseController {
         return "org/orgroom/orgroom-album";
     }
 
+    /**
+     * TODO 加载相册照片流
+     * @param model
+     * @param albumId
+     * @param originId
+     * @return
+     */
     @RequestMapping("/album/image")
-    public String image(Model model, Integer albumId, Integer originId) {
+    public String image(Model model, Integer albumId, Integer originId) throws ServiceException {
+        // 校友组织基本信息
+        Origin origin = orgroomService.getOriginById(originId);
+        if (origin == null || CommonUtil.isEmpty(origin.getOriginId())) {
+            return "redirect:/org.action";
+        }
+        model.addAttribute("orgroom", origin);
 
         model.addAttribute("page");
 
