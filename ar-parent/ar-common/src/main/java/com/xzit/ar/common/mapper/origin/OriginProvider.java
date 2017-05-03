@@ -25,7 +25,7 @@ public class OriginProvider {
 				+ "from origin o, user_origin uo, user u "
 				+ "where o.origin_grade like #{originGrade} "
 				+ "and (o.origin_name like #{queryStr} or u.true_name like #{queryStr}) "
-				+ "and uo.origin_id=o.origin_id and u.user_id=uo.user_id  and uo.state='A' "
+				+ "and (uo.origin_id=o.origin_id or 1=1) and u.user_id=uo.user_id  and uo.state='A' "
 				+ "and o.state like #{state} and o.origin_type='C' order by o.create_time desc ";
 	}
 	

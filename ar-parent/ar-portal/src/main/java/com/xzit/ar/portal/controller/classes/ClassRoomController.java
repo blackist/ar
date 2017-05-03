@@ -15,7 +15,9 @@ import java.util.UUID;
 
 import javax.annotation.Resource;
 
+import com.xzit.ar.common.po.album.Album;
 import com.xzit.ar.common.po.origin.Origin;
+import com.xzit.ar.portal.service.image.AlbumService;
 import com.xzit.ar.portal.service.information.CommentService;
 import com.xzit.ar.portal.service.information.InformationService;
 import com.xzit.ar.portal.service.my.TaService;
@@ -60,6 +62,9 @@ public class ClassRoomController extends BaseController {
 
 	@Resource
 	private TaService taService;
+
+	@Resource
+	private AlbumService albumService;
 
 	/**
 	 * TODO 加载班级主页
@@ -219,13 +224,6 @@ public class ClassRoomController extends BaseController {
 		return "class/classroom/classroom-info-side";
 	}
 
-	/**
-	 * TODO 对班级动态消息发发表评论
-	 * @param infoId
-	 * @param content
-	 * @return
-	 * @throws ServiceException
-	 */
 //	@RequestMapping(value = "/commentInfo", method = RequestMethod.POST)
 //	public @ResponseBody Comment commentInfo(@RequestParam("infoId") Integer infoId,
 //			@RequestParam("content") String content) throws ServiceException {
@@ -392,6 +390,51 @@ public class ClassRoomController extends BaseController {
 		attr.addAttribute("classId", classId);
 		// 重定向
 		return "redirect:/classroom/message.action";
+	}
+
+	/**
+	 * TODO 加载班级相册
+	 * @param model 
+	 * @param classId 
+	 * @return
+	 * @throws ServiceException
+	 */
+	@RequestMapping("/album")
+	public String album(Model model, Integer classId) throws ServiceException {
+		// 班级基本信息
+		Map<String, Object> classroom = classRoomService.classIndex(classId);
+		if (classroom == null || CommonUtil.isEmpty(classroom.get("classId").toString())){
+			return "redirect:/class.action";
+		}
+		model.addAttribute("classroom", classroom);
+		// 加载相册
+		Page<Album> page = new Page<>(getPageIndex(), 12);
+		albumService.getAlbums(page, classId);
+		// 传递数据
+		model.addAttribute("page", page);
+
+		return "class/classroom/classroom-album";
+	}
+
+	/**
+	 * TODO 加载相册照片流
+	 * @param model
+	 * @param albumId
+	 * @param classId
+	 * @return
+	 */
+	@RequestMapping("/album/image")
+	public String image(Model model, Integer albumId, Integer classId) throws ServiceException {
+		// 班级基本信息
+		Map<String, Object> classroom = classRoomService.classIndex(classId);
+		if (classroom == null || CommonUtil.isEmpty(classroom.get("classId").toString())){
+			return "redirect:/class.action";
+		}
+		model.addAttribute("classroom", classroom);
+		// 加载照片流
+
+
+		return "class/classroom/classroom-album-image";
 	}
 
 	/**

@@ -7,8 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ececa08-7c78-49ca-b88d-e43327a37548" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/org/OrgroomController.java" afterPath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/org/OrgroomController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-add.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-add.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-album-image.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-album.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/class/classroom/classroom-album-image.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/class/classroom/classroom-album.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/origin/OriginProvider.java" afterPath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/origin/OriginProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/classes/ClassRoomController.java" afterPath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/classes/ClassRoomController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/ar-portal/target/" />
     <ignored path="$PROJECT_DIR$/ar-manage/target/" />
@@ -55,14 +60,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="OrgroomController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/org/OrgroomController.java">
+      <file leaf-file-name="classroom-album-image.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-album-image.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="431" column="59" lean-forward="true" selection-start-line="431" selection-start-column="21" selection-end-line="431" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="363">
+              <caret line="41" column="67" lean-forward="false" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -109,12 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-pageheader.jsp" />
-        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/org/orgroom/orgroom-index.js" />
-        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/org/orgroom/orgroom-index.jsp" />
-        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/org/orgroom/orgroom-member.js" />
-        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/org/orgroom/orgroom-directory.js" />
-        <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/org/OrgroomService.java" />
         <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/origin/OriginMapper.java" />
         <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/origin/OriginMapper.xml" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/org/impl/OrgroomServiceImpl.java" />
@@ -160,6 +157,12 @@
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/news/news-index.jsp" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-add.jsp" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/org/OrgroomController.java" />
+        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/class/classroom/classroom-album-image.js" />
+        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/class/classroom/classroom-album.js" />
+        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-album.jsp" />
+        <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/origin/OriginProvider.java" />
+        <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/classes/ClassRoomController.java" />
+        <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-album-image.jsp" />
       </list>
     </option>
   </component>
@@ -590,6 +593,86 @@
               <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classroom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -697,7 +780,167 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orgroom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="news" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classroom" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -780,6 +1023,78 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ar-portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -963,11 +1278,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Projects\java\ar\ar-parent\ar-portal\src\main\webapp\assets\script\class\classroom" />
+      <recent name="F:\Projects\java\ar\ar-parent\ar-portal\src\main\webapp\WEB-INF\views\class\classroom" />
       <recent name="F:\Projects\java\ar\ar-parent\ar-portal\src\main\webapp\assets\script\news" />
       <recent name="F:\Projects\java\ar\ar-parent\ar-portal\src\main\webapp\WEB-INF\views\news" />
       <recent name="F:\Projects\java\ar\ar-parent\ar-portal\src\main\webapp\assets\images\icon" />
-      <recent name="F:\Projects\java\ar\ar-parent\ar-portal\src\main\webapp\assets\script\org\orgroom" />
-      <recent name="F:\Projects\java\ar\ar-parent\ar-portal\src\main\webapp\assets\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Projects\java\ar\ar-parent\ar-portal\src\main\webapp\assets\images\icon\loading" />
@@ -1650,12 +1965,12 @@
       <workItem from="1493499704639" duration="168000" />
       <workItem from="1493529601893" duration="2794000" />
       <workItem from="1493616895539" duration="162000" />
-      <workItem from="1493810325316" duration="9370000" />
+      <workItem from="1493810325316" duration="13849000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="429391000" />
+    <option name="totallyTimeSpent" value="433870000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1685,7 +2000,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4814815" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4814815" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32919255" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32314816" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1744,80 +2059,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/assets/images/icon/loading/loader.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/assets/images/blog-icon1.png" />
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/assets/images/blog-icon2.png" />
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/image/AlbumService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="23" column="96" lean-forward="true" selection-start-line="23" selection-start-column="86" selection-end-line="23" selection-end-column="86" />
-          <folding>
-            <marker date="1493444596033" expanded="true" signature="50:199" ph="..." />
-            <marker date="1493444596033" expanded="true" signature="201:287" ph="/**...*/" />
-            <marker date="1493444596033" expanded="true" signature="325:465" ph="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/image/impl/AlbumServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="38" column="40" lean-forward="true" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/album/AlbumMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="48" column="53" lean-forward="true" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/album/AlbumMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/org/orgroom/orgroom-directory.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-728">
-          <caret line="13" column="62" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/portal-common/portal-js.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="14" column="69" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <marker date="1492003340202" expanded="true" signature="63:86" ph="..." />
-            <marker date="1492003340202" expanded="true" signature="1331:1484" ph="..." />
-            <marker date="1492003340202" expanded="true" signature="1348:1473" ph="{...}" />
-            <marker date="1492003340202" expanded="true" signature="1385:1465" ph="{&quot;width&quot;: '100%'...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/assets/css/album.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/org/orgroom/orgroom-album-image.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/assets/js/album.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7789">
@@ -2883,13 +3124,257 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/class/classroom/classroom-album-image.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="4" column="64" lean-forward="false" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
+          <folding>
+            <marker date="1493823217108" expanded="true" signature="13:158" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/class/classroom/classroom-album.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding>
+            <marker date="1493823246486" expanded="true" signature="13:150" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/org/OrgroomController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="431" column="59" lean-forward="true" selection-start-line="431" selection-start-column="21" selection-end-line="431" selection-end-column="21" />
+        <state relative-caret-position="491">
+          <caret line="423" column="45" lean-forward="true" selection-start-line="419" selection-start-column="8" selection-end-line="423" selection-end-column="41" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1493822544417" expanded="true" signature="51:1203" ph="..." />
+            <marker date="1493822544417" expanded="true" signature="1205:1290" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="1291:1330" ph="@{...}" />
+            <marker date="1493822544417" expanded="true" signature="1677:1774" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="1904:2511" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="2517:2654" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="2818:3393" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="3399:3548" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="3682:4205" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="4211:4386" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="4638:5752" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="5759:5856" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="5992:6498" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="6504:6597" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="6749:7030" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="7036:7173" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="7338:7887" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="7893:7965" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="8113:8172" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="8178:8282" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="8494:8711" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="8717:8873" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="9059:9854" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="9860:9988" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="10102:10621" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="10627:10762" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="10914:11825" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="11831:11954" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="12092:12610" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="12616:12746" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="12864:13451" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="13457:13577" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="13713:14204" ph="{...}" />
+            <marker date="1493822544417" expanded="true" signature="14210:14321" ph="/**...*/" />
+            <marker date="1493822544417" expanded="true" signature="14454:14807" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-album.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="10" column="76" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding>
+            <marker date="1493825139982" expanded="true" signature="63:106" ph="..." />
+            <marker date="1493825139982" expanded="true" signature="194:1963" ph="..." />
+            <marker date="1493825139982" expanded="true" signature="201:321" ph="..." />
+            <marker date="1493825139982" expanded="true" signature="329:1818" ph="..." />
+            <marker date="1493825139982" expanded="true" signature="438:1726" ph="..." />
+            <marker date="1493825139982" expanded="false" signature="757:780" ph="..." />
+            <marker date="1493825139982" expanded="true" signature="781:1696" ph="..." />
+            <marker date="1493825139982" expanded="true" signature="814:1598" ph="..." />
+            <marker date="1493825139982" expanded="true" signature="867:1588" ph="..." />
+            <marker date="1493825139982" expanded="true" signature="923:1554" ph="..." />
+            <marker date="1493825139982" expanded="false" signature="956:973" ph="..." />
+            <marker date="1493825139982" expanded="true" signature="974:1529" ph="..." />
+            <marker date="1493825139982" expanded="true" signature="1005:1235" ph="..." />
+            <marker date="1493825139982" expanded="true" signature="1104:1221" ph="..." />
+            <marker date="1493825139982" expanded="false" signature="1189:1206" ph="..." />
+            <marker date="1493825139982" expanded="true" signature="1264:1398" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/classes/ClassRoomService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="771">
+          <caret line="51" column="37" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <marker date="1493106720328" expanded="false" signature="0:180" ph="/**...*/" />
+            <marker date="1493106720328" expanded="false" signature="233:542" ph="..." />
+            <marker date="1493106720328" expanded="true" signature="544:655" ph="/**...*/" />
+            <marker date="1493106720328" expanded="true" signature="694:780" ph="/**...*/" />
+            <marker date="1493106720328" expanded="true" signature="1092:1196" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/classes/ClassController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="42" column="47" lean-forward="true" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
+          <folding>
+            <marker date="1492501211193" expanded="false" signature="0:185" ph="/**...*/" />
+            <marker date="1492501211193" expanded="false" signature="241:795" ph="..." />
+            <marker date="1492501211193" expanded="true" signature="797:908" ph="/**...*/" />
+            <marker date="1492501211193" expanded="true" signature="909:946" ph="@{...}" />
+            <marker date="1492501211193" expanded="true" signature="1129:1328" ph="{...}" />
+            <marker date="1492501211193" expanded="true" signature="1331:1417" ph="/**...*/" />
+            <marker date="1492501211193" expanded="true" signature="1517:2023" ph="{...}" />
+            <marker date="1492501211193" expanded="true" signature="2026:2106" ph="/**...*/" />
+            <marker date="1492501211193" expanded="true" signature="2206:2561" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/classes/ClassService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+          <folding>
+            <marker date="1492501457917" expanded="false" signature="0:176" ph="/**...*/" />
+            <marker date="1492501457917" expanded="false" signature="229:401" ph="..." />
+            <marker date="1492501457917" expanded="true" signature="403:510" ph="/**...*/" />
+            <marker date="1492501457917" expanded="true" signature="545:624" ph="/**...*/" />
+            <marker date="1492501457917" expanded="true" signature="674:812" ph="/**...*/" />
+            <marker date="1492501457917" expanded="true" signature="950:1015" ph="/**...*/" />
+            <marker date="1492501457917" expanded="true" signature="1068:1138" ph="/**...*/" />
+            <marker date="1492501457917" expanded="true" signature="1195:1280" ph="/**...*/" />
+            <marker date="1492501457917" expanded="true" signature="1363:1446" ph="/**...*/" />
+            <marker date="1492501457917" expanded="true" signature="1534:1620" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/classes/impl/ClassServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="63" column="39" lean-forward="true" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
+          <folding>
+            <marker date="1490970410989" expanded="false" signature="0:185" ph="/**...*/" />
+            <marker date="1490970410989" expanded="false" signature="243:704" ph="..." />
+            <marker date="1490970410989" expanded="true" signature="706:833" ph="/**...*/" />
+            <marker date="1490970410989" expanded="true" signature="1073:1182" ph="{...}" />
+            <marker date="1490970410989" expanded="true" signature="1336:1708" ph="{...}" />
+            <marker date="1490970410989" expanded="true" signature="1777:1910" ph="{...}" />
+            <marker date="1490970410989" expanded="true" signature="1983:2120" ph="{...}" />
+            <marker date="1490970410989" expanded="true" signature="2219:2418" ph="{...}" />
+            <marker date="1490970410989" expanded="true" signature="2522:2726" ph="{...}" />
+            <marker date="1490970410989" expanded="true" signature="2827:3030" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/origin/OriginMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding>
+            <marker date="1493433683321" expanded="false" signature="50:266" ph="..." />
+            <marker date="1493433683321" expanded="true" signature="321:480" ph="/**...*/" />
+            <marker date="1493433683321" expanded="true" signature="756:855" ph="/**...*/" />
+            <marker date="1493433683321" expanded="true" signature="1025:1114" ph="/**...*/" />
+            <marker date="1493433683321" expanded="true" signature="1292:1414" ph="/**...*/" />
+            <marker date="1493433683321" expanded="true" signature="1622:1738" ph="/**...*/" />
+            <marker date="1493433683321" expanded="true" signature="1956:2071" ph="/**...*/" />
+            <marker date="1493433683321" expanded="true" signature="2281:2368" ph="/**...*/" />
+            <marker date="1493433683321" expanded="true" signature="2531:2622" ph="/**...*/" />
+            <marker date="1493433683321" expanded="true" signature="2804:2887" ph="/**...*/" />
+            <marker date="1493433683321" expanded="true" signature="2998:3097" ph="/**...*/" />
+            <marker date="1493433683321" expanded="true" signature="3283:3363" ph="/**...*/" />
+            <marker date="1493433683321" expanded="true" signature="3497:3609" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/origin/OriginProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="29" column="56" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <marker date="1493826838065" expanded="false" signature="0:176" ph="/**...*/" />
+            <marker date="1493826838065" expanded="true" signature="220:343" ph="/**...*/" />
+            <marker date="1493826838065" expanded="true" signature="697:1089" ph="{...}" />
+            <marker date="1493826838065" expanded="true" signature="1129:1227" ph="{...}" />
+            <marker date="1493826838065" expanded="true" signature="1271:1424" ph="{...}" />
+            <marker date="1493826838065" expanded="true" signature="1456:1742" ph="{...}" />
+            <marker date="1493826838065" expanded="true" signature="1779:1987" ph="{...}" />
+            <marker date="1493826838065" expanded="true" signature="2020:2471" ph="{...}" />
+            <marker date="1493826838065" expanded="false" signature="2509:2513" ph=" { " />
+            <marker date="1493826838065" expanded="false" signature="2588:2591" ph=" }" />
+            <marker date="1493826838065" expanded="false" signature="2627:2631" ph=" { " />
+            <marker date="1493826838065" expanded="false" signature="2712:2715" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/classes/ClassRoomController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="436" column="59" lean-forward="true" selection-start-line="436" selection-start-column="55" selection-end-line="436" selection-end-column="55" />
+          <folding>
+            <marker date="1493827123898" expanded="false" signature="0:186" ph="/**...*/" />
+            <marker date="1493827123898" expanded="false" signature="242:1613" ph="..." />
+            <marker date="1493827123898" expanded="true" signature="1615:1734" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="1735:1776" ph="@{...}" />
+            <marker date="1493827123898" expanded="true" signature="2095:2196" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="2354:2919" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="2922:3024" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="3160:3691" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="3694:3797" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="3927:4396" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="4399:4502" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="4628:5084" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="5087:5210" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="5391:5833" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="5836:5907" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="6053:6301" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="6304:6431" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="6609:7347" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="8034:8477" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="8480:8594" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="8928:10458" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="10461:10535" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="10699:11332" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="11335:11411" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="11543:12017" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="12020:12106" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="12331:12975" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="12978:13081" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="13184:13638" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="13641:13733" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="13859:14181" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="14184:14262" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="14402:14529" ph="{...}" />
+            <marker date="1493827123898" expanded="true" signature="14532:14674" ph="/**...*/" />
+            <marker date="1493827123898" expanded="true" signature="14897:15061" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-album-image.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="41" column="67" lean-forward="false" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
