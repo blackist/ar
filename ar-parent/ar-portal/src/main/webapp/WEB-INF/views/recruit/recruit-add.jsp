@@ -9,10 +9,7 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/views/portal-common/header.jsp" %>
-
 <%@ include file="/WEB-INF/views/portal-common/navmenu.jsp" %>
-
-
 <div class="banner-bottom">
     <div class="container higher" id="container">
         <section>
@@ -39,8 +36,8 @@
 
                                     <ul class="nav nav-pills nav-justified">
                                         <li><a href="javascript:;" data-toggle=""><span>公司信息</span></a></li>
-                                        <li class="active"><a href="#tab-recruit"
-                                                              data-toggle="tab"><span>招聘信息</span></a></li>
+                                        <li class="active">
+                                            <a href="#tab-recruit" data-toggle="tab"><span>招聘信息</span></a></li>
                                         <li><a href="javascript:;" data-toggle=""><span>完成发布</span></a></li>
                                     </ul>
 
@@ -57,7 +54,7 @@
                                                     <h5 class="panel-title">基本信息</h5>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-sm-4"><span class="asterisk">*
+                                                    <label class="col-sm-3"><span class="asterisk">*
 														</span>招聘标题</label>
                                                     <div class="col-sm-4">
                                                         <input type="text" name="title" id="title" maxlength="20"
@@ -67,7 +64,7 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label class="col-sm-4"><span class="asterisk">*
+                                                    <label class="col-sm-3"><span class="asterisk">*
 														</span>所招人数</label>
                                                     <div class="col-sm-4">
                                                         <input type="text" name="members" id="members"
@@ -77,7 +74,7 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label class="col-sm-4"><span class="asterisk">*
+                                                    <label class="col-sm-3"><span class="asterisk">*
 														</span>学历要求</label>
                                                     <div class="col-sm-4">
                                                         <div class="input-group">
@@ -92,7 +89,7 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label class="col-sm-4"><span class="asterisk">*
+                                                    <label class="col-sm-3"><span class="asterisk">*
 														</span>每月薪资</label>
                                                     <div class="col-sm-4">
                                                         <div class="input-group">
@@ -111,7 +108,7 @@
                                                     <h5 class="panel-title">职位信息</h5>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="col-sm-4"><span class="asterisk">*
+                                                    <label class="col-sm-3"><span class="asterisk">*
 														</span>职位名称</label>
                                                     <div class="col-sm-4">
                                                         <input type="text" name="posName" id="posName"
@@ -122,9 +119,9 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label class="col-sm-4 control-label"><span
+                                                    <label class="col-sm-3 control-label"><span
                                                             class="asterisk">* </span>职位描述</label>
-                                                    <div class="col-sm-7">
+                                                    <div class="col-sm-9">
 															<textarea rows="7" style="height: 150.4px;"
                                                                       name="posDesc" id="posDesc"
                                                                       class="form-control tooltips" data-trigger="hover"
@@ -135,8 +132,8 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label class="col-sm-4 control-label">职位福利</label>
-                                                    <div class="col-sm-7">
+                                                    <label class="col-sm-3 control-label">职位福利</label>
+                                                    <div class="col-sm-9">
                                                         <c:forEach items="${positionBenefit}" var="benefit">
                                                             <div class="ckbox ckbox-primary"
                                                                  style="width: 20%; float: left;">
@@ -150,40 +147,54 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label class="col-sm-4"><span class="asterisk">*
+                                                    <label class="col-sm-3"><span class="asterisk">*
 														</span>工作地点</label>
-                                                    <div class="col-sm-7">
-                                                        <input type="text" name="workPlace" id="workPlace"
-                                                               class="form-control tooltips" data-trigger="hover"
-                                                               data-toggle="tooltip" data-original-title="不超过50字"
-                                                               maxlength="50"/>
+                                                    <div class="col-sm-9">
+                                                        <div class="col-sm-4">
+                                                            <select class="select2" id="province" name="province">
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <select class="select2" id="city" name="city">
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <select class="select2" id="county" name="county">
+                                                            </select>
+                                                        </div>
+                                                        <div class="mb5"></div>
+                                                        <div class="col-sm-12">
+                                                            <input type="text" name="workPlace" id="workPlace"
+                                                                   class="form-control tooltips" data-trigger="hover"
+                                                                   data-toggle="tooltip" data-original-title="不超过50字"
+                                                                   maxlength="50"/>
+                                                        </div>
                                                     </div>
-                                                </div>
 
-                                                <div class="panel panel-default">
-                                                    <h5 class="panel-title">联系方式</h5>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-4"><span class="asterisk">*
+                                                    <div class="panel panel-default">
+                                                        <h5 class="panel-title">联系方式</h5>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4"><span class="asterisk">*
 														</span>联系人</label>
-                                                    <div class="col-sm-4">
-                                                        <input type="text" name="leaderName" id="leaderName"
-                                                               class="form-control tooltips" data-trigger="hover"
-                                                               data-toggle="tooltip" data-original-title="不超过20字"
-                                                               placeholder="联系人姓名" maxlength="20"/>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" name="leaderName" id="leaderName"
+                                                                   class="form-control tooltips" data-trigger="hover"
+                                                                   data-toggle="tooltip" data-original-title="不超过20字"
+                                                                   placeholder="联系人姓名" maxlength="20"/>
+                                                        </div>
                                                     </div>
-                                                </div>
 
-                                                <div class="form-group">
-                                                    <label class="col-sm-4"><span class="asterisk">*
+                                                    <div class="form-group">
+                                                        <label class="col-sm-4"><span class="asterisk">*
 														</span>联系方式</label>
-                                                    <div class="col-sm-4">
-                                                        <input type="text" name="leaderPhone" id="leaderPhone"
-                                                               class="form-control tooltips" data-trigger="hover"
-                                                               data-toggle="tooltip" data-original-title="不超过30字"
-                                                               placeholder="手机/固定电话" maxlength="30"/>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" name="leaderPhone" id="leaderPhone"
+                                                                   class="form-control tooltips" data-trigger="hover"
+                                                                   data-toggle="tooltip" data-original-title="不超过30字"
+                                                                   placeholder="手机/固定电话" maxlength="30"/>
+                                                        </div>
                                                     </div>
-                                                </div>
                                             </form>
                                         </div>
 
@@ -191,8 +202,9 @@
                                     <!-- tab-content -->
 
                                     <ul class="pager wizard">
-                                        <li class="next"><a href="javascript:;"
-                                                            onclick="addRecruitSubmit()" id="submitBtn">提交审核</a></li>
+                                        <li class="next">
+                                            <a href="javascript:;" onclick="addRecruitSubmit()" id="submitBtn">提交审核</a>
+                                        </li>
                                     </ul>
 
                                 </div>
@@ -204,15 +216,7 @@
         </section>
     </div>
 </div>
-所在地：
-<select id="province" name="province">
-</select>
-<select id="city" name="city">
-</select>
-<select id="county" name="city">
-</select>
 <%@ include file="/WEB-INF/views/portal-common/footer.jsp" %>
-
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
 <script src="assets/script/recruit/recruit-add.js"></script>

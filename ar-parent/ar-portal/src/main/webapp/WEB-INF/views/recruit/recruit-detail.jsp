@@ -187,11 +187,7 @@
 								</div>
 								<!-- /.modal -->
 
-
-
-
-								<br /> <br /> <br />
-
+								<div class="mb40" ></div>
 								<ul class="nav nav-tabs nav-dark">
 									<li class="active"><a data-toggle="tab"
 										href="#position-desc"><strong>职位描述</strong></a></li>

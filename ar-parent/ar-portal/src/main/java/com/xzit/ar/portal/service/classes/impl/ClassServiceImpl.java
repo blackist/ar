@@ -40,11 +40,11 @@ public class ClassServiceImpl implements ClassService {
 
 	@Override
 	public List<Grade> getAll() throws ServiceException {
-		try {
+//		try {
 			return gradeMapper.getAll();
-		} catch (Exception e) {
-			throw new ServiceException("");
-		}
+//		} catch (Exception e) {
+//			throw new ServiceException("");
+//		}
 	}
 
 	@Override

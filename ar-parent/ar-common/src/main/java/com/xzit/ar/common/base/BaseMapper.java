@@ -66,5 +66,5 @@ public interface BaseMapper {
 	/**
 	 * 查询所有，用于加载下拉框的option项
 	 */
-	<T extends BaseEntity> List<T> getAll() throws Exception;
+	<T extends BaseEntity> List<T> getAll()  ;
 }
