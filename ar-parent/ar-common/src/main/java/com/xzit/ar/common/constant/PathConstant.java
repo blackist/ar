@@ -31,4 +31,9 @@ public interface PathConstant {
 	 */
 	String portraitRelPath = "/ar/pic/portrait";
 
+	/**
+	 * 相册默认封面图片路径
+	 */
+	String albumCoverDefaultRelPath = "assets/images/example/ablum-cover/media-audio.png";
+
 }

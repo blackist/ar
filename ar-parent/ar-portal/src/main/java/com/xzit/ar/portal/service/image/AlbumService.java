@@ -22,4 +22,12 @@ public interface AlbumService {
      * @throws ServiceException
      */
     List<Album> getAlbums(Page<Album> page, Integer originId) throws ServiceException;
+
+    /**
+     * TODO 保存创建的相册
+     * @param album
+     * @return
+     * @throws ServiceException
+     */
+    Integer saveAlbum(Album album) throws ServiceException;
 }

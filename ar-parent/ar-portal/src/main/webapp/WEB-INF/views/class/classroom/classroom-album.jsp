@@ -20,7 +20,7 @@
 		<div class="tab-content" style="background-color: #ddd;">
 			<!-- options -->
 			<ul class="filemanager-options">
-				<li><a href="classroom/album/add.action" class="itemopt"><i class="fa fa-plus"></i> 新建相册</a></li>
+				<li><a href="classroom/album/add.action?classId=${classroom.classId}" class="itemopt"><i class="fa fa-plus"></i> 新建相册</a></li>
 			</ul>
 			
 			<div class="row filemanager">

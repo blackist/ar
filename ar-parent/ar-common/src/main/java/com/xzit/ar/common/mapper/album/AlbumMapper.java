@@ -16,6 +16,6 @@ public interface AlbumMapper extends BaseMapper{
      * @return
      * @throws Exception
      */
-    List<Album> getAlbums(Page<Album> page, @Param("originId") Integer originId)  ;
+    List<Album> getAlbums(Page<Album> page, @Param("originId") Integer originId) throws Exception;
     
 }

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50173
 File Encoding         : 65001
 
-Date: 2017-04-28 14:19:52
+Date: 2017-05-06 14:24:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -39,7 +39,9 @@ CREATE TABLE `activity` (
   `exp2` varchar(100) DEFAULT NULL COMMENT '备用字段',
   PRIMARY KEY (`act_id`),
   KEY `FK_ACTIVITY_USERID` (`user_id`),
-  KEY `FK_ACTIVITY_ORIGINID` (`origin_id`)
+  KEY `FK_ACTIVITY_ORIGINID` (`origin_id`),
+  CONSTRAINT `FK_ACTIVITY_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_ACTIVITY_ORIGINID` FOREIGN KEY (`origin_id`) REFERENCES `origin` (`origin_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -67,17 +69,21 @@ CREATE TABLE `album` (
   `album_id` int(8) NOT NULL AUTO_INCREMENT COMMENT '相册标识',
   `album_name` varchar(20) NOT NULL COMMENT '相册名称',
   `album_desc` varchar(200) DEFAULT NULL COMMENT '相册描述，少于200字符',
-  `create_time` datetime NOT NULL COMMENT '创建时间',
-  `interests` int(4) DEFAULT NULL COMMENT '感兴趣数',
-  `cover_image` int(11) DEFAULT NULL COMMENT '相册封面标识',
+  `cover_image` varchar(255) NOT NULL COMMENT '相册封面图片路径',
+  `interests` int(4) DEFAULT '0' COMMENT '感兴趣数',
   `origin_id` int(8) NOT NULL COMMENT '相册所属组织标识',
   `user_id` int(8) NOT NULL COMMENT '相册创建者标识',
-  `state` char(2) NOT NULL COMMENT '状态',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `state` char(2) NOT NULL DEFAULT 'A' COMMENT '状态',
   `state_time` datetime DEFAULT NULL COMMENT '状态日期',
   `exp1` varchar(100) DEFAULT NULL COMMENT '备用字段',
   `exp2` varchar(100) DEFAULT NULL COMMENT '备用字段',
-  PRIMARY KEY (`album_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`album_id`),
+  KEY `FK_ALBUM_USERID` (`user_id`),
+  KEY `FK_ALBUM_ORIGINID` (`origin_id`),
+  CONSTRAINT `FK_ALBUM_ORIGINID` FOREIGN KEY (`origin_id`) REFERENCES `origin` (`origin_id`),
+  CONSTRAINT `FK_ALBUM_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for album_image
@@ -156,7 +162,7 @@ CREATE TABLE `comment` (
   KEY `FK_COMMENT_INFOID` (`info_id`),
   CONSTRAINT `FK_COMMENT_INFOID` FOREIGN KEY (`info_id`) REFERENCES `information` (`info_id`),
   CONSTRAINT `FK_COMMENT_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for dictionary
@@ -196,9 +202,9 @@ CREATE TABLE `grade` (
   `class_num` int(4) NOT NULL COMMENT '班级数量',
   `create_time` datetime NOT NULL COMMENT '创建时间',
   `state` char(2) NOT NULL COMMENT '状态',
-  `state_time` datetime DEFAULT '0000-00-00 00:00:00' COMMENT '状态日期',
+  `state_time` datetime DEFAULT NULL COMMENT '状态日期',
   PRIMARY KEY (`grade_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for image
@@ -245,7 +251,7 @@ CREATE TABLE `information` (
   KEY `FK_INFORMATION_ORIGINID` (`origin_id`),
   CONSTRAINT `FK_INFORMATION_ORIGINID` FOREIGN KEY (`origin_id`) REFERENCES `origin` (`origin_id`) ON DELETE CASCADE,
   CONSTRAINT `FK_INFORMATION_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for log
@@ -304,7 +310,7 @@ CREATE TABLE `origin` (
   KEY `FK_ORIGIN_MGRID` (`mgr_id`),
   CONSTRAINT `FK_ORIGIN_CREATORID` FOREIGN KEY (`creator_id`) REFERENCES `user` (`user_id`),
   CONSTRAINT `FK_ORIGIN_MGRID` FOREIGN KEY (`mgr_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for recruit
@@ -357,7 +363,7 @@ CREATE TABLE `recruit_unit` (
   PRIMARY KEY (`unit_id`),
   KEY `FK_RECRUIT_UNIT_USERID` (`user_id`),
   CONSTRAINT `FK_RECRUIT_UNIT_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for reply
@@ -486,7 +492,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`user_id`),
   KEY `FK_USER_IMAGEID` (`image_id`),
   CONSTRAINT `FK_USER_IMAGEID` FOREIGN KEY (`image_id`) REFERENCES `image` (`image_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=277 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=326 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for user_info
@@ -573,7 +579,7 @@ CREATE TABLE `user_resume` (
   PRIMARY KEY (`resume_id`),
   KEY `FK_USER_RESUME` (`user_id`),
   CONSTRAINT `FK_USER_RESUME` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for user_role

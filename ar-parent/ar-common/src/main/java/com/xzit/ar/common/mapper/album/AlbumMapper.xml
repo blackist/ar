@@ -61,7 +61,8 @@
 
 
   <!--save-->
-  <insert id="save" parameterType="com.xzit.ar.common.po.album.Album" >
+  <insert id="save" parameterType="com.xzit.ar.common.po.album.Album"  useGeneratedKeys="true" keyProperty="albumId">
+
     insert into album
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="albumId != null" >album_id,</if>
@@ -91,6 +92,7 @@
       <if test="exp1 != null" >#{exp1,jdbcType=VARCHAR},</if>
       <if test="exp2 != null" >#{exp2,jdbcType=VARCHAR},</if>
     </trim>
+
   </insert>
 
   
