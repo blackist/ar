@@ -25,6 +25,7 @@
 <script src="assets/js/jquery.validate.min.js"></script>
 <script src="assets/js/custom.js"></script>
 
+<%--file upload--%>
 <script src="assets/js/fileinput.min.js"></script>
 <script src="assets/js/fileinput_locale_zh.js"></script>
 

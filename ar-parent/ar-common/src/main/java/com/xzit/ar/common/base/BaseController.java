@@ -330,7 +330,6 @@ public abstract class BaseController {
 	 * @Title: getCurrentUser
 	 * @Description: TODO 获取当前用户
 	 */
-	@SuppressWarnings("unchecked")
 	protected Map<String, Object> getCurrentUser() {
 		Map<String, Object> user = null;
 		// 普通用户

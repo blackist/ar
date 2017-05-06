@@ -16,7 +16,6 @@ import java.util.UUID;
 import javax.annotation.Resource;
 
 import com.xzit.ar.common.po.album.Album;
-import com.xzit.ar.common.po.origin.Origin;
 import com.xzit.ar.portal.service.image.AlbumService;
 import com.xzit.ar.portal.service.information.CommentService;
 import com.xzit.ar.portal.service.information.InformationService;
@@ -26,7 +25,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -435,6 +433,15 @@ public class ClassRoomController extends BaseController {
 
 
 		return "class/classroom/classroom-album-image";
+	}
+
+	@RequestMapping("/album/add")
+	public String addAlbum(Model model, Integer classId) {
+
+		//
+		model.addAttribute("");
+
+		return "class/classroom/classroom-album-add";
 	}
 
 	/**

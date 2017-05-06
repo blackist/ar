@@ -45,7 +45,7 @@
 				</div>
 				<%--outline div--%>
 				<div class="col-sm-3" id="org-outline">
-					<img src="assets/images/icon/loader.gif" class="center-block">
+					<img src="assets/images/icon/loading/loader.gif" class="center-block">
 				</div>
 				<%--outline div--%>
 			</div>

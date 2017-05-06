@@ -18,10 +18,26 @@
 		<input type="hidden" value="${classroom.classId}" id="classId">
 		<!-- Tab panes -->
 		<div class="tab-content" style="background-color: #ddd;">
+			<!-- options -->
+			<ul class="filemanager-options">
+				<li><a href="classroom/album/add.action" class="itemopt"><i class="fa fa-plus"></i> 新建相册</a></li>
+			</ul>
+			
 			<div class="row filemanager">
 				<c:forEach items="${page.beanList}" var="album" >
 					<div class="col-xs-6 col-sm-4 col-md-3 document">
 						<div class="thmb" style="min-height: 228px">
+							<div class="btn-group fm-group">
+								<button type="button" class="btn btn-default dropdown-toggle fm-toggle" data-toggle="dropdown">
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu fm-menu" role="menu">
+									<li><a href="#"><i class="fa fa-picture-o"></i> 查看相册</a></li>
+									<li><a href="#"><i class="fa fa-edit"></i> 编辑相册</a></li>
+									<li><a href="#"><i class="fa fa-trash-o"></i> 删除相册</a></li>
+									<li><a href="#"><i class="fa fa-upload"></i> 上传照片</a></li>
+								</ul>
+							</div><!-- btn-group -->
 							<div class="thmb-prev">
 								<a href="classroom/album/image.action?albumId=${album.albumId}&classId=${album.originId}">
 									<img src="${album.coverImage}" class="img-responsive center-block" style="min-height: 160px"/>
@@ -47,4 +63,20 @@
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
 <script src="assets/script/class/classroom/classroom-album.js"></script>
+<script>
+    jQuery(document).ready(function(){
+
+        jQuery('.thmb').hover(function(){
+            var t = jQuery(this);
+            t.find('.fm-group').show();
+        }, function() {
+            var t = jQuery(this);
+            if(!t.closest('.thmb').hasClass('checked')) {
+                t.find('.fm-group').hide();
+            }
+        });
+
+    });
+
+</script>
 </html>

@@ -21,6 +21,6 @@ public class AccountController extends BaseController {
 
         model.addAttribute("");
 
-        return "my/account/account-password.jsp";
+        return "my/account/account-password";
     }
 }

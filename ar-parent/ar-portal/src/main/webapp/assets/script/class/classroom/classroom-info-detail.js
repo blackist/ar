@@ -23,7 +23,7 @@ $(function() {
  */
 function loadMoreComment(pageIndex) {
     // 按钮显示加载
-    $("#btn-load-more").html("<img src='assets/images/icon/loader.gif'>");
+    $("#btn-load-more").html("<img src='assets/images/icon/loading/loader.gif'>");
     // 加载评论列表
     var infoId = $("#infoId").val();
     $.post("classroom/infoCommentList.action", {
