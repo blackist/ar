@@ -40,9 +40,9 @@ import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.portal.service.classes.ClassRoomService;
 
 /**
+ * @author Mr.Black
  * @ClassName: ClassRoomController
  * @Description: TODO 班级空间
- * @author Mr.Black
  * @date 2016年2月20日 下午3:05:30
  */
 @Controller
@@ -66,6 +66,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 加载班级主页
+     *
      * @param model
      * @param classId
      * @return
@@ -89,6 +90,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 加载班级通讯录
+     *
      * @param model
      * @param classId
      * @return
@@ -112,6 +114,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 加载班级成员列表
+     *
      * @param model
      * @param classId
      * @return
@@ -133,6 +136,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 加载班级动态消息
+     *
      * @param model
      * @param classId
      * @return
@@ -155,6 +159,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 加载班级动态消息详情
+     *
      * @param model
      * @param classId
      * @param infoId
@@ -179,6 +184,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 动态加载评论
+     *
      * @param model
      * @param infoId
      * @return
@@ -196,6 +202,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 加载消息详情页面的侧边栏
+     *
      * @param model
      * @param authorId
      * @param classId
@@ -254,6 +261,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 发布班级动态消息
+     *
      * @throws ServiceException
      * @Title: publishClassInfo
      * @Description: TODO 发布班级动态
@@ -312,6 +320,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 申请加入班级
+     *
      * @Title: joinClass
      * @Description: TODO 加入班级
      */
@@ -342,6 +351,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 加载班级留言页面
+     *
      * @Title: message
      * @Description: TODO 加载班级留言
      */
@@ -362,6 +372,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 发布班级留言
+     *
      * @Title: publishClassMessage
      * @Description: TODO 发布班级留言
      */
@@ -392,6 +403,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 加载班级相册
+     *
      * @param model
      * @param classId
      * @return
@@ -416,6 +428,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 加载创建相册界面
+     *
      * @param model
      * @param classId
      * @return
@@ -424,8 +437,7 @@ public class ClassRoomController extends BaseController {
     @RequestMapping("/album/add")
     public String addAlbum(Model model, Integer classId) throws ServiceException {
         // 班级基本信息
-        Map<String, Object> classroom = classRoomService.classIndex(classId
-        );
+        Map<String, Object> classroom = classRoomService.classIndex(classId);
         if (classroom == null || CommonUtil.isEmpty(classroom.get("classId").toString())) {
             return "redirect:/class.action";
         }
@@ -436,6 +448,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 保存相册
+     *
      * @param attributes
      * @param classId
      * @param albumName
@@ -443,7 +456,7 @@ public class ClassRoomController extends BaseController {
      * @return
      * @throws ServiceException
      */
-    @RequestMapping("/album/save")
+    @RequestMapping(value = "/album/save", method = RequestMethod.POST)
     public String saveAlbum(RedirectAttributes attributes, Integer classId, String albumName, String albumDesc) throws ServiceException {
 
         // 参数校验
@@ -462,15 +475,62 @@ public class ClassRoomController extends BaseController {
 
             // 存储相册
             attributes.addAttribute("classId", classId);
+            // 插入相册后返回ID
             attributes.addAttribute("albumId", albumService.saveAlbum(album));
 
-            return "redirect:/classroom/album/image.action";
+            return "redirect:/classroom/album.action";
+        }
+        return "redirect:/class.action";
+    }
+
+    /**
+     * TODO 加载相册编辑界面
+     *
+     * @param model
+     * @param albumId
+     * @param classId
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/album/edit")
+    public String editAlbum(Model model, Integer albumId, Integer classId) throws ServiceException {
+        // 班级基本信息
+        Map<String, Object> classroom = classRoomService.classIndex(classId);
+        if (classroom == null || CommonUtil.isEmpty(classroom.get("classId").toString())) {
+            return "redirect:/class.action";
+        }
+        model.addAttribute("classroom", classroom);
+        // 查询相册信息
+        model.addAttribute("album", albumService.getAlbumById(albumId));
+
+        return "class/classroom/classroom-album-edit";
+    }
+
+    /**
+     * TODO 更新相册信息
+     *
+     * @param attributes
+     * @param classId
+     * @param album
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping(value = "/album/update", method = RequestMethod.POST)
+    public String updateAlbum(RedirectAttributes attributes, Integer classId, Album album) throws ServiceException {
+        // 参数校验
+        if (album != null && CommonUtil.isNotEmpty(classId) && CommonUtil.isNotEmpty(album.getAlbumId())) {
+            album.setStateTime(new Date());
+            // 数据存储
+            albumService.updateAlbum(album);
+            attributes.addAttribute("classId", classId);
+            return "redirect:/classroom/album.action";
         }
         return "redirect:/class.action";
     }
 
     /**
      * TODO 加载相册照片流
+     *
      * @param model
      * @param albumId
      * @param classId
@@ -491,7 +551,29 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
+     * TODO 删除相册
+     * @param attributes
+     * @param classId
+     * @param albumId
+     * @return jsp
+     * @throws ServiceException
+     */
+    @RequestMapping(value = "/album/delete", method = RequestMethod.POST)
+    public String deleteAlbum(RedirectAttributes attributes, Integer classId, Integer albumId) throws ServiceException {
+        // 参数校验
+        if (CommonUtil.isNotEmpty(albumId) && CommonUtil.isNotEmpty(classId)) {
+            // 删除相册
+            albumService.deleteAlbum(albumId);
+        }
+        // 跳转页面
+        attributes.addAttribute("classId", classId);
+
+        return "redirect:/classroom/album.action";
+    }
+
+    /**
      * TODO 编辑班级简介
+     *
      * @Title: description
      * @Description: TODO 编辑班级简介
      */
@@ -503,6 +585,7 @@ public class ClassRoomController extends BaseController {
 
     /**
      * TODO 提交班级信息编辑
+     *
      * @param model
      * @param attr
      * @param classId
@@ -510,7 +593,7 @@ public class ClassRoomController extends BaseController {
      * @return
      * @throws ServiceException
      */
-    @RequestMapping("/setDescription")
+    @RequestMapping(value = "/setDescription", method = RequestMethod.POST)
     public String setDescription(Model model, RedirectAttributes attr, @RequestParam("classId") Integer classId,
                                  @RequestParam("description") String description) throws ServiceException {
         classRoomService.updateClassDesc(description, classId);

@@ -50,6 +50,8 @@
       album
     WHERE
       origin_id=#{originId}
+    ORDER BY
+      state_time DESC
 
   </select>
 

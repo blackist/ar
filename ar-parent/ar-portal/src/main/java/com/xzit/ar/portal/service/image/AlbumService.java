@@ -14,6 +14,15 @@ import java.util.List;
  */
 public interface AlbumService {
 
+
+    /**
+     * TODO 根据Id查询相册信息
+     * @param albumId
+     * @return album对象
+     * @throws ServiceException
+     */
+    Album getAlbumById(Integer albumId) throws ServiceException;
+
     /**
      * TODO 加载组织的相册列表
      * @param page 分页类
@@ -30,4 +39,22 @@ public interface AlbumService {
      * @throws ServiceException
      */
     Integer saveAlbum(Album album) throws ServiceException;
+
+    /**
+     * TODO 编辑相册
+     * @param album
+     * @return
+     * @throws ServiceException
+     */
+    Integer updateAlbum(Album album) throws ServiceException;
+
+
+    /**
+     * TODO 删除相册
+     * @param albumId
+     * @return
+     * @throws ServiceException
+     */
+    Integer deleteAlbum(Integer albumId) throws ServiceException;
+
 }

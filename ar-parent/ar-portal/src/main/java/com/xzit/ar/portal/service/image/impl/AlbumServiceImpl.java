@@ -24,6 +24,25 @@ public class AlbumServiceImpl implements AlbumService {
     private AlbumMapper albumMapper;
 
     /**
+     * TODO 根据Id查询相册信息
+     *
+     * @param albumId
+     * @return album对象
+     * @throws ServiceException
+     */
+    @Override
+    public Album getAlbumById(Integer albumId) throws ServiceException {
+        try {
+            if (CommonUtil.isNotEmpty(albumId)) {
+                return albumMapper.getById(albumId);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("加载相册信息时发生异常！");
+        }
+        return null;
+    }
+
+    /**
      * TODO 加载组织的相册列表
      *
      * @param page     分页类
@@ -46,6 +65,7 @@ public class AlbumServiceImpl implements AlbumService {
 
     /**
      * TODO 保存创建的相册
+     *
      * @param album
      * @return 相册的id
      * @throws ServiceException
@@ -60,6 +80,47 @@ public class AlbumServiceImpl implements AlbumService {
             }
         } catch (Exception e) {
             throw new ServiceException("创建相册时发生异常！");
+        }
+        return 0;
+    }
+
+    /**
+     * TODO 编辑相册
+     *
+     * @param album
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public Integer updateAlbum(Album album) throws ServiceException {
+        try {
+            // 关键参数校验
+            if (CommonUtil.isNotEmpty(album.getAlbumId())) {
+                return albumMapper.update(album);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("更新相册信息时发生异常！");
+        }
+        return null;
+    }
+
+    /**
+     * TODO 删除相册
+     *
+     * @param albumId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public Integer deleteAlbum(Integer albumId) throws ServiceException {
+        try {
+            // 参数校验
+            if (CommonUtil.isNotEmpty(albumId)) {
+                return albumMapper.delete(albumId);
+            }
+
+        } catch (Exception e) {
+            throw new ServiceException("删除相册时发生异常！");
         }
         return 0;
     }
