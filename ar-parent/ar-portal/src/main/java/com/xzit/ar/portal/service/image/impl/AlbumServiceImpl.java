@@ -46,9 +46,8 @@ public class AlbumServiceImpl implements AlbumService {
 
     /**
      * TODO 保存创建的相册
-     *
      * @param album
-     * @return
+     * @return 相册的id
      * @throws ServiceException
      */
     @Override
@@ -56,7 +55,8 @@ public class AlbumServiceImpl implements AlbumService {
         try {
             // 参数校验
             if (CommonUtil.isNotEmpty(album.getUserId()) && CommonUtil.isNotEmpty(album.getOriginId())) {
-                return albumMapper.save(album);
+                albumMapper.save(album);
+                return album.getAlbumId();
             }
         } catch (Exception e) {
             throw new ServiceException("创建相册时发生异常！");

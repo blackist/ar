@@ -10,15 +10,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ececa08-7c78-49ca-b88d-e43327a37548" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ar-doc/pdm/ar.pdb" afterPath="$PROJECT_DIR$/../ar-doc/pdm/ar.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ar-doc/pdm/ar.pdm" afterPath="$PROJECT_DIR$/../ar-doc/pdm/ar.pdm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/constant/PathConstant.java" afterPath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/constant/PathConstant.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/album/AlbumMapper.java" afterPath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/album/AlbumMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/album/AlbumMapper.xml" afterPath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/album/AlbumMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-common/target/classes/com/xzit/ar/common/mapper/album/AlbumMapper.xml" afterPath="$PROJECT_DIR$/ar-common/target/classes/com/xzit/ar/common/mapper/album/AlbumMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/classes/ClassRoomController.java" afterPath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/classes/ClassRoomController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/image/AlbumService.java" afterPath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/image/AlbumService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/image/impl/AlbumServiceImpl.java" afterPath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/image/impl/AlbumServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-album-add.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-album-add.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-album.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-album.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/class/classroom/classroom-album.js" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/class/classroom/classroom-album.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ar-tools/model-portal/Bracket1.5/form-validation.html" afterPath="$PROJECT_DIR$/../ar-tools/model-portal/Bracket1.5/form-validation.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/database/MBG/db.properties" afterPath="$PROJECT_DIR$/../ar-doc/sql/MBG/db.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/database/MBG/generatorConfig.xml" afterPath="$PROJECT_DIR$/../ar-doc/sql/MBG/generatorConfig.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/database/ar-mysql-data.sql" afterPath="$PROJECT_DIR$/../ar-doc/sql/ar-mysql-data.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/database/ar-mysql-table.sql" afterPath="$PROJECT_DIR$/../ar-doc/sql/ar-mysql-table.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/database/sql/sql_query.json" afterPath="$PROJECT_DIR$/../ar-doc/sql/sql/sql_query.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/mind map/ar-manage.mmap" afterPath="$PROJECT_DIR$/../ar-doc/mmap/ar-manage.mmap" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/mind map/ar-news.mmap" afterPath="$PROJECT_DIR$/../ar-doc/mmap/ar-news.mmap" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/system data/industry.txt" afterPath="$PROJECT_DIR$/../ar-doc/data/industry.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/system data/user_list.xls" afterPath="$PROJECT_DIR$/../ar-doc/data/user_list.xls" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/use case/AR.mdl" afterPath="$PROJECT_DIR$/../ar-doc/mdl/AR.mdl" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/use case/~$工程学院_信电校友录_用例规约_班级录.docx" afterPath="$PROJECT_DIR$/../ar-doc/mdl/~$工程学院_信电校友录_用例规约_班级录.docx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/use case/~$工程学院_信电校友录_用例规约_职业招聘.docx" afterPath="$PROJECT_DIR$/../ar-doc/mdl/~$工程学院_信电校友录_用例规约_职业招聘.docx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/use case/~WRL0946.tmp" afterPath="$PROJECT_DIR$/../ar-doc/mdl/~WRL0946.tmp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/use case/用例规约/徐州工程学院_信电校友录_用例规约.docx" afterPath="$PROJECT_DIR$/../ar-doc/mdl/用例规约/徐州工程学院_信电校友录_用例规约.docx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/use case/用例规约/徐州工程学院_信电校友录_用例规约_校友刊物.docx" afterPath="$PROJECT_DIR$/../ar-doc/mdl/用例规约/徐州工程学院_信电校友录_用例规约_校友刊物.docx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/use case/用例规约/徐州工程学院_信电校友录_用例规约_校友动态.docx" afterPath="$PROJECT_DIR$/../ar-doc/mdl/用例规约/徐州工程学院_信电校友录_用例规约_校友动态.docx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/use case/用例规约/徐州工程学院_信电校友录_用例规约_校友捐赠.docx" afterPath="$PROJECT_DIR$/../ar-doc/mdl/用例规约/徐州工程学院_信电校友录_用例规约_校友捐赠.docx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/use case/用例规约/徐州工程学院_信电校友录_用例规约_校友活动.docx" afterPath="$PROJECT_DIR$/../ar-doc/mdl/用例规约/徐州工程学院_信电校友录_用例规约_校友活动.docx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/use case/用例规约/徐州工程学院_信电校友录_用例规约_校友组织.docx" afterPath="$PROJECT_DIR$/../ar-doc/mdl/用例规约/徐州工程学院_信电校友录_用例规约_校友组织.docx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/use case/用例规约/徐州工程学院_信电校友录_用例规约_校友论坛.docx" afterPath="$PROJECT_DIR$/../ar-doc/mdl/用例规约/徐州工程学院_信电校友录_用例规约_校友论坛.docx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/use case/用例规约/徐州工程学院_信电校友录_用例规约_班级录.docx" afterPath="$PROJECT_DIR$/../ar-doc/mdl/用例规约/徐州工程学院_信电校友录_用例规约_班级录.docx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ar-doc/use case/用例规约/徐州工程学院_信电校友录_用例规约_职业招聘.docx" afterPath="$PROJECT_DIR$/../ar-doc/mdl/用例规约/徐州工程学院_信电校友录_用例规约_职业招聘.docx" />
     </list>
     <ignored path="$PROJECT_DIR$/ar-portal/target/" />
     <ignored path="$PROJECT_DIR$/ar-manage/target/" />
@@ -68,8 +95,8 @@
       <file leaf-file-name="ClassRoomController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/classes/ClassRoomController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="463" column="42" lean-forward="false" selection-start-line="463" selection-start-column="42" selection-end-line="463" selection-end-column="42" />
+            <state relative-caret-position="677">
+              <caret line="468" column="40" lean-forward="true" selection-start-line="468" selection-start-column="40" selection-end-line="468" selection-end-column="40" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -166,10 +193,10 @@
         <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/constant/PathConstant.java" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/image/AlbumService.java" />
         <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/album/AlbumMapper.java" />
-        <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/image/impl/AlbumServiceImpl.java" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-album-add.jsp" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/class/classroom/classroom-album.js" />
         <option value="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/album/AlbumMapper.xml" />
+        <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/image/impl/AlbumServiceImpl.java" />
         <option value="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/classes/ClassRoomController.java" />
       </list>
     </option>
@@ -1700,12 +1727,12 @@
       <workItem from="1493915674554" duration="844000" />
       <workItem from="1493954586924" duration="11334000" />
       <workItem from="1494030219722" duration="1952000" />
-      <workItem from="1494033243676" duration="12587000" />
+      <workItem from="1494033243676" duration="12950000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="469090000" />
+    <option name="totallyTimeSpent" value="469453000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1717,8 +1744,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1735,7 +1762,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43888888" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43888888" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32919255" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32224333" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1746,7 +1773,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32685184" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32690355" sideWeight="0.49785408" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32919255" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.215625" sideWeight="0.4946071" order="6" side_tool="false" content_ui="combo" x="747" y="39" width="419" height="1014" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.215625" sideWeight="0.4946071" order="6" side_tool="false" content_ui="combo" x="747" y="39" width="419" height="1014" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16718914" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1779,7 +1806,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43888888" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43888888" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32919255" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32224333" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2608,19 +2635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/image/AlbumService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding>
-            <marker date="1494048377362" expanded="false" signature="50:199" ph="..." />
-            <marker date="1494048377362" expanded="true" signature="201:287" ph="/**...*/" />
-            <marker date="1494048377362" expanded="true" signature="325:465" ph="/**...*/" />
-            <marker date="1494048377362" expanded="true" signature="558:656" ph="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/base/BaseMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -2638,21 +2652,6 @@
             <marker date="1493876629039" expanded="true" signature="1073:1090" ph="/**...*/" />
             <marker date="1493876629039" expanded="true" signature="1164:1185" ph="/**...*/" />
             <marker date="1493876629039" expanded="true" signature="1268:1301" ph="/**...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/image/impl/AlbumServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="58" column="36" lean-forward="true" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
-          <folding>
-            <marker date="1494050512256" expanded="false" signature="55:434" ph="..." />
-            <marker date="1494050512256" expanded="true" signature="436:522" ph="/**...*/" />
-            <marker date="1494050512256" expanded="true" signature="661:812" ph="/**...*/" />
-            <marker date="1494050512256" expanded="true" signature="920:1211" ph="{...}" />
-            <marker date="1494050512256" expanded="true" signature="1217:1322" ph="/**...*/" />
-            <marker date="1494050512256" expanded="true" signature="1403:1726" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2755,10 +2754,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/image/AlbumService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+          <folding>
+            <marker date="1494048377362" expanded="false" signature="50:199" ph="..." />
+            <marker date="1494048377362" expanded="true" signature="201:287" ph="/**...*/" />
+            <marker date="1494048377362" expanded="true" signature="325:465" ph="/**...*/" />
+            <marker date="1494048377362" expanded="true" signature="558:656" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/service/image/impl/AlbumServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="53" column="25" lean-forward="false" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+          <folding>
+            <marker date="1494051987449" expanded="false" signature="55:434" ph="..." />
+            <marker date="1494051987449" expanded="true" signature="436:522" ph="/**...*/" />
+            <marker date="1494051987449" expanded="true" signature="661:812" ph="/**...*/" />
+            <marker date="1494051987449" expanded="true" signature="920:1211" ph="{...}" />
+            <marker date="1494051987449" expanded="true" signature="1217:1321" ph="/**...*/" />
+            <marker date="1494051987449" expanded="true" signature="1402:1761" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/classes/ClassRoomController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="463" column="42" lean-forward="false" selection-start-line="463" selection-start-column="42" selection-end-line="463" selection-end-column="42" />
+        <state relative-caret-position="677">
+          <caret line="468" column="40" lean-forward="true" selection-start-line="468" selection-start-column="40" selection-end-line="468" selection-end-column="40" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />

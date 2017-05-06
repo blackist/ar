@@ -461,10 +461,8 @@ public class ClassRoomController extends BaseController {
             album.setCoverImage(PathConstant.albumCoverDefaultRelPath);
 
             // 存储相册
-            albumService.saveAlbum(album);
             attributes.addAttribute("classId", classId);
-            attributes.addAttribute("albumId", album.getAlbumId());
-            System.out.println(album.getAlbumId());
+            attributes.addAttribute("albumId", albumService.saveAlbum(album));
 
             return "redirect:/classroom/album/image.action";
         }
