@@ -1974,14 +1974,13 @@ div.error label.error:before {
 }
 
 .filemanager .thmb {
-	border: 1px solid #fcfcfc;
+	/*border: 0px solid #fcfcfc;*/
 	background: #fcfcfc;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	padding: 10px;
-	margin-bottom: 20px;
-	position: relative;
+	border-radius: 5px;
+	padding: 0px;
+	margin-bottom: 10px;
 	-moz-box-shadow: 0 3px 0 rgba(12, 12, 12, 0.03);
 	-webkit-box-shadow: 0 3px 0 rgba(12, 12, 12, 0.03);
 	box-shadow: 0 3px 0 rgba(12, 12, 12, 0.03);
@@ -2037,6 +2036,7 @@ div.error label.error:before {
 }
 
 .filemanager .thmb-prev {
+	border-radius: 5px;
 	background: #eee;
 	overflow: hidden;
 }

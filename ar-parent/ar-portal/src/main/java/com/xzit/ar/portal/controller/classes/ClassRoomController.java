@@ -545,7 +545,11 @@ public class ClassRoomController extends BaseController {
         }
         model.addAttribute("classroom", classroom);
         // 加载照片流
-
+        Page<Map<String, Object>> page = new Page<>(getPageIndex(), getPageSize());
+        albumService.getAlbumImage(page, albumId);
+        model.addAttribute("page", page);
+        // 相册信息
+        model.addAttribute("album", albumService.getAlbumById(albumId));
 
         return "class/classroom/classroom-album-image";
     }

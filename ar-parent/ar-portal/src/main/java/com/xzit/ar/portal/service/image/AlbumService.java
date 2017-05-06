@@ -5,6 +5,7 @@ import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.album.Album;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * TODO ${TODO}
@@ -56,5 +57,13 @@ public interface AlbumService {
      * @throws ServiceException
      */
     Integer deleteAlbum(Integer albumId) throws ServiceException;
+
+    /**
+     * TODO 加载相册图片
+     * @param albumId
+     * @return
+     * @throws ServiceException
+     */
+    List<Map<String, Object>> getAlbumImage(Page<Map<String, Object>> page, Integer albumId) throws ServiceException;
 
 }

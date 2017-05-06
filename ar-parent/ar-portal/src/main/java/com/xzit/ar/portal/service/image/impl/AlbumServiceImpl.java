@@ -1,6 +1,7 @@
 package com.xzit.ar.portal.service.image.impl;
 
 import com.xzit.ar.common.exception.ServiceException;
+import com.xzit.ar.common.mapper.album.AlbumImageMapper;
 import com.xzit.ar.common.mapper.album.AlbumMapper;
 import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.album.Album;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * TODO ${TODO}
@@ -22,6 +24,9 @@ public class AlbumServiceImpl implements AlbumService {
 
     @Resource
     private AlbumMapper albumMapper;
+
+    @Resource
+    private AlbumImageMapper albumImageMapper;
 
     /**
      * TODO 根据Id查询相册信息
@@ -123,5 +128,24 @@ public class AlbumServiceImpl implements AlbumService {
             throw new ServiceException("删除相册时发生异常！");
         }
         return 0;
+    }
+
+    /**
+     * TODO 加载相册图片
+     *
+     * @param albumId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public List<Map<String, Object>> getAlbumImage(Page<Map<String, Object>> page, Integer albumId) throws ServiceException {
+        try {
+            if (CommonUtil.isNotEmpty(albumId)) {
+                return albumImageMapper.getAlbumImage(page, albumId);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("加载相册图片时发生异常！");
+        }
+        return null;
     }
 }
