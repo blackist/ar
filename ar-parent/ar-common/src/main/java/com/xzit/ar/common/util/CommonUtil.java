@@ -8,15 +8,13 @@
 */
 package com.xzit.ar.common.util;
 
+import java.io.File;
 import java.security.MessageDigest;
 import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.UUID;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
+import com.xzit.ar.common.constant.PathConstant;
 import com.xzit.ar.common.exception.ExceptionCode;
 import com.xzit.ar.common.exception.UtilException;
 
@@ -363,5 +361,27 @@ public class CommonUtil {
 			}
 		}
 		return idList;
+	}
+
+	/**
+	 * TODO 根据当前日期，在绝对路径下创建 年/月/日 文件夹
+	 * @param parentDirAbsPath
+	 * @return  返回年月日文件夹
+	 */
+	public static  String createDateDir(String parentDirAbsPath) {
+		// 获取格式化的日期
+		Calendar date = Calendar.getInstance();
+		SimpleDateFormat format1 = new SimpleDateFormat( "yyyy");
+		SimpleDateFormat format2 = new SimpleDateFormat( "MM");
+		SimpleDateFormat format3 = new SimpleDateFormat( "dd");
+		String name1 = format1.format(date.getTime());
+		String name2 = format2.format(date.getTime());
+		String name3 = format3.format(date.getTime());
+		// 设置文件夹路径
+		String dirDatePath = "/" + name1 + "/" + name2 + "/" + name3;
+		File file = new File( parentDirAbsPath + dirDatePath);
+		file.mkdirs();
+
+		return dirDatePath;
 	}
 }

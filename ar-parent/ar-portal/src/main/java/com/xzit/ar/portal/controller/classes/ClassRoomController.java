@@ -15,7 +15,9 @@ import java.util.UUID;
 
 import javax.annotation.Resource;
 
+import com.xzit.ar.common.exception.UtilException;
 import com.xzit.ar.common.po.album.Album;
+import com.xzit.ar.common.util.ImageUtil;
 import com.xzit.ar.portal.service.image.AlbumService;
 import com.xzit.ar.portal.service.information.CommentService;
 import com.xzit.ar.portal.service.information.InformationService;
@@ -268,7 +270,7 @@ public class ClassRoomController extends BaseController {
      */
     @RequestMapping(value = "/publishClassInfo", method = RequestMethod.POST)
     public String publishClassInfo(Model model, RedirectAttributes attr, @RequestParam("infoTitle") String infoTitle,
-                                   @RequestParam("content") String content, MultipartFile infoImage, @RequestParam("classId") Integer classId) throws ServiceException {
+                                   @RequestParam("content") String content, MultipartFile infoImage, @RequestParam("classId") Integer classId) throws ServiceException, UtilException {
         Information information = new Information();
         // 参数校验
         if (CommonUtil.isNotEmpty(content) && CommonUtil.isNotEmpty(infoTitle)) {
@@ -286,27 +288,8 @@ public class ClassRoomController extends BaseController {
             information.setStateTime(new Date());
             // 图片处理
             if (infoImage != null) {
-                // 原始名称
-                String originalFilename = infoImage.getOriginalFilename();
-                // 上传图片
-                if (originalFilename != null && originalFilename.length() > 0) {
-                    // 存储图片的物理路径
-                    String pic_path = PathConstant.infoPicAbsPath;
-                    // 新的图片名称
-                    String newFileName = UUID.randomUUID()
-                            + originalFilename.substring(originalFilename.lastIndexOf("."));
-                    // 新图片
-                    File newFile = new File(pic_path + newFileName);
-                    // 将内存中的数据写入磁盘
-                    try {
-                        infoImage.transferTo(newFile);
-                    } catch (Exception e) {
-                        throw new ServiceException("发布动态时出现异常");
-                    }
-                    // 将新图片名称写到 中
-                    information.setThumbImage(PathConstant.infoPicRelPath + newFileName);
-                    System.out.println(information.getThumbImage());
-                }
+                // 保存消息的图片 
+                information.setThumbImage(ImageUtil.saveImage(infoImage));
             }
         } else {
             setMessage(model, "说两句吧");
@@ -555,7 +538,56 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
+     * TODO 加载图片上传界面
+     *
+     * @param model
+     * @param classId
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/album/upload")
+    public String uploadAlbum(Model model, Integer classId, Integer albumId) throws ServiceException {
+        // 班级基本信息
+        Map<String, Object> classroom = classRoomService.classIndex(classId);
+        if (classroom == null || CommonUtil.isEmpty(classroom.get("classId").toString())) {
+            return "redirect:/class.action";
+        }
+        model.addAttribute("classroom", classroom);
+        // 相册信息
+        model.addAttribute("album", albumService.getAlbumById(albumId));
+        
+        return "class/classroom/classroom-album-upload";
+    }
+
+    /**
+     * TODO 上传班级图片
+     * @param attributes
+     * @param classId
+     * @param albumId
+     * @param images
+     * @return
+     */
+    @RequestMapping("/album/image/upload")
+    public String uploadImage(RedirectAttributes attributes, Integer classId, Integer albumId,
+                              @RequestParam("images") MultipartFile images[]) {
+        // 参数校验
+        if (CommonUtil.isNotEmpty(classId) && CommonUtil.isNotEmpty(albumId)
+                && CommonUtil.isNotEmpty(images) && images.length > 0) {
+            // 图片存储
+            for (int i = 0;i < images.length;i++ ){
+                
+            }
+        }
+        // 参数传递
+        attributes.addAttribute("classId", classId);
+        attributes.addAttribute("albumId", albumId);
+
+        return "redirect:/classroom/album/image.action";
+    }
+
+    /**
      * TODO 删除相册
+     *
      * @param attributes
      * @param classId
      * @param albumId

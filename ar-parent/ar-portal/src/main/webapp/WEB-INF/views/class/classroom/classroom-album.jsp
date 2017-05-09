@@ -43,7 +43,7 @@
                                 <li><a href="javascript:;" onclick="deleteAlbum(${album.albumId})"><i
                                         class="fa fa-trash-o"></i>
                                     删除相册</a></li>
-                                <li><a href=""><i class="fa fa-upload"></i> 上传照片</a></li>
+                                <li><a href="classroom/album/upload.action?classId=${classroom.classId}&albumId=${album.albumId}"><i class="fa fa-upload"></i> 上传照片</a></li>
                             </ul>
                         </div><!-- btn-group -->
                         <div class="thmb-prev">

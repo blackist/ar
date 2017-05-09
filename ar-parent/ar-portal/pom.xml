@@ -36,7 +36,11 @@
 			<type>war</type>
 			<scope>runtime</scope>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
 	<build>
 		<finalName>ar-portal</finalName>
 		<plugins>

@@ -27,7 +27,7 @@
                     <label for="selectall">全选</label>
                 </div>
             </li>
-            <li><a href="" class=""><i class="fa fa-upload"></i> 上传照片</a></li>
+            <li><a href="classroom/album/upload.action?classId=${classroom.classId}&albumId=${album.albumId}" class=""><i class="fa fa-upload"></i> 上传照片</a></li>
             <li><a href="" class="itemopt disabled"><i class="fa fa-download"></i> 下载选中</a></li>
             <li><a href="" class="itemopt disabled"><i class="fa fa-trash-o"></i> 删除选中</a></li>
         </ul>
