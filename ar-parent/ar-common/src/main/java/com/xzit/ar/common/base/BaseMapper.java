@@ -26,7 +26,7 @@ public interface BaseMapper {
 	/**
 	 * 保存
 	 */
-	int save(BaseEntity t) throws Exception;
+	int save(BaseEntity t)  ;
 
 	/**
 	 * 根据Id查询

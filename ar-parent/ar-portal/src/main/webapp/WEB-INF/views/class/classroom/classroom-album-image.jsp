@@ -50,7 +50,7 @@
                                 <li><a href="#"><i class="fa fa-trash-o"></i> 删除照片</a></li>
                             </ul>
                         </div><!-- btn-group -->
-                        <div class="thmb-prev">
+                        <div class="thmb-prev" style="min-height: 170px">
                             <a href="${image.imagePath}" id="image_pre_${image.imageId}" data-rel="prettyPhoto">
                                 <img src="${image.imagePath}" class="img-responsive" alt=""/>
                             </a>

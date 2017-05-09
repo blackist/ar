@@ -9,16 +9,16 @@
 package com.xzit.ar.portal.controller.classes;
 
 import java.io.File;
-import java.util.Date;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 import javax.annotation.Resource;
 
 import com.xzit.ar.common.exception.UtilException;
 import com.xzit.ar.common.po.album.Album;
+import com.xzit.ar.common.po.image.Image;
 import com.xzit.ar.common.util.ImageUtil;
 import com.xzit.ar.portal.service.image.AlbumService;
+import com.xzit.ar.portal.service.image.ImageService;
 import com.xzit.ar.portal.service.information.CommentService;
 import com.xzit.ar.portal.service.information.InformationService;
 import com.xzit.ar.portal.service.my.TaService;
@@ -65,6 +65,9 @@ public class ClassRoomController extends BaseController {
 
     @Resource
     private AlbumService albumService;
+
+    @Resource
+    private ImageService imageService;
 
     /**
      * TODO 加载班级主页
@@ -555,12 +558,13 @@ public class ClassRoomController extends BaseController {
         model.addAttribute("classroom", classroom);
         // 相册信息
         model.addAttribute("album", albumService.getAlbumById(albumId));
-        
+
         return "class/classroom/classroom-album-upload";
     }
 
     /**
      * TODO 上传班级图片
+     *
      * @param attributes
      * @param classId
      * @param albumId
@@ -569,14 +573,42 @@ public class ClassRoomController extends BaseController {
      */
     @RequestMapping("/album/image/upload")
     public String uploadImage(RedirectAttributes attributes, Integer classId, Integer albumId,
-                              @RequestParam("images") MultipartFile images[]) {
+                              @RequestParam("images") MultipartFile images[]) throws UtilException, ServiceException {
         // 参数校验
         if (CommonUtil.isNotEmpty(classId) && CommonUtil.isNotEmpty(albumId)
                 && CommonUtil.isNotEmpty(images) && images.length > 0) {
-            // 图片存储
-            for (int i = 0;i < images.length;i++ ){
-                
+            Album album = albumService.getAlbumById(albumId);
+            if (album != null) {
+                // 图片存储
+                for (int i = 0; i < images.length; i++) {
+                    // 图片对象
+                    Image image = new Image();
+                    image.setImageName(images[i].getOriginalFilename());
+                    image.setImageSize((images[i].getSize() / (1024)) + "M");
+                    image.setImagePath(ImageUtil.saveImage(images[i]));
+                    image.setImageType("AI");
+                    image.setIsRemote("0");
+                    image.setIsThumb("0");
+                    image.setThumbPath("");
+                    image.setCreateTime(new Date());
+                    image.setState("A");
+                    image.setStateTime(new Date());
+
+                    // 存储照片
+                    imageService.saveAlbumImage(image, albumId);
+
+                    // 设置相册封面
+                    String albumCover = album.getCoverImage();
+                    if (i == 0 && CommonUtil.isNotEmpty(albumCover) && albumCover.equals(PathConstant.albumCoverDefaultRelPath)) {
+                        // 设置第一张照片为相册封面
+                        album.setCoverImage(image.getImagePath());
+                        albumService.updateAlbum(album);
+                    }
+
+                }
             }
+
+
         }
         // 参数传递
         attributes.addAttribute("classId", classId);
