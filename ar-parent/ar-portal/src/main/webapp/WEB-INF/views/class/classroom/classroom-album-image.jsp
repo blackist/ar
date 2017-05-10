@@ -27,9 +27,12 @@
                     <label for="selectall">全选</label>
                 </div>
             </li>
-            <li><a href="classroom/album/upload.action?classId=${classroom.classId}&albumId=${album.albumId}" class=""><i class="fa fa-upload"></i> 上传照片</a></li>
-            <li><a href="" class="itemopt disabled"><i class="fa fa-download"></i> 下载选中</a></li>
-            <li><a href="" class="itemopt disabled"><i class="fa fa-trash-o"></i> 删除选中</a></li>
+            <li><a href="classroom/album/upload.action?classId=${classroom.classId}&albumId=${album.albumId}"
+                   class=""><i class="fa fa-upload"></i> 上传照片</a></li>
+            <li><a href="javascript:;" class="itemopt disabled"><i class="fa fa-download"></i> 下载选中</a></li>
+            <li><a href="javascript:;" class="itemopt disabled"><i class="fa fa-trash-o"></i> 删除选中</a></li>
+            <li class="filter-type"><span style="font-size: 16px">${album.albumName} &nbsp; | &nbsp; <fmt:formatDate value="${album.createTime}"
+                                                                         pattern="yyyy-MM-dd HH:mm"/></span></li>
         </ul>
 
         <div class="row filemanager">
@@ -46,15 +49,22 @@
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu fm-menu" role="menu">
-                                <li><a href="#"><i class="fa fa-download"></i> 下载照片</a></li>
-                                <li><a href="#"><i class="fa fa-trash-o"></i> 删除照片</a></li>
+                                <li>
+                                    <a href="download.action?fileRelPath=${image.imagePath}&fileName=${image.imageName}">
+                                        <i class="fa fa-download"></i> 下载照片</a></li>
+                                <li>
+                                    <a href="classroom/album/image/delete.action?classId=${classroom.classId}&albumId=${album.albumId}&imageId=${image.imageId}">
+                                        <i class="fa fa-trash-o"></i> 删除照片</a></li>
+                                <li>
+                                    <a href="classroom/album/cover.action?classId=${classroom.classId}&albumId=${album.albumId}&imageId=${image.imageId}">
+                                        <i class="fa fa-trash-o"></i> 设为封面</a></li>
                             </ul>
                         </div><!-- btn-group -->
-                        <div class="thmb-prev" style="min-height: 170px">
-                            <a href="${image.imagePath}" id="image_pre_${image.imageId}" data-rel="prettyPhoto">
-                                <img src="${image.imagePath}" class="img-responsive" alt=""/>
-                            </a>
-                        </div>
+                        <a href="${image.imagePath}" id="image_pre_${image.imageId}" data-rel="prettyPhoto">
+                            <div class="thmb-prev" style="height: 170px">
+                                <img src="${image.imagePath}" class="img-responsive"/>
+                            </div>
+                        </a>
                         <small class="text-muted">上传于:<fmt:formatDate value="${image.createTime}"
                                                                       pattern="yyyy-MM-dd HH:mm"/></small>
                     </div><!-- thmb -->

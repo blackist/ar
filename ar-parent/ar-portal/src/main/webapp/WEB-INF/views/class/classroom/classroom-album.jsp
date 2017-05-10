@@ -19,15 +19,23 @@
     <!-- Tab panes -->
     <div class="tab-content" style="background-color: #ddd;">
         <!-- options -->
-        <ul class="filemanager-options">
-            <li><a href="classroom/album/add.action?classId=${classroom.classId}" class="itemopt"><i
-                    class="fa fa-plus"></i> 新建相册</a></li>
-        </ul>
-
         <div class="row filemanager">
+            <div class="col-xs-6 col-sm-4 col-md-3 document">
+                <div class="thmb" style="height: 228px">
+                    <a href="classroom/album/add.action?classId=${classroom.classId}">
+                        <div class="thmb-prev" style="height: 170px">
+                            <img src="assets/images/icon/album/plus.png" class="img-responsive center-block"/>
+                        </div>
+                    </a>
+                    <h5 class="fm-title">
+                        <a href="classroom/album/add.action?classId=${classroom.classId}">新建相册</a>
+                    </h5>
+                    <small class="text-muted">新建班级相册</small>
+                </div><!-- thmb -->
+            </div>
             <c:forEach items="${page.beanList}" var="album">
                 <div class="col-xs-6 col-sm-4 col-md-3 document">
-                    <div class="thmb" style="min-height: 228px">
+                    <div class="thmb" style="height: 228px">
                         <div class="btn-group fm-group">
                             <button type="button" class="btn btn-default dropdown-toggle fm-toggle"
                                     data-toggle="dropdown">
@@ -43,20 +51,22 @@
                                 <li><a href="javascript:;" onclick="deleteAlbum(${album.albumId})"><i
                                         class="fa fa-trash-o"></i>
                                     删除相册</a></li>
-                                <li><a href="classroom/album/upload.action?classId=${classroom.classId}&albumId=${album.albumId}"><i class="fa fa-upload"></i> 上传照片</a></li>
+                                <li>
+                                    <a href="classroom/album/upload.action?classId=${classroom.classId}&albumId=${album.albumId}"><i
+                                            class="fa fa-upload"></i> 上传照片</a></li>
                             </ul>
                         </div><!-- btn-group -->
-                        <div class="thmb-prev">
-                            <a href="classroom/album/image.action?albumId=${album.albumId}&classId=${album.originId}">
-                                <img src="${album.coverImage}" class="img-responsive center-block"
-                                     style="min-height: 160px"/>
-                            </a>
-                        </div>
+                        <a href="classroom/album/image.action?albumId=${album.albumId}&classId=${album.originId}">
+                            <div class="thmb-prev" style="height: 170px">
+                                <img src="${album.coverImage}" class="img-responsive center-block"/>
+                            </div>
+                        </a>
                         <h5 class="fm-title">
-                            <a href="classroom/album/image.action?albumId=${album.albumId}&classId=${album.originId}">${album.albumName}</a>
+                            <a href="classroom/album/image.action?albumId=${album.albumId}&classId=${album.originId}">
+                                &nbsp;&nbsp;&nbsp;${album.albumName}</a>
                         </h5>
-                        <small class="text-muted">更新于:<fmt:formatDate value="${album.stateTime}"
-                                                                      pattern="yyyy-MM-dd HH:mm"/></small>
+                        <small class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;更新于:<fmt:formatDate value="${album.stateTime}"
+                                                                                              pattern="yyyy-MM-dd HH:mm"/></small>
                     </div><!-- thmb -->
                 </div>
                 <!-- col-xs-6 -->

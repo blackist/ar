@@ -14,6 +14,7 @@
           i.image_path imagePath,
           i.thumb_path thumbPath,
           i.image_id imageId,
+          i.image_name imageName,
           i.create_time createTime
         FROM
           image i,
@@ -41,4 +42,14 @@
             <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
         </trim>
     </insert>
+
+    <delete id="deleteAlbumImage" parameterType="java.lang.Integer">
+        DELETE FROM album_image
+        WHERE image_id=#{imageId}
+    </delete>
+
+    <delete id="deleteAlbum" parameterType="java.lang.Integer">
+        DELETE FROM album_image
+        WHERE album_id=#{albumId}
+    </delete>
 </mapper>

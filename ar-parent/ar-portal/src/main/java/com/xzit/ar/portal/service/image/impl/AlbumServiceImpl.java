@@ -121,6 +121,9 @@ public class AlbumServiceImpl implements AlbumService {
         try {
             // 参数校验
             if (CommonUtil.isNotEmpty(albumId)) {
+                // 删除与相册相关的图片
+                albumImageMapper.deleteAlbum(albumId);
+                // 删除相册
                 return albumMapper.delete(albumId);
             }
 

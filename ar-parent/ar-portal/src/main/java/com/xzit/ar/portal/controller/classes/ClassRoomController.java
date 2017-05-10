@@ -446,7 +446,7 @@ public class ClassRoomController extends BaseController {
     public String saveAlbum(RedirectAttributes attributes, Integer classId, String albumName, String albumDesc) throws ServiceException {
 
         // 参数校验
-        if (CommonUtil.isNotEmpty(classId) && CommonUtil.isNotEmpty(albumName) && CommonUtil.isNotEmpty(albumDesc)) {
+        if (CommonUtil.isNotEmpty(classId) && CommonUtil.isNotEmpty(albumName)) {
             // 创建相册对象
             Album album = new Album();
             album.setAlbumName(albumName);
@@ -581,15 +581,17 @@ public class ClassRoomController extends BaseController {
             if (album != null) {
                 // 图片存储
                 for (int i = 0; i < images.length; i++) {
+                    // 存储图片
+                    String imagePath = ImageUtil.saveImage(images[i]);
                     // 图片对象
                     Image image = new Image();
                     image.setImageName(images[i].getOriginalFilename());
                     image.setImageSize((images[i].getSize() / (1024)) + "M");
-                    image.setImagePath(ImageUtil.saveImage(images[i]));
+                    image.setImagePath(imagePath);
                     image.setImageType("AI");
                     image.setIsRemote("0");
                     image.setIsThumb("0");
-                    image.setThumbPath("");
+                    image.setThumbPath(imagePath);
                     image.setCreateTime(new Date());
                     image.setState("A");
                     image.setStateTime(new Date());
@@ -615,6 +617,55 @@ public class ClassRoomController extends BaseController {
         attributes.addAttribute("albumId", albumId);
 
         return "redirect:/classroom/album/image.action";
+    }
+
+    /**
+     * TODO 删除相册图片
+     * @param attributes
+     * @param classId
+     * @param albumId
+     * @param imageId
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/album/image/delete")
+    public String deleteImage(RedirectAttributes attributes, Integer classId, Integer albumId, Integer imageId) throws ServiceException {
+        // 删除图片
+        if (CommonUtil.isNotEmpty(imageId)) {
+            imageService.deleteImageById(imageId);
+        }
+        // 参数传递
+        attributes.addAttribute("classId", classId);
+        attributes.addAttribute("albumId", albumId);
+
+        return "redirect:/classroom/album/image.action";
+    }
+
+    /**
+     * TODO 修改相册封面
+     *
+     * @param attributes
+     * @param classId
+     * @param albumId
+     * @return
+     */
+    @RequestMapping("/album/cover")
+    public String cover(RedirectAttributes attributes, Integer classId, Integer albumId, Integer imageId) throws ServiceException {
+        // 参数校验
+        if (CommonUtil.isNotEmpty(imageId)) {
+            // image
+            Image image = imageService.getImageById(imageId);
+            // 更新相册封面
+            Album album = albumService.getAlbumById(albumId);
+            album.setCoverImage(image.getThumbPath());
+            albumService.updateAlbum(album);
+        }
+
+        // 参数传递
+        attributes.addAttribute("classId", classId);
+        attributes.addAttribute("albumId", albumId);
+
+        return "redirect:/classroom/album.action";
     }
 
     /**

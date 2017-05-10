@@ -10,11 +10,11 @@ $(function () {
  * 相册创建校验
  */
 function addAlbum() {
-    // 
+    // 参数校验
     if (!isLength($('#albumName').val(), 2, 20)) {
         errMsg('albumName', '相册名称在2-20字符之间');
-    } else if (!isLength($('#albumDesc').val(), 2, 200) || !isValid($('#albumDesc').val())) {
-        errMsg('albumDesc', '相册描述在2-200字符之间');
+    } else if ($('#albumDesc').val().length > 200) {
+        errMsg('albumDesc', '相册描述不能多余200字符');
     } else {
         $('#album-form').submit();
     }
@@ -44,7 +44,7 @@ function deleteAlbum(albumId) {
         // 参数校验
         if (isValid(albumId)) {
             var classId = $('#classId').val();
-            //调用方法 如
+            //调用方法 如  e
             post('classroom/album/delete.action', {'albumId': albumId, 'classId' : classId});
         }
     }

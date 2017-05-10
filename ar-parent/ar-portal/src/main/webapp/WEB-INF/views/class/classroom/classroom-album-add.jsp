@@ -21,14 +21,14 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">相册名称 <span class="asterisk">*</span></label>
                 <div class="col-sm-4">
-                    <input type="text" name="albumName" id="albumName" class="form-control" placeholder="相册名称 ..." required/>
+                    <input type="text" name="albumName" id="albumName" class="form-control" required/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-sm-2 control-label">相册描述 <span class="asterisk">*</span></label>
                 <div class="col-sm-4">
-                    <textarea name="albumDesc" id="albumDesc" rows="5" class="form-control" placeholder="相册描述 ..."></textarea>
+                    <textarea name="albumDesc" id="albumDesc" rows="5" class="form-control" ></textarea>
                 </div>
             </div>
 

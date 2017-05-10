@@ -8,17 +8,7 @@
 */
 package com.xzit.ar.common.util;
 
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.io.*;
 
 import org.apache.commons.io.IOUtils;
 
@@ -187,5 +177,21 @@ public final class IOUtil {
 				IOUtils.closeQuietly(out);
 			}
 		}
+	}
+
+	/**
+	 * @Title: createFileName
+	 * @Description: TODO 下载文件时设置文件名称
+	 */
+	public static String createFileName(String name) throws UtilException {
+		String newName = "";
+		if (CommonUtil.isNotEmpty(name)) {
+			try {
+				newName = new String(name.getBytes("UTF-8"), "iso-8859-1");
+			} catch (UnsupportedEncodingException e) {
+				throw new UtilException("生成文件名时发生错误");
+			}
+		}
+		return newName;
 	}
 }

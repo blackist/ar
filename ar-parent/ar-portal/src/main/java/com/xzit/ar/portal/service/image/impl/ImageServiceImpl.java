@@ -29,6 +29,25 @@ public class ImageServiceImpl implements ImageService {
     private AlbumImageMapper albumImageMapper;
 
     /**
+     * TODO 查询图片信息
+     *
+     * @param imageId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public Image getImageById(Integer imageId) throws ServiceException {
+        try {
+            if (CommonUtil.isNotEmpty(imageId)) {
+                return imageMapper.getById(imageId);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("获取图片信息时发生异常！");
+        }
+        return null;
+    }
+
+    /**
      * TODO 存储图片信息到数据库
      *
      * @param image
@@ -42,6 +61,29 @@ public class ImageServiceImpl implements ImageService {
                 return imageMapper.save(image);
         } catch (Exception e) {
             throw new ServiceException("上传图片时发生异常！");
+        }
+        return null;
+    }
+
+
+    /**
+     * TODO 根据id删除图片信息
+     *
+     * @param imageId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public Integer deleteImageById(Integer imageId) throws ServiceException {
+        try {
+            if (CommonUtil.isNotEmpty(imageId)) {
+                // 删除相册里的照片
+                albumImageMapper.deleteAlbumImage(imageId);
+                // 删除图片信息
+                return imageMapper.delete(imageId);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("删除图片时发生异常！");
         }
         return null;
     }

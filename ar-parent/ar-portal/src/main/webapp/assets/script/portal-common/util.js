@@ -21,7 +21,7 @@ function disableBtn(el) {
 
 /* 校验参数有效性 */
 function isValid(param) {
-	if (param != null && param != '' && $.trim(param) != '') {
+	if (param != null && param != '' && $.trim(param).length > 0) {
 		return true;
 	}
 	return false;
@@ -87,7 +87,6 @@ function post(URL, PARAMS) {
         var opt = document.createElement("input");
         opt.name = x;
         opt.value = PARAMS[x];
-        // alert(opt.name)
         temp.appendChild(opt);
     }
     document.body.appendChild(temp);

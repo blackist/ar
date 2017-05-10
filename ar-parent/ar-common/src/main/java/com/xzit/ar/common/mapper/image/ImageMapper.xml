@@ -27,23 +27,24 @@
     state,
     state_time
   </sql>
-    
+
     <select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select
         <include refid="Base_Column_List"/>
         from image
         where image_id = #{id,jdbcType=INTEGER}
     </select>
+
     <delete id="delete" parameterType="java.lang.Integer">
 
-    delete from image
-    where image_id = #{imageId,jdbcType=INTEGER}
+        delete from image
+        where image_id = #{imageId,jdbcType=INTEGER}
     
     </delete>
 
 
     <insert id="save" parameterType="com.xzit.ar.common.po.image.Image" useGeneratedKeys="true" keyProperty="imageId">
-        
+
         insert into image
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="imageId != null">image_id,</if>

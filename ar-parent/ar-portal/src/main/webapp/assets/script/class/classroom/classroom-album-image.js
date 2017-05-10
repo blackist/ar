@@ -82,3 +82,19 @@ $(function() {
     jQuery("a[data-rel^='prettyPhoto']").prettyPhoto();
 });
 
+/**
+ * TODO 删除相册图片
+ * @param imageId
+ */
+function deleteImage(imageId) {
+    // 确认删除
+    if (window.confirm("确定删除这张图片吗？")){
+        // 获取参数
+        var classId = $('classId').val();
+        var albumId = $('albumId').val();
+        // 提交
+        post('classroom/album/image/delete.action', {'imageId' : imageId, 'classId' : classId, 'albumId' : albumId});
+    }
+}                                
+
+
