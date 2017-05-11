@@ -68,10 +68,10 @@
                     <div class="col-md-12">
                         <div class="blog-item">
                                 <%----%>
-                            <c:if test="${info.infoImg!=null&&info.infoImg!=''}">
+                            <c:if test="${info.thumbImage!=null&&info.thumbImage!=''}">
                                 <a href="classroom/infoDetail.action?classId=${classroom.classId}&infoId=${info.infoId}"
                                    class="blog-img">
-                                    <img src="${info.infoImg}" class="img-responsive"
+                                    <img src="${info.thumbImage}" class="img-responsive"
                                          style="max-height: 230px; max-width: 230px"/></a>
                             </c:if>
                             <div class="blog-details">

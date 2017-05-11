@@ -47,14 +47,6 @@
 						<c:forEach items="${lastInfos}" var="info" varStatus="status">
 							<div class="col-md-12">
 								<div class="blog-item">
-									<%--
-									<c:if test="${info.infoImg!=null&&info.infoImg!=''}">
-										<a
-											href="classroom/infoDetail.action?classId=${classroom.classId}&infoId=${info.infoId}"
-											class="blog-img" target="blank"><img
-											src="/img/${info.infoImg}" class="img-responsive" alt=""
-											style="max-height: 230px;" /></a>
-									</c:if> --%>
 									<div class="blog-details">
 										<div class="blog-summary">
 											<ar:sub length="40" value="${info.content}" />

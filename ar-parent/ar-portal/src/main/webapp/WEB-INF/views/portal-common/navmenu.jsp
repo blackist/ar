@@ -9,7 +9,7 @@
 				<li id="nav-home"><a class="color1" href="index.action">首页</a></li>
 				<li id="nav-news"><a class="color1" href="news.action">新闻中心</a></li>
 				<li id="nav-class"><a class="color1" href="class.action">班级录</a></li>
-				<li id="nav-org"><a class="color1" href="org.action">校友组织</a></li>
+				<li id="nav-org"><a class="color1" href="org/institute.action">校友组织</a></li>
 				<li id="nav-forum"><a class="color1" href="forum.action">校友论坛</a></li>
 				<li id="nav-recruit"><a class="color1" href="recruit.action">职业招聘</a></li>
 				<li id="nav-contact"><a class="color1" href="service.action">校园服务</a></li>

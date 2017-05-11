@@ -123,6 +123,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
 		try {
 			// 参数校验
 			if (CommonUtil.isNotEmpty(classId) && CommonUtil.isNotEmpty(infoId)) {
+				infoMapper.increaseViews(infoId);
 				return classRoomMapper.classInfoDetail(classId, infoId);
 			}
 		} catch (Exception e) {

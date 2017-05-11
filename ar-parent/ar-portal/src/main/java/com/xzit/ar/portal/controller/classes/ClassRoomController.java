@@ -577,6 +577,8 @@ public class ClassRoomController extends BaseController {
         // 参数校验
         if (CommonUtil.isNotEmpty(classId) && CommonUtil.isNotEmpty(albumId)
                 && CommonUtil.isNotEmpty(images) && images.length > 0) {
+            System.out.println(images.length);
+            System.out.println(images[0].getName());
             Album album = albumService.getAlbumById(albumId);
             if (album != null) {
                 // 图片存储
