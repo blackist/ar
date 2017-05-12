@@ -105,7 +105,7 @@ public class RecruitController extends BaseController {
 	@RequestMapping("/addRecruit")
 	public String addRecruit(Model model) throws ServiceException {
 		// 判断当前用户创建公司情况
-		List<RecruitUnit> unitList = unitService.getUnitsByUserId(getCurrentUserId());
+			List<RecruitUnit> unitList = unitService.getUnitsByUserId(getCurrentUserId());
 		if (CommonUtil.isEmpty(unitList)) {
 			// 创建新的
 			return "forward:/unit/addUnit.action";
