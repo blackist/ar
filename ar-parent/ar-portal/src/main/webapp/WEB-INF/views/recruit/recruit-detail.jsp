@@ -150,7 +150,7 @@
 											</div>
 											<div class="modal-body">
 												<form class="form" method="post" id="postForm"
-													action="my/resume/postResume.action">
+														action="my/resume/postResume.action">
 													<div class="row">
 														<div class="form-group">
 															<label class="col-sm-2"><span class="asterisk">*
@@ -161,7 +161,7 @@
 																	<c:forEach items="${resumeList}" var="resume">
 																		<option value="${resume.resumeId}">${resume.resumeTitle}</option>
 																	</c:forEach>
-																</select><br /> <br />
+																</select><br/> <br/>
 																<button class="btn btn-default btn-block" type="button"
 																	onclick="location='my/resume/addResume.action'">
 																	<span class="fa fa-plus-square-o">&nbsp;</span>创建简历
