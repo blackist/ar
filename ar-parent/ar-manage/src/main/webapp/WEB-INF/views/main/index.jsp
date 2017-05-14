@@ -20,7 +20,7 @@
 		<div class="admin-sidebar">
 
 			<!-- bar -->
-			<jsp:include page="/WEB-INF/views/sidebar/sidebar.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/global/sidebar.jsp"></jsp:include>
 
 		</div>
 		<!-- side bar end -->

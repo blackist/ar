@@ -17,7 +17,7 @@
 
 		<!-- 侧边栏 side bar start -->
 		<div class="admin-sidebar">
-			<%@ include file="/WEB-INF/views/sidebar/sidebar.jsp"%>
+			<%@ include file="/WEB-INF/views/global/sidebar.jsp"%>
 		</div>
 		<!-- side bar end -->
 

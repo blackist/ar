@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!-- 确认框 -->
-<%@ include file="/WEB-INF/views/global/operate-confirm.jsp"%>
 <footer>
 	<hr>
 	<p class="am-padding-left">
