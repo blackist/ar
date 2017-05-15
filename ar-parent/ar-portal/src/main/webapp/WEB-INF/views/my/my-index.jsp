@@ -32,6 +32,74 @@
 			<div class="col-sm-8 col-lg-10">
 				<div class="panel panel-default">
 					<div class="panel-body">
+						<div class="pull-right">
+							<div class="btn-group mr10">
+								<button class="btn btn-sm btn-white tooltips" type="button"
+										data-toggle="tooltip" title="Archive">
+									<i class="glyphicon glyphicon-hdd"></i>
+								</button>
+								<button class="btn btn-sm btn-white tooltips" type="button"
+										data-toggle="tooltip" title="Report Spam">
+									<i class="glyphicon glyphicon-exclamation-sign"></i>
+								</button>
+								<button class="btn btn-sm btn-white tooltips" type="button"
+										data-toggle="tooltip" title="Delete">
+									<i class="glyphicon glyphicon-trash"></i>
+								</button>
+							</div>
+
+							<div class="btn-group mr10">
+								<div class="btn-group nomargin">
+									<button data-toggle="dropdown"
+											class="btn btn-sm btn-white dropdown-toggle tooltips"
+											type="button" title="Move to Folder">
+										<i class="glyphicon glyphicon-folder-close mr5"></i> <span
+											class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="#"><i
+												class="glyphicon glyphicon-folder-open mr5"></i>
+											Conference</a></li>
+										<li><a href="#"><i
+												class="glyphicon glyphicon-folder-open mr5"></i>
+											Newsletter</a></li>
+										<li><a href="#"><i
+												class="glyphicon glyphicon-folder-open mr5"></i>
+											Invitations</a></li>
+										<li><a href="#"><i
+												class="glyphicon glyphicon-folder-open mr5"></i>
+											Promotions</a></li>
+									</ul>
+								</div>
+								<div class="btn-group nomargin">
+									<button data-toggle="dropdown"
+											class="btn btn-sm btn-white dropdown-toggle tooltips"
+											type="button" title="Label">
+										<i class="glyphicon glyphicon-tag mr5"></i> <span
+											class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="#"><i
+												class="glyphicon glyphicon-tag mr5"></i> Web</a></li>
+										<li><a href="#"><i
+												class="glyphicon glyphicon-tag mr5"></i> Photo</a></li>
+										<li><a href="#"><i
+												class="glyphicon glyphicon-tag mr5"></i> Video</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="btn-group">
+								<button class="btn btn-sm btn-white" type="button">
+									<i class="glyphicon glyphicon-chevron-left"></i>
+								</button>
+								<button class="btn btn-sm btn-white" type="button">
+									<i class="glyphicon glyphicon-chevron-right"></i>
+								</button>
+							</div>
+						</div>
+						<!-- pull-right -->
+
 						<h5 class="subtitle mb5">Inbox</h5>
 						<p class="text-muted">Showing 1 - 15 of 230 messages</p>
 						<div class="table-responsive">

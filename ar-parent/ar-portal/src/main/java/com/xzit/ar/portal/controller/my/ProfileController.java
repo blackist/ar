@@ -26,6 +26,11 @@ public class ProfileController extends BaseController {
 
 	@RequestMapping("/basic")
 	public String basic(Model model) {
+		// 查询用户资料
+		
+
+		model.addAttribute("userInfo");
+
 		return "my/profile/profile-basic";
 	}
 
