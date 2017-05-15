@@ -34,8 +34,6 @@
 				<ul class="nav nav-tabs">
 					<li><a href="my/profile/basic.action"><span
 							class="glyphicon glyphicon-th-list"></span>&nbsp;<strong>基本资料</strong></a></li>
-					<li><a href="my/profile/detail.action"><span
-							class="glyphicon glyphicon-paperclip"></span>&nbsp;<strong>详细资料</strong></a></li>
 					<li class="active"><a href="javascript:;"><span
 							class="glyphicon glyphicon-briefcase"></span>&nbsp;<strong>工作信息</strong></a></li>
 					<li><a href="my/profile/portrait.action"><span

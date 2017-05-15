@@ -34,8 +34,6 @@
             <ul class="nav nav-tabs">
                 <li class="active"><a href="javascript:;"><span
                         class="glyphicon glyphicon-th-list"></span>&nbsp;<strong>基本资料</strong></a></li>
-                <li><a href="my/profile/detail.action"><span
-                        class="glyphicon glyphicon-paperclip"></span>&nbsp;<strong>详细资料</strong></a></li>
                 <li><a href="my/profile/job.action"><span
                         class="glyphicon glyphicon-briefcase"></span>&nbsp;<strong>工作信息</strong></a></li>
                 <li><a href="my/profile/portrait.action"><span
@@ -46,39 +44,113 @@
             <!-- Tab panes -->
             <div class="tab-content">
                 <div class="tab-pane active" id="tab-basic">
-                    <div class="panel panel-default">
-                        <h5 class="panel-title">基本信息</h5>
-                    </div>
-                    <div class="tab-pane active" id="tab-recruit">
-                        <form class="form" id="basic-form" method="post"
-                              action="recruit/addRecruitSubmit.action">
-                            
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label"><span class="asterisk">*</span> 性别 </label>
-                                <div class="col-sm-9">
-                                    <div class="rdio rdio-primary">
-                                        <input type="radio" id="m" value="1" name="sex" />
-                                        <label for="m">男</label>
-                                    </div><!-- rdio -->
-                                    <div class="rdio rdio-primary">
-                                        <input type="radio" id="f" value="0" name="sex" />
-                                        <label for="f">女</label>
-                                    </div><!-- rdio -->
-                                    <label class="error" for="gender"></label>
-                                </div>
-                            </div><!-- form-group -->
+                    <form class="form" id="user-info-form" method="post"
+                          action="my/profile/basic/update.action">
+                        <div class="panel panel-default">
+                            <h5 class="panel-title">基本信息</h5>
+                        </div>
 
-                            <div class="form-group">
-                                <label class="col-sm-3">
-                                    <span class="asterisk">* </span>招聘标题</label>
-                                <div class="col-sm-4">
-                                    <input type="text" name="title" id="title" maxlength="20"
-                                           class="form-control tooltips" data-trigger="hover"
-                                           data-toggle="tooltip" data-original-title="2-20字"/>
-                                </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"><span class="asterisk">*</span> 性别 </label>
+                            <div class="col-sm-9">
+                                <div class="rdio rdio-primary">
+                                    <input type="radio" id="m" value="1" name="sex"
+                                           <c:if test="${userInfo.sex == '1'}">checked</c:if> />
+                                    <label for="m">男</label>
+                                </div><!-- rdio -->
+                                <div class="rdio rdio-primary">
+                                    <input type="radio" id="f" value="0" name="sex"
+                                           <c:if test="${userInfo.sex == '0'}">checked</c:if> />
+                                    <label for="f">女</label>
+                                </div><!-- rdio -->
                             </div>
-                        </form>
-                    </div>
+                        </div><!-- form-group -->
+
+                        <div class="form-group">
+                            <label class="col-sm-2">
+                                <span class="asterisk">* </span>生日</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="title" id="title" maxlength="20"
+                                       class="form-control tooltips" data-trigger="hover"
+                                       data-toggle="tooltip" data-original-title="2-20字"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2">
+                                <span class="asterisk">* </span>住址</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="address" id="address" value="${userInfo.address}"
+                                       maxlength="50" class="form-control tooltips" data-trigger="hover"
+                                       data-toggle="tooltip" data-original-title="2-50字"/>
+                            </div>
+                        </div>
+
+
+                        <br>
+
+                        <div class="panel panel-default">
+                            <h5 class="panel-title">社交信息</h5>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2">
+                                <span class="asterisk">* </span>电话</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="phone" id="phone" value="${userInfo.phone}"
+                                       maxlength="20" class="form-control tooltips" data-trigger="hover"
+                                       data-toggle="tooltip" data-original-title="8-20字"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2">
+                                <span class="asterisk">* </span>邮箱</label>
+                            <div class="col-sm-4">
+                                <input type="email" name="email" id="email" value="${userInfo.email}"
+                                       maxlength="50" class="form-control tooltips" data-trigger="hover"
+                                       data-toggle="tooltip" data-original-title="2-50字符"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2">
+                                <span class="asterisk">* </span>QQ</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="qq" id="qq" value="${userInfo.qq}"
+                                       maxlength="50" class="form-control tooltips" data-trigger="hover"
+                                       data-toggle="tooltip" data-original-title="5-20字符"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2">
+                                <span class="asterisk">* </span>微信</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="wechat" id="wechat" value="${userInfo.wechat}"
+                                       maxlength="50" class="form-control tooltips" data-trigger="hover"
+                                       data-toggle="tooltip" data-original-title="5-20字符"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2">
+                                <span class="asterisk">* </span>微博</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="microblog" id="microblog" value="${userInfo.microblog}"
+                                       maxlength="50" class="form-control tooltips" data-trigger="hover"
+                                       data-toggle="tooltip" data-original-title="5-20字符"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2"></label>
+                            <div class="col-sm-4">
+                                <button class="btn btn-primary" onclick="updateUserInfo()">保存更改</button>
+                            </div>
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>

@@ -1,96 +1,97 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xzit.ar.common.mapper.user.UserInfoMapper" >
-	<resultMap id="BaseResultMap" type="com.xzit.ar.common.po.user.UserInfo" >
-		<id column="user_info_id" property="userInfoId" jdbcType="INTEGER" />
-		<result column="age" property="age" jdbcType="INTEGER" />
-		<result column="sex" property="sex" jdbcType="CHAR" />
-		<result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
-		<result column="phone" property="phone" jdbcType="VARCHAR" />
-		<result column="email" property="email" jdbcType="VARCHAR" />
-		<result column="qq" property="qq" jdbcType="VARCHAR" />
-		<result column="microblog" property="microblog" jdbcType="VARCHAR" />
-		<result column="wechat" property="wechat" jdbcType="VARCHAR" />
-		<result column="address" property="address" jdbcType="VARCHAR" />
-		<result column="user_id" property="userId" jdbcType="INTEGER" />
-		<result column="state" property="state" jdbcType="CHAR" />
-		<result column="state_time" property="stateTime" jdbcType="TIMESTAMP" />
-		<result column="exp1" property="exp1" jdbcType="VARCHAR" />
-		<result column="exp2" property="exp2" jdbcType="VARCHAR" />
-	</resultMap>
-	<sql id="Base_Column_List" >
-		user_info_id, age, sex, birthday, introduce, phone, email, qq, microblog,
+<mapper namespace="com.xzit.ar.common.mapper.user.UserInfoMapper">
+    <resultMap id="BaseResultMap" type="com.xzit.ar.common.po.user.UserInfo">
+        <id column="user_info_id" property="userInfoId" jdbcType="INTEGER"/>
+        <result column="age" property="age" jdbcType="INTEGER"/>
+        <result column="sex" property="sex" jdbcType="CHAR"/>
+        <result column="birthday" property="birthday" jdbcType="TIMESTAMP"/>
+        <result column="phone" property="phone" jdbcType="VARCHAR"/>
+        <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="qq" property="qq" jdbcType="VARCHAR"/>
+        <result column="microblog" property="microblog" jdbcType="VARCHAR"/>
+        <result column="wechat" property="wechat" jdbcType="VARCHAR"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="state" property="state" jdbcType="CHAR"/>
+        <result column="state_time" property="stateTime" jdbcType="TIMESTAMP"/>
+        <result column="exp1" property="exp1" jdbcType="VARCHAR"/>
+        <result column="exp2" property="exp2" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <sql id="Base_Column_List">
+		user_info_id, age, sex, birthday, phone, email, qq, microblog,
 		wechat, address, user_id, state, state_time, exp1, exp2
 	</sql>
 
-	<select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
-		select
-		<include refid="Base_Column_List" />
-		from user_info
-    where user_info_id = #{userInfoId,jdbcType=INTEGER}
-	</select>
+    <select id="getUserInfoByUserId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from user_info
+        where user_id = #{userId,jdbcType=INTEGER}
+    </select>
 
-	<delete id="delete" parameterType="java.lang.Integer" >
+    <delete id="delete" parameterType="java.lang.Integer">
 		delete from user_info where user_info_id = #{userInfoId,jdbcType=INTEGER}
 	</delete>
 
 
-	<insert id="save" parameterType="com.xzit.ar.common.po.user.UserInfo" >
-		insert into user_info
-		<trim prefix="(" suffix=")" suffixOverrides="," >
-			<if test="userInfoId != null" >user_info_id,</if>
-			<if test="age != null" >age,</if>
-			<if test="sex != null" >sex,</if>
-			<if test="birthday != null" >birthday,</if>
-			<if test="phone != null" >phone,</if>
-			<if test="email != null" >email,</if>
-			<if test="qq != null" >qq,</if>
-			<if test="microblog != null" >microblog,</if>
-			<if test="wechat != null" >wechat,</if>
-			<if test="address != null" >address,</if>
-			<if test="userId != null" >user_id,</if>
-			<if test="state != null" >state,</if>
-			<if test="stateTime != null" >state_time,</if>
-			<if test="exp1 != null" >exp1,</if>
-			<if test="exp2 != null" >exp2,</if>
-		</trim>
-		<trim prefix="values (" suffix=")" suffixOverrides="," >
-			<if test="userInfoId != null" >#{userInfoId,jdbcType=INTEGER},</if>
-			<if test="age != null" >#{age,jdbcType=INTEGER},</if>
-			<if test="sex != null" >#{sex,jdbcType=CHAR},</if>
-			<if test="birthday != null" >#{birthday,jdbcType=TIMESTAMP},</if>
-			<if test="phone != null" >#{phone,jdbcType=VARCHAR},</if>
-			<if test="email != null" >#{email,jdbcType=VARCHAR},</if>
-			<if test="qq != null" >#{qq,jdbcType=VARCHAR},</if>
-			<if test="microblog != null" >#{microblog,jdbcType=VARCHAR},</if>
-			<if test="wechat != null" >#{wechat,jdbcType=VARCHAR},</if>
-			<if test="address != null" >#{address,jdbcType=VARCHAR},</if>
-			<if test="userId != null" >#{userId,jdbcType=INTEGER},</if>
-			<if test="state != null" >#{state,jdbcType=CHAR},</if>
-			<if test="stateTime != null" >#{stateTime,jdbcType=TIMESTAMP},</if>
-			<if test="exp1 != null" >#{exp1,jdbcType=VARCHAR},</if>
-			<if test="exp2 != null" >#{exp2,jdbcType=VARCHAR},</if>
-		</trim>
-	</insert>
+    <insert id="save" parameterType="com.xzit.ar.common.po.user.UserInfo">
+        insert into user_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userInfoId != null">user_info_id,</if>
+            <if test="age != null">age,</if>
+            <if test="sex != null">sex,</if>
+            <if test="birthday != null">birthday,</if>
+            <if test="phone != null">phone,</if>
+            <if test="email != null">email,</if>
+            <if test="qq != null">qq,</if>
+            <if test="microblog != null">microblog,</if>
+            <if test="wechat != null">wechat,</if>
+            <if test="address != null">address,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="state != null">state,</if>
+            <if test="stateTime != null">state_time,</if>
+            <if test="exp1 != null">exp1,</if>
+            <if test="exp2 != null">exp2,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userInfoId != null">#{userInfoId,jdbcType=INTEGER},</if>
+            <if test="age != null">#{age,jdbcType=INTEGER},</if>
+            <if test="sex != null">#{sex,jdbcType=CHAR},</if>
+            <if test="birthday != null">#{birthday,jdbcType=TIMESTAMP},</if>
+            <if test="phone != null">#{phone,jdbcType=VARCHAR},</if>
+            <if test="email != null">#{email,jdbcType=VARCHAR},</if>
+            <if test="qq != null">#{qq,jdbcType=VARCHAR},</if>
+            <if test="microblog != null">#{microblog,jdbcType=VARCHAR},</if>
+            <if test="wechat != null">#{wechat,jdbcType=VARCHAR},</if>
+            <if test="address != null">#{address,jdbcType=VARCHAR},</if>
+            <if test="userId != null">#{userId,jdbcType=INTEGER},</if>
+            <if test="state != null">#{state,jdbcType=CHAR},</if>
+            <if test="stateTime != null">#{stateTime,jdbcType=TIMESTAMP},</if>
+            <if test="exp1 != null">#{exp1,jdbcType=VARCHAR},</if>
+            <if test="exp2 != null">#{exp2,jdbcType=VARCHAR},</if>
+        </trim>
+    </insert>
 
-	<update id="update" parameterType="com.xzit.ar.common.po.user.UserInfo">
-		update user_info
-		<set >
-			<if test="age != null" >age = #{age,jdbcType=INTEGER},</if>
-			<if test="sex != null" >sex = #{sex,jdbcType=CHAR},</if>
-			<if test="birthday != null" >birthday = #{birthday,jdbcType=TIMESTAMP},</if>
-			<if test="phone != null" >phone = #{phone,jdbcType=VARCHAR},</if>
-			<if test="email != null" >email = #{email,jdbcType=VARCHAR},</if>
-			<if test="qq != null" >qq = #{qq,jdbcType=VARCHAR},</if>
-			<if test="microblog != null" >microblog = #{microblog,jdbcType=VARCHAR},</if>
-			<if test="wechat != null" >wechat = #{microblog,jdbcType=VARCHAR},</if>
-			<if test="address != null" >address = #{address,jdbcType=VARCHAR},</if>
-			<if test="userId != null" >user_id = #{userId,jdbcType=INTEGER},</if>
-			<if test="state != null" >state = #{state,jdbcType=CHAR},</if>
-			<if test="stateTime != null" >state_time = #{stateTime,jdbcType=TIMESTAMP},</if>
-			<if test="exp1 != null" >exp1 = #{exp1,jdbcType=VARCHAR},</if>
-			<if test="exp2 != null" >exp2 = #{exp2,jdbcType=VARCHAR},</if>
-		</set>
-		where user_info_id = #{userInfoId,jdbcType=INTEGER}
-	</update>
+    <update id="update" parameterType="com.xzit.ar.common.po.user.UserInfo">
+        update user_info
+        <set>
+            <if test="age != null">age = #{age,jdbcType=INTEGER},</if>
+            <if test="sex != null">sex = #{sex,jdbcType=CHAR},</if>
+            <if test="birthday != null">birthday = #{birthday,jdbcType=TIMESTAMP},</if>
+            <if test="phone != null">phone = #{phone,jdbcType=VARCHAR},</if>
+            <if test="email != null">email = #{email,jdbcType=VARCHAR},</if>
+            <if test="qq != null">qq = #{qq,jdbcType=VARCHAR},</if>
+            <if test="microblog != null">microblog = #{microblog,jdbcType=VARCHAR},</if>
+            <if test="wechat != null">wechat = #{microblog,jdbcType=VARCHAR},</if>
+            <if test="address != null">address = #{address,jdbcType=VARCHAR},</if>
+            <if test="userId != null">user_id = #{userId,jdbcType=INTEGER},</if>
+            <if test="state != null">state = #{state,jdbcType=CHAR},</if>
+            <if test="stateTime != null">state_time = #{stateTime,jdbcType=TIMESTAMP},</if>
+            <if test="exp1 != null">exp1 = #{exp1,jdbcType=VARCHAR},</if>
+            <if test="exp2 != null">exp2 = #{exp2,jdbcType=VARCHAR},</if>
+        </set>
+        where user_info_id = #{userInfoId,jdbcType=INTEGER}
+    </update>
 </mapper>
