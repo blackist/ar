@@ -73,4 +73,13 @@ public interface InformationService {
      * @throws ServiceException
      */
     Integer deleteInfo(Integer infoId, Integer userId) throws ServiceException;
+
+    /**
+     * TODO 查询用户发布的某一类消息
+     * @param userId
+     * @param infoType
+     * @return
+     * @throws ServiceException
+     */
+    List<Map<String, Object>> getInfoByUserIdAndInfoType(Page<Map<String, Object>> page, Integer userId, String infoType) throws ServiceException;
 }

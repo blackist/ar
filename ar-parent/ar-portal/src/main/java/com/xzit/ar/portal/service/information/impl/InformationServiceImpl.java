@@ -202,4 +202,24 @@ public class InformationServiceImpl implements InformationService {
         }
         return 0;
     }
+
+    /**
+     * TODO 查询用户发布的某一类消息
+     *
+     * @param userId
+     * @param infoType
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public List<Map<String, Object>> getInfoByUserIdAndInfoType(Page<Map<String, Object>> page, Integer userId, String infoType)
+            throws ServiceException {
+//        try {
+            informationMapper.getInfoByUserIdAndInfoType(page, userId, infoType);
+//        } catch (Exception e) {
+//            throw new ServiceException("加载消息时发生异常!");
+//        }
+
+        return null;
+    }
 }

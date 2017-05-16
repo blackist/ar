@@ -136,6 +136,31 @@
 			AND info.state='A'
 		</where>
 	</select>
+
+	<select id="getInfoByUserIdAndInfoType" resultType="map">
+        
+		SELECT
+			info_id infoId,
+			info_title infoTitle,
+			content content,
+			theme theme,
+			views views,
+			comments comments,
+			loves loves,
+			create_time createTime,
+			origin_id originId
+		FROM
+			information
+		<where>
+			info_type=#{infoType}
+            AND user_id=#{userId}
+            AND state='A'
+		</where>
+
+        ORDER BY
+            create_time DESC 
+
+	</select>
 	
 	<!-- delete -->
 	<delete id="delete" parameterType="java.lang.Integer" >delete from information

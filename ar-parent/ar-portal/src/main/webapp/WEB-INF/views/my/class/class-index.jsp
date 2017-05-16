@@ -44,10 +44,10 @@
                                     <div class="media">
                                         <a href="classroom.action?classId=${clazz.originId}" class="pull-left"
                                            style="color: black">
-                                            <h1><i class="fa fa-institution"></i></h1>
+                                            <h1><i class="fa fa-mortar-board"></i></h1>
                                         </a>
                                         <div class="media-body">
-                                            <a href="classroom.action?classId=${clazz.originId}">
+                                            <a href="classroom.action?classId=${clazz.originId}" style="color: black">
                                                 <h4 class="person-name">${clazz.originName}</h4>
                                             </a>
                                             <div class="text-muted">
