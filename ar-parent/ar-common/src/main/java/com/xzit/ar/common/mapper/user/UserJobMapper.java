@@ -1,17 +1,18 @@
 package com.xzit.ar.common.mapper.user;
 
+import com.xzit.ar.common.base.BaseMapper;
 import com.xzit.ar.common.po.user.UserJob;
 
-public interface UserJobMapper {
-    int deleteByPrimaryKey(Integer jobId);
+import java.util.List;
 
-    int insert(UserJob record);
+public interface UserJobMapper extends BaseMapper{
 
-    int insertSelective(UserJob record);
+    /**
+     * TODO 查询用户工作信息
+     * @param userId
+     * @return
+     * @throws Exception
+     */
+    List<UserJob> getUserJobByUserId(Integer userId) throws Exception;
 
-    UserJob selectByPrimaryKey(Integer jobId);
-
-    int updateByPrimaryKeySelective(UserJob record);
-
-    int updateByPrimaryKey(UserJob record);
 }
