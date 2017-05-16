@@ -22,6 +22,6 @@ public interface UserMapper extends BaseMapper {
 	 * @return
 	 * @throws Exception
 	 */
-	Map<String, Object> getUserBasicInfo(@Param("userId") Integer userId) throws Exception;
+	Map<String, Object> getUserBasicInfo(@Param("userId") Integer userId)  ;
 
 }

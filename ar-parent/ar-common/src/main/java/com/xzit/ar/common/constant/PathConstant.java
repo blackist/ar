@@ -26,7 +26,7 @@ public interface PathConstant {
 	/**
 	 * 上传的图片的相对路径
 	 */
-	String pictureRelativePath = contextRelativePath + "/pic/upload/";
+	String pictureRelativePath = contextRelativePath + "/pic/upload";
 
 	/**
 	 * 图片上传文件夹

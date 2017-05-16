@@ -20,9 +20,11 @@ public class User extends BaseEntity {
 
     private String trueName;
 
+    private String introduce;
+
     private String isAdmin;
 
-    private Integer headImageId;
+    private Integer imageId;
 
     private Date createTime;
 
@@ -70,6 +72,14 @@ public class User extends BaseEntity {
         this.trueName = trueName == null ? null : trueName.trim();
     }
 
+    public String getIntroduce() {
+        return introduce;
+    }
+
+    public void setIntroduce(String introduce) {
+        this.introduce = introduce == null ? null : introduce.trim();
+    }
+
     public String getIsAdmin() {
         return isAdmin;
     }
@@ -78,12 +88,12 @@ public class User extends BaseEntity {
         this.isAdmin = isAdmin == null ? null : isAdmin.trim();
     }
 
-    public Integer getHeadImageId() {
-        return headImageId;
+    public Integer getImageId() {
+        return imageId;
     }
 
-    public void setHeadImageId(Integer headImageId) {
-        this.headImageId = headImageId;
+    public void setImageId(Integer imageId) {
+        this.imageId = imageId;
     }
 
     public Date getCreateTime() {

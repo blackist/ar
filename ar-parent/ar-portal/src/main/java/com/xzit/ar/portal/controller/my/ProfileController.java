@@ -8,10 +8,18 @@
  */
 package com.xzit.ar.portal.controller.my;
 
+import com.xzit.ar.common.constant.PathConstant;
+import com.xzit.ar.common.constant.WebConstant;
 import com.xzit.ar.common.exception.ServiceException;
+import com.xzit.ar.common.exception.UtilException;
+import com.xzit.ar.common.init.context.ARContext;
+import com.xzit.ar.common.po.image.Image;
+import com.xzit.ar.common.po.user.User;
 import com.xzit.ar.common.po.user.UserInfo;
 import com.xzit.ar.common.po.user.UserJob;
 import com.xzit.ar.common.util.CommonUtil;
+import com.xzit.ar.common.util.ImageUtil;
+import com.xzit.ar.portal.service.image.ImageService;
 import com.xzit.ar.portal.service.my.ProfileService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,8 +27,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.xzit.ar.common.base.BaseController;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 
 /**
@@ -35,6 +45,9 @@ public class ProfileController extends BaseController {
 
     @Resource
     private ProfileService profileService;
+
+    @Resource
+    private ImageService imageService;
 
     /**
      * TODO 加载用户基本信息
@@ -85,6 +98,7 @@ public class ProfileController extends BaseController {
 
     /**
      * TODO 添加用户工作信息
+     *
      * @param model
      * @param userJob
      * @return
@@ -110,6 +124,7 @@ public class ProfileController extends BaseController {
 
     /**
      * TODO 删除工作信息
+     *
      * @param jobId
      * @return
      * @throws ServiceException
@@ -123,7 +138,46 @@ public class ProfileController extends BaseController {
     }
 
     @RequestMapping("/portrait")
-    public String portrait(Model model) {
+    public String portrait() {
         return "my/profile/profile-portrait";
+    }
+
+    /**
+     * TODO 上传用户头像
+     * @param session
+     * @param portrait
+     * @return
+     * @throws UtilException
+     * @throws ServiceException
+     */
+    @RequestMapping("/portrait/upload.action")
+    public String upload(HttpSession session, MultipartFile portrait) throws UtilException, ServiceException {
+        // 参数校验
+        if (portrait != null && portrait.getSize() > 0) {
+            Image image = new Image();
+            image.setImageType("");
+            image.setIsRemote("0");
+            image.setState("A");
+            image.setCreateTime(new Date());
+            image.setStateTime(new Date());
+            image.setImageName(portrait.getOriginalFilename());
+            // 保存到硬盘
+            String imagePath = ImageUtil.saveImage(portrait);
+            image.setImagePath(imagePath);
+            image.setThumbPath(imagePath);
+            // 保存图片信息
+            imageService.saveImage(image);
+
+            // 更新头像信息
+            if (CommonUtil.isNotEmpty(image.getImageId())) {
+                User user = new User();
+                user.setUserId(getCurrentUserId());
+                user.setImageId(image.getImageId());
+                // 更新并刷新session
+                session.setAttribute(WebConstant.SESSION_USER, profileService.updateUserPortrait(user));
+            }
+        }
+
+        return "redirect:/my/profile/portrait.action";
     }
 }

@@ -3,6 +3,8 @@ package com.xzit.ar.portal.service.my.impl;
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.mapper.user.UserInfoMapper;
 import com.xzit.ar.common.mapper.user.UserJobMapper;
+import com.xzit.ar.common.mapper.user.UserMapper;
+import com.xzit.ar.common.po.user.User;
 import com.xzit.ar.common.po.user.UserInfo;
 import com.xzit.ar.common.po.user.UserJob;
 import com.xzit.ar.common.util.CommonUtil;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * TODO ${TODO}
@@ -26,6 +29,9 @@ public class ProfileServiceImpl implements ProfileService {
 
     @Resource
     private UserJobMapper jobMapper;
+
+    @Resource
+    private UserMapper userMapper;
 
     /**
      * TODO 查询用户信息
@@ -133,5 +139,28 @@ public class ProfileServiceImpl implements ProfileService {
             throw new ServiceException("删除用户工作信息时发生异常！");
         }
         return 0;
+    }
+
+    /**
+     * TODO 更新用户头像信息
+     *
+     * @param user
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public Map<String, Object> updateUserPortrait(User user) throws ServiceException {
+//        try {
+            // 参数校验
+            if (CommonUtil.isNotEmpty(user.getUserId()) && CommonUtil.isNotEmpty(user.getImageId())) {
+                // 更新用户头像信息
+                userMapper.update(user);
+                // 获取更新后的用户信息
+                return userMapper.getUserBasicInfo(user.getUserId());
+            }
+//        } catch (Exception e) {
+//            throw new ServiceException("更新头像时发生异常！");
+//        }
+        return null;
     }
 }

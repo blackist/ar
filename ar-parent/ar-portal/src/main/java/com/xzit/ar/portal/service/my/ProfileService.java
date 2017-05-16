@@ -1,10 +1,12 @@
 package com.xzit.ar.portal.service.my;
 
 import com.xzit.ar.common.exception.ServiceException;
+import com.xzit.ar.common.po.user.User;
 import com.xzit.ar.common.po.user.UserInfo;
 import com.xzit.ar.common.po.user.UserJob;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * TODO ${TODO}
@@ -52,4 +54,12 @@ public interface ProfileService {
      * @throws ServiceException
      */
     Integer deleteUserJob(Integer jobId) throws ServiceException;
+
+    /**
+     * TODO 更新用户头像信息
+     * @param user
+     * @return
+     * @throws ServiceException
+     */
+    Map<String, Object> updateUserPortrait(User user) throws ServiceException;
 }
