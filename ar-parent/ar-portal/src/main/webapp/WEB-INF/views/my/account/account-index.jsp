@@ -32,9 +32,9 @@
         <div class="col-sm-8 col-lg-10">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
-                <li><a href="my/account.action"><span
+                <li class="active"><a href="my/account.action"><span
                         class="glyphicon glyphicon-th-list"></span>&nbsp;<strong>账号信息</strong></a></li>
-                <li class="active"><a href="my/account/password.action"><span
+                <li><a href="my/account/password.action"><span
                         class="glyphicon glyphicon-paperclip"></span>&nbsp;<strong>密码修改</strong></a></li>
                 <li><a href="my/account/email.action"><span
                         class="glyphicon glyphicon-briefcase"></span>&nbsp;<strong>邮箱设置</strong></a></li>
@@ -44,37 +44,32 @@
             <!-- Tab panes -->
             <div class="tab-content">
                 <div class="tab-pane active" id="tab-basic">
-                    <form method="post" action="my/account/password/update.action">
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">原密码 <span class="asterisk">*</span></label>
-                            <div class="col-sm-4">
-                                <input type="password" name="originalPassword" class="form-control" required/>
-                            </div>
+                    <div class="row padding5">
+                        <div class="col-md-2 text-right">账号：</div>
+                        <div class="col-md-2">${SESSION_USER.account}</div>
+                    </div>
+                    <div class="row padding5">
+                        <div class="col-md-2 text-right">密码：</div>
+                        <div class="col-md-2">******</div>
+                        <div class="col-md-4">
+                            <button class="btn btn-danger btn-xs" onclick="location.href='my/account/password.action'">
+                                修改密码
+                            </button>
                         </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">新密码 <span class="asterisk">*</span></label>
-                            <div class="col-sm-4">
-                                <input type="password" name="newPassword" class="form-control" required/>
-                            </div>
+                    </div>
+                    <div class="row padding5">
+                        <div class="col-md-2 text-right">邮箱：</div>
+                        <div class="col-md-2">${SESSION_USER.email}</div>
+                        <div class="col-md-8">
+                            <c:if test="${SESSION_USER.email == null || SESSION_USER.email == ''}">
+                                <button class="btn btn-primary btn-xs"
+                                        onclick="location.href='my/account/email.action'">
+                                    设置邮箱
+                                </button>
+                            </c:if>
                         </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">确认密码<span class="asterisk">*</span></label>
-                            <div class="col-sm-4">
-                                <input type="password" name="confirmPassword" class="form-control" required/>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label"></label>
-                            <div class="col-sm-4">
-                                <button class="btn btn-primary" type="submit">确认修改</button>
-                            </div>
-                        </div>
-
-                    </form>
+                    </div>
+                    <div class="row"></div>
                 </div>
             </div>
         </div>

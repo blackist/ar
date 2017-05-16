@@ -18,7 +18,7 @@
 		user_id, account, password, is_admin, email, true_name, introduce, image_id, create_time, state, state_time
 	</sql>
 	
-	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+	<select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
 		select
 		<include refid="Base_Column_List" />
 		from user

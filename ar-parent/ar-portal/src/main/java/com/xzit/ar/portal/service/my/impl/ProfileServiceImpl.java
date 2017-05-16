@@ -150,7 +150,7 @@ public class ProfileServiceImpl implements ProfileService {
      */
     @Override
     public Map<String, Object> updateUserPortrait(User user) throws ServiceException {
-//        try {
+        try {
             // 参数校验
             if (CommonUtil.isNotEmpty(user.getUserId()) && CommonUtil.isNotEmpty(user.getImageId())) {
                 // 更新用户头像信息
@@ -158,9 +158,9 @@ public class ProfileServiceImpl implements ProfileService {
                 // 获取更新后的用户信息
                 return userMapper.getUserBasicInfo(user.getUserId());
             }
-//        } catch (Exception e) {
-//            throw new ServiceException("更新头像时发生异常！");
-//        }
+        } catch (Exception e) {
+            throw new ServiceException("更新头像时发生异常！");
+        }
         return null;
     }
 }
