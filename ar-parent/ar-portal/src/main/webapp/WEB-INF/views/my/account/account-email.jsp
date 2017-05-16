@@ -11,7 +11,7 @@
 <div class="container higher" id="container">
     <div class="pageheader">
         <h2>
-            <i class="fa fa-user"></i> 个人中心 <span>账号设置</span><span>账号信息</span>
+            <i class="fa fa-user"></i> 个人中心 <span>账号设置</span><span>邮箱设置</span>
         </h2>
         <div class="breadcrumb-wrapper">
             <span class="label"></span>
@@ -32,11 +32,11 @@
         <div class="col-sm-8 col-lg-10">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
-                <li class="active"><a href="my/account.action"><span
+                <li><a href="my/account.action"><span
                         class="glyphicon glyphicon-th-list"></span>&nbsp;<strong>账号信息</strong></a></li>
                 <li><a href="my/account/password.action"><span
                         class="glyphicon glyphicon-paperclip"></span>&nbsp;<strong>密码修改</strong></a></li>
-                <li><a href="my/account/email.action"><span
+                <li class="active"><a href="my/account/email.action"><span
                         class="glyphicon glyphicon-briefcase"></span>&nbsp;<strong>邮箱设置</strong></a></li>
             </ul>
             <!-- Nav Tab -->
@@ -44,32 +44,22 @@
             <!-- Tab panes -->
             <div class="tab-content">
                 <div class="tab-pane active" id="tab-basic">
-                    <div class="row padding5">
-                        <div class="col-md-2 text-right">账号：</div>
-                        <div class="col-md-2">${user.account}</div>
-                    </div>
-                    <div class="row padding5">
-                        <div class="col-md-2 text-right">密码：</div>
-                        <div class="col-md-2">******</div>
-                        <div class="col-md-4">
-                            <button class="btn btn-danger btn-xs" onclick="location.href='my/account/password.action'">
-                                修改密码
-                            </button>
+                    <form method="post" action="my/account/email/update.action">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">邮箱 <span class="asterisk">*</span></label>
+                            <div class="col-sm-4">
+                                <input type="email" name="email" value="${SESSION_USER.email}"
+                                       class="form-control" maxlength="50" required/>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row padding5">
-                        <div class="col-md-2 text-right">邮箱：</div>
-                        <div class="col-md-2">${user.email}</div>
-                        <div class="col-md-8">
-                            <c:if test="${user.email == null || user.email == ''}">
-                                <button class="btn btn-primary btn-xs"
-                                        onclick="location.href='my/account/email.action'">
-                                    设置邮箱
-                                </button>
-                            </c:if>
+
+                        <div class="form-group">
+                            <label class="col-sm-2"></label>
+                            <div class="col-sm-4">
+                                <button class="btn btn-primary">设置邮箱</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row"></div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -82,5 +72,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/my/acount/account-password.js"></script>
+<script src="assets/script/my/acount/account-email.js"></script>
 </html>
