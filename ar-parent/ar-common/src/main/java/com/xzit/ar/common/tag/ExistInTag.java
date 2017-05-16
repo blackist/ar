@@ -48,7 +48,7 @@ public class ExistInTag extends BodyTagSupport {
 			if (CommonUtil.isNotEmpty(value) && CommonUtil.isNotEmpty(items)) {
 				// 遍历集合
 				for (Object obj : items) {
-					if (obj.toString().equals(value)) {
+					if (obj.toString().trim().equals(value.trim())) {
 						return EVAL_BODY_INCLUDE;
 					}
 				}

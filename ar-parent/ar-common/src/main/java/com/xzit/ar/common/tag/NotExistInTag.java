@@ -1,10 +1,10 @@
-/**  
+/**
  * @Title: ExistInTag.java
  * @Package com.xzit.ar.common.tag
  * @Description: TODO
  * @author Mr.Black
  * @date 2016年3月2日 上午9:35:45
- * @version V1.0  
+ * @version V1.0
  */
 package com.xzit.ar.common.tag;
 
@@ -48,7 +48,7 @@ public class NotExistInTag extends BodyTagSupport {
 			if (CommonUtil.isNotEmpty(value) && CommonUtil.isNotEmpty(items)) {
 				// 遍历集合
 				for (Object obj : items) {
-					if (obj.toString().equals(value)) {
+					if (obj.toString().trim().equals(value.trim())) {
 						return SKIP_BODY;
 					}
 				}

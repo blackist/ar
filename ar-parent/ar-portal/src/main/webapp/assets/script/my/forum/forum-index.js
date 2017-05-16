@@ -1,5 +1,7 @@
 $(function() {
 	$("#my-forum").attr("class", "active");
+
+	_pageBond('my/forum.action');
 });
 
 

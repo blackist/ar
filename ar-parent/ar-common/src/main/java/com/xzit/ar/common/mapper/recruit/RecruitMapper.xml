@@ -96,13 +96,32 @@
 	<select id="getDetailRecruit" resultType="map" parameterType="java.lang.Integer">
 		select
 		<include refid="detail" />
-		from recruit r, recruit_unit u where r.recruit_id = #{recruitId,jdbcType=INTEGER}
+		from recruit r, recruit_unit u
+		where r.recruit_id = #{recruitId,jdbcType=INTEGER}
 		and r.unit_id = u.unit_id
 	</select>
 
 	<select id="loadOtherRecruits" parameterType="java.lang.Integer" resultType="map">
 		select recruit_id recruitId, title title from recruit where unit_id = #{unitId} and
 		recruit_id != #{recruitId} and state = 'A'
+	</select>
+
+	<select id="getRecruitByUserId" resultType="map">
+		SELECT
+			recruit_id recruitId,
+			title title,
+			prof prof,
+			resumes resumes,
+			create_time createTime,
+			is_top isTop,
+			state state,
+			state_time stateTime,
+			salary salary
+		FROM
+		 	recruit
+		WHERE
+			user_id=#{userId}
+			AND state='A'
 	</select>
 	
 	<!-- delete -->

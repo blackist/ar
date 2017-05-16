@@ -14,6 +14,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import com.xzit.ar.common.mapper.recruit.RecruitMapper;
+import com.xzit.ar.common.page.Page;
 import org.springframework.stereotype.Service;
 
 import com.xzit.ar.common.exception.ServiceException;
@@ -25,9 +26,9 @@ import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.portal.service.my.ResumeService;
 
 /**
+ * @author Mr.Black
  * @ClassName: ResumeServiceImpl
  * @Description: TODO ResumeServiceImpl
- * @author Mr.Black
  * @date 2016年2月8日 下午11:24:31
  */
 @Service("resumeService")
@@ -181,9 +182,40 @@ public class ResumeServiceImpl implements ResumeService {
         return row;
     }
 
+    /**
+     * TODO 取消简历投递
+     * @param recruitId
+     * @param resumeId
+     * @return
+     * @throws ServiceException
+     */
     @Override
-    public int cancelPostResume(ResumePost resumePost) throws ServiceException {
+    public int cancelPostResume(Integer recruitId, Integer resumeId) throws ServiceException {
+        try {
+            if (CommonUtil.isNotEmpty(recruitId) && CommonUtil.isNotEmpty(resumeId)) {
+                return resumePostMapper.deletePost(recruitId, resumeId);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("取消投递消息时发生异常！");
+        }
         return 0;
     }
 
+    /**
+     * TODO 加载用户简历投递记录
+     *
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public List<Map<String, Object>> getPostsByUserId(Page<Map<String, Object>> page, Integer userId) throws ServiceException {
+        try {
+            if (CommonUtil.isNotEmpty(userId)) {
+                return resumePostMapper.getPostByUserId(page, userId);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("查询简历投递信息时发生异常！");
+        }
+        return null;
+    }
 }

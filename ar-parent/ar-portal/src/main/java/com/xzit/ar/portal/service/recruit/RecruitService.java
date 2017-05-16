@@ -55,4 +55,21 @@ public interface RecruitService {
 	 * @throws ServiceException
 	 */
 	List<Map<String, Object>> loadOtherRecruits(Integer unitId,Integer recruitId) throws ServiceException;
+
+	/**
+	 * TODO 
+	 * @param page
+	 * @param userId
+	 * @return
+	 * @throws ServiceException
+	 */
+	List<Map<String, Object>> getRecruitByUserId(Page<Map<String, Object>> page, Integer userId) throws ServiceException ;
+
+    /**
+     * TODO 删除招聘信息
+     * @param recruitId
+     * @return
+     * @throws ServiceException
+     */
+	Integer deleteRecruit(Integer recruitId) throws ServiceException;
 }

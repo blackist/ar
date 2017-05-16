@@ -32,9 +32,9 @@
         <div class="col-sm-8 col-lg-10">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
-                <li class="active"><a href="my/recruit.action"><span
+                <li><a href="my/recruit.action"><span
                         class="fa fa-archive"></span>&nbsp;<strong>我的招聘</strong></a></li>
-                <li><a href="my/resume/posted.action"><span
+                <li class="active"><a href="my/resume/posted.action"><span
                         class="fa fa-chain"></span>&nbsp;<strong>我的投递</strong></a></li>
                 <li><a href="my/resume.action"><span
                         class="fa fa-file-text-o"></span>&nbsp;<strong>我的简历</strong></a></li>
@@ -50,28 +50,27 @@
                             <thead>
                             <tr>
                                 <th>招聘标题</th>
-                                <th>简历投递</th>
-                                <th>发布时间</th>
+                                <th>我的简历</th>
+                                <th>投递时间</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${page.beanList}" var="recruit">
+                            <c:forEach items="${page.beanList}" var="post">
                                 <tr>
                                     <td>
-                                        <a href="/recruit/detailRecruit.action?recruitId=${recruit.recruitId}">${recruit.title}</a>
+                                        <a href="recruit/detailRecruit.action?recruitId=${post.recruitId}">${post.recruitTitle}</a>
                                     </td>
-                                    <td>${recruit.resumes}</td>
-                                    <td><fmt:formatDate value="${recruit.stateTime}"
+                                    <td>
+                                        <a href="my/resume/detail.action?resumeId=${post.resumeId}">${post.resumeTitle}</a>
+                                    </td>
+                                    <td><fmt:formatDate value="${post.createTime}"
                                                         pattern="YY-MM-DD HH:mm"></fmt:formatDate></td>
                                     <td>
-                                        <div class="btn-group mr5">
-                                            <button onclick="location='recruit/detailRecruit.action?recruitId=${recruit.recruitId}'"
+                                        <div class="btn-group">
+                                            <button onclick="cancelMyPost(${post.recruitId},${post.resumeId})"
                                                     class="btn btn-sm btn-white tooltips" type="button"
-                                                    data-toggle="tooltip" title="详情"><i class="fa fa-bars"></i></button>
-                                            <button onclick="deleteMyRecruit(${recruit.recruitId})"
-                                                    class="btn btn-sm btn-white tooltips" type="button"
-                                                    data-toggle="tooltip" title="删除"><i class="fa fa-trash-o"></i>
+                                                    data-toggle="tooltip" title="取消投递"><i class="fa fa-trash-o"></i>
                                             </button>
                                         </div>
                                     </td>
@@ -81,7 +80,7 @@
                         </table>
                     </div><!-- table-responsive -->
 
-                    <%@include file="/WEB-INF/views/portal-common/pagination.jsp"%>
+                    <%@include file="/WEB-INF/views/portal-common/pagination.jsp" %>
 
                 </div>
             </div>
@@ -95,5 +94,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/my/recruit/recruit.js"></script>
+<script src="assets/script/my/recruit/resume-post.js"></script>
 </html>

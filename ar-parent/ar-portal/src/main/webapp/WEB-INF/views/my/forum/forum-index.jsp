@@ -61,6 +61,7 @@
                         </tbody>
                     </table>
 
+                    <%@include file="/WEB-INF/views/portal-common/pagination.jsp"%>
                 </div>
             </div>
         </div>

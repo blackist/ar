@@ -9,10 +9,12 @@
 package com.xzit.ar.portal.controller.my;
 
 import java.util.Date;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
 import com.xzit.ar.common.init.context.ARContext;
+import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.user.UserResume;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
@@ -50,6 +52,14 @@ public class MyResumeController extends BaseController {
 		return "my/recruit/resume-index";
 	}
 
+	/**
+	 * TODO 投递简历
+	 * @param attr
+	 * @param recruitId
+	 * @param resumeId
+	 * @return
+	 * @throws ServiceException
+	 */
 	@RequestMapping(value = "/postResume", method = RequestMethod.POST)
 	public String postResume(RedirectAttributes attr, @RequestParam("recruitId") Integer recruitId,
 			@RequestParam("resumeId") Integer resumeId) throws ServiceException {
@@ -71,6 +81,42 @@ public class MyResumeController extends BaseController {
 		return "redirect:/recruit/detailRecruit.action";
 	}
 
+    /**
+     * TODO 加载用户投递的简历信息
+     * @param model
+     * @return
+     * @throws ServiceException
+     */
+	@RequestMapping("/posted")
+	public String posted(Model model) throws ServiceException {
+	    // 加载投递列表
+        Page<Map<String, Object>> page = new Page<>(getPageIndex(), getPageSize());
+        resumeService.getPostsByUserId(page, getCurrentUserId());
+        model.addAttribute("page", page);
+
+	    return "my/recruit/resume-posted";
+    }
+
+    /**
+     * TODO 取消投递
+     * @param recruitId
+     * @param resumeId
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/cancel")
+    public String cancel(Integer recruitId, Integer resumeId) throws ServiceException {
+	    // 取消投递
+        resumeService.cancelPostResume(recruitId, resumeId);
+
+	    return "redirect:/my/resume/posted.action";
+    }
+
+    /**
+     * TODO 新建简历
+     * @param model
+     * @return
+     */
 	@RequestMapping("/addResume")
 	public String addResume(Model model){
 		// 加载招聘常量
