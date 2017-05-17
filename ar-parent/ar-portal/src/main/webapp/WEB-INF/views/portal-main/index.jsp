@@ -48,7 +48,7 @@
 <!--container    -->
 <br>
 <div class="container higher" id="container">
-    <!--col-md-4-->
+    <!--col-md-4   1-->
     <div class="col-md-3">
         <div class="panel panel-default">
             <div class="panel-heading" style="background-color: #D8DBDE">
@@ -94,19 +94,19 @@
             </div>
             <div class="panel-body text-center nopadding">
                 <br>
-                <a class="btn btn-info-alt"> 我的班級 </a>
-                <a class="btn btn-info-alt"> 我的招聘 </a>
-                <a class="btn btn-info-alt"> 我的简历 </a>
+                <a href="recruit/addRecruit.action" class="btn btn-warning-alt"> 发布招聘 </a>
+                <a href="post/add.action" class="btn btn-warning-alt"> 发布新帖 </a>
+                <a class="btn btn-warning-alt"> 我的简历 </a>
                 <hr>
-                <a class="btn btn-warning-alt"> 我的简历 </a>
-                <a class="btn btn-warning-alt"> 我的简历 </a>
-                <a class="btn btn-warning-alt"> 我的简历 </a>
+                <a href="my/class.action" class="btn btn-info-alt"> 我的班級 </a>
+                <a href="my/recruit.action" class="btn btn-info-alt"> 我的招聘 </a>
+                <a href="my/resume.action" class="btn btn-info-alt"> 我的简历 </a>
                 <hr>
             </div>
         </div>
     </div>
 
-    <!--col-md-4-->
+    <!--col-md-4    2-->
     <div class="col-md-6">
         <div class="panel panel-default panel-alt widget-messaging">
             <div class="panel-heading">
@@ -155,7 +155,7 @@
         </div><!-- panel -->
     </div>
 
-    <!--col-md-4-->
+    <!--col-md-4   3-->
     <div class="col-md-3">
         <div class="panel panel-default">
             <div class="panel-heading" style="background-color: #D8DBDE">

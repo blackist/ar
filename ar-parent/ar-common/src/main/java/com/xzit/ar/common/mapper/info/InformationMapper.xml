@@ -162,6 +162,56 @@
 
 	</select>
 	
+	<select id="getInfoByInfoType" resultType="map">
+
+		SELECT
+			info_id infoId,
+			info_title infoTitle,
+			content content,
+			theme theme,
+			views views,
+			comments comments,
+			loves loves,
+			create_time createTime
+		FROM
+			information
+		<where>
+			info_type=#{infoType}
+            AND state='A'
+		</where>
+
+        ORDER BY
+            create_time DESC
+
+	</select>
+
+	<select id="getHotInfoByInfoType" resultType="map">
+
+		SELECT
+			info_id infoId,
+			info_title infoTitle,
+			content content,
+			theme theme,
+            thumb_image thumbImage,
+			views views,
+			comments comments,
+			loves loves,
+			create_time createTime
+		FROM
+			information
+		<where>
+			info_type=#{infoType}
+            AND state='A'
+		</where>
+
+        ORDER BY
+            views DESC ,
+            comments DESC ,
+            create_time DESC,
+            loves DESC 
+
+	</select>
+	
 	<!-- delete -->
 	<delete id="delete" parameterType="java.lang.Integer" >delete from information
     where info_id = #{infoId,jdbcType=INTEGER}</delete>

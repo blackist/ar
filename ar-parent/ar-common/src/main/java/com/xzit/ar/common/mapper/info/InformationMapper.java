@@ -116,6 +116,7 @@ public interface InformationMapper extends BaseMapper {
 
     /**
      * TODO 通过userId和infoType查询用户发布的某一类消息
+     *
      * @param page
      * @param userId
      * @param infoType
@@ -123,5 +124,25 @@ public interface InformationMapper extends BaseMapper {
      * @throws Exception
      */
     List<Map<String, Object>> getInfoByUserIdAndInfoType(Page<Map<String, Object>> page, @Param("userId") Integer userId,
-                                                         @Param("infoType") String infoType)  ;
+                                                         @Param("infoType") String infoType) throws Exception;
+
+    /**
+     * TODO 通过userId和infoType查询用户发布的某一类消息
+     *
+     * @param page
+     * @param infoType
+     * @return
+     * @throws Exception
+     */
+    List<Map<String, Object>> getInfoByInfoType(Page<Map<String, Object>> page,
+                                                @Param("infoType") String infoType) throws Exception;
+
+    /**
+     * TODO 查询热门消息
+     *
+     * @param infoType
+     * @return
+     * @throws Exception
+     */
+    List<Map<String, Object>> getHotInfoByInfoType(Page<Map<String, Object>> page, @Param("infoType") String infoType) throws Exception;
 }

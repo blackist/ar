@@ -33,9 +33,9 @@ public class InformationServiceImpl implements InformationService {
     private OriginMapper originMapper;
 
 
-    
     /**
      * TODO 记载组织最近消息
+     *
      * @param page     分页类
      * @param originId 组织id
      * @return 消息列表
@@ -46,7 +46,7 @@ public class InformationServiceImpl implements InformationService {
             throws ServiceException {
         try {
             // 参数校验
-            if (CommonUtil.isNotEmpty(originId)){
+            if (CommonUtil.isNotEmpty(originId)) {
                 // 查询
                 return originMapper.getOriginInfosByType(page, originId, infoType);
             }
@@ -58,6 +58,7 @@ public class InformationServiceImpl implements InformationService {
 
     /**
      * TODO 加载组织内某一成员的动态消息
+     *
      * @param page
      * @param originId
      * @param userId
@@ -69,7 +70,7 @@ public class InformationServiceImpl implements InformationService {
                                                         String infoType) throws ServiceException {
         try {
             // 参数校验
-            if(CommonUtil.isNotEmpty(userId) && CommonUtil.isNotEmpty(originId) && CommonUtil.isNotEmpty(infoType)){
+            if (CommonUtil.isNotEmpty(userId) && CommonUtil.isNotEmpty(originId) && CommonUtil.isNotEmpty(infoType)) {
                 // 查询消息
                 return informationMapper.loadOriginUserInfos(page, userId, originId, infoType);
             }
@@ -91,7 +92,7 @@ public class InformationServiceImpl implements InformationService {
     public Map<String, Object> getInfoByInfoIdAndOriginId(Integer infoId, Integer originId) throws ServiceException {
         try {
             // 参数校验
-            if (CommonUtil.isNotEmpty(infoId) && CommonUtil.isNotEmpty(originId)){
+            if (CommonUtil.isNotEmpty(infoId) && CommonUtil.isNotEmpty(originId)) {
                 // 增加浏览量
                 informationMapper.increaseViews(infoId);
                 return informationMapper.getInfoByInfoIdAndOriginId(infoId, originId);
@@ -104,6 +105,7 @@ public class InformationServiceImpl implements InformationService {
 
     /**
      * TODO 根据information id 加载信息
+     *
      * @param infoId
      * @return
      * @throws ServiceException
@@ -112,7 +114,7 @@ public class InformationServiceImpl implements InformationService {
     public Information getInfoById(Integer infoId) throws ServiceException {
         try {
             // 参数校验
-            if (CommonUtil.isNotEmpty(infoId)){
+            if (CommonUtil.isNotEmpty(infoId)) {
                 // 浏览量
                 informationMapper.increaseComments(infoId);
                 // 插叙怒消息
@@ -136,9 +138,9 @@ public class InformationServiceImpl implements InformationService {
         try {
             // 参数校验
             int originId = information.getOriginId();
-            if (CommonUtil.isNotEmpty(originId) && CommonUtil.isNotEmpty(information.getUserId())){
+            if (CommonUtil.isNotEmpty(originId) && CommonUtil.isNotEmpty(information.getUserId())) {
                 // 消息发布成功后，更新班级活动时间
-                if (informationMapper.save(information) > 0){
+                if (informationMapper.save(information) > 0) {
                     Origin origin = new Origin();
                     origin.setOriginId(originId);
                     origin.setStateTime(new Date());
@@ -154,6 +156,7 @@ public class InformationServiceImpl implements InformationService {
 
     /**
      * TODO 为消息点赞
+     *
      * @param infoId 消息id
      * @return 返回点赞的总数
      * @throws ServiceException
@@ -162,11 +165,11 @@ public class InformationServiceImpl implements InformationService {
     public Integer loveInfo(Integer infoId) throws ServiceException {
         try {
             // 校验参数
-            if (CommonUtil.isNotEmpty(infoId)){
+            if (CommonUtil.isNotEmpty(infoId)) {
                 // 点赞存储
                 informationMapper.increaseLoves(infoId);
                 // 查询消息点赞总数
-                return  informationMapper.getLoves(infoId);
+                return informationMapper.getLoves(infoId);
             }
         } catch (Exception e) {
             throw new ServiceException("发生异常！");
@@ -176,6 +179,7 @@ public class InformationServiceImpl implements InformationService {
 
     /**
      * TODO 删除消息
+     *
      * @param infoId
      * @param userId
      * @return
@@ -185,7 +189,7 @@ public class InformationServiceImpl implements InformationService {
     public Integer deleteInfo(Integer infoId, Integer userId) throws ServiceException {
         try {
             // 参数校验
-            if(CommonUtil.isNotEmpty(infoId) && CommonUtil.isNotEmpty(userId)) {
+            if (CommonUtil.isNotEmpty(infoId) && CommonUtil.isNotEmpty(userId)) {
                 // 检验帖子是否存在
                 if (informationMapper.getInfoByUserIdAndInfoId(infoId, userId) != null) {
                     // 删除帖子相关评论
@@ -194,7 +198,7 @@ public class InformationServiceImpl implements InformationService {
                     return informationMapper.delete(infoId);
                 }
             }
-            if (CommonUtil.isNotEmpty(infoId)){
+            if (CommonUtil.isNotEmpty(infoId)) {
                 return informationMapper.delete(infoId);
             }
         } catch (Exception e) {
@@ -214,12 +218,52 @@ public class InformationServiceImpl implements InformationService {
     @Override
     public List<Map<String, Object>> getInfoByUserIdAndInfoType(Page<Map<String, Object>> page, Integer userId, String infoType)
             throws ServiceException {
-//        try {
+        try {
             informationMapper.getInfoByUserIdAndInfoType(page, userId, infoType);
-//        } catch (Exception e) {
-//            throw new ServiceException("加载消息时发生异常!");
-//        }
+        } catch (Exception e) {
+            throw new ServiceException("加载消息时发生异常!");
+        }
 
+        return null;
+    }
+
+    /**
+     * TODO 按消息类型查询消息
+     *
+     * @param page
+     * @param infoType
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public List<Map<String, Object>>
+    getInfoByInfoType(Page<Map<String, Object>> page, String infoType) throws ServiceException {
+        try {
+            if (CommonUtil.isNotEmpty(infoType)) {
+                return informationMapper.getInfoByInfoType(page, infoType);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("查询信息时发生异常");
+        }
+        return null;
+    }
+
+    /**
+     * TODO 按消息类型查询热门消息
+     *
+     * @param infoType
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public List<Map<String, Object>> getHotInfoByInfoType(Page<Map<String, Object>> page, String infoType) throws ServiceException {
+        try {
+            if (CommonUtil.isNotEmpty(infoType)) {
+                return informationMapper.getHotInfoByInfoType(page, infoType);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("查询信息时发生异常");
+        }
         return null;
     }
 }

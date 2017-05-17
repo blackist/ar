@@ -15,6 +15,7 @@ public interface InformationService {
 
     /**
      * TODO 根据information id 加载信息
+     *
      * @param infoId
      * @return
      * @throws ServiceException
@@ -23,15 +24,15 @@ public interface InformationService {
 
     /**
      * TODO 加载组织最近消息
-     * @param page  分页类
-     * @param originId  组织id
-     * @return  消息列表
+     *
+     * @param page     分页类
+     * @param originId 组织id
+     * @return 消息列表
      * @throws ServiceException
      */
     List<Map<String, Object>> getOriginInfos(Page<Map<String, Object>> page, Integer originId, String infoType) throws ServiceException;
 
     /**
-     *
      * @param page
      * @param originId
      * @param originId
@@ -42,7 +43,8 @@ public interface InformationService {
 
     /**
      * TODO 通过 消息id 和 组织id 获取消息详情
-      * @param infoId
+     *
+     * @param infoId
      * @param originId
      * @return
      * @throws ServiceException
@@ -51,6 +53,7 @@ public interface InformationService {
 
     /**
      * TODO 发布组织动态消息
+     *
      * @param information 消息实体
      * @return
      * @throws ServiceException
@@ -59,7 +62,8 @@ public interface InformationService {
 
     /**
      * TODO 为消息点赞
-     * @param infoId  消息id
+     *
+     * @param infoId 消息id
      * @return 返回点赞的总数
      * @throws ServiceException
      */
@@ -67,6 +71,7 @@ public interface InformationService {
 
     /**
      * TODO 删除消息
+     *
      * @param infoId
      * @param userId
      * @return
@@ -76,10 +81,29 @@ public interface InformationService {
 
     /**
      * TODO 查询用户发布的某一类消息
+     *
      * @param userId
      * @param infoType
      * @return
      * @throws ServiceException
      */
     List<Map<String, Object>> getInfoByUserIdAndInfoType(Page<Map<String, Object>> page, Integer userId, String infoType) throws ServiceException;
+
+    /**
+     * TODO 按消息类型查询消息
+     * @param page
+     * @param infoType
+     * @return
+     * @throws ServiceException
+     */
+    List<Map<String, Object>> getInfoByInfoType(Page<Map<String, Object>> page, String infoType) throws ServiceException;
+
+    /**
+     * TODO 按消息类型查询热门消息
+     * @param infoType
+     * @return
+     * @throws ServiceException
+     */
+    List<Map<String, Object>> getHotInfoByInfoType(Page<Map<String, Object>> page, String infoType) throws ServiceException;
+
 }
