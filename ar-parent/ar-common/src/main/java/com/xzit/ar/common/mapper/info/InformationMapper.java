@@ -147,5 +147,12 @@ public interface InformationMapper extends BaseMapper {
      */
     List<Map<String, Object>> getHotInfoByInfoType(Page<Map<String, Object>> page, @Param("infoType") String infoType) throws Exception;
 
-    List<Map<String, Object>> queryInfoByVo(Page<Map<String, Object>> page);
+    /**
+     * TODO 根据实体查询信息
+     *
+     * @param page
+     * @return
+     * @throws Exception
+     */
+    List<Map<String, Object>> queryInfoByVo(Page<Map<String, Object>> page) throws Exception;
 }

@@ -47,7 +47,7 @@
         <ul class="am-list am-collapse admin-sidebar-sub" id="job-manage">
             <li><a href="job.action"><span class="am-icon-th"></span>
                 所有招聘 </a></li>
-            <li><a href="job/createJob.action"><span class="am-icon-th"></span>
+            <li><a href="job/createJob.action"><span class="am-icon-plus"></span>
                 发布招聘 </a></li>
         </ul>
     </li>

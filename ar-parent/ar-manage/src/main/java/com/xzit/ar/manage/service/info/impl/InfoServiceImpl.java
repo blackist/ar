@@ -28,26 +28,15 @@ public class InfoServiceImpl implements InfoService {
      * TODO 根据条件查询信息
      *
      * @param page
-     * @param query
-     * @param state
-     * @param infoType
      * @return
      * @throws ServiceException
      */
     @Override
-    public List<Map<String, Object>> queryInfo(
-            Page<Map<String, Object>> page, String query, String state, String infoType)
-            throws ServiceException {
-
-        //
-        Map<String, Object> information = new HashMap<>();
-        if (CommonUtil.isNotEmpty(query)) {
-            information.put("query", "%" + query + "%");
+    public List<Map<String, Object>> queryInfo(Page<Map<String, Object>> page) throws ServiceException {
+        try {
+            return informationMapper.queryInfoByVo(page);
+        } catch (Exception e) {
+            throw new ServiceException("查询信息时发生异常！");
         }
-        information.put("state", null);
-        information.put("infoType", null);
-        page.setQueryMap(information);
-
-        return informationMapper.queryInfoByVo(page);
     }
 }

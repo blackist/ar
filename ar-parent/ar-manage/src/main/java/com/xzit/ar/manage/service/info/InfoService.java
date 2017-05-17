@@ -17,12 +17,8 @@ public interface InfoService {
     /**
      * TODO 根据条件查询信息
      * @param page
-     * @param query
-     * @param state
-     * @param infoType
      * @return
      * @throws ServiceException
      */
-    List<Map<String, Object>> queryInfo(Page<Map<String, Object>> page,
-                                        String query, String state, String infoType) throws ServiceException;
+    List<Map<String, Object>> queryInfo(Page<Map<String, Object>> page) throws ServiceException;
 }

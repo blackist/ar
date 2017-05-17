@@ -214,9 +214,20 @@
 
     <select id="queryInfoByVo" resultType="map">
         SELECT
-            info.info_title title,
+            info.info_id infoId,
+            info.info_title infoTitle,
             info.content content,
-            info.info_type type
+            info.theme theme,
+            info.thumb_image thumbImage,
+            info.views views,
+            info.comments comments,
+            info.loves loves,
+            info.create_time createTime,
+            info.is_top isTop,
+            info.info_type infoType,
+            info.state state,
+            u.user_id userId,
+            u.true_name trueName
         FROM
             information info,
             user u
@@ -234,7 +245,8 @@
 
         </where>
         ORDER BY
-            info.create_time DESC 
+            info.create_time DESC,
+            info.is_top DESC 
     </select>
 	
 	<!-- delete -->

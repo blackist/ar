@@ -4,12 +4,14 @@ import com.xzit.ar.common.base.BaseController;
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.init.context.ARContext;
 import com.xzit.ar.common.page.Page;
+import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.manage.service.info.InfoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -46,9 +48,22 @@ public class InfoController extends BaseController {
      */
     @RequestMapping("/queryInfo")
     public String queryInfo(Model model, String query, String state, String infoType) throws ServiceException {
-        // 查询消息
+        // 分页类
         Page<Map<String, Object>> page = new Page<>(getPageIndex(), getPageSize());
-        infoService.queryInfo(page, query, state, infoType);
+        // 参数校验
+        Map<String, Object> information = new HashMap<>();
+        if (CommonUtil.isNotEmpty(query)) {
+            information.put("query", "%" + query + "%");
+        }
+        if (CommonUtil.isNotEmpty(state)) {
+            information.put("state", state);
+        }
+        if (CommonUtil.isNotEmpty(infoType)) {
+            information.put("infoType", infoType);
+        }
+        page.setQueryMap(information);
+        // 查询消息
+        infoService.queryInfo(page);
         // 数据返回
         model.addAttribute("page", page);
         model.addAttribute("infoTypes", ARContext.infoType);
