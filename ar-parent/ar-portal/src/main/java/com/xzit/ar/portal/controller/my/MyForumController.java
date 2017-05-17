@@ -52,6 +52,6 @@ public class MyForumController extends BaseController {
     public String delete(Integer postId) throws ServiceException {
         informationService.deleteInfo(postId, getCurrentUserId());
 
-        return "redirect:/my/forum.action";
+        return "redirect:/my/info.action";
     }
 }

@@ -211,6 +211,31 @@
             loves DESC 
 
 	</select>
+
+    <select id="queryInfoByVo" resultType="map">
+        SELECT
+            info.info_title title,
+            info.content content,
+            info.info_type type
+        FROM
+            information info,
+            user u
+        <where>
+            info.user_id=u.user_id
+            <if test="queryMap.query != null and queryMap.query != '' ">
+              AND (info.info_title LIKE #{queryMap.query} OR u.true_name LIKE #{queryMap.query})
+            </if>
+            <if test="queryMap.state != null">
+              AND (info.state = #{queryMap.state})
+            </if>
+            <if test="queryMap.infoType != null">
+              AND (info.info_type = #{queryMap.infoType})
+            </if>
+
+        </where>
+        ORDER BY
+            info.create_time DESC 
+    </select>
 	
 	<!-- delete -->
 	<delete id="delete" parameterType="java.lang.Integer" >delete from information

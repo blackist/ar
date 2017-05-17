@@ -67,6 +67,8 @@ public class Page<T> implements Serializable {
 	 */
 	private List<T> beanList;
 
+	private T queryMap;
+
 	/**
 	 * Title: <br>
 	 * Description:TODO <br>
@@ -222,4 +224,11 @@ public class Page<T> implements Serializable {
 		setCodeList();
 	}
 
+	public T getQueryMap() {
+		return queryMap;
+	}
+
+	public void setQueryMap(T queryMap) {
+		this.queryMap = queryMap;
+	}
 }

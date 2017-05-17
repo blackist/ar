@@ -1,5 +1,5 @@
 $(function() {
-	$("#nav-forum").attr("class", "active grid");
+	$("#nav-info").attr("class", "active grid");
 
     // 加载评论列表
     var postId = $("#postId").html();

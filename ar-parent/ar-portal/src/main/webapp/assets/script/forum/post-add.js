@@ -1,5 +1,5 @@
 $(function() {
-	$("#nav-forum").attr("class", "active grid");
+	$("#nav-info").attr("class", "active grid");
 
 });
 

@@ -155,10 +155,10 @@ public abstract class BaseController {
 	}
 
 	/**
-	 * @Title: setQueryStr
+	 * @Title: setQuery
 	 * @Description: TODO 传递查询条件字符串
 	 */
-	protected void setQueryStr() {
+	protected void setQuery() {
 		this.getRequest().setAttribute("queryStr", this.getParameter("queryStr"));
 	}
 
@@ -175,10 +175,10 @@ public abstract class BaseController {
 	}
 
 	/**
-	 * @Title: setStateStr
+	 * @Title: setState
 	 * @Description: TODO 传递查询条件字符串
 	 */
-	protected void setStateStr() {
+	protected void setState() {
 		this.getRequest().setAttribute("stateStr", this.getStateStr());
 	}
 

@@ -60,7 +60,7 @@ public class RecruitController extends BaseController {
 		recruitService.queryRecruit(page, getQueryStr());
 		// 传向页面
 		model.addAttribute("page", page);
-		setQueryStr();
+		setQuery();
 
 		return "recruit/recruit-index";
 	}

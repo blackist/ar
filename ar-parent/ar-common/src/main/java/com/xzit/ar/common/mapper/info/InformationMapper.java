@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.xzit.ar.common.po.info.Information;
+import com.xzit.ar.common.vo.info.InformationVo;
 import org.apache.ibatis.annotations.Param;
 
 import com.xzit.ar.common.base.BaseMapper;
@@ -145,4 +146,6 @@ public interface InformationMapper extends BaseMapper {
      * @throws Exception
      */
     List<Map<String, Object>> getHotInfoByInfoType(Page<Map<String, Object>> page, @Param("infoType") String infoType) throws Exception;
+
+    List<Map<String, Object>> queryInfoByVo(Page<Map<String, Object>> page);
 }

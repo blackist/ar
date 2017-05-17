@@ -30,7 +30,7 @@ public class ForumController extends BaseController {
         postService.queryPosts(page, getQueryStr());
         // 传向页面
         model.addAttribute("page", page);
-        setQueryStr();
+        setQuery();
 
         return "forum/forum-index";
     }

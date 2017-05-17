@@ -86,7 +86,7 @@ public class PostController extends BaseController {
             redirectAttributes.addAttribute("postId", comment.getInfoId());
             return "redirect:/post/detail.action";
         } else {
-            return "redirect:/forum.action";
+            return "redirect:/info.action";
         }
     }
 
@@ -109,7 +109,7 @@ public class PostController extends BaseController {
      */
     @RequestMapping("/add")
     public String add(Model model){
-        model.addAttribute("themes", ARContext.postTheme);
+        model.addAttribute("themes", ARContext.infoTheme);
         return "forum/post/post-add";
     }
 
@@ -135,7 +135,7 @@ public class PostController extends BaseController {
 
         postService.savePost(information);
 
-        return "redirect:/forum.action";
+        return "redirect:/info.action";
     }
 
     /**
@@ -148,7 +148,7 @@ public class PostController extends BaseController {
     @RequestMapping("/delete")
     public String delete(Model model, @Param("postId") Integer postId) throws ServiceException {
         postService.deletePost(postId, getCurrentUserId());
-        return "redirect:/forum.action";
+        return "redirect:/info.action";
     }
 
     /**
