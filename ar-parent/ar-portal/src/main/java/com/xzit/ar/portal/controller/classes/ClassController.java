@@ -93,7 +93,7 @@ public class ClassController extends BaseController {
 
 		// 查询条件返回
 		setSelectStr();
-		setQueryStr();
+		setQuery();
 
 		return "class/class-query";
 	}

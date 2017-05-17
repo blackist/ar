@@ -6,19 +6,23 @@ import com.xzit.ar.common.base.BaseEntity;
 
 public class UserJob extends BaseEntity {
     /**
-	* @Fields serialVersionUID : TODO <br>
-	*/ 
-	private static final long serialVersionUID = 1L;
+     * @Fields serialVersionUID : TODO <br>
+     */
+    private static final long serialVersionUID = 1L;
 
-	private Integer jobId;
+    private Integer jobId;
 
     private String jobName;
 
     private String jobUnit;
 
-    private Date jobDate;
+    private String jobDate;
 
     private String jobDesc;
+
+    private Date startTime;
+
+    private Date endTime;
 
     private Date createTime;
 
@@ -52,12 +56,12 @@ public class UserJob extends BaseEntity {
         this.jobUnit = jobUnit == null ? null : jobUnit.trim();
     }
 
-    public Date getJobDate() {
+    public String getJobDate() {
         return jobDate;
     }
 
-    public void setJobDate(Date jobDate) {
-        this.jobDate = jobDate;
+    public void setJobDate(String jobDate) {
+        this.jobDate = jobDate == null ? null : jobDate.trim();
     }
 
     public String getJobDesc() {
@@ -66,6 +70,22 @@ public class UserJob extends BaseEntity {
 
     public void setJobDesc(String jobDesc) {
         this.jobDesc = jobDesc == null ? null : jobDesc.trim();
+    }
+
+    public Date getStartTime() {
+        return createTime;
+    }
+
+    public void setStartTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getEndTime() {
+        return createTime;
+    }
+
+    public void setEndTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public Date getCreateTime() {

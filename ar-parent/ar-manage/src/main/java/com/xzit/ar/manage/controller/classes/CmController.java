@@ -52,7 +52,7 @@ public class CmController extends BaseController {
 		model.addAttribute("queryStr", queryStr);
 		// 查询条件返回
 		setSelectStr();
-		setStateStr();
+		setState();
 
 		return "cm/cm-query";
 	}

@@ -1,7 +1,6 @@
-<taglib version="2.0"
-	xmlns="http://java.sun.com/xml/ns/j2ee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd">
+<taglib version="2.0"	xmlns="http://java.sun.com/xml/ns/j2ee"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd">
 	<tlib-version>1.0</tlib-version>
 	<jsp-version>2.0</jsp-version>
 	<short-name>ar</short-name>
@@ -34,7 +33,7 @@
 	<tag>
 		<name>ac</name>
 		<tag-class>com.xzit.ar.common.tag.PrivilegeTag</tag-class>
-		<body-content>empty</body-content>
+		<body-content>JSP</body-content>
 		<attribute>
 			<name>url</name>
 			<required>true</required>
@@ -44,9 +43,54 @@
 	<tag>
 		<name>top</name>
 		<tag-class>com.xzit.ar.common.tag.TopTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>sub</name>
+		<tag-class>com.xzit.ar.common.tag.SubStringTag</tag-class>
 		<body-content>empty</body-content>
 		<attribute>
 			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>length</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>exist</name>
+		<tag-class>com.xzit.ar.common.tag.ExistInTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>items</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>notexist</name>
+		<tag-class>com.xzit.ar.common.tag.NotExistInTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>items</name>
 			<required>true</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>

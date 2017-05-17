@@ -57,4 +57,13 @@ public interface RecruitMapper extends BaseMapper {
 	 * @throws Exception
 	 */
 	int addResumes(@Param("recruitId") Integer recruitId) throws Exception;
+
+	/**
+	 * TODO 查询用户发布的招聘信息
+	 * @param page
+	 * @param userId
+	 * @return
+	 * @throws Exception
+	 */
+	List<Map<String, Object>> getRecruitByUserId(Page<Map<String, Object>> page, @Param("userId") Integer userId)  ;
 }

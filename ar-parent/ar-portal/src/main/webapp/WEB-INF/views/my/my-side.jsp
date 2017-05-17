@@ -8,7 +8,7 @@
             class="glyphicon glyphicon-home"></i>主页</a></li>
     <li id="my-profile"><a href="my/profile/basic.action"><i
             class="fa fa-user"></i>个人资料</a></li>
-    <li><a href="my/account.action"><i class="fa fa-gears"></i>账户设置</a></li>
+    <li id="my-account"><a href="my/account.action"><i class="fa fa-gears"></i>账户设置</a></li>
 </ul>
 
 <div class="mb10"></div>

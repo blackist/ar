@@ -38,7 +38,7 @@ public class OriginProvider {
 	}
 	
 	public String loadMyOrigin(){
-		return "select o.origin_name originName, o.origin_id originId "
+		return "select o.origin_name originName, o.origin_id originId, o.state_time stateTime, o.members members "
 				+ "from origin o, user_origin uo "
 				+ "where uo.user_id=#{userId} and o.origin_id=uo.origin_id "
 				+ "and o.origin_type=#{originType} and uo.state='A' and o.state='A' "

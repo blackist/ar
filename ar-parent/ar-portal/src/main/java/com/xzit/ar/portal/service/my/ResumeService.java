@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.xzit.ar.common.exception.ServiceException;
+import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.recruit.ResumePost;
 import com.xzit.ar.common.po.user.UserResume;
 
@@ -56,7 +57,7 @@ public interface ResumeService {
 	 * @Title: cancelPostResume
 	 * @Description: TODO 取消投递
 	 */
-	int cancelPostResume(ResumePost resumePost) throws ServiceException;
+	int cancelPostResume(Integer recruitId, Integer resumeId) throws ServiceException;
 	
 	/**
 	 * @Title: postResumeRecord
@@ -95,4 +96,11 @@ public interface ResumeService {
 	 * @throws ServiceException
 	 */
 	int deleteResume(Integer resumeId) throws ServiceException;
+
+	/**
+	 * TODO 加载用户简历投递记录
+	 * @return
+	 * @throws ServiceException
+	 */
+	List<Map<String, Object>> getPostsByUserId(Page<Map<String, Object>> page, Integer userId) throws ServiceException;
 }

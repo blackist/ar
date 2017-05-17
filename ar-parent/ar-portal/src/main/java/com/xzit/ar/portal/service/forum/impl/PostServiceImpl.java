@@ -39,7 +39,7 @@ public class PostServiceImpl implements PostService {
         Map<String, Object> post = null;
         try {
             // 参数校验
-            if (CommonUtil.isNotEmpty(postId)){
+            if (CommonUtil.isNotEmpty(postId)) {
                 // 累计浏览量
                 informationMapper.increaseViews(postId);
                 // 加载帖子详情
@@ -50,7 +50,7 @@ public class PostServiceImpl implements PostService {
         }
         return post;
     }
-    
+
     /**
      * TODO 喜欢帖子
      *
@@ -63,9 +63,9 @@ public class PostServiceImpl implements PostService {
         int loves = 0;
         try {
             // 参数校验
-            if (CommonUtil.isNotEmpty(postId)){
+            if (CommonUtil.isNotEmpty(postId)) {
                 // 点赞
-                if (informationMapper.increaseLoves(postId) > 0 ) {
+                if (informationMapper.increaseLoves(postId) > 0) {
                     loves = 1;
                     // 查询点赞数
                     loves = informationMapper.getLoves(postId);
@@ -88,7 +88,7 @@ public class PostServiceImpl implements PostService {
     public Integer commentPost(Comment comment) throws ServiceException {
         try {
             // 参数校验
-            if (comment != null && CommonUtil.isNotEmpty(comment.getUserId()) && CommonUtil.isNotEmpty(comment.getInfoId())){
+            if (comment != null && CommonUtil.isNotEmpty(comment.getUserId()) && CommonUtil.isNotEmpty(comment.getInfoId())) {
                 // 存储评论内容
                 commentMapper.save(comment);
                 // 累计评论
@@ -113,7 +113,7 @@ public class PostServiceImpl implements PostService {
         List<Map<String, Object>> comments = null;
         try {
             // 参数校验
-            if (CommonUtil.isNotEmpty(postId)){
+            if (CommonUtil.isNotEmpty(postId)) {
                 // 加载评论
                 comments = commentMapper.dynamicLoadComment(page, postId);
             }
@@ -125,6 +125,7 @@ public class PostServiceImpl implements PostService {
 
     /**
      * TODO 查询论坛帖子列表
+     *
      * @param page     分页类
      * @param queryStr 查询条件
      * @return 帖子list
@@ -132,19 +133,17 @@ public class PostServiceImpl implements PostService {
      */
     @Override
     public List<Map<String, Object>> queryPosts(Page<Map<String, Object>> page, String queryStr) throws ServiceException {
-        List<Map<String, Object>> posts = null;
         try {
             // 校验参数
-              if (CommonUtil.isEmpty(queryStr)){
-                  queryStr = "";
-              }
+            if (CommonUtil.isEmpty(queryStr)) {
+                queryStr = "";
+            }
             queryStr = "%" + queryStr + "%";
             // 根据条件查询帖子
-            posts = informationMapper.queryInfos(page, queryStr,"BBS", "%%", "A");
+            return informationMapper.queryInfos(page, queryStr, "BBS", "%%", "A");
         } catch (Exception e) {
             throw new ServiceException("加载论坛帖子时发生异常！");
         }
-        return posts;
     }
 
     /**
@@ -158,7 +157,7 @@ public class PostServiceImpl implements PostService {
     public Integer savePost(Information information) throws ServiceException {
         int row = 0;
         try {
-            if (information != null && CommonUtil.isNotEmpty(information.getUserId())){
+            if (information != null && CommonUtil.isNotEmpty(information.getUserId())) {
                 row = informationMapper.save(information);
             }
         } catch (Exception e) {
@@ -179,7 +178,7 @@ public class PostServiceImpl implements PostService {
     public Integer deletePost(Integer postId, Integer userId) throws ServiceException {
         try {
             // 参数校验
-            if(CommonUtil.isNotEmpty(postId) && CommonUtil.isNotEmpty(userId)) {
+            if (CommonUtil.isNotEmpty(postId) && CommonUtil.isNotEmpty(userId)) {
                 // 检验帖子是否存在
                 if (informationMapper.getInfoByUserIdAndInfoId(postId, userId) != null) {
                     // 删除帖子相关评论

@@ -18,12 +18,13 @@
 		user_id, account, password, is_admin, email, true_name, introduce, image_id, create_time, state, state_time
 	</sql>
 	
-	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+	<select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
 		select
 		<include refid="Base_Column_List" />
 		from user
     	where user_id = #{userId,jdbcType=INTEGER}
 	</select>
+
 	<!-- 帐号查找用户 登录 -->
 	<select id="selectByAccount" resultType="map" parameterType="java.lang.String">
 		SELECT user_id userId, account account, password password, true_name trueName, introduce introduce, is_admin isAdmin,
@@ -31,6 +32,7 @@
 		from `user`
     	WHERE account = #{account} AND state = 'A'
 	</select>
+
 	<!--获取用户基本信息-->
 	<select id="getUserBasicInfo" parameterType="java.lang.Integer" resultType="map">
 		SELECT u.user_id userId,
@@ -77,8 +79,7 @@
 		</trim>
 	</insert>
 	
-	<update id="updateByPrimaryKeySelective" parameterType="com.xzit.ar.common.po.user.User"
-		>
+	<update id="update" parameterType="com.xzit.ar.common.po.user.User">
 		update user
 		<set >
 			<if test="account != null" >account = #{account,jdbcType=VARCHAR},</if>
@@ -87,7 +88,7 @@
 			<if test="trueName != null" >true_name = #{trueName,jdbcType=VARCHAR},</if>
 			<if test="introduce != null" >introduce = #{introduce,jdbcType=VARCHAR},</if>
 			<if test="isAdmin != null" >is_admin = #{isAdmin,jdbcType=CHAR},</if>
-			<if test="imageId != null" >head_image_id = #{image_id,jdbcType=INTEGER},</if>
+			<if test="imageId != null" >image_id = #{imageId,jdbcType=INTEGER},</if>
 			<if test="createTime != null" >create_time = #{createTime,jdbcType=TIMESTAMP},</if>
 			<if test="state != null" >state = #{state,jdbcType=CHAR},</if>
 			<if test="stateTime != null" >state_time = #{stateTime,jdbcType=TIMESTAMP},</if>

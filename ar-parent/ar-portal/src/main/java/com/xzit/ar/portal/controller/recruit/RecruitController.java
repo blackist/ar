@@ -8,6 +8,7 @@
  */
 package com.xzit.ar.portal.controller.recruit;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -59,7 +60,7 @@ public class RecruitController extends BaseController {
 		recruitService.queryRecruit(page, getQueryStr());
 		// 传向页面
 		model.addAttribute("page", page);
-		setQueryStr();
+		setQuery();
 
 		return "recruit/recruit-index";
 	}
@@ -77,10 +78,14 @@ public class RecruitController extends BaseController {
 		List<Map<String, Object>> postRecords = resumeService.postResumeRecord(recruitId);
 		List<Map<String, Object>> otherRecruits = recruitService.loadOtherRecruits((Integer) recruit.get("unitId"),
 				recruitId);
+		List<String> postIds = new ArrayList<>();
+		for (Map<String, Object> user :
+			 postRecords) {
+			postIds.add(user.get("userId").toString());
+		}
 
 		// 解析 福利待遇
 		String benefit = (String) recruit.get("benefit");
-
 		// 传递参数
 		if (CommonUtil.isNotEmpty(benefit)) {
 			String[] benefits = benefit.split(",");
@@ -89,7 +94,7 @@ public class RecruitController extends BaseController {
 		}
 		model.addAttribute("resumeList", resumeList);
 		model.addAttribute("postRecords", postRecords);
-		recruit.put("userId", getCurrentUserId());
+		model.addAttribute("postIds", postIds);
 		model.addAttribute("recruit", recruit);
 		model.addAttribute("otherRecruits", otherRecruits);
 
