@@ -86,7 +86,7 @@ public class PostController extends BaseController {
             redirectAttributes.addAttribute("postId", comment.getInfoId());
             return "redirect:/post/detail.action";
         } else {
-            return "redirect:/info.action";
+            return "redirect:/forum.action";
         }
     }
 
@@ -135,7 +135,7 @@ public class PostController extends BaseController {
 
         postService.savePost(information);
 
-        return "redirect:/info.action";
+        return "redirect:/forum.action";
     }
 
     /**
@@ -146,9 +146,9 @@ public class PostController extends BaseController {
      * @throws ServiceException
      */
     @RequestMapping("/delete")
-    public String delete(Model model, @Param("postId") Integer postId) throws ServiceException {
+    public String delete( @Param("postId") Integer postId) throws ServiceException {
         postService.deletePost(postId, getCurrentUserId());
-        return "redirect:/info.action";
+        return "redirect:/forum.action";
     }
 
     /**

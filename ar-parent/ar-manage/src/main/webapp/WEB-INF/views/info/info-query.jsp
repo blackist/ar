@@ -16,23 +16,23 @@
                 <span class="am-icon-plus"></span> 发布消息
             </a>
             <c:if test="${state=='D'}">
-                <button class="am-btn am-btn-default" type="button" onclick="auditJobs()">
+                <button class="am-btn am-btn-default" type="button" onclick="auditInfos()">
                     <span class="am-icon-archive"></span> 批量审核
                 </button>
             </c:if>
             <c:if test="${state!='X'}">
                 <button class="am-btn am-btn-default" type="button"
-                        onclick="removeJobs()">
+                        onclick="removeInfos()">
                     <span class="am-icon-trash-o"></span> 批量删除
                 </button>
             </c:if>
             <c:if test="${state=='X'}">
                 <button class="am-btn am-btn-default" type="button"
-                        onclick="deleteJobs()">
+                        onclick="recoverInfos()">
                     <i class="am-icon-recycle"></i> 批量恢复
                 </button>
                 <button class="am-btn am-btn-default" type="button"
-                        onclick="deleteJobs()">
+                        onclick="deleteInfos()">
                     <span class="am-icon-trash-o"></span> 彻底删除
                 </button>
             </c:if>
@@ -108,40 +108,40 @@
                                 <div class="am-btn-group am-btn-group-xs">
                                     <c:if test="${info.isTop==1}">
                                         <button type="button"
-                                                onclick="javascript:cancelTopJob('${info.infoId}')"
+                                                onclick="javascript:cancelTopInfo('${info.infoId}')"
                                                 class="am-btn am-btn-default am-btn-xs am-text-secondary">
                                             <span class="am-icon-pencil-square-o"></span> 取消置顶
                                         </button>
                                     </c:if>
                                     <c:if test="${info.isTop==0 && info.state=='A'}">
                                         <button type="button"
-                                                onclick="javascript:setTopJob('${info.infoId}')"
+                                                onclick="javascript:setTopInfo('${info.infoId}')"
                                                 class="am-btn am-btn-default am-btn-xs am-text-secondary">
                                             <span class="am-icon-pencil-square-o"></span> 置顶
                                         </button>
                                     </c:if>
                                     <c:if test="${info.state=='D'}">
                                         <button type="button"
-                                                onclick="javascript:auditJob('${info.infoId}')"
+                                                onclick="javascript:auditInfo('${info.infoId}')"
                                                 class="am-btn am-btn-default am-btn-xs am-text-secondary">
                                             <span class="am-icon-archive"></span> 审核
                                         </button>
                                     </c:if>
                                     <c:if test="${info.state!='X'}">
                                         <button type="button"
-                                                onclick="javascript:removeJob('${info.infoId}')"
+                                                onclick="javascript:removeInfo('${info.infoId}')"
                                                 class="am-btn am-btn-default am-btn-xs am-text-danger confirm">
                                             <span class="am-icon-trash-o"></span> 删除
                                         </button>
                                     </c:if>
                                     <c:if test="${info.state=='X'}">
                                         <button type="button"
-                                                onclick="javascript:recoverJob('${info.infoId}')"
+                                                onclick="javascript:recoverInfo('${info.infoId}')"
                                                 class="am-btn am-btn-default am-btn-xs am-text-danger confirm">
                                             <i class="am-icon-recycle"></i> 恢复
                                         </button>
                                         <button type="button"
-                                                onclick="javascript:deleteJob('${info.infoId}')"
+                                                onclick="javascript:deleteInfo('${info.infoId}')"
                                                 class="am-btn am-btn-default am-btn-xs am-text-danger confirm">
                                             <span class="am-icon-trash-o"></span> 彻底删除
                                         </button>

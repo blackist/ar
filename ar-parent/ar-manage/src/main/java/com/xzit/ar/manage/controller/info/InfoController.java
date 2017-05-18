@@ -4,13 +4,16 @@ import com.xzit.ar.common.base.BaseController;
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.init.context.ARContext;
 import com.xzit.ar.common.page.Page;
+import com.xzit.ar.common.po.info.Information;
 import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.manage.service.info.InfoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,7 +42,8 @@ public class InfoController extends BaseController {
 
     /**
      * TODO 查询站内信息
-      * @param model
+     *
+     * @param model
      * @param query
      * @param state
      * @param infoType
@@ -73,5 +77,68 @@ public class InfoController extends BaseController {
         model.addAttribute("infoType", infoType);
 
         return "info/info-query";
+    }
+
+    /**
+     * TODO 加载信息发布界面
+     *
+     * @param model
+     * @return
+     */
+    @RequestMapping("/add")
+    public String add(Model model) {
+        // 数据返回
+        model.addAttribute("infoTypes", ARContext.infoType);
+
+        return "info/info-add";
+    }
+
+    /**
+     * TODO 保存管理员发布的信息
+     *
+     * @param information
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/save")
+    public String save(Information information) throws ServiceException {
+        // 参数校验
+        if (information != null && CommonUtil.isNotEmpty(information.getInfoTitle())
+                && CommonUtil.isNotEmpty(information.getContent())
+                && CommonUtil.isNotEmpty(information.getInfoType())
+                && CommonUtil.isNotEmpty(information.getIsTop())) {
+            // 关键参数设置
+            information.setComments(0);
+            information.setViews(0);
+            information.setLoves(0);
+            information.setUserId(getCurrentUserId());
+            information.setCreateTime(new Date());
+            information.setState("A");
+            information.setStateTime(new Date());
+            // 信息保存
+            infoService.saveInfo(information);
+        }
+
+        return "redirect:/info.action";
+    }
+
+    /**
+     * TODO 更新信息
+     * @param attributes
+     * @param information
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/update")
+    public String update(RedirectAttributes attributes, Information information) throws ServiceException {
+        // 参数校验
+        if (information != null && CommonUtil.isNotEmpty(information.getInfoId())) {
+            // 更新信息
+            if (infoService.updateInfo(information) > 0) {
+                setMessage(attributes, "操作成功");
+            }
+        }
+
+        return "redirect:/queryInfo.action";
     }
 }

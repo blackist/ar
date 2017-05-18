@@ -2,6 +2,7 @@ package com.xzit.ar.manage.service.info;
 
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.page.Page;
+import com.xzit.ar.common.po.info.Information;
 
 import java.util.List;
 import java.util.Map;
@@ -21,4 +22,20 @@ public interface InfoService {
      * @throws ServiceException
      */
     List<Map<String, Object>> queryInfo(Page<Map<String, Object>> page) throws ServiceException;
+
+    /**
+     * TODO 保存发布的信息到数据库
+     * @param information
+     * @return
+     * @throws ServiceException
+     */
+    Integer saveInfo(Information information) throws ServiceException;
+
+    /**
+     * TODO 更新信息的属性
+      * @param information
+     * @return
+     * @throws ServiceException
+     */
+    Integer updateInfo(Information information) throws ServiceException;
 }
