@@ -38,4 +38,12 @@ public interface InfoService {
      * @throws ServiceException
      */
     Integer updateInfo(Information information) throws ServiceException;
+
+    /**
+     * TODO 删除信息
+     * @param infoId
+     * @return
+     * @throws ServiceException
+     */
+    Integer deleteInfo(Integer infoId) throws ServiceException;
 }

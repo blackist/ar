@@ -69,7 +69,7 @@
                                 <select name="theme" id="theme" required
                                         data-am-selected="{btnSize:'sm'}" class="am-input-sm">
                                     <option value="">请选择...</option>
-                                    <c:forEach items="${themes}" var="the">
+                                    <c:forEach items="${infoThemes}" var="the">
                                         <option value="${the.value}">${the.name}</option>
                                     </c:forEach>
                                 </select>

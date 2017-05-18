@@ -80,4 +80,23 @@ public class InfoServiceImpl implements InfoService {
         }
         return 0;
     }
+
+    /**
+     * TODO 删除信息
+     *
+     * @param infoId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public Integer deleteInfo(Integer infoId) throws ServiceException {
+        try {
+            if (CommonUtil.isNotEmpty(infoId)) {
+                return informationMapper.delete(infoId);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("删除信息时发生异常！");
+        }
+        return 0;
+    }
 }

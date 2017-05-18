@@ -89,6 +89,7 @@ public class InfoController extends BaseController {
     public String add(Model model) {
         // 数据返回
         model.addAttribute("infoTypes", ARContext.infoType);
+        model.addAttribute("infoThemes", ARContext.infoTheme);
 
         return "info/info-add";
     }
@@ -124,21 +125,41 @@ public class InfoController extends BaseController {
 
     /**
      * TODO 更新信息
-     * @param attributes
+     *
      * @param information
      * @return
      * @throws ServiceException
      */
     @RequestMapping("/update")
-    public String update(RedirectAttributes attributes, Information information) throws ServiceException {
+    public String update(Model model, Information information) throws ServiceException {
         // 参数校验
         if (information != null && CommonUtil.isNotEmpty(information.getInfoId())) {
             // 更新信息
             if (infoService.updateInfo(information) > 0) {
-                setMessage(attributes, "操作成功");
+                setMessage(model, "操作成功");
             }
         }
 
-        return "redirect:/queryInfo.action";
+        return "forward:queryInfo.action";
+    }
+
+    /**
+     * TODO 删除信息
+     * @param model
+     * @param infoId
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/delete")
+    public String delete(Model model, Integer infoId) throws ServiceException {
+        // 参数校验
+        if (CommonUtil.isNotEmpty(infoId)) {
+            // 删除信息
+            if (infoService.deleteInfo(infoId) > 0) {
+                setMessage(model, "操作成功！");
+            }
+        }
+
+        return "forward:queryInfo.action";
     }
 }
