@@ -11,17 +11,15 @@
         </a>
     </li>
     <!-- 班级管理 -->
-    <li class="admin-parent" id="bar-class">
-        <a class="am-cf" href="javascript:void(0)" data-am-collapse="{target: '#class-manage'}">
-            <span class="am-icon-institution"></span> 班级 / 校友组织
-            <span class="am-icon-angle-right am-fr am-margin-right"></span>
+    <li class="admin-parent" id="bar-origin">
+        <a class="am-cf" href="javascript:void(0)" data-am-collapse="{target: '#origin-manage'}">
+            <i class="am-icon-graduation-cap"></i> 班级 / 校友组织
+            <i class="am-icon-angle-right am-fr am-margin-right"></i>
         </a>
-        <ul class="am-list am-collapse admin-sidebar-sub" id="class-manage">
-            <li>
-                <a href="cm.action" class="am-cf"><span class="am-icon-puzzle-piece"></span>所有班级</a>
-            </li>
-            <li><a href="#"><span class="am-icon-puzzle-piece"></span>创建班级</a></li>
-            <li><a href="#"><span class="am-icon-th"></span>年级管理</a></li>
+        <ul class="am-list am-collapse admin-sidebar-sub" id="origin-manage">
+            <li><a href="origin.action"><i class="am-icon-institution"></i> 组织管理</a></li>
+            <li><a href="origin/add.action"><i class="am-icon-plus-square"></i> &nbsp;创建组织</a></li>
+            <li><a href="#"><i class="am-icon-th"></i> 年级管理</a></li>
         </ul>
     </li>
     <!-- 校友论坛 -->

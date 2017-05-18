@@ -9,7 +9,7 @@
 /*
  * Modernizr tests which native CSS3 and HTML5 features are available in
  * the current UA and makes the results available to you in two ways:
- * as properties on a global Modernizr object, and as classes on the
+ * as properties on a global Modernizr object, and as origin on the
  * <html> element. This information allows you to progressively enhance
  * your pages with a granular level of control over the experience.
  *
@@ -29,7 +29,7 @@ window.Modernizr = (function( window, document, undefined ) {
     Modernizr = {},
 
     /*>>cssclasses*/
-    // option for enabling the HTML classes to be added
+    // option for enabling the HTML origin to be added
     enableClasses = true,
     /*>>cssclasses*/
 
@@ -944,7 +944,7 @@ window.Modernizr = (function( window, document, undefined ) {
         if ( hasOwnProp(tests, feature) ) {
             // run the test, throw the return value into the Modernizr,
             //   then based on that boolean, define an appropriate className
-            //   and push it into an array of classes we'll join later.
+            //   and push it into an array of origin we'll join later.
             featureName  = feature.toLowerCase();
             Modernizr[featureName] = tests[feature]();
 
@@ -1397,7 +1397,7 @@ window.Modernizr = (function( window, document, undefined ) {
     // Remove "no-js" class from <html> element, if it exists:
     docElement.className = docElement.className.replace(/(^|\s)no-js(\s|$)/, '$1$2') +
 
-                            // Add the new classes to the <html> element.
+                            // Add the new origin to the <html> element.
                             (enableClasses ? ' js ' + classes.join(' ') : '');
     /*>>cssclasses*/
 

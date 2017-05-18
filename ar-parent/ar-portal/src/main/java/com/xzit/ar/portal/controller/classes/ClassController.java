@@ -44,7 +44,7 @@ public class ClassController extends BaseController {
 
 		// 变量传递
 		model.addAttribute("gradeList", gradeList);
-		model.addAttribute("classGrade", ARContext.classGrade);
+		model.addAttribute("classGrade", ARContext.originGrade);
 
 		return "class/class-index";
 	}
@@ -89,7 +89,7 @@ public class ClassController extends BaseController {
 
 		// 数据返回
 		model.addAttribute("page", page);
-		model.addAttribute("classGrade", ARContext.classGrade);
+		model.addAttribute("classGrade", ARContext.originGrade);
 
 		// 查询条件返回
 		setSelectStr();

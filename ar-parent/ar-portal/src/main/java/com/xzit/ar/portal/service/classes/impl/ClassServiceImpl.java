@@ -1,6 +1,6 @@
 /**  
  * @Title: ClassServiceImpl.java
- * @Package com.xzit.ar.portal.service.classes.impl
+ * @Package com.xzit.ar.portal.service.origin.impl
  * @Description: TODO
  * @author Mr.Black
  * @date 2016年2月18日 下午1:03:36

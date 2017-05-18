@@ -127,4 +127,12 @@ public interface OriginMapper extends BaseMapper {
 	 * @throws Exception
 	 */
 	List<Map<String, Object>> getOriginDirectory(Page<Map<String, Object> > page, @Param("originId") Integer originId) throws Exception;
+
+	/**
+	 * TODO 条件查询组织
+	 * @param page
+	 * @return
+	 * @throws Exception
+	 */
+	List<Map<String, Object>> queryOrigin(Page<Map<String, Object>> page) throws Exception;
 }

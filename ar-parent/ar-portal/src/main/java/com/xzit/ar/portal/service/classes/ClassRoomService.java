@@ -1,6 +1,6 @@
 /**  
  * @Title: ClassRoomService.java
- * @Package com.xzit.ar.portal.service.classes
+ * @Package com.xzit.ar.portal.service.origin
  * @Description: TODO
  * @author Mr.Black
  * @date 2016年2月20日 下午4:15:39
