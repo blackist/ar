@@ -78,4 +78,12 @@ public interface ClassService {
 	 * @throws ServiceException
 	 */
 	List<Map<String, Object>> latestMembers(Integer number) throws ServiceException;
+
+	/**
+	 * TODO 条件查询组织
+	 * @param page
+	 * @return
+	 * @throws ServiceException
+	 */
+	List<Map<String, Object>> queryOrigin(Page<Map<String, Object>> page) throws ServiceException;
 }

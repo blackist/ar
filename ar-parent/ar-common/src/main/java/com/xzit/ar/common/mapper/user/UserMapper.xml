@@ -46,6 +46,26 @@
 		 	AND u.user_id=#{userId}
 	</select>
 
+    <!--获取用户详细信息-->
+    <select id="getUserDetailInfo" parameterType="java.lang.Integer" resultType="map">
+		SELECT
+		u.user_id userId,
+		u.account account,
+		u.true_name trueName,
+		u.introduce introduce,
+		img.image_path portrait,
+		ui.sex sex,
+		ui.birthday birthday
+		FROM
+		`user` u,
+		user_info ui,
+		image img
+		WHERE
+		u.image_id=img.image_id
+		AND u.user_id = ui.user_id
+		AND u.user_id = #{userId}
+	</select>
+
     <select id="queryUser" resultType="map">
         SELECT
         u.user_id userId,

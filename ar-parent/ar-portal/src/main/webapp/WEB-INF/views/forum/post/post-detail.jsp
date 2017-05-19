@@ -77,6 +77,7 @@
                         <h4 class="subtitle">${post.trueName}</h4>
                         <p>${post.introduce}</p>
                     </div>
+                    <input hidden id="userId" value="${post.userId}">
                 </div><!-- media -->
 
                 <%--comment-list 评论列表--%>
@@ -105,35 +106,7 @@
 
             </div><!-- col-sm-10 -->
 
-            <div class="col-md-3">
-
-                <h5 class="subtitle">Text Widget</h5>
-                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-                    quia non numquam eius modi tempora incidunt ut labore et dolore magnam</p>
-
-                <div class="mb30"></div>
-                <h5 class="subtitle">Categories</h5>
-                <ul class="sidebar-list">
-                    <li><a href=""><i class="fa fa-angle-right"></i> Science &amp; Technology</a></li>
-                    <li><a href=""><i class="fa fa-angle-right"></i> Food &amp; Health</a></li>
-                    <li><a href=""><i class="fa fa-angle-right"></i> Entertainment</a></li>
-                    <li><a href=""><i class="fa fa-angle-right"></i> Web Development</a></li>
-                    <li><a href=""><i class="fa fa-angle-right"></i> Communication</a></li>
-                    <li><a href=""><i class="fa fa-angle-right"></i> Movies &amp; TV Shows</a></li>
-                </ul>
-
-                <div class="mb30"></div>
-                <h5 class="subtitle">Archives</h5>
-                <ul class="sidebar-list">
-                    <li><a href=""><i class="fa fa-angle-right"></i> January 2014</a></li>
-                    <li><a href=""><i class="fa fa-angle-right"></i> December 2013</a></li>
-                    <li><a href=""><i class="fa fa-angle-right"></i> November 2013</a></li>
-                    <li><a href=""><i class="fa fa-angle-right"></i> October 2013</a></li>
-                    <li><a href=""><i class="fa fa-angle-right"></i> September 2013</a></li>
-                </ul>
-
-
-            </div><!-- col-sm-2 -->
+            <div class="col-md-3" id="outline"></div><!-- col-sm-2 -->
 
         </div><!-- row -->
 

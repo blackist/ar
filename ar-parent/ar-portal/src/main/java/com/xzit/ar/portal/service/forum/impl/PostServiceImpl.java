@@ -192,4 +192,23 @@ public class PostServiceImpl implements PostService {
         }
         return 0;
     }
+
+    /**
+     * TODO 加载用户相关帖子
+     *
+     * @param userId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public List<Map<String, Object>> getUserPost(Page<Map<String, Object>> page, Integer userId) throws ServiceException {
+        try {
+            if (CommonUtil.isNotEmpty(userId)) {
+                return informationMapper.getInfoByUserIdAndInfoType(page, userId, "BBS");
+            }
+        } catch (Exception e) {
+            throw new ServiceException("查询用户相关帖子时发生异常！");
+        }
+        return null;
+    }
 }

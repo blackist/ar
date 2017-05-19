@@ -52,17 +52,36 @@
 
     <!-- 查询消息列表 -->
     <select id="queryInfos" resultType="map">
-        SELECT info.info_id infoId, info.info_title infoTitle, info.content content, info.theme theme, info.thumb_image
-        thumbImage, info.views views,
-        info.comments comments, info.loves loves, info.create_time createTime, info.is_top isTop, info.origin_id
-        originId,
-        u.user_id userId, u.true_name trueName, u.is_admin isAdmin
-        FROM information info, user u
+        SELECT
+        info.info_id infoId,
+        info.info_title infoTitle,
+        info.content content,
+        info.theme theme,
+        info.thumb_image thumbImage,
+        info.views views,
+        info.comments comments,
+        info.loves loves,
+        info.create_time createTime,
+        info.is_top isTop,
+        info.origin_id originId,
+        u.user_id userId,
+        u.true_name trueName,
+        u.is_admin isAdmin
+
+        FROM
+        information info,
+        `user` u
+
         <where>
-            info.user_id=u.user_id AND info.state=#{state} AND info.info_type=#{infoType} AND info.theme LIKE '%%'
+            info.user_id=u.user_id
+            AND info.state=#{state}
+            AND info.info_type=#{infoType}
+            AND info.theme LIKE '%%'
             AND ( info.info_title LIKE #{queryStr} OR u.true_name LIKE #{queryStr} )
-            ORDER BY info.create_time desc, info.is_top desc
         </where>
+        ORDER BY
+        info.is_top desc,
+        info.create_time desc
     </select>
 
     <!--查询消息、作者以及组织的详情-->
