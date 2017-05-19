@@ -122,9 +122,9 @@
                             <br>
                             <div class="btn-group mr10">
                                 <%--<ar:exist value="${SESSION_USER.userId}" items="${postIds}">--%>
-                                    <%--<button class='btn btn-primary'>--%>
-                                        <%--<i class='fa fa-check mr5'></i>已经申请--%>
-                                    <%--</button>--%>
+                                <%--<button class='btn btn-primary'>--%>
+                                <%--<i class='fa fa-check mr5'></i>已经申请--%>
+                                <%--</button>--%>
                                 <%--</ar:exist>--%>
                                 <ar:notexist value="${SEESION_USER.userId}" items="${postIds}">
                                     <button class="btn btn-primary" type="button" id="postBtn"
@@ -159,10 +159,10 @@
                                                                     <option value="${resume.resumeId}">${resume.resumeTitle}</option>
                                                                 </c:forEach>
                                                             </select><br/> <br/>
-                                                            <button class="btn btn-default btn-block" type="button"
-                                                                    onclick="location='my/resume/addResume.action'">
+                                                            <a href="my/resume/addResume.action"
+                                                               class="btn btn-default btn-block" type="button">
                                                                 <span class="fa fa-plus-square-o">&nbsp;</span>创建简历
-                                                            </button>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>

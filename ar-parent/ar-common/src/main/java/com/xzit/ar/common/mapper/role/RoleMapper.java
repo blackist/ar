@@ -1,17 +1,23 @@
 package com.xzit.ar.common.mapper.role;
 
+import java.util.List;
+import java.util.Map;
+
+import com.xzit.ar.common.base.BaseMapper;
+import com.xzit.ar.common.page.Page;
+import com.xzit.ar.common.po.role.Right;
 import com.xzit.ar.common.po.role.Role;
+import org.apache.ibatis.annotations.Param;
 
-public interface RoleMapper {
-    int deleteByPrimaryKey(Integer roleId);
+public interface RoleMapper extends BaseMapper {
 
-    int insert(Role record);
+    Integer getRoleId(String roleValue) throws Exception;
 
-    int insertSelective(Role record);
+    List<Role> queryRole(Page<Role> page) throws Exception;
 
-    Role selectByPrimaryKey(Integer roleId);
+    List<Right> getRightsByRole(Integer roleId) throws Exception;
 
-    int updateByPrimaryKeySelective(Role record);
+    Map<String, Object> getRoleValueByAdminId(@Param("adminId") Integer adminId) throws Exception;
 
-    int updateByPrimaryKey(Role record);
+    List<Right> getAllRoles() throws Exception;
 }

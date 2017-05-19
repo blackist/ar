@@ -3,6 +3,9 @@ function errMsg(el, msg) {
 	$(".error_span").html("");
 	$("#" + el).after("<span class='error_span'>" + msg + "</span>");
 	$("#" + el).focus();
+    setTimeout(function() {
+        $(".error_span").fadeOut(2000);
+    }, 2300);
 }
 
 /* 清除校验失败提示信息 */

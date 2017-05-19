@@ -1,9 +1,9 @@
 package com.xzit.ar.common.mapper.role;
 
-import com.xzit.ar.common.po.role.RoleRight;
+import com.xzit.ar.common.base.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
-public interface RoleRightMapper {
-    int insert(RoleRight record);
+public interface RoleRightMapper extends BaseMapper {
 
-    int insertSelective(RoleRight record);
+	Integer deleteRoleRights(@Param("roleId") Integer roleId);
 }

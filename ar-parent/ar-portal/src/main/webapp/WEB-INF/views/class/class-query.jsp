@@ -40,7 +40,7 @@
 								<tbody>
 									<c:forEach items="${page.beanList}" var="clazz">
 										<tr>
-											<td>${clazz.classGrade}级</td>
+											<td>${clazz.originGrade}</td>
 											<td><a href="classroom.action?classId=${clazz.classId}">${clazz.className}</a></td>
 											<td>${clazz.members}</td>
 											<td><fmt:formatDate value="${clazz.createTime}"

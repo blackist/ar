@@ -205,9 +205,9 @@
 
 			<div class="am-margin">
 				<div class="am-u-sm-10 am-text-right">
-					<button type="button" class="am-btn am-btn-primary am-btn-xs"
-						onclick="createJobSubmit()" id="subBtn">下一步</button>
+					<button type="button" class="am-btn am-btn-primary am-btn-xs" onclick="createJobSubmit()" id="subBtn">下一步</button>
 				</div>
+				<br>
 			</div>
 		</div>
 		<!-- content end -->

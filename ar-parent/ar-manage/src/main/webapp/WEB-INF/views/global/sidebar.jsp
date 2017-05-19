@@ -27,11 +27,12 @@
     <!-- 招聘管理 -->
     <li class="admin-parent" id="bar-job">
         <a class="am-cf" href="javascript:;" data-am-collapse="{target: '#job-manage'}">
-            <span class="am-icon-suitcase"></span> 职业招聘 <span class="am-icon-angle-right am-fr am-margin-right"></span>
+            <span class="am-icon-suitcase"></span> &nbsp;职业招聘 <span class="am-icon-angle-right am-fr am-margin-right"></span>
         </a>
         <ul class="am-list am-collapse admin-sidebar-sub" id="job-manage">
-            <li><a href="job.action"><span class="am-icon-th"></span>所有招聘 </a></li>
-            <li><a href="job/createJob.action"><span class="am-icon-plus"></span>发布招聘 </a></li>
+            <li><a href="job.action"><span class="am-icon-th"></span> 招聘信息 </a></li>
+            <li><a href="job/createJob.action"><span class="am-icon-plus"></span> 发布招聘 </a></li>
+            <li><a href="job/createJob.action"><span class="am-icon-plus"></span> 招聘单位 </a></li>
         </ul>
     </li>
 
@@ -40,9 +41,9 @@
         <a class="am-cf" href="javascript:void(0)" data-am-collapse="{target: '#user-manage'}">
             <i class="am-icon-group"></i> 用户管理 <i class="am-icon-angle-right am-fr am-margin-right"></i></a>
         <ul class="am-list am-collapse admin-sidebar-sub" id="user-manage">
-            <li><a href="#"><i class="am-icon-user"></i>用户列表 </a></li>
-            <li><a href="#"><i class="am-icon-puzzle-piece"></i>添加用户</a></li>
-            <li><a href="#"><i class="am-icon-bug"></i>404</a></li>
+            <li><a href="user.action"><i class="am-icon-user"></i> 用户列表 </a></li>
+            <li><a href="user/add.action"><i class="am-icon-plus-square"></i> 添加用户</a></li>
+            <li><a href="#"><i class="am-icon-bug"></i> 404</a></li>
         </ul>
     </li>
 
@@ -53,8 +54,8 @@
             <i class="am-icon-angle-right am-fr am-margin-right"></i>
         </a>
         <ul class="am-list am-collapse admin-sidebar-sub" id="right-manage">
-            <li><a href="user.action" class="am-cf"><i class="am-icon-search-plus"></i>所有权限</a></li>
-            <li><a href="" class="am-cf"><i class="am-icon-search-plus"></i>角色设置</a></li>
+            <li><a href="right/indexRight.action" class="am-cf"><i class="am-icon-search-plus"></i>所有权限</a></li>
+            <li><a href="role.action" class="am-cf"><i class="am-icon-search-plus"></i>角色设置</a></li>
             <li><a href="#" class="am-cf"><i class="am-icon-puzzle-piece"></i>权限设置</a></li>
         </ul>
     </li>

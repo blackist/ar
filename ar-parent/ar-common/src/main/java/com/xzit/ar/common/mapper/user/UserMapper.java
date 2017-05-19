@@ -1,7 +1,9 @@
 package com.xzit.ar.common.mapper.user;
 
+import java.util.List;
 import java.util.Map;
 
+import com.xzit.ar.common.page.Page;
 import org.apache.ibatis.annotations.Param;
 
 import com.xzit.ar.common.base.BaseMapper;
@@ -22,6 +24,14 @@ public interface UserMapper extends BaseMapper {
 	 * @return
 	 * @throws Exception
 	 */
-	Map<String, Object> getUserBasicInfo(@Param("userId") Integer userId)  ;
+	Map<String, Object> getUserBasicInfo(@Param("userId") Integer userId) throws Exception;
+
+	/**
+	 * TODO 查询用户列表
+	 * @param page
+	 * @return
+	 * @throws Exception
+	 */
+	List<Map<String, Object>> queryUser(Page<Map<String, Object>> page);
 
 }
