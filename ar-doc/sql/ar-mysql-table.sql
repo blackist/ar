@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50173
 File Encoding         : 65001
 
-Date: 2017-05-17 13:11:13
+Date: 2017-05-19 23:20:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -45,10 +45,6 @@ CREATE TABLE `activity` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of activity
--- ----------------------------
-
--- ----------------------------
 -- Table structure for address
 -- ----------------------------
 DROP TABLE IF EXISTS `address`;
@@ -64,11 +60,6 @@ CREATE TABLE `address` (
   `state_time` datetime DEFAULT NULL COMMENT '状态时间',
   PRIMARY KEY (`addr_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of address
--- ----------------------------
-INSERT INTO `address` VALUES ('1', '江苏', '徐州', '云龙', '徐州市云徐州工程学院中心校区', '221000', '2015-12-22 00:04:40', 'A', '2015-12-22 00:04:50');
 
 -- ----------------------------
 -- Table structure for album
@@ -95,18 +86,6 @@ CREATE TABLE `album` (
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of album
--- ----------------------------
-INSERT INTO `album` VALUES ('1', '第十届飞思卡尔', '一起参加比赛的日子', 'assets/images/photos/media2.png', '0', '8', '2', '2017-04-29 13:46:24', 'A', '2017-04-29 13:48:03', '', null);
-INSERT INTO `album` VALUES ('2', '信电学院单片机设计大赛', '51单片机好有意思', 'assets/images/photos/media6.png', '0', '8', '3', '2017-04-29 14:57:10', 'A', '2017-04-29 14:57:17', null, null);
-INSERT INTO `album` VALUES ('3', '院校联赛', '走出校门，比试比试', 'assets/images/photos/media4.png', '0', '8', '4', '2017-04-29 14:57:51', 'A', '2017-04-29 14:58:01', null, null);
-INSERT INTO `album` VALUES ('4', '南昌之旅', '国赛', 'assets/images/example/ablum-cover/media-audio.png', '0', '8', '5', '2017-04-29 14:58:40', 'A', '2017-04-29 14:58:44', null, null);
-INSERT INTO `album` VALUES ('5', '全国大学生电子设计大赛', '省赛', 'assets/images/example/ablum-cover/media-audio.png', '0', '8', '34', '2017-04-29 15:33:04', 'A', '2017-04-29 15:33:15', null, null);
-INSERT INTO `album` VALUES ('15', 'adsf', '', '/ar/pic/upload//2017/05/10/dbbb464b-d8ae-455b-9474-13a9afd0148e.jpg', '0', '14', '2', '2017-05-10 16:57:08', 'A', '2017-05-10 16:57:08', null, null);
-INSERT INTO `album` VALUES ('16', '毕业典礼', '', '/ar/pic/upload//2017/05/12/68f47309-20b7-44b1-9250-6792cbc7c660.jpg', '0', '14', '5', '2017-05-11 20:04:28', 'A', '2017-05-11 20:04:28', null, null);
-INSERT INTO `album` VALUES ('17', '出游', '', '/ar/pic/upload//2017/05/12/d9985656-128e-4321-b887-d4c6b7827688.jpg', '0', '14', '5', '2017-05-12 14:07:37', 'A', '2017-05-12 14:07:37', null, null);
-
--- ----------------------------
 -- Table structure for album_image
 -- ----------------------------
 DROP TABLE IF EXISTS `album_image`;
@@ -119,36 +98,6 @@ CREATE TABLE `album_image` (
   CONSTRAINT `FK_ALBUM_IMAGE_ALBUMID` FOREIGN KEY (`album_id`) REFERENCES `album` (`album_id`) ON DELETE CASCADE,
   CONSTRAINT `FK_ALBUM_IMAGE_IMAGEID` FOREIGN KEY (`image_id`) REFERENCES `image` (`image_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of album_image
--- ----------------------------
-INSERT INTO `album_image` VALUES ('15', '51', '2017-05-10 16:59:02');
-INSERT INTO `album_image` VALUES ('15', '52', '2017-05-10 16:59:02');
-INSERT INTO `album_image` VALUES ('16', '53', '2017-05-11 20:09:08');
-INSERT INTO `album_image` VALUES ('16', '54', '2017-05-11 20:10:33');
-INSERT INTO `album_image` VALUES ('16', '55', '2017-05-11 20:11:59');
-INSERT INTO `album_image` VALUES ('16', '56', '2017-05-11 20:11:59');
-INSERT INTO `album_image` VALUES ('16', '57', '2017-05-11 20:11:59');
-INSERT INTO `album_image` VALUES ('16', '58', '2017-05-11 20:11:59');
-INSERT INTO `album_image` VALUES ('16', '59', '2017-05-11 20:11:59');
-INSERT INTO `album_image` VALUES ('16', '60', '2017-05-11 20:11:59');
-INSERT INTO `album_image` VALUES ('17', '61', '2017-05-12 14:07:49');
-INSERT INTO `album_image` VALUES ('17', '62', '2017-05-12 14:07:49');
-INSERT INTO `album_image` VALUES ('17', '63', '2017-05-12 14:07:49');
-INSERT INTO `album_image` VALUES ('17', '64', '2017-05-12 14:07:49');
-INSERT INTO `album_image` VALUES ('17', '65', '2017-05-12 14:07:49');
-INSERT INTO `album_image` VALUES ('17', '66', '2017-05-12 14:07:49');
-INSERT INTO `album_image` VALUES ('16', '67', '2017-05-12 14:08:07');
-INSERT INTO `album_image` VALUES ('16', '68', '2017-05-12 14:08:14');
-INSERT INTO `album_image` VALUES ('17', '83', '2017-05-17 11:54:42');
-INSERT INTO `album_image` VALUES ('17', '84', '2017-05-17 11:54:42');
-INSERT INTO `album_image` VALUES ('17', '85', '2017-05-17 11:54:42');
-INSERT INTO `album_image` VALUES ('17', '86', '2017-05-17 11:54:42');
-INSERT INTO `album_image` VALUES ('17', '87', '2017-05-17 11:54:42');
-INSERT INTO `album_image` VALUES ('17', '88', '2017-05-17 11:54:42');
-INSERT INTO `album_image` VALUES ('17', '89', '2017-05-17 11:54:42');
-INSERT INTO `album_image` VALUES ('17', '90', '2017-05-17 11:54:42');
 
 -- ----------------------------
 -- Table structure for attachment
@@ -168,10 +117,6 @@ CREATE TABLE `attachment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of attachment
--- ----------------------------
-
--- ----------------------------
 -- Table structure for attachment_info
 -- ----------------------------
 DROP TABLE IF EXISTS `attachment_info`;
@@ -183,10 +128,6 @@ CREATE TABLE `attachment_info` (
   CONSTRAINT `FK_ATTACHMENT_ATTA_ATTACHMENTID` FOREIGN KEY (`attachment_id`) REFERENCES `attachment` (`atta_id`) ON DELETE CASCADE,
   CONSTRAINT `FK_ATTACHMENT_INFO_INFOID` FOREIGN KEY (`info_id`) REFERENCES `information` (`info_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of attachment_info
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for collect
@@ -207,10 +148,6 @@ CREATE TABLE `collect` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of collect
--- ----------------------------
-
--- ----------------------------
 -- Table structure for comment
 -- ----------------------------
 DROP TABLE IF EXISTS `comment`;
@@ -225,64 +162,7 @@ CREATE TABLE `comment` (
   KEY `FK_COMMENT_INFOID` (`info_id`),
   CONSTRAINT `FK_COMMENT_INFOID` FOREIGN KEY (`info_id`) REFERENCES `information` (`info_id`),
   CONSTRAINT `FK_COMMENT_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of comment
--- ----------------------------
-INSERT INTO `comment` VALUES ('22', '抢沙发', '2016-03-01 11:49:24', '4', '12');
-INSERT INTO `comment` VALUES ('23', '我来喽', '2016-03-01 11:55:58', '4', '8');
-INSERT INTO `comment` VALUES ('24', '你的东西有点吊啊', '2016-03-01 15:25:52', '4', '14');
-INSERT INTO `comment` VALUES ('25', '哈哈', '2016-03-01 15:29:12', '4', '14');
-INSERT INTO `comment` VALUES ('26', '呵呵呵顿足捶胸你，们', '2016-03-01 15:32:27', '4', '14');
-INSERT INTO `comment` VALUES ('27', '再来一次', '2016-03-01 15:48:56', '4', '14');
-INSERT INTO `comment` VALUES ('28', '可以了吧', '2016-03-01 15:55:07', '4', '14');
-INSERT INTO `comment` VALUES ('29', '阿桑福德恭喜发财', '2016-03-01 16:09:48', '4', '16');
-INSERT INTO `comment` VALUES ('30', '考查课自行车vj', '2016-03-01 16:37:42', '4', '20');
-INSERT INTO `comment` VALUES ('31', 'hehhe', '2016-03-01 17:40:58', '4', '20');
-INSERT INTO `comment` VALUES ('32', '我来了', '2016-03-01 21:33:56', '2', '20');
-INSERT INTO `comment` VALUES ('33', '回复 2楼  董亮亮：你说的不错哦', '2016-03-01 21:34:11', '2', '20');
-INSERT INTO `comment` VALUES ('34', '1楼', '2017-04-10 20:12:37', '3', '29');
-INSERT INTO `comment` VALUES ('36', '3楼', '2017-04-10 20:13:21', '3', '29');
-INSERT INTO `comment` VALUES ('37', '4楼', '2017-04-10 21:10:39', '4', '29');
-INSERT INTO `comment` VALUES ('38', '5楼', '2017-04-10 21:10:57', '5', '29');
-INSERT INTO `comment` VALUES ('39', '6楼', '2017-04-10 21:11:11', '6', '29');
-INSERT INTO `comment` VALUES ('40', '7楼', '2017-04-10 21:11:27', '4', '29');
-INSERT INTO `comment` VALUES ('42', '9楼', '2017-04-10 21:11:53', '3', '29');
-INSERT INTO `comment` VALUES ('43', '10楼', '2017-04-10 21:12:05', '4', '29');
-INSERT INTO `comment` VALUES ('44', '11楼', '2017-04-10 21:12:19', '5', '29');
-INSERT INTO `comment` VALUES ('45', '12楼', '2017-04-10 21:12:29', '6', '29');
-INSERT INTO `comment` VALUES ('46', '13楼', '2017-04-10 21:12:41', '3', '29');
-INSERT INTO `comment` VALUES ('47', '14楼', '2017-04-10 21:12:54', '2', '29');
-INSERT INTO `comment` VALUES ('48', '15楼', '2017-04-10 21:13:10', '4', '29');
-INSERT INTO `comment` VALUES ('49', '16楼', '2017-04-10 21:13:23', '5', '29');
-INSERT INTO `comment` VALUES ('50', '17楼', '2017-04-10 21:13:37', '6', '29');
-INSERT INTO `comment` VALUES ('51', '18楼', '2017-04-10 21:13:51', '2', '29');
-INSERT INTO `comment` VALUES ('52', '19楼', '2017-04-10 21:14:09', '3', '29');
-INSERT INTO `comment` VALUES ('53', '20楼', '2017-04-10 21:14:23', '4', '29');
-INSERT INTO `comment` VALUES ('54', '21楼', '2017-04-10 21:14:35', '5', '29');
-INSERT INTO `comment` VALUES ('55', '22楼', '2017-04-10 21:14:46', '6', '29');
-INSERT INTO `comment` VALUES ('57', '作为自发、非盈利性活动平台，羽毛球俱乐部活动收取的相关费用只用于支付场租、购羽毛球、交流赛等各项支出。作为自发集体活动，组织方只负责召集、联络工作。凡参加活动的人员，均视为具有完全独立民事行为能力人，须对自身的安全及健康状况负责。活动中所发生的意外，俱乐部不承担任何法律连带责任。以任何形式参加本俱乐部为主体召集的活动，都将被视为同意以上免责声明，如有异议切勿参加，以免造成不必要的法律纠纷。俱乐部成员间私下发起、开展相关活动所产生的一切后果，亦与俱乐部无关。', '2017-04-10 23:19:55', '2', '29');
-INSERT INTO `comment` VALUES ('58', '抢一楼', '2017-04-10 23:24:05', '2', '28');
-INSERT INTO `comment` VALUES ('59', '回复 #9 珍妮：回复一下试试', '2017-04-10 23:38:43', '2', '29');
-INSERT INTO `comment` VALUES ('60', '2楼也是我的', '2017-04-11 10:00:12', '2', '28');
-INSERT INTO `comment` VALUES ('61', '再盖一楼', '2017-04-12 19:25:59', '4', '29');
-INSERT INTO `comment` VALUES ('62', '盖一楼', '2017-04-23 14:40:03', '2', '34');
-INSERT INTO `comment` VALUES ('63', '再来一楼', '2017-04-23 14:40:25', '2', '34');
-INSERT INTO `comment` VALUES ('64', '三楼来了', '2017-04-23 15:44:08', '2', '34');
-INSERT INTO `comment` VALUES ('65', 'hehe', '2017-04-25 14:30:16', '2', '33');
-INSERT INTO `comment` VALUES ('66', '爱上的风格', '2017-04-25 16:22:53', '2', '34');
-INSERT INTO `comment` VALUES ('67', 'zailiyilou', '2017-04-25 16:43:42', '2', '34');
-INSERT INTO `comment` VALUES ('68', '呵呵', '2017-04-25 16:44:31', '2', '15');
-INSERT INTO `comment` VALUES ('69', '第二楼', '2017-04-25 16:47:53', '2', '15');
-INSERT INTO `comment` VALUES ('70', '评论一下', '2017-04-28 14:17:51', '262', '29');
-INSERT INTO `comment` VALUES ('71', '来一发', '2017-04-29 12:19:18', '309', '28');
-INSERT INTO `comment` VALUES ('72', '冒泡', '2017-04-29 14:33:29', '119', '29');
-INSERT INTO `comment` VALUES ('73', '抢楼了', '2017-05-03 21:51:24', '125', '58');
-INSERT INTO `comment` VALUES ('74', '回复 #2 布莱克：', '2017-05-05 17:53:23', '5', '34');
-INSERT INTO `comment` VALUES ('75', '很不錯的帖子', '2017-05-08 16:22:18', '5', '29');
-INSERT INTO `comment` VALUES ('76', 'uds', '2017-05-11 23:58:23', '304', '77');
-INSERT INTO `comment` VALUES ('77', '回复 #1 陈雷雷：的液体v', '2017-05-11 23:58:34', '304', '77');
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for dictionary
@@ -294,30 +174,6 @@ CREATE TABLE `dictionary` (
   `remark` varchar(200) DEFAULT NULL COMMENT '字典备注',
   PRIMARY KEY (`dict_value`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of dictionary
--- ----------------------------
-INSERT INTO `dictionary` VALUES ('at', '相册类型', 'album type, 相册的分类， 班级相册，校友组织分类');
-INSERT INTO `dictionary` VALUES ('be', '职位福利', 'benifit  职位福利');
-INSERT INTO `dictionary` VALUES ('g', '游戏', 'game');
-INSERT INTO `dictionary` VALUES ('in', '消息类型', 'information的类型，新闻/班级动态/帖子/校友动态/捐赠信息/系统留言');
-INSERT INTO `dictionary` VALUES ('ind', '招聘公司所属行业', 'industry 行业, 招聘公司所属行业');
-INSERT INTO `dictionary` VALUES ('it', '图片类型', '');
-INSERT INTO `dictionary` VALUES ('ny', '[是]/[否] 字段填写', '根据字典值 dictdata 显示 是/否');
-INSERT INTO `dictionary` VALUES ('ot', '组织类型', '班级/校友组织  等团体的类型');
-INSERT INTO `dictionary` VALUES ('p', '专业类型', 'profession, 专业类型， 校友/班级所属专业，以及个人简历上的专业名称');
-INSERT INTO `dictionary` VALUES ('pro', '公司属性', 'property 公司属性, 共有/私营...');
-INSERT INTO `dictionary` VALUES ('prof', '学历', 'profession, 学历选项');
-INSERT INTO `dictionary` VALUES ('r', '角色定义', 'role definition, 定义站内各个用户的角色');
-INSERT INTO `dictionary` VALUES ('s', '资源', '网站资源');
-INSERT INTO `dictionary` VALUES ('sca', '公司规模', 'scale 规模, 1-49/50-99/...');
-INSERT INTO `dictionary` VALUES ('sex', '性别', '性别属性，1：男；0：女。');
-INSERT INTO `dictionary` VALUES ('sl', '薪资水平', 'salary level, 薪资水平');
-INSERT INTO `dictionary` VALUES ('state', '数据的状态', '');
-INSERT INTO `dictionary` VALUES ('t', '消息主题', '帖子主题[主题帖、话题帖、IT]');
-INSERT INTO `dictionary` VALUES ('tf', '置顶处理', 'top flag');
-INSERT INTO `dictionary` VALUES ('zx', '直系', '1、hehe\r\n2、哈哈\r\n3、嘿嘿');
 
 -- ----------------------------
 -- Table structure for dictionary_data
@@ -334,98 +190,7 @@ CREATE TABLE `dictionary_data` (
   PRIMARY KEY (`id`),
   KEY `FK_DICTIONARYDATA_DICTVALUE` (`dict_value`),
   CONSTRAINT `FK_DICTIONARYDATA_DICTVALUE` FOREIGN KEY (`dict_value`) REFERENCES `dictionary` (`dict_value`)
-) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of dictionary_data
--- ----------------------------
-INSERT INTO `dictionary_data` VALUES ('4', 'state', '正常', 'A', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('5', 'state', '删除', 'X', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('6', 'state', '异常', 'E', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('25', 'ny', '否', '0', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('26', 'ny', '是', '1', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('29', 'g', '贪吃蛇', 'es', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('30', 'p', '通信专业', 'co', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('31', 'tf', '置顶', '1', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('32', 'tf', '不置顶', '0', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('33', 'ind', '通信/电信', 'txdx', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('34', 'ind', '财务/金融/保险', 'cwjrbx', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('35', 'ind', '专业服务', 'zyfw', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('36', 'ind', '服务业', 'fwy', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('37', 'ind', '互联网/计算机', 'hlwjsj', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('38', 'ind', '零售/租赁', 'lszl', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('39', 'ind', '房产', 'fc', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('40', 'ind', '重工/制造业', 'zgzzy', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('41', 'ind', '通信/电子/电信', 'txdzdx', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('42', 'ind', '广告/市场', 'ggsc', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('43', 'ind', '能源/矿业/环保', 'nykchb', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('44', 'pro', '私营', 'sy', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('45', 'pro', '国有', 'gy', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('46', 'pro', '股份制', 'gfz', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('47', 'pro', '外商独资/办事处', 'wsdzbsc', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('48', 'pro', '中外合资/合作', 'zwhz', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('49', 'pro', '上市公司', 'ssgs', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('50', 'pro', '事业单位', 'sydw', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('51', 'pro', '政府机关', 'zfjg', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('52', 'pro', '非营利机构', 'fyljg', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('53', 'pro', '个人企业', 'grqy', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('54', 'sca', '1-49人', 's1', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('55', 'sca', '50-99人', 's2', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('56', 'sca', '100-499人', 's3', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('57', 'sca', '500-999人', 's4', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('58', 'sca', '1000人以上', 's5', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('59', 'sl', '1000元以下', 'sl1', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('60', 'sl', '1000-2000元', 'sl2', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('61', 'sl', '2000-3000元', 'sl3', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('62', 'sl', '3000-5000元', 'sl4', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('63', 'sl', '5000-8000元', 'sl5', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('64', 'sl', '8000-12000元', 'sl6', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('65', 'sl', '12000-20000元', 'sl7', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('66', 'sl', '20000-25000元', 'sl8', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('67', 'sl', '25000元以上', 'sl9', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('68', 'sl', '面议', 'slmy', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('69', 'be', '包吃', 'be1', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('70', 'be', '包住', 'be2', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('71', 'prof', '专科', 'zk', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('72', 'prof', '本科', 'bk', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('73', 'prof', '研究生', 'yjs', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('74', 'prof', '博士', 'bs', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('75', 'prof', '学历不限', 'profall', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('76', 'be', '五险一金', 'be3', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('77', 'be', '年底双薪', 'be4', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('78', 'be', '周末双休', 'be5', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('79', 'be', '交通补助', 'be6', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('80', 'be', '加班补助', 'be7', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('81', 'be', '饭补', 'be8', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('82', 'be', '话补', 'be10', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('83', 'be', '房补', 'be9', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('84', 'state', '未审核', 'D', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('85', 'state', '已审核', 'S', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('86', 'zx', '', 'asas', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('87', 'zx', '', 'zx', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('88', 'zx', '', 'aasas', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('89', 'ot', '班级', 'C', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('90', 't', '旅游', 't', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('91', 't', '就业', 'j', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('92', 't', '研讨', 'yt', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('93', 'in', '班级动态', 'CI', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('94', 'sex', '男', '1', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('95', 'sex', '女', '0', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('96', 'in', '校园服务信息', 'SS', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('97', 'ot', '学院', 'INS', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('98', 'in', '招生就业', 'RR', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('99', 'in', '论坛帖子', 'BBS', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('100', 'be', '', 'slmy', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('101', 'ot', '校友总会', 'org', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('102', 'ot', '院系分会', 'orgi', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('103', 'ot', '社团分会', 'orgm', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('104', 'ot', '学生协会', 'orgu', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('105', 'ot', '校友组织', 'OI', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('106', 'in', '班级留言', 'CM', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('107', 'in', '组织留言', 'OM', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('108', 'it', '相册图片', 'AI', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('109', 'it', '头像', 'PI', '1', null, null);
-INSERT INTO `dictionary_data` VALUES ('110', 'it', '信息图片', 'II', '1', null, null);
+) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for grade
@@ -439,22 +204,7 @@ CREATE TABLE `grade` (
   `state` char(2) NOT NULL COMMENT '状态',
   `state_time` datetime DEFAULT NULL COMMENT '状态日期',
   PRIMARY KEY (`grade_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of grade
--- ----------------------------
-INSERT INTO `grade` VALUES ('1', '2012', '0', '2016-02-16 16:40:53', 'A', '2016-02-16 16:41:28');
-INSERT INTO `grade` VALUES ('2', '2013', '2', '2016-02-16 16:41:18', 'A', '2016-02-16 16:41:25');
-INSERT INTO `grade` VALUES ('3', '2014', '1', '2016-02-16 16:41:40', 'A', '2016-02-18 13:11:43');
-INSERT INTO `grade` VALUES ('4', '2015', '1', '2016-02-16 16:41:50', 'A', '2016-02-16 16:41:54');
-INSERT INTO `grade` VALUES ('5', '2016', '0', '2017-05-04 13:40:12', 'A', '2017-05-04 13:52:18');
-INSERT INTO `grade` VALUES ('6', '2011', '0', '2017-05-04 13:40:33', 'A', '2017-05-04 13:52:21');
-INSERT INTO `grade` VALUES ('7', '2010', '0', '2017-05-04 13:40:59', 'A', '2017-05-04 13:52:23');
-INSERT INTO `grade` VALUES ('8', '2009', '0', '2017-05-04 13:41:13', 'A', '2017-05-04 13:52:27');
-INSERT INTO `grade` VALUES ('9', '2008', '0', '2017-05-04 13:41:35', 'A', '2017-05-04 13:52:29');
-INSERT INTO `grade` VALUES ('10', '2007', '0', '2017-05-04 13:55:00', 'A', '2017-05-04 13:55:09');
-INSERT INTO `grade` VALUES ('11', '2006', '0', '2017-05-04 13:55:22', 'A', '2017-05-04 13:55:25');
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for image
@@ -474,91 +224,7 @@ CREATE TABLE `image` (
   `state_time` datetime DEFAULT NULL COMMENT '状态日期',
   PRIMARY KEY (`image_id`),
   KEY `image_id` (`image_id`,`image_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of image
--- ----------------------------
-INSERT INTO `image` VALUES ('1', 'xzit.png', null, null, 'assets/images/logo/xzit.png', null, null, null, null, 'A', null);
-INSERT INTO `image` VALUES ('2', 'user2.png', null, null, '/ar-res/pic/portrait/user2.png', null, null, null, null, 'A', null);
-INSERT INTO `image` VALUES ('3', null, null, null, '/ar-res/pic/info/blog1.png', null, null, null, null, 'A', null);
-INSERT INTO `image` VALUES ('4', null, null, null, '/ar-res/pic/portrait/user6.png', null, null, null, null, 'A', null);
-INSERT INTO `image` VALUES ('5', '01.jpg', '0', '0M', '/ar/pic/upload//2017/05/10/8789dbf8-568f-4759-9e5c-7c032dd44a0d.jpg', null, '0', null, '2017-05-10 01:57:03', 'A', '2017-05-10 01:57:03');
-INSERT INTO `image` VALUES ('6', '01.jpg', '0', '0M', '/ar/pic/upload//2017/05/10/85e40bba-a92e-45d6-9fbb-462e6301cf79.jpg', null, '0', null, '2017-05-10 02:14:13', 'A', '2017-05-10 02:14:13');
-INSERT INTO `image` VALUES ('7', '08.jpg', '0', '0M', '/ar/pic/upload//2017/05/10/074b213e-960d-4da5-b78d-0f3946a9e22c.jpg', 'AI', '0', null, '2017-05-10 02:19:58', 'A', '2017-05-10 02:19:58');
-INSERT INTO `image` VALUES ('8', '01.jpg', '0', '0M', '/ar/pic/upload//2017/05/10/82fdb5fa-95d4-44c5-b1a3-f5c859f49366.jpg', 'AI', '0', null, '2017-05-10 02:20:57', 'A', '2017-05-10 02:20:58');
-INSERT INTO `image` VALUES ('9', '09 (2).jpg', '0', '0M', '/ar/pic/upload//2017/05/10/d55b03b6-def3-4ef3-ae99-e1e65a044eaf.jpg', 'AI', '0', null, '2017-05-10 02:24:21', 'A', '2017-05-10 02:24:21');
-INSERT INTO `image` VALUES ('10', '01.jpg', '0', '0M', '/ar/pic/upload//2017/05/10/a29bdc0e-7c71-4468-a867-15805a05f5dd.jpg', 'AI', '0', null, '2017-05-10 02:26:45', 'A', '2017-05-10 02:26:45');
-INSERT INTO `image` VALUES ('11', '11.jpg', '0', '1499M', '/ar/pic/upload//2017/05/10/1380180d-002d-4a06-8f8b-e13412a7ded0.jpg', 'AI', '0', '', '2017-05-10 02:41:18', 'A', '2017-05-10 02:41:18');
-INSERT INTO `image` VALUES ('12', '10.jpg', '0', '158M', '/ar/pic/upload//2017/05/10/4bbe30c1-3f9f-4080-a870-558cbacd8e13.jpg', 'AI', '0', '', '2017-05-10 02:47:32', 'A', '2017-05-10 02:47:32');
-INSERT INTO `image` VALUES ('13', '10.jpg', '0', '158M', '/ar/pic/upload//2017/05/10/35e6b210-68ad-4894-9ca5-8f4813b1509f.jpg', 'AI', '0', '', '2017-05-10 02:57:11', 'A', '2017-05-10 02:57:11');
-INSERT INTO `image` VALUES ('14', '11.jpg', '0', '1499M', '/ar/pic/upload//2017/05/10/9220105f-7165-4aa0-96f5-d644f83079e8.jpg', 'AI', '0', '', '2017-05-10 02:57:11', 'A', '2017-05-10 02:57:11');
-INSERT INTO `image` VALUES ('15', '01.jpg', '0', '179M', '/ar/pic/upload//2017/05/10/c41dc755-fa5d-47ad-9258-5e579a5bf1cf.jpg', 'AI', '0', '', '2017-05-10 03:00:00', 'A', '2017-05-10 03:00:00');
-INSERT INTO `image` VALUES ('16', '02.jpg', '0', '419M', '/ar/pic/upload//2017/05/10/bd04ab98-b010-4119-9055-097ad2dfab6c.jpg', 'AI', '0', '', '2017-05-10 03:00:00', 'A', '2017-05-10 03:00:00');
-INSERT INTO `image` VALUES ('17', '03.jpg', '0', '102M', '/ar/pic/upload//2017/05/10/048023ba-c345-4f96-a5bd-501ed1827204.jpg', 'AI', '0', '', '2017-05-10 03:00:00', 'A', '2017-05-10 03:00:00');
-INSERT INTO `image` VALUES ('18', '04.jpg', '0', '353M', '/ar/pic/upload//2017/05/10/ffccc981-4fa6-4915-9d9a-a17cc82df773.jpg', 'AI', '0', '', '2017-05-10 03:00:00', 'A', '2017-05-10 03:00:00');
-INSERT INTO `image` VALUES ('19', '05.jpg', '0', '492M', '/ar/pic/upload//2017/05/10/1ec9a157-580b-414e-a9d6-5e5cd49e354d.jpg', 'AI', '0', '', '2017-05-10 03:00:00', 'A', '2017-05-10 03:00:00');
-INSERT INTO `image` VALUES ('20', '06.jpg', '0', '391M', '/ar/pic/upload//2017/05/10/fe8cbe04-d8c0-479d-b342-d53faf590580.jpg', 'AI', '0', '', '2017-05-10 03:00:00', 'A', '2017-05-10 03:00:00');
-INSERT INTO `image` VALUES ('21', '07.jpg', '0', '176M', '/ar/pic/upload//2017/05/10/01b8e342-38d6-4924-b9aa-28fd950aa68b.jpg', 'AI', '0', '', '2017-05-10 03:00:00', 'A', '2017-05-10 03:00:00');
-INSERT INTO `image` VALUES ('22', '08.jpg', '0', '98M', '/ar/pic/upload//2017/05/10/8ac9dc6f-39c3-4a86-afd2-2e1d81932386.jpg', 'AI', '0', '', '2017-05-10 03:00:00', 'A', '2017-05-10 03:00:00');
-INSERT INTO `image` VALUES ('23', '09 (2).jpg', '0', '665M', '/ar/pic/upload//2017/05/10/68bf178b-b401-4010-aa64-6ce43df8b1d8.jpg', 'AI', '0', '', '2017-05-10 03:00:00', 'A', '2017-05-10 03:00:00');
-INSERT INTO `image` VALUES ('24', '09.jpg', '0', '413M', '/ar/pic/upload//2017/05/10/25d94b8d-eb8b-4f90-afa5-8e323a970550.jpg', 'AI', '0', '', '2017-05-10 03:00:00', 'A', '2017-05-10 03:00:00');
-INSERT INTO `image` VALUES ('25', '01.jpg', '0', '179M', '/ar/pic/upload//2017/05/10/9cf36056-088c-41c9-a20c-34367a14108d.jpg', 'AI', '0', '', '2017-05-10 10:57:28', 'A', '2017-05-10 10:57:28');
-INSERT INTO `image` VALUES ('26', '02.jpg', '0', '419M', '/ar/pic/upload//2017/05/10/654859ba-30dd-4cba-a747-fc0443df8cc9.jpg', 'AI', '0', '', '2017-05-10 10:57:28', 'A', '2017-05-10 10:57:28');
-INSERT INTO `image` VALUES ('27', '03.jpg', '0', '102M', '/ar/pic/upload//2017/05/10/b2e6e7be-e53c-44d2-a3c1-773c4604f6f8.jpg', 'AI', '0', '', '2017-05-10 10:57:28', 'A', '2017-05-10 10:57:28');
-INSERT INTO `image` VALUES ('28', '04.jpg', '0', '353M', '/ar/pic/upload//2017/05/10/69c41e1d-4a3b-4095-a3cb-73f9527ce2e0.jpg', 'AI', '0', '', '2017-05-10 10:57:28', 'A', '2017-05-10 10:57:28');
-INSERT INTO `image` VALUES ('29', '05.jpg', '0', '492M', '/ar/pic/upload//2017/05/10/d8218519-d983-4024-8c72-631ddf91e73e.jpg', 'AI', '0', '', '2017-05-10 10:57:28', 'A', '2017-05-10 10:57:28');
-INSERT INTO `image` VALUES ('30', '06.jpg', '0', '391M', '/ar/pic/upload//2017/05/10/7dfcce55-8adf-47b7-bf99-eb767e0a2797.jpg', 'AI', '0', '', '2017-05-10 10:57:28', 'A', '2017-05-10 10:57:28');
-INSERT INTO `image` VALUES ('31', '07.jpg', '0', '176M', '/ar/pic/upload//2017/05/10/c3592ed2-2001-4a23-a89e-66c9a665939d.jpg', 'AI', '0', '', '2017-05-10 10:57:28', 'A', '2017-05-10 10:57:28');
-INSERT INTO `image` VALUES ('32', 'Cg-4V1IUNNuIBNNaAAlK2OQMbo4AAK6', '0', '159M', '/ar/pic/upload//2017/05/10/4a0da00d-f080-4a4f-bc7f-63db298fddd0.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/4a0da00d-f080-4a4f-bc7f-63db298fddd0.jpg', '2017-05-10 11:32:49', 'A', '2017-05-10 11:32:49');
-INSERT INTO `image` VALUES ('33', 'Cg-4WFILK76IDNarAAXNsO3SQ9MAAKz', '0', '94M', '/ar/pic/upload//2017/05/10/69ade361-fbf4-4e5d-9201-10c7523d7b1a.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/69ade361-fbf4-4e5d-9201-10c7523d7b1a.jpg', '2017-05-10 11:33:32', 'A', '2017-05-10 11:33:32');
-INSERT INTO `image` VALUES ('34', '', '0', '877M', '/ar/pic/upload//2017/05/10/11890ceb-e52f-4cb5-8413-b23989608214.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/11890ceb-e52f-4cb5-8413-b23989608214.jpg', '2017-05-10 14:27:01', 'A', '2017-05-10 14:27:01');
-INSERT INTO `image` VALUES ('35', '', '0', '357M', '/ar/pic/upload//2017/05/10/59d4b032-542f-4b75-af6f-b4013c3b2660.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/59d4b032-542f-4b75-af6f-b4013c3b2660.jpg', '2017-05-10 14:27:02', 'A', '2017-05-10 14:27:02');
-INSERT INTO `image` VALUES ('36', '', '0', '676M', '/ar/pic/upload//2017/05/10/4b1f8d8c-eb08-40b7-a5a1-f5e5797af3f8.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/4b1f8d8c-eb08-40b7-a5a1-f5e5797af3f8.jpg', '2017-05-10 14:27:02', 'A', '2017-05-10 14:27:02');
-INSERT INTO `image` VALUES ('37', '', '0', '173M', '/ar/pic/upload//2017/05/10/2dd329dd-f082-4203-90f9-ce2d38315671.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/2dd329dd-f082-4203-90f9-ce2d38315671.jpg', '2017-05-10 14:27:02', 'A', '2017-05-10 14:27:02');
-INSERT INTO `image` VALUES ('38', '', '0', '662M', '/ar/pic/upload//2017/05/10/ee3e8420-416c-4b36-bb41-1102aeee3c5f.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/ee3e8420-416c-4b36-bb41-1102aeee3c5f.jpg', '2017-05-10 14:27:02', 'A', '2017-05-10 14:27:02');
-INSERT INTO `image` VALUES ('39', '', '0', '704M', '/ar/pic/upload//2017/05/10/93f8d926-629c-48d4-91bd-ee3e10661c2a.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/93f8d926-629c-48d4-91bd-ee3e10661c2a.jpg', '2017-05-10 14:27:02', 'A', '2017-05-10 14:27:02');
-INSERT INTO `image` VALUES ('40', '', '0', '289M', '/ar/pic/upload//2017/05/10/cd6f41cb-8df1-4938-bfaf-3d8200bdc6c5.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/cd6f41cb-8df1-4938-bfaf-3d8200bdc6c5.jpg', '2017-05-10 14:27:02', 'A', '2017-05-10 14:27:02');
-INSERT INTO `image` VALUES ('41', '01.jpg', '0', '179M', '/ar/pic/upload//2017/05/10/8af6f66d-e4c2-4cec-ad43-40d272f5e196.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/8af6f66d-e4c2-4cec-ad43-40d272f5e196.jpg', '2017-05-10 15:24:53', 'A', '2017-05-10 15:24:53');
-INSERT INTO `image` VALUES ('42', '02.jpg', '0', '419M', '/ar/pic/upload//2017/05/10/ee74e2fa-c9a8-4a70-98e5-175d387a4732.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/ee74e2fa-c9a8-4a70-98e5-175d387a4732.jpg', '2017-05-10 15:24:53', 'A', '2017-05-10 15:24:53');
-INSERT INTO `image` VALUES ('43', '03.jpg', '0', '102M', '/ar/pic/upload//2017/05/10/6b58ca3d-57bc-480c-b4b5-f774c8afb091.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/6b58ca3d-57bc-480c-b4b5-f774c8afb091.jpg', '2017-05-10 15:24:53', 'A', '2017-05-10 15:24:53');
-INSERT INTO `image` VALUES ('44', '04.jpg', '0', '353M', '/ar/pic/upload//2017/05/10/fd77f4a3-3b11-4c05-aa36-bdddb76fb583.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/fd77f4a3-3b11-4c05-aa36-bdddb76fb583.jpg', '2017-05-10 15:24:53', 'A', '2017-05-10 15:24:53');
-INSERT INTO `image` VALUES ('45', '05.jpg', '0', '492M', '/ar/pic/upload//2017/05/10/7df1e622-1fb5-4578-98a2-760580a8d646.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/7df1e622-1fb5-4578-98a2-760580a8d646.jpg', '2017-05-10 15:24:54', 'A', '2017-05-10 15:24:54');
-INSERT INTO `image` VALUES ('46', '06.jpg', '0', '391M', '/ar/pic/upload//2017/05/10/efe6f563-6078-4481-8870-243eb4f9997b.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/efe6f563-6078-4481-8870-243eb4f9997b.jpg', '2017-05-10 15:24:54', 'A', '2017-05-10 15:24:54');
-INSERT INTO `image` VALUES ('47', '07.jpg', '0', '176M', '/ar/pic/upload//2017/05/10/ecabe37b-f0e7-4266-97e5-3a85d6f68784.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/ecabe37b-f0e7-4266-97e5-3a85d6f68784.jpg', '2017-05-10 15:24:54', 'A', '2017-05-10 15:24:54');
-INSERT INTO `image` VALUES ('49', '相册.png', '0', '94M', '/ar/pic/upload//2017/05/10/a2fd9798-cbe5-47af-a7c6-c702641587f6.png', 'AI', '0', '/ar/pic/upload//2017/05/10/a2fd9798-cbe5-47af-a7c6-c702641587f6.png', '2017-05-10 16:29:06', 'A', '2017-05-10 16:29:06');
-INSERT INTO `image` VALUES ('51', '05.jpg', '0', '492M', '/ar/pic/upload//2017/05/10/dbbb464b-d8ae-455b-9474-13a9afd0148e.jpg', 'AI', '0', '/ar/pic/upload//2017/05/10/dbbb464b-d8ae-455b-9474-13a9afd0148e.jpg', '2017-05-10 16:59:02', 'A', '2017-05-10 16:59:02');
-INSERT INTO `image` VALUES ('52', '相册.png', '0', '94M', '/ar/pic/upload//2017/05/10/73723bd1-9892-49ce-9388-0a8c16b4017c.png', 'AI', '0', '/ar/pic/upload//2017/05/10/73723bd1-9892-49ce-9388-0a8c16b4017c.png', '2017-05-10 16:59:02', 'A', '2017-05-10 16:59:02');
-INSERT INTO `image` VALUES ('53', 'blackist.png', '0', '84M', '/ar/pic/upload//2017/05/11/ebf0ae53-e4a5-4525-8cc1-08ef98ade1ae.png', 'AI', '0', '/ar/pic/upload//2017/05/11/ebf0ae53-e4a5-4525-8cc1-08ef98ade1ae.png', '2017-05-11 20:09:08', 'A', '2017-05-11 20:09:08');
-INSERT INTO `image` VALUES ('54', 'blackist.png', '0', '84M', '/ar/pic/upload//2017/05/11/f15817aa-57ac-422b-b57e-9150daf63b56.png', 'AI', '0', '/ar/pic/upload//2017/05/11/f15817aa-57ac-422b-b57e-9150daf63b56.png', '2017-05-11 20:10:33', 'A', '2017-05-11 20:10:33');
-INSERT INTO `image` VALUES ('55', 'coding.net.亮爷也风流.png', '0', '4M', '/ar/pic/upload//2017/05/11/76401881-2f6f-45fd-b7f1-7fe19ce0af19.png', 'AI', '0', '/ar/pic/upload//2017/05/11/76401881-2f6f-45fd-b7f1-7fe19ce0af19.png', '2017-05-11 20:11:59', 'A', '2017-05-11 20:11:59');
-INSERT INTO `image` VALUES ('56', 'CSDN.dong161114.png', '0', '4M', '/ar/pic/upload//2017/05/11/cd8a188d-1eea-4386-9859-2e74e7402f1e.png', 'AI', '0', '/ar/pic/upload//2017/05/11/cd8a188d-1eea-4386-9859-2e74e7402f1e.png', '2017-05-11 20:11:59', 'A', '2017-05-11 20:11:59');
-INSERT INTO `image` VALUES ('57', 'github.com.亮爷也风流.png', '0', '4M', '/ar/pic/upload//2017/05/11/fa78bb72-aea9-444b-bf22-d45bf1604967.png', 'AI', '0', '/ar/pic/upload//2017/05/11/fa78bb72-aea9-444b-bf22-d45bf1604967.png', '2017-05-11 20:11:59', 'A', '2017-05-11 20:11:59');
-INSERT INTO `image` VALUES ('58', 'segmentfault.blackist.png', '0', '5M', '/ar/pic/upload//2017/05/11/06f00581-9f64-4462-94ef-169daa4ea4d4.png', 'AI', '0', '/ar/pic/upload//2017/05/11/06f00581-9f64-4462-94ef-169daa4ea4d4.png', '2017-05-11 20:11:59', 'A', '2017-05-11 20:11:59');
-INSERT INTO `image` VALUES ('59', 'wechat.董亮亮.png', '0', '155M', '/ar/pic/upload//2017/05/11/6d4c5be2-f33b-4256-8ad4-f2135b4f4eb3.png', 'AI', '0', '/ar/pic/upload//2017/05/11/6d4c5be2-f33b-4256-8ad4-f2135b4f4eb3.png', '2017-05-11 20:11:59', 'A', '2017-05-11 20:11:59');
-INSERT INTO `image` VALUES ('60', 'weibo.亮爷也风流.png', '0', '6M', '/ar/pic/upload//2017/05/11/af895a97-4d1b-459e-ab98-03389717d6c8.png', 'AI', '0', '/ar/pic/upload//2017/05/11/af895a97-4d1b-459e-ab98-03389717d6c8.png', '2017-05-11 20:11:59', 'A', '2017-05-11 20:11:59');
-INSERT INTO `image` VALUES ('61', '0V3SA81R1ZJY.jpg', '0', '877M', '/ar/pic/upload//2017/05/12/8fbd0ef9-b00c-4ba4-ba32-0ea73e88b560.jpg', 'AI', '0', '/ar/pic/upload//2017/05/12/8fbd0ef9-b00c-4ba4-ba32-0ea73e88b560.jpg', '2017-05-12 14:07:49', 'A', '2017-05-12 14:07:49');
-INSERT INTO `image` VALUES ('62', '5UL77A0Y7SB7.jpg', '0', '357M', '/ar/pic/upload//2017/05/12/d9985656-128e-4321-b887-d4c6b7827688.jpg', 'AI', '0', '/ar/pic/upload//2017/05/12/d9985656-128e-4321-b887-d4c6b7827688.jpg', '2017-05-12 14:07:49', 'A', '2017-05-12 14:07:49');
-INSERT INTO `image` VALUES ('63', '9M1A0O5Q67G4.jpg', '0', '676M', '/ar/pic/upload//2017/05/12/285f65a5-d01d-4d7e-89a3-eab8987866ad.jpg', 'AI', '0', '/ar/pic/upload//2017/05/12/285f65a5-d01d-4d7e-89a3-eab8987866ad.jpg', '2017-05-12 14:07:49', 'A', '2017-05-12 14:07:49');
-INSERT INTO `image` VALUES ('64', '62D7OT4RBV6L_1000x500.jpg', '0', '173M', '/ar/pic/upload//2017/05/12/40a51a6e-cb5a-42d8-9e31-7d51ab32fe49.jpg', 'AI', '0', '/ar/pic/upload//2017/05/12/40a51a6e-cb5a-42d8-9e31-7d51ab32fe49.jpg', '2017-05-12 14:07:49', 'A', '2017-05-12 14:07:49');
-INSERT INTO `image` VALUES ('65', 'X0JP22L6B8XM.jpg', '0', '704M', '/ar/pic/upload//2017/05/12/79962d63-8d0e-4e96-9ec6-5449e6411162.jpg', 'AI', '0', '/ar/pic/upload//2017/05/12/79962d63-8d0e-4e96-9ec6-5449e6411162.jpg', '2017-05-12 14:07:49', 'A', '2017-05-12 14:07:49');
-INSERT INTO `image` VALUES ('66', 'Y2YPTBF568S4_1000x500.jpg', '0', '289M', '/ar/pic/upload//2017/05/12/29091d3c-033c-430e-83f2-98a3a5ba3abd.jpg', 'AI', '0', '/ar/pic/upload//2017/05/12/29091d3c-033c-430e-83f2-98a3a5ba3abd.jpg', '2017-05-12 14:07:49', 'A', '2017-05-12 14:07:49');
-INSERT INTO `image` VALUES ('67', '5UL77A0Y7SB7.jpg', '0', '357M', '/ar/pic/upload//2017/05/12/a250297e-adf4-4650-be85-03560ec045de.jpg', 'AI', '0', '/ar/pic/upload//2017/05/12/a250297e-adf4-4650-be85-03560ec045de.jpg', '2017-05-12 14:08:07', 'A', '2017-05-12 14:08:07');
-INSERT INTO `image` VALUES ('68', '62D7OT4RBV6L_1000x500.jpg', '0', '173M', '/ar/pic/upload//2017/05/12/68f47309-20b7-44b1-9250-6792cbc7c660.jpg', 'AI', '0', '/ar/pic/upload/2017/05/12/68f47309-20b7-44b1-9250-6792cbc7c660.jpg', '2017-05-12 14:08:14', 'A', '2017-05-12 14:08:14');
-INSERT INTO `image` VALUES ('77', 'sina.jpg', '0', null, '/ar/pic/upload//2017/05/16f3bc0824-20a5-4aae-b3ea-7c719e85537f.jpg', '', null, '/ar/pic/upload/2017/05/16/f3bc0824-20a5-4aae-b3ea-7c719e85537f.jpg', '2017-05-16 13:02:05', 'A', '2017-05-16 13:02:05');
-INSERT INTO `image` VALUES ('78', 'sina.jpg', '0', null, '/ar/pic/upload/2017/05/16/ab98ab79-1ae4-4fe2-83ff-013ed67b14d7.jpg', '', null, '/ar/pic/upload/2017/05/16/ab98ab79-1ae4-4fe2-83ff-013ed67b14d7.jpg', '2017-05-16 13:06:56', 'A', '2017-05-16 13:06:56');
-INSERT INTO `image` VALUES ('79', 'github.png', '0', null, '/ar/pic/upload/2017/05/16/6ff16a46-849a-4cd1-b580-220851f9a23f.png', '', null, '/ar/pic/upload/2017/05/16/6ff16a46-849a-4cd1-b580-220851f9a23f.png', '2017-05-16 13:07:00', 'A', '2017-05-16 13:07:00');
-INSERT INTO `image` VALUES ('80', 'CSDN.png', '0', null, '/ar/pic/upload/2017/05/17/542fef37-98c5-4534-9222-420859200c26.png', '', null, '/ar/pic/upload/2017/05/17/542fef37-98c5-4534-9222-420859200c26.png', '2017-05-17 10:06:06', 'A', '2017-05-17 10:06:06');
-INSERT INTO `image` VALUES ('81', 'gangnamtocat.png', '0', null, '/ar/pic/upload/2017/05/17/2e5a60b8-1af0-4bdc-b93b-fef7dcbaa5cd.png', '', null, '/ar/pic/upload/2017/05/17/2e5a60b8-1af0-4bdc-b93b-fef7dcbaa5cd.png', '2017-05-17 10:07:40', 'A', '2017-05-17 10:07:40');
-INSERT INTO `image` VALUES ('82', 'aidorucat.png', '0', null, '/ar/pic/upload/2017/05/17/48174cd2-7923-4a80-8d85-f7f4f38fb09f.png', '', null, '/ar/pic/upload/2017/05/17/48174cd2-7923-4a80-8d85-f7f4f38fb09f.png', '2017-05-17 10:08:53', 'A', '2017-05-17 10:08:53');
-INSERT INTO `image` VALUES ('83', '1126.sdt-github.png', '0', '164M', '/ar/pic/upload/2017/05/17/cc313efe-0116-43b9-8bdd-b07eaca6f812.png', 'AI', '0', '/ar/pic/upload/2017/05/17/cc313efe-0116-43b9-8bdd-b07eaca6f812.png', '2017-05-17 11:54:42', 'A', '2017-05-17 11:54:42');
-INSERT INTO `image` VALUES ('84', 'aidorucat.png', '0', '79M', '/ar/pic/upload/2017/05/17/2c684460-8706-49c3-9263-bd9299ab2f40.png', 'AI', '0', '/ar/pic/upload/2017/05/17/2c684460-8706-49c3-9263-bd9299ab2f40.png', '2017-05-17 11:54:42', 'A', '2017-05-17 11:54:42');
-INSERT INTO `image` VALUES ('85', 'codercat.jpg', '0', '61M', '/ar/pic/upload/2017/05/17/88df43bf-4408-4eea-a8b4-48ce915722a6.jpg', 'AI', '0', '/ar/pic/upload/2017/05/17/88df43bf-4408-4eea-a8b4-48ce915722a6.jpg', '2017-05-17 11:54:42', 'A', '2017-05-17 11:54:42');
-INSERT INTO `image` VALUES ('86', 'dojocat.jpg', '0', '66M', '/ar/pic/upload/2017/05/17/94ecfe90-aa6c-4023-b59e-154c7af18d2e.jpg', 'AI', '0', '/ar/pic/upload/2017/05/17/94ecfe90-aa6c-4023-b59e-154c7af18d2e.jpg', '2017-05-17 11:54:42', 'A', '2017-05-17 11:54:42');
-INSERT INTO `image` VALUES ('87', 'femalecodertocat.png', '0', '103M', '/ar/pic/upload/2017/05/17/59195bb6-408e-4201-94bb-d3f9482a49fa.png', 'AI', '0', '/ar/pic/upload/2017/05/17/59195bb6-408e-4201-94bb-d3f9482a49fa.png', '2017-05-17 11:54:42', 'A', '2017-05-17 11:54:42');
-INSERT INTO `image` VALUES ('88', 'forktocat.jpg', '0', '79M', '/ar/pic/upload/2017/05/17/5b8e12e7-7ce4-4d7d-a5dd-0862cce20d8f.jpg', 'AI', '0', '/ar/pic/upload/2017/05/17/5b8e12e7-7ce4-4d7d-a5dd-0862cce20d8f.jpg', '2017-05-17 11:54:42', 'A', '2017-05-17 11:54:42');
-INSERT INTO `image` VALUES ('89', 'founding-father.jpg', '0', '84M', '/ar/pic/upload/2017/05/17/a4b9e4a6-6b85-4ec0-b333-4370f1df9a21.jpg', 'AI', '0', '/ar/pic/upload/2017/05/17/a4b9e4a6-6b85-4ec0-b333-4370f1df9a21.jpg', '2017-05-17 11:54:42', 'A', '2017-05-17 11:54:42');
-INSERT INTO `image` VALUES ('90', 'foundingfather_v2.png', '0', '109M', '/ar/pic/upload/2017/05/17/8f08e4b3-b236-49ab-9b2a-17b0ce9ed22e.png', 'AI', '0', '/ar/pic/upload/2017/05/17/8f08e4b3-b236-49ab-9b2a-17b0ce9ed22e.png', '2017-05-17 11:54:42', 'A', '2017-05-17 11:54:42');
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for information
@@ -585,80 +251,7 @@ CREATE TABLE `information` (
   KEY `FK_INFORMATION_ORIGINID` (`origin_id`),
   CONSTRAINT `FK_INFORMATION_ORIGINID` FOREIGN KEY (`origin_id`) REFERENCES `origin` (`origin_id`) ON DELETE CASCADE,
   CONSTRAINT `FK_INFORMATION_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of information
--- ----------------------------
-INSERT INTO `information` VALUES ('1', '刚找到工作，不容易', '作为一名当代大学生，我十分骄傲地找到了一份门卫的工作，从此以后，我的人生也就扬帆起航了', 'tr', '/img/info/blog1.jpg', '0', '0', '0', '2016-02-26 21:00:27', '0', 'CI', '4', '1', 'A', '2016-02-25 01:18:31');
-INSERT INTO `information` VALUES ('2', '我是个逗逼', '我是个逗逼', null, '/img/info/c245b47c-f52f-4337-86df-004f0e4a269a.jpg', '0', '0', '0', '2016-02-28 20:53:25', '0', 'CI', '4', '1', 'A', '2016-02-28 20:53:25');
-INSERT INTO `information` VALUES ('3', '再试试吧', '再试试吧', null, '/img/info/2e6d2a47-da2c-4a82-8bfc-7b236d859b0c.jpg', '0', '0', '0', '2016-02-28 20:55:56', '0', 'CI', '4', '1', 'A', '2016-02-28 20:55:56');
-INSERT INTO `information` VALUES ('5', '弧度高，准，还尼玛超', '弧度高，准，还尼玛超远我想知道他俩谁强…', null, '/img/info/19bad79c-2758-4f77-98ab-5962c2b5ed2c.jpg', '0', '0', '0', '2016-02-28 21:10:04', '0', 'CI', '4', '1', 'A', '2016-02-28 21:10:04');
-INSERT INTO `information` VALUES ('6', '今天阳光明媚，带着媳', '今天阳光明媚，带着媳妇儿出去春游了，春风和煦，时光静好，生活难得的惬意', null, '/img/info/331580e0-71ca-4fe5-973e-4c5ca3c23d24.jpg', '0', '0', '0', '2016-02-28 21:15:39', '0', 'CI', '4', '1', 'A', '2016-02-28 21:15:39');
-INSERT INTO `information` VALUES ('7', '哈哈', '哈哈', null, '', '0', '0', '0', '2016-02-28 22:18:45', '0', 'CI', '4', '1', 'A', '2016-02-28 22:18:45');
-INSERT INTO `information` VALUES ('8', '多个方面呢，就好vjhbv', '多个方面呢，就好vjhbv', null, '/img/info/ce0f7497-cae2-472a-abba-f7a3c1727613.png', '0', '1', '0', '2016-02-28 23:40:43', '0', 'CI', '4', '1', 'A', '2016-02-28 23:40:43');
-INSERT INTO `information` VALUES ('9', '哈哈，这就是帅气的我', '哈哈，这就是帅气的我', null, '/img/info/154e714d-ba5d-4d02-a158-a19d03eb9855.jpg', '0', '0', '0', '2016-02-29 20:11:50', '0', 'CI', '4', '1', 'A', '2016-02-29 20:11:50');
-INSERT INTO `information` VALUES ('10', '呵呵呵', '呵呵呵', null, '/img/info/c15ddfde-ae9e-4fdc-93bc-616cb91dbfb0.jpg', '0', '0', '0', '2016-02-29 20:31:53', '0', 'CI', '4', '1', 'A', '2016-02-29 20:31:53');
-INSERT INTO `information` VALUES ('11', '和S科学家离开vsk', '和S科学家离开vskcvcmkccb', null, '/img/info/c6cd32a4-e979-49a6-975e-ac3343637c91.jpg', '0', '0', '0', '2016-02-29 22:04:27', '0', 'CI', '4', '1', 'A', '2016-02-29 22:04:27');
-INSERT INTO `information` VALUES ('12', '双方的股份回购名', '双方的股份回购名', null, null, '0', '1', '0', '2016-02-29 23:22:04', '0', 'CI', '4', '1', 'A', '2016-02-29 23:22:04');
-INSERT INTO `information` VALUES ('13', '你说我人品怎么样\r\n还可以吧', '你说我人品怎么样\r\n还可以吧', null, '/img/info/e7f8430a-9973-4319-ad74-8efd30a6f1ac.jpg', '0', '0', '0', '2016-03-01 11:51:01', '0', 'CI', '4', '1', 'A', '2016-03-01 11:51:01');
-INSERT INTO `information` VALUES ('14', '奥德赛vhasild', '奥德赛vhasildj oaiSJl c ASDlL  jlkzdj flkzj 就 ｌｊ　ｌｊ　ｓｄｌｊｆｚｓｌｊ　ｆｄｊ　ｆｌ　ｊ　ｌｊ　ｌｊｌ　ｉｌｕ　ｉｊｊｊｋｋＯＬ　ＪＯ　ｏ　ｋ就开始离开家阿隆索飞机乘客来说ｖｊｌ路径 SJDcLDS', null, null, '0', '5', '0', '2016-03-01 12:31:02', '0', 'CI', '4', '1', 'A', '2016-03-01 12:31:02');
-INSERT INTO `information` VALUES ('15', '谔谔同花顺俄而是是忽', '谔谔同花顺俄而是是忽然怀念和健康　看空间就', null, null, '0', '2', '0', '2016-03-01 12:31:26', '0', 'CI', '4', '2', 'A', '2016-03-01 12:31:26');
-INSERT INTO `information` VALUES ('16', 'iwoqujsqAK;L', 'iwoqujsqAK;L', null, null, '0', '1', '0', '2016-03-01 12:40:36', '0', 'CI', '4', '1', 'A', '2016-03-01 12:40:36');
-INSERT INTO `information` VALUES ('17', '爱克发haskfhds.j快来', '爱克发haskfhds.j快来', null, null, '0', '0', '0', '2016-03-01 15:59:00', '0', 'CI', '4', '1', 'A', '2016-03-01 15:59:00');
-INSERT INTO `information` VALUES ('18', '恶搞无法打败你后悔', '恶搞无法打败你后悔', null, null, '0', '0', '0', '2016-03-01 16:28:04', '0', 'CI', '4', '1', 'A', '2016-03-01 16:28:04');
-INSERT INTO `information` VALUES ('19', '快点放假萨拉丁福利激发机卡分离', '快点放假萨拉丁福利激发机卡分离', null, null, '0', '0', '0', '2016-03-01 16:29:02', '0', 'CI', '4', '1', 'A', '2016-03-01 16:29:02');
-INSERT INTO `information` VALUES ('20', 'uyjumntbsrvsc', 'uyjumntbsrvsc', null, '/img/info/c09cf1d4-37a0-427f-8c9c-bd2d28c0f2f8.jpg', '0', '4', '0', '2016-03-01 16:29:36', '0', 'CI', '4', '1', 'A', '2016-03-01 16:29:36');
-INSERT INTO `information` VALUES ('21', null, 'black在这留言', null, null, '0', '0', '0', '2017-02-27 23:18:18', '0', 'CM', '2', '3', 'A', '2017-02-27 23:18:18');
-INSERT INTO `information` VALUES ('22', null, '留言测试', null, null, '0', '0', '0', '2017-03-28 15:37:40', '0', 'CM', '2', '3', 'A', '2017-03-28 15:37:40');
-INSERT INTO `information` VALUES ('23', '厉害了我的哥', '厉害了我的哥', null, null, '0', '0', '0', '2017-03-28 15:39:01', '0', 'CI', '2', '4', 'A', '2017-03-28 15:39:01');
-INSERT INTO `information` VALUES ('24', '我是一个梦想家', '我是一个梦想家', null, null, '0', '0', '0', '2017-03-28 18:31:10', '0', 'CI', '2', '3', 'A', '2017-03-28 18:31:10');
-INSERT INTO `information` VALUES ('25', null, '我来了，让我听到你们的声音', null, null, '0', '0', '0', '2017-04-07 10:55:49', '0', 'CM', '2', '4', 'A', '2017-04-07 10:55:49');
-INSERT INTO `information` VALUES ('26', '校园行指南', '    玉泉校区位于西湖西北角，紧邻玉泉植物园。校区占地总面积1700多亩，校舍建筑总面积70万平方米。玉泉校区是原浙江大学所在地，现浙江大学党政机关办公所在地。\r\n    目前浙江大学理学院、电气工程学院、机械与能源工程学院、材料与化学工程学院、计算机科学与技术学院、信息科学与工程学院、建筑工程学院、生物医学工程与仪器科学学院、经济学院、管理学院、软件学院11个学院党政机关设在该校区。\r\n\r\n    公交线路：K89、K228(夜)、 K16、82/K82、 815、81/K81、527 、15/K15、21/K21、28/k28\r\n\r\n    旅馆：紫兰酒店、玉泉饭店、西子饭店、灵峰山庄、杭州金乐饭店、百合花饭店、浙江大学竺可桢国际教育大楼、浙江大学招待所、玉泉饭店、西子饭店、灵峰山庄、杭州金乐饭店、杭州百合花饭店。', null, null, '0', '9', '0', '2017-04-07 15:48:55', '0', 'SS', '1', '1', 'A', '2017-04-09 18:58:25');
-INSERT INTO `information` VALUES ('27', '走进校园', '徐州工程学院是2002年6月经教育部批准，由始建于1983年的彭城职业大学和始建于1985年的徐州经济管理干部学院合并组建的一所全日制普通本科院校。2006年6月，学校获得学士学位授予权。2007年6月，始建于1959年的徐州教育学院整建制并入。\r\n学校坚持地方性、应用型的办学定位，坚持“立足徐州、面向苏北、服务江苏”的服务定位和为区域经济社会发展培养高素质应用型人才的办学目标，实施“错位发展战略”，大力推进教育教学改革和人才培养模式改革，经过多年的建设和发展，已成为一所主干专业学科对应地方支柱产业，具有一定区位优势的地方高校。目前，学校获批为教育部“卓越工程师教育培养计划”实施高校、江苏省大学生创业教育示范校，被授予江苏省高等学校和谐校园、江苏省文明单位、江苏省五一劳动奖状、江苏省科技富民突出贡献单位等荣誉。\r\n学校现有3个校区，占地面积1990.5亩，校舍面积57.39万平方米，固定资产14.78亿元，教学仪器设备值1.50亿元，设有14个二级学院、1个思想政治理论课教研部和1个成人教育学院，开设49个本科专业，全日制在校生21376人。\r\n学校牢固树立人才资源是第一资源和“办学以教师为本”的理念，大力实施师资队伍建设“五大工程”和“卓越计划”，不断提高师资队伍水平。学校现有教职工1279人，其中具有正高职称98人、副高职称335人；具有博士学位140人、硕士学位664人；有1人被遴选为国家科学技术奖评委，2人享受国务院政府特殊津贴，3人被评为二级教授；有全国模范教师和全国优秀教育工作者2人，“江苏省有突出贡献的中青年专家”3人，省“六大人才高峰”培养对象14人，省“333工程”培养对象28人，省“青蓝工程”中青年学术带头人12人和优秀青年骨干教师35人，徐州市优秀专家、拔尖人才63人。\r\n学校紧密结合区域经济社会发展需求，扎实推进专业学科一体化建设。现有2个国家级特色专业，3个教育部“卓越工程师计划”实施专业，1个国家级“专业综合改革试点”项目，3个国家级工程实践教育中心，1个国家级大学生校外实践教育基地，2个国家级国际合作办学项目，6个省级特色专业，5个省级重点专业（类）；获批省级精品课程10门、省级精品教材13部，省级重点教材3部，获省级优秀教学成果奖13项；拥有3个省级一级重点建设学科。\r\n学校坚持以贡献求支持，以贡献求发展，加强产教融合，努力提升科技服务能力，科学研究和平台建设不断取得新进展。09年以来，承担和完成省部级以上科研项目199项、横向课题381项，科研成果获省部级奖励37项。学校现拥有2个省级重点建设实验室，2个省级工程实验室，9个省级工程技术研究中心，8个省级实验教学示范中心；获批省级工业设计中心、省级校外人文社科研究基地、省级人才培养模式创新实验基地、省级优秀教学团队各1个，省级科技创新团队2个，1项成果入选2012年《国家哲学社会科学成果文库》。\r\n学校秉承“格物致知，敬业乐群”的校训精神，积极推进人才培养模式改革，着重培养学生的社会责任感、创新精神和实践动手能力，人才培养质量稳步提升。近三年，我校学生共获得国际竞赛奖项12项，国家级竞赛奖项469项，省部级竞赛奖项492项，其中包括国际数学建模竞赛一等奖、全国大学生数学建模竞赛一等奖、“挑战杯”中国大学生创业计划竞赛银奖、全国普通高等院校算量大赛总冠军、全国大学生英语竞赛特等奖、全国大学生桥牌锦标赛亚军等高级别奖项；获批国家级大学生创新创业训练计划项目71项。人才培养质量的不断提高和毕业生“下得去、留得住、上手快、能力强”的特点受到社会广泛认可，毕业生就业率保持在98%以上。\r\n学校深入推进国际化战略。近年来，学校先后与美国、法国、俄罗斯等12个国家的17所高校和机构建立了稳定的合作关系。举办合作办学项目10个，联合培养学生1470人。着力推进“中青年骨干教师海外培训工程”，派出教师和管理干部393人次到境外培训、访学和攻读学位；留学生工作、中外合作科研和汉语国际推广不断取得新成效。学校是“茉莉花留学江苏政府奖学金”资助高校；有3位外籍教师荣获“江苏省五一劳动荣誉奖章”。教育部简报2012年第212期以《徐州工程学院大力推进国际化发展战略，着力提高师资队伍国际化水平》为题，报道了我校师资国际化的探索和实践。\r\n学校注重结合区域文化特征，努力发挥文化传承功能。学校以非物质文化遗产的研究与传承作为高校发挥文化传承与创新功能的突破口，积极推进“非遗”进校园、进课堂、进教材、进科研工作。举办了两届中国非物质文化遗产高层论坛，“淮海地区非物质文化遗产研究中心”获批江苏省普通高等学校人文社会科学校外研究基地，相关建设成果获得教育部“高校校园文化建设”优秀奖。\r\n展望未来，学校将深入贯彻落实科学发展观，不断加强内涵建设，大力提高教育教学质量和人才培养质量，以改革创新为动力，努力发展成为一所特色鲜明的高水平地方本科院校。', null, null, '0', '7', '0', '2017-04-07 16:13:24', '0', 'SS', '1', '1', 'A', null);
-INSERT INTO `information` VALUES ('28', '校友论坛规章制度', '严格遵守', 'AZ', null, '29', '3', '1', '2017-04-09 14:03:41', '0', 'BBS', '1', null, 'A', '2017-04-09 14:05:42');
-INSERT INTO `information` VALUES ('29', '欢天喜地的校庆', '时间：2017年04月19日 20:00~22:00\r\n所属：杭州浙江大学校友会 \r\n地址：（东园街）东园巷379号东园小学东园校区（大门左手边体育馆2楼）\r\n人数：14人\r\n状态：距离开始还有1周\r\n\r\n1.费用：男生30元，女生20元，请自备零钱或者支付宝fugel@163.com。\r\n空降兵（没报名直接参加的）35元，现场支付（请不要空降，确保每个人一定的打球时间，谢谢）。<br>\r\n鸽子（报了名不参加的）事后追罚10元，同年三次以上追罚20元。（活动当日提前三小时以上取消报名的不算鸽子。）\r\n2.如报名后需取消报名，请在活动当天17点前取消报名。\r\n3.活动用球由俱乐部统一提供。\r\n4.羽毛球qq交流群79806050（入群申请务必写明姓名及教育信息，否则一概无视哟）。\r\n\r\n公交站点：体育场路口、 红会医院、建国路口、潮鸣寺巷、宝善桥建国路口、红会医院北站', 'ZA', null, '307', '29', '28', '2017-04-09 14:10:49', '0', 'BBS', '2', null, 'A', '2017-04-09 14:11:01');
-INSERT INTO `information` VALUES ('32', '', 'DEBUG测试', '', '', '0', '0', '0', '2017-04-15 19:49:06', '0', 'CM', '2', '3', 'A', '2017-04-15 19:49:06');
-INSERT INTO `information` VALUES ('33', '出现BUG了，好烦啊', '出现BUG了，好烦啊', '', '', '0', '1', '0', '2017-04-15 20:15:09', '0', 'CI', '2', '3', 'A', '2017-04-15 20:15:09');
-INSERT INTO `information` VALUES ('34', '智能车协会公告', '不能闷骚', '', '', '73', '6', '2', '2017-04-19 00:14:35', '1', 'OI', '2', '8', 'A', '2017-04-19 00:15:05');
-INSERT INTO `information` VALUES ('41', 'Come On Baby Go', 'Let me hear you say', '', '', '10', '0', '0', '2017-04-23 17:02:41', '0', 'OI', '2', '8', 'A', '2017-04-23 17:02:41');
-INSERT INTO `information` VALUES ('42', '', '留言测试', '', '', '0', '0', '0', '2017-04-23 23:18:07', '0', 'OM', '2', '8', 'A', '2017-04-23 23:18:26');
-INSERT INTO `information` VALUES ('43', '', 'ceshi2', '', '', '0', '0', '0', '2017-04-25 14:11:00', '0', 'OM', '2', '8', 'A', '2017-04-25 14:11:00');
-INSERT INTO `information` VALUES ('44', '', '第一个留言 ----black', '', '', '0', '0', '0', '2017-04-25 16:52:06', '0', 'CM', '2', '2', 'A', '2017-04-25 16:52:06');
-INSERT INTO `information` VALUES ('45', '', '自动糊班级是一个神奇的存在', '', '', '0', '0', '0', '2017-04-25 16:54:14', '0', 'CM', '4', '4', 'A', '2017-04-25 16:54:14');
-INSERT INTO `information` VALUES ('46', '周一下午班级聚会', '周一下午班级聚会', '', '', '0', '0', '0', '2017-04-25 17:03:13', '0', 'CI', '4', '2', 'A', '2017-04-25 17:03:13');
-INSERT INTO `information` VALUES ('47', '班级严禁打群架，不过', '班级严禁打群架，不过偶尔可以打一打', '', '', '0', '0', '0', '2017-04-25 17:15:26', '0', 'CI', '4', '2', 'A', '2017-04-25 17:15:26');
-INSERT INTO `information` VALUES ('48', '我是逗逼', '呵呵呵', '', '', '0', '0', '0', '2017-04-25 17:25:12', '0', 'CI', '5', '3', 'A', '2017-04-25 17:25:12');
-INSERT INTO `information` VALUES ('49', '', '董亮亮回班级来看看了', '', '', '0', '0', '0', '2017-04-28 13:25:43', '0', 'CM', '4', '3', 'A', '2017-04-28 13:25:43');
-INSERT INTO `information` VALUES ('50', '贺一飞前来报到', '我是一个大太阳，浑身充满正能量', '', '', '0', '0', '0', '2017-04-28 14:16:19', '0', 'CI', '262', '2', 'A', '2017-04-28 14:16:19');
-INSERT INTO `information` VALUES ('51', '班级聚会', '不V鼓鼓囊囊 vc大发慈悲不vs的是谁发的号码你不单纯I度噢迪接啊爱看哦我剖大家来看但判断是否刚才V会比较', '', '', '0', '0', '0', '2017-04-28 14:18:55', '0', 'OI', '262', '8', 'A', '2017-04-28 14:18:55');
-INSERT INTO `information` VALUES ('52', '', '官方公会很高  对方vc是的浮现出V没机会故事大全二手房的规划和郭德纲方便改变中断过ds fg', '', '', '0', '0', '0', '2017-04-28 14:19:14', '0', 'OM', '262', '8', 'A', '2017-04-28 14:19:14');
-INSERT INTO `information` VALUES ('53', '我的学院我做主', '还记得在信电学院的青葱岁月。', '', '', '0', '0', '0', '2017-04-28 22:18:21', '0', 'OI', '122', '7', 'A', '2017-04-28 22:18:21');
-INSERT INTO `information` VALUES ('54', '哈哈，开心的大学生活', '开心的不要不要的', '', '', '1', '0', '0', '2017-04-28 22:18:45', '0', 'OI', '122', '7', 'A', '2017-04-28 22:18:45');
-INSERT INTO `information` VALUES ('55', '', '我来也', '', '', '0', '0', '0', '2017-04-28 22:18:54', '0', 'OM', '122', '7', 'A', '2017-04-28 22:18:54');
-INSERT INTO `information` VALUES ('56', '', '小杰来报道', '', '', '0', '0', '0', '2017-04-29 00:41:34', '0', 'OM', '125', '7', 'A', '2017-04-29 00:41:34');
-INSERT INTO `information` VALUES ('57', '', '哈哈', '', '', '0', '0', '0', '2017-04-29 12:22:32', '0', 'OM', '6', '8', 'A', '2017-04-29 12:22:40');
-INSERT INTO `information` VALUES ('58', '新帖子，冒个泡', '猫跑了，冒泡了', '', '', '3', '1', '1', '2017-04-29 14:33:19', '0', 'BBS', '119', null, 'A', '2017-04-29 14:33:19');
-INSERT INTO `information` VALUES ('59', '爱玩了', '的说法不V你那边', '', '', '0', '0', '0', '2017-04-29 14:33:56', '0', 'OI', '119', '8', 'A', '2017-04-29 14:33:56');
-INSERT INTO `information` VALUES ('60', '呵呵', '地超看到法国不能发生的', '', '', '0', '0', '0', '2017-04-29 14:35:20', '0', 'OI', '119', '8', 'A', '2017-04-29 14:35:20');
-INSERT INTO `information` VALUES ('61', '啊师傅规范化', '阿尔法狗好呢', '', '', '1', '0', '0', '2017-04-29 14:37:40', '0', 'OI', '119', '8', 'A', '2017-04-29 14:37:50');
-INSERT INTO `information` VALUES ('62', '', '哈啊哈', '', '', '0', '0', '0', '2017-05-03 20:26:44', '0', 'CM', '122', '2', 'A', '2017-05-03 20:26:44');
-INSERT INTO `information` VALUES ('63', '快乐的日子', '哥好久没跟你告白', '', '/ar/pic/info/1ebe4dbe-1eff-4176-861c-ca4ff746cfbb.png', '0', '0', '1', '2017-05-03 20:27:22', '0', 'CI', '122', '2', 'A', '2017-05-03 20:27:22');
-INSERT INTO `information` VALUES ('64', '', '留言了', '', '', '0', '0', '0', '2017-05-03 21:20:06', '0', 'CM', '122', '4', 'A', '2017-05-03 21:20:06');
-INSERT INTO `information` VALUES ('65', '到此一游', '我来了', '', '', '0', '0', '0', '2017-05-03 21:20:26', '0', 'CI', '122', '4', 'A', '2017-05-03 21:20:26');
-INSERT INTO `information` VALUES ('66', '', '我是逗逼', '', '', '0', '0', '0', '2017-05-03 21:37:37', '0', 'OM', '5', '8', 'A', '2017-05-03 21:37:37');
-INSERT INTO `information` VALUES ('67', '新帖发一枚', '喜欢上了工作', '', '', '1', '0', '0', '2017-05-03 21:51:11', '0', 'BBS', '125', null, 'A', '2017-05-03 21:51:11');
-INSERT INTO `information` VALUES ('68', '第一发', '第一条动态消息', '', '', '0', '0', '0', '2017-05-03 23:55:03', '0', 'CI', '5', '14', 'A', '2017-05-03 23:55:03');
-INSERT INTO `information` VALUES ('69', '', '逗逼到此一游', '', '', '0', '0', '0', '2017-05-03 23:55:15', '0', 'CM', '5', '14', 'A', '2017-05-03 23:55:15');
-INSERT INTO `information` VALUES ('70', 'Come On Baby Go', '一起嗨过的日子', '', '', '0', '0', '0', '2017-05-05 13:32:21', '0', 'CI', '5', '2', 'A', '2017-05-05 13:32:21');
-INSERT INTO `information` VALUES ('71', '士大夫', '士大夫但是个', '', '', '0', '0', '0', '2017-05-09 00:11:23', '0', 'CI', '2', '14', 'A', '2017-05-09 00:11:23');
-INSERT INTO `information` VALUES ('72', '春游', '开心的不要不要的！', '', '/ar/pic/upload//2017/05/09/882269c8-8897-46d7-83ca-a1377ba74845.jpg', '0', '0', '0', '2017-05-09 23:59:12', '0', 'CI', '5', '14', 'A', '2017-05-09 23:59:12');
-INSERT INTO `information` VALUES ('73', '秋游了', '开心的不行啊', '', '/ar/pic/upload//2017/05/10/3c45fc59-2257-4227-9843-c08d1b16be19.jpg', '0', '0', '0', '2017-05-10 00:00:25', '0', 'CI', '5', '14', 'A', '2017-05-10 00:00:25');
-INSERT INTO `information` VALUES ('74', '夏令营了', '水水的，开开心心！', '', '/ar/pic/upload//2017/05/10/ca2bebf0-ed27-4b5c-81dd-fa19dc5db16d.jpg', '0', '0', '0', '2017-05-10 00:00:51', '0', 'CI', '5', '14', 'A', '2017-05-10 00:00:51');
-INSERT INTO `information` VALUES ('75', '毕业了', '毕业好开心', '', '/ar/pic/upload//2017/05/11/bd1a8b98-a18c-4be4-8c55-58d5389c74f2.jpg', '4', '0', '3', '2017-05-11 21:53:13', '0', 'CI', '35', '14', 'A', '2017-05-11 21:53:13');
-INSERT INTO `information` VALUES ('76', '毕设答辩', '答辩好激动啊', '', '/ar/pic/upload//2017/05/11/0b1918fd-5ffe-40c2-aa21-1f8413031144.jpg', '14', '0', '4', '2017-05-11 21:53:37', '0', 'CI', '35', '14', 'A', '2017-05-11 21:53:37');
-INSERT INTO `information` VALUES ('77', '工作好累', '毕业之后即将参加工作，好累啊', '', '/ar/pic/upload//2017/05/11/04a403ad-a722-407e-b712-a507549afa9e.jpg', '8', '2', '1', '2017-05-11 22:21:57', '0', 'CI', '304', '14', 'A', '2017-05-11 22:21:57');
-INSERT INTO `information` VALUES ('78', '毕业季，回忆我们一起走过的大学四年', '风格发挥工会积极， 奥尔特加 哇塞的个回复你为人所知都会有展示填入简洁	风格发挥工会积极， 奥尔特加 哇塞的个回复你为人所知都会有展示填入简洁	风格发挥工会积极， 奥尔特加 哇塞的个回复你为人所知都会有展示填入简洁	风格发挥工会积极， 奥尔特加 哇塞的个回复你为人所知都会有展示填入简洁	风格发挥工会积极， 奥尔特加 哇塞的个回复你为人所知都会有展示填入简洁	风格发挥工会积极， 奥尔特加 哇塞的个回复你为人所知都会有展示填入简洁	风格发挥工会积极， 奥尔特加 哇塞的个回复你为人所知都会有展示填入简洁	风格发挥工会积极， 奥尔特加 哇塞的个回复你为人所知都会有展示填入简洁	风格发挥工会积极， 奥尔特加 哇塞的个回复你为人所知都会有展示填入简洁	风格发挥工会积极， 奥尔特加 哇塞的个回复你为人所知都会有展示填入简洁', '', '', '0', '0', '0', '2017-05-16 19:49:45', '0', 'BBS', '2', null, 'A', '2017-05-16 19:49:45');
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for log
@@ -674,10 +267,6 @@ CREATE TABLE `log` (
   `oper_time` datetime NOT NULL COMMENT '操作时间',
   PRIMARY KEY (`log_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of log
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for message
@@ -698,67 +287,26 @@ CREATE TABLE `message` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of message
--- ----------------------------
-
--- ----------------------------
 -- Table structure for origin
 -- ----------------------------
 DROP TABLE IF EXISTS `origin`;
 CREATE TABLE `origin` (
   `origin_id` int(8) NOT NULL AUTO_INCREMENT COMMENT '组织标识',
   `origin_name` varchar(20) NOT NULL COMMENT '组织名称',
-  `origin_no` varchar(20) DEFAULT NULL COMMENT '组织编号',
   `origin_type` varchar(20) NOT NULL COMMENT '组织类型',
   `origin_desc` varchar(500) DEFAULT NULL COMMENT '组织描述',
   `origin_grade` char(4) DEFAULT NULL,
   `members` int(4) NOT NULL DEFAULT '0' COMMENT '成员数量',
   `create_time` datetime NOT NULL COMMENT '创建时间',
-  `mgr_id` int(8) DEFAULT NULL,
-  `creator_id` int(8) NOT NULL COMMENT '创建者',
+  `mgr_id` int(8) NOT NULL,
   `state` char(2) NOT NULL COMMENT '状态',
   `state_time` datetime DEFAULT NULL COMMENT '状态时间',
   `exp1` varchar(100) DEFAULT NULL COMMENT '备用字段',
   `exp2` varchar(100) DEFAULT NULL COMMENT '备用字段',
   PRIMARY KEY (`origin_id`),
-  KEY `FK_ORIGIN_CREATORID` (`creator_id`),
   KEY `FK_ORIGIN_MGRID` (`mgr_id`),
-  CONSTRAINT `FK_ORIGIN_CREATORID` FOREIGN KEY (`creator_id`) REFERENCES `user` (`user_id`),
   CONSTRAINT `FK_ORIGIN_MGRID` FOREIGN KEY (`mgr_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of origin
--- ----------------------------
-INSERT INTO `origin` VALUES ('1', '徐州工程学院', '', 'INS', '', '', '0', '2016-02-16 23:21:47', '1', '1', 'A', '2016-02-16 23:22:02', null, null);
-INSERT INTO `origin` VALUES ('2', '13软嵌1班', '201305051', 'C', null, '2013', '4', '2016-02-17 15:38:12', '3', '2', 'A', '2016-02-17 15:38:25', null, null);
-INSERT INTO `origin` VALUES ('3', '14计嵌1', '201405051', 'C', '14计嵌1班欢迎你的加入', '2014', '4', '2016-02-18 19:45:09', '4', '2', 'A', '2016-02-18 19:45:21', null, null);
-INSERT INTO `origin` VALUES ('4', '15自动化', '201505011', 'C', null, '2015', '37', '2016-02-18 19:46:04', '3', '2', 'A', '2016-02-18 19:46:12', null, null);
-INSERT INTO `origin` VALUES ('5', '信电工程学院', null, 'INS', null, null, '0', '2017-04-07 15:54:11', '1', '1', 'A', '2017-04-07 15:54:24', null, null);
-INSERT INTO `origin` VALUES ('6', '校友总会', null, 'org', '信电学院校友总会', null, '1', '2017-04-16 21:54:52', '1', '1', 'A', '2017-04-16 21:55:05', null, null);
-INSERT INTO `origin` VALUES ('7', '信电工程学院分会', null, 'orgi', '信电工程学院分会', null, '4', '2017-04-16 21:56:03', '1', '1', 'A', '2017-04-29 00:41:34', null, null);
-INSERT INTO `origin` VALUES ('8', '智能车与机器人协会', null, 'orgm', '科技引领时代', null, '8', '2017-04-16 21:57:35', '1', '1', 'A', '2017-05-03 21:37:37', null, null);
-INSERT INTO `origin` VALUES ('9', '跆拳道协会', null, 'orgm', '不得不承认，有时候肌肉比头脑更管用，所以我们要强身健体', null, '1', '2017-04-16 21:58:48', '1', '1', 'A', '2017-04-16 21:58:55', null, null);
-INSERT INTO `origin` VALUES ('10', '三早晨读社', null, 'orgm', '早睡，早起，早读书', null, '1', '2017-04-16 21:59:40', '1', '1', 'A', '2017-04-16 21:59:45', null, null);
-INSERT INTO `origin` VALUES ('11', '轮滑社', null, 'orgm', '在这光滑的地面上摩擦', null, '1', '2017-04-16 22:00:26', '1', '1', 'A', '2017-04-16 22:00:32', null, null);
-INSERT INTO `origin` VALUES ('12', '手机开发协会', null, 'orgm', '移动端时代已经到来，我们就是引领时代的先行者', null, '2', '2017-04-16 22:01:16', '1', '1', 'A', '2017-04-16 22:01:22', null, null);
-INSERT INTO `origin` VALUES ('13', '学习部', null, 'orgu', '督促松弛的同学学习，是我们的目的', null, '2', '2017-04-16 22:02:17', '1', '1', 'A', '2017-04-16 22:02:22', null, null);
-INSERT INTO `origin` VALUES ('14', '13软嵌2', '20130505', 'C', '活力四射的班级', '2013', '5', '2017-05-03 23:30:07', '1', '1', 'A', '2017-05-03 23:30:17', null, null);
-INSERT INTO `origin` VALUES ('15', '土木工程学院分会', null, 'orgi', null, null, '0', '2017-05-08 17:15:45', '1', '1', 'A', '2017-05-08 17:16:04', null, null);
-INSERT INTO `origin` VALUES ('16', '环境工程学院分会', null, 'orgi', null, null, '0', '2017-05-08 17:18:51', '1', '1', 'A', '2017-05-08 17:19:02', null, null);
-INSERT INTO `origin` VALUES ('17', '外国语学院分会', null, 'orgi', null, null, '0', '2017-05-08 17:19:32', '1', '1', 'A', '2017-05-08 17:19:39', null, null);
-INSERT INTO `origin` VALUES ('18', '化学化工学院', null, 'orgi', null, null, '0', '2017-05-08 18:33:48', '1', '1', 'A', '2017-05-08 18:33:54', null, null);
-INSERT INTO `origin` VALUES ('19', '经济学院', null, 'orgi', null, null, '0', '2017-05-08 18:37:45', '1', '1', 'A', '2017-05-08 18:37:42', null, null);
-INSERT INTO `origin` VALUES ('20', '教育科学学院', null, 'orgi', null, null, '0', '2017-05-08 18:38:25', '1', '1', 'A', '2017-05-08 18:38:32', null, null);
-INSERT INTO `origin` VALUES ('21', '体育学院', '人文学院', 'orgi', null, null, '0', '2017-05-08 18:38:57', '1', '1', 'A', '2017-05-08 18:39:04', null, null);
-INSERT INTO `origin` VALUES ('22', '人文学院', null, 'orgi', null, null, '0', '2017-05-08 18:39:28', '1', '1', 'A', '2017-05-08 18:39:39', null, null);
-INSERT INTO `origin` VALUES ('23', '外国语学院', null, 'orgi', null, null, '0', '2017-05-08 18:39:56', '1', '1', 'A', '2017-05-08 18:40:02', null, null);
-INSERT INTO `origin` VALUES ('24', '艺术学院', null, 'orgi', null, null, '0', '2017-05-08 18:40:23', '1', '1', 'A', '2017-05-08 18:40:36', null, null);
-INSERT INTO `origin` VALUES ('25', '数学与物理科学学院', null, 'orgi', null, null, '0', '2017-05-08 18:41:09', '1', '1', 'A', '2017-05-08 18:41:17', null, null);
-INSERT INTO `origin` VALUES ('26', '机电工程学院', null, 'orgi', null, null, '0', '2017-05-08 18:41:54', '1', '1', 'A', '2017-05-08 18:42:00', null, null);
-INSERT INTO `origin` VALUES ('27', '食品工程学院', null, 'orgi', null, null, '0', '2017-05-08 18:42:26', '1', '1', 'A', '2017-05-08 18:42:31', null, null);
-INSERT INTO `origin` VALUES ('28', '管理学院', null, 'orgi', null, null, '0', '2017-05-08 18:42:49', '1', '1', 'A', '2017-05-08 18:42:55', null, null);
-INSERT INTO `origin` VALUES ('29', '马克思主义学院', null, 'orgi', null, null, '0', '2017-05-08 18:43:16', '1', '1', 'A', '2017-05-08 18:43:22', null, null);
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for recruit
@@ -791,28 +339,7 @@ CREATE TABLE `recruit` (
   KEY `FK_RECRUIT_USERID` (`user_id`),
   CONSTRAINT `FK_RECRUIT_UNITID` FOREIGN KEY (`unit_id`) REFERENCES `recruit_unit` (`unit_id`) ON DELETE CASCADE,
   CONSTRAINT `FK_RECRUIT_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of recruit
--- ----------------------------
-INSERT INTO `recruit` VALUES ('27', '西树泡芙开业大吉，招服务员10名', 'sl4', '10', 'profall', '1', null, '李先生', '13412514543', '0', '服务员', '工作时间:afbsbdzxcxvdsxz送饭的vsdsdf诗圣杜甫斯蒂芬斯蒂芬广东东莞贵妇狗', 'be1,be4,be7,be8', '呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵', '38', '2', '2016-02-06 14:38:25', 'A', '2016-02-06 14:38:25', null, null);
-INSERT INTO `recruit` VALUES ('38', '羊肉馆缺的就是 经理', 'sl4', '1', 'bk', '0', null, '张全蛋', '3838438', '0', '大堂经理', '工作时间:，大堂经理最潇洒，大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒', 'be1,be2,be3,be4', '徐州市沛县龙固时尚街区', '38', '2', '2016-02-06 16:38:34', 'A', '2016-02-06 16:38:34', null, null);
-INSERT INTO `recruit` VALUES ('53', '朱氏土灶台', 'sl2', '2', 'profall', '0', null, '朱正玉', '19873661127', '0', '洗碗工', '工作时间:呵呵额呵呵我试试看，呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看', 'be1,be4,be8', '苏州科技园小吃一条街', '38', '2', '2016-02-06 20:23:12', 'A', '2016-02-10 23:03:08', null, null);
-INSERT INTO `recruit` VALUES ('54', '长城4S店', 'sl4', '3', 'profall', '3', null, '刘金宝', '13322529090', '0', '4S专业维修人员', '工作时间:早上9点-晚上5点工作时间:早上9点-晚上5点工作时间:早上9点-晚上5点工作时间:早上9点-晚上5点工作时间:早上9点-晚上5点工作时间:早上9点-晚上5点工作时间:早上9点-晚上5点工作时间:早上9点-晚上5点', 'be1,be2,be3,be4', '徐州市竹林寺对面，长城4S店', '38', '2', '2016-02-06 21:15:01', 'A', '2017-05-14 20:45:34', null, null);
-INSERT INTO `recruit` VALUES ('56', '重工之路，怎能少了机械师的指点', 'sl5', '3', 'bk', '1', null, '刘经理', '13452328979', '0', '中型机械师', '岗位职责:研究以及实践新时代下重型器械的发展方向，为我公司做强有力的发展导师；\r\n\r\n任职资格:本科及以上学历，有三年以上工作经验；\r\n\r\n工作时间:三班倒', 'be1,be2,be3,be4,be5,be6,be7,be8,be10', '徐州工业集团总部厂房', '39', '3', '2016-02-06 22:52:15', 'A', '2017-05-14 20:45:33', null, null);
-INSERT INTO `recruit` VALUES ('57', '招聘A级摄影师一名', 'sl4', '1', 'profall', '0', null, '吴经理', '15567984543', '1', '摄影室', '岗位职责:国庆将至，本店迎来大批顾客，拍摄写真、全家福等照片，业务较多，特聘摄影师负责部分 工作，包括摄影、场景布置、业务接待；\r\n\r\n任职资格:有两年以上工作经验\r\n\r\n工作时间:早九晚五', 'be1,be6,be7,be10', '徐州古彭大厦A座8楼', '44', '4', '2016-02-09 14:20:52', 'A', '2017-05-14 20:45:40', null, null);
-INSERT INTO `recruit` VALUES ('59', '证券交易所急招网络安全人员', 'sl5', '2', 'bk', '0', null, '王经理', '15569098900', '0', '网络交易安全', '岗位职责: 维护交易所网站信息安全、交易安全，为证券交易避免网络攻击，保证公司信息安全；\r\n任职资格: 有两年以上工作经验；\r\n工作时间: 早九晚五‘；', 'be3,be4,be6,be7,be10', '上海虹桥机场南广场办公楼1002', '34', '1', '2016-02-10 22:13:06', 'X', '2016-02-10 23:03:08', null, null);
-INSERT INTO `recruit` VALUES ('60', '特聘汽车美容师', 'sl4', '5', 'profall', '0', null, '王金山', '89922512/18796553231', '0', '汽车美容师', '岗位职责: 负责返厂汽车的美容保养工作\r\n任职资格: 有一年以上工作经验；\r\n工作时间: 早上8：00-晚上9：00', 'be1,be2,be3,be4,be6,be7', '金山桥一汽大众工作室', '43', '1', '2016-02-10 22:22:57', 'A', '2016-02-10 22:22:57', null, null);
-INSERT INTO `recruit` VALUES ('62', '电力维护人员', 'sl5', '2', 'bk', '2', null, '吴天旺', '89923232/18976882212', '0', '电力维护人员', '岗位职责: 保障电力稳定传输；\r\n任职资格: 有3年以上工作经验；\r\n工作时间: 早九晚五；', null, '华北电力公司', '36', '1', '2016-02-10 22:34:23', 'A', '2016-02-10 23:03:07', null, null);
-INSERT INTO `recruit` VALUES ('65', '证券交易所急招网络安全人员', 'sl6', '123', 'bk', '1', null, '刘一道', '15569098900', '0', '网络交易安全', '岗位职责: 网络交易安全\r\n任职资格: 网络交易安全\r\n工作时间: 早九晚五', null, '上海虹桥机场南广场办公楼1002', '34', '1', '2016-02-10 23:42:08', 'A', '2016-02-11 22:45:50', null, null);
-INSERT INTO `recruit` VALUES ('66', '西树泡芙开业大吉，招服务员10名', 'sl4', '10', 'profall', '0', '2016-02-11 17:15:49', '李先生', '13412514543', '0', '服务员', '工作时间:afbsbdzxcxvdsxz送饭的vsdsdf诗圣杜甫斯蒂芬斯蒂芬广东东莞贵妇狗', 'be1,be4,be7,be8', '呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵', '38', '2', '2016-02-06 14:38:25', 'A', '2016-02-06 14:38:25', '', '');
-INSERT INTO `recruit` VALUES ('67', '羊肉馆缺的就是 经理', 'sl4', '1', 'bk', '0', '2016-02-11 17:15:52', '张全蛋', '3838438', '0', '大堂经理', '工作时间:，大堂经理最潇洒，大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒大堂经理最潇洒', 'be1,be2,be3,be4', '徐州市沛县龙固时尚街区', '38', '2', '2016-02-06 16:38:34', 'A', '2016-02-06 16:38:34', '', '');
-INSERT INTO `recruit` VALUES ('68', '朱氏土灶台', 'sl2', '2', 'profall', '0', '2016-02-11 17:15:55', '朱正玉', '19873661127', '0', '洗碗工', '工作时间:呵呵额呵呵我试试看，呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看呵额呵呵我试试看', 'be1,be4,be8', '苏州科技园小吃一条街', '38', '2', '2016-02-06 20:23:12', 'A', '2017-05-14 20:45:35', '', '');
-INSERT INTO `recruit` VALUES ('69', '聘请秘书一名', 'sl4', '1', 'yjs', '3', null, '刘局长', '89970796', '0', '专职秘书', '岗位职责: 专职秘书专职秘书专职秘书专职秘书专职秘书专职秘书\r\n任职资格: 专职秘书专职秘书专职秘书\r\n工作时间:', 'be3,be4,be5,be6,be7,be8,be10,be9', '徐州市工商管理局', '34', '1', '2016-02-11 22:03:30', 'A', '2016-02-11 22:03:30', null, null);
-INSERT INTO `recruit` VALUES ('70', '照烧鸡排饭厨师', 'sl4', '1', 'bk', '4', null, '董经理', '18796221162', '1', '主厨', '岗位职责: 烧饭\r\n任职资格: 要求两年以上工作经验\r\n工作时间: 早九晚五\r\n岗位职责: 烧饭\r\n任职资格: 要求两年以上工作经验\r\n工作时间: 早九晚五', 'be1,be2,be3', '新世纪大道', '45', '2', '2017-03-28 23:04:02', 'A', '2017-05-14 20:45:37', null, null);
-INSERT INTO `recruit` VALUES ('71', '哈哈以哈哈', 'sl3', '45', 'bk', '0', null, '宿舍的', '1234554657', '0', '搞笑专家', '岗位职责: 但是V的股份你好久没看，里的反对过分和你见面后\r\n任职资格: 是V的股份你好久没看，里的反对过分和你见面后\r\n工作时间: 是V的股份你好久没看，里的反对过分和你见面后', 'be1,be2', '谁的风格回家帮你是的过得更好', '45', '2', '2017-03-30 22:11:46', 'A', '2017-03-30 22:11:46', null, null);
-INSERT INTO `recruit` VALUES ('73', '服务器维护', 'sl4', '1', 'bk', '0', null, '李经理', '17661252354', '0', '运维人员', '岗位职责: 维护服务器\r\n任职资格: 三年工作经验\r\n工作时间: 朝九晚五\r\n岗位职责: 维护服务器\r\n任职资格: 三年工作经验\r\n工作时间: 朝九晚五岗位职责: 维护服务器\r\n任职资格: 三年工作经验\r\n工作时间: 朝九晚五', 'be1,be2', '江苏省徐州沛县', '45', '2', '2017-05-16 22:59:11', 'D', '2017-05-16 22:59:11', null, null);
+) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for recruit_unit
@@ -832,21 +359,7 @@ CREATE TABLE `recruit_unit` (
   PRIMARY KEY (`unit_id`),
   KEY `FK_RECRUIT_UNIT_USERID` (`user_id`),
   CONSTRAINT `FK_RECRUIT_UNIT_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of recruit_unit
--- ----------------------------
-INSERT INTO `recruit_unit` VALUES ('34', '上海虹桥证券交易所', 'cwjrbx', 'gy', 's5', '本公司是上海市证券交易中心，绝大部分的证券交易由本公司审查，同时，我公司肩负实现中国伟大复兴的历史重任；\r\n\r\n本公司本着为人民服务的理念服务大众', 'www.shanghai.zhengquan.com', '1', 'A', '2016-02-05 15:16:14');
-INSERT INTO `recruit_unit` VALUES ('36', '太平洋电力公司', 'txdx', 'gy', 's1', '双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划双方的购房贷款累计开户及规划', '', '1', 'A', '2016-02-05 15:46:06');
-INSERT INTO `recruit_unit` VALUES ('37', '黄焖鸡徐州万达分店', 'fwy', 'sy', 's1', '黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香黄焖鸡，一品香', '', '5', 'A', '2016-02-05 15:52:40');
-INSERT INTO `recruit_unit` VALUES ('38', '西树泡芙', 'fwy', 'sy', 's1', '泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，泡芙还是西树的好，', '', '1', 'A', '2016-02-05 15:56:15');
-INSERT INTO `recruit_unit` VALUES ('39', '徐州重工', 'zgzzy', 'gy', 's4', '机械化进程是推动国家向发达国家发展的动力之一\r\n机械化进程是推动国家向发达国家发展的动力之一机械化进程是推动国家向发达国家发展的动力之一\r\n机械化进程是推动国家向发达国家发展的动力之一机械化进程是推动国家向发达国家发展的动力之一机械化进程是推动国家向发达国家发展的动力之一机械化进程是推动国家向发达国家发展的动力之一', '', '3', 'A', '2016-02-05 15:59:38');
-INSERT INTO `recruit_unit` VALUES ('43', '一汽大众', 'zgzzy', 'ssgs', 's3', '一汽大众值得信赖，    一汽大众值得信赖，    一汽大众值得信赖，    一汽大众值得信赖，    一汽大众值得信赖；\r\n      一汽大众值得信赖，    一汽大众值得信赖，    一汽大众值得信赖，    一汽大众值得信赖，    一汽大众值得信赖，', 'www.yiqidazhong.com', '1', 'A', '2016-02-05 18:58:40');
-INSERT INTO `recruit_unit` VALUES ('44', '薇拉摄影室', 'fwy', 'sy', 's1', '专业拍摄婚纱照，情侣写真；专业拍摄婚纱照，情侣写真；专业拍摄婚纱照，情侣写真；专业拍摄婚纱照，情侣写真；专业拍摄婚纱照，情侣写真；\r\n\r\n专业拍摄婚纱照，情侣写真；专业拍摄婚纱照，情侣写真；专业拍摄婚纱照，情侣写真；专业拍摄婚纱照，情侣写真；专业拍摄婚纱照，情侣写真；', '', '4', 'A', '2016-02-05 19:05:32');
-INSERT INTO `recruit_unit` VALUES ('45', '徐州化工', 'nykchb', 'gy', 's4', '徐州化工徐州化工徐州化工徐州化工徐州化工徐州化工徐州化工徐州化工徐州化工徐州化工徐州化工徐州化工徐州化工徐州化工', '', '2', 'A', '2016-02-11 00:07:51');
-INSERT INTO `recruit_unit` VALUES ('46', '镇江动漫设计工作室', 'hlwjsj', 'sy', 's1', '动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江动漫设计来镇江', '', '125', 'A', '2017-05-03 22:37:13');
-INSERT INTO `recruit_unit` VALUES ('47', '东芝', 'txdx', 'sy', 's3', '东芝公司是一家很强大的互联网公司，东芝公司是一家很强大的互联网公司东芝公司是一家很强大的，互联网公司东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司，东芝公司是一家很强大的互联网公司，东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司，东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司，东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司东芝公司是一家很强大的互联网公司', '', '304', 'A', '2017-05-12 14:26:43');
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for reply
@@ -866,10 +379,6 @@ CREATE TABLE `reply` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of reply
--- ----------------------------
-
--- ----------------------------
 -- Table structure for resume_post
 -- ----------------------------
 DROP TABLE IF EXISTS `resume_post`;
@@ -886,21 +395,6 @@ CREATE TABLE `resume_post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of resume_post
--- ----------------------------
-INSERT INTO `resume_post` VALUES ('54', '3', '2017-05-03 20:00:48', 'A', '2017-05-03 20:00:48');
-INSERT INTO `resume_post` VALUES ('70', '3', '2017-05-03 20:24:12', 'A', '2017-05-03 20:24:12');
-INSERT INTO `resume_post` VALUES ('62', '3', '2017-05-03 20:24:40', 'A', '2017-05-03 20:24:40');
-INSERT INTO `resume_post` VALUES ('69', '4', '2017-05-03 21:50:08', 'A', '2017-05-03 21:50:08');
-INSERT INTO `resume_post` VALUES ('54', '5', '2017-05-04 13:38:29', 'A', '2017-05-04 13:38:29');
-INSERT INTO `resume_post` VALUES ('65', '5', '2017-05-04 13:58:32', 'A', '2017-05-04 13:58:32');
-INSERT INTO `resume_post` VALUES ('70', '5', '2017-05-04 13:59:28', 'A', '2017-05-04 13:59:28');
-INSERT INTO `resume_post` VALUES ('70', '2', '2017-05-16 23:30:00', 'A', '2017-05-16 23:30:00');
-INSERT INTO `resume_post` VALUES ('69', '2', '2017-05-16 23:35:35', 'A', '2017-05-16 23:35:35');
-INSERT INTO `resume_post` VALUES ('54', '2', '2017-05-16 23:57:28', 'A', '2017-05-16 23:57:28');
-INSERT INTO `resume_post` VALUES ('27', '2', '2017-05-17 00:06:52', 'A', '2017-05-17 00:06:52');
-
--- ----------------------------
 -- Table structure for right
 -- ----------------------------
 DROP TABLE IF EXISTS `right`;
@@ -914,149 +408,7 @@ CREATE TABLE `right` (
   `state` char(2) NOT NULL COMMENT '状态',
   `state_time` datetime DEFAULT NULL COMMENT '状态日期',
   PRIMARY KEY (`right_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=139 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of right
--- ----------------------------
-INSERT INTO `right` VALUES ('1', '未命名', '0', '1', '/cm', '0', 'A', '2017-05-14 20:44:33');
-INSERT INTO `right` VALUES ('2', '未命名', '0', '2', '/cm/deleteClass', '0', 'A', '2017-05-14 20:44:33');
-INSERT INTO `right` VALUES ('3', '未命名', '0', '4', '/cm/queryClass', '0', 'A', '2017-05-14 20:44:33');
-INSERT INTO `right` VALUES ('4', '未命名', '0', '8', '/cm/excepClass', '0', 'A', '2017-05-14 20:44:33');
-INSERT INTO `right` VALUES ('5', '未命名', '0', '16', '/cm/recoverClass', '0', 'A', '2017-05-14 20:44:33');
-INSERT INTO `right` VALUES ('6', '未命名', '0', '32', '/cm/removeClass', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('7', '未命名', '0', '64', '/crm', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('8', '未命名', '0', '128', '/dict/getAllDicts', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('9', '未命名', '0', '256', '/dict/updateDict', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('10', '未命名', '0', '512', '/dict/deleteDict', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('11', '未命名', '0', '1024', '/dict/queryDicts', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('12', '未命名', '0', '2048', '/dict/indexDict', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('13', '未命名', '0', '4096', '/dict/addDict', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('14', '未命名', '0', '8192', '/dict/addDictSubmit', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('15', '未命名', '0', '16384', '/dict/updateDictSubmit', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('16', '未命名', '0', '32768', '/dictData/queryDictData', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('17', '未命名', '0', '65536', '/dictData/indexDictData', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('18', '未命名', '0', '131072', '/dictData/addDictData', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('19', '未命名', '0', '262144', '/dictData/addDictDataSubmit', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('20', '未命名', '0', '524288', '/flat/createFlat', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('21', '未命名', '0', '1048576', '/flat/createFlatSubmit', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('22', '未命名', '0', '2097152', '/job/recoverJob', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('23', '未命名', '0', '4194304', '/job/createJob', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('24', '未命名', '0', '8388608', '/job/deleteJob', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('25', '未命名', '0', '16777216', '/job/setTopJob', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('26', '未命名', '0', '33554432', '/job/auditJobs', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('27', '未命名', '0', '67108864', '/job/auditJob', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('28', '未命名', '0', '134217728', '/job/queryJobs', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('29', '未命名', '0', '268435456', '/job/removeJobs', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('30', '未命名', '0', '536870912', '/job/deleteJobs', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('31', '未命名', '0', '1073741824', '/job/cancelTopJob', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('32', '未命名', '0', '2147483648', '/job/removeJob', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('33', '未命名', '0', '4294967296', '/job/recoverJobs', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('34', '未命名', '0', '8589934592', '/job/detailJob', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('35', '未命名', '0', '17179869184', '/job', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('36', '未命名', '0', '34359738368', '/job/createJobSubmit', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('37', '未命名', '0', '68719476736', '/manage', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('38', '未命名', '0', '137438953472', '/error/{errCode}', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('39', '未命名', '0', '274877906944', '/manage/welcome', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('40', '未命名', '0', '549755813888', '/right/queryRights', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('41', '未命名', '0', '1099511627776', '/right/updateRight', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('42', '未命名', '0', '2199023255552', '/right/addRight', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('43', '未命名', '0', '4398046511104', '/right/indexRight', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('44', '未命名', '0', '8796093022208', '/right/scanAddRights', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('45', '未命名', '0', '17592186044416', '/right/updateRightSubmit', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('46', '未命名', '0', '35184372088832', '/class', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('47', '未命名', '0', '70368744177664', '/class/queryClasses', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('48', '未命名', '0', '140737488355328', '/class/outlineClass', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('49', '未命名', '0', '281474976710656', '/classroom/member', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('50', '未命名', '0', '562949953421312', '/classroom/message', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('51', '未命名', '0', '1125899906842624', '/classroom', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('52', '未命名', '0', '2251799813685248', '/classroom/directory', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('53', '未命名', '0', '4503599627370496', '/classroom/info', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('54', '未命名', '0', '9007199254740992', '/classroom/description', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('55', '未命名', '0', '18014398509481984', '/classroom/setDescription', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('56', '未命名', '0', '36028797018963968', '/classroom/album/update', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('57', '未命名', '0', '72057594037927936', '/classroom/album/delete', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('58', '未命名', '0', '144115188075855872', '/classroom/album/image', '0', 'A', '2017-05-14 20:44:34');
-INSERT INTO `right` VALUES ('59', '未命名', '0', '288230376151711744', '/classroom/album', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('60', '未命名', '0', '576460752303423488', '/classroom/album/save', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('61', '未命名', '0', '1152921504606846976', '/classroom/joinClass', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('62', '未命名', '1', '1', '/classroom/album/add', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('63', '未命名', '1', '2', '/classroom/infoSide', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('64', '未命名', '1', '4', '/classroom/album/edit', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('65', '未命名', '1', '8', '/classroom/commentInfo', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('66', '未命名', '1', '16', '/classroom/infoDetail', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('67', '未命名', '1', '32', '/classroom/album/image/upload', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('68', '未命名', '1', '64', '/classroom/album/cover', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('69', '未命名', '1', '128', '/classroom/album/upload', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('70', '未命名', '1', '256', '/classroom/album/image/delete', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('71', '未命名', '1', '512', '/classroom/publishClassInfo', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('72', '未命名', '1', '1024', '/classroom/publishClassMessage', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('73', '未命名', '1', '2048', '/classroom/infoCommentList', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('74', '未命名', '1', '4096', '/forum', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('75', '未命名', '1', '8192', '/post/add', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('76', '未命名', '1', '16384', '/post/save', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('77', '未命名', '1', '32768', '/post/delete', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('78', '未命名', '1', '65536', '/post/comment', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('79', '未命名', '1', '131072', '/post/detail', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('80', '未命名', '1', '262144', '/post/deleteComment', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('81', '未命名', '1', '524288', '/post/commentList', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('82', '未命名', '1', '1048576', '/post/love', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('83', '未命名', '1', '2097152', '/login/val', '1', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('84', '未命名', '1', '4194304', '/login/validate', '1', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('85', '未命名', '1', '8388608', '/login/logout', '1', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('86', '未命名', '1', '16777216', '/login', '1', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('87', '未命名', '1', '33554432', '/index', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('88', '未命名', '1', '67108864', '/download', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('89', '未命名', '1', '134217728', '/my/account', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('90', '未命名', '1', '268435456', '/my/class', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('91', '未命名', '1', '536870912', '/my', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('92', '未命名', '1', '1073741824', '/my/forum', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('93', '未命名', '1', '2147483648', '/my/recruit', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('94', '未命名', '1', '4294967296', '/my/resume', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('95', '未命名', '1', '8589934592', '/my/resume/delete', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('96', '未命名', '1', '17179869184', '/my/resume/update', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('97', '未命名', '1', '34359738368', '/my/resume/detail', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('98', '未命名', '1', '68719476736', '/my/resume/postResume', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('99', '未命名', '1', '137438953472', '/my/resume/edit', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('100', '未命名', '1', '274877906944', '/my/resume/addResume', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('101', '未命名', '1', '549755813888', '/my/resume/addResumeSubmit', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('102', '未命名', '1', '1099511627776', '/my/profile/basic', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('103', '未命名', '1', '2199023255552', '/my/profile/detail', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('104', '未命名', '1', '4398046511104', '/my/profile/portrait', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('105', '未命名', '1', '8796093022208', '/my/profile/job', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('106', '未命名', '1', '17592186044416', '/ta/show', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('107', '未命名', '1', '35184372088832', '/news', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('108', '未命名', '1', '70368744177664', '/org', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('109', '未命名', '1', '140737488355328', '/org/union', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('110', '未命名', '1', '281474976710656', '/org/mass', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('111', '未命名', '1', '562949953421312', '/org/outline', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('112', '未命名', '1', '1125899906842624', '/org/institute', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('113', '未命名', '1', '2251799813685248', '/orgroom/member', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('114', '未命名', '1', '4503599627370496', '/orgroom/message', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('115', '未命名', '1', '9007199254740992', '/orgroom', '0', 'A', '2017-05-14 20:44:35');
-INSERT INTO `right` VALUES ('116', '未命名', '1', '18014398509481984', '/orgroom/directory', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('117', '未命名', '1', '36028797018963968', '/orgroom/info', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('118', '未命名', '1', '72057594037927936', '/orgroom/deleteInfo', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('119', '未命名', '1', '144115188075855872', '/orgroom/album/image', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('120', '未命名', '1', '288230376151711744', '/orgroom/album', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('121', '未命名', '1', '576460752303423488', '/orgroom/loveInfo', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('122', '未命名', '1', '1152921504606846976', '/orgroom/joinOrigin', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('123', '未命名', '2', '1', '/orgroom/infoSide', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('124', '未命名', '2', '2', '/orgroom/commentInfo', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('125', '未命名', '2', '4', '/orgroom/infoDetail', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('126', '未命名', '2', '8', '/orgroom/publishInfo', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('127', '未命名', '2', '16', '/orgroom/infoCommentList', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('128', '未命名', '2', '32', '/orgroom/publishMessage', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('129', '未命名', '2', '64', '/recruit', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('130', '未命名', '2', '128', '/recruit/addRecruit', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('131', '未命名', '2', '256', '/recruit/detailRecruit', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('132', '未命名', '2', '512', '/recruit/addRecruitSubmit', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('133', '未命名', '2', '1024', '/recruit/recruitSuccess', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('134', '未命名', '2', '2048', '/unit/selectUnit', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('135', '未命名', '2', '4096', '/unit/addUnit', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('136', '未命名', '2', '8192', '/unit/addUnitSubmit', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('137', '未命名', '2', '16384', '/service', '0', 'A', '2017-05-14 20:44:36');
-INSERT INTO `right` VALUES ('138', '未命名', '2', '32768', '/service/school', '0', 'A', '2017-05-14 20:44:36');
+) ENGINE=InnoDB AUTO_INCREMENT=168 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for role
@@ -1070,11 +422,7 @@ CREATE TABLE `role` (
   `state` char(2) NOT NULL COMMENT '状态',
   `state_time` datetime DEFAULT NULL COMMENT '状态日期',
   PRIMARY KEY (`role_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of role
--- ----------------------------
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for role_right
@@ -1088,10 +436,6 @@ CREATE TABLE `role_right` (
   CONSTRAINT `FK_ROLE_RIGHT_RIGHTID` FOREIGN KEY (`right_id`) REFERENCES `right` (`right_id`),
   CONSTRAINT `FK_ROLE_RIGHT_ROLEID` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of role_right
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for share
@@ -1109,10 +453,6 @@ CREATE TABLE `share` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of share
--- ----------------------------
-
--- ----------------------------
 -- Table structure for subscription
 -- ----------------------------
 DROP TABLE IF EXISTS `subscription`;
@@ -1128,10 +468,6 @@ CREATE TABLE `subscription` (
   KEY `FK_SUBSCRIPTION_USERID` (`user_id`),
   CONSTRAINT `FK_SUBSCRIPTION_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of subscription
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for user
@@ -1153,222 +489,6 @@ CREATE TABLE `user` (
   KEY `FK_USER_IMAGEID` (`image_id`),
   CONSTRAINT `FK_USER_IMAGEID` FOREIGN KEY (`image_id`) REFERENCES `image` (`image_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=326 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of user
--- ----------------------------
-INSERT INTO `user` VALUES ('1', 'sa', '202CB962AC59075B964B07152D234B70', null, '管理员', '--这人很懒，什么也没留下', '1', '1', 'A', '2017-04-09 15:40:29', '2016-01-02 15:01:42');
-INSERT INTO `user` VALUES ('2', 'black', '25D55AD283AA400AF464C76D713C07AD', '1075512174@qq.com', '布莱克', '这人很懒，什么也没留下', '79', '0', 'A', '2017-04-09 15:40:31', '2016-01-15 22:53:27');
-INSERT INTO `user` VALUES ('3', 'jenny', '202CB962AC59075B964B07152D234B70', null, '珍妮', '这人很懒，什么也没留下', '82', '0', 'A', '2017-04-09 15:40:34', '2016-01-24 13:17:33');
-INSERT INTO `user` VALUES ('4', '20130505238', '25D55AD283AA400AF464C76D713C07AD', null, '董亮亮', '这人很懒，什么也没留下', '81', '0', 'A', '2017-04-09 15:40:38', '2016-02-05 15:09:15');
-INSERT INTO `user` VALUES ('5', '20130505240', '25D55AD283AA400AF464C76D713C07AD', null, '梅朔', '这人很懒，什么也没留下', '1', '0', 'A', '2017-04-09 15:40:40', '2016-02-05 15:38:48');
-INSERT INTO `user` VALUES ('6', '20130505241', '25D55AD283AA400AF464C76D713C07AD', null, '沈亚东', '这人很懒，什么也没留下', '80', '0', 'A', '2016-02-05 17:24:50', '2016-02-05 15:38:48');
-INSERT INTO `user` VALUES ('7', 'blackist', '202CB962AC59075B964B07152D234B70', null, 'Black先生', '这人很懒，什么也没留下', '1', '0', 'A', '2017-04-02 22:35:38', '2017-04-02 22:35:28');
-INSERT INTO `user` VALUES ('8', '20130503202', '25D55AD283AA400AF464C76D713C07AD', null, '颜健', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('9', '20130503203', '25D55AD283AA400AF464C76D713C07AD', null, '张娜', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('10', '20130503204', '25D55AD283AA400AF464C76D713C07AD', null, '杨燕', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('11', '20130503205', '25D55AD283AA400AF464C76D713C07AD', null, '张艳', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('12', '20130503206', '25D55AD283AA400AF464C76D713C07AD', null, '何泽慧', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('13', '20130503207', '25D55AD283AA400AF464C76D713C07AD', null, '祁凯', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('14', '20130503208', '25D55AD283AA400AF464C76D713C07AD', null, '于成东', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('15', '20130503209', '25D55AD283AA400AF464C76D713C07AD', null, '潘峰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('16', '20130503210', '25D55AD283AA400AF464C76D713C07AD', null, '韦杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('17', '20130503212', '25D55AD283AA400AF464C76D713C07AD', null, '范亚雷', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('18', '20130503213', '25D55AD283AA400AF464C76D713C07AD', null, '王杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('19', '20130503214', '25D55AD283AA400AF464C76D713C07AD', null, '杜昊鸿', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('20', '20130503215', '25D55AD283AA400AF464C76D713C07AD', null, '林山河', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('21', '20130503216', '25D55AD283AA400AF464C76D713C07AD', null, '李波', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('22', '20130503217', '25D55AD283AA400AF464C76D713C07AD', null, '颜嘉欣', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('23', '20130503218', '25D55AD283AA400AF464C76D713C07AD', null, '刘跃波', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('24', '20130503220', '25D55AD283AA400AF464C76D713C07AD', null, '肖飞', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('25', '20130503221', '25D55AD283AA400AF464C76D713C07AD', null, '刘强', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('26', '20130503223', '25D55AD283AA400AF464C76D713C07AD', null, '赵东栋', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('27', '20130503225', '25D55AD283AA400AF464C76D713C07AD', null, '郑文传', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('28', '20130503226', '25D55AD283AA400AF464C76D713C07AD', null, '石进远', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('29', '20130503227', '25D55AD283AA400AF464C76D713C07AD', null, '戴永政', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('30', '20130503228', '25D55AD283AA400AF464C76D713C07AD', null, '陈冲', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('31', '20130503229', '25D55AD283AA400AF464C76D713C07AD', null, '左文滔', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('32', '20130503230', '25D55AD283AA400AF464C76D713C07AD', null, '司兴健', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('33', '20130503231', '25D55AD283AA400AF464C76D713C07AD', null, '张泽燚', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('34', '20130503232', '25D55AD283AA400AF464C76D713C07AD', null, '吉波', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:41');
-INSERT INTO `user` VALUES ('35', '20130503233', '25D55AD283AA400AF464C76D713C07AD', null, '王明轩', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('36', '20130503234', '25D55AD283AA400AF464C76D713C07AD', null, '张彪', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('37', '20130503235', '25D55AD283AA400AF464C76D713C07AD', null, '许恒', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('38', '20130503236', '25D55AD283AA400AF464C76D713C07AD', null, '李琪', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('39', '20130503237', '25D55AD283AA400AF464C76D713C07AD', null, '严志麟', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('40', '20130503238', '25D55AD283AA400AF464C76D713C07AD', null, '徐澔', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('41', '20130503239', '25D55AD283AA400AF464C76D713C07AD', null, '沙淘金', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('42', '20130503240', '25D55AD283AA400AF464C76D713C07AD', null, '滕珂', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('43', '20130503241', '25D55AD283AA400AF464C76D713C07AD', null, '计宗佑', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('44', '20130503242', '25D55AD283AA400AF464C76D713C07AD', null, '谢海庆', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('45', '20130503243', '25D55AD283AA400AF464C76D713C07AD', null, '凌立章', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('46', '20130503244', '25D55AD283AA400AF464C76D713C07AD', null, '张加涛', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('47', '20130503245', '25D55AD283AA400AF464C76D713C07AD', null, '张杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('48', '20130503246', '25D55AD283AA400AF464C76D713C07AD', null, '陆亚洲', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('49', '20130503247', '25D55AD283AA400AF464C76D713C07AD', null, '李凌飞', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('50', '20130503248', '25D55AD283AA400AF464C76D713C07AD', null, '周亮亮', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('51', '20130503249', '25D55AD283AA400AF464C76D713C07AD', null, '吴庆业', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('52', '20130503250', '25D55AD283AA400AF464C76D713C07AD', null, '刘明明', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('53', '20130503251', '25D55AD283AA400AF464C76D713C07AD', null, '李帅', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('54', '20130503252', '25D55AD283AA400AF464C76D713C07AD', null, '周东东', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('55', '20130503253', '25D55AD283AA400AF464C76D713C07AD', null, '魏庭胜', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('56', '20130503254', '25D55AD283AA400AF464C76D713C07AD', null, '蔡志鹏', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('57', '20130503255', '25D55AD283AA400AF464C76D713C07AD', null, '吴小康', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('58', '20130503256', '25D55AD283AA400AF464C76D713C07AD', null, '孟永乐', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('59', '20130503257', '25D55AD283AA400AF464C76D713C07AD', null, '田小彤', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('60', '20130503258', '25D55AD283AA400AF464C76D713C07AD', null, '汪保旭', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('61', '20130503259', '25D55AD283AA400AF464C76D713C07AD', null, '臧家宾', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('62', '20130503260', '25D55AD283AA400AF464C76D713C07AD', null, '洪伟韬', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:00:42');
-INSERT INTO `user` VALUES ('118', '20130502201', '25D55AD283AA400AF464C76D713C07AD', null, '宋雪莹', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('119', '20130502202', '25D55AD283AA400AF464C76D713C07AD', null, '刘敏', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('120', '20130502203', '25D55AD283AA400AF464C76D713C07AD', null, '徐香', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('121', '20130502204', '25D55AD283AA400AF464C76D713C07AD', null, '冯敏', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('122', '20130502205', '25D55AD283AA400AF464C76D713C07AD', null, '陈琦', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('123', '20130502206', '25D55AD283AA400AF464C76D713C07AD', null, '倪宇惠', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('124', '20130502207', '25D55AD283AA400AF464C76D713C07AD', null, '沈咪', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('125', '20130502208', '25D55AD283AA400AF464C76D713C07AD', null, '夏杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('126', '20130502209', '25D55AD283AA400AF464C76D713C07AD', null, '张艺馨', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('127', '20130502210', '25D55AD283AA400AF464C76D713C07AD', null, '姜娟', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('128', '20130502211', '25D55AD283AA400AF464C76D713C07AD', null, '崔政霞', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('129', '20130502212', '25D55AD283AA400AF464C76D713C07AD', null, '周梦莹', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('130', '20130502213', '25D55AD283AA400AF464C76D713C07AD', null, '丁甜甜', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('131', '20130502214', '25D55AD283AA400AF464C76D713C07AD', null, '黄虚虚', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('132', '20130502215', '25D55AD283AA400AF464C76D713C07AD', null, '杨孟婧', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('133', '20130502216', '25D55AD283AA400AF464C76D713C07AD', null, '冯曦瑾', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('134', '20130502217', '25D55AD283AA400AF464C76D713C07AD', null, '时贝贝', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('135', '20130502218', '25D55AD283AA400AF464C76D713C07AD', null, '胡璐', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('136', '20130502219', '25D55AD283AA400AF464C76D713C07AD', null, '孟颖', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('137', '20130502220', '25D55AD283AA400AF464C76D713C07AD', null, '钟清华', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('138', '20130502221', '25D55AD283AA400AF464C76D713C07AD', null, '周永鹏', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('139', '20130502222', '25D55AD283AA400AF464C76D713C07AD', null, '彭涛', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('140', '20130502223', '25D55AD283AA400AF464C76D713C07AD', null, '孙俊', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('141', '20130502224', '25D55AD283AA400AF464C76D713C07AD', null, '朱家熠', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('142', '20130502225', '25D55AD283AA400AF464C76D713C07AD', null, '张春昊', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('143', '20130502226', '25D55AD283AA400AF464C76D713C07AD', null, '陈键', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('144', '20130502227', '25D55AD283AA400AF464C76D713C07AD', null, '谈子杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('145', '20130502228', '25D55AD283AA400AF464C76D713C07AD', null, '陆元凯', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('146', '20130502229', '25D55AD283AA400AF464C76D713C07AD', null, '曹彦文', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('147', '20130502231', '25D55AD283AA400AF464C76D713C07AD', null, '钱东培', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('148', '20130502232', '25D55AD283AA400AF464C76D713C07AD', null, '章豪杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('149', '20130502233', '25D55AD283AA400AF464C76D713C07AD', null, '王安户', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('150', '20130502234', '25D55AD283AA400AF464C76D713C07AD', null, '于孝文', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('151', '20130502235', '25D55AD283AA400AF464C76D713C07AD', null, '孔冰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('152', '20130502236', '25D55AD283AA400AF464C76D713C07AD', null, '沈成', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('153', '20130502237', '25D55AD283AA400AF464C76D713C07AD', null, '吴智超', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('154', '20130502238', '25D55AD283AA400AF464C76D713C07AD', null, '王杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('155', '20130502239', '25D55AD283AA400AF464C76D713C07AD', null, '唐旺', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('156', '20130502240', '25D55AD283AA400AF464C76D713C07AD', null, '王项韬', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('157', '20130502241', '25D55AD283AA400AF464C76D713C07AD', null, '毛稳', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('158', '20130502242', '25D55AD283AA400AF464C76D713C07AD', null, '胡大伟', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('159', '20130502243', '25D55AD283AA400AF464C76D713C07AD', null, '张青', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('160', '20130502244', '25D55AD283AA400AF464C76D713C07AD', null, '周仁朋', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('161', '20130502246', '25D55AD283AA400AF464C76D713C07AD', null, '赵玉吉', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('162', '20130502247', '25D55AD283AA400AF464C76D713C07AD', null, '薛凤凯', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('163', '20130502248', '25D55AD283AA400AF464C76D713C07AD', null, '李彬', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('164', '20130502249', '25D55AD283AA400AF464C76D713C07AD', null, '王见远', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('165', '20130502250', '25D55AD283AA400AF464C76D713C07AD', null, '张萌萌', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('166', '20130502251', '25D55AD283AA400AF464C76D713C07AD', null, '周宇超', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('167', '20130502252', '25D55AD283AA400AF464C76D713C07AD', null, '郭啸', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('168', '20130502253', '25D55AD283AA400AF464C76D713C07AD', null, '陈凯顺', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('169', '20130502254', '25D55AD283AA400AF464C76D713C07AD', null, '孟珂', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('170', '20130502255', '25D55AD283AA400AF464C76D713C07AD', null, '廖凯', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('171', '20130502256', '25D55AD283AA400AF464C76D713C07AD', null, '樊佳卫', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('172', '20130502257', '25D55AD283AA400AF464C76D713C07AD', null, '姜鹏程', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('173', '20130502258', '25D55AD283AA400AF464C76D713C07AD', null, '陈中康', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('174', '20130502259', '25D55AD283AA400AF464C76D713C07AD', null, '刘磊', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('175', '20130502260', '25D55AD283AA400AF464C76D713C07AD', null, '李壮', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:04:38');
-INSERT INTO `user` VALUES ('231', '20130505201', '25D55AD283AA400AF464C76D713C07AD', null, '陈傲娟', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('232', '20130505202', '25D55AD283AA400AF464C76D713C07AD', null, '袁路路', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('233', '20130505203', '25D55AD283AA400AF464C76D713C07AD', null, '闫雨', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('234', '20130505204', '25D55AD283AA400AF464C76D713C07AD', null, '赵莉', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('235', '20130505205', '25D55AD283AA400AF464C76D713C07AD', null, '谢佳慧', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('236', '20130505206', '25D55AD283AA400AF464C76D713C07AD', null, '董倩', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('237', '20130505207', '25D55AD283AA400AF464C76D713C07AD', null, '赵缘', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('238', '20130505208', '25D55AD283AA400AF464C76D713C07AD', null, '吴楠', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('239', '20130505209', '25D55AD283AA400AF464C76D713C07AD', null, '张叶', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('240', '20130505210', '25D55AD283AA400AF464C76D713C07AD', null, '薛玉淋', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('241', '20130505211', '25D55AD283AA400AF464C76D713C07AD', null, '周颖', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('242', '20130505212', '25D55AD283AA400AF464C76D713C07AD', null, '侯文静', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('243', '20130505213', '25D55AD283AA400AF464C76D713C07AD', null, '郝天威', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('244', '20130505214', '25D55AD283AA400AF464C76D713C07AD', null, '戴运来', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('245', '20130505215', '25D55AD283AA400AF464C76D713C07AD', null, '赵一沣', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('246', '20130505216', '25D55AD283AA400AF464C76D713C07AD', null, '刘杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('247', '20130505217', '25D55AD283AA400AF464C76D713C07AD', null, '是旸明', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('248', '20130505218', '25D55AD283AA400AF464C76D713C07AD', null, '施圣洁', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('249', '20130505219', '25D55AD283AA400AF464C76D713C07AD', null, '王凯', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('250', '20130505220', '25D55AD283AA400AF464C76D713C07AD', null, '姜可', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('251', '20130505221', '25D55AD283AA400AF464C76D713C07AD', null, '杨健', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('252', '20130505222', '25D55AD283AA400AF464C76D713C07AD', null, '夏辉', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('253', '20130505223', '25D55AD283AA400AF464C76D713C07AD', null, '徐洋洋', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('254', '20130505224', '25D55AD283AA400AF464C76D713C07AD', null, '王维', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('255', '20130505225', '25D55AD283AA400AF464C76D713C07AD', null, '赵江麟', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('256', '20130505226', '25D55AD283AA400AF464C76D713C07AD', null, '吴健', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('257', '20130505227', '25D55AD283AA400AF464C76D713C07AD', null, '吴焰峰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('258', '20130505228', '25D55AD283AA400AF464C76D713C07AD', null, '姜凌峰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('259', '20130505229', '25D55AD283AA400AF464C76D713C07AD', null, '任越', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('260', '20130505230', '25D55AD283AA400AF464C76D713C07AD', null, '顾余祥', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('261', '20130505231', '25D55AD283AA400AF464C76D713C07AD', null, '张兴刚', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('262', '20130505233', '25D55AD283AA400AF464C76D713C07AD', null, '贺一飞', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('263', '20130505234', '25D55AD283AA400AF464C76D713C07AD', null, '徐盼', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('264', '20130505235', '25D55AD283AA400AF464C76D713C07AD', null, '叶浪', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('265', '20130505236', '25D55AD283AA400AF464C76D713C07AD', null, '尤煜明', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('266', '20130505237', '25D55AD283AA400AF464C76D713C07AD', null, '邵熙', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('268', '20130505239', '25D55AD283AA400AF464C76D713C07AD', null, '秦冲', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('271', '20130505242', '25D55AD283AA400AF464C76D713C07AD', null, '姜俊杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('272', '20130505243', '25D55AD283AA400AF464C76D713C07AD', null, '顾朋朋', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('273', '20130505244', '25D55AD283AA400AF464C76D713C07AD', null, '陈天瑶', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('274', '20130505246', '25D55AD283AA400AF464C76D713C07AD', null, '沈东扬', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('275', '20130505247', '25D55AD283AA400AF464C76D713C07AD', null, '陈超', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('276', '20130505249', '25D55AD283AA400AF464C76D713C07AD', null, '时波', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-28 14:14:03');
-INSERT INTO `user` VALUES ('277', '20130505101', '25D55AD283AA400AF464C76D713C07AD', null, '杨诚', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('278', '20130505102', '25D55AD283AA400AF464C76D713C07AD', null, '潘佳玲', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('279', '20130505103', '25D55AD283AA400AF464C76D713C07AD', null, '钱冬芳', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('280', '20130505104', '25D55AD283AA400AF464C76D713C07AD', null, '周洁', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('281', '20130505105', '25D55AD283AA400AF464C76D713C07AD', null, '徐洁', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('282', '20130505106', '25D55AD283AA400AF464C76D713C07AD', null, '花梦晴', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('283', '20130505107', '25D55AD283AA400AF464C76D713C07AD', null, '李倩倩', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('284', '20130505108', '25D55AD283AA400AF464C76D713C07AD', null, '张叶强', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('285', '20130505109', '25D55AD283AA400AF464C76D713C07AD', null, '许雪', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('286', '20130505110', '25D55AD283AA400AF464C76D713C07AD', null, '徐瑶', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('287', '20130505111', '25D55AD283AA400AF464C76D713C07AD', null, '李桂馨', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('288', '20130505112', '25D55AD283AA400AF464C76D713C07AD', null, '田威威', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('289', '20130505113', '25D55AD283AA400AF464C76D713C07AD', null, '张金闯', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('290', '20130505114', '25D55AD283AA400AF464C76D713C07AD', null, '郭泽权', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('291', '20130505115', '25D55AD283AA400AF464C76D713C07AD', null, '高慎佳', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('292', '20130505116', '25D55AD283AA400AF464C76D713C07AD', null, '陈路路', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('293', '20130505117', '25D55AD283AA400AF464C76D713C07AD', null, '郭旭', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('294', '20130505118', '25D55AD283AA400AF464C76D713C07AD', null, '董自信', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('295', '20130505119', '25D55AD283AA400AF464C76D713C07AD', null, '陈维炜', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('296', '20130505120', '25D55AD283AA400AF464C76D713C07AD', null, '魏星亮', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('297', '20130505121', '25D55AD283AA400AF464C76D713C07AD', null, '陈万生', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('298', '20130505122', '25D55AD283AA400AF464C76D713C07AD', null, '孟晨宇', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('299', '20130505123', '25D55AD283AA400AF464C76D713C07AD', null, '邢俊杰', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('300', '20130505124', '25D55AD283AA400AF464C76D713C07AD', null, '刘仁春', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('301', '20130505125', '25D55AD283AA400AF464C76D713C07AD', null, '蔡志丹', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('302', '20130505126', '25D55AD283AA400AF464C76D713C07AD', null, '郝志远', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('303', '20130505127', '25D55AD283AA400AF464C76D713C07AD', null, '宋文成', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('304', '20130505128', '25D55AD283AA400AF464C76D713C07AD', null, '陈雷雷', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('305', '20130505129', '25D55AD283AA400AF464C76D713C07AD', null, '汪龙波', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('306', '20130505130', '25D55AD283AA400AF464C76D713C07AD', null, '李溪海', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('307', '20130505131', '25D55AD283AA400AF464C76D713C07AD', null, '曹硕', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('308', '20130505132', '25D55AD283AA400AF464C76D713C07AD', null, '周文阳', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('309', '20130505133', '25D55AD283AA400AF464C76D713C07AD', null, '刘嘉', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('310', '20130505134', '25D55AD283AA400AF464C76D713C07AD', null, '王生辉', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('311', '20130505135', '25D55AD283AA400AF464C76D713C07AD', null, '卢嘉贵', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('312', '20130505136', '25D55AD283AA400AF464C76D713C07AD', null, '周文利', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('313', '20130505137', '25D55AD283AA400AF464C76D713C07AD', null, '倪钧', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('314', '20130505138', '25D55AD283AA400AF464C76D713C07AD', null, '周尚', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('315', '20130505139', '25D55AD283AA400AF464C76D713C07AD', null, '杜聪', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('316', '20130505140', '25D55AD283AA400AF464C76D713C07AD', null, '徐德立', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('317', '20130505141', '25D55AD283AA400AF464C76D713C07AD', null, '史锋', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('318', '20130505142', '25D55AD283AA400AF464C76D713C07AD', null, '王鸣一', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('319', '20130505143', '25D55AD283AA400AF464C76D713C07AD', null, '张仁伟', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('320', '20130505144', '25D55AD283AA400AF464C76D713C07AD', null, '姚焱舒', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('321', '20130505145', '25D55AD283AA400AF464C76D713C07AD', null, '黄河', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('322', '20130505146', '25D55AD283AA400AF464C76D713C07AD', null, '尹轩宇', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('323', '20130505147', '25D55AD283AA400AF464C76D713C07AD', null, '管庆刚', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('324', '20130505148', '25D55AD283AA400AF464C76D713C07AD', null, '贺山燕', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
-INSERT INTO `user` VALUES ('325', '20130505149', '25D55AD283AA400AF464C76D713C07AD', null, '梁尚', '--这个人很懒，什么也没留下', '1', '0', 'A', null, '2017-04-29 12:18:17');
 
 -- ----------------------------
 -- Table structure for user_info
@@ -1396,13 +516,6 @@ CREATE TABLE `user_info` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of user_info
--- ----------------------------
-INSERT INTO `user_info` VALUES ('1', '1', '22', '2016-02-19 08:51:31', '18796221162', '1075512174@qq.com', '1075512174', '家里有小杰', '董学长', '徐州市沛县龙固镇龙东村', '4', 'A', '2016-02-19 08:52:56', null, null);
-INSERT INTO `user_info` VALUES ('2', '1', '20', null, '15162044824', '3838438@190.com', '38384382', '香蕉人', '香蕉人', '江苏省南通市神鬼村', '2', 'A', '2016-02-27 20:19:13', null, null);
-INSERT INTO `user_info` VALUES ('3', '1', '23', '2017-04-02 22:40:30', '18796257336', 'blackist@163.com', '1075512174', 'BIG BANG', 'blackbool', '浙江杭州下沙高教园区', '5', 'A', '2017-04-02 22:41:48', null, null);
-
--- ----------------------------
 -- Table structure for user_job
 -- ----------------------------
 DROP TABLE IF EXISTS `user_job`;
@@ -1425,12 +538,6 @@ CREATE TABLE `user_job` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of user_job
--- ----------------------------
-INSERT INTO `user_job` VALUES ('1', 'HTML美工', '凌志公司', null, null, '2016.10 - 至今', null, '0', '2017-05-16 08:11:07', '2', 'A', '2017-05-16 08:11:57');
-INSERT INTO `user_job` VALUES ('2', '服务器维护', '东软南京分公司', null, null, '2015.10 - 2016.10', null, '0', '2017-05-16 08:17:39', '2', 'A', '2017-05-16 08:17:43');
-
--- ----------------------------
 -- Table structure for user_origin
 -- ----------------------------
 DROP TABLE IF EXISTS `user_origin`;
@@ -1445,49 +552,6 @@ CREATE TABLE `user_origin` (
   CONSTRAINT `FK_USER_ORIGIN_ORIGINID` FOREIGN KEY (`origin_id`) REFERENCES `origin` (`origin_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_USER_ORIGIN_USERID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of user_origin
--- ----------------------------
-INSERT INTO `user_origin` VALUES ('4', '1', '2016-02-18 22:51:36', 'A', '2016-02-18 22:51:45');
-INSERT INTO `user_origin` VALUES ('2', '1', '2016-03-01 22:22:20', 'A', '2016-03-01 22:22:20');
-INSERT INTO `user_origin` VALUES ('2', '3', '2017-02-27 23:17:52', 'A', '2017-02-27 23:17:52');
-INSERT INTO `user_origin` VALUES ('2', '2', '2017-02-28 00:30:45', 'A', '2017-02-28 00:30:45');
-INSERT INTO `user_origin` VALUES ('2', '4', '2017-03-28 15:38:44', 'A', '2017-03-28 15:38:44');
-INSERT INTO `user_origin` VALUES ('2', '8', '2017-04-17 15:47:57', 'A', '2017-04-17 15:48:02');
-INSERT INTO `user_origin` VALUES ('2', '9', '2017-04-17 15:48:24', 'A', '2017-04-17 15:48:31');
-INSERT INTO `user_origin` VALUES ('2', '10', '2017-04-17 15:48:49', 'A', '2017-04-17 15:48:51');
-INSERT INTO `user_origin` VALUES ('2', '11', '2017-04-17 15:49:06', 'A', '2017-04-17 15:49:10');
-INSERT INTO `user_origin` VALUES ('3', '8', '2017-04-17 15:49:38', 'A', '2017-04-17 15:49:46');
-INSERT INTO `user_origin` VALUES ('4', '8', '2017-04-17 15:50:33', 'A', '2017-04-17 15:50:38');
-INSERT INTO `user_origin` VALUES ('5', '6', '2017-04-17 15:51:33', 'A', '2017-04-17 15:51:39');
-INSERT INTO `user_origin` VALUES ('6', '7', '2017-04-17 15:51:49', 'A', '2017-04-17 15:51:55');
-INSERT INTO `user_origin` VALUES ('7', '12', '2017-04-17 15:52:10', 'A', '2017-04-17 15:52:15');
-INSERT INTO `user_origin` VALUES ('3', '13', '2017-04-17 15:52:26', 'A', '2017-04-17 15:52:31');
-INSERT INTO `user_origin` VALUES ('2', '7', '2017-04-18 21:17:50', 'A', '2017-04-18 21:17:50');
-INSERT INTO `user_origin` VALUES ('4', '4', '2017-04-25 16:53:30', 'A', '2017-04-25 16:53:30');
-INSERT INTO `user_origin` VALUES ('5', '3', '2017-04-25 17:24:55', 'A', '2017-04-25 17:24:55');
-INSERT INTO `user_origin` VALUES ('4', '3', '2017-04-28 13:25:56', 'A', '2017-04-28 13:25:56');
-INSERT INTO `user_origin` VALUES ('262', '2', '2017-04-28 14:15:31', 'A', '2017-04-28 14:15:31');
-INSERT INTO `user_origin` VALUES ('122', '7', '2017-04-28 22:16:14', 'A', '2017-04-28 22:16:14');
-INSERT INTO `user_origin` VALUES ('6', '8', '2017-04-29 12:19:59', 'A', '2017-04-29 12:19:59');
-INSERT INTO `user_origin` VALUES ('119', '8', '2017-04-29 14:33:42', 'A', '2017-04-29 14:33:42');
-INSERT INTO `user_origin` VALUES ('118', '8', '2017-04-29 17:10:11', 'A', '2017-04-29 17:10:11');
-INSERT INTO `user_origin` VALUES ('122', '2', '2017-05-03 20:26:36', 'A', '2017-05-03 20:26:36');
-INSERT INTO `user_origin` VALUES ('122', '12', '2017-05-03 21:04:18', 'A', '2017-05-03 21:04:18');
-INSERT INTO `user_origin` VALUES ('122', '4', '2017-05-03 21:19:57', 'A', '2017-05-03 21:19:57');
-INSERT INTO `user_origin` VALUES ('5', '8', '2017-05-03 21:37:24', 'A', '2017-05-03 21:37:24');
-INSERT INTO `user_origin` VALUES ('125', '8', '2017-05-03 22:40:31', 'A', '2017-05-03 22:40:31');
-INSERT INTO `user_origin` VALUES ('5', '14', '2017-05-03 23:54:42', 'A', '2017-05-03 23:54:42');
-INSERT INTO `user_origin` VALUES ('5', '4', '2017-05-05 13:31:19', 'A', '2017-05-05 13:31:19');
-INSERT INTO `user_origin` VALUES ('5', '2', '2017-05-05 13:31:56', 'A', '2017-05-05 13:31:56');
-INSERT INTO `user_origin` VALUES ('2', '14', '2017-05-06 10:35:53', 'A', '2017-05-06 10:35:53');
-INSERT INTO `user_origin` VALUES ('5', '13', '2017-05-11 20:03:42', 'A', '2017-05-11 20:03:42');
-INSERT INTO `user_origin` VALUES ('5', '7', '2017-05-11 20:36:13', 'A', '2017-05-11 20:36:13');
-INSERT INTO `user_origin` VALUES ('304', '14', '2017-05-11 22:19:44', 'A', '2017-05-11 22:19:44');
-INSERT INTO `user_origin` VALUES ('4', '14', '2017-05-17 10:07:52', 'A', '2017-05-17 10:07:52');
-INSERT INTO `user_origin` VALUES ('3', '14', '2017-05-17 10:09:21', 'A', '2017-05-17 10:09:21');
-INSERT INTO `user_origin` VALUES ('6', '3', '2017-05-17 12:37:27', 'A', '2017-05-17 12:37:27');
 
 -- ----------------------------
 -- Table structure for user_resume
@@ -1512,16 +576,7 @@ CREATE TABLE `user_resume` (
   PRIMARY KEY (`resume_id`),
   KEY `FK_USER_RESUME` (`user_id`),
   CONSTRAINT `FK_USER_RESUME` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of user_resume
--- ----------------------------
-INSERT INTO `user_resume` VALUES ('1', '寻觅 程序员的工作', 'HEHE', 'sl5', 'Mr.Black', '1', '徐州沛县龙固', '18796221162', '我是一个牛逼的人', null, '2', 'X', '2016-02-07 23:11:49', null, null);
-INSERT INTO `user_resume` VALUES ('2', '找一份程序员的工作，前端', 'IT，WEB前端，HTML', 'sl6', '梅朔', '1', '常州市北区', '15665167096', '我是一个小太阳，浑身充满正能量', null, '2', 'A', '2017-04-01 23:53:06', null, null);
-INSERT INTO `user_resume` VALUES ('3', '打字员', '文职', 'sl3', '陈琦', '0', '江苏', '101010101010', '时代风格呵呵听歌是的vc发V点都不个非官方你滚蛋 巍峨方便 VV额去的V', null, '122', 'A', '2017-05-03 20:00:28', null, null);
-INSERT INTO `user_resume` VALUES ('4', '动漫原型设计', '美工', 'sl5', '夏杰', '0', '徐州', '18796257336', '美女一枚', null, '125', 'A', '2017-05-03 21:49:27', null, null);
-INSERT INTO `user_resume` VALUES ('5', '前端工程师', '美工', 'sl4', '梅朔', '1', '常州市北区', '15665167059', '我是一个乐观的人', null, '5', 'A', '2017-05-04 13:38:10', null, null);
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for user_role
@@ -1536,7 +591,3 @@ CREATE TABLE `user_role` (
   CONSTRAINT `FK_ROLE_ID` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`),
   CONSTRAINT `FK_USER_ID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of user_role
--- ----------------------------
