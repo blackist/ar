@@ -1,8 +1,11 @@
 package com.xzit.ar.manage.service.origin.impl;
 
 import com.xzit.ar.common.exception.ServiceException;
+import com.xzit.ar.common.mapper.origin.GradeMapper;
 import com.xzit.ar.common.mapper.origin.OriginMapper;
 import com.xzit.ar.common.page.Page;
+import com.xzit.ar.common.po.origin.Origin;
+import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.manage.service.origin.OriginService;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +25,9 @@ public class OriginServiceImpl implements OriginService {
     @Resource
     private OriginMapper originMapper;
 
+    @Resource
+    private GradeMapper gradeMapper;
+
     /**
      * TODO 条件查询组织
      *
@@ -36,5 +42,48 @@ public class OriginServiceImpl implements OriginService {
         } catch (Exception e) {
             throw new ServiceException("查询组织信息时发生异常！");
         }
+    }
+
+    /**
+     * TODO 新建组织
+     *
+     * @param origin
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public Integer saveOrigin(Origin origin) throws ServiceException {
+        try {
+            // 参数校验
+            if (CommonUtil.isNotEmpty(origin.getMgrId())) {
+                originMapper.save(origin);
+                // 若新增组织为班级，则年级的班级数加1
+                if (origin.getOriginType().trim().equals("C") && CommonUtil.isNotEmpty(origin.getOriginGrade())) {
+                    return gradeMapper.increaseClassNum(origin.getOriginGrade());
+                }
+            }
+        } catch (Exception e) {
+            throw new ServiceException("新建时发生异常！");
+        }
+        return 0;
+    }
+
+    /**
+     * TODO 更新组织信息
+     *
+     * @param origin
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public Integer updateOrigin(Origin origin) throws ServiceException {
+        try {
+            if (CommonUtil.isNotEmpty(origin.getOriginId())) {
+                return originMapper.update(origin);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("更新信息时发生异常！");
+        }
+        return 0;
     }
 }

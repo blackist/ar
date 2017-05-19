@@ -12,14 +12,9 @@
 <div class="am-g">
     <div class="am-u-md-9 am-cf">
         <div class="am-btn-group am-btn-group-xs">
-            <a class="am-btn am-btn-default" href="info/add.action">
-                <span class="am-icon-plus"></span> 发布消息
+            <a class="am-btn am-btn-default" href="origin/add.action">
+                <span class="am-icon-plus"></span> 创建组织
             </a>
-            <c:if test="${state=='D'}">
-                <button class="am-btn am-btn-default" type="button" onclick="auditInfos()">
-                    <span class="am-icon-archive"></span> 批量审核
-                </button>
-            </c:if>
             <c:if test="${state!='X'}">
                 <button class="am-btn am-btn-default" type="button"
                         onclick="removeInfos()">
@@ -42,7 +37,6 @@
             <select id="state" class="dll-query">
                 <option value="" name="state" <c:if test="${state==''}">selected</c:if>>全部</option>
                 <option value="A" name="state" <c:if test="${state=='A'}">selected</c:if>>正常</option>
-                <option value="D" name="state" <c:if test="${state=='D'}">selected</c:if>>未审核</option>
                 <option value="X" name="state" <c:if test="${state=='X'}">selected</c:if>>已删除</option>
             </select>
             &nbsp;&nbsp;&nbsp;&nbsp;年级：

@@ -4,6 +4,7 @@ import com.xzit.ar.common.base.BaseController;
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.init.context.ARContext;
 import com.xzit.ar.common.page.Page;
+import com.xzit.ar.common.po.origin.Origin;
 import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.manage.service.origin.OriginService;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -76,5 +78,62 @@ public class OriginController extends BaseController {
         model.addAttribute("state", state);
 
         return "origin/origin-query";
+    }
+
+    /**
+     * TODO 加载新建组织页面
+     *
+     * @param model
+     * @return
+     */
+    @RequestMapping("/add")
+    public String add(Model model) {
+        // 数据返回
+        model.addAttribute("types", ARContext.originType);
+        model.addAttribute("grades", ARContext.originGrade);
+
+        return "origin/origin-add";
+    }
+
+    /**
+     * TODO 保存组织信息
+     *
+     * @param origin
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/save")
+    public String save(Origin origin) throws ServiceException {
+        // 参数校验
+        if (origin != null && CommonUtil.isNotEmpty(origin.getOriginName())
+                && CommonUtil.isNotEmpty(origin.getOriginType())
+                && CommonUtil.isNotEmpty(origin.getOriginGrade())) {
+            // 设置关键参数
+            origin.setMgrId(getCurrentUserId());
+            origin.setMembers(0);
+            origin.setCreateTime(new Date());
+            origin.setState("A");
+            origin.setStateTime(new Date());
+
+            originService.saveOrigin(origin);
+        }
+
+        return "redirect:/origin.action";
+    }
+
+    /**
+     * TODO 更新组织信息
+     * @param origin
+     * @return
+     * @throws ServiceException
+     */
+    @RequestMapping("/update")
+    public String update(Origin origin) throws ServiceException {
+        // 关键参数校验
+        if (origin != null && CommonUtil.isNotEmpty(origin.getOriginId())) {
+            originService.updateOrigin(origin);
+        }
+
+        return "forward:queryOrigin.action";
     }
 }
