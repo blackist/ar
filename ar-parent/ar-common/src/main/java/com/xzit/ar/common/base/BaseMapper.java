@@ -41,7 +41,7 @@ public interface BaseMapper {
 	/**
 	 * 更新实体
 	 */
-	int update(BaseEntity entity) throws Exception;
+	int update(BaseEntity entity)  ;
 	
 	/**
 	 * 更新实体状态

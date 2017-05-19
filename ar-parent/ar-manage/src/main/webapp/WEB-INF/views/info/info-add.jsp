@@ -81,8 +81,14 @@
                                 <span class="error_span"> * </span>置顶
                             </div>
                             <div class="am-u-sm-4 am-u-end">
-                                <input type="radio" name="isTop" value="1">是
-                                <input type="radio" name="isTop" value="0" checked="checked">否
+                                <div class="am-btn-group" data-am-button="">
+                                    <label class="am-btn am-btn-default am-btn-xs">
+                                        <input type="radio" name="isTop" value="1"> 是
+                                    </label>
+                                    <label class="am-btn am-btn-default am-btn-xs am-active">
+                                        <input type="radio" name="isTop" value="0" checked="checked">否
+                                    </label>
+                                </div>
                             </div>
                         </div>
 

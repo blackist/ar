@@ -93,7 +93,7 @@
                     <tr>
                         <td><input type="checkbox" value="${origin.originId}"/></td>
                         <td>
-                            <a href="job/detailJob.action?recruitId=${origin.originId}"
+                            <a href="origin/home.action?originId=${origin.originId}"
                                target="blank">${origin.originName}</a>
                         </td>
                         <td><ar:dictdata dictdata="${origin.originType}" dict="ot"></ar:dictdata></td>

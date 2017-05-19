@@ -3,6 +3,7 @@ package com.xzit.ar.manage.service.origin;
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.origin.Origin;
+import com.xzit.ar.common.po.user.User;
 
 import java.util.List;
 import java.util.Map;
@@ -38,4 +39,20 @@ public interface OriginService {
      * @throws ServiceException
      */
     Integer updateOrigin(Origin origin) throws ServiceException;
+
+    /**
+     * TODO 通过 originId 获取origin信息
+     * @param originId
+     * @return
+     * @throws ServiceException
+     */
+    Map<String, Object> getOriginById(Integer originId) throws ServiceException;
+
+    /**
+     * TODO 获取组织成员列表
+     * @param originId
+     * @return
+     * @throws ServiceException
+     */
+    List<Map<String, Object>> getOriginMembers(Page<Map<String, Object>> page, Integer originId) throws ServiceException;
 }

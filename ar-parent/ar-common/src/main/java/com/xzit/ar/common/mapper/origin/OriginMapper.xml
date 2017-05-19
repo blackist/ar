@@ -29,6 +29,35 @@
         where origin_id = #{originId,jdbcType=INTEGER}
     </select>
 
+    <!--按id查询组织详情-->
+    <select id="getOriginById" resultType="map" parameterType="java.lang.Integer">
+        SELECT
+        o.origin_id originId,
+        o.origin_name originName,
+        o.origin_type originType,
+        o.origin_grade originGrade,
+        o.members members,
+        o.origin_desc originDesc,
+		o.create_time createTime,
+		o.mgr_id mgrId,
+		u.true_name mgrName,
+		u.introduce mgrIntroduce,
+		img.image_path mgrPortrait,
+		o.state state,
+		o.state_time stateTime
+
+        FROM
+        origin o,
+        `user` u,
+        image img
+
+        WHERE
+        o.mgr_id=u.user_id
+        AND u.image_id=img.image_id
+        AND origin_id = #{originId,jdbcType=INTEGER}
+
+    </select>
+
     <!--按组织类型查询组织列表-->
     <select id="loadOriginByOriginType" resultType="map">
 		SELECT origin_id originId, origin_name originName, members members, state_time stateTime
@@ -69,7 +98,8 @@
 		SELECT
 			u.user_id userId,
 			u.true_name trueName,
-			img.image_path portrait
+			img.image_path portrait,
+			uo.state state
 		FROM
 			`user` u,
 			user_origin uo,
@@ -194,7 +224,7 @@
             <if test="originDesc != null">origin_desc = #{originDesc,jdbcType=LONGVARCHAR},</if>
             <if test="members != null">members = #{members,jdbcType=INTEGER},</if>
             <if test="createTime != null">create_time = #{createTime,jdbcType=TIMESTAMP},</if>
-            <if test="mgrId != null">mgr_id = #{creatorId,jdbcType=INTEGER},</if>
+            <if test="mgrId != null">mgr_id = #{mgrId,jdbcType=INTEGER},</if>
             <if test="state != null">state = #{state,jdbcType=CHAR},</if>
             <if test="stateTime != null">state_time = #{stateTime,jdbcType=TIMESTAMP},</if>
             <if test="exp1 != null">exp1 = #{exp1,jdbcType=VARCHAR},</if>

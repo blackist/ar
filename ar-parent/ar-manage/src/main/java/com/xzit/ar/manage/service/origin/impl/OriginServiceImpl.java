@@ -5,6 +5,7 @@ import com.xzit.ar.common.mapper.origin.GradeMapper;
 import com.xzit.ar.common.mapper.origin.OriginMapper;
 import com.xzit.ar.common.page.Page;
 import com.xzit.ar.common.po.origin.Origin;
+import com.xzit.ar.common.po.user.User;
 import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.manage.service.origin.OriginService;
 import org.springframework.stereotype.Service;
@@ -77,13 +78,51 @@ public class OriginServiceImpl implements OriginService {
      */
     @Override
     public Integer updateOrigin(Origin origin) throws ServiceException {
-        try {
+//        try {
             if (CommonUtil.isNotEmpty(origin.getOriginId())) {
                 return originMapper.update(origin);
             }
-        } catch (Exception e) {
-            throw new ServiceException("更新信息时发生异常！");
-        }
+//        } catch (Exception e) {
+//            throw new ServiceException("更新信息时发生异常！");
+//        }
         return 0;
+    }
+
+    /**
+     * TODO 通过 originId 获取origin信息
+     *
+     * @param originId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public Map<String, Object> getOriginById(Integer originId) throws ServiceException {
+        try {
+            if (CommonUtil.isNotEmpty(originId)) {
+                return originMapper.getOriginById(originId);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("查询信息时发生异常");
+        }
+        return null;
+    }
+
+    /**
+     * TODO 获取组织成员列表
+     *
+     * @param originId
+     * @return
+     * @throws ServiceException
+     */
+    @Override
+    public List<Map<String, Object>> getOriginMembers(Page<Map<String, Object>> page, Integer originId) throws ServiceException {
+        try {
+            if (CommonUtil.isNotEmpty(originId)) {
+                return originMapper.getOriginMember(page, originId);
+            }
+        } catch (Exception e) {
+            throw new ServiceException("查询成员信息时发生异常！");
+        }
+        return null;
     }
 }

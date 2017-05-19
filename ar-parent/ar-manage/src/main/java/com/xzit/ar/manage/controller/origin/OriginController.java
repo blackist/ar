@@ -10,6 +10,7 @@ import com.xzit.ar.manage.service.origin.OriginService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -134,6 +135,38 @@ public class OriginController extends BaseController {
             originService.updateOrigin(origin);
         }
 
-        return "forward:queryOrigin.action";
+        return "redirect:/origin.action";
+    }
+
+    /**
+     * TODO 查询组织详情
+     * @param model
+     * @param originId
+     * @return
+     */
+    @RequestMapping("/home")
+    public String detail(Model model, @RequestParam("originId") Integer originId) throws ServiceException {
+        // 查询班级信息
+        // 信息返回
+        model.addAttribute("origin", originService.getOriginById(originId));
+        model.addAttribute("grades", ARContext.originGrade);
+        model.addAttribute("types", ARContext.originType);
+
+        return "origin/origin-home";
+    }
+
+    @RequestMapping("/member")
+    public String member(Model model, @RequestParam("originId") Integer originId) throws ServiceException {
+        // 参数校验
+        if (CommonUtil.isNotEmpty(originId)){
+            Page<Map<String, Object>> page = new Page<>(getPageIndex(), getPageSize());
+            // 查询成员
+            originService.getOriginMembers(page, originId);
+            // 数据返回
+            model.addAttribute("page", page);
+        }
+        model.addAttribute("origin", originService.getOriginById(originId));
+
+        return "origin/origin-home-member";
     }
 }
