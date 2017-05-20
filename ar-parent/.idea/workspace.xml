@@ -9,30 +9,7 @@
     <bookmark url="file://$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-detail.jsp" line="127" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef8fa3f8-c720-4ed8-b972-4b11a28ed58d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/css/bootstrap-datetimepicker.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/js/bootstrap-datetimepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/js/bootstrap-datetimepicker.zh-CN.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ar-doc/毕设文档/答辩评定表.doc" afterPath="$PROJECT_DIR$/../ar-doc/毕设文档/答辩评定表.doc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/user/UserInfoMapper.xml" afterPath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/mapper/user/UserInfoMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/po/user/UserInfo.java" afterPath="$PROJECT_DIR$/ar-common/src/main/java/com/xzit/ar/common/po/user/UserInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-manage/src/main/java/com/xzit/ar/manage/controller/origin/OriginController.java" afterPath="$PROJECT_DIR$/ar-manage/src/main/java/com/xzit/ar/manage/controller/origin/OriginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-manage/src/main/webapp/WEB-INF/views/global/sidebar.jsp" afterPath="$PROJECT_DIR$/ar-manage/src/main/webapp/WEB-INF/views/global/sidebar.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-manage/src/main/webapp/WEB-INF/views/origin/origin-add.jsp" afterPath="$PROJECT_DIR$/ar-manage/src/main/webapp/WEB-INF/views/origin/origin-add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-manage/src/main/webapp/assets/script/origin/origin-add.js" afterPath="$PROJECT_DIR$/ar-manage/src/main/webapp/assets/script/origin/origin-add.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/my/ProfileController.java" afterPath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/my/ProfileController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/recruit/RecruitController.java" afterPath="$PROJECT_DIR$/ar-portal/src/main/java/com/xzit/ar/portal/controller/recruit/RecruitController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-info.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/class/classroom/classroom-info.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/my/profile/profile-basic.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/my/profile/profile-basic.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/portal-common/footer.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/portal-common/footer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/portal-common/portal-css.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/portal-common/portal-css.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/portal-main/index.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/portal-main/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-detail.jsp" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/WEB-INF/views/recruit/recruit-detail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/my/forum/forum-index.js" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/my/forum/forum-index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/my/my-index.js" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/my/my-index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/my/profile/profile-basic.js" afterPath="$PROJECT_DIR$/ar-portal/src/main/webapp/assets/script/my/profile/profile-basic.js" />
-    </list>
+    <list default="true" id="ef8fa3f8-c720-4ed8-b972-4b11a28ed58d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/ar-common/target/" />
     <ignored path="$PROJECT_DIR$/ar-portal/target/" />
@@ -1586,7 +1563,7 @@
       <workItem from="1495065578109" duration="25951000" />
       <workItem from="1495154935461" duration="25985000" />
       <workItem from="1495196157506" duration="17123000" />
-      <workItem from="1495243304576" duration="18112000" />
+      <workItem from="1495243304576" duration="19308000" />
     </task>
     <servers />
   </component>
@@ -1623,7 +1600,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282104000" />
+    <option name="totallyTimeSpent" value="283300000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1636,7 +1613,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1650,7 +1626,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.5212963" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1" y="103" width="1913" height="934" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.5212963" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1" y="103" width="1913" height="934" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
