@@ -31,6 +31,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -72,10 +74,22 @@ public class ProfileController extends BaseController {
      * @throws ServiceException
      */
     @RequestMapping("/basic/update")
-    public String updateBasic(UserInfo userInfo) throws ServiceException {
-        System.out.println(userInfo.getWechat());
-        // 设置用户id
+    public String updateBasic(UserInfo userInfo, String birthdayString) throws ServiceException {
+        // 日期校验
+        if (CommonUtil.isNotEmpty(birthdayString)) {
+            try {
+                // 设置生日参数
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                Date birthday = simpleDateFormat.parse(birthdayString);
+                userInfo.setBirthday(birthday);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        // 设置参数
         userInfo.setUserId(getCurrentUserId());
+        userInfo.setState("A");
+        userInfo.setStateTime(new Date());
         profileService.updateUserInfo(userInfo);
 
         return "redirect:/my/profile/basic.action";
@@ -99,7 +113,6 @@ public class ProfileController extends BaseController {
     /**
      * TODO 添加用户工作信息
      *
-     * @param model
      * @param userJob
      * @return
      * @throws ServiceException
@@ -144,6 +157,7 @@ public class ProfileController extends BaseController {
 
     /**
      * TODO 上传用户头像
+     *
      * @param session
      * @param portrait
      * @return

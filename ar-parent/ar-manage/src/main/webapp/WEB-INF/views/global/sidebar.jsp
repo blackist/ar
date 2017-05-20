@@ -32,7 +32,7 @@
         <ul class="am-list am-collapse admin-sidebar-sub" id="job-manage">
             <li><a href="job.action"><span class="am-icon-th"></span> 招聘信息 </a></li>
             <li><a href="job/createJob.action"><span class="am-icon-plus"></span> 发布招聘 </a></li>
-            <li><a href="job/createJob.action"><span class="am-icon-plus"></span> 招聘单位 </a></li>
+            <li><a href="job/createJob.action"><span class="am-icon-institution"></span> 招聘单位 </a></li>
         </ul>
     </li>
 
@@ -42,8 +42,7 @@
             <i class="am-icon-group"></i> 用户管理 <i class="am-icon-angle-right am-fr am-margin-right"></i></a>
         <ul class="am-list am-collapse admin-sidebar-sub" id="user-manage">
             <li><a href="user.action"><i class="am-icon-user"></i> 用户列表 </a></li>
-            <li><a href="user/add.action"><i class="am-icon-plus-square"></i> 添加用户</a></li>
-            <li><a href="#"><i class="am-icon-bug"></i> 404</a></li>
+            <li><a href="javascript:;"><i class="am-icon-plus-square"></i> 添加用户</a></li>
         </ul>
     </li>
 

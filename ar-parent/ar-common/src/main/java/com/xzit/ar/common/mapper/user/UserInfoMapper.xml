@@ -18,7 +18,7 @@
         <result column="exp1" property="exp1" jdbcType="VARCHAR"/>
         <result column="exp2" property="exp2" jdbcType="VARCHAR"/>
     </resultMap>
-    
+
     <sql id="Base_Column_List">
 		user_info_id, age, sex, birthday, phone, email, qq, microblog,
 		wechat, address, user_id, state, state_time, exp1, exp2

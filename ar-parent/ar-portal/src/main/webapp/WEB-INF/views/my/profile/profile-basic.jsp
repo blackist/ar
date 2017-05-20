@@ -5,6 +5,7 @@
 <head>
     <title>个人中心-信电校友录</title>
     <%@ include file="/WEB-INF/views/portal-common/portal-meta.jsp" %>
+    <link href="assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 </head>
 <body>
 <%@ include file="/WEB-INF/views/portal-common/header.jsp" %>
@@ -69,11 +70,16 @@
                         <div class="form-group">
                             <label class="col-sm-2">
                                 <span class="asterisk">* </span>生日</label>
-                            <div class="col-sm-4">
-                                <input type="text" name="title" id="title" maxlength="20"
-                                       class="form-control tooltips" data-trigger="hover"
-                                       data-toggle="tooltip" data-original-title="2-20字"/>
+                            <div class="input-group date form_date col-sm-4" data-date="" data-date-format="dd MM yyyy"
+                                 data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                <input type="text" name="birthdayString" readonly
+                                       value="<fmt:formatDate value='${userInfo.birthday}' pattern='yyyy-MM-dd'></fmt:formatDate>"
+                                       class="form-control" size="16">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                <span class="input-group-addon"><span
+                                        class="glyphicon glyphicon-calendar"></span></span>
                             </div>
+                            <input type="hidden" id="dtp_input2" value=""/><br/>
                         </div>
 
                         <div class="form-group">
@@ -164,4 +170,6 @@
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
 <script src="assets/script/my/profile/profile-basic.js"></script>
+<script src="assets/js/bootstrap-datetimepicker.js"></script>
+<script src="assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
 </html>

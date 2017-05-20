@@ -107,8 +107,7 @@ public class OriginController extends BaseController {
     public String save(Origin origin) throws ServiceException {
         // 参数校验
         if (origin != null && CommonUtil.isNotEmpty(origin.getOriginName())
-                && CommonUtil.isNotEmpty(origin.getOriginType())
-                && CommonUtil.isNotEmpty(origin.getOriginGrade())) {
+                && CommonUtil.isNotEmpty(origin.getOriginType())) {
             // 设置关键参数
             origin.setMgrId(getCurrentUserId());
             origin.setMembers(0);

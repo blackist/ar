@@ -52,8 +52,7 @@
                                 <span class="error_span"> * </span>类型
                             </div>
                             <div class="am-u-sm-4 am-u-end">
-                                <select name="originType" id="originType"
-                                        data-am-selected="{btnSize:'sm'}" class="am-input-sm" required>
+                                <select name="originType" id="originType" class="am-input-sm" required>
                                     <c:forEach items="${types}" var="type">
                                         <option value="${type.value}"
                                                 <c:if test="${type.value == 'C'}">selected</c:if>>${type.name}</option>
