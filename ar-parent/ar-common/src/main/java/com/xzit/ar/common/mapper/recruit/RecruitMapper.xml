@@ -1,44 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xzit.ar.common.mapper.recruit.RecruitMapper" >
-	<resultMap id="BaseResultMap" type="com.xzit.ar.common.po.recruit.Recruit" >
-		<id column="recruit_id" property="recruitId" jdbcType="INTEGER" />
-		<result column="title" property="title" jdbcType="VARCHAR" />
-		<result column="prof" property="prof" jdbcType="VARCHAR" />
-		<result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
-		<result column="members" property="members" jdbcType="INTEGER" />
-		<result column="resumes" property="resumes" jdbcType="INTEGER" />
-		<result column="leader_name" property="leaderName" jdbcType="VARCHAR" />
-		<result column="leader_phone" property="leaderPhone" jdbcType="VARCHAR" />
-		<result column="is_top" property="isTop" jdbcType="CHAR" />
-		<result column="pos_name" property="posName" jdbcType="VARCHAR" />
-		<result column="pos_desc" property="posDesc" jdbcType="VARCHAR" />
-		<result column="salary" property="salary" jdbcType="VARCHAR" />
-		<result column="benefit" property="benefit" jdbcType="VARCHAR" />
-		<result column="work_place" property="workPlace" jdbcType="VARCHAR" />
-		<result column="unit_id" property="unitId" jdbcType="INTEGER" />
-		<result column="user_id" property="userId" jdbcType="INTEGER" />
-		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-		<result column="state" property="state" jdbcType="CHAR" />
-		<result column="state_time" property="stateTime" jdbcType="TIMESTAMP" />
-		<result column="exp1" property="exp1" jdbcType="VARCHAR" />
-		<result column="exp2" property="exp2" jdbcType="VARCHAR" />
-	</resultMap>
-	
-	<!-- sql -->
-	<sql id="Base_Column_List" >
+<mapper namespace="com.xzit.ar.common.mapper.recruit.RecruitMapper">
+    <resultMap id="BaseResultMap" type="com.xzit.ar.common.po.recruit.Recruit">
+        <id column="recruit_id" property="recruitId" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="prof" property="prof" jdbcType="VARCHAR"/>
+        <result column="end_time" property="endTime" jdbcType="TIMESTAMP"/>
+        <result column="members" property="members" jdbcType="INTEGER"/>
+        <result column="resumes" property="resumes" jdbcType="INTEGER"/>
+        <result column="leader_name" property="leaderName" jdbcType="VARCHAR"/>
+        <result column="leader_phone" property="leaderPhone" jdbcType="VARCHAR"/>
+        <result column="is_top" property="isTop" jdbcType="CHAR"/>
+        <result column="pos_name" property="posName" jdbcType="VARCHAR"/>
+        <result column="pos_desc" property="posDesc" jdbcType="VARCHAR"/>
+        <result column="salary" property="salary" jdbcType="VARCHAR"/>
+        <result column="benefit" property="benefit" jdbcType="VARCHAR"/>
+        <result column="work_place" property="workPlace" jdbcType="VARCHAR"/>
+        <result column="unit_id" property="unitId" jdbcType="INTEGER"/>
+        <result column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="state" property="state" jdbcType="CHAR"/>
+        <result column="state_time" property="stateTime" jdbcType="TIMESTAMP"/>
+        <result column="exp1" property="exp1" jdbcType="VARCHAR"/>
+        <result column="exp2" property="exp2" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- sql -->
+    <sql id="Base_Column_List">
 		recruit_id, title, prof, end_time, members, resumes, leader_name, leader_phone, is_top,
 		pos_name, pos_desc, salary, benefit, work_place, unit_id, user_id, create_time,
 		state, state_time, exp1, exp2
 	</sql>
 
-	<sql id="entity" >
-		r.recruit_id recruitId, r.title title, r.prof prof, r.resumes resumes, r.create_time
-		createTime, r.is_top isTop, r.state state, r.state_time stateTime, r.salary salary,
-		u.unit_name unitName, user.account account
+    <sql id="entity">
+		r.recruit_id recruitId,
+		r.title title, r.prof prof,
+		r.resumes resumes,
+		r.create_time createTime,
+		r.is_top isTop,
+		r.state state,
+		r.state_time stateTime,
+		r.salary salary,
+		u.unit_name unitName,
+		user.user_id userId,
+		user.true_name trueName
 	</sql>
 
-	<sql id="detail" >
+    <sql id="detail">
 		r.recruit_id recruitId,
 		r.title title,
 		r.prof prof,
@@ -65,48 +73,48 @@
 		u.unit_desc unitDesc,
 		u.unit_web unitWeb
 	</sql>
-	
-	<!-- select -->
-	<select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
-		select
-		<include refid="Base_Column_List" />
-		from recruit
-    	where recruit_id = #{recruitId,jdbcType=INTEGER}
-	</select>
 
-	<select id="queryRecruit" resultType="map" parameterType="java.lang.String">
-		select
-			<include refid="entity"/>
-		from
-			recruit r, recruit_unit u,
-			`user` user
-		where
-			(r.title like #{queryStr}
-				or r.pos_name like #{queryStr}
-				or r.work_place like #{queryStr}
-				or u.unit_name like #{queryStr})
-			and r.unit_id = u.unit_id
-		  	and r.user_id = user.user_id
-			and r.state='A'
-		order by
-			r.is_top desc,
-			r.create_time desc
-	</select>
+    <!-- select -->
+    <select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from recruit
+        where recruit_id = #{recruitId,jdbcType=INTEGER}
+    </select>
 
-	<select id="getDetailRecruit" resultType="map" parameterType="java.lang.Integer">
-		select
-		<include refid="detail" />
-		from recruit r, recruit_unit u
-		where r.recruit_id = #{recruitId,jdbcType=INTEGER}
-		and r.unit_id = u.unit_id
-	</select>
+    <select id="queryRecruit" resultType="map" parameterType="java.lang.String">
+        select
+        <include refid="entity"/>
+        from
+        recruit r, recruit_unit u,
+        `user` user
+        where
+        (r.title like #{queryStr}
+        or r.pos_name like #{queryStr}
+        or r.work_place like #{queryStr}
+        or u.unit_name like #{queryStr})
+        and r.unit_id = u.unit_id
+        and r.user_id = user.user_id
+        and r.state='A'
+        order by
+        r.is_top desc,
+        r.create_time desc
+    </select>
 
-	<select id="loadOtherRecruits" parameterType="java.lang.Integer" resultType="map">
+    <select id="getDetailRecruit" resultType="map" parameterType="java.lang.Integer">
+        select
+        <include refid="detail"/>
+        from recruit r, recruit_unit u
+        where r.recruit_id = #{recruitId,jdbcType=INTEGER}
+        and r.unit_id = u.unit_id
+    </select>
+
+    <select id="loadOtherRecruits" parameterType="java.lang.Integer" resultType="map">
 		select recruit_id recruitId, title title from recruit where unit_id = #{unitId} and
 		recruit_id != #{recruitId} and state = 'A'
 	</select>
 
-	<select id="getRecruitByUserId" resultType="map">
+    <select id="getRecruitByUserId" resultType="map">
 		SELECT
 			recruit_id recruitId,
 			title title,
@@ -123,114 +131,115 @@
 			user_id=#{userId}
 			AND state='A'
 	</select>
-	
-	<!-- delete -->
-	<delete id="delete" parameterType="java.lang.Integer" >delete from recruit where recruit_id = #{recruitId,jdbcType=INTEGER}</delete>
-	<delete id="deleteEntities" parameterType="java.util.List">
-		delete from recruit
-		<where>
-			recruit_id in
-			<foreach collection="ids" item="id" index="index" open="(" close=")" separator=",">#{id}</foreach>
-		</where>
-	</delete>
-	
-	<!-- insert -->
-	<insert id="save" parameterType="com.xzit.ar.common.po.recruit.Recruit">
-		insert into recruit
-		<trim prefix="(" suffix=")" suffixOverrides="," >
-			<if test="recruitId != null" >recruit_id,</if>
-			<if test="title != null" >title,</if>
-			<if test="prof != null" >prof,</if>
-			<if test="endTime != null" >end_time,</if>
-			<if test="members != null" >members,</if>
-			<if test="resumes != null" >resumes,</if>
-			<if test="leaderName != null" >leader_name,</if>
-			<if test="leaderPhone != null" >leader_phone,</if>
-			<if test="isTop != null" >is_top,</if>
-			<if test="posName != null" >pos_name,</if>
-			<if test="posDesc != null" >pos_desc,</if>
-			<if test="salary != null" >salary,</if>
-			<if test="benefit != null" >benefit,</if>
-			<if test="workPlace != null" >work_place,</if>
-			<if test="unitId != null" >unit_id,</if>
-			<if test="userId != null" >user_id,</if>
-			<if test="createTime != null" >create_time,</if>
-			<if test="state != null" >state,</if>
-			<if test="stateTime != null" >state_time,</if>
-			<if test="exp1 != null" >exp1,</if>
-			<if test="exp2 != null" >exp2,</if>
-		</trim>
-		<trim prefix="values (" suffix=")" suffixOverrides="," >
-			<if test="recruitId != null" >#{recruitId,jdbcType=INTEGER},</if>
-			<if test="title != null" >#{title,jdbcType=VARCHAR},</if>
-			<if test="prof != null" >#{prof,jdbcType=VARCHAR},</if>
-			<if test="endTime != null" >#{endTime,jdbcType=TIMESTAMP},</if>
-			<if test="members != null" >#{members,jdbcType=INTEGER},</if>
-			<if test="resumes != null" >#{resumes,jdbcType=INTEGER},</if>
-			<if test="leaderName != null" >#{leaderName,jdbcType=VARCHAR},</if>
-			<if test="leaderPhone != null" >#{leaderPhone,jdbcType=VARCHAR},</if>
-			<if test="isTop != null" >#{isTop,jdbcType=CHAR},</if>
-			<if test="posName != null" >#{posName,jdbcType=VARCHAR},</if>
-			<if test="posDesc != null" >#{posDesc,jdbcType=VARCHAR},</if>
-			<if test="salary != null" >#{salary,jdbcType=VARCHAR},</if>
-			<if test="benefit != null" >#{benefit,jdbcType=VARCHAR},</if>
-			<if test="workPlace != null" >#{workPlace,jdbcType=VARCHAR},</if>
-			<if test="unitId != null" >#{unitId,jdbcType=INTEGER},</if>
-			<if test="userId != null" >#{userId,jdbcType=INTEGER},</if>
-			<if test="createTime != null" >#{createTime,jdbcType=TIMESTAMP},</if>
-			<if test="state != null" >#{state,jdbcType=CHAR},</if>
-			<if test="stateTime != null" >#{stateTime,jdbcType=TIMESTAMP},</if>
-			<if test="exp1 != null" >#{exp1,jdbcType=VARCHAR},</if>
-			<if test="exp2 != null" >#{exp2,jdbcType=VARCHAR},</if>
-		</trim>
-	</insert>
-	
-	
-	<update id="update" parameterType="com.xzit.ar.common.po.recruit.Recruit">
-		update recruit
-		<set >
-			<if test="title != null" >title = #{title,jdbcType=VARCHAR},</if>
-			<if test="prof != null" >prof = #{prof,jdbcType=VARCHAR},</if>
-			<if test="endTime != null" >end_time = #{endTime,jdbcType=TIMESTAMP},</if>
-			<if test="members != null" >members = #{members,jdbcType=INTEGER},</if>
-			<if test="resumes != null" >resumes = #{resumes,jdbcType=INTEGER},</if>
-			<if test="leaderName != null" >leader_name = #{leaderName,jdbcType=VARCHAR},</if>
-			<if test="leaderPhone != null" >leader_phone = #{leaderPhone,jdbcType=VARCHAR},</if>
-			<if test="isTop != null" >is_top = #{isTop,jdbcType=CHAR},</if>
-			<if test="posName != null" >pos_name = #{posName,jdbcType=VARCHAR},</if>
-			<if test="posDesc != null" >pos_desc = #{posDesc,jdbcType=VARCHAR},</if>
-			<if test="salary != null" >salary = #{salary,jdbcType=VARCHAR},</if>
-			<if test="benefit != null" >benefit = #{benefit,jdbcType=VARCHAR},</if>
-			<if test="workPlace != null" >work_place = #{workPlace,jdbcType=VARCHAR},</if>
-			<if test="unitId != null" >unit_id = #{unitId,jdbcType=INTEGER},</if>
-			<if test="userId != null" >user_id = #{userId,jdbcType=INTEGER},</if>
-			<if test="createTime != null" >create_time = #{createTime,jdbcType=TIMESTAMP},</if>
-			<if test="state != null" >state = #{state,jdbcType=CHAR},</if>
-			<if test="stateTime != null" >state_time = #{stateTime,jdbcType=TIMESTAMP},</if>
-			<if test="exp1 != null" >exp1 = #{exp1,jdbcType=VARCHAR},</if>
-			<if test="exp2 != null" >exp2 = #{exp2,jdbcType=VARCHAR},</if>
-		</set>
-		where recruit_id = #{recruitId,jdbcType=INTEGER}
-	</update>
 
-	<update id="batchState" parameterType="java.util.List">
-		update recruit
-		<set >state = #{state}</set>
-		<where>
-			recruit_id in
-			<foreach collection="ids" item="id" index="index" open="(" close=")" separator=",">#{id}</foreach>
-		</where>
-	</update>
+    <!-- delete -->
+    <delete id="delete"
+            parameterType="java.lang.Integer">delete from recruit where recruit_id = #{recruitId,jdbcType=INTEGER}</delete>
+    <delete id="deleteEntities" parameterType="java.util.List">
+        delete from recruit
+        <where>
+            recruit_id in
+            <foreach collection="ids" item="id" index="index" open="(" close=")" separator=",">#{id}</foreach>
+        </where>
+    </delete>
 
-	<update id="updateState" parameterType="java.lang.Integer">
-		update recruit
-		<set >state = #{state}</set>
-		<where>recruit_id = #{id}</where>
-	</update>
+    <!-- insert -->
+    <insert id="save" parameterType="com.xzit.ar.common.po.recruit.Recruit">
+        insert into recruit
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="recruitId != null">recruit_id,</if>
+            <if test="title != null">title,</if>
+            <if test="prof != null">prof,</if>
+            <if test="endTime != null">end_time,</if>
+            <if test="members != null">members,</if>
+            <if test="resumes != null">resumes,</if>
+            <if test="leaderName != null">leader_name,</if>
+            <if test="leaderPhone != null">leader_phone,</if>
+            <if test="isTop != null">is_top,</if>
+            <if test="posName != null">pos_name,</if>
+            <if test="posDesc != null">pos_desc,</if>
+            <if test="salary != null">salary,</if>
+            <if test="benefit != null">benefit,</if>
+            <if test="workPlace != null">work_place,</if>
+            <if test="unitId != null">unit_id,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="state != null">state,</if>
+            <if test="stateTime != null">state_time,</if>
+            <if test="exp1 != null">exp1,</if>
+            <if test="exp2 != null">exp2,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="recruitId != null">#{recruitId,jdbcType=INTEGER},</if>
+            <if test="title != null">#{title,jdbcType=VARCHAR},</if>
+            <if test="prof != null">#{prof,jdbcType=VARCHAR},</if>
+            <if test="endTime != null">#{endTime,jdbcType=TIMESTAMP},</if>
+            <if test="members != null">#{members,jdbcType=INTEGER},</if>
+            <if test="resumes != null">#{resumes,jdbcType=INTEGER},</if>
+            <if test="leaderName != null">#{leaderName,jdbcType=VARCHAR},</if>
+            <if test="leaderPhone != null">#{leaderPhone,jdbcType=VARCHAR},</if>
+            <if test="isTop != null">#{isTop,jdbcType=CHAR},</if>
+            <if test="posName != null">#{posName,jdbcType=VARCHAR},</if>
+            <if test="posDesc != null">#{posDesc,jdbcType=VARCHAR},</if>
+            <if test="salary != null">#{salary,jdbcType=VARCHAR},</if>
+            <if test="benefit != null">#{benefit,jdbcType=VARCHAR},</if>
+            <if test="workPlace != null">#{workPlace,jdbcType=VARCHAR},</if>
+            <if test="unitId != null">#{unitId,jdbcType=INTEGER},</if>
+            <if test="userId != null">#{userId,jdbcType=INTEGER},</if>
+            <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
+            <if test="state != null">#{state,jdbcType=CHAR},</if>
+            <if test="stateTime != null">#{stateTime,jdbcType=TIMESTAMP},</if>
+            <if test="exp1 != null">#{exp1,jdbcType=VARCHAR},</if>
+            <if test="exp2 != null">#{exp2,jdbcType=VARCHAR},</if>
+        </trim>
+    </insert>
 
-	<update id="addResumes" parameterType="java.lang.Integer">
-		update recruit
-		<set>resumes = resumes + 1</set>
-		<where>recruit_id = #{recruitId}</where>
-	</update>
+
+    <update id="update" parameterType="com.xzit.ar.common.po.recruit.Recruit">
+        update recruit
+        <set>
+            <if test="title != null">title = #{title,jdbcType=VARCHAR},</if>
+            <if test="prof != null">prof = #{prof,jdbcType=VARCHAR},</if>
+            <if test="endTime != null">end_time = #{endTime,jdbcType=TIMESTAMP},</if>
+            <if test="members != null">members = #{members,jdbcType=INTEGER},</if>
+            <if test="resumes != null">resumes = #{resumes,jdbcType=INTEGER},</if>
+            <if test="leaderName != null">leader_name = #{leaderName,jdbcType=VARCHAR},</if>
+            <if test="leaderPhone != null">leader_phone = #{leaderPhone,jdbcType=VARCHAR},</if>
+            <if test="isTop != null">is_top = #{isTop,jdbcType=CHAR},</if>
+            <if test="posName != null">pos_name = #{posName,jdbcType=VARCHAR},</if>
+            <if test="posDesc != null">pos_desc = #{posDesc,jdbcType=VARCHAR},</if>
+            <if test="salary != null">salary = #{salary,jdbcType=VARCHAR},</if>
+            <if test="benefit != null">benefit = #{benefit,jdbcType=VARCHAR},</if>
+            <if test="workPlace != null">work_place = #{workPlace,jdbcType=VARCHAR},</if>
+            <if test="unitId != null">unit_id = #{unitId,jdbcType=INTEGER},</if>
+            <if test="userId != null">user_id = #{userId,jdbcType=INTEGER},</if>
+            <if test="createTime != null">create_time = #{createTime,jdbcType=TIMESTAMP},</if>
+            <if test="state != null">state = #{state,jdbcType=CHAR},</if>
+            <if test="stateTime != null">state_time = #{stateTime,jdbcType=TIMESTAMP},</if>
+            <if test="exp1 != null">exp1 = #{exp1,jdbcType=VARCHAR},</if>
+            <if test="exp2 != null">exp2 = #{exp2,jdbcType=VARCHAR},</if>
+        </set>
+        where recruit_id = #{recruitId,jdbcType=INTEGER}
+    </update>
+
+    <update id="batchState" parameterType="java.util.List">
+        update recruit
+        <set>state = #{state}</set>
+        <where>
+            recruit_id in
+            <foreach collection="ids" item="id" index="index" open="(" close=")" separator=",">#{id}</foreach>
+        </where>
+    </update>
+
+    <update id="updateState" parameterType="java.lang.Integer">
+        update recruit
+        <set>state = #{state}</set>
+        <where>recruit_id = #{id}</where>
+    </update>
+
+    <update id="addResumes" parameterType="java.lang.Integer">
+        update recruit
+        <set>resumes = resumes + 1</set>
+        <where>recruit_id = #{recruitId}</where>
+    </update>
 </mapper>

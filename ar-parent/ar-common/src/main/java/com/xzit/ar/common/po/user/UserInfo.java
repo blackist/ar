@@ -18,8 +18,6 @@ public class UserInfo extends BaseEntity {
 
     private Date birthday;
 
-    private String introduce;
-
     private String phone;
 
     private String email;
@@ -72,14 +70,6 @@ public class UserInfo extends BaseEntity {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
-    }
-
-    public String getIntroduce() {
-        return introduce;
-    }
-
-    public void setIntroduce(String introduce) {
-        this.introduce = introduce == null ? null : introduce.trim();
     }
 
     public String getPhone() {

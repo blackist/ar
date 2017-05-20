@@ -16,6 +16,7 @@ import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.common.util.IOUtil;
 import com.xzit.ar.portal.service.classes.ClassService;
 import com.xzit.ar.portal.service.forum.PostService;
+import com.xzit.ar.portal.service.information.InformationService;
 import com.xzit.ar.portal.service.recruit.RecruitService;
 import org.aspectj.util.FileUtil;
 import org.springframework.stereotype.Controller;
@@ -48,6 +49,9 @@ public class MainController extends BaseController {
     @Resource
     private RecruitService recruitService;
 
+    @Resource
+    private InformationService informationService;
+
     /**
      * TODO 网站首页
      *
@@ -58,6 +62,12 @@ public class MainController extends BaseController {
     @RequestMapping("/index")
     public String index(Model model) throws ServiceException {
 
+        // 校友新闻
+        model.addAttribute("inews",
+                informationService.getInfoByInfoType(new Page<Map<String, Object>>(getPageIndex(), 4), "AN"));
+        // 校友新闻
+        model.addAttribute("news",
+                informationService.getInfoByInfoType(new Page<Map<String, Object>>(getPageIndex(), getPageSize()), "AN"));
         // 热门话题
         model.addAttribute("posts",
                 postService.queryPosts(new Page<Map<String, Object>>(1, 10), ""));

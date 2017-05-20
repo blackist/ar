@@ -39,14 +39,18 @@ public class FlatServiceImpl implements FlatService {
 			throw new ServiceException("系统异常");
 		}
 		// 获取unitList
-		unitList = unitMapper.getUnitsByUserId(userId);
+		try {
+			unitList = unitMapper.getUnitsByUserId(userId);
+		} catch (Exception e) {
+			throw new ServiceException("查询招聘单位信息时发生异常！");
+		}
 
 		return unitList;
 	}
 
 	@Override
 	public Integer createUnit(RecruitUnit recruitUnit) throws ServiceException {
-		Integer unitId = null;
+		Integer unitId;
 		try {
 			unitId = unitMapper.save(recruitUnit);
 		} catch (Exception e) {

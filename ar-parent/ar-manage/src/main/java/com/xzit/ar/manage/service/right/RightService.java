@@ -24,13 +24,15 @@ import com.xzit.ar.common.po.role.Right;
 */
 public interface RightService {
 
-	public List<Map<String, Object>> queryRights(Page<Right> page, String queryInput) throws ServiceException;
+	List<Map<String, Object>> queryRights(Page<Right> page, String queryInput) throws ServiceException;
 	
-	public Right selectById(Integer rightId) throws ServiceException ;
+	Right selectById(Integer rightId) throws ServiceException ;
 	
-	public int saveRight(Right right) throws ServiceException; 
+	int saveRight(Right right) throws ServiceException;
 	
-	public Right selectByRightUrl(String rightUrl) throws ServiceException;
+	Right selectByRightUrl(String rightUrl) throws ServiceException;
 	
-	public int updateRight(Right right) throws ServiceException;
+	int updateRight(Right right) throws ServiceException;
+
+	List<Right> getIsNotPublicRights() throws ServiceException;
 }

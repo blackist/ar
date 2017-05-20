@@ -1,6 +1,6 @@
 /**  
  * @Title: ClassService.java
- * @Package com.xzit.ar.portal.service.classes
+ * @Package com.xzit.ar.portal.service.origin
  * @Description: TODO
  * @author Mr.Black
  * @date 2016年2月18日 下午1:01:20
@@ -78,4 +78,12 @@ public interface ClassService {
 	 * @throws ServiceException
 	 */
 	List<Map<String, Object>> latestMembers(Integer number) throws ServiceException;
+
+	/**
+	 * TODO 条件查询组织
+	 * @param page
+	 * @return
+	 * @throws ServiceException
+	 */
+	List<Map<String, Object>> queryOrigin(Page<Map<String, Object>> page) throws ServiceException;
 }

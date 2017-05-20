@@ -3,6 +3,9 @@ function errMsg(el, msg) {
 	$(".error_span").html("");
 	$("#" + el).after("<span class='error_span'>" + msg + "</span>");
 	$("#" + el).focus();
+    setTimeout(function() {
+        $(".error_span").fadeOut(2000);
+    }, 2300);
 }
 
 /* 清除校验失败提示信息 */
@@ -66,3 +69,26 @@ function getIds() {
 	}
 	return ids;
 }
+
+
+/**
+ * TODO 利用js进行POST方式提交
+ * @param URL
+ * @param PARAMS
+ */
+function post(URL, PARAMS) {
+    var temp = document.createElement("form");
+    temp.action = URL;
+    temp.method = "post";
+    temp.style.display = "none";
+    for (var x in PARAMS) {
+        var opt = document.createElement("input");
+        opt.name = x;
+        opt.value = PARAMS[x];
+        temp.appendChild(opt);
+    }
+    document.body.appendChild(temp);
+    temp.submit();
+    return;
+}
+

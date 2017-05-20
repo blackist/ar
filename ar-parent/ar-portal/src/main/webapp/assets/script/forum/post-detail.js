@@ -1,11 +1,16 @@
-$(function() {
-	$("#nav-info").attr("class", "active grid");
+$(function () {
+    $("#nav-info").attr("class", "active grid");
 
     // 加载评论列表
     var postId = $("#postId").html();
-    $.post("post/commentList.action?postId="+postId, function(data) {
+    $.post("post/commentList.action?postId=" + postId, function (data) {
         $("#comment-list").html(data);
     });
+
+    var userId = $('#userId').val();
+    $.post('post/outline.action', {'userId': userId}, function (data) {
+        $('#outline').html(data);
+    })
 });
 
 /**
@@ -18,9 +23,9 @@ function loadMoreComment(pageIndex) {
     // 加载评论列表
     var postId = $("#postId").html();
     $.post("post/commentList.action", {
-        "postId" : postId,
-        "pageIndex" : pageIndex
-    }, function(data) {
+        "postId": postId,
+        "pageIndex": pageIndex
+    }, function (data) {
         $("#btn-load-more").remove();
         // 向 div 中追加元素
         $("#comment-list").append(data);
@@ -33,7 +38,7 @@ function loadMoreComment(pageIndex) {
  */
 function focusCommentPost() {
     $("#comment-content").focus();
-    $("html,body").animate({scrollTop:$("#comment-content").offset().top},500);//500是ms,也可以用slow代替
+    $("html,body").animate({scrollTop: $("#comment-content").offset().top}, 500);//500是ms,也可以用slow代替
 }
 
 /**
@@ -42,9 +47,9 @@ function focusCommentPost() {
 function commentPost() {
     var content = $("#comment-content").val();
     // 评论长度校验
-    if(!isLength(content, 1, 500)) {
+    if (!isLength(content, 1, 500)) {
         errMsg("comment-content", "评论不能为空，且不能超过500字");
-    } else{
+    } else {
         // 提交
         $("#form-comment").submit();
     }
@@ -57,7 +62,7 @@ function commentPost() {
 function replyComment(replyUser) {
     $("#comment-content").html(replyUser);
     $("#comment-content").focus();
-    $("html,body").animate({scrollTop:$("#comment-content").offset().top},500);//500是ms,也可以用slow代替
+    $("html,body").animate({scrollTop: $("#comment-content").offset().top}, 500);//500是ms,也可以用slow代替
 }
 
 /**
@@ -67,12 +72,12 @@ function replyComment(replyUser) {
 function lovePost(postId) {
 
     $.ajax({
-        type : "GET",
-        url : "post/love.action",
-        data : "postId=" + postId,
-        dataType : "text",
-        success : function(data){
-            $("#post-love-add").attr("onclick" , null);
+        type: "GET",
+        url: "post/love.action",
+        data: "postId=" + postId,
+        dataType: "text",
+        success: function (data) {
+            $("#post-love-add").attr("onclick", null);
             $(".post-loves").html(data);
         }
     });
@@ -83,9 +88,9 @@ function lovePost(postId) {
  * @param postId
  */
 function deletePost(postId) {
-    if (confirm("删除后无法恢复，确定删除这条帖子吗？")){
+    if (confirm("删除后无法恢复，确定删除这条帖子吗？")) {
         // 删除帖子
-        location.href = "post/delete.action?postId="+postId;
+        location.href = "post/delete.action?postId=" + postId;
     }
 }
 
@@ -94,10 +99,10 @@ function deletePost(postId) {
  * @param commentId
  */
 function deleteComment(commentId) {
-    if (confirm("确定删除这条评论吗？")){
-        $.post("post/deleteComment.action?commentId="+commentId, function (data) {
+    if (confirm("确定删除这条评论吗？")) {
+        $.post("post/deleteComment.action?commentId=" + commentId, function (data) {
             // 页面移除评论内容
-            $("#comment-li-"+commentId).remove();
+            $("#comment-li-" + commentId).remove();
             window.location.reload();
         });
     }

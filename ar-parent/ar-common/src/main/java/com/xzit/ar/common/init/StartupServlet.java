@@ -11,12 +11,12 @@ package com.xzit.ar.common.init;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 
+import com.xzit.ar.common.util.origin.OriginUtil;
 import com.xzit.ar.common.util.info.InfoUtil;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import com.xzit.ar.common.init.context.ARContext;
 import com.xzit.ar.common.mapper.dict.DictionaryDataMapper;
-import com.xzit.ar.common.util.classes.ClassUtil;
 import com.xzit.ar.common.util.dictionary.DictionaryUtil;
 import com.xzit.ar.common.util.privilege.PrivilegeUtil;
 import com.xzit.ar.common.util.recruit.RecruitUtil;
@@ -71,7 +71,7 @@ public class StartupServlet extends DispatcherServlet {
 			/**
 			 * 班级录初始化
 			 */
-			ClassUtil.initClass();
+			OriginUtil.initClass();
 
 			/**
 			 * 论坛初始化

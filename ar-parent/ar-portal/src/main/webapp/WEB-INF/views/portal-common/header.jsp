@@ -19,7 +19,7 @@
 					<c:choose>
 						<c:when test="${SESSION_USER != null}">
 							<li class="top_link">
-								<a href="my.action" target="blank">
+								<a href="my/profile/basic.action" target="blank">
 									<%--<c:if test="${SESSION_USER.portrait != null}">--%>
 										<%--<img src="${SESSION_USER.portrait}" width="20px" class="img-circle"/>--%>
 									<%--</c:if>--%>

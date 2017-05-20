@@ -1,6 +1,6 @@
 /**  
  * @Title: CmController.java
- * @Package com.xzit.ar.manage.controller.classes
+ * @Package com.xzit.ar.manage.controller.origin
  * @Description: TODO
  * @author Mr.Black
  * @date 2016年3月2日 下午11:25:52
@@ -48,7 +48,7 @@ public class CmController extends BaseController {
 		// 查询班级
 		// 数据返回
 		model.addAttribute("page", cmService.queryClasses(page, queryStr, getSelectStr(), getStateStr()));
-		model.addAttribute("classGrade", ARContext.classGrade);
+		model.addAttribute("classGrade", ARContext.originGrade);
 		model.addAttribute("queryStr", queryStr);
 		// 查询条件返回
 		setSelectStr();

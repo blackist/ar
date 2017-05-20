@@ -37,6 +37,7 @@ public class PostController extends BaseController {
 
     /**
      * TODO 加载信息详情
+     *
      * @param model
      * @param postId
      * @return
@@ -50,8 +51,18 @@ public class PostController extends BaseController {
         return "forum/post/post-detail";
     }
 
+    @RequestMapping("/outline")
+    public String outline(Model model, Integer userId) throws ServiceException {
+        // 数据返回
+        model.addAttribute("posts",
+                postService.getUserPost(new Page<Map<String, Object>>(1, 20), userId));
+
+        return "forum/post/post-outline";
+    }
+
     /**
      * TODO 加载评论列表
+     *
      * @param model
      * @return
      */
@@ -68,6 +79,7 @@ public class PostController extends BaseController {
 
     /**
      * TODO 评论帖子
+     *
      * @param model
      * @param redirectAttributes
      * @param comment
@@ -82,39 +94,43 @@ public class PostController extends BaseController {
         // 存储
         postService.commentPost(comment);
         // 重定向
-        if (comment != null && CommonUtil.isNotEmpty(comment.getInfoId())){
+        if (comment != null && CommonUtil.isNotEmpty(comment.getInfoId())) {
             redirectAttributes.addAttribute("postId", comment.getInfoId());
             return "redirect:/post/detail.action";
         } else {
-            return "redirect:/info.action";
+            return "redirect:/forum.action";
         }
     }
 
     /**
      * TODO 为帖子点赞
+     *
      * @param model
      * @param postId
      * @return
      * @throws ServiceException
      */
     @RequestMapping(value = "/love", method = RequestMethod.GET)
-    public @ResponseBody Integer love(Model model, @Param("postId") Integer postId) throws ServiceException {
+    public @ResponseBody
+    Integer love(Model model, @Param("postId") Integer postId) throws ServiceException {
         return postService.lovePost(postId);
     }
 
     /**
      * TODO 加载发帖界面
+     *
      * @param model
      * @return
      */
     @RequestMapping("/add")
-    public String add(Model model){
+    public String add(Model model) {
         model.addAttribute("themes", ARContext.infoTheme);
         return "forum/post/post-add";
     }
 
     /**
      * TODO 保存用户发布的新帖
+     *
      * @param model
      * @param information
      * @return
@@ -135,30 +151,32 @@ public class PostController extends BaseController {
 
         postService.savePost(information);
 
-        return "redirect:/info.action";
+        return "redirect:/forum.action";
     }
 
     /**
      * TODO 删除帖子
-     * @param model
+     *
      * @param postId
      * @return
      * @throws ServiceException
      */
     @RequestMapping("/delete")
-    public String delete(Model model, @Param("postId") Integer postId) throws ServiceException {
+    public String delete(@Param("postId") Integer postId) throws ServiceException {
         postService.deletePost(postId, getCurrentUserId());
-        return "redirect:/info.action";
+        return "redirect:/forum.action";
     }
 
     /**
      * TODO 删除用户评论
+     *
      * @param commentId
      * @return
      * @throws ServiceException
      */
     @RequestMapping("/deleteComment")
-    public @ResponseBody Integer deleteComment(@Param("commentId") Integer commentId) throws ServiceException {
+    public @ResponseBody
+    Integer deleteComment(@Param("commentId") Integer commentId) throws ServiceException {
         return commentService.deleteComment(commentId, getCurrentUserId());
     }
 }

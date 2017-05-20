@@ -1,7 +1,6 @@
 $(function() {
 	// system side bar 打开
-	$("#job-manage").attr("class",
-			"am-list am-collapse admin-sidebar-sub am-in");
+	$("#job-manage").attr("class", "am-list am-collapse admin-sidebar-sub am-in");
 });
 
 function createJob() {
@@ -10,8 +9,6 @@ function createJob() {
 		errMsg("unitId", "招聘单位必选");
 		return;
 	} else {
-		_start();
-		// location.href = 'job/createJob.action?unitId=' + unitId;
 		$("#unitIdForm").submit();
 	}
 }

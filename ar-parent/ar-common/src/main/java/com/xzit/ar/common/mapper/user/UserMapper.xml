@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xzit.ar.common.mapper.user.UserMapper" >
-	<resultMap id="BaseResultMap" type="com.xzit.ar.common.po.user.User" >
-		<id column="user_id" property="userId" jdbcType="INTEGER" />
-		<result column="account" property="account" jdbcType="VARCHAR" />
-		<result column="password" property="password" jdbcType="VARCHAR" />
-		<result column="email" property="email" jdbcType="VARCHAR" />
-		<result column="true_name" property="trueName" jdbcType="VARCHAR" />
-		<result column="introduce" property="introduce" jdbcType="VARCHAR" />
-		<result column="is_admin" property="isAdmin" jdbcType="CHAR" />
-		<result column="image_id" property="imageId" jdbcType="INTEGER" />
-		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-		<result column="state" property="state" jdbcType="CHAR" />
-		<result column="state_time" property="stateTime" jdbcType="TIMESTAMP" />
-	</resultMap>
-	<sql id="Base_Column_List" >
+<mapper namespace="com.xzit.ar.common.mapper.user.UserMapper">
+    <resultMap id="BaseResultMap" type="com.xzit.ar.common.po.user.User">
+        <id column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="account" property="account" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="true_name" property="trueName" jdbcType="VARCHAR"/>
+        <result column="introduce" property="introduce" jdbcType="VARCHAR"/>
+        <result column="is_admin" property="isAdmin" jdbcType="CHAR"/>
+        <result column="image_id" property="imageId" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="state" property="state" jdbcType="CHAR"/>
+        <result column="state_time" property="stateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Base_Column_List">
 		user_id, account, password, is_admin, email, true_name, introduce, image_id, create_time, state, state_time
 	</sql>
-	
-	<select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
-		select
-		<include refid="Base_Column_List" />
-		from user
-    	where user_id = #{userId,jdbcType=INTEGER}
-	</select>
 
-	<!-- 帐号查找用户 登录 -->
-	<select id="selectByAccount" resultType="map" parameterType="java.lang.String">
+    <select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where user_id = #{userId,jdbcType=INTEGER}
+    </select>
+
+    <!-- 帐号查找用户 登录 -->
+    <select id="selectByAccount" resultType="map" parameterType="java.lang.String">
 		SELECT user_id userId, account account, password password, true_name trueName, introduce introduce, is_admin isAdmin,
 			email email, image_id imageId
 		from `user`
     	WHERE account = #{account} AND state = 'A'
 	</select>
 
-	<!--获取用户基本信息-->
-	<select id="getUserBasicInfo" parameterType="java.lang.Integer" resultType="map">
+    <!--获取用户基本信息-->
+    <select id="getUserBasicInfo" parameterType="java.lang.Integer" resultType="map">
 		SELECT u.user_id userId,
 		 	u.account account,
 		 	u.true_name trueName,
@@ -45,55 +45,107 @@
 		WHERE u.image_id=img.image_id
 		 	AND u.user_id=#{userId}
 	</select>
-	
-	<delete id="delete" parameterType="java.lang.Integer" >delete from user
-    where user_id = #{userId,jdbcType=INTEGER}</delete>
-    
-	<insert id="save" parameterType="com.xzit.ar.common.po.user.User" >
-		insert into user
-		<trim prefix="(" suffix=")" suffixOverrides="," >
-			<if test="userId != null" >user_id,</if>
-			<if test="account != null" >account,</if>
-			<if test="password != null" >password,</if>
-			<if test="email != null" >email,</if>
-			<if test="trueName != null">true_name,</if>
-			<if test="introduce != null" >introduce,</if>
-			<if test="isAdmin != null" >is_admin,</if>
-			<if test="imageId != null" >image_id,</if>
-			<if test="createTime != null" >create_time,</if>
-			<if test="state != null" >state,</if>
-			<if test="stateTime != null" >state_time,</if>
-		</trim>
-		<trim prefix="values (" suffix=")" suffixOverrides="," >
-			<if test="userId != null" >#{userId,jdbcType=INTEGER},</if>
-			<if test="account != null" >#{account,jdbcType=VARCHAR},</if>
-			<if test="password != null" >#{password,jdbcType=VARCHAR},</if>
-			<if test="email != null" >#{email,jdbcType=VARCHAR},</if>
-			<if test="trueName != null">#{trueName,jdbcType=VARCHAR},</if>
-			<if test="introduce != null" >introduce,</if>
-			<if test="isAdmin != null" >#{isAdmin,jdbcType=CHAR},</if>
-			<if test="imageId != null" >#{image_id,jdbcType=INTEGER},</if>
-			<if test="createTime != null" >#{createTime,jdbcType=TIMESTAMP},</if>
-			<if test="state != null" >#{state,jdbcType=CHAR},</if>
-			<if test="stateTime != null" >#{stateTime,jdbcType=TIMESTAMP},</if>
-		</trim>
-	</insert>
-	
-	<update id="update" parameterType="com.xzit.ar.common.po.user.User">
-		update user
-		<set >
-			<if test="account != null" >account = #{account,jdbcType=VARCHAR},</if>
-			<if test="password != null" >password = #{password,jdbcType=VARCHAR},</if>
-			<if test="email != null" >email = #{email,jdbcType=VARCHAR},</if>
-			<if test="trueName != null" >true_name = #{trueName,jdbcType=VARCHAR},</if>
-			<if test="introduce != null" >introduce = #{introduce,jdbcType=VARCHAR},</if>
-			<if test="isAdmin != null" >is_admin = #{isAdmin,jdbcType=CHAR},</if>
-			<if test="imageId != null" >image_id = #{imageId,jdbcType=INTEGER},</if>
-			<if test="createTime != null" >create_time = #{createTime,jdbcType=TIMESTAMP},</if>
-			<if test="state != null" >state = #{state,jdbcType=CHAR},</if>
-			<if test="stateTime != null" >state_time = #{stateTime,jdbcType=TIMESTAMP},</if>
-		</set>
-		where user_id = #{userId,jdbcType=INTEGER}
-	</update>
+
+    <!--获取用户详细信息-->
+    <select id="getUserDetailInfo" parameterType="java.lang.Integer" resultType="map">
+		SELECT
+		u.user_id userId,
+		u.account account,
+		u.true_name trueName,
+		u.introduce introduce,
+		img.image_path portrait,
+		ui.sex sex,
+		ui.birthday birthday
+		FROM
+		`user` u,
+		user_info ui,
+		image img
+		WHERE
+		u.image_id=img.image_id
+		AND u.user_id = ui.user_id
+		AND u.user_id = #{userId}
+	</select>
+
+    <select id="queryUser" resultType="map">
+        SELECT
+        u.user_id userId,
+        u.account account,
+        u.true_name trueName,
+        u.email email,
+        u.introduce introduce,
+        u.is_admin isAdmin,
+        u.state state,
+        u.state_time stateTime
+        FROM
+        `user` u
+        <where>
+            1=1
+            <if test="queryMap.state != null">
+                AND u.state = #{queryMap.state}
+            </if>
+            <if test="queryMap.query != null">
+                u.true_name LIKE #{queryMap.query}
+            </if>
+            <if test="queryMap.isAdmin != null">
+                u.is_admin = #{queryMap.isAdmin}
+            </if>
+        </where>
+        ORDER BY
+        u.state_time DESC
+
+
+    </select>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from user
+        where user_id = #{userId,jdbcType=INTEGER}
+    </delete>
+
+    <insert id="save" parameterType="com.xzit.ar.common.po.user.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">user_id,</if>
+            <if test="account != null">account,</if>
+            <if test="password != null">password,</if>
+            <if test="email != null">email,</if>
+            <if test="trueName != null">true_name,</if>
+            <if test="introduce != null">introduce,</if>
+            <if test="isAdmin != null">is_admin,</if>
+            <if test="imageId != null">image_id,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="state != null">state,</if>
+            <if test="stateTime != null">state_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">#{userId,jdbcType=INTEGER},</if>
+            <if test="account != null">#{account,jdbcType=VARCHAR},</if>
+            <if test="password != null">#{password,jdbcType=VARCHAR},</if>
+            <if test="email != null">#{email,jdbcType=VARCHAR},</if>
+            <if test="trueName != null">#{trueName,jdbcType=VARCHAR},</if>
+            <if test="introduce != null">introduce,</if>
+            <if test="isAdmin != null">#{isAdmin,jdbcType=CHAR},</if>
+            <if test="imageId != null">#{image_id,jdbcType=INTEGER},</if>
+            <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
+            <if test="state != null">#{state,jdbcType=CHAR},</if>
+            <if test="stateTime != null">#{stateTime,jdbcType=TIMESTAMP},</if>
+        </trim>
+    </insert>
+
+    <update id="update" parameterType="com.xzit.ar.common.po.user.User">
+        update user
+        <set>
+            <if test="account != null">account = #{account,jdbcType=VARCHAR},</if>
+            <if test="password != null">password = #{password,jdbcType=VARCHAR},</if>
+            <if test="email != null">email = #{email,jdbcType=VARCHAR},</if>
+            <if test="trueName != null">true_name = #{trueName,jdbcType=VARCHAR},</if>
+            <if test="introduce != null">introduce = #{introduce,jdbcType=VARCHAR},</if>
+            <if test="isAdmin != null">is_admin = #{isAdmin,jdbcType=CHAR},</if>
+            <if test="imageId != null">image_id = #{imageId,jdbcType=INTEGER},</if>
+            <if test="createTime != null">create_time = #{createTime,jdbcType=TIMESTAMP},</if>
+            <if test="state != null">state = #{state,jdbcType=CHAR},</if>
+            <if test="stateTime != null">state_time = #{stateTime,jdbcType=TIMESTAMP},</if>
+        </set>
+        where user_id = #{userId,jdbcType=INTEGER}
+    </update>
 
 </mapper>

@@ -77,10 +77,12 @@ public class ARContext {
 	public static List<Map<String, Object>> unitIndustry;
 	
 	/**
-	 * 班级录环境变量
+	 * 组织环境变量
 	 */
 	
-	public static List<Map<String, Object>> classGrade;
+	public static List<Map<String, Object>> originGrade;
+
+	public static List<Map<String, Object>> originType;
 
 	/**
 	 * 信息环境变量

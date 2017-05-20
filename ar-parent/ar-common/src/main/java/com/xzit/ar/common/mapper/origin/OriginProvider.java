@@ -18,7 +18,7 @@ public class OriginProvider {
 
 	String entity = "origin_id, origin_name, origin_type, origin_grade, members, origin_desc,create_time, creator_id, state, state_time ";
 
-	String clazz = " o.origin_id classId, o.origin_name className, o.origin_grade classGrade, o.members members, o.create_time createTime , o.state state ";
+	String clazz = " o.origin_id classId, o.origin_name className, o.origin_grade originGrade, o.members members, o.create_time createTime , o.state state ";
 
 	public String queryClasses() {
 		return "select distinct " + clazz 

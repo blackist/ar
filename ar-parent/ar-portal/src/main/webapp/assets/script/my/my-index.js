@@ -1,3 +1,3 @@
-$(function() {
-	$("#my-home").attr("class", "active");
+$(function () {
+    $("#my-home").attr("class", "active");
 });

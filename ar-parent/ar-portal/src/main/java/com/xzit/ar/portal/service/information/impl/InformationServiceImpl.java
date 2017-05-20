@@ -116,7 +116,7 @@ public class InformationServiceImpl implements InformationService {
             // 参数校验
             if (CommonUtil.isNotEmpty(infoId)) {
                 // 浏览量
-                informationMapper.increaseComments(infoId);
+                informationMapper.increaseViews(infoId);
                 // 插叙怒消息
                 return informationMapper.getById(infoId);
             }

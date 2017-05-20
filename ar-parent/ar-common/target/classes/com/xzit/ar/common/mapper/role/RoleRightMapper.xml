@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xzit.ar.common.mapper.role.RoleRightMapper" >
-  <resultMap id="BaseResultMap" type="com.xzit.ar.common.po.role.RoleRight" >
-    <result column="role_id" property="roleId" jdbcType="INTEGER" />
-    <result column="right_id" property="rightId" jdbcType="INTEGER" />
-  </resultMap>
-  <insert id="insert" parameterType="com.xzit.ar.common.po.role.RoleRight" >
-    insert into role_right (role_id, right_id)
-    values (#{roleId,jdbcType=INTEGER}, #{rightId,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" parameterType="com.xzit.ar.common.po.role.RoleRight" >
-    insert into role_right
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="roleId != null" >
-        role_id,
-      </if>
-      <if test="rightId != null" >
-        right_id,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="roleId != null" >
-        #{roleId,jdbcType=INTEGER},
-      </if>
-      <if test="rightId != null" >
-        #{rightId,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
+<mapper namespace="com.xzit.ar.common.mapper.role.RoleRightMapper">
+    <resultMap id="BaseResultMap" type="com.xzit.ar.common.po.role.RoleRight">
+        <result column="role_id" property="roleId" jdbcType="INTEGER"/>
+        <result column="right_id" property="rightId" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <insert id="save" parameterType="com.xzit.ar.common.po.role.RoleRight">
+        insert into role_right
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="roleId != null">role_id,</if>
+            <if test="rightId != null">right_id,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="roleId != null">#{roleId,jdbcType=INTEGER},</if>
+            <if test="rightId != null">#{rightId,jdbcType=INTEGER},</if>
+        </trim>
+    </insert>
+
+    <delete id="deleteRoleRights" parameterType="java.lang.Integer">
+		delete from role_right
+		where role_id=#{roleId}
+	</delete>
+
 </mapper>

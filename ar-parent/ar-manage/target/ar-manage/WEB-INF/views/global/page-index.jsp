@@ -61,8 +61,4 @@
             _queryfunc(pageIndex, pageSize);
         });
     }
-
-    function refreshPage() {
-        $("li .am-active a .page-indexor").click();
-    }
 </script>

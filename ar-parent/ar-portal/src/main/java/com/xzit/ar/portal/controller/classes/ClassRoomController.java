@@ -1,6 +1,6 @@
 /**
  * @Title: ClassRoomController.java
- * @Package com.xzit.ar.portal.controller.classes
+ * @Package com.xzit.ar.portal.controller.origin
  * @Description: TODO
  * @author Mr.Black
  * @date 2016年2月20日 下午3:05:30

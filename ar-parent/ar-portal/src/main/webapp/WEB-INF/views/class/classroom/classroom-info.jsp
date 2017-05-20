@@ -52,14 +52,13 @@
                         </button>
                     </div>
                     <div class="panel-footer" hidden="true" id="picUploadBox">
-                        <div class="col-sm-4">
+                        <div class="col-sm-6">
                             <input class="file" type="file" id="uploadInput" multiple
                                    data-max-file-count="1" name="infoImage"
                                    accept=".bmp,.jpg,.gif,.png,.jpeg"> <br>
                         </div>
                     </div>
                     <input type="hidden" name="classId" value="${classroom.classId}" id="classId">
-
                 </form>
             </div>
             <!-- 动态列表 -->

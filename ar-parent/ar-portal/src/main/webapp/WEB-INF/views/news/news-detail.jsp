@@ -32,11 +32,12 @@
                             <li><i class="fa fa-heart"></i> 喜欢 <span class="post-loves">${info.loves}</span></li>
                             <li><i class="glyphicon glyphicon-comment"></i> 评论 ${info.comments}</li>
                         </ul>
-
                         <br/>
-                        <div class="blog-img">
-                            <img src="${info.thumbImage}" class="img-responsive"/></div>
-                        <div class="mb10"></div>
+                        <c:if test="${info.thumbImage != null && info.thumbImage != ''}">
+                            <div class="blog-img">
+                                <img src="${info.thumbImage}" class="img-responsive"/></div>
+                            <div class="mb10"></div>
+                        </c:if>
                         <p>${info.content}</p><%-- postId --%>
                     </div><!-- panel-body -->
                     <div class="widget-photoday">

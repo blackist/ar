@@ -8,5 +8,5 @@ import com.xzit.ar.common.po.recruit.RecruitUnit;
 
 public interface RecruitUnitMapper extends BaseMapper {
 
-	List<RecruitUnit> getUnitsByUserId(@Param("userId") Integer userId);
+	List<RecruitUnit> getUnitsByUserId(@Param("userId") Integer userId) throws Exception;
 }

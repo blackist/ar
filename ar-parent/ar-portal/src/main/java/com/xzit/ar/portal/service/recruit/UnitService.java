@@ -21,7 +21,11 @@ import com.xzit.ar.common.po.recruit.RecruitUnit;
  */
 public interface UnitService {
 	
-	public Integer createUnit(RecruitUnit recruitUnit) throws ServiceException;
+	Integer createUnit(RecruitUnit recruitUnit) throws ServiceException;
 
-	public List<RecruitUnit> getUnitsByUserId(Integer userId) throws ServiceException;
+	List<RecruitUnit> getUnitsByUserId(Integer userId) throws ServiceException;
+
+	RecruitUnit getUnitByUserId(Integer userId) throws ServiceException;
+
+	Integer updateUnit(RecruitUnit recruitUnit) throws ServiceException;
 }

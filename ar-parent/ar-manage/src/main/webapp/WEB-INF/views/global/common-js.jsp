@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <script src="assets/js/jquery1.11.1.min.js"></script>
 
 <script src="assets/script/global/manage-util.js"></script>
@@ -13,14 +13,7 @@
 <script src="assets/js/npm.js"></script>
 
 <script type="text/javascript">
-	function _start() {
-		$.AMUI.progress.start();
-	}
-	function _done() {
-		$.AMUI.progress.done();
-	}
-
-	$(function() {
-		alls();
-	});
+    $(function () {
+        alls();
+    });
 </script>

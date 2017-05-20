@@ -1,6 +1,6 @@
 /**  
  * @Title: CmService.java
- * @Package com.xzit.ar.manage.service.classes
+ * @Package com.xzit.ar.manage.service.origin
  * @Description: TODO
  * @author Mr.Black
  * @date 2016年3月2日 下午11:55:47

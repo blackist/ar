@@ -21,21 +21,11 @@
     </ol>
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
-        <div class="item active">
-            <img src="assets/images/school/xzit-front-wide.jpg">
-        </div>
-        <div class="item">
-            <img src="assets/images/school/xzit-south.jpg">
-        </div>
-        <div class="item">
-            <img src="assets/images/school/xzit-motto.jpg">
-        </div>
-        <div class="item">
-            <img src="assets/images/school/xzit-library.jpg">
-        </div>
-        <div class="item">
-            <img src="assets/images/school/xzit-alumni.jpg">
-        </div>
+        <div class="item active"><img src="assets/images/school/xzit-front-wide.jpg"></div>
+        <div class="item"><img src="assets/images/school/xzit-south.jpg"></div>
+        <div class="item"><img src="assets/images/school/xzit-motto.jpg"></div>
+        <div class="item"><img src="assets/images/school/xzit-library.jpg"></div>
+        <div class="item"><img src="assets/images/school/xzit-alumni.jpg"></div>
     </div>
     <!-- 轮播（Carousel）导航 -->
     <a class="carousel-control focus-navigation left" href="#myCarousel" data-slide="prev">
@@ -55,36 +45,22 @@
                 <h4 class="panel-title">校友新闻</h4>
             </div>
             <div class="panel-body padding0">
-                <a href="" class="photoday"><img src="" alt=""/></a>
-                <div class="photo-details">
-                    <a href="#">
-                        <h5 class="photo-title"><ar:sub value="住建部工程管理类专业评估（认证）委员会专家组莅临我校考查指导工作"
-                                                        length="20"></ar:sub></h5>
+
+                <c:forEach items="${inews}" var="info">
+                    <a href="news/detail.action?infoId=${info.infoId}" class="photoday">
+                        <img src="${info.thumbImage}" alt=""/>
                     </a>
-                    <small class="text-muted">发布于 ： 2017-05-17</small>
-                    <small></small>
-                </div><!-- photo-details -->
-                <hr>
-                <a href="" class="photoday"><img src="" alt=""/></a>
-                <div class="photo-details">
-                    <a href="#">
-                        <h5 class="photo-title"><ar:sub value="住建部工程管理类专业评估（认证）委员会专家组莅临我校考查指导工作"
-                                                        length="20"></ar:sub></h5>
-                    </a>
-                    <small class="text-muted">发布于 ： 2017-05-17</small>
-                    <small></small>
-                </div><!-- photo-details -->
-                <hr>
-                <a href="" class="photoday"><img src="" alt=""/></a>
-                <div class="photo-details">
-                    <a href="#">
-                        <h5 class="photo-title"><ar:sub value="住建部工程管理类专业评估（认证）委员会专家组莅临我校考查指导工作"
-                                                        length="20"></ar:sub></h5>
-                    </a>
-                    <small class="text-muted">发布于 ： 2017-05-17</small>
-                    <small></small>
-                </div><!-- photo-details -->
-                <hr>
+                    <div class="photo-details">
+                        <a href="news/detail.action?infoId=${info.infoId}">
+                            <h5 class="photo-title"><ar:sub value="${info.infoTitle}" length="20"></ar:sub></h5>
+                        </a>
+                        <small class="text-muted">
+                            发布于 ：<fmt:formatDate value="${info.createTime}" pattern="M月d日"></fmt:formatDate>
+                        </small>
+                    </div>
+                    <hr>
+                </c:forEach>
+
             </div>
         </div>
 
@@ -117,12 +93,12 @@
             </div>
             <div class="panel-body">
                 <ul>
-                    <c:forEach items="${posts}" var="post">
+                    <c:forEach items="${news}" var="info">
                         <li>
                             <small class="pull-right">
-                                <fmt:formatDate value="${post.createTime}" pattern="M月d日"></fmt:formatDate>
+                                <fmt:formatDate value="${info.createTime}" pattern="M月d日"></fmt:formatDate>
                             </small>
-                            <a href="post/detail.action?postId=${post.infoId}"><h4 class="sender">${post.infoTitle}</h4>
+                            <a href="news/detail.action?infoId=${info.infoId}"><h4 class="sender">${info.infoTitle}</h4>
                             </a>
                         </li>
                     </c:forEach>

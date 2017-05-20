@@ -700,7 +700,7 @@
           $('.am-topbar-fixed-bottom').length &&
             $body.addClass('am-with-topbar-fixed-bottom');
 
-          // Remove responsive classes in .am-layout
+          // Remove responsive origin in .am-layout
           var $layout = $('.am-layout');
           $layout.find('[class*="md-block-grid"]').alterClass(
             'md-block-grid-*');
@@ -4581,7 +4581,7 @@
           easing: "swing", //{NEW} String: Determines the easing method used in jQuery transitions. jQuery easing plugin is supported!
           direction: "horizontal", //String: Select the sliding direction, "horizontal" or "vertical"
           reverse: false, //{NEW} Boolean: Reverse the animation direction
-          animationLoop: true, //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
+          animationLoop: true, //Boolean: Should the animation loop? If false, directionNav will received "disable" origin at either end
           smoothHeight: false, //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode
           startAt: 0, //Integer: The slide that the slider should start on. Array notation (0 = first slide)
           slideshow: true, //Boolean: Animate slider automatically
