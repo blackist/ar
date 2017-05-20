@@ -78,13 +78,13 @@ public class OriginServiceImpl implements OriginService {
      */
     @Override
     public Integer updateOrigin(Origin origin) throws ServiceException {
-//        try {
+        try {
             if (CommonUtil.isNotEmpty(origin.getOriginId())) {
                 return originMapper.update(origin);
             }
-//        } catch (Exception e) {
-//            throw new ServiceException("更新信息时发生异常！");
-//        }
+        } catch (Exception e) {
+            throw new ServiceException("更新信息时发生异常！");
+        }
         return 0;
     }
 

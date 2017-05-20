@@ -38,6 +38,8 @@
 							class="fa fa-chain"></span>&nbsp;<strong>我的投递</strong></a></li>
 					<li><a href="my/resume.action"><span
 							class="fa fa-file-text-o"></span>&nbsp;<strong>我的简历</strong></a></li>
+					<li><a href="unit/my.action"><span
+							class="fa fa-institution"></span>&nbsp;<strong>我的单位</strong></a></li>
 				</ul>
 				<!-- Nav Tab -->
 

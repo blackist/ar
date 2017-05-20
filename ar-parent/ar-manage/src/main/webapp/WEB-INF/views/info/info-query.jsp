@@ -91,7 +91,7 @@
                     <tr>
                         <td><input type="checkbox" value="${info.infoId}"/></td>
                         <td>
-                            <a href="job/detailJob.action?recruitId=${info.infoId}" target="blank">
+                            <a href="info/detail.action?infoId=${info.infoId}" target="blank">
                                 <ar:sub value="${info.infoTitle}" length="15"></ar:sub>
                             </a>
                             <c:if test="${info.isTop==1}">

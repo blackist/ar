@@ -120,7 +120,7 @@ public class RecruitController extends BaseController {
 		model.addAttribute("positionBenefit", ARContext.positionBenefit);
 		model.addAttribute("positionProf", ARContext.positionProf);
 		super.setFormValid();
-		setOperateRemarks("公司信息为个人公司信息，若要修改，请到 我的帐户 >> 我的招聘 中修改公司信息");
+		setOperateRemarks("公司信息为个人公司信息，若要修改，请到 个人中心 >> 我的招聘 中修改公司信息");
 
 		return "recruit/recruit-add";
 	}
