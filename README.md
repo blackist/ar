@@ -1,9 +1,10 @@
 # 校友录(alumni record) 
 
 [![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)](https://github.com/blackist/ar)
-[![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star)](https://github.com/blackist/ar/stargazers)
-[![GitHub watchers](https://img.shields.io/github/watchers/badges/shields.svg?style=social&label=Watch)](https://github.com/blackist/ar/watchers)
-[![GitHub forks](https://img.shields.io/github/forks/badges/shields.svg?style=social&label=Fork)](https://github.com/blackist/ar/network)
+[![](https://img.shields.io/badge/spring-3.2.0-blue.svg)]()
+[![](https://img.shields.io/badge/jdk-1.7-blue.svg)]()
+[![](https://img.shields.io/badge/mybatis-3.3.0-blue.svg)]()
+[![](https://img.shields.io/badge/mysql-5.1.20-blue.svg)]()
 
 ---
 
