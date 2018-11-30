@@ -100,3 +100,10 @@ ar-common生成jar 安装在本地，ar-manage和ar-portal依赖此库。
 ### 项目架构
 
 ...
+
+
+
+
+### 项目交流
+
+![](http://pic.blackist.top/javaweb-ar-TIM%E5%9B%BE%E7%89%8720181130212423.jpg)
