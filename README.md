@@ -1,8 +1,8 @@
 # 校友录(alumni record) 
 
 [![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg)](https://github.com/blackist/ar)
-[![](https://img.shields.io/badge/spring-3.2.0-blue.svg)]()
-[![](https://img.shields.io/badge/jdk-1.7-blue.svg)]()
+[![](https://img.shields.io/badge/spring-4.2.0-blue.svg)]()
+[![](https://img.shields.io/badge/jdk-1.8-blue.svg)]()
 [![](https://img.shields.io/badge/mybatis-3.3.0-blue.svg)]()
 [![](https://img.shields.io/badge/mysql-5.1.20-blue.svg)]()
 
@@ -12,7 +12,11 @@
 
 校友录网站。作为毕业设计，为母校设计校友交流平台。基于javaWeb，由Maven构建管理，采用Spring+SpringMVC+MyBatis框架，用EhCache做数据缓存。门户网站采用BootStrap设计界面，后台管理网站用AmazeUI设计界面。门户网站总体布局如下所示：
 
-![](http://i.imgur.com/5ZsQbe4.jpg)
+![](http://pic.blackist.top/javaweb-ar-ar-portal-logo.png)
+
+后台管理总体布局如下所示：
+
+![](http://pic.blackist.top/javaweb-ar-ar-manage-logo.png)
 
 ## 项目背景
 
@@ -24,21 +28,75 @@
 
 - Maven 3.0.3
 - IntelliJ IDEA 2017.1/eclipse EE
-- jdk1.7
-- tomcat 7
+- jdk1.8
+- tomcat8.0
 - mysql 5.1
 
-# 系统安装运行流程说明
 
-## 安装数据库
 
-1. 导入数据字典表；<br>
-2. 在用户表(user)中加入id为1的超级管理员；<br>
-3. 在组织表(origin)中加入id为1的徐州工程学院；<br>
-4. 在图片表(image)中加入id为1的徐州工程学院logo；<br>
 
-## 数据字典
+### Getting Start
+
+#### 导入数据库
+
+数据库为MySQL5.1，数据库sql文件在./ar-doc/sql/ar-mysql-data.sql，新建数据库ar，执行此sql文件，可导入表结构和数据字典等数据。
+
+1. 导入数据字典表；
+2. 在用户表(user)中加入id为1的超级管理员；
+3. 在组织表(origin)中加入id为1的徐州工程学院；
+4. 在图片表(image)中加入id为1的徐州工程学院logo；
+
+##### 数据字典
 
 dictionary(字典表)：
 
 dictionary_data(字典数据表)：
+
+#### 导入工程（推荐IDEA）
+
+1.安装Maven...
+
+2.在IDEA中配置Maven，jdk
+
+3.导入Maven项目，等待maven依赖项下载...
+
+4.在IDEA中配置Tomcat8.0
+
+5.修改项目中的数据库配置 ./ar-parent/ar-portal/src/main/resources/config.properties
+
+
+``` xml
+jdbc.driver=com.mysql.jdbc.Driver
+# 数据库地址
+jdbc.url=jdbc:mysql://localhost/ar?characterEncoding=utf8
+# 数据库用户名密码
+jdbc.username=root
+jdbc.password=root
+
+```
+
+
+#### 项目构建
+
+执行ar-common模块下的maven clean 以及 maven install
+
+![](http://pic.blackist.top/javaweb-ar-ar-common-maven-cycle.png)
+
+ar-common生成jar 安装在本地，ar-manage和ar-portal依赖此库。
+
+运行ar-portal模块，启动成功日志：
+
+![](http://pic.blackist.top/javaweb-ar-ar-portal-startup-success.png)
+
+门户网站：
+访问地址: http://localhost:8080/ar-portal/index.action
+用户名/密码: black/12345678
+
+后台管理：
+访问地址: http://localhost:8080/ar-portal/manage.action
+用户名/密码: sa/12345678
+
+
+### 项目架构
+
+...

@@ -4,7 +4,7 @@
 	
 	
 	<!-- 缓存位置可以是自定义的硬盘地址也可以是JVM默认使用的缓存地址 java.io.tmpdir -->
-	<diskStore path="e:\cache\ar\cache"/>
+	<!--<diskStore path="e:\cache\ar\cache"/>-->
 	
 	<!-- 缓存配置
 		不能配置 maxElementOnDisk="1000000", 原始文件没有配置，需要其它元素支持-->
