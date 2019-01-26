@@ -22,9 +22,9 @@
 
 面向学校潜在的需求，为校友设计交流平台（班记录、校友组织、校友论坛等），同时也让院校了解毕业生的就业状况并未毕业生提供就业服务（职业招聘、校园服务等）。
 
-# 开发环境
+## 开发环境
 
-## 本机
+### 本机
 
 - Maven 3.0.3
 - IntelliJ IDEA 2017.1/eclipse EE
@@ -35,9 +35,9 @@
 
 
 
-### Getting Start
+## Getting Start
 
-#### 导入数据库
+### 导入数据库
 
 数据库为MySQL5.1，数据库sql文件在./ar-doc/sql/ar-mysql-data.sql，新建数据库ar，执行此sql文件，可导入表结构和数据字典等数据。
 
@@ -46,13 +46,13 @@
 3. 在组织表(origin)中加入id为1的徐州工程学院；
 4. 在图片表(image)中加入id为1的徐州工程学院logo；
 
-##### 数据字典
+#### 数据字典
 
 dictionary(字典表)：
 
 dictionary_data(字典数据表)：
 
-#### 导入工程（推荐IDEA）
+### 导入工程（推荐IDEA）
 
 1.安装Maven...
 
@@ -76,7 +76,7 @@ jdbc.password=root
 ```
 
 
-#### 项目构建
+### 项目构建
 
 执行ar-common模块下的maven clean 以及 maven install
 
@@ -96,14 +96,21 @@ ar-common生成jar 安装在本地，ar-manage和ar-portal依赖此库。
 访问地址: http://localhost:8080/ar-portal/manage.action
 用户名/密码: sa/12345678
 
+### 项目打包
 
-### 项目架构
+可以使用命令行打包war，打包的war在ar-portal/target下：
+```cmd
+mvn clean && mvn install && mvn package
+
+```
+
+## 项目架构
 
 ...
 
 
 
 
-### 项目交流
+## 项目交流
 
 ![](http://pic.blackist.top/javaweb-ar-TIM%E5%9B%BE%E7%89%8720181130212423.jpg)
