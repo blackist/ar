@@ -117,6 +117,7 @@ mvn clean && mvn install && mvn package
 
 ![校友录](http://pic.blackist.top/blackist-wechat-pub.jpg)
 
+回复：校友录
 
 ### 加入QQ群交流
 
