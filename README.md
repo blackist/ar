@@ -18,6 +18,17 @@
 
 ![](http://pic.blackist.top/javaweb-ar-ar-manage-logo.png)
 
+
+在线体验：
+
+【门户网站】
+访问地址: http://tomcat.blackist.top/ar-portal/index.action
+用户名/密码: black/12345678
+
+【后台管理】
+访问地址: http://tomcat.blackist.top/ar-portal/manage.action
+用户名/密码: sa/12345678
+
 ## 项目背景
 
 面向学校潜在的需求，为校友设计交流平台（班记录、校友组织、校友论坛等），同时也让院校了解毕业生的就业状况并未毕业生提供就业服务（职业招聘、校园服务等）。
@@ -104,20 +115,13 @@ mvn clean && mvn install && mvn package
 
 ```
 
-## 项目架构
-
-...
-
-
-
-
-## 项目交流
+## 项目开发交流
 
 ### 关注公众号获取校友录开发文档
 
 ![校友录](http://pic.blackist.top/blackist-wechat-pub.jpg)
 
-回复：校友录
+获取项目架构、线上部署、网站风格配置文档，回复：校友录
 
 ### 加入QQ群交流
 
