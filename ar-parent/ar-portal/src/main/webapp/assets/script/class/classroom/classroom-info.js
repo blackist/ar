@@ -1,7 +1,7 @@
 $(function() {
 	$("#info-li").attr("class", "active");
 	var classId = $("#classId").val();
-	_pageBond("classroom/info.action?classId=" + classId);
+	_pageBond(getContextPath() + "/classroom/info.action?classId=" + classId);
 
 	$("#infoBoxText").focus(function() {
 		$('#infoBoxEditor').attr("hidden", false);

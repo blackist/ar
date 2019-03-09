@@ -3,7 +3,7 @@
 <%@ include file="/WEB-INF/views/portal-common/portal-tag.jsp"%>
 <c:if test="${SESSION_USER.userId!=null}">
 	<div class="media">
-		<a class="pull-left" href="ta/show.action?userId=${SESSION_USER.userId}">
+		<a class="pull-left" href="${pageContext.request.contextPath}/ta/show.action?userId=${SESSION_USER.userId}">
 			<img class="thumbnail img-responsive center-block" src="${SESSION_USER.portrait}"  style="max-width: 65px"/>
 		</a>
 		<div class="media-body event-body">

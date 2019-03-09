@@ -9,6 +9,6 @@ $(function() {
 function deleteJob(jobId) {
 	if (window.confirm('确定删除这条信息？')){
         // 提交删除
-        post('my/profile/job/delete.action', {"jobId" : jobId});
+        post(getContextPath() + "/my/profile/job/delete.action", {"jobId" : jobId});
 	}
 }

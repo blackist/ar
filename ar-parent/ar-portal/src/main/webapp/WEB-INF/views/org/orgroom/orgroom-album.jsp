@@ -35,12 +35,12 @@
 								</ul>
 							</div><!-- btn-group -->
 							<div class="thmb-prev">
-								<a href="classroom/album/image.action?albumId=${album.albumId}&classId=${album.originId}">
+								<a href="${pageContext.request.contextPath}/classroom/album/image.action?albumId=${album.albumId}&classId=${album.originId}">
 									<img src="${album.coverImage}" class="img-responsive center-block" style="min-height: 160px"/>
 								</a>
 							</div>
 							<h5 class="fm-title">
-								<a href="orgroom/album/image.action?albumId=${album.albumId}&originId=${album.originId}">${album.albumName}</a>
+								<a href="${pageContext.request.contextPath}/orgroom/album/image.action?albumId=${album.albumId}&originId=${album.originId}">${album.albumName}</a>
 							</h5>
 							<small class="text-muted">更新于:<fmt:formatDate value="${album.stateTime}" pattern="yyyy-MM-dd HH:mm" /></small>
 						</div><!-- thmb -->
@@ -58,7 +58,7 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/org/orgroom/orgroom-album.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/org/orgroom/orgroom-album.js"></script>
 <script>
     jQuery(document).ready(function(){
 

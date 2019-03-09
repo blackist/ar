@@ -22,7 +22,7 @@
                 <c:forEach items="${classOtherInfos}" var="classInfo">
                     <c:if test="${classInfo.infoId != infoId}">
                         <li>
-                            <a href="classroom/infoDetail.action?classId=${classroom.classId}&infoId=${classInfo.infoId}">
+                            <a href="${pageContext.request.contextPath}/classroom/infoDetail.action?classId=${classroom.classId}&infoId=${classInfo.infoId}">
                                 <i class="fa fa-angle-right"></i> <ar:sub length="15" value="${classInfo.infoTitle}" />
                             </a>
                         </li>
@@ -43,7 +43,7 @@
             <ul class="sidebar-list">
                 <c:forEach items="${authorOtherInfos}" var="authorInfo">
                         <li>
-                            <a href="classroom/infoDetail.action?classId=${classroom.classId}&infoId=${authorInfo.infoId}">
+                            <a href="${pageContext.request.contextPath}/classroom/infoDetail.action?classId=${classroom.classId}&infoId=${authorInfo.infoId}">
                             <i class="fa fa-angle-right"></i> <ar:sub length="15" value="${authorInfo.infoTitle}" /> </a>
                         </li>
                 </c:forEach>

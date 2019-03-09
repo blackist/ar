@@ -3,7 +3,7 @@ $(function () {
 
     // 相册翻页
     var classId = $("#classId").val();
-    _pageBond("classroom/album.action?classId=" + classId);
+    _pageBond(getContextPath() + "/classroom/album.action?classId=" + classId);
 });
 
 /**
@@ -45,7 +45,7 @@ function deleteAlbum(albumId) {
         if (isValid(albumId)) {
             var classId = $('#classId').val();
             //调用方法 如  e
-            post('classroom/album/delete.action', {'albumId': albumId, 'classId' : classId});
+            post(getContextPath() + '/classroom/album/delete.action', {'albumId': albumId, 'classId' : classId});
         }
     }
 }

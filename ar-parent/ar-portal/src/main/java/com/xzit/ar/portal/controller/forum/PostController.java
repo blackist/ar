@@ -111,9 +111,9 @@ public class PostController extends BaseController {
      * @throws ServiceException
      */
     @RequestMapping(value = "/love", method = RequestMethod.GET)
-    public @ResponseBody
-    Integer love(Model model, @Param("postId") Integer postId) throws ServiceException {
-        return postService.lovePost(postId);
+    @ResponseBody
+    public String love(Model model, @Param("postId") Integer postId) throws ServiceException {
+        return postService.lovePost(postId).toString();
     }
 
     /**

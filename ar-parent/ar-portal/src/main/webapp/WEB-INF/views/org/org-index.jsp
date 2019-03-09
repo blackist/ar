@@ -17,7 +17,7 @@
         <!-- 导航栏 -->
         <div class="header">
             <ol class="breadcrumb">
-                <li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
+                <li><i class="fa fa-home"></i>&nbsp;<a href="${pageContext.request.contextPath}/index.action">主页</a></li>
                 <li class="active">校友组织</li>
             </ol>
         </div>
@@ -30,13 +30,13 @@
                             <div class="blog-item">
                                 <div class="blog-details">
                                     <h4 class="blog-title">
-                                        <a href="class/queryClasses.action?selectStr=${grade.gradeValue}">${grade.gradeValue}级</a>
+                                        <a href="${pageContext.request.contextPath}/class/queryClasses.action?selectStr=${grade.gradeValue}">${grade.gradeValue}级</a>
                                     </h4>
                                     <ul class="blog-meta">
                                         <li>创建于:<fmt:formatDate value="${grade.createTime}"
                                                                 pattern="yyyy-MM-dd"></fmt:formatDate></li>
                                         <li>
-                                            <a href="class/queryClasses.action?selectStr=${grade.gradeValue}">${grade.classNum}个班级</a>
+                                            <a href="${pageContext.request.contextPath}/class/queryClasses.action?selectStr=${grade.gradeValue}">${grade.classNum}个班级</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -54,5 +54,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/org/org-index.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/org/org-index.js"></script>
 </html>

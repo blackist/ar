@@ -22,7 +22,7 @@
 			<div class="tab-pane active" id="orgroom-content">
 				<!-- 动态编写 -->
 				<div class="panel panel-dark panel-alt timeline-post" id="infoBox">
-					<form action="orgroom/publishInfo.action" method="post" enctype="multipart/form-data" id="originInfoForm">
+					<form action="${pageContext.request.contextPath}/orgroom/publishInfo.action" method="post" enctype="multipart/form-data" id="originInfoForm">
 						<div class="panel-body" style="border-bottom: solid 5px #ddd">
 							<input class="form-control" name="infoTitle" id="infoTitle" placeholder="标题">
 						</div>
@@ -59,7 +59,7 @@
 							<div class="blog-item">
 								<%----%>
 								<c:if test="${info.infoImg!=null&&info.infoImg!=''}">
-									<a href="classroom/infoDetail.action?classId=${orgroom.originId}&infoId=${info.infoId}" class="blog-img" target="blank">
+									<a href="${pageContext.request.contextPath}/classroom/infoDetail.action?classId=${orgroom.originId}&infoId=${info.infoId}" class="blog-img" target="blank">
 										<img src="${info.infoImg}" class="img-responsive" style="max-height: 230px;" />
 									</a>
 								</c:if>
@@ -71,12 +71,12 @@
 										</c:if>
 										<br>
 										<ul class="blog-meta">
-											<li>By: <a href="ta/show.action?userId=${info.userId}">${info.trueName}</a></li>
+											<li>By: <a href="${pageContext.request.contextPath}/ta/show.action?userId=${info.userId}">${info.trueName}</a></li>
 											<li><fmt:formatDate value="${info.createTime}" pattern="yyyy-MM-dd HH:mm" /></li>
-											<li><a href="orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${info.infoId}">评论(${info.comments})</a></li>
+											<li><a href="${pageContext.request.contextPath}/orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${info.infoId}">评论(${info.comments})</a></li>
 										</ul>
 										<button class="btn btn-sm btn-white"
-											onclick="javascript:location.href='orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${info.infoId}';">查看详情</button>
+											onclick="javascript:location.href='${pageContext.request.contextPath}/orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${info.infoId}';">查看详情</button>
 									</div>
 								</div>
 							</div>
@@ -101,5 +101,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/org/orgroom/orgroom-info.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/org/orgroom/orgroom-info.js"></script>
 </html>

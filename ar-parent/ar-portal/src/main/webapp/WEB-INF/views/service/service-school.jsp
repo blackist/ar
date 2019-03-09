@@ -20,11 +20,11 @@
 		<div class="col-md-9 project1">
 			<!-- 导航栏 -->
 			<ol class="breadcrumb">
-				<li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
-				<li>&nbsp;<a href="service.action">校园服务</a></li>
+				<li><i class="fa fa-home"></i>&nbsp;<a href="${pageContext.request.contextPath}/index.action">主页</a></li>
+				<li>&nbsp;<a href="${pageContext.request.contextPath}/service.action">校园服务</a></li>
 				<li class="active">${service.infoTitle}</li>
 			</ol>
-			<img src="assets/images/e.jpg" class="img-responsive center-block"/>
+			<img src="${pageContext.request.contextPath}/assets/images/e.jpg" class="img-responsive center-block"/>
 			<p style="font-size: 16px">${service.content}</p>
 		</div>
 		<%@include file="/WEB-INF/views/service/service-list.jsp"%>
@@ -36,5 +36,5 @@
 	<%@ include file="/WEB-INF/views/portal-common/footer.jsp"%>
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/message/contact-us.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/message/contact-us.js"></script>
 </html>

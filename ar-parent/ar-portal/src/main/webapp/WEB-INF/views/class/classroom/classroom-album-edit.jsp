@@ -17,7 +17,7 @@
     <%@ include file="/WEB-INF/views/class/classroom/classroom-nav.jsp" %>
     <!-- Tab panes -->
     <div class="tab-content" style="background-color: #ddd;">
-        <form action="classroom/album/update.action" method="post" id="album-form">
+        <form action="${pageContext.request.contextPath}/classroom/album/update.action" method="post" id="album-form">
             <div class="form-group">
                 <label class="col-sm-2 control-label">相册名称 <span class="asterisk">*</span></label>
                 <div class="col-sm-4">
@@ -56,5 +56,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/class/classroom/classroom-album.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/class/classroom/classroom-album.js"></script>
 </html>

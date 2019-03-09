@@ -13,7 +13,7 @@
 			<!-- navigation -->
 			<div class="header">
 				<ol class="breadcrumb">
-					<li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
+					<li><i class="fa fa-home"></i>&nbsp;<a href="${pageContext.request.contextPath}/index.action">主页</a></li>
 					<li class="active">登录</li>
 				</ol>
 			</div>
@@ -41,7 +41,7 @@
 				</div>
 			</div>
 			<%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-			<script src="assets/script/portal-main/login.js"></script>
+			<script src="${pageContext.request.contextPath}/assets/script/portal-main/login.js"></script>
 
 		</div>
 	</div>

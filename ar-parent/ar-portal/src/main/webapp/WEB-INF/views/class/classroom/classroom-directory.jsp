@@ -31,7 +31,7 @@
                     <div class="col-md-6">
                         <div class="people-item">
                             <div class="media">
-                                <a href="ta/show.action?userId=${directory.userId}"
+                                <a href="${pageContext.request.contextPath}/ta/show.action?userId=${directory.userId}"
                                    class="pull-left"> <img src="${directory.imgPath}" class="img-responsive thumbnail media-object">
                                 </a>
                                 <div class="media-body">
@@ -91,5 +91,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/class/classroom/classroom-directory.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/class/classroom/classroom-directory.js"></script>
 </html>

@@ -18,7 +18,7 @@
             <!-- 导航栏 -->
             <div class="header">
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
+                    <li><i class="fa fa-home"></i>&nbsp;<a href="${pageContext.request.contextPath}/index.action">主页</a></li>
                     <li class="active">班级录</li>
                 </ol>
             </div>
@@ -42,7 +42,7 @@
                                 <tr>
                                     <td>${clazz.originGrade}</td>
                                     <td>
-                                        <a href="classroom.action?classId=${clazz.originId}">${clazz.originName}</a>
+                                        <a href="${pageContext.request.contextPath}/classroom.action?classId=${clazz.originId}">${clazz.originName}</a>
                                     </td>
                                     <td>${clazz.members}</td>
                                     <td><fmt:formatDate value="${clazz.createTime}" pattern="yyyy-MM-dd"/></td>
@@ -71,5 +71,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/class/class-query.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/class/class-query.js"></script>
 </html>

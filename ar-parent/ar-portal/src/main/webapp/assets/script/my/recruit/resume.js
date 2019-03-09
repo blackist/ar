@@ -55,7 +55,7 @@ function updateResumeSubmit(){
 function deleteResume(resumeId) {
 
     if (confirm("确定删除这份简历？")){
-        window.location.href="my/resume/delete.action?resumeId="+resumeId;
+        window.location.href=getContextPath() + "/my/resume/delete.action?resumeId="+resumeId;
     }
 }
 

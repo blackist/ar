@@ -1,4 +1,4 @@
 $(function() {
 	$("#nav-info").attr("class", "active grid");
-	_pageBond("forum.action");
+	_pageBond(getContextPath() + "/forum.action");
 });

@@ -15,7 +15,7 @@
         <!-- 导航栏 -->
         <div class="header">
             <ol class="breadcrumb">
-                <li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
+                <li><i class="fa fa-home"></i>&nbsp;<a href="${pageContext.request.contextPath}/index.action">主页</a></li>
                 <li class="active">新闻中心</li>
             </ol>
         </div>
@@ -59,7 +59,7 @@
                     <li class="active"><i class="fa fa-comments-o"></i> 所有评论(${info.comments})</li>
                 </ol>
                 <ul class="media-list comment-list" id="comment-list">
-                    <img class="center-block" src='assets/images/icon/loading/loader.gif'>
+                    <img class="center-block" src='${pageContext.request.contextPath}/assets/images/icon/loading/loader.gif'>
                 </ul><!-- comment-list -->
 
                 <!--登录可评论-->
@@ -67,7 +67,7 @@
                     <div class="mb20"></div>
                     <h5 class="subtitle mb5"><i class="fa fa-user"></i> ${SESSION_USER.trueName}：</h5>
                     <div class="mb20"></div>
-                    <form method="post" action="news/comment.action" id="form-comment">
+                    <form method="post" action="${pageContext.request.contextPath}/news/comment.action" id="form-comment">
                             <textarea name="content" maxlength="500" rows="5" class="form-control"
                                       id="comment-content"></textarea>
                         <input hidden name="infoId" id="infoId" value="${info.infoId}">
@@ -90,5 +90,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/news/news-detail.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/news/news-detail.js"></script>
 </html>

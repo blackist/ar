@@ -23,7 +23,7 @@
 			<div class="tab-pane active" id="classroom-content">
 				<!-- 动态编写 -->
 				<div class="panel panel-dark panel-alt timeline-post" id="infoBox">
-					<form action="classroom/publishClassMessage.action" method="post"
+					<form action="${pageContext.request.contextPath}/classroom/publishClassMessage.action" method="post"
 						enctype="multipart/form-data" id="classMessagePublishForm">
 						<div class="panel-body">
 							<textarea class="form-control" placeholder="留言..."
@@ -70,5 +70,5 @@
 	<%@ include file="/WEB-INF/views/portal-common/footer.jsp"%>
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/class/classroom/classroom-message.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/class/classroom/classroom-message.js"></script>
 </html>

@@ -93,7 +93,7 @@ function deleteImage(imageId) {
         var classId = $('classId').val();
         var albumId = $('albumId').val();
         // 提交
-        post('classroom/album/image/delete.action', {'imageId' : imageId, 'classId' : classId, 'albumId' : albumId});
+        post(getContextPath() + '/classroom/album/image/delete.action', {'imageId' : imageId, 'classId' : classId, 'albumId' : albumId});
     }
 }                                
 

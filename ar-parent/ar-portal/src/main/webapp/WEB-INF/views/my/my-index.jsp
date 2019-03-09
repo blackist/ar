@@ -151,5 +151,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/my/my-index.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/my/my-index.js"></script>
 </html>

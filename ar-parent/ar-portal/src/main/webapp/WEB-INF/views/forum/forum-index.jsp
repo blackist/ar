@@ -19,7 +19,7 @@
             <!-- 导航栏 -->
             <div class="header">
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
+                    <li><i class="fa fa-home"></i>&nbsp;<a href="${pageContext.request.contextPath}/index.action">主页</a></li>
                     <li class="active">校友论坛</li>
                 </ol>
             </div>
@@ -44,7 +44,7 @@
                         <c:forEach items="${page.beanList}" var="post">
                             <tr>
                                 <td id="${post.infoId}">&nbsp;<a
-                                        href="post/detail.action?postId=${post.infoId}">${post.infoTitle}</a><ar:top
+                                        href="${pageContext.request.contextPath}/post/detail.action?postId=${post.infoId}">${post.infoTitle}</a><ar:top
                                         value="${post.isTop}"/>
                                 </td>
                                 <td>${post.trueName}</td>
@@ -67,5 +67,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/forum/forum-index.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/forum/forum-index.js"></script>
 </html>

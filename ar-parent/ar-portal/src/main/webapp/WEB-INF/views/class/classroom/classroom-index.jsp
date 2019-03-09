@@ -52,11 +52,11 @@
 											<ar:sub length="40" value="${info.content}" />
 											<br>
 											<ul class="blog-meta">
-												<li>By: <a href="ta.show.action?userId=${info.userId}">${info.userName}</a></li>
+												<li>By: <a href="${pageContext.request.contextPath}/ta.show.action?userId=${info.userId}">${info.userName}</a></li>
 												<li><fmt:formatDate value="${info.createTime}"
 														pattern="yyyy-MM-dd HH:mm" /></li>
 												<li><a
-													href="classroom/infoDetail.action?classId=${classroom.classId}&infoId=${info.infoId}">评论(${info.comments})</a></li>
+													href="${pageContext.request.contextPath}/classroom/infoDetail.action?classId=${classroom.classId}&infoId=${info.infoId}">评论(${info.comments})</a></li>
 											</ul>
 											<button class="btn btn-sm btn-white"
 												onclick="javascript:location.href='classroom/infoDetail.action?classId=${classroom.classId}&infoId=${info.infoId}';">查看详情</button>
@@ -93,14 +93,14 @@
 							<strong></strong><a class="alert-link" href="javascript:;">您还未加入该班级!</a>
 						</div>
 						<a class="btn btn-darkblue"
-							href="classroom/joinClass.action?classId=${classroom.classId}"><span
+							href="${pageContext.request.contextPath}/classroom/joinClass.action?classId=${classroom.classId}"><span
 							class="glyphicon glyphicon-plus"></span>&nbsp;加入班级</a>
 					</ar:notexist>
 					<hr />
 					<h5 class="subtitle mb5">管理员：</h5>
 					<div class="media">
 						<a class="pull-left"
-							href="ta/show.action?userId=${classroom.mgrId}"> <img
+							href="${pageContext.request.contextPath}/ta/show.action?userId=${classroom.mgrId}"> <img
 							class="media-object img-responsive" src="${classroom.mgrImg}"
 							alt="" style="max-width: 100px;">
 						</a>
@@ -121,5 +121,5 @@
 	<%@ include file="/WEB-INF/views/portal-common/footer.jsp"%>
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/class/classroom/classroom-index.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/class/classroom/classroom-index.js"></script>
 </html>

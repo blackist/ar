@@ -19,8 +19,8 @@
 				<!-- 导航栏 -->
 				<div class="header">
 					<ol class="breadcrumb">
-						<li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
-						<li><a href="recruit.action">职业招聘</a></li>
+						<li><i class="fa fa-home"></i>&nbsp;<a href="${pageContext.request.contextPath}/index.action">主页</a></li>
+						<li><a href="${pageContext.request.contextPath}/recruit.action">职业招聘</a></li>
 						<li class="active">发布招聘</li>
 					</ol>
 				</div>
@@ -73,7 +73,7 @@
 										<!-- tab-content -->
 
 										<ul class="pager wizard">
-											<li class="next"><a href="recruit.action">返回招聘首页</a></li>
+											<li class="next"><a href="${pageContext.request.contextPath}/recruit.action">返回招聘首页</a></li>
 										</ul>
 
 									</div>
@@ -91,6 +91,6 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/recruit/unit/unit-select.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/recruit/unit/unit-select.js"></script>
 
 </html>

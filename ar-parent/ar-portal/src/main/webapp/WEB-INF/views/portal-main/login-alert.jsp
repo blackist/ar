@@ -10,7 +10,7 @@
 		<div class="modal-content">
 			<div class="col-md-10">
 				<form class="form-horizontal" method="post"
-					action="login/val.action" id="loginForm">
+					action="${pageContext.request.contextPath}/login/val.action" id="loginForm">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h4 class="panel-title">登录</h4>

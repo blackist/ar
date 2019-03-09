@@ -7,7 +7,7 @@ function joinClass() {
 	var classId = $("#asfvbszd_ausivsbkjzcnsaohdknxzoxhjcnc_").val();
 	/* 参数校验 */
 	if (isValid(userId) && isValid(classId)) {
-		$.post('classroom/joinClass.action', {
+		$.post(getContextPath() + '/classroom/joinClass.action', {
 			"userId" : userId,
 			"classId" : classId
 		}, function(data) {

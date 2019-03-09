@@ -16,8 +16,9 @@
             <!-- 导航栏 -->
             <div class="header">
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
-                    <li><a href="recruit.action">职业招聘</a></li>
+                    <li><i class="fa fa-home"></i>&nbsp;<a href="${pageContext.request.contextPath}/index.action">主页</a>
+                    </li>
+                    <li><a href="${pageContext.request.contextPath}/recruit.action">职业招聘</a></li>
                     <li class="active">发布招聘</li>
                 </ol>
             </div>
@@ -49,7 +50,7 @@
                                         </div>
                                         <div class="tab-pane active" id="tab-recruit">
                                             <form class="form" id="recruitForm" method="post"
-                                                  action="recruit/addRecruitSubmit.action">
+                                                  action="${pageContext.request.contextPath}/recruit/addRecruitSubmit.action">
                                                 <div class="panel panel-default">
                                                     <h5 class="panel-title">基本信息</h5>
                                                 </div>
@@ -195,6 +196,7 @@
                                                                    placeholder="手机/固定电话" maxlength="30"/>
                                                         </div>
                                                     </div>
+                                                </div>
                                             </form>
                                         </div>
 
@@ -219,8 +221,8 @@
 <%@ include file="/WEB-INF/views/portal-common/footer.jsp" %>
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/recruit/recruit-add.js"></script>
-<script src="assets/script/portal-common/area.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/recruit/recruit-add.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/portal-common/area.js"></script>
 
 <!--js初始化函数-->
 <script type="text/javascript">
@@ -240,7 +242,7 @@
                     var $clone = $(this).clone().css('display', 'block')
                         .appendTo('body');
                     var top = Math.round(($clone.height() - $clone.find(
-                            '.modal-content').height()) / 3);
+                        '.modal-content').height()) / 3);
                     top = top > 0 ? top : 0;
                     $clone.remove();
                     $(this).find('.modal-content').css("margin-top", top);

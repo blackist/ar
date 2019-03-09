@@ -20,7 +20,7 @@
 		<div class="col-md-9 project1">
 			<!-- 导航栏 -->
 			<ol class="breadcrumb">
-				<li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
+				<li><i class="fa fa-home"></i>&nbsp;<a href="${pageContext.request.contextPath}/index.action">主页</a></li>
 				<li class="active">校园服务</li>
 			</ol>
 
@@ -51,5 +51,5 @@
 	<%@ include file="/WEB-INF/views/portal-common/footer.jsp"%>
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/message/contact-us.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/message/contact-us.js"></script>
 </html>

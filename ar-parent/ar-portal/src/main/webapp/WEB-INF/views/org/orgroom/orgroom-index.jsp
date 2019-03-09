@@ -93,14 +93,14 @@
 							<button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
 							<a class="alert-link" href="javascript:;">您还未加入该班级${orgroom.originName}!</a>
 						</div>
-						<a class="btn btn-darkblue" href="orgroom/joinOrigin.action?originId=${orgroom.originId}">
+						<a class="btn btn-darkblue" href="${pageContext.request.contextPath}/orgroom/joinOrigin.action?originId=${orgroom.originId}">
 							<span class="glyphicon glyphicon-plus"></span>&nbsp;申请加入</a>
 					</ar:notexist>
 					<hr />
 					<h5 class="subtitle mb5">管理员：</h5>
 					<div class="media">
 						<a class="pull-left"
-							href="ta/show.action?userId=${classroom.mgrId}"> <img
+							href="${pageContext.request.contextPath}/ta/show.action?userId=${classroom.mgrId}"> <img
 							class="media-object img-responsive" src="${classroom.mgrImg}"
 							alt="" style="max-width: 100px;">
 						</a>
@@ -121,5 +121,5 @@
 	<%@ include file="/WEB-INF/views/portal-common/footer.jsp"%>
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/org/orgroom/orgroom-index.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/org/orgroom/orgroom-index.js"></script>
 </html>

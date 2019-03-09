@@ -16,7 +16,7 @@
         <div class="breadcrumb-wrapper">
             <span class="label"></span>
             <ol class="breadcrumb">
-                <li><a href="index.action">主页</a></li>
+                <li><a href="${pageContext.request.contextPath}/index.action">主页</a></li>
                 <li class="active">个人中心</li>
             </ol>
         </div>
@@ -32,13 +32,13 @@
         <div class="col-sm-8 col-lg-10">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
-                <li><a href="my/recruit.action"><span
+                <li><a href="${pageContext.request.contextPath}/my/recruit.action"><span
                         class="fa fa-archive"></span>&nbsp;<strong>我的招聘</strong></a></li>
-                <li><a href="my/resume/posted.action"><span
+                <li><a href="${pageContext.request.contextPath}/my/resume/posted.action"><span
                         class="fa fa-chain"></span>&nbsp;<strong>我的投递</strong></a></li>
-                <li class="active"><a href="my/resume.action"><span
+                <li class="active"><a href="${pageContext.request.contextPath}/my/resume.action"><span
                         class="fa fa-file-text-o"></span>&nbsp;<strong>我的简历</strong></a></li>
-                <li><a href="unit/my.action"><span
+                <li><a href="${pageContext.request.contextPath}/unit/my.action"><span
                         class="fa fa-institution"></span>&nbsp;<strong>我的单位</strong></a></li>
             </ul>
             <!-- Nav Tab -->
@@ -46,7 +46,7 @@
             <!-- Tab panes -->
             <div class="tab-content">
                 <ul class="filemanager-options">
-                    <li><a href="my/resume/addResume.action" class="itemopt"><i class="fa fa-plus"></i> 登记简历</a></li>
+                    <li><a href="${pageContext.request.contextPath}/my/resume/addResume.action" class="itemopt"><i class="fa fa-plus"></i> 登记简历</a></li>
                     <li><a href="" class="itemopt"></a></li>
                     <li><a href="" class="itemopt"></a></li>
                 </ul>
@@ -66,16 +66,16 @@
                             <tr>
                                 <td>${status.index+1}</td>
                                 <td>
-                                    <a href="my/resume/detail.action?resumeId=${resume.resumeId}">${resume.resumeTitle}</a>
+                                    <a href="${pageContext.request.contextPath}/my/resume/detail.action?resumeId=${resume.resumeId}">${resume.resumeTitle}</a>
                                 </td>
                                 <td>${resume.profType}</td>
                                 <td><ar:dictdata dictdata="${resume.expSalary}" dict="sl"></ar:dictdata></td>
                                 <td>
                                     <div class="btn-group mr5">
-                                        <button onclick="location='my/resume/detail.action?resumeId=${resume.resumeId}'"
+                                        <button onclick="location='${pageContext.request.contextPath}/my/resume/detail.action?resumeId=${resume.resumeId}'"
                                                 class="btn btn-sm btn-white tooltips" type="button"
                                                 data-toggle="tooltip" title="详情"><i class="fa fa-bars"></i></button>
-                                        <button onclick="location='my/resume/edit.action?resumeId=${resume.resumeId}'"
+                                        <button onclick="location='${pageContext.request.contextPath}/my/resume/edit.action?resumeId=${resume.resumeId}'"
                                                 class="btn btn-sm btn-white tooltips" type="button"
                                                 data-toggle="tooltip" title="编辑"><i class="fa fa-edit"></i></button>
                                         <button onclick="deleteResume(${resume.resumeId})"
@@ -101,5 +101,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/my/recruit/resume.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/my/recruit/resume.js"></script>
 </html>

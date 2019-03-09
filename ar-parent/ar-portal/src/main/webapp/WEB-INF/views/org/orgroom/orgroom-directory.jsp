@@ -34,7 +34,7 @@
 						<div class="col-md-6">
 							<div class="people-item">
 								<div class="media">
-									<a href="ta/show.action?userId=${directory.userId}"
+									<a href="${pageContext.request.contextPath}/ta/show.action?userId=${directory.userId}"
 										class="pull-left"> <img alt=""
 										src="${directory.portrait}" class="thumbnail media-object">
 									</a>
@@ -95,5 +95,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/org/orgroom/orgroom-directory.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/org/orgroom/orgroom-directory.js"></script>
 </html>

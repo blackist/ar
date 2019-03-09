@@ -22,7 +22,7 @@
 			<div class="tab-pane active" id="classroom-content">
 				<!-- 动态编写 -->
 				<div class="panel panel-dark panel-alt timeline-post" id="infoBox">
-					<form action="orgroom/publishMessage.action" method="post" id="orgroomMessageForm">
+					<form action="${pageContext.request.contextPath}/orgroom/publishMessage.action" method="post" id="orgroomMessageForm">
 						<div class="panel-body">
 							<textarea class="form-control" placeholder="留言..." id="infoBoxText" maxlength="200" name="content"></textarea>
 						</div>
@@ -42,7 +42,7 @@
 										<ar:sub length="210" value="${message.content}" />
 										<br>
 										<ul class="blog-meta">
-											<li>By: <a href="ta/show.action?userId=${message.userId}">${message.trueName}</a></li>
+											<li>By: <a href="${pageContext.request.contextPath}/ta/show.action?userId=${message.userId}">${message.trueName}</a></li>
 											<li><fmt:formatDate value="${message.createTime}" pattern="yyyy-MM-dd HH:mm" /></li>
 										</ul>
 									</div>
@@ -63,5 +63,5 @@
 	<%@ include file="/WEB-INF/views/portal-common/footer.jsp"%>
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/org/orgroom/orgroom-message.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/org/orgroom/orgroom-message.js"></script>
 </html>

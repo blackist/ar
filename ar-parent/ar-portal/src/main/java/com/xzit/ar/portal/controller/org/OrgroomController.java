@@ -243,10 +243,9 @@ public class OrgroomController extends BaseController {
      * @return
      */
     @RequestMapping("/loveInfo")
-    public
     @ResponseBody
-    Integer loveInfo(@RequestParam("infoId") Integer infoId) throws ServiceException {
-        return informationService.loveInfo(infoId);
+    public String loveInfo(@RequestParam("infoId") Integer infoId) throws ServiceException {
+        return informationService.loveInfo(infoId).toString();
     }
 
     /**
@@ -328,6 +327,7 @@ public class OrgroomController extends BaseController {
      */
     @RequestMapping("publishMessage")
     public String publishMessage(RedirectAttributes attributes, Information information) throws ServiceException {
+        System.out.println(information.getContent());
         // 参数校验
         if (CommonUtil.isNotEmpty(information.getOriginId()) && CommonUtil.isNotEmpty(information.getContent())) {
             // 设置消息内容
@@ -355,6 +355,7 @@ public class OrgroomController extends BaseController {
 
     /**
      * TODO 加载组织的成员列表
+     *
      * @param model
      * @param originId
      * @return
@@ -369,7 +370,7 @@ public class OrgroomController extends BaseController {
         }
         model.addAttribute("orgroom", origin);
         // 成员信息
-        Page<Map<String, Object> > page = new Page<>(getPageIndex(), 20);
+        Page<Map<String, Object>> page = new Page<>(getPageIndex(), 20);
         orgroomService.getOriginMember(page, originId);
         // 传递成员列表 
         model.addAttribute("page", page);
@@ -379,6 +380,7 @@ public class OrgroomController extends BaseController {
 
     /**
      * TODO 加载组织通讯录
+     *
      * @param model
      * @param originId originId
      * @return
@@ -393,7 +395,7 @@ public class OrgroomController extends BaseController {
         }
         model.addAttribute("orgroom", origin);
         // 成员信息
-        Page<Map<String, Object> > page = new Page<>(getPageIndex(), 20);
+        Page<Map<String, Object>> page = new Page<>(getPageIndex(), 20);
         orgroomService.getOriginDirectory(page, originId);
         // 传递通讯录数据
         model.addAttribute("page", page);
@@ -404,6 +406,7 @@ public class OrgroomController extends BaseController {
 
     /**
      * TODO 加载组织相册
+     *
      * @param model
      * @param originId
      * @return
@@ -428,6 +431,7 @@ public class OrgroomController extends BaseController {
 
     /**
      * TODO 加载相册照片流
+     *
      * @param model
      * @param albumId
      * @param originId

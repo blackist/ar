@@ -27,7 +27,7 @@
                     <label for="selectall">全选</label>
                 </div>
             </li>
-            <li><a href="classroom/album/upload.action?classId=${classroom.classId}&albumId=${album.albumId}"
+            <li><a href="${pageContext.request.contextPath}/classroom/album/upload.action?classId=${classroom.classId}&albumId=${album.albumId}"
                    class=""><i class="fa fa-upload"></i> 上传照片</a></li>
             <li><a href="javascript:;" class="itemopt disabled"><i class="fa fa-download"></i> 下载选中</a></li>
             <li><a href="javascript:;" class="itemopt disabled"><i class="fa fa-trash-o"></i> 删除选中</a></li>
@@ -50,13 +50,13 @@
                             </button>
                             <ul class="dropdown-menu fm-menu" role="menu">
                                 <li>
-                                    <a href="download.action?fileRelPath=${image.imagePath}&fileName=${image.imageName}">
+                                    <a href="${pageContext.request.contextPath}/download.action?fileRelPath=${image.imagePath}&fileName=${image.imageName}">
                                         <i class="fa fa-download"></i> 下载照片</a></li>
                                 <li>
-                                    <a href="classroom/album/image/delete.action?classId=${classroom.classId}&albumId=${album.albumId}&imageId=${image.imageId}">
+                                    <a href="${pageContext.request.contextPath}/classroom/album/image/delete.action?classId=${classroom.classId}&albumId=${album.albumId}&imageId=${image.imageId}">
                                         <i class="fa fa-trash-o"></i> 删除照片</a></li>
                                 <li>
-                                    <a href="classroom/album/cover.action?classId=${classroom.classId}&albumId=${album.albumId}&imageId=${image.imageId}">
+                                    <a href="${pageContext.request.contextPath}/classroom/album/cover.action?classId=${classroom.classId}&albumId=${album.albumId}&imageId=${image.imageId}">
                                         <i class="fa fa-trash-o"></i> 设为封面</a></li>
                             </ul>
                         </div><!-- btn-group -->
@@ -86,6 +86,6 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/js/jquery.prettyPhoto.js"></script>
-<script src="assets/script/class/classroom/classroom-album-image.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/jquery.prettyPhoto.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/class/classroom/classroom-album-image.js"></script>
 </html>

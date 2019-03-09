@@ -69,7 +69,7 @@
 							<li class="active"><i class="fa fa-user"></i> 关于校友</li>
 						</ol>
 						<div class="media">
-							<a class="pull-left" href="ta/show.action?userId=${info.userId}">
+							<a class="pull-left" href="${pageContext.request.contextPath}/ta/show.action?userId=${info.userId}">
 								<img class="thumbnail img-responsive center-block" src="${info.portrait}"  style="max-width: 65px"/>
 							</a>
 							<div class="media-body event-body">
@@ -92,7 +92,7 @@
 							<div class="mb20"></div>
 							<h5 class="subtitle mb5"><i class="fa fa-user"></i> ${SESSION_USER.trueName}：</h5>
 							<div class="mb20"></div>
-							<form method="post" action="orgroom/commentInfo.action" id="form-comment">
+							<form method="post" action="${pageContext.request.contextPath}/orgroom/commentInfo.action" id="form-comment">
 								<textarea name="content" maxlength="500" rows="5" class="form-control" id="comment-content"></textarea>
 								<input hidden name="infoId" value="${info.infoId}">
 								<input hidden name="originId" value="${orgroom.originId}">
@@ -105,7 +105,7 @@
 					<!-- col-sm-8 -->
 
 					<div class="col-sm-3" id="orgroom-info-side">
-						<img class="center-block" src='assets/images/icon/loader.gif'>
+						<img class="center-block" src='${pageContext.request.contextPath}/assets/images/icon/loader.gif'>
 					</div>
 					<!-- col-sm-4 -->
 
@@ -121,5 +121,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/org/orgroom/orgroom-info-detail.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/org/orgroom/orgroom-info-detail.js"></script>
 </html>

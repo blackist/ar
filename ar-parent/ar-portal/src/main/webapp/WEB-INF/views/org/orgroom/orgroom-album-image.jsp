@@ -6,7 +6,7 @@
 <head>
 <title>${orgroom.originName}相册-信电校友录</title>
 <%@ include file="/WEB-INF/views/portal-common/portal-meta.jsp"%>
-<link rel="stylesheet" href="assets/css/album.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/album.css" />
 </head>
 
 <body>
@@ -20,11 +20,11 @@
 		<!-- Tab panes -->
 		<div class="tab-content" style="background-color: #ddd;">
 			<div class="album" style="width: 780px">
-				<a class="album-pic" href="assets/images/photos/media2.png" title="Lion Rock"></a>
-				<a class="album-pic" href="assets/images/photos/media4.png" title="Holsten Gate"></a>
-				<a class="album-pic" href="assets/images/photos/media2.png" title="Blue Hour"></a>
-				<a class="album-pic" href="assets/images/photos/media4.png" title="Holsten Gate"></a>
-				<a class="album-pic" href="assets/images/photos/media2.png" title="Blue Hour"></a>
+				<a class="album-pic" href="${pageContext.request.contextPath}/assets/images/photos/media2.png" title="Lion Rock"></a>
+				<a class="album-pic" href="${pageContext.request.contextPath}/assets/images/photos/media4.png" title="Holsten Gate"></a>
+				<a class="album-pic" href="${pageContext.request.contextPath}/assets/images/photos/media2.png" title="Blue Hour"></a>
+				<a class="album-pic" href="${pageContext.request.contextPath}/assets/images/photos/media4.png" title="Holsten Gate"></a>
+				<a class="album-pic" href="${pageContext.request.contextPath}/assets/images/photos/media2.png" title="Blue Hour"></a>
 			</div>
 
 			<%@ include file="/WEB-INF/views/portal-common/pagination.jsp"%>
@@ -38,6 +38,6 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/js/album.js"></script>
-<script src="assets/script/org/orgroom/orgroom-album-image.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/album.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/org/orgroom/orgroom-album-image.js"></script>
 </html>

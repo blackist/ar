@@ -16,7 +16,7 @@
         <div class="breadcrumb-wrapper">
             <span class="label"></span>
             <ol class="breadcrumb">
-                <li><a href="index.action">主页</a></li>
+                <li><a href="${pageContext.request.contextPath}/index.action">主页</a></li>
                 <li class="active">个人中心</li>
             </ol>
         </div>
@@ -32,11 +32,11 @@
         <div class="col-sm-8 col-lg-10">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
-                <li><a href="my/account.action"><span
+                <li><a href="${pageContext.request.contextPath}/my/account.action"><span
                         class="glyphicon glyphicon-th-list"></span>&nbsp;<strong>账号信息</strong></a></li>
-                <li class="active"><a href="my/account/password.action"><span
+                <li class="active"><a href="${pageContext.request.contextPath}/my/account/password.action"><span
                         class="glyphicon glyphicon-paperclip"></span>&nbsp;<strong>密码修改</strong></a></li>
-                <li><a href="my/account/email.action"><span
+                <li><a href="${pageContext.request.contextPath}/my/account/email.action"><span
                         class="glyphicon glyphicon-briefcase"></span>&nbsp;<strong>邮箱设置</strong></a></li>
             </ul>
             <!-- Nav Tab -->
@@ -87,5 +87,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/my/acount/account-password.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/my/acount/account-password.js"></script>
 </html>

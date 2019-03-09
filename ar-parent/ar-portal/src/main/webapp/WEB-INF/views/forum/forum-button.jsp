@@ -2,7 +2,7 @@
 
 <form action="forum.action" method="get">
 	<div class="btn-demo" style="width: 105px; float: right; ">
-		<a class="btn btn-success" href="post/add.action"> <span
+		<a class="btn btn-success" href="${pageContext.request.contextPath}/post/add.action"> <span
 				class="fa fa-plus-circle"></span>&nbsp;发布新帖
 		</a>
 	</div>

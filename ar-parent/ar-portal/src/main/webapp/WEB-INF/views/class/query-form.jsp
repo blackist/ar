@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ include file="/WEB-INF/views/portal-common/portal-tag.jsp" %>
-<form action="class/queryClasses.action" method="post">
+<form action="${pageContext.request.contextPath}/class/queryClasses.action" method="post">
     <div class="form-group">
         <div class="col-sm-2">
             <div class="input-group">

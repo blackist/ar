@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<form action="recruit.action" method="get">
+<form action="${pageContext.request.contextPath}/recruit.action" method="get">
 	<div class="btn-demo"
 		style="width: 228px; float: right; ">
-		<a class="btn btn-success" href="recruit/addRecruit.action"> <span
+		<a class="btn btn-success" href="${pageContext.request.contextPath}/recruit/addRecruit.action"> <span
 			class="fa fa-plus-circle"></span>&nbsp;发布招聘
-		</a> <a class="btn btn-success" href="my/resume/addResume.action"> <span
+		</a> <a class="btn btn-success" href="${pageContext.request.contextPath}/my/resume/addResume.action"> <span
 			class="fa fa-file-text-o"></span>&nbsp;登记简历                                        
 		</a>
 	</div>

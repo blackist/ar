@@ -20,7 +20,7 @@
 				<div class="header">
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
-						<li><a href="recruit.action">职业招聘</a></li>
+						<li><a href="${pageContext.request.contextPath}/recruit.action">职业招聘</a></li>
 						<li class="active">发布招聘</li>
 					</ol>
 				</div>
@@ -54,7 +54,7 @@
 											</div>
 											<div class="tab-pane active" id="tab-unit">
 												<form class="form" id="unitForm" method="post"
-													action="unit/addUnitSubmit.action">
+													action="${pageContext.request.contextPath}/unit/addUnitSubmit.action">
 													<div class="form-group">
 														<label class="col-sm-4"><span class="asterisk">*
 														</span>公司名称</label>
@@ -157,6 +157,6 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/recruit/unit/unit-add.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/recruit/unit/unit-add.js"></script>
 
 </html>

@@ -21,11 +21,11 @@
     </ol>
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
-        <div class="item active"><img src="assets/images/school/xzit-front-wide.jpg"></div>
-        <div class="item"><img src="assets/images/school/xzit-south.jpg"></div>
-        <div class="item"><img src="assets/images/school/xzit-motto.jpg"></div>
-        <div class="item"><img src="assets/images/school/xzit-library.jpg"></div>
-        <div class="item"><img src="assets/images/school/xzit-alumni.jpg"></div>
+        <div class="item active"><img src="${pageContext.request.contextPath}/assets/images/school/xzit-front-wide.jpg"></div>
+        <%--<div class="item"><img src="${pageContext.request.contextPath}/assets/images/school/xzit-south.jpg"></div>--%>
+        <div class="item"><img src="${pageContext.request.contextPath}/assets/images/school/xzit-motto.jpg"></div>
+        <div class="item"><img src="${pageContext.request.contextPath}/assets/images/school/xzit-library.jpg"></div>
+        <div class="item"><img src="${pageContext.request.contextPath}/assets/images/school/xzit-alumni.jpg"></div>
     </div>
     <!-- 轮播（Carousel）导航 -->
     <a class="carousel-control focus-navigation left" href="#myCarousel" data-slide="prev">
@@ -47,11 +47,11 @@
             <div class="panel-body padding0">
 
                 <c:forEach items="${inews}" var="info">
-                    <a href="news/detail.action?infoId=${info.infoId}" class="photoday">
+                    <a href="${pageContext.request.contextPath}/news/detail.action?infoId=${info.infoId}" class="photoday">
                         <img src="${info.thumbImage}" alt=""/>
                     </a>
                     <div class="photo-details">
-                        <a href="news/detail.action?infoId=${info.infoId}">
+                        <a href="${pageContext.request.contextPath}/news/detail.action?infoId=${info.infoId}">
                             <h5 class="photo-title"><ar:sub value="${info.infoTitle}" length="20"></ar:sub></h5>
                         </a>
                         <small class="text-muted">
@@ -70,13 +70,13 @@
             </div>
             <div class="panel-body text-center nopadding">
                 <br>
-                <a href="recruit/addRecruit.action" class="btn btn-warning-alt"> 发布招聘 </a>
-                <a href="post/add.action" class="btn btn-warning-alt"> 发布新帖 </a>
+                <a href="${pageContext.request.contextPath}/recruit/addRecruit.action" class="btn btn-warning-alt"> 发布招聘 </a>
+                <a href="${pageContext.request.contextPath}/post/add.action" class="btn btn-warning-alt"> 发布新帖 </a>
                 <a class="btn btn-warning-alt"> 我的简历 </a>
                 <hr>
-                <a href="my/class.action" class="btn btn-info-alt"> 我的班級 </a>
-                <a href="my/recruit.action" class="btn btn-info-alt"> 我的招聘 </a>
-                <a href="my/resume.action" class="btn btn-info-alt"> 我的简历 </a>
+                <a href="${pageContext.request.contextPath}/my/class.action" class="btn btn-info-alt"> 我的班級 </a>
+                <a href="${pageContext.request.contextPath}/my/recruit.action" class="btn btn-info-alt"> 我的招聘 </a>
+                <a href="${pageContext.request.contextPath}/my/resume.action" class="btn btn-info-alt"> 我的简历 </a>
                 <hr>
             </div>
         </div>
@@ -87,7 +87,7 @@
         <div class="panel panel-default panel-alt widget-messaging">
             <div class="panel-heading">
                 <div class="panel-btns">
-                    <a href="forum.action" class="panel-edit"><i class="fa fa-chevron-right"></i></a>
+                    <a href="${pageContext.request.contextPath}/forum.action" class="panel-edit"><i class="fa fa-chevron-right"></i></a>
                 </div>
                 <h1 class="panel-title">校友新闻</h1>
             </div>
@@ -98,7 +98,7 @@
                             <small class="pull-right">
                                 <fmt:formatDate value="${info.createTime}" pattern="M月d日"></fmt:formatDate>
                             </small>
-                            <a href="news/detail.action?infoId=${info.infoId}"><h4 class="sender">${info.infoTitle}</h4>
+                            <a href="${pageContext.request.contextPath}/news/detail.action?infoId=${info.infoId}"><h4 class="sender">${info.infoTitle}</h4>
                             </a>
                         </li>
                     </c:forEach>
@@ -111,7 +111,7 @@
         <div class="panel panel-default panel-alt widget-messaging">
             <div class="panel-heading">
                 <div class="panel-btns">
-                    <a href="forum.action" class="panel-edit"><i class="fa fa-chevron-right"></i></a>
+                    <a href="${pageContext.request.contextPath}/forum.action" class="panel-edit"><i class="fa fa-chevron-right"></i></a>
                 </div>
                 <h2 class="panel-title">热门话题</h2>
             </div>
@@ -122,7 +122,7 @@
                             <small class="pull-right">
                                 <fmt:formatDate value="${post.createTime}" pattern="M月d日"></fmt:formatDate>
                             </small>
-                            <a href="post/detail.action?postId=${post.infoId}"><h4 class="sender">${post.infoTitle}</h4>
+                            <a href="${pageContext.request.contextPath}/post/detail.action?postId=${post.infoId}"><h4 class="sender">${post.infoTitle}</h4>
                             </a>
                         </li>
                     </c:forEach>
@@ -141,7 +141,7 @@
                 <ul>
                     <c:forEach items="${recruits}" var="recruit">
                         <li>
-                            <a href="recruit/detailRecruit.action?recruitId=${recruit.recruitId}">
+                            <a href="${pageContext.request.contextPath}/recruit/detailRecruit.action?recruitId=${recruit.recruitId}">
                                 <ar:sub value="${recruit.title}" length="15"></ar:sub>
                             </a>
                         </li>
@@ -157,15 +157,15 @@
                 <li>
                     <div class="media">
                         <a class="pull-left col-sm-4" style="max-height: 40px;"
-                           href="ta/show.action?userId=${member.userId}">
+                           href="${pageContext.request.contextPath}/ta/show.action?userId=${member.userId}">
                             <img class="thumbnail img-responsive" src="${member.imgPath}"></a>
                         <div class="media-body" style="max-height: 40px;">
-                            <a class="email-summary" href="ta/show.action?userId=">${member.trueName}</a>
+                            <a class="email-summary" href="${pageContext.request.contextPath}/ta/show.action?userId=">${member.trueName}</a>
                             <small class="text-muted"><fmt:formatDate value="${member.createTime}"
                                                                       pattern="yyyy-MM-dd HH:mm"/>&nbsp; 加入
                             </small>
                             <a class="email-summary"
-                               href="classroom.action?classId=${member.originId}">${member.originName}</a>
+                               href="${pageContext.request.contextPath}/classroom.action?classId=${member.originId}">${member.originName}</a>
                         </div>
                     </div>
                 </li>
@@ -178,5 +178,5 @@
 <%@ include file="/WEB-INF/views/portal-common/footer.jsp" %>
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/portal-main/index.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/portal-main/index.js"></script>
 </html>

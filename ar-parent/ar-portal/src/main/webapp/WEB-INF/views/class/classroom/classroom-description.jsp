@@ -22,7 +22,7 @@
 		<div class="tab-content" style="background-color: #ddd;">
 			<div class="tab-pane active" id="classroom-content">
 				<div class="col-md-8">
-					<form id="descForm" action="classroom/setDescription.action"
+					<form id="descForm" action="${pageContext.request.contextPath}/classroom/setDescription.action"
 						class="form-horizontal" method="post">
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -61,5 +61,5 @@
 	<%@ include file="/WEB-INF/views/portal-common/footer.jsp"%>
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/class/classroom/classroom-description.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/class/classroom/classroom-description.js"></script>
 </html>

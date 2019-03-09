@@ -23,7 +23,7 @@
         <div class="tab-pane active" id="classroom-content">
             <!-- 动态编写 -->
             <div class="panel panel-dark panel-alt timeline-post" id="infoBox">
-                <form action="classroom/publishClassInfo.action" method="post"
+                <form action="${pageContext.request.contextPath}/classroom/publishClassInfo.action" method="post"
                       enctype="multipart/form-data" id="classInfoPublishForm">
                     <div class="panel-body" style="border-bottom: solid 5px #ddd">
                         <input class="form-control" name="infoTitle" id="infoTitle" placeholder="标题">
@@ -68,7 +68,7 @@
                         <div class="blog-item">
                                 <%----%>
                             <c:if test="${info.thumbImage!=null&&info.thumbImage!=''}">
-                                <a href="classroom/infoDetail.action?classId=${classroom.classId}&infoId=${info.infoId}"
+                                <a href="${pageContext.request.contextPath}/classroom/infoDetail.action?classId=${classroom.classId}&infoId=${info.infoId}"
                                    class="blog-img">
                                     <img src="${info.thumbImage}" class="img-responsive"
                                          style="max-height: 230px; max-width: 230px"/></a>
@@ -78,15 +78,15 @@
                                     <ar:sub length="40" value="${info.infoTitle}"/>
                                     <br>
                                     <ul class="blog-meta">
-                                        <li>By: <a href="ta/show.action?userId=${info.userId}">${info.userName}</a></li>
+                                        <li>By: <a href="${pageContext.request.contextPath}/ta/show.action?userId=${info.userId}">${info.userName}</a></li>
                                         <li><fmt:formatDate value="${info.createTime}" pattern="yyyy-MM-dd HH:mm"/></li>
                                         <li>
-                                            <a href="classroom/infoDetail.action?classId=${classroom.classId}&infoId=${info.infoId}">
+                                            <a href="${pageContext.request.contextPath}/classroom/infoDetail.action?classId=${classroom.classId}&infoId=${info.infoId}">
                                                 评论(${info.comments})</a>
                                         </li>
                                     </ul>
                                     <button class="btn btn-sm btn-white"
-                                            onclick="javascript:location.href='classroom/infoDetail.action?classId=${classroom.classId}&infoId=${info.infoId}';">
+                                            onclick="javascript:location.href='${pageContext.request.contextPath}/classroom/infoDetail.action?classId=${classroom.classId}&infoId=${info.infoId}';">
                                         查看详情
                                     </button>
                                 </div>
@@ -112,5 +112,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/class/classroom/classroom-info.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/class/classroom/classroom-info.js"></script>
 </html>

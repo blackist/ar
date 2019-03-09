@@ -16,7 +16,7 @@
         <div class="breadcrumb-wrapper">
             <span class="label"></span>
             <ol class="breadcrumb">
-                <li><a href="index.action">主页</a></li>
+                <li><a href="${pageContext.request.contextPath}/index.action">主页</a></li>
                 <li class="active">个人中心</li>
             </ol>
         </div>
@@ -32,13 +32,13 @@
         <div class="col-sm-8 col-lg-10">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
-                <li><a href="my/recruit.action"><span
+                <li><a href="${pageContext.request.contextPath}/my/recruit.action"><span
                         class="fa fa-archive"></span>&nbsp;<strong>我的招聘</strong></a></li>
-                <li><a href="my/resume/posted.action"><span
+                <li><a href="${pageContext.request.contextPath}/my/resume/posted.action"><span
                         class="fa fa-chain"></span>&nbsp;<strong>我的投递</strong></a></li>
-                <li class="active"><a href="my/resume.action"><span
+                <li class="active"><a href="${pageContext.request.contextPath}/my/resume.action"><span
                         class="fa fa-file-text-o"></span>&nbsp;<strong>我的简历</strong></a></li>
-                <li><a href="unit/my.action"><span
+                <li><a href="${pageContext.request.contextPath}/unit/my.action"><span
                         class="fa fa-institution"></span>&nbsp;<strong>我的单位</strong></a></li>
             </ul>
             <!-- Nav Tab -->
@@ -55,7 +55,7 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab-recruit">
                                 <form class="form" id="resumeForm" method="post"
-                                      action="my/resume/addResumeSubmit.action">
+                                      action="${pageContext.request.contextPath}/my/resume/addResumeSubmit.action">
 
                                     <div class="panel panel-default">
                                         <h5 class="panel-title">职位信息</h5>
@@ -162,7 +162,7 @@
                         <ul class="pager wizard">
                             <li><a href="javascript:;" onclick="addResumeSubmit()" id="submitBtn">提交</a></li>
                             &nbsp;&nbsp;&nbsp;
-                            <li><a href="my/resume.action" id="cancelBtn">放弃</a></li>
+                            <li><a href="${pageContext.request.contextPath}/my/resume.action" id="cancelBtn">放弃</a></li>
                         </ul>
                     </div>
                 </div>
@@ -177,5 +177,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/my/recruit/resume.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/my/recruit/resume.js"></script>
 </html>

@@ -22,7 +22,7 @@
                 <c:forEach items="${originOtherInfos}" var="originInfo">
                     <c:if test="${originInfo.infoId != infoId}">
                         <li>
-                            <a href="orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${originInfo.infoId}">
+                            <a href="${pageContext.request.contextPath}/orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${originInfo.infoId}">
                                 <i class="fa fa-angle-right"></i> <ar:sub length="15" value="${originInfo.infoTitle}" />
                             </a>
                         </li>
@@ -43,7 +43,7 @@
             <ul class="sidebar-list">
                 <c:forEach items="${authorOtherInfos}" var="authorInfo">
                         <li>
-                            <a href="orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${authorInfo.infoId}">
+                            <a href="${pageContext.request.contextPath}/orgroom/infoDetail.action?originId=${orgroom.originId}&infoId=${authorInfo.infoId}">
                             <i class="fa fa-angle-right"></i> <ar:sub length="15" value="${authorInfo.infoTitle}" /> </a>
                         </li>
                 </c:forEach>

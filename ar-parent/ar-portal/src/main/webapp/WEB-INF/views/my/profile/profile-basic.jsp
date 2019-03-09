@@ -5,7 +5,7 @@
 <head>
     <title>个人中心-信电校友录</title>
     <%@ include file="/WEB-INF/views/portal-common/portal-meta.jsp" %>
-    <link href="assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 </head>
 <body>
 <%@ include file="/WEB-INF/views/portal-common/header.jsp" %>
@@ -17,7 +17,7 @@
         <div class="breadcrumb-wrapper">
             <span class="label"></span>
             <ol class="breadcrumb">
-                <li><a href="index.action">主页</a></li>
+                <li><a href="${pageContext.request.contextPath}/index.action">主页</a></li>
                 <li class="active">个人中心</li>
             </ol>
         </div>
@@ -35,9 +35,9 @@
             <ul class="nav nav-tabs">
                 <li class="active"><a href="javascript:;"><span
                         class="glyphicon glyphicon-th-list"></span>&nbsp;<strong>基本资料</strong></a></li>
-                <li><a href="my/profile/job.action"><span
+                <li><a href="${pageContext.request.contextPath}/my/profile/job.action"><span
                         class="glyphicon glyphicon-briefcase"></span>&nbsp;<strong>工作信息</strong></a></li>
-                <li><a href="my/profile/portrait.action"><span
+                <li><a href="${pageContext.request.contextPath}/my/profile/portrait.action"><span
                         class="glyphicon glyphicon-picture"></span>&nbsp;<strong>头像设置</strong></a></li>
             </ul>
             <!-- Nav Tab -->
@@ -46,7 +46,7 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="tab-basic">
                     <form class="form" id="user-info-form" method="post"
-                          action="my/profile/basic/update.action">
+                          action="${pageContext.request.contextPath}/my/profile/basic/update.action">
                         <div class="panel panel-default">
                             <h5 class="panel-title">基本信息</h5>
                         </div>
@@ -169,7 +169,7 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/my/profile/profile-basic.js"></script>
-<script src="assets/js/bootstrap-datetimepicker.js"></script>
-<script src="assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/my/profile/profile-basic.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/bootstrap-datetimepicker.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
 </html>

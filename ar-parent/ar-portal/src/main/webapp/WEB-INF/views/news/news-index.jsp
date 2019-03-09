@@ -15,7 +15,7 @@
         <!-- 导航栏 -->
         <div class="header">
             <ol class="breadcrumb">
-                <li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
+                <li><i class="fa fa-home"></i>&nbsp;<a href="${pageContext.request.contextPath}/index.action">主页</a></li>
                 <li class="active">新闻中心</li>
             </ol>
         </div>
@@ -26,7 +26,7 @@
             <div class="panel panel-default panel-alt widget-messaging">
                 <div class="panel-heading">
                     <div class="panel-btns">
-                        <a href="forum.action" class="panel-edit"><i class="fa fa-chevron-right"></i></a>
+                        <a href="${pageContext.request.contextPath}/forum.action" class="panel-edit"><i class="fa fa-chevron-right"></i></a>
                     </div>
                     <h1 class="panel-title">校友新闻</h1>
                 </div>
@@ -37,7 +37,7 @@
                                 <small class="pull-right">
                                     <fmt:formatDate value="${info.createTime}" pattern="M月d日"></fmt:formatDate>
                                 </small>
-                                <a href="news/detail.action?infoId=${info.infoId}"><h4
+                                <a href="${pageContext.request.contextPath}/news/detail.action?infoId=${info.infoId}"><h4
                                         class="sender">${info.infoTitle}</h4>
                                 </a>
                             </li>
@@ -57,5 +57,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/news/news-index.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/news/news-index.js"></script>
 </html>

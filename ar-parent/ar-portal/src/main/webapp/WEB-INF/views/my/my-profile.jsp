@@ -5,14 +5,14 @@
 	<!-- navigation -->
 	<div class="header">
 		<ol class="breadcrumb">
-			<li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
+			<li><i class="fa fa-home"></i>&nbsp;<a href="${pageContext.request.contextPath}/index.action">主页</a></li>
 			<li class="active">个人中心</li>
 		</ol>
 	</div>
 
 	<div class="row">
 		<div class="col-sm-3">
-			<img src="assets/images/photos/profile-2.jpg"
+			<img src="${pageContext.request.contextPath}/assets/images/photos/profile-2.jpg"
 				class="thumbnail img-responsive" alt="" />
 
 			<div class="mb30"></div>
@@ -80,7 +80,7 @@
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
 								class="media-object act-thumb"
-								src="assets/images/photos/user1.png" alt="" />
+								src="${pageContext.request.contextPath}/assets/images/photos/user1.png" alt="" />
 							</a>
 							<div class="media-body act-media-body">
 								<strong>Ray Sin</strong> started following <strong>Eileen
@@ -93,7 +93,7 @@
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
 								class="media-object act-thumb"
-								src="assets/images/photos/userprofile.png" alt="" />
+								src="${pageContext.request.contextPath}/assets/images/photos/userprofile.png" alt="" />
 							</a>
 							<div class="media-body act-media-body">
 								<strong>Eileen Sideways</strong> posted a new blog. <br /> <small
@@ -101,7 +101,7 @@
 
 								<div class="media blog-media">
 									<a class="pull-left" href="#"> <img class="media-object"
-										src="assets/images/photos/media5.png" alt="" />
+										src="${pageContext.request.contextPath}/assets/images/photos/media5.png" alt="" />
 									</a>
 									<div class="media-body">
 										<h4 class="media-title">
@@ -124,7 +124,7 @@
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
 								class="media-object act-thumb"
-								src="assets/images/photos/user2.png" alt="" />
+								src="${pageContext.request.contextPath}/assets/images/photos/user2.png" alt="" />
 							</a>
 							<div class="media-body act-media-body">
 								<strong>Chris Anthemum</strong> started following <strong>Eileen
@@ -137,7 +137,7 @@
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
 								class="media-object act-thumb"
-								src="assets/images/photos/userprofile.png" alt="" />
+								src="${pageContext.request.contextPath}/assets/images/photos/userprofile.png" alt="" />
 							</a>
 							<div class="media-body act-media-body">
 								<strong>Eileen Sideways</strong> uploaded <a href="">5
@@ -145,17 +145,17 @@
 									12:30pm</small>
 
 								<ul class="uploadphoto-list">
-									<li><a href="assets/images/photos/media1.jpg"
+									<li><a href="${pageContext.request.contextPath}/assets/images/photos/media1.jpg"
 										data-rel="prettyPhoto"><img
-											src="assets/images/photos/media1.jpg" class="img-responsive"
+											src="${pageContext.request.contextPath}/assets/images/photos/media1.jpg" class="img-responsive"
 											alt="" /></a></li>
-									<li><a href="assets/images/photos/media2.png"
+									<li><a href="${pageContext.request.contextPath}/assets/images/photos/media2.png"
 										data-rel="prettyPhoto"><img
-											src="assets/images/photos/media2.png" class="img-responsive"
+											src="${pageContext.request.contextPath}/assets/images/photos/media2.png" class="img-responsive"
 											alt="" /></a></li>
-									<li><a href="assets/images/photos/media3.png"
+									<li><a href="${pageContext.request.contextPath}/assets/images/photos/media3.png"
 										data-rel="prettyPhoto"><img
-											src="assets/images/photos/media3.png" class="img-responsive"
+											src="${pageContext.request.contextPath}/assets/images/photos/media3.png" class="img-responsive"
 											alt="" /></a></li>
 								</ul>
 							</div>
@@ -165,7 +165,7 @@
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
 								class="media-object act-thumb"
-								src="assets/images/photos/user4.png" alt="" />
+								src="${pageContext.request.contextPath}/assets/images/photos/user4.png" alt="" />
 							</a>
 							<div class="media-body act-media-body">
 								<strong>Frank Furter</strong> started following <strong>Eileen
@@ -178,7 +178,7 @@
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
 								class="media-object act-thumb"
-								src="assets/images/photos/userprofile.png" alt="" />
+								src="${pageContext.request.contextPath}/assets/images/photos/userprofile.png" alt="" />
 							</a>
 							<div class="media-body act-media-body">
 								<strong>Eileen Sideways</strong> posted a new note. <br /> <small
@@ -200,7 +200,7 @@
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
 								class="media-object act-thumb"
-								src="assets/images/photos/userprofile.png" alt="" />
+								src="${pageContext.request.contextPath}/assets/images/photos/userprofile.png" alt="" />
 							</a>
 							<div class="media-body act-media-body">
 								<strong>Eileen Sideways</strong> posted a new blog. <br /> <small
@@ -208,7 +208,7 @@
 
 								<div class="media blog-media">
 									<a class="pull-left" href="#"> <img class="media-object"
-										src="assets/images/photos/media4.png" alt="" />
+										src="${pageContext.request.contextPath}/assets/images/photos/media4.png" alt="" />
 									</a>
 									<div class="media-body">
 										<h4 class="media-title">
@@ -230,15 +230,15 @@
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
 								class="media-object act-thumb"
-								src="assets/images/photos/userprofile.png" alt="" />
+								src="${pageContext.request.contextPath}/assets/images/photos/userprofile.png" alt="" />
 							</a>
 							<div class="media-body act-media-body">
 								<strong>Eileen Sideways</strong> added new photo. <br /> <small
 									class="text-muted">December 24 at 1:30pm</small>
 								<div class="mb20"></div>
-								<a href="assets/images/photos/media6.png" data-rel="prettyPhoto"
+								<a href="${pageContext.request.contextPath}/assets/images/photos/media6.png" data-rel="prettyPhoto"
 									class="img-single"><img
-									src="assets/images/photos/media6.png" class="img-responsive"
+									src="${pageContext.request.contextPath}/assets/images/photos/media6.png" class="img-responsive"
 									alt="" /></a>
 							</div>
 						</div>
@@ -247,7 +247,7 @@
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
 								class="media-object act-thumb"
-								src="assets/images/photos/user5.png" alt="" />
+								src="${pageContext.request.contextPath}/assets/images/photos/user5.png" alt="" />
 							</a>
 							<div class="media-body act-media-body">
 								<strong>Weno Carasbong</strong> started following <strong>Eileen
@@ -260,7 +260,7 @@
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
 								class="media-object act-thumb"
-								src="assets/images/photos/userprofile.png" alt="" />
+								src="${pageContext.request.contextPath}/assets/images/photos/userprofile.png" alt="" />
 							</a>
 							<div class="media-body act-media-body">
 								<strong>Eileen Sideways</strong> posted a new blog. <br /> <small
@@ -268,7 +268,7 @@
 
 								<div class="media blog-media">
 									<a class="pull-left" href="#"> <img class="media-object"
-										src="assets/images/photos/media7.png" alt="" />
+										src="${pageContext.request.contextPath}/assets/images/photos/media7.png" alt="" />
 									</a>
 									<div class="media-body">
 										<h4 class="media-title">
@@ -464,7 +464,7 @@
 
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
-								class="media-object act-thumb" src="images/photos/user2.png"
+								class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/user2.png"
 								alt="" />
 							</a>
 							<div class="media-body act-media-body">
@@ -472,11 +472,11 @@
 									class="text-muted">Today at 12:30pm</small>
 
 								<ul class="uploadphoto-list">
-									<li><a href="images/photos/media5.png"
-										data-rel="prettyPhoto"><img src="images/photos/media5.png"
+									<li><a href="${pageContext.request.contextPath}/images/photos/media5.png"
+										data-rel="prettyPhoto"><img src="${pageContext.request.contextPath}/images/photos/media5.png"
 											class="img-responsive" alt="" /></a></li>
-									<li><a href="images/photos/media4.png"
-										data-rel="prettyPhoto"><img src="images/photos/media4.png"
+									<li><a href="${pageContext.request.contextPath}/images/photos/media4.png"
+										data-rel="prettyPhoto"><img src="${pageContext.request.contextPath}/images/photos/media4.png"
 											class="img-responsive" alt="" /></a></li>
 								</ul>
 							</div>
@@ -485,7 +485,7 @@
 
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
-								class="media-object act-thumb" src="images/photos/user1.png"
+								class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/user1.png"
 								alt="" />
 							</a>
 							<div class="media-body act-media-body">
@@ -498,7 +498,7 @@
 
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
-								class="media-object act-thumb" src="images/photos/user4.png"
+								class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/user4.png"
 								alt="" />
 							</a>
 							<div class="media-body act-media-body">
@@ -511,7 +511,7 @@
 
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
-								class="media-object act-thumb" src="images/photos/user2.png"
+								class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/user2.png"
 								alt="" />
 							</a>
 							<div class="media-body act-media-body">
@@ -519,14 +519,14 @@
 									class="text-muted">5 days ago at 12:30pm</small>
 
 								<ul class="uploadphoto-list">
-									<li><a href="images/photos/media6.png"
-										data-rel="prettyPhoto"><img src="images/photos/media6.png"
+									<li><a href="${pageContext.request.contextPath}/images/photos/media6.png"
+										data-rel="prettyPhoto"><img src="${pageContext.request.contextPath}/images/photos/media6.png"
 											class="img-responsive" alt="" /></a></li>
-									<li><a href="images/photos/media7.png"
-										data-rel="prettyPhoto"><img src="images/photos/media7.png"
+									<li><a href="${pageContext.request.contextPath}/images/photos/media7.png"
+										data-rel="prettyPhoto"><img src="${pageContext.request.contextPath}/images/photos/media7.png"
 											class="img-responsive" alt="" /></a></li>
-									<li><a href="images/photos/media2.png"
-										data-rel="prettyPhoto"><img src="images/photos/media2.png"
+									<li><a href="${pageContext.request.contextPath}/images/photos/media2.png"
+										data-rel="prettyPhoto"><img src="${pageContext.request.contextPath}/images/photos/media2.png"
 											class="img-responsive" alt="" /></a></li>
 								</ul>
 							</div>
@@ -535,7 +535,7 @@
 
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
-								class="media-object act-thumb" src="images/photos/user1.png"
+								class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/user1.png"
 								alt="" />
 							</a>
 							<div class="media-body act-media-body">
@@ -548,7 +548,7 @@
 
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
-								class="media-object act-thumb" src="images/photos/user4.png"
+								class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/user4.png"
 								alt="" />
 							</a>
 							<div class="media-body act-media-body">
@@ -561,7 +561,7 @@
 
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
-								class="media-object act-thumb" src="images/photos/user3.png"
+								class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/user3.png"
 								alt="" />
 							</a>
 							<div class="media-body act-media-body">
@@ -570,7 +570,7 @@
 
 								<div class="media blog-media">
 									<a class="pull-left" href="#"> <img class="media-object"
-										src="images/photos/media3.png" alt="" />
+										src="${pageContext.request.contextPath}/images/photos/media3.png" alt="" />
 									</a>
 									<div class="media-body">
 										<h4 class="media-title">
@@ -592,7 +592,7 @@
 
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
-								class="media-object act-thumb" src="images/photos/user4.png"
+								class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/user4.png"
 								alt="" />
 							</a>
 							<div class="media-body act-media-body">
@@ -605,7 +605,7 @@
 
 						<div class="media act-media">
 							<a class="pull-left" href="#"> <img
-								class="media-object act-thumb" src="images/photos/user4.png"
+								class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/user4.png"
 								alt="" />
 							</a>
 							<div class="media-body act-media-body">

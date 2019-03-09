@@ -32,11 +32,11 @@
         <div class="col-sm-8 col-lg-10">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
-                <li><a href="my/profile/basic.action"><span
+                <li><a href="${pageContext.request.contextPath}/my/profile/basic.action"><span
                         class="glyphicon glyphicon-th-list"></span>&nbsp;<strong>基本资料</strong></a></li>
                 <li class="active"><a href="javascript:;"><span
                         class="glyphicon glyphicon-briefcase"></span>&nbsp;<strong>工作信息</strong></a></li>
-                <li><a href="my/profile/portrait.action"><span
+                <li><a href="${pageContext.request.contextPath}/my/profile/portrait.action"><span
                         class="glyphicon glyphicon-picture"></span>&nbsp;<strong>头像设置</strong></a></li>
             </ul>
             <!-- Nav Tab -->
@@ -70,7 +70,7 @@
                         </table>
                     </div><!-- table-responsive -->
 
-                    <form method="post" action="my/profile/job/add.action">
+                    <form method="post" action="${pageContext.request.contextPath}/my/profile/job/add.action">
                         <div class="col-lg-4">
                             <input type="text" name="jobName" placeholder="职位/职务" maxlength="30" class="form-control"/>
                         </div>
@@ -98,5 +98,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/my/profile/profile-job.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/my/profile/profile-job.js"></script>
 </html>

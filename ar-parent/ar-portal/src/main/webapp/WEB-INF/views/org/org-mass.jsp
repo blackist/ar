@@ -17,7 +17,7 @@
 			<!-- 导航栏 -->
 			<div class="header">
 				<ol class="breadcrumb">
-					<li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
+					<li><i class="fa fa-home"></i>&nbsp;<a href="${pageContext.request.contextPath}/index.action">主页</a></li>
 					<li class="active">校友组织</li>
 				</ol>
 			</div>
@@ -30,12 +30,12 @@
 								<div class="blog-item">
 									<div class="blog-details">
 										<h5 class="blog-title">
-											<a href="orgroom.action?originId=${mass.originId}">
+											<a href="${pageContext.request.contextPath}/orgroom.action?originId=${mass.originId}">
 												<i class="fa fa-users"></i> <ar:sub length="10" value="${mass.originName}" /></a>
 										</h5>
 										<ul class="blog-meta">
 											<li>最近活动：<fmt:formatDate value="${mass.stateTime}" pattern="YYYY-MM-dd"></fmt:formatDate></li>
-											<li>成员：<a href="orgroom.action?originId=${mass.originId}">${mass.members}</a></li>
+											<li>成员：<a href="${pageContext.request.contextPath}/orgroom.action?originId=${mass.originId}">${mass.members}</a></li>
 										</ul>
 									</div>
 								</div>
@@ -45,7 +45,7 @@
 				</div>
 				<%--outline div--%>
 				<div class="col-sm-3" id="org-outline">
-					<img src="assets/images/icon/loading/loader.gif" class="center-block">
+					<img src="${pageContext.request.contextPath}/assets/images/icon/loading/loader.gif" class="center-block">
 				</div>
 				<%--outline div--%>
 			</div>
@@ -56,5 +56,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/org/org-mass.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/org/org-mass.js"></script>
 </html>

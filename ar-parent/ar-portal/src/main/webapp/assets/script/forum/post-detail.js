@@ -3,12 +3,13 @@ $(function () {
 
     // 加载评论列表
     var postId = $("#postId").html();
-    $.post("post/commentList.action?postId=" + postId, function (data) {
+    var ctx = "${pageContext.request.contextPath}";
+    $.post(getContextPath() + "/post/commentList.action?postId=" + postId, function (data) {
         $("#comment-list").html(data);
     });
 
     var userId = $('#userId').val();
-    $.post('post/outline.action', {'userId': userId}, function (data) {
+    $.post(getContextPath() + '/post/outline.action', {'userId': userId}, function (data) {
         $('#outline').html(data);
     })
 });
@@ -22,7 +23,7 @@ function loadMoreComment(pageIndex) {
     $("#btn-load-more").html("<img src='assets/images/icon/loading/loader.gif'>");
     // 加载评论列表
     var postId = $("#postId").html();
-    $.post("post/commentList.action", {
+    $.post(getContextPath() + "/post/commentList.action", {
         "postId": postId,
         "pageIndex": pageIndex
     }, function (data) {
@@ -73,10 +74,11 @@ function lovePost(postId) {
 
     $.ajax({
         type: "GET",
-        url: "post/love.action",
+        url: getContextPath() + "/post/love.action",
         data: "postId=" + postId,
         dataType: "text",
         success: function (data) {
+            console.log(data)
             $("#post-love-add").attr("onclick", null);
             $(".post-loves").html(data);
         }

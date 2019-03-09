@@ -72,7 +72,7 @@
                         <li class="active"><i class="fa fa-user"></i> 关于校友</li>
                     </ol>
                     <div class="media">
-                        <a class="pull-left" href="ta/show.action?userId=${info.userId}">
+                        <a class="pull-left" href="${pageContext.request.contextPath}/ta/show.action?userId=${info.userId}">
                             <img class="thumbnail img-responsive center-block" src="${info.portrait}"
                                  style="max-width: 65px"/>
                         </a>
@@ -88,7 +88,7 @@
                         <li class="active"><i class="fa fa-comments-o"></i> 所有评论(${info.comments})</li>
                     </ol>
                     <ul class="media-list comment-list" id="comment-list">
-                        <img class="center-block" src='assets/images/icon/loader.gif'>
+                        <img class="center-block" src='${pageContext.request.contextPath}/assets/images/icon/loader.gif'>
                     </ul><!-- comment-list -->
 
                     <%--登录可评论--%>
@@ -96,7 +96,7 @@
                         <div class="mb20"></div>
                         <h5 class="subtitle mb5"><i class="fa fa-user"></i> ${SESSION_USER.trueName}：</h5>
                         <div class="mb20"></div>
-                        <form method="post" action="classroom/commentInfo.action" id="form-comment">
+                        <form method="post" action="${pageContext.request.contextPath}/classroom/commentInfo.action" id="form-comment">
                             <textarea name="content" maxlength="500" rows="5" class="form-control"
                                       id="comment-content"></textarea>
                             <input hidden name="infoId" value="${info.infoId}">
@@ -129,5 +129,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/class/classroom/classroom-info-detail.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/class/classroom/classroom-info-detail.js"></script>
 </html>

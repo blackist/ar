@@ -4,11 +4,11 @@
 $(function() {
     $("#my-recruit").attr("class", "active");
 
-    _pageBond('my/recruit.action');
+    _pageBond(getContextPath() + "/my/recruit.action");
 });
 
 function deleteMyRecruit(recruitId) {
     if (window.confirm('确定删除这条招聘信息？')){
-        post('my/recruit/delete.action', {'recruitId' : recruitId});
+        post(getContextPath() + "/my/recruit/delete.action", {'recruitId' : recruitId});
     }
 }

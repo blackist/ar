@@ -4,7 +4,7 @@
 $(function() {
     $("#my-recruit").attr("class", "active");
 
-    _pageBond('my/resume/posted.action')
+    _pageBond(getContextPath() + "/my/resume/posted.action)
 });
 
 function cancelMyPost(recruitId, resumeId) {

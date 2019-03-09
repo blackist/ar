@@ -16,7 +16,7 @@
         <div class="breadcrumb-wrapper">
             <span class="label"></span>
             <ol class="breadcrumb">
-                <li><a href="index.action">首页</a></li>
+                <li><a href="${pageContext.request.contextPath}/index.action">首页</a></li>
                 <li class="active">个人中心</li>
             </ol>
         </div>
@@ -95,7 +95,7 @@
 
                                 <div class="media blog-media">
                                     <a class="pull-left" href="#">
-                                        <img class="media-object" src="images/photos/media5.png" alt=""/>
+                                        <img class="media-object" src="${pageContext.request.contextPath}/images/photos/media5.png" alt=""/>
                                     </a>
                                     <div class="media-body">
                                         <h4 class="media-title"><a href="">Ut Enim Ad Minim Veniam</a></h4>
@@ -111,7 +111,7 @@
 
                         <div class="media act-media">
                             <a class="pull-left" href="#">
-                                <img class="media-object act-thumb" src="images/photos/user2.png" alt=""/>
+                                <img class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/user2.png" alt=""/>
                             </a>
                             <div class="media-body act-media-body">
                                 <strong>Chris Anthemum</strong> started following <strong>Eileen Sideways</strong>.
@@ -129,19 +129,19 @@
                                 <small class="text-muted">5 days ago at 12:30pm</small>
 
                                 <ul class="uploadphoto-list">
-                                    <li><a href="images/photos/media1.jpg" data-rel="prettyPhoto"><img
-                                            src="images/photos/media1.jpg" class="img-responsive" alt=""/></a></li>
-                                    <li><a href="images/photos/media2.png" data-rel="prettyPhoto"><img
-                                            src="images/photos/media2.png" class="img-responsive" alt=""/></a></li>
-                                    <li><a href="images/photos/media3.png" data-rel="prettyPhoto"><img
-                                            src="images/photos/media3.png" class="img-responsive" alt=""/></a></li>
+                                    <li><a href="${pageContext.request.contextPath}/images/photos/media1.jpg" data-rel="prettyPhoto"><img
+                                            src="${pageContext.request.contextPath}/images/photos/media1.jpg" class="img-responsive" alt=""/></a></li>
+                                    <li><a href="${pageContext.request.contextPath}/images/photos/media2.png" data-rel="prettyPhoto"><img
+                                            src="${pageContext.request.contextPath}/images/photos/media2.png" class="img-responsive" alt=""/></a></li>
+                                    <li><a href="${pageContext.request.contextPath}/images/photos/media3.png" data-rel="prettyPhoto"><img
+                                            src="${pageContext.request.contextPath}/images/photos/media3.png" class="img-responsive" alt=""/></a></li>
                                 </ul>
                             </div>
                         </div><!-- media -->
 
                         <div class="media act-media">
                             <a class="pull-left" href="#">
-                                <img class="media-object act-thumb" src="images/photos/user4.png" alt=""/>
+                                <img class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/user4.png" alt=""/>
                             </a>
                             <div class="media-body act-media-body">
                                 <strong>Frank Furter</strong> started following <strong>Eileen Sideways</strong>. <br/>
@@ -151,7 +151,7 @@
 
                         <div class="media act-media">
                             <a class="pull-left" href="#">
-                                <img class="media-object act-thumb" src="images/photos/userprofile.png" alt=""/>
+                                <img class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/userprofile.png" alt=""/>
                             </a>
                             <div class="media-body act-media-body">
                                 <strong>Eileen Sideways</strong> posted a new note. <br/>
@@ -166,7 +166,7 @@
 
                         <div class="media act-media">
                             <a class="pull-left" href="#">
-                                <img class="media-object act-thumb" src="images/photos/userprofile.png" alt=""/>
+                                <img class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/userprofile.png" alt=""/>
                             </a>
                             <div class="media-body act-media-body">
                                 <strong>Eileen Sideways</strong> posted a new blog. <br/>
@@ -174,7 +174,7 @@
 
                                 <div class="media blog-media">
                                     <a class="pull-left" href="#">
-                                        <img class="media-object" src="images/photos/media4.png" alt=""/>
+                                        <img class="media-object" src="${pageContext.request.contextPath}/images/photos/media4.png" alt=""/>
                                     </a>
                                     <div class="media-body">
                                         <h4 class="media-title"><a href="">Ut Enim Ad Minim Veniam</a></h4>
@@ -189,20 +189,20 @@
 
                         <div class="media act-media">
                             <a class="pull-left" href="#">
-                                <img class="media-object act-thumb" src="images/photos/userprofile.png" alt=""/>
+                                <img class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/userprofile.png" alt=""/>
                             </a>
                             <div class="media-body act-media-body">
                                 <strong>Eileen Sideways</strong> added new photo. <br/>
                                 <small class="text-muted">December 24 at 1:30pm</small>
                                 <div class="mb20"></div>
-                                <a href="images/photos/media6.png" data-rel="prettyPhoto" class="img-single"><img
-                                        src="images/photos/media6.png" class="img-responsive" alt=""/></a>
+                                <a href="${pageContext.request.contextPath}/images/photos/media6.png" data-rel="prettyPhoto" class="img-single"><img
+                                        src="${pageContext.request.contextPath}/images/photos/media6.png" class="img-responsive" alt=""/></a>
                             </div>
                         </div><!-- media -->
 
                         <div class="media act-media">
                             <a class="pull-left" href="#">
-                                <img class="media-object act-thumb" src="images/photos/user5.png" alt=""/>
+                                <img class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/user5.png" alt=""/>
                             </a>
                             <div class="media-body act-media-body">
                                 <strong>Weno Carasbong</strong> started following <strong>Eileen Sideways</strong>.
@@ -213,7 +213,7 @@
 
                         <div class="media act-media">
                             <a class="pull-left" href="#">
-                                <img class="media-object act-thumb" src="images/photos/userprofile.png" alt=""/>
+                                <img class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/userprofile.png" alt=""/>
                             </a>
                             <div class="media-body act-media-body">
                                 <strong>Eileen Sideways</strong> posted a new blog. <br/>
@@ -416,7 +416,7 @@
 
                         <div class="media act-media">
                             <a class="pull-left" href="#">
-                                <img class="media-object act-thumb" src="images/photos/user1.png" alt=""/>
+                                <img class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/user1.png" alt=""/>
                             </a>
                             <div class="media-body act-media-body">
                                 <strong>Nusja Nawancali</strong> is now following to <strong>Zaham Sindilmaca</strong>.
@@ -427,7 +427,7 @@
 
                         <div class="media act-media">
                             <a class="pull-left" href="#">
-                                <img class="media-object act-thumb" src="images/photos/user4.png" alt=""/>
+                                <img class="media-object act-thumb" src="${pageContext.request.contextPath}/images/photos/user4.png" alt=""/>
                             </a>
                             <div class="media-body act-media-body">
                                 <strong>Frank Furter</strong> is now following to <strong>Zaham Sindilmaca</strong>.
@@ -654,5 +654,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/ta/ta-index.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/ta/ta-index.js"></script>
 </html>

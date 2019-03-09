@@ -19,7 +19,7 @@
 				<!-- 导航栏 -->
 				<div class="header">
 					<ol class="breadcrumb">
-						<li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
+						<li><i class="fa fa-home"></i>&nbsp;<a href="${pageContext.request.contextPath}/index.action">主页</a></li>
 						<li class="active">职业招聘</li>
 					</ol>
 				</div>
@@ -46,7 +46,7 @@
 								<c:forEach items="${page.beanList}" var="recruit">
 									<tr>
 										<td id="${recruit.recruitId}">&nbsp;
-											<a href="recruit/detailRecruit.action?recruitId=${recruit.recruitId}"> ${recruit.title}</a>
+											<a href="${pageContext.request.contextPath}/recruit/detailRecruit.action?recruitId=${recruit.recruitId}"> ${recruit.title}</a>
 											<ar:top value="${recruit.isTop}" /></td>
 										<td>${recruit.unitName}</td>
 										<td><ar:dictdata dictdata="${recruit.salary}" dict="sl" /></td>
@@ -66,5 +66,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/recruit/recruit-index.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/recruit/recruit-index.js"></script>
 </html>

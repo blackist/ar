@@ -19,8 +19,8 @@
             <!-- 导航栏 -->
             <div class="header">
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
-                    <li><a href="forum.action">校友论坛</a></li>
+                    <li><i class="fa fa-home"></i>&nbsp;<a href="${pageContext.request.contextPath}/index.action">主页</a></li>
+                    <li><a href="${pageContext.request.contextPath}/forum.action">校友论坛</a></li>
                     <li class="active">发布新帖</li>
                 </ol>
             </div>
@@ -38,7 +38,7 @@
 
                                     <div class="tab-content">
 
-                                        <form class="form" id="postForm" method="post" action="post/save.action">
+                                        <form class="form" id="postForm" method="post" action="${pageContext.request.contextPath}/post/save.action">
                                             <div class="form-group">
 
                                                 <label class="col-sm-4"><span class="asterisk">*
@@ -82,7 +82,7 @@
 
                                     <ul class="pager wizard">
                                         <li><a href="javascript:;" onclick="savePost()" id="submitBtn">发布新帖</a></li>&nbsp;
-                                        <li><a href="forum.action">放弃发布</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/forum.action">放弃发布</a></li>
                                     </ul>
 
                                 </div>
@@ -99,7 +99,7 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/forum/post-add.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/forum/post-add.js"></script>
 <%--<script src="assets/js/jquery.tagsinput.min.js"></script>--%>
 <%--<script>--%>
 <%--$(function () {--%>

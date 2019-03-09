@@ -20,7 +20,7 @@
 				<div class="header">
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
-						<li><a href="recruit.action">职业招聘</a></li>
+						<li><a href="${pageContext.request.contextPath}/recruit.action">职业招聘</a></li>
 						<li class="active">发布招聘</li>
 					</ol>
 				</div>
@@ -67,7 +67,7 @@
 
 															<div class="btn-demo">
 																<br> <a class="btn btn-darkblue"
-																	href="unit/addUnit.action"><span
+																	href="${pageContext.request.contextPath}/unit/addUnit.action"><span
 																	class="fa fa-plus-square-o">&nbsp;</span>新建公司信息</a>
 															</div>
 														</div>
@@ -100,6 +100,6 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp"%>
-<script src="assets/script/recruit/unit/unit-select.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/recruit/unit/unit-select.js"></script>
 
 </html>

@@ -16,8 +16,8 @@
         <div class="breadcrumb-wrapper">
             <span class="label"></span>
             <ol class="breadcrumb">
-                <li><a href="index.action">主页</a></li>
-                <li><a href="my.action">个人中心</a></li>
+                <li><a href="${pageContext.request.contextPath}/index.action">主页</a></li>
+                <li><a href="${pageContext.request.contextPath}/my.action">个人中心</a></li>
                 <li class="active">我的班级</li>
             </ol>
         </div>
@@ -42,12 +42,12 @@
                             <div class="col-md-6">
                                 <div class="people-item">
                                     <div class="media">
-                                        <a href="classroom.action?classId=${clazz.originId}" class="pull-left"
+                                        <a href="${pageContext.request.contextPath}/classroom.action?classId=${clazz.originId}" class="pull-left"
                                            style="color: black">
                                             <h1><i class="fa fa-mortar-board"></i></h1>
                                         </a>
                                         <div class="media-body">
-                                            <a href="classroom.action?classId=${clazz.originId}" style="color: black">
+                                            <a href="${pageContext.request.contextPath}/classroom.action?classId=${clazz.originId}" style="color: black">
                                                 <h4 class="person-name">${clazz.originName}</h4>
                                             </a>
                                             <div class="text-muted">
@@ -85,5 +85,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/my/class/class-index.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/my/class/class-index.js"></script>
 </html>

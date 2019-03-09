@@ -16,7 +16,7 @@
         <div class="breadcrumb-wrapper">
             <span class="label"></span>
             <ol class="breadcrumb">
-                <li><a href="index.action">主页</a></li>
+                <li><a href="${pageContext.request.contextPath}/index.action">主页</a></li>
                 <li class="active">个人中心</li>
             </ol>
         </div>
@@ -32,13 +32,13 @@
         <div class="col-sm-8 col-lg-10">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
-                <li class="active"><a href="my/recruit.action"><span
+                <li class="active"><a href="${pageContext.request.contextPath}/my/recruit.action"><span
                         class="fa fa-archive"></span>&nbsp;<strong>我的招聘</strong></a></li>
-                <li><a href="my/resume/posted.action"><span
+                <li><a href="${pageContext.request.contextPath}/my/resume/posted.action"><span
                         class="fa fa-chain"></span>&nbsp;<strong>我的投递</strong></a></li>
-                <li><a href="my/resume.action"><span
+                <li><a href="${pageContext.request.contextPath}/my/resume.action"><span
                         class="fa fa-file-text-o"></span>&nbsp;<strong>我的简历</strong></a></li>
-                <li><a href="unit/my.action"><span
+                <li><a href="${pageContext.request.contextPath}/unit/my.action"><span
                         class="fa fa-institution"></span>&nbsp;<strong>我的单位</strong></a></li>
             </ul>
             <!-- Nav Tab -->
@@ -61,14 +61,14 @@
                             <c:forEach items="${page.beanList}" var="recruit">
                                 <tr>
                                     <td>
-                                        <a href="/recruit/detailRecruit.action?recruitId=${recruit.recruitId}">${recruit.title}</a>
+                                        <a href="${pageContext.request.contextPath}/recruit/detailRecruit.action?recruitId=${recruit.recruitId}">${recruit.title}</a>
                                     </td>
                                     <td>${recruit.resumes}</td>
                                     <td><fmt:formatDate value="${recruit.stateTime}"
                                                         pattern="YY-MM-DD HH:mm"></fmt:formatDate></td>
                                     <td>
                                         <div class="btn-group mr5">
-                                            <button onclick="location='recruit/detailRecruit.action?recruitId=${recruit.recruitId}'"
+                                            <button onclick="location='${pageContext.request.contextPath}/recruit/detailRecruit.action?recruitId=${recruit.recruitId}'"
                                                     class="btn btn-sm btn-white tooltips" type="button"
                                                     data-toggle="tooltip" title="详情"><i class="fa fa-bars"></i></button>
                                             <button onclick="deleteMyRecruit(${recruit.recruitId})"
@@ -97,5 +97,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/my/recruit/recruit.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/my/recruit/recruit.js"></script>
 </html>

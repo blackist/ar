@@ -1,7 +1,7 @@
 $(function() {
 	$("#message-li").attr("class", "active");
 	var originId = $("#originId").val();
-	_pageBond("orgroom/message.action?originId=" + originId);
+	_pageBond(getContextPath() + "/orgroom/message.action?originId=" + originId);
 
 	$("#infoBoxText").focus(function() {
 		$('#infoBoxEditor').attr("hidden", false);
@@ -25,6 +25,4 @@ function publishMessage() {
 	}
 
 	$("#orgroomMessageForm").submit();
-
-	post()
 }

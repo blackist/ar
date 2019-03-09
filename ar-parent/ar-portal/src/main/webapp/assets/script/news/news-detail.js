@@ -3,10 +3,10 @@ $(function() {
 
     // 加载评论列表
     var infoId = $("#infoId").val();
-    $.post("news/commentList.action?infoId="+infoId, function(data) {
+    $.post(getContextPath() + "/news/commentList.action?infoId="+infoId, function(data) {
         $("#comment-list").html(data);
     });
-    $.post('news/outline.action', function (data) {
+    $.post(getContextPath() + "/news/outline.action", function (data) {
         $('#news-detail-outline').html(data);
     })
 
@@ -21,7 +21,7 @@ function loadMoreComment(pageIndex) {
     $("#btn-load-more").html("<img src='assets/images/icon/loading/loader.gif'>");
     // 加载评论列表
     var postId = $("#postId").html();
-    $.post("news/commentList.action", {
+    $.post(getContextPath() + "/news/commentList.action", {
         "postId" : postId,
         "pageIndex" : pageIndex
     }, function(data) {
@@ -72,7 +72,7 @@ function lovePost(postId) {
 
     $.ajax({
         type : "GET",
-        url : "post/love.action",
+        url : getContextPath() + "/post/love.action",
         data : "postId=" + postId,
         dataType : "text",
         success : function(data){
@@ -89,7 +89,7 @@ function lovePost(postId) {
 function deletePost(postId) {
     if (confirm("删除后无法恢复，确定删除这条帖子吗？")){
         // 删除帖子
-        location.href = "post/delete.action?postId="+postId;
+        location.href = getContextPath() + "/post/delete.action?postId="+postId;
     }
 }
 
@@ -99,7 +99,7 @@ function deletePost(postId) {
  */
 function deleteComment(commentId) {
     if (confirm("确定删除这条评论吗？")){
-        $.post("post/deleteComment.action?commentId="+commentId, function (data) {
+        $.post(getContextPath() + "/post/deleteComment.action?commentId="+commentId, function (data) {
             // 页面移除评论内容
             $("#comment-li-"+commentId).remove();
             window.location.reload();

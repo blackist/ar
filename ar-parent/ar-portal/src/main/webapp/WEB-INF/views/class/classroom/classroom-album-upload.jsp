@@ -17,7 +17,7 @@
     <%@ include file="/WEB-INF/views/class/classroom/classroom-nav.jsp" %>
     <!-- Tab panes -->
     <div class="tab-content" style="background-color: #ddd;">
-        <form method="post" action="classroom/album/image/upload.action" enctype="multipart/form-data">
+        <form method="post" action="${pageContext.request.contextPath}/classroom/album/image/upload.action" enctype="multipart/form-data">
             <div class="panel-footer" id="picUploadBox">
                 <input class="file" type="file" id="uploadInput" multiple data-max-file-count="12"
                            name="images" accept=".bmp,.jpg,.gif,.png,.jpeg"> <br>
@@ -36,5 +36,5 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/class/classroom/classroom-album-upload.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/class/classroom/classroom-album-upload.js"></script>
 </html>

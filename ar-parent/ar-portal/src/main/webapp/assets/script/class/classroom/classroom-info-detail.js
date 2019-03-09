@@ -3,7 +3,7 @@ $(function() {
 
     // 加载评论列表
     var infoId = $("#infoId").val();
-    $.post("classroom/infoCommentList.action?infoId="+infoId, function(data) {
+    $.post(getContextPath() + "/classroom/infoCommentList.action?infoId="+infoId, function(data) {
         // 刷新评论列表
         $("#comment-list").html(data);
     });
@@ -11,7 +11,7 @@ $(function() {
     // 加载侧边栏
     var authorId = $("#authorId").val();
     var classId = $("#classId").val();
-    $.post("classroom/infoSide.action?authorId="+authorId+"&classId="+classId, function (data) {
+    $.post(getContextPath() + "/classroom/infoSide.action?authorId="+authorId+"&classId="+classId, function (data) {
         $("#classroom-info-side").html(data);
     });
 });
@@ -26,7 +26,7 @@ function loadMoreComment(pageIndex) {
     $("#btn-load-more").html("<img src='assets/images/icon/loading/loader.gif'>");
     // 加载评论列表
     var infoId = $("#infoId").val();
-    $.post("classroom/infoCommentList.action", {
+    $.post(getContextPath() + "/classroom/infoCommentList.action", {
         "infoId" : infoId,
         "pageIndex" : pageIndex
     }, function(data) {
@@ -75,7 +75,7 @@ function loveInfo(infoId) {
 
     $.ajax({
         type : "GET",
-        url : "orgroom/loveInfo.action",
+        url : getContextPath() + "/orgroom/loveInfo.action",
         data : "infoId=" + infoId,
         dataType : "text",
         success : function(data){
@@ -93,7 +93,7 @@ function deleteInfo(infoId) {
     if (confirm("删除后无法恢复，确定删除这条帖子吗？")){
         var originId = $("#originId").val();
         // 删除帖子
-        location.href = "orgroom/deleteInfo.action?infoId="+infoId+"&originId="+originId;
+        location.href = getContextPath() + "/orgroom/deleteInfo.action?infoId="+infoId+"&originId="+originId;
     }
 }
 
@@ -103,7 +103,7 @@ function deleteInfo(infoId) {
  */
 function deleteComment(commentId) {
     if (confirm("确定删除这条评论吗？")){
-        $.post("orgroom/deleteComment.action?commentId="+commentId, function (data) {
+        $.post(getContextPath() + "/orgroom/deleteComment.action?commentId="+commentId, function (data) {
             // 页面移除评论内容
             $("#comment-li-"+commentId).remove();
             window.location.reload();

@@ -13,7 +13,7 @@
         <hr>
         <li><a href="http://www.xzit.edu.cn/" target="_blank">学校官网</a></li><hr>
         <c:forEach items="${services}" var="service">
-            <li><a href="service/school.action?id=${service.infoId}">${service.infoTitle}</a></li><hr>
+            <li><a href="${pageContext.request.contextPath}/service/school.action?id=${service.infoId}">${service.infoTitle}</a></li><hr>
         </c:forEach>
         <li><a href="http://xbzkb.xzit.edu.cn/" target="_blank">学报编辑部</a></li><hr>
         <li><a href="http://lib.xzit.edu.cn/" target="_blank">图书馆</a></li><hr>

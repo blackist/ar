@@ -7,8 +7,8 @@
 	<div class="breadcrumb-wrapper">
 		<ol class="breadcrumb">
 			
-			<li><a href="index.action">主页</a></li>
-			<li><a href="class.action">班级录</a></li>
+			<li><a href="${pageContext.request.contextPath}/index.action">主页</a></li>
+			<li><a href="${pageContext.request.contextPath}/class.action">班级录</a></li>
 			<li class="active">${classroom.clasName}</li>
 		</ol>
 	</div>

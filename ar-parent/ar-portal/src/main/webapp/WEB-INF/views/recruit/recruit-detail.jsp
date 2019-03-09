@@ -20,7 +20,7 @@
             <div class="header">
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i>&nbsp;<a href="index.action">主页</a></li>
-                    <li><a href="recruit.action">职业招聘</a></li>
+                    <li><a href="${pageContext.request.contextPath}/recruit.action">职业招聘</a></li>
                     <li class="active">招聘详情</li>
                 </ol>
             </div>
@@ -147,7 +147,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <form class="form" method="post" id="postForm"
-                                                  action="my/resume/postResume.action">
+                                                  action="${pageContext.request.contextPath}/my/resume/postResume.action">
                                                 <div class="row">
                                                     <div class="form-group">
                                                         <label class="col-sm-2"><span class="asterisk">*
@@ -159,7 +159,7 @@
                                                                     <option value="${resume.resumeId}">${resume.resumeTitle}</option>
                                                                 </c:forEach>
                                                             </select><br/> <br/>
-                                                            <a href="my/resume/addResume.action"
+                                                            <a href="${pageContext.request.contextPath}/my/resume/addResume.action"
                                                                class="btn btn-default btn-block" type="button">
                                                                 <span class="fa fa-plus-square-o">&nbsp;</span>创建简历
                                                             </a>
@@ -216,7 +216,7 @@
                                 <div id="apply-record" class="tab-pane">
                                     <ul class="media-list comment-list">
                                         <c:forEach items="${postRecords}" var="record">
-                                            <li class="media"><a href="ta/show.action?userId=${record.userId}"
+                                            <li class="media"><a href="${pageContext.request.contextPath}/ta/show.action?userId=${record.userId}"
                                                                  class="pull-left">
                                                 <img src="${record.portrait}" class="media-object">
                                             </a>
@@ -240,7 +240,7 @@
                                         <ul>
                                             <c:forEach items="${otherRecruits}" var="otherRecruit">
                                                 <li><a
-                                                        href="recruit/detailRecruit.action?recruitId=${otherRecruit.recruitId}">${otherRecruit.title}</a>
+                                                        href="${pageContext.request.contextPath}/recruit/detailRecruit.action?recruitId=${otherRecruit.recruitId}">${otherRecruit.title}</a>
                                                 </li>
                                             </c:forEach>
                                         </ul>
@@ -266,6 +266,6 @@
 
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/recruit/recruit-detail.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/recruit/recruit-detail.js"></script>
 
 </html>

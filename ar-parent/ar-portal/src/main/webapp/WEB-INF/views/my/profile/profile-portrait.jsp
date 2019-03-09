@@ -16,7 +16,7 @@
         <div class="breadcrumb-wrapper">
             <span class="label"></span>
             <ol class="breadcrumb">
-                <li><a href="index.action">主页</a></li>
+                <li><a href="${pageContext.request.contextPath}/index.action">主页</a></li>
                 <li class="active">个人中心</li>
             </ol>
         </div>
@@ -32,9 +32,9 @@
         <div class="col-sm-8 col-lg-10">
             <!-- Navigation tabs -->
             <ul class="nav nav-tabs">
-                <li><a href="my/profile/basic.action"><span
+                <li><a href="${pageContext.request.contextPath}/my/profile/basic.action"><span
                         class="glyphicon glyphicon-th-list"></span>&nbsp;<strong>基本资料</strong></a></li>
-                <li><a href="my/profile/job.action"><span
+                <li><a href="${pageContext.request.contextPath}/my/profile/job.action"><span
                         class="glyphicon glyphicon-briefcase"></span>&nbsp;<strong>工作信息</strong></a></li>
                 <li class="active"><a href="javascript:;"><span
                         class="glyphicon glyphicon-picture"></span>&nbsp;<strong>头像设置</strong></a></li>
@@ -67,5 +67,5 @@
 <%@ include file="/WEB-INF/views/portal-common/footer.jsp" %>
 </body>
 <%@ include file="/WEB-INF/views/portal-common/portal-js.jsp" %>
-<script src="assets/script/my/profile/profile-portrait.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/my/profile/profile-portrait.js"></script>
 </html>
