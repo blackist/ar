@@ -117,15 +117,15 @@ mvn clean && mvn install && mvn package
 
 ## 项目开发交流
 
-### 关注公众号获取校友录开发文档
+### 关注公众号
 
 ![校友录](http://pic.blackist.top/blackist-wechat-pub.jpg)
 
-获取项目架构、线上部署、网站风格配置文档，回复：校友录
+关注公众号，回复：校友录，获取项目架构、线上部署、网站风格配置等开发文档
 
 ### 加入QQ群交流
 
-![校友录](http://pic.blackist.top/javaweb-ar-TIM%E5%9B%BE%E7%89%8720181130212423.jpg){:height="20px" width="50px"}
+![校友录](http://pic.blackist.top/javaweb-ar-TIM%E5%9B%BE%E7%89%8720181130212423.jpg){:width="50px"}
 
 
 ## License
