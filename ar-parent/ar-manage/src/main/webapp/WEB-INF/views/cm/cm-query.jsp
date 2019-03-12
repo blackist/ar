@@ -71,7 +71,7 @@
 						<tr>
 							<td><input type="checkbox" value="${clazz.classId}" /></td>
 							<td>${clazz.classGrade}级</td>
-							<td><a href="crm.action?classId=${clazz.classId}"
+							<td><a href="${pageContext.request.contextPath}/crm.action?classId=${clazz.classId}"
 								target="blank">${clazz.className}</a></td>
 							<td>${clazz.members}</td>
 							<td><fmt:formatDate value="${clazz.createTime}"
@@ -123,5 +123,5 @@
 	<!-- 操作说明 -->
 	<%@ include file="/WEB-INF/views/global/operate-message.jsp"%>
 	<!-- 控制 js -->
-	<script src="assets/script/cm/cm-query.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/script/cm/cm-query.js"></script>
 </div>

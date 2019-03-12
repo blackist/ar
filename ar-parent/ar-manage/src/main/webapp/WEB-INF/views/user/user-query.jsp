@@ -12,7 +12,7 @@
 <div class="am-g">
     <div class="am-u-md-9 am-cf">
         <div class="am-btn-group am-btn-group-xs">
-            <a class="am-btn am-btn-default" href="info/add.action">
+            <a class="am-btn am-btn-default" href="${pageContext.request.contextPath}/info/add.action">
                 <span class="am-icon-plus"></span> 添加用户
             </a>
             <c:if test="${state=='D'}">
@@ -149,5 +149,5 @@
     <!-- 操作说明 -->
     <%@ include file="/WEB-INF/views/global/operate-message.jsp" %>
     <!-- 控制 js -->
-    <script src="assets/script/user/user-query.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/script/user/user-query.js"></script>
 </div>

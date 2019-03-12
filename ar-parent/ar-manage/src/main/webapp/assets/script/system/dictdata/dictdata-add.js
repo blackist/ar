@@ -30,7 +30,7 @@ function addDictDataSubmit() {
 		$.AMUI.progress.start();
 		/* 提交后台 */
 		var dictForm = $("#dictdataForm").serialize();
-		$.post("dictData/addDictDataSubmit.action", dictForm, function(data) {
+		$.post(getContextPath() + "/dictData/addDictDataSubmit.action", dictForm, function(data) {
 			$.AMUI.progress.done();
 			$("#admin-content").html(data);
 		});

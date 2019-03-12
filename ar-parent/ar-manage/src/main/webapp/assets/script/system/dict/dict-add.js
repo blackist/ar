@@ -5,7 +5,7 @@ $(function() {
 	var dicts;
 	$.ajax({
 		type : 'GET',
-		url : 'dict/getAllDicts.action',
+		url : getContextPath() + '/dict/getAllDicts.action',
 		success : function(data) {
 			dicts = eval(data);
 		},
@@ -47,7 +47,7 @@ function addDictSubmit() {
 	if (validDictAdd()) {
 		/* 提交后台 */
 		var dictForm = $("#dictForm").serialize();
-		$.post("dict/addDictSubmit.action", dictForm, function(data) {
+		$.post(getContextPath() + "/dict/addDictSubmit.action", dictForm, function(data) {
 			$.AMUI.progress.done();
 			$("#admin-content").html(data);
 		});

@@ -9,7 +9,7 @@ $(function(){
 function loadRightQuery() {
 	/*loading进度条*/
 	$.AMUI.progress.start();
-	$.post("right/queryRights.action", function(data) {
+	$.post(getContextPath() + "/right/queryRights.action", function(data) {
 		$.AMUI.progress.done();
 		$("#admin-content").html(data);
 	});
@@ -17,5 +17,5 @@ function loadRightQuery() {
 /*导航栏点击事件，导航至right-index.jsp(刷新页面)*/
 function loadRightIndex() {
 	$.AMUI.progress.start();
-	location.href="right/indexRight.action";
+	location.href=getContextPath() + "/right/indexRight.action";
 }

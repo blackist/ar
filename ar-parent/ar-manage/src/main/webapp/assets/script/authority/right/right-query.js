@@ -7,7 +7,7 @@ function queryRights(pageIndex,pageSize) {
 	/* loading进度条 */
 	$.AMUI.progress.start();
 	var queryInput = $("#queryInput").val();
-	$.post("right/queryRights.action", {
+	$.post(getContextPath() + "/right/queryRights.action", {
 		"pageIndex" : pageIndex,
 		"pageSize" : pageSize,
 		"queryInput" : queryInput
@@ -34,7 +34,7 @@ function deleteDict(dictValue) {
 /* 更新 */
 function updateRight(rightId) {
 	$.AMUI.progress.start();
-	$.post("right/updateRight.action", {
+	$.post(getContextPath() + "/right/updateRight.action", {
 		"rightId" : rightId
 	}, function(data) {
 		$.AMUI.progress.done();
@@ -44,7 +44,7 @@ function updateRight(rightId) {
 /* 扫描权限 */
 function scanAddRights() {
 	$.AMUI.progress.start();
-	$.post("right/scanAddRights.action", function(data) {
+	$.post(getContextPath() + "/right/scanAddRights.action", function(data) {
 		$.AMUI.progress.done();
 		$("#admin-content").html(data);
 	});

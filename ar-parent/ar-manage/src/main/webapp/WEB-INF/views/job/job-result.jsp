@@ -26,8 +26,7 @@
         <div class="am-cf am-padding">
             <div class="am-fl am-cf">
                 <strong class="am-text-primary am-text-lg">职业招聘</strong> /
-                <small><a
-                        href="job.action">招聘信息</a></small>
+                <small><a href="${pageContext.request.contextPath}/job.action">招聘信息</a></small>
                 /
                 <small>发布招聘</small>
             </div>
@@ -66,7 +65,7 @@
 
         <div class="am-margin">
             <div class="am-u-sm-10 am-text-right">
-                <<a href="href='job.action'" class="am-btn am-btn-primary am-btn-xs">完成</a>
+                <a href="${pageContext.request.contextPath}/job.action" class="am-btn am-btn-primary am-btn-xs">完成</a>
             </div>
             <br>
         </div>
@@ -78,7 +77,7 @@
 <%@ include file="/WEB-INF/views/global/footer.jsp" %>
 <!-- 控制js -->
 <%@ include file="/WEB-INF/views/global/common-js.jsp" %>
-<script src="assets/script/job/flat/flat-select.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/job/flat/flat-select.js"></script>
 </body>
 </html>
 

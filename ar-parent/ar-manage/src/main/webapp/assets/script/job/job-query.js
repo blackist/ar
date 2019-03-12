@@ -10,7 +10,7 @@ function queryJobs(pageIndex,pageSize) {
 	$.AMUI.progress.start();
 	var queryStr = $("#queryStr").val();
 	var stateStr = $("#stateStr").val();
-	$.post("job/queryJobs.action", {
+	$.post(getContextPath() + "/job/queryJobs.action", {
 		"pageIndex" : pageIndex,
 		"pageSize" : pageSize,
 		"queryStr" : queryStr,

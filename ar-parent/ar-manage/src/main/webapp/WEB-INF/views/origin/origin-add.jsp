@@ -89,7 +89,7 @@
 
             <div class="am-margin">
                 <button type="button" onclick="saveOrigin()" class="am-btn am-btn-primary am-btn-xs">提交</button>
-                <a href="origin.action" class="am-btn am-btn-warning am-btn-xs">取消</a>
+                <a href="${pageContext.request.contextPath}/origin.action" class="am-btn am-btn-warning am-btn-xs">取消</a>
             </div>
             <%@ include file="/WEB-INF/views/global/operate-remarks.jsp" %>
         </div>
@@ -102,6 +102,6 @@
 
 <!-- 控制js -->
 <%@ include file="/WEB-INF/views/global/common-js.jsp" %>
-<script src="assets/script/origin/origin-add.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/origin/origin-add.js"></script>
 </body>
 </html>

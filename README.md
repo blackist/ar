@@ -99,6 +99,7 @@ ar-common生成jar 安装在本地，ar-manage和ar-portal依赖此库。
 
 ![](http://pic.blackist.top/javaweb-ar-ar-portal-startup-success.png)
 
+
 门户网站：
 访问地址: http://localhost:8080/ar-portal/index.action
 用户名/密码: black/12345678
@@ -106,6 +107,8 @@ ar-common生成jar 安装在本地，ar-manage和ar-portal依赖此库。
 后台管理：
 访问地址: http://localhost:8080/ar-portal/manage.action
 用户名/密码: sa/12345678
+
+如果此开源项目对您有帮助，欢迎给个Start，嘿嘿^-^~
 
 ### 项目打包
 

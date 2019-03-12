@@ -5,7 +5,7 @@ $(function() {
 
 	/* loading进度条 */
 	$.AMUI.progress.start();
-	$.post("role/queryRole.action", function(data) {
+	$.post(getContextPath() + "/role/queryRole.action", function(data) {
 		$.AMUI.progress.done();
 		$("#admin-content").html(data);
 	});

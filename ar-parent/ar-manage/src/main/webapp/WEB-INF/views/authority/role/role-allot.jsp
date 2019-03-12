@@ -5,8 +5,7 @@
 <div class="am-cf am-padding">
     <div class="am-fl am-cf">
         <strong class="am-text-primary am-text-lg">权限管理</strong> /
-        <small><a
-                href="role.action">角色管理 </a></small>
+        <small><a href="${pageContext.request.contextPath}/role.action">角色管理 </a></small>
         /
         <small> 权限分配</small>
     </div>
@@ -68,7 +67,7 @@
 
 <!-- 控制js -->
 <%@ include file="/WEB-INF/views/global/common-js.jsp" %>
-<script src="assets/script/authority/role/role-allot.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/authority/role/role-allot.js"></script>
 <script>
     //把一个select 中的项移到另一个select中
     function moveOptions(from, to) {

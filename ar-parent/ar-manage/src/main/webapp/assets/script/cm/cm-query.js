@@ -11,7 +11,7 @@ function queryClass(pageIndex, pageSize) {
 	var stateStr = $("#stateStr").val();
 	var selectStr = $("#selectStr").val();
 	$.AMUI.progress.start();
-	$.post("cm/queryClass.action", {
+	$.post(getContextPath() + "/cm/queryClass.action", {
 		"pageIndex" : pageIndex,
 		"pageSize" : pageSize,
 		"queryStr" : queryStr,

@@ -4,7 +4,7 @@ $(function() {
 			"am-list am-collapse admin-sidebar-sub am-in");
 
 	$.AMUI.progress.start();
-	$.post("cm/queryClass.action", {
+	$.post(getContextPath() + "/cm/queryClass.action", {
 		"pageIndex" : "1"
 	}, function(data) {
 		$.AMUI.progress.done();

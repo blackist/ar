@@ -21,7 +21,7 @@
 			<%@ include file="/WEB-INF/views/portal-common/portal-tag.jsp"%>
 			<div class="signinpanel">
 				<div class="col-md-3">
-					<form method="post" action="login/validate.action" id="loginForm">
+					<form method="post" action="${pageContext.request.contextPath}/login/validate.action" id="loginForm">
 						<h4 class="nomargin">登&nbsp;录</h4>
 						<input id="-sdcjsd_mdjskvnsjv-hcdsxzlregfbdcskxm" type="hidden"
 							name="queryString" value="${queryString}"> <input

@@ -4,14 +4,16 @@ $(function () {
 
 });
 
-/* 条件查询 *//* 查询函数可以有多个参数，pageIndex要是第一个 */
+/* 条件查询 */
+
+/* 查询函数可以有多个参数，pageIndex要是第一个 */
 function queryInfo(pageIndex, pageSize) {
     /* loading进度条 */
     $.AMUI.progress.start();
     var query = $("#query").val();
     var state = $("#state").val();
     var infoType = $('#infoType').val();
-    $.post("info/queryInfo.action", {
+    $.post(getContextPath() + "/info/queryInfo.action", {
         "pageIndex": pageIndex,
         "pageSize": pageSize,
         "query": query,
@@ -26,7 +28,7 @@ function queryInfo(pageIndex, pageSize) {
 /* 置顶操作 */
 function setTopInfo(infoId) {
     $.AMUI.progress.start();
-    $.post('info/update.action', {
+    $.post(getContextPath() + '/info/update.action', {
         'infoId': infoId,
         'isTop': '1'
     }, function (data) {
@@ -38,7 +40,7 @@ function setTopInfo(infoId) {
 /* 取消置顶操作 */
 function cancelTopInfo(infoId) {
     $.AMUI.progress.start();
-    $.post('info/update.action', {
+    $.post(getContextPath() + '/info/update.action', {
         'infoId': infoId,
         'isTop': '0'
     }, function (data) {
@@ -50,7 +52,7 @@ function cancelTopInfo(infoId) {
 /* 审核操作 */
 function auditInfo(infoId) {
     $.AMUI.progress.start();
-    $.post('info/update.action', {
+    $.post(getContextPath() + '/info/update.action', {
         'infoId': infoId,
         'state': 'A'
     }, function (data) {
@@ -64,7 +66,7 @@ function auditInfos() {
     var infoIds = getIds();
     if (isValid(infoIds)) {
         $.AMUI.progress.start();
-        $.post('info/update.action', {
+        $.post(getContextPath() + '/info/update.action', {
             "recruitIds": recruitIds
         }, function (data) {
             $.AMUI.progress.done();
@@ -77,7 +79,7 @@ function auditInfos() {
 function removeInfo(infoId) {
     if (window.confirm("您，确定删除这条数据？")) {
         $.AMUI.progress.start();
-        $.post("info/update.action", {
+        $.post(getContextPath() + "/info/update.action", {
             'infoId': infoId,
             'state': 'X'
         }, function (data) {
@@ -90,10 +92,12 @@ function removeInfo(infoId) {
 /* 删除 */
 function removeInfos() {
     var infoIds = getIds();
+    alert("功能缺失");
+    return;
     if (isValid(infoIds)) {
         if (window.confirm("您，确定删除这些数据？")) {
             $.AMUI.progress.start();
-            $.post('info/removeJobs.action', {
+            $.post(getContextPath() + '/info/removeJobs.action', {
                 'infoIds': infoIds
             }, function (data) {
                 $.AMUI.progress.done();
@@ -102,12 +106,13 @@ function removeInfos() {
         }
     }
 }
+
 /* 彻底删除 */
 function deleteInfo(infoId) {
     if (isValid(infoId)) {
         if (window.confirm("您，确定要彻底删除这条数据？")) {
             $.AMUI.progress.start();
-            $.post("info/delete.action", {
+            $.post(getContextPath() + "/info/delete.action", {
                 "infoId": infoId
             }, function (data) {
                 $.AMUI.progress.done();
@@ -123,7 +128,7 @@ function deleteInfos() {
     if (isValid(infoIds)) {
         if (window.confirm("您，确定彻底删除这些数据？")) {
             $.AMUI.progress.start();
-            $.post("info/deleteInfos.action", {
+            $.post(getContextPath() + "/info/deleteInfos.action", {
                 "infoIds": infoIds
             }, function (data) {
                 $.AMUI.progress.done();
@@ -137,7 +142,7 @@ function deleteInfos() {
 function recoverInfo(infoId) {
     if (window.confirm("您，确定恢复这条数据吗？")) {
         $.AMUI.progress.start();
-        $.post("info/update.action", {
+        $.post(getContextPath() + "/info/update.action", {
             "infoId": infoId,
             'state': 'A'
         }, function (data) {
@@ -153,7 +158,7 @@ function recoverInfos() {
     if (isValid(infoIds)) {
         if (confirm("您，确定恢复这些数据吗？")) {
             $.AMUI.progress.start();
-            $.post("info/recoverInfos.action", {
+            $.post(getContextPath() + "/info/recoverInfos.action", {
                 "infoIds": infoIds
             }, function (data) {
                 $.AMUI.progress.done();

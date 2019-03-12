@@ -13,7 +13,7 @@ function allotSubmit() {
         var roleId = $('#roleId').val();
 
         $.AMUI.progress.start();
-        $.post('role/allotSubmit.action', {
+        $.post(getContextPath() + '/role/allotSubmit.action', {
             "rightIds": rightIds,
             "roleId": roleId
         }, function (data) {

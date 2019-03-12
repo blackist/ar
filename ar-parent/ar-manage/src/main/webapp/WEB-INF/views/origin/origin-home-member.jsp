@@ -27,7 +27,7 @@
         <div class="am-cf am-padding">
             <div class="am-fl am-cf">
                 <strong class="am-text-primary am-text-lg">班级 / 校友组织 </strong>
-                <small><a href="origin.action"> / 组织管理</a></small>
+                <small><a href="${pageContext.request.contextPath}/origin.action"> / 组织管理</a></small>
                 <small> / 组织成员</small>
             </div>
         </div>
@@ -35,7 +35,7 @@
 
         <div class="am-tabs am-margin">
             <ul class="am-tabs-nav am-nav am-nav-tabs">
-                <li><a href="origin/home.action?originId=${origin.originId}">主页</a></li>
+                <li><a href="${pageContext.request.contextPath}/origin/home.action?originId=${origin.originId}">主页</a></li>
                 <li class="am-active"><a href="javascript:;">成员</a></li>
             </ul>
             <br>
@@ -60,7 +60,7 @@
                             <tr>
                                 <td><input type="checkbox" value="${member.userId}"/></td>
                                 <td>
-                                    <a href="origin/home.action?originId=${member.userId}"
+                                    <a href="${pageContext.request.contextPath}/origin/home.action?originId=${member.userId}"
                                        target="blank">${member.trueName}</a>
                                     <c:if test="${member.userId == origin.mgrId}">
                                         &nbsp;<span class="am-badge am-badge-success">管理员</span>
@@ -107,7 +107,7 @@
 <%@ include file="/WEB-INF/views/global/footer.jsp" %>
 <!-- 控制js -->
 <%@ include file="/WEB-INF/views/global/common-js.jsp" %>
-<script src="assets/script/origin/origin-home-member.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/origin/origin-home-member.js"></script>
 </body>
 </html>
 

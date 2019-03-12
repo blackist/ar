@@ -3,11 +3,11 @@
 
 <ul class="am-list admin-sidebar-list">
     <!-- 首页 bar -->
-    <li id="bar-home"><a href="manage.action"><span class="am-icon-home"></span> 首页</a></li>
+    <li id="bar-home"><a href="${pageContext.request.contextPath}/manage.action"><span class="am-icon-home"></span> 首页</a></li>
 
     <!-- 新闻中心 -->
     <li class="admin-parent" id="bar-info">
-        <a class="am-cf" href="info.action">
+        <a class="am-cf" href="${pageContext.request.contextPath}/info.action">
             <span class="am-icon-newspaper-o"></span> 信息中心
         </a>
     </li>
@@ -19,8 +19,8 @@
             <i class="am-icon-angle-right am-fr am-margin-right"></i>
         </a>
         <ul class="am-list am-collapse admin-sidebar-sub" id="origin-manage">
-            <li><a href="origin.action"><i class="am-icon-institution"></i> 组织管理</a></li>
-            <li><a href="origin/add.action"><i class="am-icon-plus-square"></i> &nbsp;创建组织</a></li>
+            <li><a href="${pageContext.request.contextPath}/origin.action"><i class="am-icon-institution"></i> 组织管理</a></li>
+            <li><a href="${pageContext.request.contextPath}/origin/add.action"><i class="am-icon-plus-square"></i> &nbsp;创建组织</a></li>
         </ul>
     </li>
 
@@ -30,9 +30,9 @@
             <span class="am-icon-suitcase"></span> &nbsp;职业招聘 <span class="am-icon-angle-right am-fr am-margin-right"></span>
         </a>
         <ul class="am-list am-collapse admin-sidebar-sub" id="job-manage">
-            <li><a href="job.action"><span class="am-icon-th"></span> 招聘信息 </a></li>
-            <li><a href="job/createJob.action"><span class="am-icon-plus"></span> 发布招聘 </a></li>
-            <li><a href="job/createJob.action"><span class="am-icon-institution"></span> 招聘单位 </a></li>
+            <li><a href="${pageContext.request.contextPath}/job.action"><span class="am-icon-th"></span> 招聘信息 </a></li>
+            <li><a href="${pageContext.request.contextPath}/job/createJob.action"><span class="am-icon-plus"></span> 发布招聘 </a></li>
+            <li><a href="${pageContext.request.contextPath}/job/createJob.action"><span class="am-icon-institution"></span> 招聘单位 </a></li>
         </ul>
     </li>
 
@@ -41,7 +41,7 @@
         <a class="am-cf" href="javascript:void(0)" data-am-collapse="{target: '#user-manage'}">
             <i class="am-icon-group"></i> 用户管理 <i class="am-icon-angle-right am-fr am-margin-right"></i></a>
         <ul class="am-list am-collapse admin-sidebar-sub" id="user-manage">
-            <li><a href="user.action"><i class="am-icon-user"></i> 用户列表 </a></li>
+            <li><a href="${pageContext.request.contextPath}/user.action"><i class="am-icon-user"></i> 用户列表 </a></li>
             <li><a href="javascript:;"><i class="am-icon-plus-square"></i> 添加用户</a></li>
         </ul>
     </li>
@@ -53,8 +53,8 @@
             <i class="am-icon-angle-right am-fr am-margin-right"></i>
         </a>
         <ul class="am-list am-collapse admin-sidebar-sub" id="right-manage">
-            <li><a href="right/indexRight.action" class="am-cf"><i class="am-icon-search-plus"></i>所有权限</a></li>
-            <li><a href="role.action" class="am-cf"><i class="am-icon-search-plus"></i>角色设置</a></li>
+            <li><a href="${pageContext.request.contextPath}/right/indexRight.action" class="am-cf"><i class="am-icon-search-plus"></i>所有权限</a></li>
+            <li><a href="${pageContext.request.contextPath}/role.action" class="am-cf"><i class="am-icon-search-plus"></i>角色设置</a></li>
             <li><a href="#" class="am-cf"><i class="am-icon-puzzle-piece"></i>权限设置</a></li>
         </ul>
     </li>
@@ -66,12 +66,12 @@
             <i class="am-icon-angle-right am-fr am-margin-right"></i>
         </a>
         <ul class="am-list am-collapse admin-sidebar-sub" id="system-setting">
-            <li><a href="dict/indexDict.action"><i class="am-icon-search-plus"></i>字典</a></li>
-            <li><a href="dictData/indexDictData.action"><i class="am-icon-search-plus"></i>字典数据</a></li>
+            <li><a href="${pageContext.request.contextPath}/dict/indexDict.action"><i class="am-icon-search-plus"></i>字典</a></li>
+            <li><a href="${pageContext.request.contextPath}/dictData/indexDictData.action"><i class="am-icon-search-plus"></i>字典数据</a></li>
         </ul>
     </li>
     <!-- ... -->
-    <li><a href="login/logout.action"><span class="am-icon-sign-out"></span> 注销</a></li>
+    <li><a href="${pageContext.request.contextPath}/login/logout.action"><span class="am-icon-sign-out"></span> 注销</a></li>
 </ul>
 
 <!-- 公告 bookmark -->

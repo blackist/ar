@@ -7,7 +7,7 @@ $(function() {
 /* 置顶操作 */
 function setTopJob(recruitId) {
 	$.AMUI.progress.start();
-	$.post("job/setTopJob.action", {
+	$.post(getContextPath() + "/job/setTopJob.action", {
 		"recruitId" : recruitId
 	}, function(data) {
 		$.AMUI.progress.done();
@@ -18,7 +18,7 @@ function setTopJob(recruitId) {
 /* 取消置顶操作 */
 function cancelTopJob(recruitId) {
 	$.AMUI.progress.start();
-	$.post("job/cancelTopJob.action", {
+	$.post(getContextPath() + "/job/cancelTopJob.action", {
 		"recruitId" : recruitId
 	}, function(data) {
 		$.AMUI.progress.done();
@@ -29,7 +29,7 @@ function cancelTopJob(recruitId) {
 /* 审核操作 */
 function auditJob(recruitId) {
 	$.AMUI.progress.start();
-	$.post("job/auditJob.action", {
+	$.post(getContextPath() + "/job/auditJob.action", {
 		"recruitId" : recruitId
 	}, function(data) {
 		$.AMUI.progress.done();
@@ -51,7 +51,7 @@ function removeJob(recruitId) {
 	// operateConfirm(fun, "你，确定要删除这条记录？");
 	if (confirm("您，确定删除这条数据？")) {
 		$.AMUI.progress.start();
-		$.post("job/removeJob.action", {
+		$.post(getContextPath() + "/job/removeJob.action", {
 			"recruitId" : recruitId
 		}, function(data) {
 			$.AMUI.progress.done();

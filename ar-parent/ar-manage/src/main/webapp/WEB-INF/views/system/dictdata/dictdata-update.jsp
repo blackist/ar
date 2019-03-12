@@ -6,7 +6,7 @@
 <div class="am-cf am-padding">
 	<div class="am-fl am-cf">
 		<strong class="am-text-primary am-text-lg">系统设置</strong> / <small><a
-			href="view/loadJSP.action?jspURL=system/dict/dict-index">字典</a></small> / <small>编辑字典</small>
+			href="${pageContext.request.contextPath}/view/loadJSP.action?jspURL=system/dict/dict-index">字典</a></small> / <small>编辑字典</small>
 	</div>
 </div>
 <div class="am-tabs">
@@ -51,4 +51,4 @@
 </div>
 
 <!-- 控制 js -->
-<script src="assets/script/system/dict/dict-update.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/system/dict/dict-update.js"></script>

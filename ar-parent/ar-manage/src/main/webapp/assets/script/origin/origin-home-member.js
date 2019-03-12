@@ -14,7 +14,7 @@ function queryOrigin(pageIndex, pageSize) {
     // 参数提取
     var originId = $('#originId').val();
     // 跳转
-    post('origin/member.action', {'originId': originId, 'pageIndex': pageIndex, 'pageSize': pageSize});
+    post(getContextPath() + '/origin/member.action', {'originId': originId, 'pageIndex': pageIndex, 'pageSize': pageSize});
 }
 
 /**
@@ -24,6 +24,6 @@ function queryOrigin(pageIndex, pageSize) {
 function setManager(mgrId) {
     var originId = $('#originId').val();
     if (isValid(originId)) {
-        window.location.href='origin/update.action?originId=' + originId + '&mgrId=' + mgrId;
+        window.location.href=getContextPath() + '/origin/update.action?originId=' + originId + '&mgrId=' + mgrId;
     }
 }

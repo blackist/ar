@@ -10,7 +10,7 @@ $(function () {
 function loadJobQuery() {
     /* loading进度条 */
     $.AMUI.progress.start();
-    $.post("job/queryJobs.action", function (data) {
+    $.post(getContextPath() + "/job/queryJobs.action", function (data) {
         $.AMUI.progress.done();
         $("#admin-content").html(data);
     });
@@ -18,5 +18,5 @@ function loadJobQuery() {
 /* 导航栏点击事件，导航至dict-index.jsp(刷新页面) */
 function loadDictIndex() {
     $.AMUI.progress.start();
-    location.href = "job.action";
+    location.href = getContextPath() + "/job.action";
 }

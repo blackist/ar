@@ -12,7 +12,7 @@ function queryOrigin(pageIndex, pageSize) {
     var state = $("#state").val();
     var originGrade = $('#originGrade').val();
     var originType = $('#originType').val();
-    $.post("origin/queryOrigin.action", {
+    $.post(getContextPath() + "/origin/queryOrigin.action", {
         "pageIndex": pageIndex,
         "pageSize": pageSize,
         "query": query,
@@ -28,7 +28,7 @@ function queryOrigin(pageIndex, pageSize) {
 /* 置顶操作 */
 function setTopInfo(infoId) {
     $.AMUI.progress.start();
-    $.post('info/update.action', {
+    $.post(getContextPath() + '/info/update.action', {
         'infoId': infoId,
         'isTop': '1'
     }, function (data) {
@@ -40,7 +40,7 @@ function setTopInfo(infoId) {
 /* 取消置顶操作 */
 function cancelTopInfo(infoId) {
     $.AMUI.progress.start();
-    $.post('info/update.action', {
+    $.post(getContextPath() + '/info/update.action', {
         'infoId': infoId,
         'isTop': '0'
     }, function (data) {
@@ -52,7 +52,7 @@ function cancelTopInfo(infoId) {
 /* 审核操作 */
 function auditInfo(infoId) {
     $.AMUI.progress.start();
-    $.post('info/update.action', {
+    $.post(getContextPath() + '/info/update.action', {
         'infoId': infoId,
         'state': 'A'
     }, function (data) {
@@ -66,7 +66,7 @@ function auditInfos() {
     var infoIds = getIds();
     if (isValid(infoIds)) {
         $.AMUI.progress.start();
-        $.post('info/update.action', {
+        $.post(getContextPath() + '/info/update.action', {
             "recruitIds": recruitIds
         }, function (data) {
             $.AMUI.progress.done();

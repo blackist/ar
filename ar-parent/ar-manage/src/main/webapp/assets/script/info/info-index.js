@@ -6,7 +6,7 @@ $(function () {
     // content 默认加载列表界面
     /* loading进度条 */
     $.AMUI.progress.start();
-    $.post("info/queryInfo.action", function (data) {
+    $.post(getContextPath() + "/info/queryInfo.action", function (data) {
         $.AMUI.progress.done();
         $("#admin-content").html(data);
     });

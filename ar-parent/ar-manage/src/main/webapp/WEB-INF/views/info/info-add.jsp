@@ -35,7 +35,7 @@
             </ul>
             <div class="am-tabs-bd">
                 <div class="am-tab-panel am-fade am-in am-active">
-                    <form class="am-form" id="info-form" method="post" action="info/save.action">
+                    <form class="am-form" id="info-form" method="post" action="${pageContext.request.contextPath}/info/save.action">
 
                         <div class="am-g am-margin-top-sm">
                             <div class="am-u-sm-2 am-text-right">
@@ -108,7 +108,7 @@
 
             <div class="am-margin">
                 <button type="button" onclick="saveInfo()" class="am-btn am-btn-primary am-btn-xs">发布信息</button>
-                <a href="info.action" class="am-btn am-btn-primary am-btn-xs">放弃发布</a>
+                <a href="${pageContext.request.contextPath}/info.action" class="am-btn am-btn-primary am-btn-xs">放弃发布</a>
             </div>
             <%@ include file="/WEB-INF/views/global/operate-remarks.jsp" %>
         </div>
@@ -121,6 +121,6 @@
 
 <!-- 控制js -->
 <%@ include file="/WEB-INF/views/global/common-js.jsp" %>
-<script src="assets/script/info/info-add.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/info/info-add.js"></script>
 </body>
 </html>

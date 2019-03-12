@@ -99,7 +99,7 @@
                         </td>
                         <td>${job.unitName}</td>
                         <td><ar:dictdata dictdata="${job.salary}" dict="sl"/></td>
-                        <td><a href="user/detail.action?userId=${job.userId}">${job.trueName}</a></td>
+                        <td><a href="${pageContext.request.contextPath}/user/detail.action?userId=${job.userId}">${job.trueName}</a></td>
                         <td><fmt:formatDate value="${job.createTime}" pattern="M月d日"></fmt:formatDate></td>
                         <td><ar:dictdata dictdata="${job.state}" dict="state"/></td>
                         <td>
@@ -161,5 +161,5 @@
     <!-- 操作说明 -->
     <%@ include file="/WEB-INF/views/global/operate-message.jsp" %>
     <!-- 控制 js -->
-    <script src="assets/script/job/job-query.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/script/job/job-query.js"></script>
 </div>

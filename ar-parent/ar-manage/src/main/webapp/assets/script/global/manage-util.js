@@ -13,6 +13,17 @@ function errClean() {
 	$(".error").html("");
 }
 
+/**
+ * 获取 contextPath
+ * @returns {string}
+ */
+function getContextPath() {
+    var pathName = document.location.pathname;
+    var index = pathName.substr(1).indexOf("/");
+    var result = pathName.substr(0, index + 1);
+    return result;
+}
+
 /* 使按钮失效 */
 function disableBtn(el) {
 	$("#" + el).attr("disabled", "disabled");

@@ -5,7 +5,7 @@
 <div class="am-cf am-padding">
 	<div class="am-fl am-cf">
 		<strong class="am-text-primary am-text-lg">系统设置</strong> / <small><a
-			href="dictData/indexDictData.action"> 字典数据 </a></small> / <small>添加字典数据</small>
+			href="${pageContext.request.contextPath}/dictData/indexDictData.action"> 字典数据 </a></small> / <small>添加字典数据</small>
 	</div>
 </div>
 <div class="am-tabs  am-margin" data-am-tabs>
@@ -66,7 +66,7 @@
 	<%@ include file="/WEB-INF/views/global/operate-remarks.jsp"%>
 </div>
 
-<script src="assets/js/amazeui.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/amazeui.js"></script>
 
 <!-- 控制 js -->
-<script src="assets/script/system/dictdata/dictdata-add.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/system/dictdata/dictdata-add.js"></script>

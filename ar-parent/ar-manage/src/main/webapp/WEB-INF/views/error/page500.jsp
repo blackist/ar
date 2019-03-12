@@ -6,8 +6,8 @@
 <%@ include file="/WEB-INF/views/global/base-path.jsp"%>
 <%@ include file="/WEB-INF/views/global/manage-meta.jsp"%>
 <title>系统错误</title>
-<link rel="icon" type="image/png" href="assets/i/title-logo.jpg" />
-<link rel="stylesheet" href="assets/css/error-page.css" />
+<link rel="icon" type="image/png" href="${pageContext.request.contextPath}/assets/i/title-logo.jpg" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/error-page.css" />
 </head>
 <body>
 	<div id="page"
@@ -16,7 +16,7 @@
 		<h2>Sorry, the site contents error.</h2>
 		<font color="#666666">你请求访问的页面包含错误，我们建议你返回首页进行浏览，谢谢！</font><br /> <br />
 		<div class="button">
-			<a href="indexManage.action" title="返回首页" target="_blank">返回首页</a>
+			<a href="${pageContext.request.contextPath}/indexManage.action" title="返回首页" target="_blank">返回首页</a>
 		</div>
 	</div>
 	<br />

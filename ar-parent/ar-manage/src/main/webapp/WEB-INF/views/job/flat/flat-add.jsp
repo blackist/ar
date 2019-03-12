@@ -27,7 +27,7 @@
             <div class="am-fl am-cf">
                 <strong class="am-text-primary am-text-lg">职业招聘</strong> /
                 <small><a
-                        href="job.action">招聘单位</a></small>
+                        href="${pageContext.request.contextPath}/job.action">招聘单位</a></small>
                 /
                 <small>添加单位信息</small>
             </div>
@@ -136,7 +136,7 @@
 <%@ include file="/WEB-INF/views/global/footer.jsp" %>
 <!-- 控制js -->
 <%@ include file="/WEB-INF/views/global/common-js.jsp" %>
-<script src="assets/script/job/flat/flat-add.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/job/flat/flat-add.js"></script>
 </body>
 </html>
 

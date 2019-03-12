@@ -31,6 +31,6 @@
 
 	<!-- 控制js -->
 	<%@ include file="/WEB-INF/views/global/common-js.jsp"%>
-	<script src="assets/script/cm/cm-index.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/script/cm/cm-index.js"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@
 			<div class="am-cf am-padding">
 				<div class="am-fl am-cf">
 					<strong class="am-text-primary am-text-lg">职业招聘</strong> / <small><a
-						href="job.action">招聘信息</a></small> / <small>发布招聘</small>
+						href="${pageContext.request.contextPath}/job.action">招聘信息</a></small> / <small>发布招聘</small>
 				</div>
 			</div>
 			<div class="am-tabs am-margin">
@@ -45,7 +45,7 @@
 					</div>
 					<div class="am-tab-panel am-fade am-in am-active" id="job-tag">
 						<form class="am-form" id="jobForm"
-							action="job/createJobSubmit.action" method="post">
+							action="${pageContext.request.contextPath}/job/createJobSubmit.action" method="post">
 							<div class="am-u-sm-1 am-text-right">
 								<strong>基本信息</strong>
 							</div>
@@ -217,7 +217,7 @@
 	<%@ include file="/WEB-INF/views/global/footer.jsp"%>
 	<!-- 控制js -->
 	<%@ include file="/WEB-INF/views/global/common-js.jsp"%>
-	<script src="assets/script/job/job-add.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/script/job/job-add.js"></script>
 </body>
 </html>
 

@@ -28,7 +28,7 @@
 			</div>
 			<br> <br>
 
-			<form method="get" action="login/loginValidate.action"
+			<form method="get" action="${pageContext.request.contextPath}/login/loginValidate.action"
 				class="am-form">
 				<label for="text">用户名:</label> <input type="text" name="account"
 					value="${account}" placeholder="用户名"> <span

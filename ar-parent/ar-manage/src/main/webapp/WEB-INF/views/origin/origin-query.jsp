@@ -12,7 +12,7 @@
 <div class="am-g">
     <div class="am-u-md-9 am-cf">
         <div class="am-btn-group am-btn-group-xs">
-            <a class="am-btn am-btn-default" href="origin/add.action">
+            <a class="am-btn am-btn-default" href="${pageContext.request.contextPath}/origin/add.action">
                 <span class="am-icon-plus"></span> 创建组织
             </a>
             <c:if test="${state!='X'}">
@@ -93,12 +93,12 @@
                     <tr>
                         <td><input type="checkbox" value="${origin.originId}"/></td>
                         <td>
-                            <a href="origin/home.action?originId=${origin.originId}"
+                            <a href="${pageContext.request.contextPath}/origin/home.action?originId=${origin.originId}"
                                target="blank">${origin.originName}</a>
                         </td>
                         <td><ar:dictdata dictdata="${origin.originType}" dict="ot"></ar:dictdata></td>
                         <td>${origin.members}</td>
-                        <td><a href="user/account.action?userId=${origin.mgrId}">${origin.mgrName}</a></td>
+                        <td><a href="${pageContext.request.contextPath}/user/account.action?userId=${origin.mgrId}">${origin.mgrName}</a></td>
                         <td><fmt:formatDate value="${origin.stateTime}" pattern="YYYY-M-d HH:mm"></fmt:formatDate></td>
                         <td><ar:dictdata dictdata="${origin.state}" dict="state"/></td>
                         <td>
@@ -160,5 +160,5 @@
     <!-- 操作说明 -->
     <%@ include file="/WEB-INF/views/global/operate-message.jsp" %>
     <!-- 控制 js -->
-    <script src="assets/script/origin/origin-query.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/script/origin/origin-query.js"></script>
 </div>

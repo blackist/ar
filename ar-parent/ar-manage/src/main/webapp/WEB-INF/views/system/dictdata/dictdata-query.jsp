@@ -90,5 +90,5 @@
 	</div>
 	<%@ include file="/WEB-INF/views/global/operate-message.jsp"%>
 	<!-- 控制 js -->
-	<script src="assets/script/system/dictdata/dictdata-query.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/script/system/dictdata/dictdata-query.js"></script>
 </div>

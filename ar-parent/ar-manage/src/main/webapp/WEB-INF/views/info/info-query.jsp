@@ -91,7 +91,7 @@
                     <tr>
                         <td><input type="checkbox" value="${info.infoId}"/></td>
                         <td>
-                            <a href="info/detail.action?infoId=${info.infoId}" target="blank">
+                            <a href="${pageContext.request.contextPath}/info/detail.action?infoId=${info.infoId}" target="blank">
                                 <ar:sub value="${info.infoTitle}" length="15"></ar:sub>
                             </a>
                             <c:if test="${info.isTop==1}">
@@ -162,5 +162,5 @@
     <!-- 操作说明 -->
     <%@ include file="/WEB-INF/views/global/operate-message.jsp" %>
     <!-- 控制 js -->
-    <script src="assets/script/info/info-query.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/script/info/info-query.js"></script>
 </div>

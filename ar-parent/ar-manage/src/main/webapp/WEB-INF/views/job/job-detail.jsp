@@ -27,7 +27,7 @@
 			<div class="am-cf am-padding">
 				<div class="am-fl am-cf">
 					<strong class="am-text-primary am-text-lg"> 职业招聘 </strong> / <small><a
-						href="job.action">招聘信息 </a></small> / <small>招聘详情</small>
+						href="${pageContext.request.contextPath}/job.action">招聘信息 </a></small> / <small>招聘详情</small>
 				</div>
 			</div>
 
@@ -168,7 +168,7 @@
 							<div class="am-g am-margin-top">
 								<div class="am-u-sm-2 am-text-right">申请记录：</div>
 								<div class="am-u-sm-6 am-text-left">
-									<a href="user/userInfo?userId=${userId}" target="blank">black</a>
+									<a href="${pageContext.request.contextPath}/user/userInfo?userId=${userId}" target="blank">black</a>
 									申请于 3月26号 <br>
 								</div>
 								<div class="am-u-sm-4 am-text-left"></div>
@@ -211,6 +211,6 @@
 
 	<!-- 控制js -->
 	<%@ include file="/WEB-INF/views/global/common-js.jsp"%>
-	<script src="assets/script/job/job-detail.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/script/job/job-detail.js"></script>
 </body>
 </html>

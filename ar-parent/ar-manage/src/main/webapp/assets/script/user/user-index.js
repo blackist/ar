@@ -5,7 +5,7 @@ $(function () {
 
     // content 默认加载列表界面
     $.AMUI.progress.start();
-    $.post("user/queryUser.action", function (data) {
+    $.post(getContextPath() + "/user/queryUser.action", function (data) {
         $.AMUI.progress.done();
         $("#admin-content").html(data);
     });

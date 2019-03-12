@@ -35,6 +35,6 @@
 	<%@ include file="/WEB-INF/views/global/footer.jsp" %>
 	
 	<!-- 控制js -->
-	<script src="assets/script/main/index.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/script/main/index.js"></script>
 </body>
 </html>

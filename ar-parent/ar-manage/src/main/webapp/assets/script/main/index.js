@@ -9,7 +9,7 @@ function loadWelcome() {
 	/* content 默认加载的界面 */
 	/* SB进度条 */
 	$.AMUI.progress.start();
-	$.post("manage/welcome.action", function(data) {
+	$.post(getContextPath() + "/manage/welcome.action", function(data) {
 		$.AMUI.progress.done();
 		$("#admin-content").html(data);
 	});

@@ -27,7 +27,7 @@
             <div class="am-fl am-cf">
                 <strong class="am-text-primary am-text-lg">职业招聘</strong> /
                 <small><a
-                        href="job.action">招聘信息</a></small>
+                        href="${pageContext.request.contextPath}/job.action">招聘信息</a></small>
                 /
                 <small>发布招聘</small>
             </div>
@@ -47,7 +47,7 @@
                          style="width: 33.3%"></div>
                 </div>
                 <div class="am-tab-panel am-fade  am-in am-active" id="flat-tag">
-                    <form id="unitIdForm" class="am-form" action="job/createJob.action" method="post">
+                    <form id="unitIdForm" class="am-form" action="${pageContext.request.contextPath}/job/createJob.action" method="post">
                         <div class="am-g am-margin-top">
                             <div class="am-u-sm-2 am-text-right">选择招聘单位：</div>
                             <div class="am-u-sm-4 am-text-left">
@@ -58,7 +58,7 @@
                                         <option value="${flat.unitId}">${flat.unitName}</option>
                                     </c:forEach>
                                 </select><br>
-                                <a href="flat/createFlat.action" class="am-btn am-btn-default am-btn-block am-btn-sm">创建单位信息</a>
+                                <a href="${pageContext.request.contextPath}/flat/createFlat.action" class="am-btn am-btn-default am-btn-block am-btn-sm">创建单位信息</a>
                             </div>
                             <div class="am-u-sm-8 am-text-left"></div>
                         </div>
@@ -81,7 +81,7 @@
 <%@ include file="/WEB-INF/views/global/footer.jsp" %>
 <!-- 控制js -->
 <%@ include file="/WEB-INF/views/global/common-js.jsp" %>
-<script src="assets/script/job/flat/flat-select.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/job/flat/flat-select.js"></script>
 </body>
 </html>
 

@@ -18,7 +18,7 @@
                         class="am-icon-caret-down"></span></a>
                 <ul class="am-dropdown-content">
                     <li><a href="javascript:;"><span class="am-icon-user"></span> 个人中心</a></li>
-                    <li><a href="login/logout.action"><span class="am-icon-power-off"></span> 退出</a></li>
+                    <li><a href="${pageContext.request.contextPath}/login/logout.action"><span class="am-icon-power-off"></span> 退出</a></li>
                 </ul>
             </li>
             <li><a href="javascript:void(0)" id="admin-fullscreen"><span

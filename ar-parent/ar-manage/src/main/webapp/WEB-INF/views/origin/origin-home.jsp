@@ -26,7 +26,7 @@
         <div class="am-cf am-padding">
             <div class="am-fl am-cf">
                 <strong class="am-text-primary am-text-lg">班级 / 校友组织 </strong>
-                <small><a href="origin.action"> / 组织管理</a></small>
+                <small><a href="${pageContext.request.contextPath}/origin.action"> / 组织管理</a></small>
                 <small> / 组织主页</small>
             </div>
         </div>
@@ -46,7 +46,7 @@
                                 <img class="am-img-circle" src="${origin.mgrPortrait}"/>
                             </div>
                             <div class="am-u-md-8">
-                                <p>管理员：<a href="user/detail.action?userId=${origin.mgrId}">${origin.mgrName}</a></p>
+                                <p>管理员：<a href="${pageContext.request.contextPath}/user/detail.action?userId=${origin.mgrId}">${origin.mgrName}</a></p>
                                 <p class="am-form-help">${origin.mgrIntroduce}</p>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
             </div>
 
             <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
-                <form class="am-form am-form-horizontal" method="post" action="origin/update.action">
+                <form class="am-form am-form-horizontal" method="post" action="${pageContext.request.contextPath}/origin/update.action">
 
                     <div class="am-form-group">
                         <label for="originName" class="am-u-sm-3 am-form-label">名称 </label>
@@ -141,7 +141,7 @@
 <%@ include file="/WEB-INF/views/global/footer.jsp" %>
 <!-- 控制js -->
 <%@ include file="/WEB-INF/views/global/common-js.jsp" %>
-<script src="assets/script/origin/origin-home.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/origin/origin-home.js"></script>
 </body>
 </html>
 

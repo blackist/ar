@@ -108,7 +108,7 @@
 
             <div class="am-margin">
                 <button type="button" onclick="saveInfo()" class="am-btn am-btn-primary am-btn-xs">发布信息</button>
-                <a href="info.action" class="am-btn am-btn-primary am-btn-xs">放弃发布</a>
+                <a href="${pageContext.request.contextPath}/info.action" class="am-btn am-btn-primary am-btn-xs">放弃发布</a>
             </div>
             <%@ include file="/WEB-INF/views/global/operate-remarks.jsp" %>
         </div>
@@ -121,6 +121,6 @@
 
 <!-- 控制js -->
 <%@ include file="/WEB-INF/views/global/common-js.jsp" %>
-<script src="assets/script/user/user-add.js"></script>
+<script src="${pageContext.request.contextPath}/assets/script/user/user-add.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@ $(function() {
 function queryRole(pageIndex, pageSize) {
 	/* loading进度条 */
 	$.AMUI.progress.start();
-	$.post("role/queryRole.action", {
+	$.post(getContextPath() + "/role/queryRole.action", {
 		"pageIndex" : pageIndex,
 		"pageSize" : pageSize
 	}, function(data) {
@@ -17,7 +17,7 @@ function queryRole(pageIndex, pageSize) {
 
 function allot(roleId) {
 	$.AMUI.progress.start();
-	$.post("role/allot.action", {
+	$.post(getContextPath() + "/role/allot.action", {
 		"roleId" : roleId
 	}, function(data) {
 		$.AMUI.progress.done();
