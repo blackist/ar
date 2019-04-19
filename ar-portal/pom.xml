@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.xzit.ar</groupId>
+		<artifactId>ar-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>ar-portal</artifactId>
+	<packaging>war</packaging>
+	<name>ar-portal Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+		<!-- jstl -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+		</dependency>
+		<!-- 工程 common 包 -->
+		<dependency>
+			<groupId>com.xzit.ar</groupId>
+			<artifactId>ar-common</artifactId>
+		</dependency>
+		<!-- 工程 war 包 -->
+		<dependency>
+			<groupId>com.xzit.ar</groupId>
+			<artifactId>ar-manage</artifactId>
+			<type>war</type>
+			<scope>runtime</scope>
+		</dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+	<build>
+		<finalName>ar-portal</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<warSourceDirectory>src/main/webapp</warSourceDirectory>
+					<overlays>
+						<overlay>
+							<groupId>com.xzit.ar</groupId>
+							<artifactId>ar-manage</artifactId>
+							<excludes>
+								<exclude>WEB-INF/lib/*</exclude>
+								<exclude>WEB-INF/web.xml</exclude>
+								<exclude>WEB-INF/classes/*.xml</exclude>
+							</excludes>
+						</overlay>
+					</overlays>
+				</configuration>
+			</plugin>
+		</plugins>
+		
+	</build>
+</project>
