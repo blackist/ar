@@ -136,13 +136,6 @@ mvn clean && mvn install && mvn package
 
 此项目作为我的毕业设计，期间我经历嵌入式开发、考研等事情，历时两年多还有部分功能未完成，有兴趣的码友欢迎[共同开发](https://github.com/blackist/ar/pulls)，也期待此项目可以成为某某学校的校友网站^-^。
 
-如果你觉得此项目有所帮助，那么可以赞助我。
-
-![](http://pic.blackist.top/blackist-pay-wechat-tiny.jpg)
-
-
-
-
 
 
 ## License
