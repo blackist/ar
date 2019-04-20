@@ -16,7 +16,6 @@ spring-test/test-output/
 argfile*
 activemq-data/
 
-classes/
 /build
 buildSrc/build
 /spring-*/build
