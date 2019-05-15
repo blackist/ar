@@ -42,7 +42,7 @@
             <i class="am-icon-group"></i> 用户管理 <i class="am-icon-angle-right am-fr am-margin-right"></i></a>
         <ul class="am-list am-collapse admin-sidebar-sub" id="user-manage">
             <li><a href="${pageContext.request.contextPath}/user.action"><i class="am-icon-user"></i> 用户列表 </a></li>
-            <li><a href="javascript:;"><i class="am-icon-plus-square"></i> 添加用户</a></li>
+            <li><a href="${pageContext.request.contextPath}/user/add.action"><i class="am-icon-plus-square"></i> 添加用户</a></li>
         </ul>
     </li>
 
