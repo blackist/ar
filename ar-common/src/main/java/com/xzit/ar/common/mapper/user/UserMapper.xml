@@ -122,9 +122,9 @@
             <if test="password != null">#{password,jdbcType=VARCHAR},</if>
             <if test="email != null">#{email,jdbcType=VARCHAR},</if>
             <if test="trueName != null">#{trueName,jdbcType=VARCHAR},</if>
-            <if test="introduce != null">introduce,</if>
+            <if test="introduce != null">#{introduce, jdbcType=VARCHAR},</if>
             <if test="isAdmin != null">#{isAdmin,jdbcType=CHAR},</if>
-            <if test="imageId != null">#{image_id,jdbcType=INTEGER},</if>
+            <if test="imageId != null">#{imageId,jdbcType=INTEGER},</if>
             <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
             <if test="state != null">#{state,jdbcType=CHAR},</if>
             <if test="stateTime != null">#{stateTime,jdbcType=TIMESTAMP},</if>

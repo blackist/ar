@@ -1,14 +1,20 @@
 package com.xzit.ar.manage.controller.user;
 
 import com.xzit.ar.common.base.BaseController;
+import com.xzit.ar.common.exception.UtilException;
 import com.xzit.ar.common.page.Page;
+import com.xzit.ar.common.po.user.User;
 import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.manage.service.user.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -67,5 +73,43 @@ public class UserController extends BaseController {
         model.addAttribute("isAdmin", isAdmin);
 
         return "user/user-query";
+    }
+
+    @RequestMapping("/add")
+    public String userAddPage(Model model) {
+        model.addAttribute("sex", false);
+        return "user/user-add";
+    }
+
+    @RequestMapping(value = "/add/submit", method = RequestMethod.POST)
+    public String userAddSubmit(Model model,
+                                @RequestParam("account") String account,
+                                @RequestParam("trueName") String trueName,
+                                @RequestParam("isAdmin") String isAdmin,
+                                @RequestParam("email") String email,
+                                @RequestParam("introduce") String introduce) throws UtilException {
+        if (CommonUtil.isNotEmpty(account)) {
+            Map<String, Object> _user = userService.getUserByAccount(account);
+            if (_user != null) {
+                setMessage(account + " 已存在");
+                System.out.println(account + " 已存在");
+                return "redirect:/user.action";
+            } else {
+                User user = new User();
+                user.setAccount(account);
+                user.setTrueName(trueName);
+                user.setEmail(email);
+                user.setIsAdmin(isAdmin);
+                user.setIntroduce(introduce);
+                user.setState("A");
+                user.setPassword(CommonUtil.md5("12345678"));
+                user.setImageId(1);
+                user.setStateTime(new Date());
+                user.setCreateTime(new Date());
+                userService.addUser(user);
+            }
+        }
+
+        return "redirect:/user.action";
     }
 }
