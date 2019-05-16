@@ -13,6 +13,8 @@ File Encoding         : 65001
 Date: 2019-03-12 20:01:32
 */
 
+CREATE DATABASE IF NOT EXISTS  ar character set UTF8mb4 collate utf8mb4_bin;
+
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
