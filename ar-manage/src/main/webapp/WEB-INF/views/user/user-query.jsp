@@ -12,7 +12,7 @@
 <div class="am-g">
     <div class="am-u-md-9 am-cf">
         <div class="am-btn-group am-btn-group-xs">
-            <a class="am-btn am-btn-default" href="${pageContext.request.contextPath}/info/add.action">
+            <a class="am-btn am-btn-default" href="${pageContext.request.contextPath}/user/add.action">
                 <span class="am-icon-plus"></span> 添加用户
             </a>
             <c:if test="${state=='D'}">
