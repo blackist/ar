@@ -83,7 +83,15 @@
                             </div>
                         </div>
 
-
+                        <div class="am-g am-margin-top-sm">
+                            <div class="am-u-sm-2 am-text-right">
+                                密码
+                            </div>
+                            <div class="am-u-sm-4 am-u-end">
+                                <input type="text"  class="am-input-sm" disabled value="12345678">
+                                <span class="error_span" id="user-email"></span>
+                            </div>
+                        </div>
 
                         <div class="am-g am-margin-top-sm">
                             <div class="am-u-sm-2 am-text-right">
