@@ -10,8 +10,6 @@
 
 ## 项目简介
 
-[码云地址](https://gitee.com/blackist/ar)
-
 [Wiki](https://github.com/blackist/ar/wiki)
 
 校友录网站。作为毕业设计，为母校设计校友交流平台。基于javaWeb，由Maven构建管理，采用Spring+SpringMVC+MyBatis框架，用EhCache做数据缓存。门户网站采用BootStrap设计界面，后台管理网站用AmazeUI设计界面。门户网站总体布局如下所示：
