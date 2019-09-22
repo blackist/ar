@@ -130,7 +130,7 @@ mvn clean && mvn install && mvn package
 
 ### 加入QQ群交流
 
-** 432196940 **
+**432196940**
 
 <!-- ![校友录](http://pic.blackist.top/javaweb-ar-TIM%E5%9B%BE%E7%89%8720181130212423.jpg){:width="50px"} -->
 
