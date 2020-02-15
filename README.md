@@ -97,6 +97,18 @@ jdbc.password=root
 
 ar-common生成jar 安装在本地，ar-manage和ar-portal依赖此库。
 
+### 项目部署
+
+建议运行 ar-portal:war exploded。
+
+![](http://pic.blackist.top/202002151534_482.png)
+
+原因如下：
+
+- war exploded 模式将 WEB 工程以文件夹的形式发布到 Tomcat，支持热部署。
+- ar-portal 是门户网站模块，包含后台管理模块。maven 模块结构如下图所示。
+  ![](http://pic.blackist.top/202002151541_295.png)
+
 运行ar-portal模块，启动成功日志：
 
 ![](http://pic.blackist.top/javaweb-ar-ar-portal-startup-success.png)
@@ -143,17 +155,17 @@ mvn clean && mvn install && mvn package
 ## License
 
     Copyright (C) 2013 董亮亮
-
+    
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
     (at your option) any later version.
-
+    
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-
+    
     You should have received a copy of the GNU General Public License along
     with this program; if not, write to the Free Software Foundation, Inc.,
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
