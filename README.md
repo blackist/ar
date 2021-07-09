@@ -138,7 +138,9 @@ mvn clean && mvn install && mvn package
 
 ![校友录](http://pic.blackist.top/blackist-wechat-pub.jpg)
 
-关注公众号，回复：校友录，获取项目架构、线上部署、网站风格配置等开发文档
+关注公众号，回复：
+- 校友录，获取项目架构、线上部署、网站风格配置等开发文档
+- 论文，获取参考论文
 
 ### 加入QQ群交流
 
