@@ -132,6 +132,27 @@ mvn clean && mvn install && mvn package
 
 ```
 
+### 使用IDEA运行
+
+1.配置 Tomcat
+
+tomcat 需要 8.0 的版本，否则会不兼容，👉[Tomcat 8.0.9](https://download.csdn.net/download/dong161114/20822688).
+
+首先配置 Tomcat 服务器路径
+![](http://pic.blackist.top/20210807123253.jpg)
+
+其次配置项目部署在 Tomcat 上
+![](http://pic.blackist.top/20210807123512.jpg)
+![](http://pic.blackist.top/20210807123601.jpg)
+
+Application Context 就是项目在容器里的目录，浏览器地址的一部分.
+
+2.启动运行即可
+
+![](http://pic.blackist.top/20210807123734.jpg)
+
+
+
 ## 项目开发交流
 
 ### 关注公众号
