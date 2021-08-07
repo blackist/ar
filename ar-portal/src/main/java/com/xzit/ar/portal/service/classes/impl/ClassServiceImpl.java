@@ -110,14 +110,12 @@ public class ClassServiceImpl implements ClassService {
     }
 
     @Override
-    public List<Map<String, Object>> latestMembers(Integer number) throws ServiceException {
-        try {
+    public List<Map<String, Object>> latestMembers(Integer number) {
+
             if (CommonUtil.isNotEmpty(number)) {
                 return classMapper.latestMembers("C", number);
             }
-        } catch (Exception e) {
-            throw new ServiceException("无法加载近期加入班级录的校友!");
-        }
+
         return null;
     }
 

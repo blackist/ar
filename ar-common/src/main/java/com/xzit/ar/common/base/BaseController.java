@@ -74,7 +74,7 @@ public abstract class BaseController {
      */
     private static String errorPage = "error/page500";
 
-    private static Logger logger = new Logger(BaseController.class);
+    protected static Logger logger = new Logger(BaseController.class);
 
     /**
      * @param @throws AssertException <br>

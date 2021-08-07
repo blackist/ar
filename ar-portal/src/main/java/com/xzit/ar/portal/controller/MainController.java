@@ -1,39 +1,32 @@
-/**
- * @Title: ManageController.java
- * @Package com.xzit.ar.portal.controller
- * @Description: TODO
- * @author Mr.Black
- * @date 2016年1月14日 下午2:05:32
- * @version V1.0
- */
 package com.xzit.ar.portal.controller;
 
+import com.xzit.ar.common.base.BaseController;
 import com.xzit.ar.common.constant.PathConstant;
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.exception.UtilException;
 import com.xzit.ar.common.page.Page;
-import com.xzit.ar.common.util.CommonUtil;
+import com.xzit.ar.common.util.AsyncUtils;
 import com.xzit.ar.common.util.IOUtil;
 import com.xzit.ar.portal.service.classes.ClassService;
 import com.xzit.ar.portal.service.forum.PostService;
 import com.xzit.ar.portal.service.information.InformationService;
 import com.xzit.ar.portal.service.recruit.RecruitService;
-import org.aspectj.util.FileUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.xzit.ar.common.base.BaseController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Future;
 
 /**
+ * 校友录首页服务
+ *
  * @author Mr.Black
- * @ClassName: ManageController
- * @Description: TODO MainController
  * @date 2016年1月14日 下午2:05:32
  */
 @Controller
@@ -53,41 +46,81 @@ public class MainController extends BaseController {
     private InformationService informationService;
 
     /**
-     * TODO 网站首页
+     * 网站首页
      *
-     * @param model
-     * @return
-     * @throws ServiceException
+     * @param model ..
+     * @return ..
      */
     @RequestMapping("/index")
     public String index(Model model) throws ServiceException {
 
-        // 校友新闻
-        model.addAttribute("inews",
-                informationService.getInfoByInfoType(new Page<Map<String, Object>>(getPageIndex(), 4), "AN"));
-        // 校友新闻
-        model.addAttribute("news",
-                informationService.getInfoByInfoType(new Page<Map<String, Object>>(getPageIndex(), getPageSize()), "AN"));
-        // 热门话题
-        model.addAttribute("posts",
-                postService.queryPosts(new Page<Map<String, Object>>(1, 10), ""));
-        // 热门招聘
-        model.addAttribute("recruits",
-                recruitService.queryRecruit(new Page<Map<String, Object>>(1, 8), ""));
-        // 近期校友
-        model.addAttribute("latestMembers", classService.latestMembers(5));
+        Map<String, Object> res = new ConcurrentHashMap<>(5);
+
+        final CountDownLatch signal = new CountDownLatch(5);
+
+        Future<?> inewFu = AsyncUtils.EXECUTORS.submit(() -> {
+            try {
+                // 校友新闻
+                res.put("inews", informationService.getInfoByInfoType(new Page<>(getPageIndex(), 4), "AN"));
+            } finally {
+                signal.countDown();
+            }
+        });
+
+        Future<?> newsFu = AsyncUtils.EXECUTORS.submit(() -> {
+            try {
+                // 校友新闻
+                res.put("news", informationService.getInfoByInfoType(new Page<>(getPageIndex(), getPageSize()), "AN"));
+            }finally {
+                signal.countDown();
+            }
+        });
+
+        Future<?> postsFu = AsyncUtils.EXECUTORS.submit(() -> {
+            try {
+                // 热门话题
+                res.put("posts", postService.queryPosts(new Page<>(1, 10), ""));
+            } finally {
+                signal.countDown();
+            }
+        });
+
+        Future<?> recruitFu = AsyncUtils.EXECUTORS.submit(() -> {
+            try {
+                // 热门招聘
+                res.put("recruits", recruitService.queryRecruit(new Page<>(1, 8), ""));
+            } finally {
+                signal.countDown();
+            }
+        });
+
+        Future<?> memberFu = AsyncUtils.EXECUTORS.submit(() -> {
+            try {
+                // 近期校友
+                res.put("latestMembers", classService.latestMembers(5));
+            } finally {
+                signal.countDown();
+            }
+        });
+
+        try {
+            signal.await();
+
+            res.forEach(model::addAttribute);
+        } catch (Exception e) {
+            logger.info("[Main] 加载首页信息异常", e);
+        }
 
         return "portal-main/index";
     }
 
     /**
-     * TODO 下载文件
+     * 下载文件
      *
-     * @param response
-     * @param fileRelPath
-     * @param fileName
-     * @return
-     * @throws UtilException
+     * @param response ..
+     * @param fileRelPath ..
+     * @param fileName ..
+     * @return ..
      */
     @RequestMapping("/download")
     public String download(HttpServletResponse response, String fileRelPath, String fileName) throws UtilException {
@@ -107,8 +140,6 @@ public class MainController extends BaseController {
                 os.write(b, 0, length);
             }
             inputStream.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

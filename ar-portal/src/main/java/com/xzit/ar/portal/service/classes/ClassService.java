@@ -77,7 +77,7 @@ public interface ClassService {
 	 * @return
 	 * @throws ServiceException
 	 */
-	List<Map<String, Object>> latestMembers(Integer number) throws ServiceException;
+	List<Map<String, Object>> latestMembers(Integer number);
 
 	/**
 	 * TODO 条件查询组织

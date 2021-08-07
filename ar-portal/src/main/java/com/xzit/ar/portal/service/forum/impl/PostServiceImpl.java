@@ -132,18 +132,14 @@ public class PostServiceImpl implements PostService {
      * @throws ServiceException
      */
     @Override
-    public List<Map<String, Object>> queryPosts(Page<Map<String, Object>> page, String queryStr) throws ServiceException {
-        try {
-            // 校验参数
-            if (CommonUtil.isEmpty(queryStr)) {
-                queryStr = "";
-            }
-            queryStr = "%" + queryStr + "%";
-            // 根据条件查询帖子
-            return informationMapper.queryInfos(page, queryStr, "BBS", "%%", "A");
-        } catch (Exception e) {
-            throw new ServiceException("加载论坛帖子时发生异常！");
+    public List<Map<String, Object>> queryPosts(Page<Map<String, Object>> page, String queryStr) {
+        // 校验参数
+        if (CommonUtil.isEmpty(queryStr)) {
+            queryStr = "";
         }
+        queryStr = "%" + queryStr + "%";
+        // 根据条件查询帖子
+        return informationMapper.queryInfos(page, queryStr, "BBS", "%%", "A");
     }
 
     /**

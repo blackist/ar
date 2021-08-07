@@ -18,8 +18,7 @@ public interface RecruitMapper extends BaseMapper {
 	 * @param @param
 	 *            queryStr
 	 */
-	List<Map<String, Object>> queryRecruit(Page<Map<String, Object>> page, @Param("queryStr") String queryStr)
-			throws Exception;
+	List<Map<String, Object>> queryRecruit(Page<Map<String, Object>> page, @Param("queryStr") String queryStr);
 
 	/**
 	 * @Title: getDetailRecruit

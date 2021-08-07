@@ -2,7 +2,7 @@
  * @Title: RecruitServiceImpl.java
  * @Package com.xzit.ar.portal.service.recruit.impl
  * @Description: TODO
- * @author 钁ｄ寒浜?-Dosgi.requiredJavaVersion=1.7
+ * @author DongLL
  * @date 2016年1月24日 下午1:39:09
  * @version V1.0
  */
@@ -35,19 +35,15 @@ public class RecruitServiceImpl implements RecruitService {
     private RecruitMapper recruitMapper;
 
     @Override
-    public List<Map<String, Object>> queryRecruit(Page<Map<String, Object>> page, String queryStr)
-            throws ServiceException {
+    public List<Map<String, Object>> queryRecruit(Page<Map<String, Object>> page, String queryStr) {
         List<Map<String, Object>> recruitList = null;
         // 参数校验
         if (!CommonUtil.isNotEmpty(queryStr)) {
             queryStr = "";
         }
         queryStr = "%" + queryStr + "%";
-        try {
             recruitList = recruitMapper.queryRecruit(page, queryStr);
-        } catch (Exception e) {
-            throw new ServiceException("加载招聘信息失败");
-        }
+
         return recruitList;
     }
 

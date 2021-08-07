@@ -96,7 +96,7 @@ public interface InformationService {
      * @return
      * @throws ServiceException
      */
-    List<Map<String, Object>> getInfoByInfoType(Page<Map<String, Object>> page, String infoType) throws ServiceException;
+    List<Map<String, Object>> getInfoByInfoType(Page<Map<String, Object>> page, String infoType);
 
     /**
      * TODO 按消息类型查询热门消息

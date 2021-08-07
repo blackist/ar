@@ -72,8 +72,7 @@ public interface OriginMapper extends BaseMapper {
 	 * @throws Exception
 	 */
 	@SelectProvider(type = OriginProvider.class, method = "latestMembers")
-	List<Map<String, Object>> latestMembers(@Param("originType") String originType, @Param("number") Integer number)
-			throws Exception;
+	List<Map<String, Object>> latestMembers(@Param("originType") String originType, @Param("number") Integer number);
 
 	/**
 	 * TODO 累加班级成员数量

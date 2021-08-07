@@ -22,7 +22,7 @@ public interface PostService {
      * @return 帖子list
      * @throws ServiceException
      */
-    List<Map<String, Object>> queryPosts(Page<Map<String, Object>> page, String queryStr) throws ServiceException;
+    List<Map<String, Object>> queryPosts(Page<Map<String, Object>> page, String queryStr);
 
     /**
      * TODO 根据info_id查询帖子详情

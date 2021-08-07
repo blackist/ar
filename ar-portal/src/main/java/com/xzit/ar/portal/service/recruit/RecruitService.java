@@ -37,7 +37,7 @@ public interface RecruitService {
 	 * @return
 	 * @throws ServiceException
 	 */
-	List<Map<String, Object>> queryRecruit(Page<Map<String, Object>> page, String queryStr) throws ServiceException ;
+	List<Map<String, Object>> queryRecruit(Page<Map<String, Object>> page, String queryStr);
 
 	/**
 	 * TODO 查询招聘详情

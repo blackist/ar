@@ -136,7 +136,7 @@ public interface InformationMapper extends BaseMapper {
      * @throws Exception
      */
     List<Map<String, Object>> getInfoByInfoType(Page<Map<String, Object>> page,
-                                                @Param("infoType") String infoType) throws Exception;
+                                                @Param("infoType") String infoType);
 
     /**
      * TODO 查询热门消息
