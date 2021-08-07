@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  * Created by 董亮亮 on 2017/4/7.
  */
 @Service("serviceService")
@@ -23,7 +23,7 @@ public class ServiceServiceImpl implements ServiceService {
     private InformationMapper informationMapper;
 
     /**
-     * TODO 获取校园服务信息列表
+     * 获取校园服务信息列表
      * @return
      */
     @Override

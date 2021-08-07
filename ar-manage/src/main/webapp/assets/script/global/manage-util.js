@@ -83,7 +83,7 @@ function getIds() {
 
 
 /**
- * TODO 利用js进行POST方式提交
+ * 利用js进行POST方式提交
  * @param URL
  * @param PARAMS
  */

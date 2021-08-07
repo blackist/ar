@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/4/29 11:02.
@@ -29,11 +29,10 @@ public class ImageServiceImpl implements ImageService {
     private AlbumImageMapper albumImageMapper;
 
     /**
-     * TODO 查询图片信息
+     * 查询图片信息
      *
      * @param imageId
      * @return
-     * @throws ServiceException
      */
     @Override
     public Image getImageById(Integer imageId) throws ServiceException {
@@ -48,11 +47,10 @@ public class ImageServiceImpl implements ImageService {
     }
 
     /**
-     * TODO 存储图片信息到数据库
+     * 存储图片信息到数据库
      *
      * @param image
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer saveImage(Image image) throws ServiceException {
@@ -67,11 +65,10 @@ public class ImageServiceImpl implements ImageService {
 
 
     /**
-     * TODO 根据id删除图片信息
+     * 根据id删除图片信息
      *
      * @param imageId
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer deleteImageById(Integer imageId) throws ServiceException {
@@ -89,12 +86,11 @@ public class ImageServiceImpl implements ImageService {
     }
 
     /**
-     * TODO 上传图片到相册
+     * 上传图片到相册
      *
      * @param image   图片
      * @param albumId albumId
      * @return 上传图片的个数
-     * @throws ServiceException
      */
     @Override
     public Integer saveAlbumImage(Image image, Integer albumId) throws ServiceException {

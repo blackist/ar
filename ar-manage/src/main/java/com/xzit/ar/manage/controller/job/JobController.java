@@ -33,7 +33,7 @@ import com.xzit.ar.manage.service.job.JobService;
 
 /**
  * @ClassName: RecruitController
- * @Description: TODO 后台招聘管理处理
+ * @Description: 后台招聘管理处理
  * @author Mr.Black
  * @date 2016年2月9日 下午4:04:14
  */
@@ -88,7 +88,7 @@ public class JobController extends BaseController {
 	}
 
 	/**
-	 * @Title: setTopJob @Description: TODO 招聘信息置顶 @return String @throws
+	 * @Title: setTopJob @Description: 招聘信息置顶 @return String @throws
 	 */
 	@RequestMapping(value = "/setTopJob", method = RequestMethod.POST)
 	public String setTopJob(Model model, @RequestParam("recruitId") Integer recruitId) throws ServiceException {
@@ -98,7 +98,7 @@ public class JobController extends BaseController {
 
 	/**
 	 * @Title: cancelTopJob
-	 * @Description: TODO 取消置顶
+	 * @Description: 取消置顶
 	 */
 	@RequestMapping(value = "/cancelTopJob", method = RequestMethod.POST)
 	public String cancelTopJob(Model model, @RequestParam("recruitId") Integer recruitId) throws ServiceException {
@@ -108,7 +108,7 @@ public class JobController extends BaseController {
 
 	/**
 	 * @Title: auditJob
-	 * @Description: TODO 审核操作
+	 * @Description: 审核操作
 	 */
 	@RequestMapping(value = "/auditJob", method = RequestMethod.POST)
 	public String auditJob(Model model, @RequestParam("recruitId") Integer recruitId) throws ServiceException {
@@ -132,7 +132,7 @@ public class JobController extends BaseController {
 
 	/**
 	 * @Title: deleteJob
-	 * @Description: TODO 根据recruitId删除Job
+	 * @Description: 根据recruitId删除Job
 	 */
 	@RequestMapping(value = "/removeJob", method = RequestMethod.POST)
 	public String removeJob(Model model, RedirectAttributes attr, @RequestParam("recruitId") Integer recruitId)
@@ -146,7 +146,7 @@ public class JobController extends BaseController {
 
 	/**
 	 * @Title: removeJobs
-	 * @Description: TODO 批量删除
+	 * @Description: 批量删除
 	 * @param @param
 	 *            model
 	 * @param @param
@@ -166,7 +166,7 @@ public class JobController extends BaseController {
 
 	/**
 	 * @Title: deleteJob
-	 * @Description: TODO 删除记录
+	 * @Description: 删除记录
 	 * @param @param
 	 *            model
 	 * @param @param
@@ -218,7 +218,7 @@ public class JobController extends BaseController {
 
 	/**
 	 * @Title: createJobSubmit
-	 * @Description: TODO 招聘发布信息提交至后台
+	 * @Description: 招聘发布信息提交至后台
 	 */
 	@RequestMapping(value = "/createJobSubmit", method = RequestMethod.POST)
 	public String createJobSubmit(Model model, RedirectAttributes attr, Recruit recruit) throws ServiceException {
@@ -242,7 +242,7 @@ public class JobController extends BaseController {
 
 	/**
 	 * @Title: recoverJob
-	 * @Description: TODO 恢复数据
+	 * @Description: 恢复数据
 	 */
 	@RequestMapping(value = "/recoverJob", method = RequestMethod.POST)
 	public String recoverJob(Model model, @RequestParam("recruitId") Integer recruitId) throws ServiceException {
@@ -255,7 +255,7 @@ public class JobController extends BaseController {
 
 	/**
 	 * @Title: recoverJobs
-	 * @Description: TODO 恢复数据
+	 * @Description: 恢复数据
 	 */
 	@RequestMapping(value = "/recoverJobs", method = RequestMethod.POST)
 	public String recoverJobs(Model model, RedirectAttributes attr, @RequestParam("recruitIds") String recruitIds)

@@ -19,7 +19,7 @@ import com.xzit.ar.common.util.CommonUtil;
 
 /**
  * @ClassName: DictionaryTag
- * @Description: TODO 字典引用标签，输出字典数据Name
+ * @Description: 字典引用标签，输出字典数据Name
  * @author Mr.Black
  * @date 2016年1月8日 下午11:11:23
  */

@@ -14,7 +14,7 @@ import javax.servlet.jsp.tagext.BodyTagSupport;
 
 /**
  * @ClassName: CommonTag
- * @Description: TODO 通用标签
+ * @Description: 通用标签
  * @author Mr.Black
  * @date 2016年1月24日 下午11:11:29
  */

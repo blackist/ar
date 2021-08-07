@@ -9,7 +9,7 @@ import com.xzit.ar.common.base.BaseMapper;
 public interface UserOriginMapper extends BaseMapper {
 
 	/**
-	 * TODO 获取该组织所有成员id列表
+	 * 获取该组织所有成员id列表
 	 * @param originId
 	 * @return
 	 * @throws Exception
@@ -17,7 +17,7 @@ public interface UserOriginMapper extends BaseMapper {
 	List<Integer> getAllOriginMemberIds(@Param("originId") Integer originId) throws Exception;
 
 	/**
-	 * TODO 判断用户是否是该组织的成员
+	 * 判断用户是否是该组织的成员
 	 * @param originId
 	 * @param userId
 	 * @return

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/5/4 14:16.
@@ -23,7 +23,7 @@ public class MyClassController extends BaseController {
     private ClassService classService;
 
     /**
-     * TODO 加载我的班级
+     * 加载我的班级
      * @param model
      * @return
      */

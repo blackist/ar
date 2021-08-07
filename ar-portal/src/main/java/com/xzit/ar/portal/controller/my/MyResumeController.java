@@ -31,7 +31,7 @@ import com.xzit.ar.portal.service.my.ResumeService;
 
 /**
  * @ClassName: ResumeController
- * @Description: TODO 简历管理
+ * @Description: 简历管理
  * @author Mr.Black
  * @date 2016年2月7日 下午7:45:01
  */
@@ -53,7 +53,7 @@ public class MyResumeController extends BaseController {
 	}
 
 	/**
-	 * TODO 投递简历
+	 * 投递简历
 	 * @param attr
 	 * @param recruitId
 	 * @param resumeId
@@ -82,10 +82,9 @@ public class MyResumeController extends BaseController {
 	}
 
     /**
-     * TODO 加载用户投递的简历信息
+     * 加载用户投递的简历信息
      * @param model
      * @return
-     * @throws ServiceException
      */
 	@RequestMapping("/posted")
 	public String posted(Model model) throws ServiceException {
@@ -98,11 +97,10 @@ public class MyResumeController extends BaseController {
     }
 
     /**
-     * TODO 取消投递
+     * 取消投递
      * @param recruitId
      * @param resumeId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/cancel")
     public String cancel(Integer recruitId, Integer resumeId) throws ServiceException {
@@ -113,7 +111,7 @@ public class MyResumeController extends BaseController {
     }
 
     /**
-     * TODO 新建简历
+     * 新建简历
      * @param model
      * @return
      */
@@ -152,7 +150,7 @@ public class MyResumeController extends BaseController {
 	}
 
 	/**
-	 * TODO 编辑简历，加载简历信息到编辑界面
+	 * 编辑简历，加载简历信息到编辑界面
 	 * @param model
 	 * @param resumeId
 	 * @return
@@ -169,7 +167,7 @@ public class MyResumeController extends BaseController {
 	}
 
 	/**
-	 * TODO  更新简历信息
+	 *  更新简历信息
 	 * @param model
 	 * @param resume
 	 * @return
@@ -186,7 +184,7 @@ public class MyResumeController extends BaseController {
 	}
 
 	/**
-	 * TODO 删除用户指定的简历
+	 * 删除用户指定的简历
 	 * @param model
 	 * @param resumeId
 	 * @return

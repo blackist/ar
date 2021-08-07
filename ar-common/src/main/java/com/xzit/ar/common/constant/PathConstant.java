@@ -10,7 +10,7 @@ package com.xzit.ar.common.constant;
 
 /**
  * @ClassName: PathConstant
- * @Description: TODO 设置相关路径
+ * @Description: 设置相关路径
  * @author Mr.Black
  * @date 2016年2月28日 下午8:24:55
  */

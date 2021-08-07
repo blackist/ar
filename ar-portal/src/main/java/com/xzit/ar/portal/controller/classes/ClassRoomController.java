@@ -44,7 +44,7 @@ import com.xzit.ar.portal.service.classes.ClassRoomService;
 /**
  * @author Mr.Black
  * @ClassName: ClassRoomController
- * @Description: TODO 班级空间
+ * @Description: 班级空间
  * @date 2016年2月20日 下午3:05:30
  */
 @Controller
@@ -70,12 +70,11 @@ public class ClassRoomController extends BaseController {
     private ImageService imageService;
 
     /**
-     * TODO 加载班级主页
+     * 加载班级主页
      *
      * @param model
      * @param classId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model, @RequestParam("classId") Integer classId) throws ServiceException {
@@ -94,12 +93,11 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 加载班级通讯录
+     * 加载班级通讯录
      *
      * @param model
      * @param classId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/directory")
     public String directory(Model model, @RequestParam("classId") Integer classId) throws ServiceException {
@@ -118,12 +116,11 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 加载班级成员列表
+     * 加载班级成员列表
      *
      * @param model
      * @param classId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/member")
     public String member(Model model, @RequestParam("classId") Integer classId) throws ServiceException {
@@ -140,12 +137,11 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 加载班级动态消息
+     * 加载班级动态消息
      *
      * @param model
      * @param classId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/info")
     public String info(Model model, @RequestParam("classId") Integer classId) throws ServiceException {
@@ -163,13 +159,12 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 加载班级动态消息详情
+     * 加载班级动态消息详情
      *
      * @param model
      * @param classId
      * @param infoId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/infoDetail")
     public String infoDetail(Model model, @RequestParam("classId") Integer classId,
@@ -188,7 +183,7 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 动态加载评论
+     * 动态加载评论
      *
      * @param model
      * @param infoId
@@ -206,13 +201,12 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 加载消息详情页面的侧边栏
+     * 加载消息详情页面的侧边栏
      *
      * @param model
      * @param authorId
      * @param classId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/infoSide")
     public String infoSide(Model model, @RequestParam("authorId") Integer authorId, @RequestParam("classId") Integer classId) throws ServiceException {
@@ -265,11 +259,10 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 发布班级动态消息
+     * 发布班级动态消息
      *
-     * @throws ServiceException
      * @Title: publishClassInfo
-     * @Description: TODO 发布班级动态
+     * @Description: 发布班级动态
      */
     @RequestMapping(value = "/publishClassInfo", method = RequestMethod.POST)
     public String publishClassInfo(Model model, RedirectAttributes attr, @RequestParam("infoTitle") String infoTitle,
@@ -305,10 +298,10 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 申请加入班级
+     * 申请加入班级
      *
      * @Title: joinClass
-     * @Description: TODO 加入班级
+     * @Description: 加入班级
      */
     @RequestMapping("/joinClass")
     public String joinClass(Model model, RedirectAttributes attr, @RequestParam("classId") Integer classId)
@@ -336,10 +329,10 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 加载班级留言页面
+     * 加载班级留言页面
      *
      * @Title: message
-     * @Description: TODO 加载班级留言
+     * @Description: 加载班级留言
      */
     @RequestMapping("/message")
     public String message(Model model, @RequestParam("classId") Integer classId) throws ServiceException {
@@ -357,10 +350,10 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 发布班级留言
+     * 发布班级留言
      *
      * @Title: publishClassMessage
-     * @Description: TODO 发布班级留言
+     * @Description: 发布班级留言
      */
     @RequestMapping("/publishClassMessage")
     public String publishClassMessage(Model model, RedirectAttributes attr, @RequestParam("content") String content,
@@ -388,12 +381,11 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 加载班级相册
+     * 加载班级相册
      *
      * @param model
      * @param classId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/album")
     public String album(Model model, Integer classId) throws ServiceException {
@@ -413,12 +405,11 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 加载创建相册界面
+     * 加载创建相册界面
      *
      * @param model
      * @param classId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/album/add")
     public String addAlbum(Model model, Integer classId) throws ServiceException {
@@ -433,14 +424,13 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 保存相册
+     * 保存相册
      *
      * @param attributes
      * @param classId
      * @param albumName
      * @param albumDesc
      * @return
-     * @throws ServiceException
      */
     @RequestMapping(value = "/album/save", method = RequestMethod.POST)
     public String saveAlbum(RedirectAttributes attributes, Integer classId, String albumName, String albumDesc) throws ServiceException {
@@ -470,13 +460,12 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 加载相册编辑界面
+     * 加载相册编辑界面
      *
      * @param model
      * @param albumId
      * @param classId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/album/edit")
     public String editAlbum(Model model, Integer albumId, Integer classId) throws ServiceException {
@@ -493,13 +482,12 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 更新相册信息
+     * 更新相册信息
      *
      * @param attributes
      * @param classId
      * @param album
      * @return
-     * @throws ServiceException
      */
     @RequestMapping(value = "/album/update", method = RequestMethod.POST)
     public String updateAlbum(RedirectAttributes attributes, Integer classId, Album album) throws ServiceException {
@@ -515,7 +503,7 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 加载相册照片流
+     * 加载相册照片流
      *
      * @param model
      * @param albumId
@@ -541,12 +529,11 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 加载图片上传界面
+     * 加载图片上传界面
      *
      * @param model
      * @param classId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/album/upload")
     public String uploadAlbum(Model model, Integer classId, Integer albumId) throws ServiceException {
@@ -563,7 +550,7 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 上传班级图片
+     * 上传班级图片
      *
      * @param attributes
      * @param classId
@@ -622,13 +609,12 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 删除相册图片
+     * 删除相册图片
      * @param attributes
      * @param classId
      * @param albumId
      * @param imageId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/album/image/delete")
     public String deleteImage(RedirectAttributes attributes, Integer classId, Integer albumId, Integer imageId) throws ServiceException {
@@ -644,7 +630,7 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 修改相册封面
+     * 修改相册封面
      *
      * @param attributes
      * @param classId
@@ -671,13 +657,12 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 删除相册
+     * 删除相册
      *
      * @param attributes
      * @param classId
      * @param albumId
      * @return jsp
-     * @throws ServiceException
      */
     @RequestMapping(value = "/album/delete", method = RequestMethod.POST)
     public String deleteAlbum(RedirectAttributes attributes, Integer classId, Integer albumId) throws ServiceException {
@@ -693,10 +678,10 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 编辑班级简介
+     * 编辑班级简介
      *
      * @Title: description
-     * @Description: TODO 编辑班级简介
+     * @Description: 编辑班级简介
      */
     @RequestMapping("/description")
     public String description(Model model, @RequestParam("classId") Integer classId) throws ServiceException {
@@ -705,14 +690,13 @@ public class ClassRoomController extends BaseController {
     }
 
     /**
-     * TODO 提交班级信息编辑
+     * 提交班级信息编辑
      *
      * @param model
      * @param attr
      * @param classId
      * @param description
      * @return
-     * @throws ServiceException
      */
     @RequestMapping(value = "/setDescription", method = RequestMethod.POST)
     public String setDescription(Model model, RedirectAttributes attr, @RequestParam("classId") Integer classId,

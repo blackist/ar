@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/5/18 22:12.
@@ -31,7 +31,7 @@ public class OriginController extends BaseController {
     private OriginService originService;
 
     /**
-     * TODO 加载组织管理界面
+     * 加载组织管理界面
      *
      * @return
      */
@@ -42,11 +42,10 @@ public class OriginController extends BaseController {
     }
 
     /**
-     * TODO 查询组织信息
+     * 查询组织信息
      *
      * @param model
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/queryOrigin")
     public String queryOrigin(Model model, String query, String originGrade, String state, String originType) throws ServiceException {
@@ -82,7 +81,7 @@ public class OriginController extends BaseController {
     }
 
     /**
-     * TODO 加载新建组织页面
+     * 加载新建组织页面
      *
      * @param model
      * @return
@@ -97,11 +96,10 @@ public class OriginController extends BaseController {
     }
 
     /**
-     * TODO 保存组织信息
+     * 保存组织信息
      *
      * @param origin
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/save")
     public String save(Origin origin) throws ServiceException {
@@ -122,10 +120,9 @@ public class OriginController extends BaseController {
     }
 
     /**
-     * TODO 更新组织信息
+     * 更新组织信息
      * @param origin
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/update")
     public String update(Origin origin) throws ServiceException {
@@ -138,7 +135,7 @@ public class OriginController extends BaseController {
     }
 
     /**
-     * TODO 查询组织详情
+     * 查询组织详情
      * @param model
      * @param originId
      * @return

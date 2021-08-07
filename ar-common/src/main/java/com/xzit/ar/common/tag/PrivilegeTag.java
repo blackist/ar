@@ -12,7 +12,7 @@ import javax.servlet.jsp.tagext.BodyTagSupport;
 
 /**
  * @ClassName: PrivilegeTag
- * @Description: TODO 权限控制标签
+ * @Description: 权限控制标签
  * @author Mr.Black
  * @date 2016年1月8日 下午10:58:20
  */

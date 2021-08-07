@@ -20,7 +20,7 @@ import com.xzit.ar.common.exception.UtilException;
 
 /**
  * @ClassName: CommonUtil
- * @Description: TODO 通用工具类
+ * @Description: 通用工具类
  * @author Mr.Black
  * @date 2015年12月10日 下午5:09:50
  * @version V1.0
@@ -33,7 +33,7 @@ public class CommonUtil {
     private static final Random RANDOM = new Random();
 
     /**
-     * @Title: isEmpty @Description: TODO 判断字符串是否为空 @param @param
+     * @Title: isEmpty @Description: 判断字符串是否为空 @param @param
      *         str @param @return @return boolean @author Mr.Black @date
      *         2015年12月10日 下午5:19:15 @throws
      */
@@ -46,7 +46,7 @@ public class CommonUtil {
 
     /**
      *
-     * @Title: isNotEmpty @Description: TODO 字符串是否不为空 @param @param
+     * @Title: isNotEmpty @Description: 字符串是否不为空 @param @param
      *         str @param @return @return boolean @author Mr.Black @date
      *         2015年12月10日 下午5:18:05 @throws
      */
@@ -55,7 +55,7 @@ public class CommonUtil {
     }
 
     /**
-     * @Title: isEmpty @Description: TODO is Integer Empty? @param @param
+     * @Title: isEmpty @Description: is Integer Empty? @param @param
      *         integer @param @return @return boolean @throws
      */
     public static boolean isEmpty(Integer integer) {
@@ -66,7 +66,7 @@ public class CommonUtil {
     }
 
     /**
-     * @Title: isNotEmpty @Description: TODO is integer Not Empty @param @param
+     * @Title: isNotEmpty @Description: is integer Not Empty @param @param
      *         integer @param @return @return boolean @throws
      */
     public static boolean isNotEmpty(Integer integer) {
@@ -75,7 +75,7 @@ public class CommonUtil {
 
     /**
      *
-     * @Title: isEmpty @Description: TODO 判断字符串是否为空 @param @param
+     * @Title: isEmpty @Description: 判断字符串是否为空 @param @param
      *         t @param @return @return boolean @author Mr.Black @date
      *         2015年12月10日 下午5:18:44 @throws
      */
@@ -85,7 +85,7 @@ public class CommonUtil {
 
     /**
      *
-     * @Title: isNotEmpty @Description: TODO 判断字符串是否不为空 @param @param
+     * @Title: isNotEmpty @Description: 判断字符串是否不为空 @param @param
      *         t @param @return @return boolean @author Mr.Black @date
      *         2015年12月10日 下午5:19:42 @throws
      */
@@ -96,7 +96,7 @@ public class CommonUtil {
     /**
      *
      * @Title: isEmpty <br>
-     * @Description: TODO 判断集合是否为空<br>
+     * @Description: 判断集合是否为空<br>
      * @param @param
      *            col
      * @param @return
@@ -112,7 +112,7 @@ public class CommonUtil {
 
     /**
      * @Title: isNotEmpty <br>
-     * @Description: TODO 集合不为NULL也不为空 <br>
+     * @Description: 集合不为NULL也不为空 <br>
      * @param @param
      *            col
      * @param @return
@@ -128,7 +128,7 @@ public class CommonUtil {
 
     /**
      * @Title: isEmpty <br>
-     * @Description: TODO 集合不为NULL也不为空 <br>
+     * @Description: 集合不为NULL也不为空 <br>
      * @param @param
      *            map
      * @param @return
@@ -144,7 +144,7 @@ public class CommonUtil {
 
     /**
      * @Title: isNotEmpty <br>
-     * @Description: TODO 集合不为NULL也不为空 <br>
+     * @Description: 集合不为NULL也不为空 <br>
      * @param @param
      *            map
      * @param @return
@@ -160,7 +160,7 @@ public class CommonUtil {
 
     /**
      * @Title: lowerCaseFirstChar <br>
-     * @Description: TODO 字符串第一个字母小写<br>
+     * @Description: 字符串第一个字母小写<br>
      * @param @param
      *            str
      * @param @return
@@ -185,7 +185,7 @@ public class CommonUtil {
     /**
      *
      * @Title: isNull <br>
-     * @Description: TODO 判断是否是空对象 <br>
+     * @Description: 判断是否是空对象 <br>
      * @param @param
      *            obj
      * @param @return
@@ -201,7 +201,7 @@ public class CommonUtil {
 
     /**
      * @Title: getUUID <br>
-     * @Description: TODO 获取UUID值 <br>
+     * @Description: 获取UUID值 <br>
      * @param @return
      *            <br>
      * @return String <br>
@@ -216,7 +216,7 @@ public class CommonUtil {
     /**
      *
      * @Title: getRandomNumber <br>
-     * @Description: TODO 获取指定位数的随机数 <br>
+     * @Description: 获取指定位数的随机数 <br>
      * @param @param
      *            size
      * @param @return
@@ -237,7 +237,7 @@ public class CommonUtil {
     /**
      *
      * @Title: messageFormat <br>
-     * @Description: TODO 消息格式化<br>
+     * @Description: 消息格式化<br>
      * @return String <br>
      * @author Mr.Black <br>
      * @date 2015年12月21日 下午1:10:20 <br>
@@ -250,7 +250,7 @@ public class CommonUtil {
     /**
      *
      * @Title: getRandomChar <br>
-     * @Description: TODO 获取指定位数随机字符串 <br>
+     * @Description: 获取指定位数随机字符串 <br>
      * @param @param
      *            size
      * @param @return
@@ -281,7 +281,7 @@ public class CommonUtil {
     }
 
     /**
-     * @Description: TODO 对字符串进行md5加密<br>
+     * @Description: 对字符串进行md5加密<br>
      * @param @param
      *            s
      * @param @return
@@ -317,7 +317,7 @@ public class CommonUtil {
     }
 
     /**
-     * @Description: TODO 数组转换为字符串<br>
+     * @Description: 数组转换为字符串<br>
      * @param @param
      *            objs
      * @param @return
@@ -345,7 +345,7 @@ public class CommonUtil {
 
     /**
      * @Title: splitIds
-     * @Description: TODO 从ids中解析出若干个id
+     * @Description: 从ids中解析出若干个id
      * @param @param ids id序列
      * @return List<Integer> id list
      */
@@ -364,7 +364,7 @@ public class CommonUtil {
     }
 
     /**
-     * TODO 根据当前日期，在绝对路径下创建 年/月/日 文件夹
+     * 根据当前日期，在绝对路径下创建 年/月/日 文件夹
      * @param parentDirAbsPath
      * @return 返回年月日文件夹
      */
@@ -386,7 +386,7 @@ public class CommonUtil {
     }
 
     /**
-     * TODO 截取字符串
+     * 截取字符串
      * @param str
      * @param begin
      * @param end

@@ -10,7 +10,7 @@ $(function() {
 });
 
 /**
- * TODO 留言提交校验
+ * 留言提交校验
  */
 function publishMessage() {
 	var content = $('#infoBoxText').val();

@@ -10,7 +10,7 @@ package com.xzit.ar.common.mapper.origin;
 
 /**
  * @ClassName: ClassRoomProvider
- * @Description: TODO Class SQL
+ * @Description: Class SQL
  * @author Mr.Black
  * @date 2016年2月20日 下午4:10:25
  */

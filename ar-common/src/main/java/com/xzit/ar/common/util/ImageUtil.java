@@ -1,7 +1,7 @@
 /**
  * @Title: ImageUtil.java <br>
  * @Package com.xzit.ar.common.util <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2015年12月10日 下午8:15:28 <br>
  * @version V1.0 <br>
@@ -28,7 +28,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @author Mr.Black <br>
  * @version V1.0  <br> <br>
  * @ClassName: ImageUtil <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @date 2015年12月10日 下午8:15:28 <br>
  */
 public final class ImageUtil {
@@ -41,7 +41,7 @@ public final class ImageUtil {
      * @return void <br>
      * @throws <br>
      * @Title: pictureZoom <br>
-     * @Description: TODO 缩放图片<br>
+     * @Description: 缩放图片<br>
      * @author Mr.Black <br>
      * @date 2015年12月10日 下午8:16:10 <br>
      */
@@ -65,7 +65,7 @@ public final class ImageUtil {
      * @return void <br>
      * @throws <br>
      * @Title: pictureZoom <br>
-     * @Description: TODO 缩放图片 <br>
+     * @Description: 缩放图片 <br>
      * @author Mr.Black <br>
      * @date 2015年12月10日 下午8:22:00 <br>
      */
@@ -80,7 +80,7 @@ public final class ImageUtil {
      * @return BufferedImage <br>
      * @throws <br>
      * @Title: cutByShort <br>
-     * @Description: TODO <br>
+     * @Description: <br>
      * @author Mr.Black <br>
      * @date 2015年12月10日 下午8:15:58 <br>
      */
@@ -102,7 +102,7 @@ public final class ImageUtil {
     }
 
     /**
-     * TODO 保存上传的图片到硬盘
+     * 保存上传的图片到硬盘
      * @param image
      * @return 图片的相对路径
      * @throws UtilException

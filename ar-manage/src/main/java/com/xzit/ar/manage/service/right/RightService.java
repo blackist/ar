@@ -1,7 +1,7 @@
 /**  
 * @Title: RightService.java <br>
 * @Package com.xzit.ar.manage.service.right <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2016年1月2日 下午10:50:00 <br>
 * @version V1.0 <br>
@@ -17,7 +17,7 @@ import com.xzit.ar.common.po.role.Right;
 
 /**
 * @ClassName: RightService <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2016年1月2日 下午10:50:00 <br>
 * @version V1.0  <br>

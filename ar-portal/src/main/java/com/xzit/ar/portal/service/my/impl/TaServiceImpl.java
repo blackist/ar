@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/4/23 22:34.
@@ -22,11 +22,10 @@ public class TaServiceImpl implements TaService {
     private UserMapper userMapper;
 
     /**
-     * TODO 获取用户的基本信息：userId, account, potrait, trueName, introduce
+     * 获取用户的基本信息：userId, account, potrait, trueName, introduce
      *
      * @param userId
      * @return
-     * @throws ServiceException
      */
     @Override
     public Map<String, Object> getUserBasicInfo(Integer userId) throws ServiceException {

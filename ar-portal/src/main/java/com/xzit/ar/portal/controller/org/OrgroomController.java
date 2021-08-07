@@ -27,7 +27,7 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * TODO 校友组织主页
+ * 校友组织主页
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/4/16 15:34.
@@ -53,7 +53,7 @@ public class OrgroomController extends BaseController {
 
 
     /**
-     * TODO 加载校友组织首页
+     * 加载校友组织首页
      *
      * @param model
      * @param originId
@@ -78,12 +78,11 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 加入组织
+     * 加入组织
      *
      * @param attributes
      * @param originId   组织id
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/joinOrigin")
     public String joinOrigin(RedirectAttributes attributes, @RequestParam("originId") Integer originId) throws ServiceException {
@@ -106,12 +105,11 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 加载校友组织动态消息页面
+     * 加载校友组织动态消息页面
      *
      * @param model    视图model
      * @param originId 组织id
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/info")
     public String info(Model model, @RequestParam("originId") Integer originId) throws ServiceException {
@@ -130,13 +128,12 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 发布组织动态消息
+     * 发布组织动态消息
      *
      * @param attributes
      * @param content
      * @param originId
      * @return
-     * @throws ServiceException
      * @author 董亮亮
      */
     @RequestMapping("/publishInfo")
@@ -172,7 +169,7 @@ public class OrgroomController extends BaseController {
 
 
     /**
-     * TODO 加载班级动态详情
+     * 加载班级动态详情
      *
      * @param model
      * @param originId
@@ -195,7 +192,7 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 动态加载评论
+     * 动态加载评论
      *
      * @param model
      * @param infoId
@@ -213,12 +210,11 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 评论帖子
+     * 评论帖子
      *
      * @param redirectAttributes
      * @param comment
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/commentInfo")
     public String commentInfo(RedirectAttributes redirectAttributes, Comment comment, Integer originId) throws ServiceException {
@@ -237,7 +233,7 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 为消息点赞
+     * 为消息点赞
      *
      * @param infoId
      * @return
@@ -249,7 +245,7 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 删除消息
+     * 删除消息
      *
      * @param redirectAttributes
      * @param infoId
@@ -265,13 +261,12 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 加载消息详情页面的侧边栏
+     * 加载消息详情页面的侧边栏
      *
      * @param model
      * @param authorId
      * @param originId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/infoSide")
     public String infoSide(Model model, @RequestParam("authorId") Integer authorId, @RequestParam("originId") Integer originId) throws ServiceException {
@@ -294,12 +289,11 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 加载组织留言板
+     * 加载组织留言板
      *
      * @param model
      * @param originId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/message")
     public String message(Model model, Integer originId) throws ServiceException {
@@ -318,12 +312,11 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 发表组织留言
+     * 发表组织留言
      *
      * @param attributes
      * @param information
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("publishMessage")
     public String publishMessage(RedirectAttributes attributes, Information information) throws ServiceException {
@@ -354,12 +347,11 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 加载组织的成员列表
+     * 加载组织的成员列表
      *
      * @param model
      * @param originId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/member")
     public String member(Model model, @RequestParam("originId") Integer originId) throws ServiceException {
@@ -379,12 +371,11 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 加载组织通讯录
+     * 加载组织通讯录
      *
      * @param model
      * @param originId originId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/directory")
     public String directory(Model model, Integer originId) throws ServiceException {
@@ -405,12 +396,11 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 加载组织相册
+     * 加载组织相册
      *
      * @param model
      * @param originId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/album")
     public String album(Model model, @RequestParam("originId") Integer originId) throws ServiceException {
@@ -430,7 +420,7 @@ public class OrgroomController extends BaseController {
     }
 
     /**
-     * TODO 加载相册照片流
+     * 加载相册照片流
      *
      * @param model
      * @param albumId

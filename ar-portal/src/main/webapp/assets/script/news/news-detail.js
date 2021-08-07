@@ -13,7 +13,7 @@ $(function() {
 });
 
 /**
- * TODO 加载更多评论
+ * 加载更多评论
  * @param pageIndex
  */
 function loadMoreComment(pageIndex) {
@@ -83,7 +83,7 @@ function lovePost(postId) {
 }
 
 /**
- * TODO 删除用户帖子
+ * 删除用户帖子
  * @param postId
  */
 function deletePost(postId) {
@@ -94,7 +94,7 @@ function deletePost(postId) {
 }
 
 /**
- * TODO 删除用户评论
+ * 删除用户评论
  * @param commentId
  */
 function deleteComment(commentId) {

@@ -1,7 +1,7 @@
 /**  
 * @Title: RightInitialization.java <br>
 * @Package com.xzit.ar.common.init <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2016年1月2日 下午9:02:06 <br>
 * @version V1.0 <br>
@@ -10,7 +10,7 @@ package com.xzit.ar.common.init;
 
 /**
  * @ClassName: RightInitialization <br>
- * @Description: TODO 权限资源初始化 <br>
+ * @Description: 权限资源初始化 <br>
  * @author Mr.Black <br>
  * @date 2016年1月2日 下午9:02:06 <br>
  * @version V1.0 <br>

@@ -1,7 +1,7 @@
 /**  
 * @Title: ControllerException.java <br>
 * @Package com.xzit.ar.common.exception <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 上午10:41:17 <br>
 * @version V1.0 <br>
@@ -10,7 +10,7 @@ package com.xzit.ar.common.exception;
 
 /**
 * @ClassName: ControllerException <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 上午10:41:17 <br>
 * @version V1.0  <br> <br>
@@ -18,7 +18,7 @@ package com.xzit.ar.common.exception;
 public class ControllerException extends GlobalException {
 
 	/**
-	* @Fields serialVersionUID : TODO <br>
+	* @Fields serialVersionUID : <br>
 	*/ 
 	private static final long serialVersionUID = 5601667770792566234L;
 

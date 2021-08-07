@@ -1,7 +1,7 @@
 /**  
 * @Title: WebInitListener.java <br>
 * @Package com.xzit.ar.common.init <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2016年1月2日 下午8:50:26 <br>
 * @version V1.0 <br>
@@ -13,7 +13,7 @@ import javax.servlet.ServletContextListener;
 
 /**
  * @ClassName: WebInitListener <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2016年1月2日 下午8:50:26 <br>
  * @version V1.0 <br>

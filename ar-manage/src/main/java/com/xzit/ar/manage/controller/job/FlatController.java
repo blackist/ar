@@ -25,7 +25,7 @@ import com.xzit.ar.manage.service.job.FlatService;
 
 /**
  * @ClassName: FlatController
- * @Description: TODO 处理招聘发布单位的信息
+ * @Description: 处理招聘发布单位的信息
  * @author Mr.Black
  * @date 2016年2月10日 下午3:31:33
  */
@@ -38,7 +38,7 @@ public class FlatController extends BaseController {
 
 	/**
 	 * @Title: createFlat
-	 * @Description: TODO 跳转创建招聘单位界面
+	 * @Description: 跳转创建招聘单位界面
 	 */
 	@RequestMapping("/createFlat")
 	public String createFlat(Model model) {
@@ -52,7 +52,7 @@ public class FlatController extends BaseController {
 
 	/**
 	 * @Title: createFlatSubmit
-	 * @Description: TODO 存储界面提交的单位信息
+	 * @Description: 存储界面提交的单位信息
 	 * @param model
 	 * @param unit
 	 * @param isRecruiting

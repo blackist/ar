@@ -42,7 +42,7 @@ public class DictDataController extends BaseController {
 	private DictService dictService;
 
 	/**
-	 * @Title: indexDictData @Description: TODO 加载字典数据索引界面 @throws
+	 * @Title: indexDictData @Description: 加载字典数据索引界面 @throws
 	 */
 	@RequestMapping("/indexDictData")
 	public String indexDictData() {
@@ -52,7 +52,7 @@ public class DictDataController extends BaseController {
 	/**
 	 * @throws ServiceException
 	 * @Title: queryDictData
-	 * @Description: TODO 条件查询字典数据
+	 * @Description: 条件查询字典数据
 	 */
 	@RequestMapping("/queryDictData")
 	public String queryDictData(Model model, String queryInput) throws ServiceException {
@@ -69,7 +69,7 @@ public class DictDataController extends BaseController {
 	/**
 	 * @throws ServiceException
 	 * @Title: addDictData
-	 * @Description: TODO 加载添加数据界面
+	 * @Description: 加载添加数据界面
 	 */
 	@RequestMapping("/addDictData")
 	public String addDictData(Model model) throws ServiceException {
@@ -84,7 +84,7 @@ public class DictDataController extends BaseController {
 	/**
 	 * @throws ServiceException
 	 * @Title: addDictDataSubmit
-	 * @Description: TODO 持久化dictdata数据
+	 * @Description: 持久化dictdata数据
 	 */
 	@RequestMapping("/addDictDataSubmit")
 	String addDictDataSubmit(Model model, DictionaryData dictionaryData) throws ServiceException {

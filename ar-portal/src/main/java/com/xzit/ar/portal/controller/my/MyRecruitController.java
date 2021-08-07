@@ -22,10 +22,9 @@ public class MyRecruitController extends BaseController {
     private RecruitService recruitService;
 
     /**
-     * TODO 加载我的招聘信息界面
+     * 加载我的招聘信息界面
      * @param model
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("")
     public String index(Model model) throws ServiceException {
@@ -38,10 +37,9 @@ public class MyRecruitController extends BaseController {
     }
 
     /**
-     * TODO 刪除招聘信息
+     * 刪除招聘信息
      * @param recruitId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/delete")
     public String delete(Integer recruitId) throws ServiceException {

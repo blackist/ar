@@ -1,7 +1,7 @@
 /**  
 * @Title: ManageController.java <br>
 * @Package com.xzit.ar.manage <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月23日 上午11:44:17 <br>
 * @version V1.0 <br>
@@ -20,7 +20,7 @@ import com.xzit.ar.common.constant.WebConstant;
 
 /**
  * @ClassName: ManageController <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2015年12月23日 上午11:44:17 <br>
  * @version V1.0 <br>
@@ -30,7 +30,7 @@ import com.xzit.ar.common.constant.WebConstant;
 public class ManageController extends BaseController {
 
 	/**
-	 * @Description: TODO 空请求跳转<br>
+	 * @Description: 空请求跳转<br>
 	 * @author Mr.Black <br>
 	 * @date 2015年12月23日 下午12:36:56 <br>
 	 */
@@ -40,7 +40,7 @@ public class ManageController extends BaseController {
 	}
 
 	/**
-	 * @Description: TODO 加载 欢迎界面 <br>
+	 * @Description: 加载 欢迎界面 <br>
 	 * @author Mr.Black <br>
 	 * @date 2016年1月3日 下午4:23:41 <br>
 	 */
@@ -51,7 +51,7 @@ public class ManageController extends BaseController {
 	}
 
 	/**
-	 * @Description: TODO 错误请求跳转<br>
+	 * @Description: 错误请求跳转<br>
 	 * @author Mr.Black <br>
 	 * @date 2015年12月23日 上午11:46:19 <br>
 	 */

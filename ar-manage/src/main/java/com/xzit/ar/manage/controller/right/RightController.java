@@ -1,7 +1,7 @@
 /**
  * @Title: ControllerReflect.java <br>
  * @Package com.xzit.ar.manage.controller <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2016年1月3日 上午10:25:46 <br>
  * @version V1.0 <br>
@@ -26,7 +26,7 @@ import com.xzit.ar.manage.service.right.RightService;
 
 /**
  * @ClassName: ControllerReflect <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2016年1月3日 上午10:25:46 <br>
  * @version V1.0 <br>
@@ -39,7 +39,7 @@ public class RightController extends BaseController {
     private RightService rightService;
 
     /**
-     * @Description: TODO 加载权限管理索引界面<br>
+     * @Description: 加载权限管理索引界面<br>
      * @author Mr.Black <br>
      * @date 2016年1月4日 上午11:39:33 <br>
      */
@@ -63,7 +63,7 @@ public class RightController extends BaseController {
 
     /**
      * @Title: addRight
-     * @Description: TODO addRight
+     * @Description: addRight
      */
     @RequestMapping("/addRight")
     public String addRight() {
@@ -99,7 +99,7 @@ public class RightController extends BaseController {
 
     /**
      * @Title: scanAddRights
-     * @Description: TODO 扫描并添加未被添加的权限
+     * @Description: 扫描并添加未被添加的权限
      */
     @RequestMapping("/scanAddRights")
     public String scanAddRights(Model model) throws ServiceException {

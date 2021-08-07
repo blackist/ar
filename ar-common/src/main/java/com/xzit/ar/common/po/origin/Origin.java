@@ -6,7 +6,7 @@ import com.xzit.ar.common.base.BaseEntity;
 
 public class Origin extends BaseEntity{
     /**
-	* @Fields serialVersionUID : TODO <br>
+	* @Fields serialVersionUID : <br>
 	*/ 
 	private static final long serialVersionUID = 1L;
 

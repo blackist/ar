@@ -3,7 +3,7 @@ $(function() {
 });
 
 /**
- * TODO 删除用户工作信息
+ * 删除用户工作信息
  * @param jobId jobId
  */
 function deleteJob(jobId) {

@@ -1,7 +1,7 @@
 /**  
 * @Title: DataCacheKeyGenerator.java <br>
 * @Package com.xzit.ar.common.cache <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月30日 下午5:12:41 <br>
 * @version V1.0 <br>
@@ -17,7 +17,7 @@ import com.xzit.ar.common.page.Page;
 
 /**
  * @ClassName: DataCacheKeyGenerator <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2015年12月30日 下午5:12:41 <br>
  * @version V1.0 <br>

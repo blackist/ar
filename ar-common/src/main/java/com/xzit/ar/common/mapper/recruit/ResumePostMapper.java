@@ -12,7 +12,7 @@ import com.xzit.ar.common.po.recruit.ResumePost;
 public interface ResumePostMapper extends BaseMapper {
 
     /**
-     * TODO 加载招聘信息的简历投递记录
+     * 加载招聘信息的简历投递记录
      *
      * @param recruitId
      * @return
@@ -29,7 +29,7 @@ public interface ResumePostMapper extends BaseMapper {
     List<Map<String, Object>> checkResumeRecord(ResumePost resumePost);
 
     /**
-     * TODO 恢复简历投递
+     * 恢复简历投递
      *
      * @param resumePost
      * @return
@@ -37,7 +37,7 @@ public interface ResumePostMapper extends BaseMapper {
     int recoverResumeRecord(ResumePost resumePost);
 
     /**
-     * TODO 取消简历投递
+     * 取消简历投递
      * @param recruitId
      * @param resumeId
      * @return
@@ -45,7 +45,7 @@ public interface ResumePostMapper extends BaseMapper {
     int deletePost(@Param("recruitId") Integer recruitId, @Param("resumeId") Integer resumeId) throws Exception;
 
     /**
-     * TODO 加载用户简历投递记录
+     * 加载用户简历投递记录
      * @param page
      * @param userId
      * @return

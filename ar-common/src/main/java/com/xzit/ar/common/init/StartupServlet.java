@@ -1,7 +1,7 @@
 /**  
 * @Title: StartupServlet.java <br>
 * @Package com.xzit.ar.common.init <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2016年1月2日 下午9:14:57 <br>
 * @version V1.0 <br>
@@ -23,7 +23,7 @@ import com.xzit.ar.common.util.recruit.RecruitUtil;
 
 /**
  * @ClassName: StartupServlet <br>
- * @Description: TODO StartupServlet <br>
+ * @Description: StartupServlet <br>
  * @author Mr.Black <br>
  * @date 2016年1月2日 下午9:14:57 <br>
  * @version V1.0 <br>

@@ -1,7 +1,7 @@
 /**  
 * @Title: Initialization.java <br>
 * @Package com.xzit.ar.common.init <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2016年1月2日 下午8:24:23 <br>
 * @version V1.0 <br>
@@ -13,7 +13,7 @@ import org.springframework.beans.factory.InitializingBean;
 
 /**
 * @ClassName: Initialization <br>
-* @Description: TODO 项目初始化接口<br>
+* @Description: 项目初始化接口<br>
 * @author Mr.Black <br>
 * @date 2016年1月2日 下午8:24:23 <br>
 * @version V1.0  <br>

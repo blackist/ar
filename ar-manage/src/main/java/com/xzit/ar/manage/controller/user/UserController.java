@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/5/19 17:16.
@@ -32,7 +32,7 @@ public class UserController extends BaseController {
     private UserService userService;
 
     /**
-     * TODO 加载用户管理界面
+     * 加载用户管理界面
      * @return
      */
     @RequestMapping("")
@@ -42,7 +42,7 @@ public class UserController extends BaseController {
     }
 
     /**
-     * TODO 查询用户列表
+     * 查询用户列表
      * @param model
      * @param query
      * @param state

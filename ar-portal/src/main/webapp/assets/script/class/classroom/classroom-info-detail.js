@@ -18,7 +18,7 @@ $(function() {
 
 
 /**
- * TODO 加载更多评论
+ * 加载更多评论
  * @param pageIndex
  */
 function loadMoreComment(pageIndex) {
@@ -86,7 +86,7 @@ function loveInfo(infoId) {
 }
 
 /**
- * TODO 删除用户帖子
+ * 删除用户帖子
  * @param postId
  */
 function deleteInfo(infoId) {
@@ -98,7 +98,7 @@ function deleteInfo(infoId) {
 }
 
 /**
- * TODO 删除用户评论
+ * 删除用户评论
  * @param commentId
  */
 function deleteComment(commentId) {

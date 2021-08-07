@@ -1620,34 +1620,34 @@ div.error label.error:before {
 	border-radius: 0 0 3px 0;
 }
 
-.widget-todo .panel-btns i {
+.widget-.panel-btns i {
 	font-size: 12px;
 }
 
-.widget-todo .todo-list {
+.widget-.todo-list {
 	padding: 0;
 	margin: 0;
 	list-style: none;
 }
 
-.widget-todo .panel-body {
+.widget-.panel-body {
 	padding: 0;
 }
 
-.widget-todo .todo-list li {
+.widget-.todo-list li {
 	border-bottom: 1px solid #eee;
 	padding: 15px 10px 8px 20px;
 }
 
-.widget-todo .todo-list li input:checked+label {
+.widget-.todo-list li input:checked+label {
 	text-decoration: line-through;
 }
 
-.widget-todo .todo-list .todo-form {
+.widget-.todo-list .todo-form {
 	padding-bottom: 15px;
 }
 
-.widget-todo .todo-list li .btn {
+.widget-.todo-list li .btn {
 	margin: 0;
 	padding: 6px 10px;
 }

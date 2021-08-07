@@ -11,7 +11,7 @@ import java.util.Map;
 public interface AlbumImageMapper extends BaseMapper {
 
     /**
-     * TODO 加载相册图片
+     * 加载相册图片
      * @param albumId
      * @return
      * @throws Exception
@@ -19,7 +19,7 @@ public interface AlbumImageMapper extends BaseMapper {
     List<Map<String, Object>> getAlbumImage(Page<Map<String, Object>> page, @Param("albumId") Integer albumId) throws Exception;
 
     /**
-     * TODO 删除相册的图片
+     * 删除相册的图片
      * @param imageId
      * @return
      * @throws Exception
@@ -27,10 +27,9 @@ public interface AlbumImageMapper extends BaseMapper {
     Integer deleteAlbumImage(@Param("imageId") Integer imageId) throws Exception;
 
     /**
-     * TODO 删除相册时删除关联图片
+     * 删除相册时删除关联图片
      * @param albumId
      * @return
-     * @throws ServiceException
      */
     Integer deleteAlbum(Integer albumId) throws ServiceException;
 }

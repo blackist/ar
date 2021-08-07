@@ -15,7 +15,7 @@ import com.xzit.ar.common.po.recruit.RecruitUnit;
 
 /**
  * @ClassName: FlatService
- * @Description: TODO 处理职业招聘的单位的业务信息
+ * @Description: 处理职业招聘的单位的业务信息
  * @author Mr.Black
  * @date 2016年2月10日 下午3:35:18
  */
@@ -23,14 +23,14 @@ public interface FlatService {
 
 	/**
 	 * @Title: createUnit
-	 * @Description: TODO createUnit
+	 * @Description: createUnit
 	 * @param @param recruitUnit
 	 */
 	public Integer createUnit(RecruitUnit recruitUnit) throws ServiceException;
 
 	/**
 	 * @Title: getUnitsByUserId
-	 * @Description: TODO 查询当前用户的招聘信息单位
+	 * @Description: 查询当前用户的招聘信息单位
 	 * @param @param userId
 	 */
 	public List<RecruitUnit> getUnitsByUserId(Integer userId) throws ServiceException;

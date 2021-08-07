@@ -22,7 +22,7 @@ import com.xzit.ar.portal.service.recruit.UnitService;
 
 /**
  * @ClassName: UnitServiceImpl
- * @Description: TODO UnitService实现类
+ * @Description: UnitService实现类
  * @author Mr.Black
  * @date 2016年2月3日 下午4:51:01
  */

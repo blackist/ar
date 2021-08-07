@@ -1,7 +1,7 @@
 /**  
 * @Title: WebUtil.java <br>
 * @Package com.xzit.ar.common.util <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 下午3:44:47 <br>
 * @version V1.0 <br>
@@ -20,7 +20,7 @@ import com.xzit.ar.common.po.user.User;
 
 /**
 * @ClassName: WebUtil <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 下午3:44:47 <br>
 * @version V1.0  <br> <br>
@@ -34,7 +34,7 @@ public final class WebUtil {
     }
     
 	/**
-	* @Description: TODO 获取当前操作员id <br>
+	* @Description: 获取当前操作员id <br>
 	* @param @return <br>
 	* @return Integer <br>
 	* @author Mr.Black <br>
@@ -48,7 +48,7 @@ public final class WebUtil {
 		return null;
 	}
 	/**
-	* @Description: TODO 获取当前操作员<br>
+	* @Description: 获取当前操作员<br>
 	* @author Mr.Black <br>
 	* @date 2015年12月21日 下午4:09:21 <br>
 	 */
@@ -66,7 +66,7 @@ public final class WebUtil {
 	}
 	
 	/**
-	* @Description: TODO 判断是否拥有权限<br>
+	* @Description: 判断是否拥有权限<br>
 	* @author Mr.Black <br>
 	* @date 2015年12月21日 下午4:10:13 <br>
 	 */
@@ -76,7 +76,7 @@ public final class WebUtil {
 	}
 	
 	/**
-	* @Description: TODO 设置属性值<br>
+	* @Description: 设置属性值<br>
 	* @author Mr.Black <br>
 	* @date 2015年12月21日 下午3:47:28 <br>
 	 */
@@ -89,7 +89,7 @@ public final class WebUtil {
     }
 
     /**
-    * @Description: TODO 获取属性值<br>
+    * @Description: 获取属性值<br>
     * @return Object <br>
     * @author Mr.Black <br>
     * @date 2015年12月21日 下午3:47:11 <br>
@@ -108,7 +108,7 @@ public final class WebUtil {
     }
     
     /**
-    * @Description: TODO 删除属性值<br>
+    * @Description: 删除属性值<br>
     * @author Mr.Black <br>
     * @date 2015年12月21日 下午3:46:59 <br>
      */
@@ -122,7 +122,7 @@ public final class WebUtil {
     }
     
     /**
-    * @Description: TODO 获取IP<br>
+    * @Description: 获取IP<br>
     * @author Mr.Black <br>
     * @date 2015年12月21日 下午3:48:08 <br>
      */

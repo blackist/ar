@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/4/29 11:03.
@@ -29,11 +29,10 @@ public class AlbumServiceImpl implements AlbumService {
     private AlbumImageMapper albumImageMapper;
 
     /**
-     * TODO 根据Id查询相册信息
+     * 根据Id查询相册信息
      *
      * @param albumId
      * @return album对象
-     * @throws ServiceException
      */
     @Override
     public Album getAlbumById(Integer albumId) throws ServiceException {
@@ -48,12 +47,11 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     /**
-     * TODO 加载组织的相册列表
+     * 加载组织的相册列表
      *
      * @param page     分页类
      * @param originId originId
      * @return 相册列表
-     * @throws ServiceException
      */
     @Override
     public List<Album> getAlbums(Page<Album> page, Integer originId) throws ServiceException {
@@ -69,11 +67,10 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     /**
-     * TODO 保存创建的相册
+     * 保存创建的相册
      *
      * @param album
      * @return 相册的id
-     * @throws ServiceException
      */
     @Override
     public Integer saveAlbum(Album album) throws ServiceException {
@@ -90,11 +87,10 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     /**
-     * TODO 编辑相册
+     * 编辑相册
      *
      * @param album
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer updateAlbum(Album album) throws ServiceException {
@@ -110,11 +106,10 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     /**
-     * TODO 删除相册
+     * 删除相册
      *
      * @param albumId
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer deleteAlbum(Integer albumId) throws ServiceException {
@@ -134,11 +129,10 @@ public class AlbumServiceImpl implements AlbumService {
     }
 
     /**
-     * TODO 加载相册图片
+     * 加载相册图片
      *
      * @param albumId
      * @return
-     * @throws ServiceException
      */
     @Override
     public List<Map<String, Object>> getAlbumImage(Page<Map<String, Object>> page, Integer albumId) throws ServiceException {

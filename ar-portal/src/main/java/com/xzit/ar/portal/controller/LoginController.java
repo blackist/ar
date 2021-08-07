@@ -49,7 +49,7 @@ public class LoginController extends BaseController {
 	}
 
 	/**
-	 * @Description: TODO 登录处理<br>
+	 * @Description: 登录处理<br>
 	 * @author Mr.Black <br>
 	 */
 	@RequestMapping(value = "/validate", method = RequestMethod.POST)
@@ -129,7 +129,7 @@ public class LoginController extends BaseController {
 	}
 
 	/**
-	 * @Description: TODO 登出<br>
+	 * @Description: 登出<br>
 	 * @author Mr.Black <br>
 	 * @date 2015年12月23日 下午12:51:01 <br>
 	 */

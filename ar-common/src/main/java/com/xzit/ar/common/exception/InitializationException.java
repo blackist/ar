@@ -1,7 +1,7 @@
 /**  
 * @Title: InitializationException.java <br>
 * @Package com.xzit.ar.common.init <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2016年1月2日 下午8:28:45 <br>
 * @version V1.0 <br>
@@ -10,7 +10,7 @@ package com.xzit.ar.common.exception;
 
 /**
  * @ClassName: InitializationException <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2016年1月2日 下午8:28:45 <br>
  * @version V1.0 <br>
@@ -18,7 +18,7 @@ package com.xzit.ar.common.exception;
 public class InitializationException extends GlobalException {
 
 	/**
-	 * @Fields serialVersionUID : TODO <br>
+	 * @Fields serialVersionUID : <br>
 	 */
 	private static final long serialVersionUID = -6111311456939773773L;
 

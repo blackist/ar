@@ -17,7 +17,7 @@ public interface RightMapper extends BaseMapper {
      * @return int
      * @throws
      * @Title: deleteByPrimaryKey
-     * @Description: TODO 删除权限
+     * @Description: 删除权限
      */
     int deleteByPrimaryKey(Integer rightId);
 
@@ -28,7 +28,7 @@ public interface RightMapper extends BaseMapper {
      * @return Right
      * @throws
      * @Title: selectById
-     * @Description: TODO 通过权限id 查询权限
+     * @Description: 通过权限id 查询权限
      */
     Right selectById(@Param("rightId") Integer rightId) throws Exception;
 
@@ -39,7 +39,7 @@ public interface RightMapper extends BaseMapper {
      * @return Right
      * @throws
      * @Title: selectByRightUrl
-     * @Description: TODO 通过url查询权限
+     * @Description: 通过url查询权限
      */
     Right selectByRightUrl(@Param("rightUrl") String rightUrl) throws Exception;
 
@@ -49,7 +49,7 @@ public interface RightMapper extends BaseMapper {
      * @return Map<String,Object>
      * @throws
      * @Title: selectTopPosCode
-     * @Description: TODO 查询最高权限位权限码
+     * @Description: 查询最高权限位权限码
      */
     Map<String, Object> selectTopPosCode() throws Exception;
 
@@ -61,7 +61,7 @@ public interface RightMapper extends BaseMapper {
      * @return List<Map<String,Object>>
      * @throws
      * @Title: queryRights
-     * @Description: TODO 查询权限
+     * @Description: 查询权限
      */
     List<Map<String, Object>> queryRights(Page<Right> page, @Param("queryInput") String queryInput) throws Exception;
 
@@ -71,12 +71,12 @@ public interface RightMapper extends BaseMapper {
      * @return List<Right>
      * @throws
      * @Title: getAllRights
-     * @Description: TODO 加载所有权限
+     * @Description: 加载所有权限
      */
     List<Right> getAllRights() throws Exception;
 
     /**
-     * TODO 获取非公开权限资源
+     * 获取非公开权限资源
      *
      * @return
      * @throws Exception

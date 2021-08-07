@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/5/19 20:42.
@@ -15,7 +15,7 @@ import java.util.Map;
 public interface UserService {
 
     /**
-     * TODO 查询用户列表
+     * 查询用户列表
      * @param page
      * @return
      */

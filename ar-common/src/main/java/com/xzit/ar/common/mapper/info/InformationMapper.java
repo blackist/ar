@@ -13,7 +13,7 @@ import com.xzit.ar.common.page.Page;
 public interface InformationMapper extends BaseMapper {
 
     /**
-     * TODO 按组织类型和组织id查询信息
+     * 按组织类型和组织id查询信息
      *
      * @param infoType
      * @param originId
@@ -24,7 +24,7 @@ public interface InformationMapper extends BaseMapper {
                                               @Param("infoNum") Integer infoNum) throws Exception;
 
     /**
-     * TODO 加载组织某一个成员发布的消息
+     * 加载组织某一个成员发布的消息
      *
      * @param page
      * @param userId
@@ -37,7 +37,7 @@ public interface InformationMapper extends BaseMapper {
                                                   @Param("originId") Integer originId, @Param("infoType") String infoType) throws Exception;
 
     /**
-     * TODO 增加消息评论数
+     * 增加消息评论数
      *
      * @param infoId
      * @return
@@ -45,7 +45,7 @@ public interface InformationMapper extends BaseMapper {
     Integer increaseComments(@Param("infoId") Integer infoId) throws Exception;
 
     /**
-     * TODO 增加喜欢数
+     * 增加喜欢数
      *
      * @param infoId
      * @return
@@ -54,7 +54,7 @@ public interface InformationMapper extends BaseMapper {
     Integer increaseLoves(@Param("infoId") Integer infoId) throws Exception;
 
     /**
-     * TODO 获取消息点赞数
+     * 获取消息点赞数
      *
      * @param infoId
      * @return
@@ -63,7 +63,7 @@ public interface InformationMapper extends BaseMapper {
     Integer getLoves(@Param("infoId") Integer infoId) throws Exception;
 
     /**
-     * TODO 累计浏览量
+     * 累计浏览量
      *
      * @param infoId
      * @return
@@ -72,7 +72,7 @@ public interface InformationMapper extends BaseMapper {
     Integer increaseViews(@Param("infoId") Integer infoId) throws Exception;
 
     /**
-     * TODO 根据条件查询信息列表
+     * 根据条件查询信息列表
      *
      * @param page     分页类
      * @param infoType 信息类型
@@ -86,7 +86,7 @@ public interface InformationMapper extends BaseMapper {
                                          @Param("theme") String theme, @Param("state") String state);
 
     /**
-     * TODO 根据info_id查询信息、作者、组织的详细信息
+     * 根据info_id查询信息、作者、组织的详细信息
      *
      * @param infoId
      * @return Map<String, Object> info
@@ -95,7 +95,7 @@ public interface InformationMapper extends BaseMapper {
     Map<String, Object> getInfoDetailById(@Param("infoId") Integer infoId) throws Exception;
 
     /**
-     * TODO 通过userId和infoId查找信息
+     * 通过userId和infoId查找信息
      *
      * @param infoId
      * @param userId
@@ -105,7 +105,7 @@ public interface InformationMapper extends BaseMapper {
     Information getInfoByUserIdAndInfoId(@Param("infoId") Integer infoId, @Param("userId") Integer userId) throws Exception;
 
     /**
-     * TODO 通过 InfoId 和 OriginId 获取
+     * 通过 InfoId 和 OriginId 获取
      *
      * @param infoId
      * @param originId
@@ -116,7 +116,7 @@ public interface InformationMapper extends BaseMapper {
             throws Exception;
 
     /**
-     * TODO 通过userId和infoType查询用户发布的某一类消息
+     * 通过userId和infoType查询用户发布的某一类消息
      *
      * @param page
      * @param userId
@@ -128,7 +128,7 @@ public interface InformationMapper extends BaseMapper {
                                                          @Param("infoType") String infoType) throws Exception;
 
     /**
-     * TODO 通过userId和infoType查询用户发布的某一类消息
+     * 通过userId和infoType查询用户发布的某一类消息
      *
      * @param page
      * @param infoType
@@ -139,7 +139,7 @@ public interface InformationMapper extends BaseMapper {
                                                 @Param("infoType") String infoType);
 
     /**
-     * TODO 查询热门消息
+     * 查询热门消息
      *
      * @param infoType
      * @return
@@ -148,7 +148,7 @@ public interface InformationMapper extends BaseMapper {
     List<Map<String, Object>> getHotInfoByInfoType(Page<Map<String, Object>> page, @Param("infoType") String infoType) throws Exception;
 
     /**
-     * TODO 根据实体查询信息
+     * 根据实体查询信息
      *
      * @param page
      * @return

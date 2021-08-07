@@ -1,7 +1,7 @@
 /**  
 * @Title: Logger.java <br>
 * @Package com.xzit.ar.common.base <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 下午1:07:26 <br>
 * @version V1.0 <br>
@@ -12,7 +12,7 @@ import com.xzit.ar.common.util.CommonUtil;
 
 /**
 * @ClassName: Logger <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 下午1:07:26 <br>
 * @version V1.0  <br> <br>

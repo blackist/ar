@@ -15,7 +15,7 @@ import com.xzit.ar.common.po.recruit.RecruitUnit;
 
 /**
  * @ClassName: UnitService
- * @Description: TODO UnitService
+ * @Description: UnitService
  * @author Mr.Black
  * @date 2016年2月3日 下午4:48:59
  */

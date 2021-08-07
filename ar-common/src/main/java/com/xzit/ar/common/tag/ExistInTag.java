@@ -17,7 +17,7 @@ import com.xzit.ar.common.util.CommonUtil;
 
 /**
  * @ClassName: ExistInTag
- * @Description: TODO 检查某个值是否存在某个List/Array
+ * @Description: 检查某个值是否存在某个List/Array
  * @author Mr.Black
  * @date 2016年3月2日 上午9:35:45
  */

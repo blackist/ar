@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/5/4 14:32.
@@ -26,11 +26,10 @@ public class MyForumController extends BaseController {
     private InformationService informationService;
 
     /**
-     * TODO 加载我的帖子
+     * 加载我的帖子
      *
      * @param model
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("")
     public String index(Model model) throws ServiceException {
@@ -43,10 +42,9 @@ public class MyForumController extends BaseController {
     }
 
     /**
-     * TODO 删除帖子
+     * 删除帖子
      * @param postId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/delete")
     public String delete(Integer postId) throws ServiceException {

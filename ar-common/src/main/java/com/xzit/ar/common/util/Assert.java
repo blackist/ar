@@ -1,7 +1,7 @@
 /**  
 * @Title: Assert.java <br>
 * @Package com.xzit.ar.common.util <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 下午1:22:24 <br>
 * @version V1.0 <br>
@@ -16,7 +16,7 @@ import com.xzit.ar.common.exception.ExceptionCode;
 
 /**
 * @ClassName: Assert <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 下午1:22:24 <br>
 * @version V1.0  <br> <br>

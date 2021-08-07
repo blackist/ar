@@ -1,7 +1,7 @@
 /**  
 * @Title: LoginServiceImpl.java <br>
 * @Package com.xzit.ar.manage.service.impl <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2016年1月2日 下午2:47:21 <br>
 * @version V1.0 <br>
@@ -22,7 +22,7 @@ import com.xzit.ar.common.util.CommonUtil;
 
 /**
  * @ClassName: LoginServiceImpl <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2016年1月2日 下午2:47:21 <br>
  * @version V1.0 <br>

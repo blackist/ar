@@ -25,7 +25,7 @@ import com.xzit.ar.portal.service.recruit.RecruitService;
 /**
  * @author Mr.Black
  * @ClassName: RecruitServiceImpl
- * @Description: TODO RecruitService实现类
+ * @Description: RecruitService实现类
  * @date 2016年1月24日 下午1:39:09
  */
 @Service("recruitService")
@@ -80,12 +80,11 @@ public class RecruitServiceImpl implements RecruitService {
     }
 
     /**
-     * TODO 查询用户发布的招聘信息
+     * 查询用户发布的招聘信息
      *
      * @param page
      * @param userId
      * @return
-     * @throws ServiceException
      */
     @Override
     public List<Map<String, Object>> getRecruitByUserId(Page<Map<String, Object>> page, Integer userId) throws ServiceException {
@@ -100,11 +99,10 @@ public class RecruitServiceImpl implements RecruitService {
     }
 
     /**
-     * TODO 删除招聘信息
+     * 删除招聘信息
      *
      * @param recruitId
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer deleteRecruit(Integer recruitId) throws ServiceException {

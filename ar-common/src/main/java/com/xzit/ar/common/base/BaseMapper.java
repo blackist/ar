@@ -1,7 +1,7 @@
 /**  
 * @Title: BaseMapper.java <br>
 * @Package com.xzit.ar.common.base <br>
-* @Description: TODO BaseMapper<br>
+* @Description: BaseMapper<br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 下午2:24:05 <br>
 * @version V1.0 <br>
@@ -15,7 +15,7 @@ import org.apache.ibatis.annotations.Param;
 
 /**
  * @ClassName: BaseMapper <br>
- * @Description: TODO BaseMapper<br>
+ * @Description: BaseMapper<br>
  * @author Mr.Black <br>
  * @date 2015年12月21日 下午2:24:05 <br>
  * @version V1.0 <br>

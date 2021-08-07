@@ -1,7 +1,7 @@
 /**  
 * @Title: AuthorizationUtil.java <br>
 * @Package com.xzit.ar.common.authorization.util <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2016年1月3日 下午3:00:38 <br>
 * @version V1.0 <br>
@@ -27,7 +27,7 @@ import com.xzit.ar.common.util.CommonUtil;
 
 /**
  * @ClassName: AuthorizationUtil <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2016年1月3日 下午3:00:38 <br>
  * @version V1.0 <br>
@@ -36,7 +36,7 @@ public class PrivilegeUtil {
 
 	/**
 	 * @Title: loadAllRights
-	 * @Description: TODO 刷新环境中的所有权限
+	 * @Description: 刷新环境中的所有权限
 	 * @return List<Right>
 	 */
 	public static void refreshAllRights() throws GlobalException {
@@ -51,7 +51,7 @@ public class PrivilegeUtil {
 
 	/**
 	 * @Title: loadAllRights
-	 * @Description: TODO 加载所有权限
+	 * @Description: 加载所有权限
 	 * @return List<Right>
 	 */
 	public static void loadAllRights() throws UtilException {
@@ -67,7 +67,7 @@ public class PrivilegeUtil {
 
 	/**
 	 * @Title: detectAllRightURL
-	 * @Description: TODO 扫描所有权限url
+	 * @Description: 扫描所有权限url
 	 */
 	public static List<String> detectAllRightURL() {
 		List<String> rightUrlList = new ArrayList<String>();
@@ -87,7 +87,7 @@ public class PrivilegeUtil {
 	}
 
 	/**
-	 * @Title: makeDefaultRight @Description: TODO 封装默认形式的权限 @param @param
+	 * @Title: makeDefaultRight @Description: 封装默认形式的权限 @param @param
 	 *         rightUrl 封装权限的rightUrl @throws
 	 */
 	public static Right makeDefaultRight(String rightUrl) {
@@ -111,7 +111,7 @@ public class PrivilegeUtil {
 	}
 
 	/**
-	 * @Description: TODO 消去字符串第一个和最后一个字符 <br>
+	 * @Description: 消去字符串第一个和最后一个字符 <br>
 	 * @author Mr.Black <br>
 	 * @date 2016年1月3日 下午3:03:14 <br>
 	 */
@@ -124,7 +124,7 @@ public class PrivilegeUtil {
 
 	/**
 	 * @Title: isPublic
-	 * @Description: TODO 判断rightUrl 是否是公共资源
+	 * @Description: 判断rightUrl 是否是公共资源
 	 */
 	public static boolean isPublic(String rightUrl) {
 		// 系统未初始化，rightList不存在

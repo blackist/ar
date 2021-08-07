@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/4/9.
@@ -23,11 +23,10 @@ public class TaController extends BaseController {
     private TaService taService;
 
     /**
-     * TODO 用户个人主页
+     * 用户个人主页
      * @param model
      * @param userId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/show")
     public String show(Model model, Integer userId) throws ServiceException {

@@ -1,7 +1,7 @@
 /**  
 * @Title: DictController.java <br>
 * @Package com.xzit.ar.manage.controller.dict <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月25日 下午9:15:37 <br>
 * @version V1.0 <br>
@@ -28,7 +28,7 @@ import com.xzit.ar.manage.service.dict.DictService;
 
 /**
  * @ClassName: DictController <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2015年12月25日 下午9:15:37 <br>
  * @version V1.0 <br>
@@ -42,7 +42,7 @@ public class DictController extends BaseController {
 	private DictService dictService;
 
 	/**
-	 * @Description: TODO 加载 dictionary 索引界面<br>
+	 * @Description: 加载 dictionary 索引界面<br>
 	 * @author Mr.Black <br>
 	 * @date 2016年1月3日 下午3:26:04 <br>
 	 */
@@ -52,7 +52,7 @@ public class DictController extends BaseController {
 	}
 
 	/**
-	 * @Description: TODO 根据条件分页查询字典项<br>
+	 * @Description: 根据条件分页查询字典项<br>
 	 * @author Mr.Black <br>
 	 * @date 2015年12月26日 下午10:57:22 <br>
 	 */
@@ -71,7 +71,7 @@ public class DictController extends BaseController {
 	}
 
 	/**
-	 * @Description: TODO 请求添加字典项<br>
+	 * @Description: 请求添加字典项<br>
 	 * @author Mr.Black <br>
 	 * @date 2015年12月26日 下午10:55:50 <br>
 	 */
@@ -82,7 +82,7 @@ public class DictController extends BaseController {
 	}
 
 	/**
-	 * @Description: TODO 保存页面传来的字典项实体<br>
+	 * @Description: 保存页面传来的字典项实体<br>
 	 * @param @param
 	 *            dictionary 字典项实体
 	 * @return String <br>
@@ -100,7 +100,7 @@ public class DictController extends BaseController {
 	}
 
 	/**
-	 * @Description: TODO 根据主键删除字典<br>
+	 * @Description: 根据主键删除字典<br>
 	 * @param @param
 	 *            dictValue 要删除字典的主键
 	 * @author Mr.Black <br>
@@ -117,7 +117,7 @@ public class DictController extends BaseController {
 	}
 
 	/**
-	 * @Description: TODO 请求编辑字典<br>
+	 * @Description: 请求编辑字典<br>
 	 * @param @param
 	 *            dictValue
 	 * @author Mr.Black <br>
@@ -134,7 +134,7 @@ public class DictController extends BaseController {
 	}
 
 	/**
-	 * @Description: TODO 保存修改的字典项实体<br>
+	 * @Description: 保存修改的字典项实体<br>
 	 * @param @param
 	 *            dictionary 字典项实体
 	 * @author Mr.Black <br>

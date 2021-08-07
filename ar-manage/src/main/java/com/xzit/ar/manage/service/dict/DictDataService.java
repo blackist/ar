@@ -17,7 +17,7 @@ import com.xzit.ar.common.po.dict.DictionaryData;
 
 /**
  * @ClassName: DictDataService
- * @Description: TODO DictDataService
+ * @Description: DictDataService
  * @author Mr.Black
  * @date 2016年1月8日 上午12:38:04
  */

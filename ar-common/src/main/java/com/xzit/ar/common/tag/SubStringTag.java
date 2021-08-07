@@ -16,7 +16,7 @@ import com.xzit.ar.common.util.CommonUtil;
 
 /**
  * @ClassName: SubStringTag
- * @Description: TODO 页面字符串长度限制标签
+ * @Description: 页面字符串长度限制标签
  * @author Mr.Black
  * @date 2016年2月27日 下午1:18:21
  */

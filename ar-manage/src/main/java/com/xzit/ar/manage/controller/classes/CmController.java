@@ -25,7 +25,7 @@ import com.xzit.ar.manage.service.classes.CmService;
 
 /**
  * @ClassName: CmController
- * @Description: TODO 班级录后台管理
+ * @Description: 班级录后台管理
  * @author Mr.Black
  * @date 2016年3月2日 下午11:25:52
  */
@@ -60,7 +60,7 @@ public class CmController extends BaseController {
 	/**
 	 * @throws ServiceException
 	 * @Title: excepClass
-	 * @Description: TODO 异常冻结班级
+	 * @Description: 异常冻结班级
 	 */
 	@RequestMapping("/excepClass")
 	public String excepClass(Model model, @RequestParam("classId") Integer classId) throws ServiceException {
@@ -75,7 +75,7 @@ public class CmController extends BaseController {
 
 	/**
 	 * @Title: recoverClass
-	 * @Description: TODO 删除班级
+	 * @Description: 删除班级
 	 */
 	@RequestMapping("/recoverClass")
 	public String recoverClass(Model model, @RequestParam("classId") Integer classId) throws ServiceException {
@@ -90,7 +90,7 @@ public class CmController extends BaseController {
 
 	/**
 	 * @Title: removeClass
-	 * @Description: TODO 删除班级
+	 * @Description: 删除班级
 	 */
 	@RequestMapping("/removeClass")
 	public String removeClass(Model model, @RequestParam("classId") Integer classId) throws ServiceException {
@@ -105,7 +105,7 @@ public class CmController extends BaseController {
 
 	/**
 	 * @Title: deleteClass
-	 * @Description: TODO 彻底删除班级
+	 * @Description: 彻底删除班级
 	 */
 	@RequestMapping("/deleteClass")
 	public String deleteClass(Model model, @RequestParam("classId") Integer classId) throws ServiceException {

@@ -26,7 +26,7 @@ import com.xzit.ar.portal.service.recruit.UnitService;
 
 /**
  * @ClassName: UnitController
- * @Description: TODO UnitController
+ * @Description: UnitController
  * @author Mr.Black
  * @date 2016年2月4日 上午10:32:03
  */
@@ -76,10 +76,9 @@ public class UnitController extends BaseController {
     }
 
     /**
-     * TODO 我的单位
+     * 我的单位
      * @param model
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/my")
     public String my(Model model) throws ServiceException {
@@ -97,7 +96,6 @@ public class UnitController extends BaseController {
      * 更新单位信息
      * @param recruitUnit
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/update")
     public String update(RecruitUnit recruitUnit) throws ServiceException {

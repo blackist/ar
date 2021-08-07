@@ -18,7 +18,7 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/5/3 21:29.
@@ -34,7 +34,7 @@ public class NewsController extends BaseController {
     private PostService postService;
 
     /**
-     * TODO 加载新闻中心界面
+     * 加载新闻中心界面
      * @param model
      * @return
      */
@@ -50,10 +50,9 @@ public class NewsController extends BaseController {
     }
 
     /**
-     * TODO 加载热门新闻
+     * 加载热门新闻
      * @param model
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/outline")
     public String outline(Model model) throws ServiceException {
@@ -65,7 +64,7 @@ public class NewsController extends BaseController {
     }
 
     /**
-     * TODO 加载新闻详情
+     * 加载新闻详情
      * @param model
      * @return
      */
@@ -78,7 +77,7 @@ public class NewsController extends BaseController {
     }
 
     /**
-     * TODO 加载评论列表
+     * 加载评论列表
      * @param model
      * @return
      */
@@ -94,11 +93,10 @@ public class NewsController extends BaseController {
     }
 
     /**
-     * TODO 评论新闻
+     * 评论新闻
      * @param redirectAttributes
      * @param comment
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/comment")
     public String comment(RedirectAttributes redirectAttributes, Comment comment) throws ServiceException {

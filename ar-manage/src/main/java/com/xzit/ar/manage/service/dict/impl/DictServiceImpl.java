@@ -1,7 +1,7 @@
 /**  
 * @Title: DictServiceImpl.java <br>
 * @Package com.xzit.ar.manage.service.impl <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月25日 下午9:23:53 <br>
 * @version V1.0 <br>
@@ -30,7 +30,7 @@ import com.xzit.ar.manage.service.dict.DictService;
 
 /**
  * @ClassName: DictServiceImpl <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2015年12月25日 下午9:23:53 <br>
  * @version V1.0 <br>

@@ -18,7 +18,7 @@ import org.springframework.cache.annotation.Cacheable;
 
 /**
  * @ClassName: QueryRecruits
- * @Description: TODO QueryRecruits
+ * @Description: QueryRecruits
  * @author Mr.Black
  * @date 2016年1月26日 下午11:30:34
  */

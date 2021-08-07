@@ -11,7 +11,7 @@ import com.xzit.ar.common.base.BaseMapper;
 public interface UserMapper extends BaseMapper {
 
 	/**
-	 * TODO 通过账号查询用户
+	 * 通过账号查询用户
 	 * @param account 账号
 	 * @return
 	 * @throws Exception
@@ -19,7 +19,7 @@ public interface UserMapper extends BaseMapper {
 	Map<String, Object> selectByAccount(@Param("account") String account) throws  Exception;
 
 	/**
-	 * TODO 获取用户基本信息：userId, account, portrait, trueName, introduce
+	 * 获取用户基本信息：userId, account, portrait, trueName, introduce
 	 * @param userId
 	 * @return
 	 * @throws Exception
@@ -27,7 +27,7 @@ public interface UserMapper extends BaseMapper {
 	Map<String, Object> getUserBasicInfo(@Param("userId") Integer userId) throws Exception;
 
 	/**
-	 * TODO 查询用户列表
+	 * 查询用户列表
 	 * @param page
 	 * @return
 	 * @throws Exception

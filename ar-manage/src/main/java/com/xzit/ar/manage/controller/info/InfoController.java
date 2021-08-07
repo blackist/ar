@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/5/17 17:01.
@@ -31,7 +31,7 @@ public class InfoController extends BaseController {
     private InfoService infoService;
 
     /**
-     * TODO 加载消息管理界面
+     * 加载消息管理界面
      *
      * @return
      */
@@ -41,14 +41,13 @@ public class InfoController extends BaseController {
     }
 
     /**
-     * TODO 查询站内信息
+     * 查询站内信息
      *
      * @param model
      * @param query
      * @param state
      * @param infoType
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/queryInfo")
     public String queryInfo(Model model, String query, String state, String infoType) throws ServiceException {
@@ -80,7 +79,7 @@ public class InfoController extends BaseController {
     }
 
     /**
-     * TODO 加载信息发布界面
+     * 加载信息发布界面
      *
      * @param model
      * @return
@@ -95,11 +94,10 @@ public class InfoController extends BaseController {
     }
 
     /**
-     * TODO 保存管理员发布的信息
+     * 保存管理员发布的信息
      *
      * @param information
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/save")
     public String save(Information information) throws ServiceException {
@@ -124,11 +122,10 @@ public class InfoController extends BaseController {
     }
 
     /**
-     * TODO 更新信息
+     * 更新信息
      *
      * @param information
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/update")
     public String update(Model model, Information information) throws ServiceException {
@@ -144,11 +141,10 @@ public class InfoController extends BaseController {
     }
 
     /**
-     * TODO 删除信息
+     * 删除信息
      * @param model
      * @param infoId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/delete")
     public String delete(Model model, Integer infoId) throws ServiceException {

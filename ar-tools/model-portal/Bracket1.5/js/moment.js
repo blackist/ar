@@ -2613,7 +2613,7 @@
             days -= absRound(yearsToDays(years));
 
             // 30 days to a month
-            // TODO (iskren): Use anchor date (like 1st Jan) to compute this.
+            // (iskren): Use anchor date (like 1st Jan) to compute this.
             months += absRound(days / 30);
             days %= 30;
 

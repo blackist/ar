@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * TODO 校园服务
+ * 校园服务
  * Created by 董亮亮 on 2017/4/7.
  */
 @Controller
@@ -29,7 +29,7 @@ public class ServiceController extends BaseController {
     private ServiceService serviceService;
 
     /**
-     * TODO 加载校园服务界面
+     * 加载校园服务界面
      * @return
      */
     @RequestMapping("")
@@ -40,7 +40,7 @@ public class ServiceController extends BaseController {
     }
 
     /**
-     * TODO 加载校园服务详细信息
+     * 加载校园服务详细信息
      * @param model
      * @param id
      * @return

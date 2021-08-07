@@ -28,7 +28,7 @@ import com.xzit.ar.portal.service.my.ResumeService;
 /**
  * @author Mr.Black
  * @ClassName: ResumeServiceImpl
- * @Description: TODO ResumeServiceImpl
+ * @Description: ResumeServiceImpl
  * @date 2016年2月8日 下午11:24:31
  */
 @Service("resumeService")
@@ -112,11 +112,10 @@ public class ResumeServiceImpl implements ResumeService {
     }
 
     /**
-     * TODO 删除个人简历
+     * 删除个人简历
      *
      * @param resumeId
      * @return
-     * @throws ServiceException
      */
     @Override
     public int deleteResume(Integer resumeId) throws ServiceException {
@@ -134,11 +133,10 @@ public class ResumeServiceImpl implements ResumeService {
     }
 
     /**
-     * TODO 更新简历信息
+     * 更新简历信息
      *
      * @param resume
      * @return
-     * @throws ServiceException
      */
     @Override
     public int updateResume(UserResume resume) throws ServiceException {
@@ -156,11 +154,10 @@ public class ResumeServiceImpl implements ResumeService {
     }
 
     /**
-     * TODO 根据ID加载用户简历详情
+     * 根据ID加载用户简历详情
      *
      * @param resumeId
      * @return
-     * @throws ServiceException
      */
     @Override
     public UserResume getResumeById(Integer resumeId) throws ServiceException {
@@ -183,11 +180,10 @@ public class ResumeServiceImpl implements ResumeService {
     }
 
     /**
-     * TODO 取消简历投递
+     * 取消简历投递
      * @param recruitId
      * @param resumeId
      * @return
-     * @throws ServiceException
      */
     @Override
     public int cancelPostResume(Integer recruitId, Integer resumeId) throws ServiceException {
@@ -202,10 +198,9 @@ public class ResumeServiceImpl implements ResumeService {
     }
 
     /**
-     * TODO 加载用户简历投递记录
+     * 加载用户简历投递记录
      *
      * @return
-     * @throws ServiceException
      */
     @Override
     public List<Map<String, Object>> getPostsByUserId(Page<Map<String, Object>> page, Integer userId) throws ServiceException {

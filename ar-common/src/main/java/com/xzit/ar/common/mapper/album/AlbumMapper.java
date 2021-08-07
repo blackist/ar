@@ -10,7 +10,7 @@ import java.util.List;
 public interface AlbumMapper extends BaseMapper{
 
     /**
-     * TODO 加载相册列表
+     * 加载相册列表
      * @param page
      * @param originId
      * @return

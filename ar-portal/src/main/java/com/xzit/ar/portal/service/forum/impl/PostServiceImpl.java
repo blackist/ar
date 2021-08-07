@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  * Created by 董亮亮 on 2017/4/9.
  */
 @Service("postService")
@@ -28,11 +28,10 @@ public class PostServiceImpl implements PostService {
     private CommentMapper commentMapper;
 
     /**
-     * TODO 根据info_id查询帖子详情
+     * 根据info_id查询帖子详情
      *
      * @param postId
      * @return post
-     * @throws ServiceException
      */
     @Override
     public Map<String, Object> getPostById(Integer postId) throws ServiceException {
@@ -52,11 +51,10 @@ public class PostServiceImpl implements PostService {
     }
 
     /**
-     * TODO 喜欢帖子
+     * 喜欢帖子
      *
      * @param postId 帖子id
      * @return 喜欢此帖子的人数
-     * @throws ServiceException
      */
     @Override
     public Integer lovePost(Integer postId) throws ServiceException {
@@ -78,11 +76,10 @@ public class PostServiceImpl implements PostService {
     }
 
     /**
-     * TODO 存储评论内容
+     * 存储评论内容
      *
      * @param comment
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer commentPost(Comment comment) throws ServiceException {
@@ -101,12 +98,11 @@ public class PostServiceImpl implements PostService {
     }
 
     /**
-     * TODO 动态加载评论列表
+     * 动态加载评论列表
      *
      * @param page
      * @param postId
      * @return
-     * @throws ServiceException
      */
     @Override
     public List<Map<String, Object>> dynamicLoadComment(Page<Map<String, Object>> page, Integer postId) throws ServiceException {
@@ -124,12 +120,11 @@ public class PostServiceImpl implements PostService {
     }
 
     /**
-     * TODO 查询论坛帖子列表
+     * 查询论坛帖子列表
      *
      * @param page     分页类
      * @param queryStr 查询条件
      * @return 帖子list
-     * @throws ServiceException
      */
     @Override
     public List<Map<String, Object>> queryPosts(Page<Map<String, Object>> page, String queryStr) {
@@ -143,11 +138,10 @@ public class PostServiceImpl implements PostService {
     }
 
     /**
-     * TODO 保存帖子信息
+     * 保存帖子信息
      *
      * @param information
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer savePost(Information information) throws ServiceException {
@@ -163,12 +157,11 @@ public class PostServiceImpl implements PostService {
     }
 
     /**
-     * TODO 删除用户的帖子
+     * 删除用户的帖子
      *
      * @param postId
      * @param userId
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer deletePost(Integer postId, Integer userId) throws ServiceException {
@@ -190,11 +183,10 @@ public class PostServiceImpl implements PostService {
     }
 
     /**
-     * TODO 加载用户相关帖子
+     * 加载用户相关帖子
      *
      * @param userId
      * @return
-     * @throws ServiceException
      */
     @Override
     public List<Map<String, Object>> getUserPost(Page<Map<String, Object>> page, Integer userId) throws ServiceException {

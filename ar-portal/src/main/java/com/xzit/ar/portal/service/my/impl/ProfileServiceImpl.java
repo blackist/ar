@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/5/15 22:45.
@@ -34,11 +34,10 @@ public class ProfileServiceImpl implements ProfileService {
     private UserMapper userMapper;
 
     /**
-     * TODO 查询用户信息
+     * 查询用户信息
      *
      * @param userId
      * @return
-     * @throws ServiceException
      */
     @Override
     public UserInfo getUserInfo(Integer userId) throws ServiceException {
@@ -55,11 +54,10 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     /**
-     * TODO 更新用户信息
+     * 更新用户信息
      *
      * @param userInfo
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer updateUserInfo(UserInfo userInfo) throws ServiceException {
@@ -85,11 +83,10 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     /**
-     * TODO 加载用户工作信息列表
+     * 加载用户工作信息列表
      *
      * @param userId
      * @return
-     * @throws ServiceException
      */
     @Override
     public List<UserJob> getUserJobByUserId(Integer userId) throws ServiceException {
@@ -104,11 +101,10 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     /**
-     * TODO 保存工作信息
+     * 保存工作信息
      *
      * @param userJob
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer saveUserJob(UserJob userJob) throws ServiceException {
@@ -123,11 +119,10 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     /**
-     * TODO 删除工作信息
+     * 删除工作信息
      *
      * @param jobId
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer deleteUserJob(Integer jobId) throws ServiceException {
@@ -142,11 +137,10 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     /**
-     * TODO 更新用户头像信息
+     * 更新用户头像信息
      *
      * @param user
      * @return
-     * @throws ServiceException
      */
     @Override
     public Map<String, Object> updateUserPortrait(User user) throws ServiceException {

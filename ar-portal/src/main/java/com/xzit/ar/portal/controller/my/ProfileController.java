@@ -52,11 +52,10 @@ public class ProfileController extends BaseController {
     private ImageService imageService;
 
     /**
-     * TODO 加载用户基本信息
+     * 加载用户基本信息
      *
      * @param model
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/basic")
     public String basic(Model model) throws ServiceException {
@@ -67,11 +66,10 @@ public class ProfileController extends BaseController {
     }
 
     /**
-     * TODO 更新用户信息
+     * 更新用户信息
      *
      * @param userInfo
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/basic/update")
     public String updateBasic(UserInfo userInfo, String birthdayString) throws ServiceException {
@@ -96,11 +94,10 @@ public class ProfileController extends BaseController {
     }
 
     /**
-     * TODO 加载用户工作信息
+     * 加载用户工作信息
      *
      * @param model
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/job")
     public String job(Model model) throws ServiceException {
@@ -111,11 +108,10 @@ public class ProfileController extends BaseController {
     }
 
     /**
-     * TODO 添加用户工作信息
+     * 添加用户工作信息
      *
      * @param userJob
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/job/add")
     public String add(UserJob userJob) throws ServiceException {
@@ -136,11 +132,10 @@ public class ProfileController extends BaseController {
     }
 
     /**
-     * TODO 删除工作信息
+     * 删除工作信息
      *
      * @param jobId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/job/delete.action")
     public String delete(@RequestParam("jobId") Integer jobId) throws ServiceException {
@@ -156,13 +151,12 @@ public class ProfileController extends BaseController {
     }
 
     /**
-     * TODO 上传用户头像
+     * 上传用户头像
      *
      * @param session
      * @param portrait
      * @return
      * @throws UtilException
-     * @throws ServiceException
      */
     @RequestMapping("/portrait/upload.action")
     public String upload(HttpSession session, MultipartFile portrait) throws UtilException, ServiceException {

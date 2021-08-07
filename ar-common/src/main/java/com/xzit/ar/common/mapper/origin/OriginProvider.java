@@ -10,7 +10,7 @@ package com.xzit.ar.common.mapper.origin;
 
 /**
  * @ClassName: OriginProvider
- * @Description: TODO origin表的sql语句
+ * @Description: origin表的sql语句
  * @author Mr.Black
  * @date 2016年2月18日 下午2:06:27
  */

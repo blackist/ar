@@ -1,7 +1,7 @@
 /**  
 * @Title: GlobalExceptionCode.java <br>
 * @Package com.xzit.ar.common.exception <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月10日 下午7:38:39 <br>
 * @version V1.0 <br>
@@ -10,7 +10,7 @@ package com.xzit.ar.common.exception;
 
 /**
  * @ClassName: GlobalExceptionCode <br>
- * @Description: TODO 异常错误code代码 <br>
+ * @Description: 异常错误code代码 <br>
  * @author Mr.Black <br>
  * @date 2015年12月10日 下午7:38:39 <br>
  * @version V1.0 <br>

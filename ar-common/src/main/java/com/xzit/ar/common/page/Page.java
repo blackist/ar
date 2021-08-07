@@ -1,7 +1,7 @@
 /**  
 * @Title: PageBean.java <br>
 * @Package com.xzit.ar.common.page <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月16日 上午12:26:36 <br>
 * @version V1.0 <br>
@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * @ClassName: Page <br>
- * @Description: TODO 分页Bean<br>
+ * @Description: 分页Bean<br>
  * @author Mr.Black <br>
  * @date 2015年12月23日 下午8:08:26 <br>
  * @version V1.2 <br>
@@ -71,7 +71,7 @@ public class Page<T> implements Serializable {
 
 	/**
 	 * Title: <br>
-	 * Description:TODO <br>
+	 * Description:<br>
 	 * <br>
 	 */
 	public Page() {
@@ -80,7 +80,7 @@ public class Page<T> implements Serializable {
 
 	/**
 	 * Title: <br>
-	 * Description:TODO <br>
+	 * Description:<br>
 	 * 
 	 * @param pageIndex
 	 * @param pageSize
@@ -94,7 +94,7 @@ public class Page<T> implements Serializable {
 
 	/**
 	 * Title: <br>
-	 * Description:TODO <br>
+	 * Description:<br>
 	 * 
 	 * @param pageIndex
 	 * @param pageSize
@@ -137,7 +137,7 @@ public class Page<T> implements Serializable {
 	}
 
 	/**
-	 * @Description: TODO 设置页码集合<br>
+	 * @Description: 设置页码集合<br>
 	 * @author Mr.Black <br>
 	 * @date 2015年12月23日 下午8:30:04 <br>
 	 */

@@ -1,7 +1,7 @@
 /**  
 * @Title: CustomException.java <br>
 * @Package com.xzit.ar.exception <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月10日 下午7:09:38 <br>
 * @version V1.0 <br>
@@ -12,7 +12,7 @@ import java.text.MessageFormat;
 
 /**
  * @ClassName: CustomException <br>
- * @Description: TODO 系统自定义异常 , 预期异常, 需要在系统中抛出此类异常<br>
+ * @Description: 系统自定义异常 , 预期异常, 需要在系统中抛出此类异常<br>
  * @author Mr.Black <br>
  * @date 2015年12月10日 下午7:09:38 <br>
  * @version V1.0 <br>
@@ -22,7 +22,7 @@ import java.text.MessageFormat;
 public class GlobalException extends Exception {
 
 	/**
-	 * @Fields serialVersionUID : TODO <br>
+	 * @Fields serialVersionUID : <br>
 	 */
 	private static final long serialVersionUID = 5076963716058925012L;
 
@@ -35,7 +35,7 @@ public class GlobalException extends Exception {
 	/**
 	 * 
 	 * Title: <br>
-	 * Description:TODO <br>
+	 * Description:<br>
 	 * 
 	 * @param code
 	 */
@@ -47,7 +47,7 @@ public class GlobalException extends Exception {
 	/**
 	 * 
 	 * Title: <br>
-	 * Description:TODO <br>
+	 * Description:<br>
 	 * 
 	 * @param msg
 	 */
@@ -57,7 +57,7 @@ public class GlobalException extends Exception {
 
 	/**
 	 * Title: <br>
-	 * Description:TODO <br>
+	 * Description:<br>
 	 * 
 	 * @param code
 	 * @param msg
@@ -70,7 +70,7 @@ public class GlobalException extends Exception {
 	/**
 	 * 
 	 * Title: <br>
-	 * Description:TODO <br>
+	 * Description:<br>
 	 * @param code
 	 * @param msg
 	 * @param params
@@ -82,7 +82,7 @@ public class GlobalException extends Exception {
 	/**
 	 * 
 	 * Title: <br>
-	 * Description:TODO <br>
+	 * Description:<br>
 	 * @param exception
 	 */
 	public GlobalException(GlobalException exception) {
@@ -92,7 +92,7 @@ public class GlobalException extends Exception {
 	/**
 	 * 
 	 * Title: <br>
-	 * Description:TODO <br>
+	 * Description:<br>
 	 * 
 	 * @param code
 	 * @param arg0
@@ -105,7 +105,7 @@ public class GlobalException extends Exception {
 	/**
 	 * 
 	 * Title: <br>
-	 * Description:TODO <br>
+	 * Description:<br>
 	 * 
 	 * @param arg0
 	 * @param exception
@@ -118,7 +118,7 @@ public class GlobalException extends Exception {
 	/**
 	 * 
 	 * Title: <br>
-	 * Description:TODO <br>
+	 * Description:<br>
 	 * 
 	 * @param code
 	 * @param arg0
@@ -146,7 +146,7 @@ public class GlobalException extends Exception {
 	/**
 	 * 
 	* @Title: getCode <br>
-	* @Description: TODO <br>
+	* @Description: <br>
 	* @param @return <br>
 	* @return int <br>
 	* @author Mr.Black <br>
@@ -160,7 +160,7 @@ public class GlobalException extends Exception {
 	/**
 	 * 
 	* @Title: getMsg <br>
-	* @Description: TODO <br>
+	* @Description: <br>
 	* @param @return <br>
 	* @return String <br>
 	* @author Mr.Black <br>

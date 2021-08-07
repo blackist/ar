@@ -18,7 +18,7 @@ function queryOrigin(pageIndex, pageSize) {
 }
 
 /**
- * TODO 设置班级管理员
+ * 设置班级管理员
  * @param mgrId
  */
 function setManager(mgrId) {

@@ -1,7 +1,7 @@
 /**  
 * @Title: PageInterceptor.java <br>
 * @Package com.xzit.ar.common.page <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月25日 下午11:08:13 <br>
 * @version V1.0 <br>
@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @ClassName: PageInterceptor <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2015年12月25日 下午11:08:13 <br>
  * @version V1.0 <br>
@@ -161,7 +161,7 @@ public class PageInterceptor implements Interceptor {
 	}
 
 	/**
-	* @Description: TODO 把真正的参数对象解析出来
+	* @Description: 把真正的参数对象解析出来
 	* Spring会自动封装对个参数对象为Map<String, Object>对象
 	*对于通过@Param指定key值参数我们不做处理，因为XML文件需要该KEY值
 	* 而对于没有@Param指定时，Spring会使用0,1作为主键
@@ -259,7 +259,7 @@ public class PageInterceptor implements Interceptor {
 	}
 
 	/**
-	 * @Description: TODO buildOraclePageSql<br>
+	 * @Description: buildOraclePageSql<br>
 	 * @author Mr.Black <br>
 	 * @date 2015年12月30日 下午8:41:50 <br>
 	 */
@@ -273,7 +273,7 @@ public class PageInterceptor implements Interceptor {
 	}
 
 	/**
-	 * @Description: TODO queryTotalRecord<br>
+	 * @Description: queryTotalRecord<br>
 	 * @author Mr.Black <br>
 	 * @date 2015年12月30日 下午8:42:10 <br>
 	 */
@@ -322,7 +322,7 @@ public class PageInterceptor implements Interceptor {
 	}
 
 	/**
-	 * @Description: TODO 根据原Sql语句获取对应的查询总记录数的Sql语句<br>
+	 * @Description: 根据原Sql语句获取对应的查询总记录数的Sql语句<br>
 	 * @author Mr.Black <br>
 	 * @date 2015年12月30日 下午8:42:37 <br>
 	 */
@@ -335,7 +335,7 @@ public class PageInterceptor implements Interceptor {
 
 	/**
 	 * @ClassName: ReflectUtil <br>
-	 * @Description: TODO 利用反射进行操作的一个工具类<br>
+	 * @Description: 利用反射进行操作的一个工具类<br>
 	 * @author Mr.Black <br>
 	 * @date 2015年12月30日 下午8:42:52 <br>
 	 * @version V1.0 <br>
@@ -406,10 +406,10 @@ public class PageInterceptor implements Interceptor {
 					field.setAccessible(true);
 					field.set(obj, fieldValue);
 				} catch (IllegalArgumentException e) {
-					// TODO Auto-generated catch block
+					// Auto-generated catch block
 					e.printStackTrace();
 				} catch (IllegalAccessException e) {
-					// TODO Auto-generated catch block
+					// Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

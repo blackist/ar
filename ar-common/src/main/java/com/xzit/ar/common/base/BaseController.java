@@ -1,7 +1,7 @@
 /**
  * @Title: BaseController.java <br>
  * @Package com.xzit.ar.common.base <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2015年12月21日 上午11:08:45 <br>
  * @version V1.0 <br>
@@ -34,7 +34,7 @@ import com.xzit.ar.common.util.CommonUtil;
  * @version V1.0 <br>
  *          <br>
  * @ClassName: BaseController <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @date 2015年12月21日 上午11:08:45 <br>
  */
 public abstract class BaseController {
@@ -81,7 +81,7 @@ public abstract class BaseController {
      * @return String <br>
      * @throws <br>
      * @Title: getParameter <br>
-     * @Description: TODO 获取参数<br>
+     * @Description: 获取参数<br>
      * @author Mr.Black <br>
      * @date 2015年12月21日 下午1:28:56 <br>
      */
@@ -96,7 +96,7 @@ public abstract class BaseController {
     /**
      * @throws <br>
      * @Title: getParameter <br>
-     * @Description: TODO 获取参数<br>
+     * @Description: 获取参数<br>
      * @author Mr.Black <br>
      * @date 2015年12月21日 下午1:11:27 <br>
      */
@@ -116,7 +116,7 @@ public abstract class BaseController {
      * @return Long <br>
      * @throws <br>
      * @Title: getLongParameter <br>
-     * @Description: TODO getLongParameter<br>
+     * @Description: getLongParameter<br>
      * @author Mr.Black <br>
      * @date 2015年12月21日 下午1:30:55 <br>
      */
@@ -128,7 +128,7 @@ public abstract class BaseController {
     /**
      * @throws <br>
      * @Title: getLongParameter <br>
-     * @Description: TODO getLongParameter<br>
+     * @Description: getLongParameter<br>
      * @author Mr.Black <br>
      * @date 2015年12月21日 下午1:31:34 <br>
      */
@@ -139,7 +139,7 @@ public abstract class BaseController {
 
     /**
      * @return Integer <br>
-     * @Description: TODO getIntegerParameter <br>
+     * @Description: getIntegerParameter <br>
      * @author Mr.Black <br>
      * @date 2015年12月21日 下午1:32:44 <br>
      */
@@ -150,7 +150,7 @@ public abstract class BaseController {
 
     /**
      * @return Integer <br>
-     * @Description: TODO getIntegerParameter<br>
+     * @Description: getIntegerParameter<br>
      * @author Mr.Black <br>
      * @date 2015年12月21日 下午1:33:23 <br>
      */
@@ -161,7 +161,7 @@ public abstract class BaseController {
 
     /**
      * @Title: getQueryStr
-     * @Description: TODO 获取查询条件字符串
+     * @Description: 获取查询条件字符串
      */
     protected String getQueryStr() {
         return this.getParameter("queryStr");
@@ -169,7 +169,7 @@ public abstract class BaseController {
 
     /**
      * @Title: setQuery
-     * @Description: TODO 传递查询条件字符串
+     * @Description: 传递查询条件字符串
      */
     protected void setQuery() {
         this.getRequest().setAttribute("queryStr", this.getParameter("queryStr"));
@@ -177,7 +177,7 @@ public abstract class BaseController {
 
     /**
      * @Title: getStateStr
-     * @Description: TODO 获取查询条件字符串
+     * @Description: 获取查询条件字符串
      */
     protected String getStateStr() {
         if (this.getParameter("stateStr") == null) {
@@ -189,7 +189,7 @@ public abstract class BaseController {
 
     /**
      * @Title: setState
-     * @Description: TODO 传递查询条件字符串
+     * @Description: 传递查询条件字符串
      */
     protected void setState() {
         this.getRequest().setAttribute("stateStr", this.getStateStr());
@@ -197,7 +197,7 @@ public abstract class BaseController {
 
     /**
      * @Title: getSelectStr
-     * @Description: TODO 获取条件查询下拉框条件
+     * @Description: 获取条件查询下拉框条件
      */
     protected String getSelectStr() {
         return this.getParameter("selectStr");
@@ -205,7 +205,7 @@ public abstract class BaseController {
 
     /**
      * @Title: setSelectStr
-     * @Description: TODO 返回条件查询下拉框条件
+     * @Description: 返回条件查询下拉框条件
      */
     protected void setSelectStr() {
         this.getRequest().setAttribute("selectStr", this.getParameter("selectStr"));
@@ -214,7 +214,7 @@ public abstract class BaseController {
     /**
      * @param @return <br>
      * @return int <br>
-     * @Description: TODO getPageIndex<br>
+     * @Description: getPageIndex<br>
      * @author Mr.Black <br>
      * @date 2015年12月21日 下午1:34:13 <br>
      */
@@ -230,7 +230,7 @@ public abstract class BaseController {
     /**
      * @param @return <br>
      * @return int <br>
-     * @Description: TODO getPageSize <br>
+     * @Description: getPageSize <br>
      * @author Mr.Black <br>
      * @date 2015年12月21日 下午1:34:22 <br>
      */
@@ -245,7 +245,7 @@ public abstract class BaseController {
 
     /**
      * @return ModelAndView <br>
-     * @Description: TODO 页面跳转成功处理<br>
+     * @Description: 页面跳转成功处理<br>
      * @author Mr.Black <br>
      * @date 2015年12月23日 下午9:07:08 <br>
      */
@@ -260,7 +260,7 @@ public abstract class BaseController {
 
     /**
      * @return ModelAndView <br>
-     * @Description: TODO 页面跳转失败处理<br>
+     * @Description: 页面跳转失败处理<br>
      * @author Mr.Black <br>
      * @date 2015年12月23日 下午9:06:44 <br>
      */
@@ -279,7 +279,7 @@ public abstract class BaseController {
     /**
      * @param @return <br>
      * @return HttpServletRequest <br>
-     * @Description: TODO 获取request<br>
+     * @Description: 获取request<br>
      * @author Mr.Black <br>
      * @date 2015年12月21日 下午1:36:56 <br>
      */
@@ -290,7 +290,7 @@ public abstract class BaseController {
 
     /**
      * @Title: getSession
-     * @Description: TODO 获取当前 Session
+     * @Description: 获取当前 Session
      */
     protected HttpSession getSession() {
         return this.getRequest().getSession();
@@ -298,14 +298,14 @@ public abstract class BaseController {
 
     /**
      * @Title: setOperateRemarks
-     * @Description: TODO 通过request设置操作备注
+     * @Description: 通过request设置操作备注
      */
     protected void setOperateRemarks(String operateRemarks) {
         this.getRequest().setAttribute(OPERATE_REMARKS, operateRemarks);
     }
 
     /**
-     * @Description: TODO 添加页面操作说明<br>
+     * @Description: 添加页面操作说明<br>
      * @author Mr.Black <br>
      * @date 2015年12月26日 上午2:03:44 <br>
      */
@@ -315,14 +315,14 @@ public abstract class BaseController {
 
     /**
      * @Title: setMessage
-     * @Description: TODO 处理后存放处理结果信息
+     * @Description: 处理后存放处理结果信息
      */
     protected void setMessage(String message) {
         this.getRequest().setAttribute("OPERATE_REASULT_MESSAGE", message);
     }
 
     /**
-     * @Description: TODO 向页面返回操作结果信息 <br>
+     * @Description: 向页面返回操作结果信息 <br>
      * message 操作结果信息
      * @author Mr.Black <br>
      * @date 2015年12月27日 下午8:51:09 <br>
@@ -335,7 +335,7 @@ public abstract class BaseController {
 
     /**
      * @Title: setMessage
-     * @Description: TODO 重定向传参数
+     * @Description: 重定向传参数
      */
     protected void setMessage(RedirectAttributes attr, String message) {
         if (attr != null) {
@@ -345,7 +345,7 @@ public abstract class BaseController {
 
     /**
      * @Title: getCurrentUser
-     * @Description: TODO 获取当前用户
+     * @Description: 获取当前用户
      */
     protected Map<String, Object> getCurrentUser() {
         Map<String, Object> user = null;
@@ -360,7 +360,7 @@ public abstract class BaseController {
 
     /**
      * @Title: getCurrentUserId
-     * @Description: TODO 获取当前用户 ID
+     * @Description: 获取当前用户 ID
      */
     protected Integer getCurrentUserId() {
         Integer userId = null;
@@ -373,7 +373,7 @@ public abstract class BaseController {
 
     /**
      * @Title: isCurrentUserAdmin
-     * @Description: TODO 判断当前用户是否是管理员
+     * @Description: 判断当前用户是否是管理员
      */
     protected boolean isCurrentUserAdmin() {
         // 获取管理员标识
@@ -386,7 +386,7 @@ public abstract class BaseController {
 
     /**
      * @Title: setFormValid
-     * @Description: TODO 设置表单校验标识
+     * @Description: 设置表单校验标识
      */
     protected void setFormValid() {
         // 消除失效校验标识
@@ -397,7 +397,7 @@ public abstract class BaseController {
 
     /**
      * @Title: validForm
-     * @Description: TODO 提交表单后调用此方法，校验是否重复提交
+     * @Description: 提交表单后调用此方法，校验是否重复提交
      */
     protected boolean validForm() {
         String _validFlag = (String) getSession().getAttribute(WebConstant.FORM_VALID_NAME);

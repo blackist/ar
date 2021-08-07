@@ -18,7 +18,7 @@ public interface CommentMapper extends BaseMapper {
 	List<Map<String, Object>> loadInfoComment(@Param("infoId") Integer infoId);
 
 	/**
-	 * TODO 动态加载评论列表
+	 * 动态加载评论列表
 	 * @param page
 	 * @param infoId
 	 * @return
@@ -27,7 +27,7 @@ public interface CommentMapper extends BaseMapper {
 	List<Map<String, Object>> dynamicLoadComment(Page<Map<String, Object>> page, @Param("infoId") Integer infoId) throws Exception;
 
 	/**
-	 * TODO 当信息被删除时，COmments同时被删除
+	 * 当信息被删除时，COmments同时被删除
 	 * @param infoId
 	 * @return 删除帖子的评论
 	 * @throws Exception
@@ -35,7 +35,7 @@ public interface CommentMapper extends BaseMapper {
 	Integer deleteCommentByInfoId(@Param("infoId") Integer infoId) throws Exception;
 
 	/**
-	 * TODO 通过userId和commentId删除评论
+	 * 通过userId和commentId删除评论
 	 * @param infoId
 	 * @param userId
 	 * @return

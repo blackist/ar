@@ -1,7 +1,7 @@
 /**  
 * @Title: UpdateDictCache.java <br>
 * @Package com.xzit.ar.common.cache.dict <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2016年1月1日 下午9:10:25 <br>
 * @version V1.0 <br>
@@ -19,7 +19,7 @@ import org.springframework.cache.annotation.Caching;
 
 /**
  * @ClassName: UpdateDictCache <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2016年1月1日 下午9:10:25 <br>
  * @version V1.0 <br>

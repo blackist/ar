@@ -10,7 +10,7 @@ package com.xzit.ar.common.mapper.recruit;
 
 /**
  * @ClassName: RecruitProvider
- * @Description: TODO Recruit Sql Provider
+ * @Description: Recruit Sql Provider
  * @author Mr.Black
  * @date 2016年2月11日 上午11:40:53
  */

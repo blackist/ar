@@ -1,7 +1,7 @@
 /**
  * @Title: RightServiceImpl.java <br>
  * @Package com.xzit.ar.manage.service.right.impl <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2016年1月2日 下午10:50:51 <br>
  * @version V1.0 <br>
@@ -26,7 +26,7 @@ import com.xzit.ar.manage.service.right.RightService;
  * @author Mr.Black <br>
  * @version V1.0 <br>
  * @ClassName: RightServiceImpl <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @date 2016年1月2日 下午10:50:51 <br>
  */
 @Service("rightService")

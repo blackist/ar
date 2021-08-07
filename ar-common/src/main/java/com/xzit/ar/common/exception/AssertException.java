@@ -1,7 +1,7 @@
 /**  
 * @Title: AssertException.java <br>
 * @Package com.xzit.ar.common.exception <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 下午1:24:47 <br>
 * @version V1.0 <br>
@@ -10,7 +10,7 @@ package com.xzit.ar.common.exception;
 
 /**
 * @ClassName: AssertException <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 下午1:24:47 <br>
 * @version V1.0  <br> <br>
@@ -18,7 +18,7 @@ package com.xzit.ar.common.exception;
 public class AssertException extends GlobalException {
 
 	/**
-	* @Fields serialVersionUID : TODO <br>
+	* @Fields serialVersionUID : <br>
 	*/ 
 	private static final long serialVersionUID = 793213271166742835L;
 

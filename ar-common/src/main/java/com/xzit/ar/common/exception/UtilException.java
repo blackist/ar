@@ -3,7 +3,7 @@ package com.xzit.ar.common.exception;
 /**
  * 
 * @ClassName: UtilException <br>
-* @Description: TODO 调用工具类的异常<br>
+* @Description: 调用工具类的异常<br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 上午10:27:44 <br>
 * @version V1.0  <br> <br>

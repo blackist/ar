@@ -1,7 +1,7 @@
 /**  
 * @Title: GlobalExceptionHandler.java <br>
 * @Package com.xzit.ar.common.exception.handler <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2016年1月1日 下午10:07:14 <br>
 * @version V1.0 <br>
@@ -19,7 +19,7 @@ import com.xzit.ar.common.exception.GlobalException;
 
 /**
  * @ClassName: GlobalExceptionHandler <br>
- * @Description: TODO 全局异常处理器<br>
+ * @Description: 全局异常处理器<br>
  * @author Mr.Black <br>
  * @date 2016年1月1日 下午10:07:14 <br>
  * @version V1.0 <br>

@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/5/18 22:34.
@@ -30,11 +30,10 @@ public class OriginServiceImpl implements OriginService {
     private GradeMapper gradeMapper;
 
     /**
-     * TODO 条件查询组织
+     * 条件查询组织
      *
      * @param page
      * @return
-     * @throws ServiceException
      */
     @Override
     public List<Map<String, Object>> queryOrigin(Page<Map<String, Object>> page) throws ServiceException {
@@ -46,11 +45,10 @@ public class OriginServiceImpl implements OriginService {
     }
 
     /**
-     * TODO 新建组织
+     * 新建组织
      *
      * @param origin
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer saveOrigin(Origin origin) throws ServiceException {
@@ -70,11 +68,10 @@ public class OriginServiceImpl implements OriginService {
     }
 
     /**
-     * TODO 更新组织信息
+     * 更新组织信息
      *
      * @param origin
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer updateOrigin(Origin origin) throws ServiceException {
@@ -89,11 +86,10 @@ public class OriginServiceImpl implements OriginService {
     }
 
     /**
-     * TODO 通过 originId 获取origin信息
+     * 通过 originId 获取origin信息
      *
      * @param originId
      * @return
-     * @throws ServiceException
      */
     @Override
     public Map<String, Object> getOriginById(Integer originId) throws ServiceException {
@@ -108,11 +104,10 @@ public class OriginServiceImpl implements OriginService {
     }
 
     /**
-     * TODO 获取组织成员列表
+     * 获取组织成员列表
      *
      * @param originId
      * @return
-     * @throws ServiceException
      */
     @Override
     public List<Map<String, Object>> getOriginMembers(Page<Map<String, Object>> page, Integer originId) throws ServiceException {

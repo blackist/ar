@@ -1,7 +1,7 @@
 /**  
 * @Title: CacheHander.java <br>
 * @Package com.xzit.ar.common.cache <br>
-* @Description: TODO CacheHander<br>
+* @Description: CacheHander<br>
 * @author Mr.Black <br>
 * @date 2015年12月29日 下午5:51:24 <br>
 * @version V1.0 <br>
@@ -20,7 +20,7 @@ import net.sf.ehcache.ObjectExistsException;
 
 /**
  * @ClassName: CacheHander <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2015年12月29日 下午5:51:24 <br>
  * @version V1.0 <br>
@@ -63,7 +63,7 @@ public class DataCacheHandler {
 	}
 
 	/**
-	 * @Description: TODO 将查询结果缓存<br>
+	 * @Description: 将查询结果缓存<br>
 	 * @author Mr.Black <br>
 	 * @date 2015年12月30日 下午1:21:21 <br>
 	 */
@@ -96,7 +96,7 @@ public class DataCacheHandler {
 	}
 
 	/**
-	 * @Description: TODO 获得cache key的方法，cache key是Cache中一个Element的唯一标识 cache
+	 * @Description: 获得cache key的方法，cache key是Cache中一个Element的唯一标识 cache
 	 *               key包括
 	 *               包名+类名+方法名+各个参数的具体指，如com.co.cache.service.UserServiceImpl.
 	 *               getAllUser<br>

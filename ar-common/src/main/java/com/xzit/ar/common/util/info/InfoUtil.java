@@ -5,7 +5,7 @@ import com.xzit.ar.common.init.context.ARContext;
 import com.xzit.ar.common.mapper.dict.DictionaryDataMapper;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/4/12 21:35.
@@ -13,7 +13,7 @@ import com.xzit.ar.common.mapper.dict.DictionaryDataMapper;
 public class InfoUtil {
 
     /**
-     * TODO Info初始化
+     * Info初始化
      * @throws UtilException
      */
     public static void initForum() throws UtilException {
@@ -22,7 +22,7 @@ public class InfoUtil {
     }
 
     /**
-     * TODO 加载帖子主题
+     * 加载帖子主题
      * @throws UtilException
      */
     public static void loadInfoTheme() throws UtilException {
@@ -36,7 +36,7 @@ public class InfoUtil {
     }
 
     /**
-     * TODO 加载信息类型
+     * 加载信息类型
      * @throws UtilException
      */
         public static void loadInfoType() throws UtilException{

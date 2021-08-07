@@ -1,7 +1,7 @@
 /**  
 * @Title: CacheInterceptor.java <br>
 * @Package com.xzit.ar.common.cache <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月29日 下午5:54:42 <br>
 * @version V1.0 <br>
@@ -12,7 +12,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 
 /**
  * @ClassName: CacheInterceptor <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2015年12月29日 下午5:54:42 <br>
  * @version V1.0 <br>

@@ -1,7 +1,7 @@
 /**  
 * @Title: LoginInterceptor.java <br>
 * @Package com.xzit.ar.common.interceptor <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2016年1月2日 下午5:25:54 <br>
 * @version V1.0 <br>
@@ -23,7 +23,7 @@ import com.xzit.ar.common.util.privilege.PrivilegeUtil;
 
 /**
  * @ClassName: LoginInterceptor <br>
- * @Description: TODO 登录拦截<br>
+ * @Description: 登录拦截<br>
  * @author Mr.Black <br>
  * @date 2016年1月2日 下午5:25:54 <br>
  * @version V1.0 <br>

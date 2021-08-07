@@ -27,7 +27,7 @@ import com.xzit.ar.common.po.user.UserOrigin;
 public interface ClassRoomService {
 
 	/**
-	 * TODO 查询班级基本信息
+	 * 查询班级基本信息
 	 * @param classId
 	 * @return
 	 * @throws ServiceException
@@ -40,7 +40,7 @@ public interface ClassRoomService {
 	Page<Map<String, Object>> classMember(Page<Map<String, Object>> page, Integer classId)
 			throws ServiceException;
 	/**
-	 * TODO 加载班级最新动态消息
+	 * 加载班级最新动态消息
 	 * @param page
 	 * @param classId
 	 * @return

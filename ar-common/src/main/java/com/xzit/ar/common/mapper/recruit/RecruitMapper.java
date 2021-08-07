@@ -13,7 +13,7 @@ public interface RecruitMapper extends BaseMapper {
 
 	/**
 	 * @Title: queryRecruit
-	 * @Description: TODO 招聘索引界面分页加载招聘信息
+	 * @Description: 招聘索引界面分页加载招聘信息
 	 * @param @param page
 	 * @param @param
 	 *            queryStr
@@ -22,7 +22,7 @@ public interface RecruitMapper extends BaseMapper {
 
 	/**
 	 * @Title: getDetailRecruit
-	 * @Description: TODO 查询招聘详情
+	 * @Description: 查询招聘详情
 	 * @param @param
 	 *            id
 	 */
@@ -30,7 +30,7 @@ public interface RecruitMapper extends BaseMapper {
 
 	/**
 	 * @Title: loadOtherRecruits
-	 * @Description: TODO 加载招聘信息发布单位的其他招聘信息
+	 * @Description: 加载招聘信息发布单位的其他招聘信息
 	 * @param @param
 	 *            unitId
 	 * @param @param
@@ -41,7 +41,7 @@ public interface RecruitMapper extends BaseMapper {
 
 	/**
 	 * @Title: queryJob
-	 * @Description: TODO 后台管理查询招聘信息
+	 * @Description: 后台管理查询招聘信息
 	 * @param @param page
 	 * @param @param queryStr
 	 */
@@ -50,7 +50,7 @@ public interface RecruitMapper extends BaseMapper {
 			throws Exception;
 
 	/**
-	 * TODO 用户向此招聘信息投递简历时，此招聘信息的简历投递数+1
+	 * 用户向此招聘信息投递简历时，此招聘信息的简历投递数+1
 	 * @param recruitId
 	 * @return
 	 * @throws Exception
@@ -58,7 +58,7 @@ public interface RecruitMapper extends BaseMapper {
 	int addResumes(@Param("recruitId") Integer recruitId) throws Exception;
 
 	/**
-	 * TODO 查询用户发布的招聘信息
+	 * 查询用户发布的招聘信息
 	 * @param page
 	 * @param userId
 	 * @return

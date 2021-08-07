@@ -13,7 +13,7 @@ import com.xzit.ar.common.init.context.ARContext;
 
 /**
  * @ClassName: RecruitUtil
- * @Description: TODO 职业招聘相关工具
+ * @Description: 职业招聘相关工具
  * @author Mr.Black
  * @date 2016年2月3日 下午9:47:13
  */
@@ -32,7 +32,7 @@ public class RecruitUtil {
 	/**
 	 * @throws UtilException
 	 * @Title: loadUnitProperty
-	 * @Description: TODO 加载公司属性列表
+	 * @Description: 加载公司属性列表
 	 */
 	public static void loadUnitProperty() throws UtilException {
 		System.out.println("-------------------- 加载 公司属性列表 --------------------");
@@ -46,7 +46,7 @@ public class RecruitUtil {
 
 	/**
 	 * @Title: refreshUnitProperty
-	 * @Description: TODO 刷新
+	 * @Description: 刷新
 	 */
 	public static void refreshUnitProperty() throws UtilException {
 		System.out.println("-------------- 刷新 公司属性列表 ---------------");
@@ -60,7 +60,7 @@ public class RecruitUtil {
 
 	/**
 	 * @Title: loadUnitScale
-	 * @Description: TODO loadUnitScale
+	 * @Description: loadUnitScale
 	 */
 	public static void loadUnitScale() throws UtilException {
 		System.out.println("-------------------- 加载 公司规模列表 --------------------");
@@ -74,7 +74,7 @@ public class RecruitUtil {
 
 	/**
 	 * @Title: refreshUnitScale
-	 * @Description: TODO refreshUnitScale
+	 * @Description: refreshUnitScale
 	 */
 	public static void refreshUnitScale() throws UtilException {
 		System.out.println("-------------- 刷新 公司规模列表 ---------------");
@@ -88,7 +88,7 @@ public class RecruitUtil {
 
 	/**
 	 * @Title: loadUnitIndustry
-	 * @Description: TODO loadUnitIndustry
+	 * @Description: loadUnitIndustry
 	 */
 	public static void loadUnitIndustry() throws UtilException {
 		System.out.println("-------------------- 加载 公司行业列表 --------------------");
@@ -102,7 +102,7 @@ public class RecruitUtil {
 
 	/**
 	 * @Title: refreshUnitIndustry
-	 * @Description: TODO refreshUnitIndustry
+	 * @Description: refreshUnitIndustry
 	 */
 	public static void refreshUnitIndustry() throws UtilException {
 		System.out.println("-------------- 刷新 公司行业列表 ---------------");
@@ -115,7 +115,7 @@ public class RecruitUtil {
 	}
 
 	/**
-	 * @Title: loadPositionBenefit @Description: TODO @param @throws
+	 * @Title: loadPositionBenefit @Description: @param @throws
 	 *         UtilException @return void @throws
 	 */
 	public static void loadPositionSalary() throws UtilException {
@@ -129,7 +129,7 @@ public class RecruitUtil {
 	}
 
 	/**
-	 * @Title: refreshPositionBenefit @Description: TODO @param @throws
+	 * @Title: refreshPositionBenefit @Description: @param @throws
 	 *         UtilException @return void @throws
 	 */
 	public static void refreshPositionSalary() throws UtilException {
@@ -142,7 +142,7 @@ public class RecruitUtil {
 	}
 
 	/**
-	 * @Title: loadPositionBenefit @Description: TODO @param @throws
+	 * @Title: loadPositionBenefit @Description: @param @throws
 	 *         UtilException @return void @throws
 	 */
 	public static void loadPositionBenefit() throws UtilException {
@@ -156,7 +156,7 @@ public class RecruitUtil {
 	}
 
 	/**
-	 * @Title: refreshPositionBenefit @Description: TODO @param @throws
+	 * @Title: refreshPositionBenefit @Description: @param @throws
 	 *         UtilException @return void @throws
 	 */
 	public static void refreshPositionBenefit() throws UtilException {
@@ -171,7 +171,7 @@ public class RecruitUtil {
 
 	/**
 	 * @Title: loadPositionPro
-	 * @Description: TODO loadPositionPro
+	 * @Description: loadPositionPro
 	 */
 	public static void loadPositionProf() throws UtilException {
 		System.out.println("-------------------- 加载 职位学历要求列表 --------------------");

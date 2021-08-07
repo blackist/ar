@@ -35,7 +35,7 @@ import com.xzit.ar.portal.service.recruit.UnitService;
 
 /**
  * @ClassName: RecruitController
- * @Description: TODO RecruitController
+ * @Description: RecruitController
  * @author Mr.Black
  * @date 2016年1月17日 下午1:54:22
  */
@@ -66,9 +66,8 @@ public class RecruitController extends BaseController {
     }
 
     /**
-     * @throws ServiceException
      * @Title: detailRecruit
-     * @Description: TODO detailRecruit
+     * @Description: detailRecruit
      */
     @RequestMapping(value = "/detailRecruit", method = {RequestMethod.GET})
     public String detailRecruit(Model model, @RequestParam("recruitId") Integer recruitId) throws ServiceException {
@@ -101,10 +100,9 @@ public class RecruitController extends BaseController {
     }
 
     /**
-     * TODO 跳转发布招聘界面
+     * 跳转发布招聘界面
      * @param model
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/addRecruit")
     public String addRecruit(Model model) throws ServiceException {
@@ -125,12 +123,11 @@ public class RecruitController extends BaseController {
     }
 
     /**
-     * TODO 招聘信息保存
+     * 招聘信息保存
      * @param model
      * @param attr
      * @param recruit
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/addRecruitSubmit")
     public String addRecruitSubmit(Model model, RedirectAttributes attr, Recruit recruit) throws ServiceException {
@@ -160,7 +157,7 @@ public class RecruitController extends BaseController {
 
     /**
      * @Title: recruitSuccess
-     * @Description: TODO 招聘发布成功跳转
+     * @Description: 招聘发布成功跳转
      */
     @RequestMapping("/recruitSuccess")
     public String recruitSuccess(Model model) {

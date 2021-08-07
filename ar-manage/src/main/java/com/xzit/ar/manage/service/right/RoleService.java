@@ -25,43 +25,43 @@ public interface RoleService {
 
 	/**
 	 * @Title: queryRole
-	 * @Description: TODO 查询角色
+	 * @Description: 查询角色
 	 */
 	Page<Role> queryRole(Page<Role> page) throws ServiceException;
 
 	/**
 	 * @Title: getRoleById
-	 * @Description: TODO 获取角色
+	 * @Description: 获取角色
 	 */
 	Role getRoleById(Integer roleId) throws ServiceException;
 
 	/**
 	 * @Title: getRightsByRole
-	 * @Description: TODO 记载角色的权限
+	 * @Description: 记载角色的权限
 	 */
 	List<Right> getRightsByRole(Integer roleId) throws ServiceException;
 
 	/**
 	 * @Title: getRoleIdByRoleValue
-	 * @Description: TODO 通过rolevalue获取roleId
+	 * @Description: 通过rolevalue获取roleId
 	 */
 	Integer getRoleIdByRoleValue(String roleValue) throws ServiceException;
 
 	/**
 	 * @Title: updateRoleRights
-	 * @Description: TODO 更新对角色的权限分配
+	 * @Description: 更新对角色的权限分配
 	 */
 	Integer updateRoleRights(Integer roleId, List<Integer> idList) throws ServiceException;
 
 	/**
 	 * @Title: getRoleValueByAdminId
-	 * @Description: TODO 通过adminId获取管理员身份
+	 * @Description: 通过adminId获取管理员身份
 	 */
 	String getRoleValueByAdminId(Integer adminId) throws ServiceException;
 
 	/**
 	 * @Title: getAllRoles
-	 * @Description: TODO 加载所有角色
+	 * @Description: 加载所有角色
 	 */
 	List<Right> getAllRoles() throws ServiceException;
 }

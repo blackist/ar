@@ -1,7 +1,7 @@
 /**  
 * @Title: IOUtil.java <br>
 * @Package com.xzit.ar.common.util <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月10日 下午8:23:32 <br>
 * @version V1.0 <br>
@@ -17,7 +17,7 @@ import com.xzit.ar.common.exception.UtilException;
 
 /**
  * @ClassName: IOUtil <br>
- * @Description: TODO <br>
+ * @Description: <br>
  * @author Mr.Black <br>
  * @date 2015年12月10日 下午8:23:32 <br>
  * @version V1.0 <br>
@@ -181,7 +181,7 @@ public final class IOUtil {
 
 	/**
 	 * @Title: createFileName
-	 * @Description: TODO 下载文件时设置文件名称
+	 * @Description: 下载文件时设置文件名称
 	 */
 	public static String createFileName(String name) throws UtilException {
 		String newName = "";

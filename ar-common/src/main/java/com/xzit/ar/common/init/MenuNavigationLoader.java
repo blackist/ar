@@ -1,7 +1,7 @@
 /**  
 * @Title: ResourcesInitialization.java <br>
 * @Package com.xzit.ar.common.init <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2016年1月2日 下午9:11:57 <br>
 * @version V1.0 <br>
@@ -10,7 +10,7 @@ package com.xzit.ar.common.init;
 
 /**
  * @ClassName: ResourcesInitialization <br>
- * @Description: TODO 加载项目资源<br>
+ * @Description: 加载项目资源<br>
  * @author Mr.Black <br>
  * @date 2016年1月2日 下午9:11:57 <br>
  * @version V1.0 <br>

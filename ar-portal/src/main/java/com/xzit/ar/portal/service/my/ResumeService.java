@@ -26,7 +26,7 @@ public interface ResumeService {
 
 	/**
 	 * @Title: loadMyResumes
-	 * @Description: TODO 进入个人中心是加载用户简历
+	 * @Description: 进入个人中心是加载用户简历
 	 * @param @param userId
 	 * @param @return
 	 * @param @throws ServiceException   
@@ -37,7 +37,7 @@ public interface ResumeService {
 
 	/**
 	 * @Title: loadPostResumes
-	 * @Description: TODO 投送简历时加载用户的所有简历
+	 * @Description: 投送简历时加载用户的所有简历
 	 * @param @param userId
 	 * @param @return
 	 * @param @throws ServiceException   
@@ -48,20 +48,20 @@ public interface ResumeService {
 	
 	/**
 	 * @Title: postResume
-	 * @Description: TODO 投递简历
+	 * @Description: 投递简历
 	 * @param @param resumePost
 	 */
 	int postResume(ResumePost resumePost) throws ServiceException;
 	
 	/**
 	 * @Title: cancelPostResume
-	 * @Description: TODO 取消投递
+	 * @Description: 取消投递
 	 */
 	int cancelPostResume(Integer recruitId, Integer resumeId) throws ServiceException;
 	
 	/**
 	 * @Title: postResumeRecord
-	 * @Description: TODO 加载招聘信息简历投递记录
+	 * @Description: 加载招聘信息简历投递记录
 	 * @param @param recruitId
 	 */
 	List<Map<String, Object>> postResumeRecord(Integer recruitId) throws ServiceException;
@@ -74,7 +74,7 @@ public interface ResumeService {
 	int createResume(UserResume resume) throws ServiceException;
 
 	/**
-	 * TODO 根据ID加载用户简历详情
+	 * 根据ID加载用户简历详情
 	 * @param resumeId
 	 * @return
 	 * @throws ServiceException
@@ -82,7 +82,7 @@ public interface ResumeService {
 	UserResume getResumeById(Integer resumeId) throws ServiceException;
 
 	/**
-	 * TODO 更新简历信息
+	 * 更新简历信息
 	 * @param resume
 	 * @return
 	 * @throws ServiceException
@@ -90,7 +90,7 @@ public interface ResumeService {
 	int updateResume(UserResume resume) throws ServiceException;
 
 	/**
-	 * TODO 删除个人简历
+	 * 删除个人简历
 	 * @param resumeId
 	 * @return
 	 * @throws ServiceException
@@ -98,7 +98,7 @@ public interface ResumeService {
 	int deleteResume(Integer resumeId) throws ServiceException;
 
 	/**
-	 * TODO 加载用户简历投递记录
+	 * 加载用户简历投递记录
 	 * @return
 	 * @throws ServiceException
 	 */

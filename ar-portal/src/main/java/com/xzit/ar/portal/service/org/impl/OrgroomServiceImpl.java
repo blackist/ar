@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/4/18 23:33.
@@ -41,11 +41,10 @@ public class OrgroomServiceImpl implements OrgroomService {
 
 
     /**
-     * TODO 根据 originId 查询 origin 基本信息
+     * 根据 originId 查询 origin 基本信息
      *
      * @param originId orginId
      * @return origin 信息
-     * @throws ServiceException
      */
     @Override
     public Origin getOriginById(Integer originId) throws ServiceException {
@@ -61,11 +60,10 @@ public class OrgroomServiceImpl implements OrgroomService {
     }
 
     /**
-     * TODO 加载组织成员id列表
+     * 加载组织成员id列表
      *
      * @param originId
      * @return 成员id列表
-     * @throws ServiceException
      */
     @Override
     public List<Integer> getMemberIds(Integer originId) throws ServiceException {
@@ -81,11 +79,10 @@ public class OrgroomServiceImpl implements OrgroomService {
     }
 
     /**
-     * TODO 当前用户加入组织
+     * 当前用户加入组织
      *
      * @param userOrigin
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer joinOrigin(UserOrigin userOrigin) throws ServiceException {
@@ -105,12 +102,11 @@ public class OrgroomServiceImpl implements OrgroomService {
     }
 
     /**
-     * TODO 查询组织成员列表
+     * 查询组织成员列表
      *
      * @param page
      * @param originId
      * @return
-     * @throws ServiceException
      */
     @Override
     public List<Map<String, Object>> getOriginMember(Page<Map<String, Object>> page, Integer originId) throws ServiceException {
@@ -127,12 +123,11 @@ public class OrgroomServiceImpl implements OrgroomService {
     }
 
     /**
-     * TODO 加载班级成员通讯录列表
+     * 加载班级成员通讯录列表
      *
      * @param page     分页类
      * @param originId originId
      * @return
-     * @throws ServiceException
      */
     @Override
     public List<Map<String, Object>> getOriginDirectory(Page<Map<String, Object>> page, Integer originId) throws ServiceException {

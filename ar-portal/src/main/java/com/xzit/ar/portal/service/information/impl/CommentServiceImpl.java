@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/4/15 21:33.
  */
@@ -28,11 +28,10 @@ public class CommentServiceImpl implements CommentService {
     private InformationMapper informationMapper;
 
     /**
-     * TODO 删除用户自己的评论
+     * 删除用户自己的评论
      * @param commentId
      * @param userId
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer deleteComment(Integer commentId, Integer userId) throws ServiceException {
@@ -47,11 +46,10 @@ public class CommentServiceImpl implements CommentService {
     }                                                       
 
     /**
-     * TODO 存储评论
+     * 存储评论
      *
      * @param comment
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer saveComment(Comment comment) throws ServiceException {
@@ -70,10 +68,9 @@ public class CommentServiceImpl implements CommentService {
     }
 
     /**
-     * TODO 动态加载动态消息的评论
+     * 动态加载动态消息的评论
      * @param infoId
      * @return
-     * @throws ServiceException
      */
     @Override
     public List<Map<String, Object>> dynamicLoadComment(Page<Map<String, Object> > page, Integer infoId) throws ServiceException {

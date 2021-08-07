@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/5/16 14:22.
@@ -22,11 +22,10 @@ public class AccountServiceImpl implements AccountService {
     private UserMapper userMapper;
 
     /**
-     * TODO 查询用户账号信息
+     * 查询用户账号信息
      *
      * @param userId
      * @return
-     * @throws ServiceException
      */
     @Override
     public User getUserById(Integer userId) throws ServiceException {
@@ -41,11 +40,10 @@ public class AccountServiceImpl implements AccountService {
     }
 
     /**
-     * TODO 更新用户账号信息
+     * 更新用户账号信息
      *
      * @param user
      * @return
-     * @throws ServiceException
      */
     @Override
     public Integer updateUser(User user) throws ServiceException {

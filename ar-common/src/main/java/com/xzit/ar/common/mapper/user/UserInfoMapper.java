@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 public interface UserInfoMapper extends BaseMapper {
 
     /**
-     * TODO 通过userId获取UserInfo
+     * 通过userId获取UserInfo
      * @return
      * @throws Exception
      */

@@ -22,7 +22,7 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * TODO ${TODO}
+ * 描述
  * Created by 董亮亮 on 2017/4/9.
  */
 @Controller
@@ -36,12 +36,11 @@ public class PostController extends BaseController {
     private CommentService commentService;
 
     /**
-     * TODO 加载信息详情
+     * 加载信息详情
      *
      * @param model
      * @param postId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/detail")
     public String detail(Model model, @Param("postId") Integer postId) throws ServiceException {
@@ -61,7 +60,7 @@ public class PostController extends BaseController {
     }
 
     /**
-     * TODO 加载评论列表
+     * 加载评论列表
      *
      * @param model
      * @return
@@ -78,13 +77,12 @@ public class PostController extends BaseController {
     }
 
     /**
-     * TODO 评论帖子
+     * 评论帖子
      *
      * @param model
      * @param redirectAttributes
      * @param comment
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/comment")
     public String comment(Model model, RedirectAttributes redirectAttributes, Comment comment) throws ServiceException {
@@ -103,12 +101,11 @@ public class PostController extends BaseController {
     }
 
     /**
-     * TODO 为帖子点赞
+     * 为帖子点赞
      *
      * @param model
      * @param postId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping(value = "/love", method = RequestMethod.GET)
     @ResponseBody
@@ -117,7 +114,7 @@ public class PostController extends BaseController {
     }
 
     /**
-     * TODO 加载发帖界面
+     * 加载发帖界面
      *
      * @param model
      * @return
@@ -129,12 +126,11 @@ public class PostController extends BaseController {
     }
 
     /**
-     * TODO 保存用户发布的新帖
+     * 保存用户发布的新帖
      *
      * @param model
      * @param information
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/save")
     public String save(Model model, Information information) throws ServiceException {
@@ -155,11 +151,10 @@ public class PostController extends BaseController {
     }
 
     /**
-     * TODO 删除帖子
+     * 删除帖子
      *
      * @param postId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/delete")
     public String delete(@Param("postId") Integer postId) throws ServiceException {
@@ -168,11 +163,10 @@ public class PostController extends BaseController {
     }
 
     /**
-     * TODO 删除用户评论
+     * 删除用户评论
      *
      * @param commentId
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/deleteComment")
     public @ResponseBody

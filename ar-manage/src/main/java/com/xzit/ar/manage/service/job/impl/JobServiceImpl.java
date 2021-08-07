@@ -25,7 +25,7 @@ import com.xzit.ar.manage.service.job.JobService;
 
 /**
  * @ClassName: JobServiceImpl
- * @Description: TODO JobServiceImpl
+ * @Description: JobServiceImpl
  * @author Mr.Black
  * @date 2016年2月9日 下午4:51:31
  */

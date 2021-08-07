@@ -51,11 +51,10 @@ public class ClassController extends BaseController {
     }
 
     /**
-     * TODO 加载班记录信息侧边栏
+     * 加载班记录信息侧边栏
      *
      * @param model
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/outlineClass")
     public String outlineClass(Model model) throws ServiceException {
@@ -77,11 +76,10 @@ public class ClassController extends BaseController {
     }
 
     /**
-     * TODO 查询班级
+     * 查询班级
      *
      * @param model
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/queryClasses")
     public String queryClasses(Model model, String queryStr, String selectStr) throws ServiceException {

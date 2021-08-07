@@ -35,7 +35,7 @@ function editAlbum() {
 }
 
 /**
- * TODO 删除相册
+ * 删除相册
  * @param albumId
  */
 function deleteAlbum(albumId) {

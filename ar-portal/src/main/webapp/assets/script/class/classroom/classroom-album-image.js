@@ -83,7 +83,7 @@ $(function() {
 });
 
 /**
- * TODO 删除相册图片
+ * 删除相册图片
  * @param imageId
  */
 function deleteImage(imageId) {

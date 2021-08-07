@@ -1,7 +1,7 @@
 /**  
 * @Title: BaseEntity.java <br>
 * @Package com.xzit.ar.common.base <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 下午1:49:34 <br>
 * @version V1.0 <br>
@@ -15,7 +15,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 
 /**
 * @ClassName: BaseEntity <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 下午1:49:34 <br>
 * @version V1.0  <br> <br>
@@ -23,7 +23,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 public abstract class BaseEntity implements Serializable {
 
 	/**
-	* @Fields serialVersionUID : TODO <br>
+	* @Fields serialVersionUID : <br>
 	*/ 
 	private static final long serialVersionUID = -3412131575274665203L;
 

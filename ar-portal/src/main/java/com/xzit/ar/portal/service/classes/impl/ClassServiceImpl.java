@@ -26,7 +26,7 @@ import com.xzit.ar.portal.service.classes.ClassService;
 /**
  * @author Mr.Black
  * @ClassName: ClassServiceImpl
- * @Description: TODO ClassService实现类
+ * @Description: ClassService实现类
  * @date 2016年2月18日 下午1:03:36
  */
 @Service("classService")
@@ -120,11 +120,10 @@ public class ClassServiceImpl implements ClassService {
     }
 
     /**
-     * TODO 条件查询组织
+     * 条件查询组织
      *
      * @param page
      * @return
-     * @throws ServiceException
      */
     @Override
     public List<Map<String, Object>> queryOrigin(Page<Map<String, Object>> page) throws ServiceException {

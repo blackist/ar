@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * TODO 校友组织管理
+ * 校友组织管理
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/4/16 15:32.
  */
@@ -25,7 +25,7 @@ public class OrgController extends BaseController {
     private OrgService orgService;
 
     /**
-     * TODO 加载校友组织列表
+     * 加载校友组织列表
      * @param model
      * @return
      */
@@ -36,7 +36,7 @@ public class OrgController extends BaseController {
     }
 
     /**
-     * TODO 加载院系分会
+     * 加载院系分会
      * @param model
      * @return
      */
@@ -47,7 +47,7 @@ public class OrgController extends BaseController {
     }
 
     /**
-     * TODO 加载社团分会
+     * 加载社团分会
      * @param model
      * @return
      */
@@ -58,7 +58,7 @@ public class OrgController extends BaseController {
     }
 
     /**
-     * TODO 加载学生协会
+     * 加载学生协会
      * @param model
      * @return
      */
@@ -69,11 +69,10 @@ public class OrgController extends BaseController {
     }
 
     /**
-     * TODO 加载校友组织侧边栏
+     * 加载校友组织侧边栏
      * @param model
      * @param originType
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/outline")
     public String outline(Model model, @Param("originType") String originType) throws ServiceException {

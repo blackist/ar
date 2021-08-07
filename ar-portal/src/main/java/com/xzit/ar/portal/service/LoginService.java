@@ -1,7 +1,7 @@
 /**  
 * @Title: LoginService.java <br>
 * @Package com.xzit.ar.manage.service <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2016年1月2日 下午2:45:14 <br>
 * @version V1.0 <br>
@@ -14,7 +14,7 @@ import com.xzit.ar.common.exception.ServiceException;
 
 /**
  * @ClassName: LoginService <br>
- * @Description: TODO 登录 service<br>
+ * @Description: 登录 service<br>
  * @author Mr.Black <br>
  * @date 2016年1月2日 下午2:45:14 <br>
  * @version V1.0 <br>

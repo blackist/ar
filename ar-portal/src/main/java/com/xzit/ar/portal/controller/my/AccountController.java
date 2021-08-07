@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 
 /**
- * TODO ${TODO}
+ * 描述
  *
  * @author 董亮亮 1075512174@qq.com.
  * @Date:2017/5/4 14:12.
@@ -27,7 +27,7 @@ public class AccountController extends BaseController {
 
 
     /**
-     * TODO 账号信息
+     * 账号信息
      *
      * @param model
      * @return
@@ -41,7 +41,7 @@ public class AccountController extends BaseController {
     }
 
     /**
-     * TODO 密码修改界面
+     * 密码修改界面
      *
      * @return
      */
@@ -51,13 +51,12 @@ public class AccountController extends BaseController {
     }
 
     /**
-     * TODO 密码修改提交
+     * 密码修改提交
      *
      * @param originalPassword 原密码
      * @param newPassword      新密码
      * @param confirmPassword  确认密码
      * @return
-     * @throws ServiceException
      * @throws UtilException
      */
     @RequestMapping("/password/update")
@@ -80,7 +79,7 @@ public class AccountController extends BaseController {
     }
 
     /**
-     * TODO 邮箱设置界面
+     * 邮箱设置界面
      *
      * @return
      */
@@ -90,11 +89,10 @@ public class AccountController extends BaseController {
     }
 
     /**
-     * TODO 更新用户email
+     * 更新用户email
      *
      * @param email
      * @return
-     * @throws ServiceException
      */
     @RequestMapping("/email/update")
     public String email(String email) throws ServiceException {

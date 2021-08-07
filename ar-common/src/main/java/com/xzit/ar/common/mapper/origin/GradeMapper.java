@@ -9,14 +9,14 @@ import org.apache.ibatis.annotations.Param;
 public interface GradeMapper extends BaseMapper {
 
 	/**
-	 * TODO 查询年级列表
+	 * 查询年级列表
 	 * @return
 	 * @throws Exception
 	 */
 	List<Map<String, Object>> loadGradeList() throws Exception;
 
 	/**
-	 * TODO 增减年级的班级数
+	 * 增减年级的班级数
 	 * @param gradeValue
 	 * @return
 	 * @throws Exception

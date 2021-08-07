@@ -1,7 +1,7 @@
 /**  
 * @Title: GlobalConstants.java <br>
 * @Package com.xzit.ar.common.constant <br>
-* @Description: TODO <br>
+* @Description: <br>
 * @author Mr.Black <br>
 * @date 2015年12月21日 下午1:01:48 <br>
 * @version V1.0 <br>
@@ -10,7 +10,7 @@ package com.xzit.ar.common.constant;
 
 /**
  * @ClassName: GlobalConstants <br>
- * @Description: TODO 全局常量<br>
+ * @Description: 全局常量<br>
  * @author Mr.Black <br>
  * @date 2015年12月21日 下午1:01:48 <br>
  * @version V1.0 <br>
