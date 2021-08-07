@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.xzit.ar</groupId>
     <artifactId>ar-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0-RELEASE</version>
     <packaging>pom</packaging>
     <name>信电校友录</name>
 
@@ -16,7 +16,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jdk.version>1.7</jdk.version>
+        <jdk.version>1.8</jdk.version>
         <junit.version>4.10</junit.version>
         <jackson.version>2.1.0</jackson.version>
         <servlet-api.version>3.1.0</servlet-api.version>
@@ -173,16 +173,11 @@
                 <version>2.2.2</version>
             </dependency>
             <dependency>
-                <groupId>commons-logging</groupId>
-                <artifactId>commons-logging</artifactId>
-                <version>1.1.1</version>
-            </dependency>
-            <dependency>
                 <groupId>org.javassist</groupId>
                 <artifactId>javassist</artifactId>
                 <version>3.17.1-GA</version>
             </dependency>
-            <!-- spring 对 mmybatis 的支持 -->
+            <!-- spring 对 mybatis 的支持 -->
             <dependency>
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis-spring</artifactId>
@@ -275,7 +270,17 @@
             <dependency>
                 <groupId>com.xzit.ar</groupId>
                 <artifactId>ar-common</artifactId>
-                <version>${project.version}</version>
+                <version>1.0-RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xzit.ar</groupId>
+                <artifactId>ar-manage</artifactId>
+                <version>1.0-RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xzit.ar</groupId>
+                <artifactId>ar-portal</artifactId>
+                <version>1.0-RELEASE</version>
             </dependency>
 
             <!-- 工程manage war包 -->
@@ -306,6 +311,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
                 </configuration>
@@ -314,10 +320,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <source>1.7</source>

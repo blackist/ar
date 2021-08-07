@@ -1,29 +1,18 @@
-/**
- * @Title: ManageController.java
- * @Package com.xzit.ar.portal.controller
- * @Description: TODO
- * @author Mr.Black
- * @date 2016年1月14日 下午2:05:32
- * @version V1.0
- */
 package com.xzit.ar.portal.controller;
 
+import com.xzit.ar.common.base.BaseController;
 import com.xzit.ar.common.constant.PathConstant;
 import com.xzit.ar.common.exception.ServiceException;
 import com.xzit.ar.common.exception.UtilException;
 import com.xzit.ar.common.page.Page;
-import com.xzit.ar.common.util.CommonUtil;
 import com.xzit.ar.common.util.IOUtil;
 import com.xzit.ar.portal.service.classes.ClassService;
 import com.xzit.ar.portal.service.forum.PostService;
 import com.xzit.ar.portal.service.information.InformationService;
 import com.xzit.ar.portal.service.recruit.RecruitService;
-import org.aspectj.util.FileUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.xzit.ar.common.base.BaseController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -31,9 +20,9 @@ import java.io.*;
 import java.util.Map;
 
 /**
+ * 校友录首页服务
+ *
  * @author Mr.Black
- * @ClassName: ManageController
- * @Description: TODO MainController
  * @date 2016年1月14日 下午2:05:32
  */
 @Controller
@@ -53,11 +42,10 @@ public class MainController extends BaseController {
     private InformationService informationService;
 
     /**
-     * TODO 网站首页
+     * 网站首页
      *
-     * @param model
-     * @return
-     * @throws ServiceException
+     * @param model ..
+     * @return ..
      */
     @RequestMapping("/index")
     public String index(Model model) throws ServiceException {
@@ -81,13 +69,12 @@ public class MainController extends BaseController {
     }
 
     /**
-     * TODO 下载文件
+     * 下载文件
      *
-     * @param response
-     * @param fileRelPath
-     * @param fileName
-     * @return
-     * @throws UtilException
+     * @param response ..
+     * @param fileRelPath ..
+     * @param fileName ..
+     * @return ..
      */
     @RequestMapping("/download")
     public String download(HttpServletResponse response, String fileRelPath, String fileName) throws UtilException {
@@ -107,8 +94,6 @@ public class MainController extends BaseController {
                 os.write(b, 0, length);
             }
             inputStream.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

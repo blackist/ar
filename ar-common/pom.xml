@@ -6,14 +6,12 @@
 	<parent>
 		<groupId>com.xzit.ar</groupId>
 		<artifactId>ar-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0-RELEASE</version>
 	</parent>
 	<artifactId>ar-common</artifactId>
 	<name>ar-common</name>
-	<url>http://maven.apache.org</url>
-	<properties>
+	<version>1.0-RELEASE</version>
 
-	</properties>
 	<dependencies>
 		<!-- 工具包 -->
 		<dependency>
@@ -54,7 +52,7 @@
 		<dependency>
 			<groupId>net.coobird</groupId>
 			<artifactId>thumbnailator</artifactId>
-			<version>0.4.7</version>
+			<version>0.4.14</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
@@ -118,14 +116,10 @@
 			<artifactId>cglib</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.javassist</groupId>
 			<artifactId>javassist</artifactId>
 		</dependency>
-		<!-- spring 对 mmybatis 的支持 -->
+		<!-- spring 对 mybatis 的支持 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
