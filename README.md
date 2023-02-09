@@ -157,7 +157,7 @@ Application Context 就是项目在容器里的目录，浏览器地址的一部
 
 ### 关注公众号
 
-![校友录](https://blogres.blackist.org/blackist-wechat-pub.jpg)
+![校友录](https://blogres.blackist.org/wechat-official-account-qrcode.jpg)
 
 关注公众号，回复：
 - 校友录，获取项目架构、线上部署、网站风格配置等开发文档
