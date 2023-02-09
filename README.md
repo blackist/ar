@@ -14,11 +14,11 @@
 
 校友录网站。作为毕业设计，为母校设计校友交流平台。基于javaWeb，由Maven构建管理，采用Spring+SpringMVC+MyBatis框架，用EhCache做数据缓存。门户网站采用BootStrap设计界面，后台管理网站用AmazeUI设计界面。门户网站总体布局如下所示：
 
-![](http://pic.blackist.top/javaweb-ar-ar-portal-logo.png)
+![](https://blogres.blackist.org/javaweb-ar-ar-portal-logo.png)
 
 后台管理总体布局如下所示：
 
-![](http://pic.blackist.top/javaweb-ar-ar-manage-logo.png)
+![](https://blogres.blackist.org/javaweb-ar-ar-manage-logo.png)
 
 
 在线体验：
@@ -93,7 +93,7 @@ jdbc.password=root
 
 执行ar-common模块下的maven clean 以及 maven install
 
-![](http://pic.blackist.top/javaweb-ar-ar-common-maven-cycle.png)
+![](https://blogres.blackist.org/javaweb-ar-ar-common-maven-cycle.png)
 
 ar-common生成jar 安装在本地，ar-manage和ar-portal依赖此库。
 
@@ -101,17 +101,17 @@ ar-common生成jar 安装在本地，ar-manage和ar-portal依赖此库。
 
 建议运行 ar-portal:war exploded。
 
-![](http://pic.blackist.top/202002151534_482.png)
+![](https://blogres.blackist.org/202002151534_482.png)
 
 原因如下：
 
 - war exploded 模式将 WEB 工程以文件夹的形式发布到 Tomcat，支持热部署。
 - ar-portal 是门户网站模块，包含后台管理模块。maven 模块结构如下图所示。
-  ![](http://pic.blackist.top/202002151541_295.png)
+  ![](https://blogres.blackist.org/202002151541_295.png)
 
 运行ar-portal模块，启动成功日志：
 
-![](http://pic.blackist.top/javaweb-ar-ar-portal-startup-success.png)
+![](https://blogres.blackist.org/javaweb-ar-ar-portal-startup-success.png)
 
 
 门户网站：
@@ -139,17 +139,17 @@ mvn clean && mvn install && mvn package
 tomcat 需要 8.0 的版本，否则会不兼容，👉[Tomcat 8.0.9](https://download.csdn.net/download/dong161114/20822688).
 
 首先配置 Tomcat 服务器路径
-![](http://pic.blackist.top/20210807123253.jpg)
+![](https://blogres.blackist.org/20210807123253.jpg)
 
 其次配置项目部署在 Tomcat 上
-![](http://pic.blackist.top/20210807123512.jpg)
-![](http://pic.blackist.top/20210807123601.jpg)
+![](https://blogres.blackist.org/20210807123512.jpg)
+![](https://blogres.blackist.org/20210807123601.jpg)
 
 Application Context 就是项目在容器里的目录，浏览器地址的一部分.
 
 2.启动运行即可
 
-![](http://pic.blackist.top/20210807123734.jpg)
+![](https://blogres.blackist.org/20210807123734.jpg)
 
 
 
@@ -157,7 +157,7 @@ Application Context 就是项目在容器里的目录，浏览器地址的一部
 
 ### 关注公众号
 
-![校友录](http://pic.blackist.top/blackist-wechat-pub.jpg)
+![校友录](https://blogres.blackist.org/blackist-wechat-pub.jpg)
 
 关注公众号，回复：
 - 校友录，获取项目架构、线上部署、网站风格配置等开发文档
@@ -167,7 +167,7 @@ Application Context 就是项目在容器里的目录，浏览器地址的一部
 
 **432196940**
 
-<!-- ![校友录](http://pic.blackist.top/javaweb-ar-TIM%E5%9B%BE%E7%89%8720181130212423.jpg){:width="50px"} -->
+<!-- ![校友录](https://blogres.blackist.org/javaweb-ar-TIM%E5%9B%BE%E7%89%8720181130212423.jpg){:width="50px"} -->
 
 ### 开源支持
 
