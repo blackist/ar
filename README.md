@@ -23,13 +23,9 @@
 
 在线体验：
 
-【门户网站】
-访问地址: http://tomcat.blackist.top/ar-portal/index.action
-用户名/密码: black/12345678
+【[门户网站]()】
 
-【后台管理】
-访问地址: http://tomcat.blackist.top/ar-portal/manage.action
-用户名/密码: sa/12345678
+【[后台管理]()】
 
 ## 项目背景
 

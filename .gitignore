@@ -37,3 +37,4 @@ test-output
 atlassian-ide-plugin.xml
 .gradletasknamecache
 .tern-project
+.vscode/
