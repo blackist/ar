@@ -14,7 +14,7 @@
 
 校友录网站。作为毕业设计，为母校设计校友交流平台。基于javaWeb，由Maven构建管理，采用Spring+SpringMVC+MyBatis框架，用EhCache做数据缓存。门户网站采用BootStrap设计界面，后台管理网站用AmazeUI设计界面。门户网站总体布局如下所示：
 
-![](https://blogres.blackist.org/javaweb-ar-ar-portal-logo.png)
+![](./ar-doc/ar.png)
 
 后台管理总体布局如下所示：
 
@@ -22,10 +22,8 @@
 
 
 在线体验：
-
-【[门户网站]()】
-
-【[后台管理]()】
+- [门户网站]()
+- [后台管理]()
 
 ## 项目背景
 
